@@ -27,6 +27,7 @@ export default defineConfig({
     defaultLocale: "en",
     locales: ["zh", "en"],
   },
+  
   output: 'static',
 
   integrations: [
