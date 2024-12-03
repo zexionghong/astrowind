@@ -86,14 +86,14 @@ export const headerData = {
       ],
     },
     {
-      text: 'Blog',
+      text: '语言',
       links: [
         {
-          text: 'Blog List',
+          text: '中文',
           href: getBlogPermalink(),
         },
         {
-          text: 'Article',
+          text: 'English',
           href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
         },
         {

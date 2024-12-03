@@ -11,6 +11,7 @@ import icon from 'astro-icon';
 import compress from 'astro-compress';
 import type { AstroIntegration } from 'astro';
 
+
 import astrowind from './vendor/integration';
 
 import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehypePlugin } from './src/utils/frontmatter';
@@ -22,6 +23,10 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
+  i18n: {
+    defaultLocale: "en",
+    locales: ["zh", "en"],
+  },
   output: 'static',
 
   integrations: [
@@ -87,4 +92,5 @@ export default defineConfig({
       },
     },
   },
-});
+},
+);
