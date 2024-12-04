@@ -1,4 +1,5 @@
 ---
+import Layout from '@/layouts/PageLayout.astro';
 import { getRelativeLocaleUrl } from 'astro:i18n';
 
 const { lang } = Astro.params;
@@ -11,6 +12,8 @@ export async function getStaticPaths() {
 }
 
 ---
-<p>lang: {lang}</p>
-<p>url: {url}</p>
-<a href={url}>English</a>
+<Layout lang={lang}>
+  <p>lang: {lang}</p>
+  <p>url: {url}</p>
+  <a href={url}>English</a>
+</Layout>

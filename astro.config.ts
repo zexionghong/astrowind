@@ -24,10 +24,10 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 
 export default defineConfig({
   i18n: {
-    defaultLocale: "en",
+    defaultLocale: "zh",
     locales: ["zh", "en"],
   },
-  
+
   output: 'static',
 
   integrations: [

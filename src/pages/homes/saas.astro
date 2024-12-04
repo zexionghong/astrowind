@@ -10,10 +10,12 @@ import Pricing from '~/components/widgets/Pricing.astro';
 
 import { headerData } from '~/navigation';
 import FAQs from '~/components/widgets/FAQs.astro';
+import { SITE } from 'astrowind:config';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 
 const metadata = {
-  title: 'SaaS Landing Page',
+  title: 'IpFlex - 全球IP代理',
+  description: 'IpFlex提供全球IP代理，是一家专业的proxy服务供应商，帮助您轻松解锁地域限制，畅游全球网络。',
 };
 ---
 
@@ -40,27 +42,26 @@ const metadata = {
   <!-- Hero2 Widget ******************* -->
 
   <Hero2
-    tagline="SaaS Web Demo"
+    tagline="超性价比，超稳定的IP代理"
     actions={[
-      { variant: 'primary', target: '_blank', text: 'Get Started', href: 'https://github.com/onwidget/astrowind' },
-      { text: 'Learn more', href: '#features' },
+      { variant: 'primary', target: '_blank', text: '立即注册', href: SITE?.dashboard },
+      { text: '了解更多', href: '#features' },
     ]}
     image={{
       src: 'https://images.unsplash.com/photo-1580481072645-022f9a6dbf27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'AstroWind Hero Image',
+      alt: 'IpFlex Image',
     }}
   >
     <Fragment slot="title">
-      Simplify web design with Astrowind: <br /> your ultimate <span class="text-accent dark:text-white highlight"
-        >SaaS</span
-      > companion<br />
+      全球IP代理，畅通无阻
     </Fragment>
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        Elevate your website creation process with <span class="font-semibold">AstroWind</span>'s SaaS solutions.</span
-      >
-      Seamlessly blend the power of Astro 4.0 and Tailwind CSS to craft websites that resonate with your brand and audience.
+        从个人用户到企业客户，<br />
+        IpFlex都能为您量身定制最优IP代理方案。<br />
+        覆盖全球的IP资源池，稳定可靠的连接质量，灵活的计费模式，即刻开启您的无界网络体验。
+      </span>
     </Fragment>
   </Hero2>
 
@@ -68,40 +69,40 @@ const metadata = {
 
   <Features
     id="features"
-    title="Why choose AstroWind?"
-    subtitle="Each of the following features enhances AstroWind's value proposition."
+    title="为什么选择IpFlex?"
+    subtitle="每个功能都增强了IpFlex的价值主张。"
     columns={2}
     items={[
       {
-        title: 'Integration of Astro 4.0 and Tailwind CSS',
+        title: '全球IP资源池',
         description:
-          'Offers a powerful combination that enhances both the development process and the end-user experience. Also, allows to build dynamic and visually stunning websites with optimized performance.',
+          '覆盖全球的IP资源池，稳定可靠的连接质量，灵活的计费模式，即刻开启您的无界网络体验。',
         icon: 'tabler:layers-union',
       },
       {
-        title: 'Versatile design for startups, small businesses, and more',
-        description: `Easily customize AstroWind to harmonize with the unique branding and identity of your venture. AstroWind's versatile design adapts to suit your needs.`,
+        title: '灵活的计费模式',
+        description: `灵活的计费模式，即用即付，无需预付。`,
         icon: 'tabler:artboard',
       },
       {
-        title: 'Effortless customization for portfolios and marketing sites',
+        title: '高效的技术支持',
         description:
-          'With intuitive customization, easily showcase portfolio pieces, case studies, project highlights, and relevant content. Ideal for creative professionals and businesses looking to highlight their expertise.',
+          '24小时技术支持，随时为您解答疑问。',
         icon: 'tabler:writing',
       },
       {
-        title: 'Optimized landing pages and engaging blogs',
-        description: `Landing pages are strategically designed to captivate visitors and prompt specific actions. Additionally, the blog creation feature empowers sharing insights, engaging the audience.`,
+        title: '丰富的IP类型',
+        description: `住宅代理、数据中心代理，轮换IP，满足您的各种需求。`,
         icon: 'tabler:podium',
       },
       {
-        title: 'Fast loading times and production-ready code',
-        description: `Using Astro 4.0 ensures fast loading and seamless rendering, enhancing browsing. The code follows best practices, improving user experience, SEO, and reducing bounce rates.`,
+        title: '快速稳定的连接',
+        description: `使用IpFlex的IP代理，您可以享受到快速稳定的连接，无需担心网络延迟和连接不稳定的问题。`,
         icon: 'tabler:rocket',
       },
       {
-        title: 'SEO-optimized structure for enhanced visibility',
-        description: `Follows SEO best practices with clean code, semantic HTML markup, and fast loading, enhancing search engine rankings. AstroWind's SEO structure ensures visibility to potential customers and clients.`,
+        title: '无限带宽',
+        description: `IpFlex提供无限带宽，让您无需担心流量限制的问题，超高速率，超低延迟。`,
         icon: 'tabler:eyeglass',
       },
     ]}
@@ -110,28 +111,36 @@ const metadata = {
   <!-- Content Widget **************** -->
 
   <Content
-    title="Use cases"
-    subtitle="Discover how AstroWind's versatile template serves as the ideal solution for various use cases, providing tailored solutions to drive success."
+    title="应用场景"
+    subtitle="IpFlex的灵活性和可定制性使其成为各种应用场景的理想解决方案。"
     isReversed
     items={[
       {
-        title: 'Description:',
+        title: '多地域展示',
         description:
-          'Are you a startup with big dreams? AstroWind propels your success. Our template forges a seamless online presence, attracting investors and customers from day one. Astro 4.0 and Tailwind CSS ensure striking, responsive sites, leaving lasting impressions. Countless startups leverage AstroWind to kickstart their journey and resonate with audiences.',
+          '企业能够灵活展示品牌形象，触达全球受众，洞悉各地市场动态。',
       },
       {
-        title: 'Benefits:',
-        description: `Allow startups to quickly create professional websites without investing extensive time and resources. <br /> Make a memorable first impression with visually appealing design elements that highlight your startup's unique value proposition. <br /> Ensures your website looks stunning and works well on all devices. <br /> Engage potential investors and customers with engaging content, clear messaging, and intuitive navigation.`,
+        title: '安全防护',
+        description: `提升网络安全，隐藏真实IP，有效防范恶意攻击，保护品牌声誉免受威胁。`,
+      },
+      {
+        title: '绕过地区限制',
+        description: `克服社交媒体平台地区限制，确保营销信息无阻碍地传达到目标受众。`,
+      },
+      {
+        title: '实时监测竞争对手',
+        description: `以匿名方式观察竞争对手，获取实时市场情报，为企业策略调整提供关键信息。`,
       },
     ]}
     image={{
       src: 'https://images.unsplash.com/photo-1620558138198-cfb9b4f3c294?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1671&q=80',
-      alt: 'Startup Image',
+      alt: '跨境电商 Image',
     }}
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Startup success stories: <br /><span class="text-2xl">Launching with AstroWind</span>
+        社媒营销: <br /><span class="text-2xl">助力企业全球化，洞悉全球市场</span>
       </h3>
     </Fragment>
 
@@ -146,12 +155,20 @@ const metadata = {
     isAfterContent={true}
     items={[
       {
-        title: 'Description:',
-        description: `For SaaS businesses, user experience is key. AstroWind enhances showcasing SaaS solutions intuitively. The template's Astro 4.0 and Tailwind CSS integration guarantees user-friendly experience, mirroring your software's efficiency. Customize pages to communicate SaaS value and solutions for your audience.`,
+        title: '地域解锁',
+        description: `IpFlex提供全球IP资源池，帮助您轻松解锁地域限制，畅游全球网络。`,
       },
       {
-        title: 'Benefits:',
-        description: `Ensuring a cohesive and user-centric design for your SaaS website. <br /> Effectively communicate complex SaaS features through visual aids, animations, and interactive elements. <br /> Prioritize user needs and pain points through well-structured layouts and clear navigation. <br /> Encourage visitors to take action with strategically placed CTAs. <br /> Ensures your SaaS website works seamlessly across all devices.`,
+        title: '价格比较与优化',
+        description: `实时比较不同市场的价格水平，优化产品定价，提高在国际市场的竞争力。`,
+      },
+      {
+        title: '安全支付与数据保护',
+        description: `提高电商平台上的支付安全性，隐藏用户数据，有效保护用户隐私。`,
+      },
+      {
+        title: '实时市场洞察',
+        description: `以匿名方式观察国际竞争对手，获取实时市场信息，为跨境电商制定灵活战略提供关键支持。`,
       },
     ]}
     image={{
@@ -161,7 +178,7 @@ const metadata = {
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        SaaS showcase: <br /><span class="text-2xl">Streamlining user experience</span>
+        跨境电商 <br /><span class="text-2xl">开启您的跨境电商之旅</span>
       </h3>
     </Fragment>
 
@@ -177,12 +194,20 @@ const metadata = {
     isAfterContent={true}
     items={[
       {
-        title: 'Description:',
-        description: `Your portfolio is your masterpiece, and AstroWind is your canvas. Whether you're a designer, photographer, artist, or any other creative professional, AstroWind empowers you to showcase your work with elegance and sophistication. Tailored to highlight your creative projects, AstroWind's templates offer a visually immersive experience that lets your portfolio shine.`,
+        title: '对抗欺诈',
+        description: `有助于识别和防范欺诈行为，保障广告投放的真实性和有效性。`,
       },
       {
-        title: 'Benefits:',
-        description: `Serve as a captivating backdrop to showcase your creative work, capturing attention and leaving a lasting impression. <br /> Tailor your portfolio to reflect your unique style and artistic vision. <br /> Prioritizes visuals, allowing you to present your work in high-resolution detail that draws viewers into your creations. <br /> Enables seamless navigation for effortless portfolio exploration.`,
+        title: '提升广告效果',
+        description: `实现地域差异化验证，广告可以更精准地匹配目标受众，提高广告的点击率和转化率。`,
+      },
+      {
+        title: '保障账号安全',
+        description: `轮流验证广告，减少因高频操作而引起的账号封禁风险，确保稳定广告投放。`,
+      },
+      {
+        title: '实时监测广告竞品',
+        description: `以匿名方式监测竞争对手的广告策略，获取实时市场信息，为广告优化和调整提供有力支持。`,
       },
     ]}
     image={{
@@ -192,7 +217,7 @@ const metadata = {
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Creative portfolios: <br /><span class="text-2xl">Highlighting your work</span>
+        广告验证<br /><span class="text-2xl">护航广告战场，广告投放更精准有力！</span>
       </h3>
     </Fragment>
 
@@ -206,12 +231,20 @@ const metadata = {
   <Content
     items={[
       {
-        title: 'Description:',
-        description: `For small businesses, a well-crafted website can be a game-changer. AstroWind empowers small businesses to not only establish a credible online presence but also convert visitors into loyal customers. The template's thoughtful design and optimization features ensure that your website doesn't just attract attention but also guides visitors through a seamless journey, ultimately leading to conversions.`,
+        title: '匿名保护',
+        description: `确保企业品牌在互联网上的匿名性，减少品牌被追踪、恶意攻击的风险。`,
       },
       {
-        title: 'Benefits:',
-        description: `Present your small business with a professional and polished website that instills confidence and trust among visitors. <br /> Strategically placed CTAs, user-friendly forms, and optimized layouts work together to drive user engagement and conversions. <br /> Ensure a smooth browsing experience, reducing bounce rates and encouraging interaction.`,
+        title: '防范恶意行为:',
+        description: `隐藏真实信息，有效预防黑客攻击、虚假宣传等恶意行为，保持品牌声誉完整。`,
+      },
+      {
+        title: '规遍地域监管',
+        description: `绕过地域监管，保护品牌在各地市场的一致性，规遍地域差异带来的潜在风险。`,
+      },
+      {
+        title: '保护敏感信息',
+        description: `隐藏企业敏感信息，如服务器位置等，有效防范信息泄露，维护品牌隐私。`,
       },
     ]}
     image={{
@@ -221,7 +254,7 @@ const metadata = {
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Small business growth: <br /><span class="text-2xl">Converting visitors into customers</span>
+        品牌保护<br /><span class="text-2xl">保护品牌声誉，维护企业形象</span>
       </h3>
     </Fragment>
 
@@ -233,41 +266,52 @@ const metadata = {
   <!-- Pricing Widget ******************* -->
 
   <Pricing
-    title="Flexible pricing plans"
+    title="产品价格"
     prices={[
       {
-        title: 'free',
-        subtitle: 'Access to core features and a wide range of templates',
-        price: '0',
-        period: '/ month',
+        title: '固定流量',
+        subtitle: '长效有效的静态住宅IP，IP地址固定，按使用量扣费',
+        price: '5',
+        period: '/ GB',
         callToAction: {
           target: '_blank',
-          text: 'Get Started for Free',
-          href: '#',
+          text: '免费试用',
+          href: SITE?.dashboard,
         },
       },
       {
-        title: 'pro',
-        subtitle: 'Premium templates and advanced customization',
-        price: 15,
-        period: '/ Month',
+        title: '轮换流量',
+        subtitle: '轮换住宅IP，IP地址轮换，指定地区内随机切换，按使用量扣费',
+        price: '5',
+        period: '/ GB',
         callToAction: {
           target: '_blank',
-          text: 'Upgrade to Pro',
-          href: '#',
+          text: '免费试用',
+          href: SITE?.dashboard,
         },
         hasRibbon: true,
-        ribbonTitle: 'popular',
+        ribbonTitle: '热门',
       },
       {
-        title: 'Enterprise',
-        subtitle: 'Tailored solutions for large-scale projects',
-        price: 45,
-        period: '/ Month',
+        title: '固定IP',
+        subtitle: '长效有效的静态数据中心IP，IP地址固定，按天扣费',
+        price: '3',
+        period: '/ IP / 天',
         callToAction: {
           target: '_blank',
-          text: 'Unlock Enterprise Features',
-          href: '#',
+          text: '免费试用',
+          href: SITE?.dashboard,
+        },
+      },
+      {
+        title: '轮换IP',
+        subtitle: '短暂有效的轮换住宅IP，IP地址轮换，指定地区内随机切换，按个收费',
+        price: '0.1',
+        period: '/ 个',
+        callToAction: {
+          target: '_blank',
+          text: '免费试用',
+          href: SITE?.dashboard,
         },
       },
     ]}
@@ -276,12 +320,12 @@ const metadata = {
   <!-- FAQs Widget ******************* -->
 
   <FAQs
-    title="Frequently Asked Questions"
+    title="常见问题"
     items={[
       {
-        title: 'Is AstroWind compatible with the latest versions of Astro and Tailwind CSS?',
+        title: 'AstroWind与Astro和Tailwind CSS兼容吗？',
         description:
-          'Yes, AstroWind is designed to be compatible with the latest versions of both Astro and Tailwind CSS. This ensures that you can harness the full capabilities of these technologies while benefiting from the features offered by AstroWind.',
+          '是的，AstroWind设计为与Astro和Tailwind CSS的最新版本兼容。这将确保您可以充分利用这些技术的能力，同时受益于AstroWind提供的功能。',
         icon: 'tabler:chevrons-right',
       },
       {

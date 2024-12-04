@@ -1,24 +1,25 @@
 site:
-  name: AstroWind
-  site: 'https://astrowind.vercel.app'
+  name: IpFlex
+  site: 'https://ipflex.ink'
   base: '/'
   trailingSlash: false
+  dashboard: 'https://dashboard.ipflex.ink'
 
   googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
 
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: IpFlex
+    template: '%s — IpFlex'
+  description: "IpFlex是一家安全稳定,纯净独享,低廉价格的ip代理商,海量住宅代理,动态ip,静态ip"
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: IpFlex
     images:
-      - url: '~/assets/images/default.png'
+      - url: '~/assets/images/logo.png'
         width: 1200
         height: 628
     type: website
@@ -28,7 +29,7 @@ metadata:
     cardType: summary_large_image
 
 i18n:
-  language: en
+  language: zh
   textDirection: ltr
 
 apps:
