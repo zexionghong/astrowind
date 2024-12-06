@@ -1,105 +1,118 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import Hero from '~/components/widgets/Hero.astro';
-import Note from '~/components/widgets/Note.astro';
+import Header from '~/components/widgets/Header.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
 import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Steps from '~/components/widgets/Steps.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
 import Content from '~/components/widgets/Content.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
+
+import { headerData } from '~/navigation';
 import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+import { SITE } from 'astrowind:config';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 
 const metadata = {
-  title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
-  description: 'AstroWind 是一个免费的模板，用于使用 Astro 4.0 和 Tailwind CSS 创建网站。它适用于初创公司、小型企业、SaaS 网站、专业投资组合、营销网站、登陆页面和博客。',
-  keywords: ['Astro', 'Tailwind CSS', '免费模板', '网站创建', 'AstroWind'],
-  author: 'AstroWind 团队',
-  ignoreTitleTemplate: false,
+  title: 'IpFlex - 全球IP代理',
+  description: 'IpFlex提供全球IP代理，是一家专业的proxy服务供应商，帮助您轻松解锁地域限制，畅游全球网络。',
 };
+
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+  <Fragment slot="header">
+    <Header
+      {...headerData}
+      actions={[
+        {
+          variant: 'secondary',
+          text: 'Login',
+          href: '#',
+        },
+        {
+          variant: 'primary',
+          text: 'Sign Up',
+          href: '#',
+        },
+      ]}
+      isSticky
+    />
+  </Fragment>
 
-  <Hero
+  <!-- Hero2 Widget *******
+      bg={`
+      <div class="absolute inset-0">
+        <div class="absolute inset-0 bg-[url('~/assets/images/index_top1.png')] bg-cover bg-center opacity-30"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-page to-transparent"></div>
+      </div>
+    `} 
+  ************ -->
+
+  <Hero2
+    title="超性价比，超稳定的IP代理"
     actions={[
-      {
-        variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/onwidget/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
-      },
-      { text: 'Learn more', href: '#features' },
+      { variant: 'primary', target: '_blank', text: '立即注册', href: SITE?.dashboard },
+      { text: '了解更多', href: '#features' },
     ]}
-    image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
+
+    image={{
+      src: '~/assets/images/index_top1.png',
+      alt: 'IpFlex Image',
+    }}
   >
     <Fragment slot="title">
-      Free template for <span class="hidden xl:inline">creating websites with</span>
-      <span class="text-accent dark:text-white highlight"> Astro 4.0</span> + Tailwind CSS
+      全球IP代理，畅通无阻
     </Fragment>
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 4.0
-        + Tailwind CSS.</span
-      >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
-      Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages &
-      Blogs.
+        从个人用户到企业客户，<br />
+        IpFlex都能为您量身定制最优IP代理方案。<br />
+        覆盖全球的IP资源池，稳定可靠的连接质量，灵活的计费模式，即刻开启您的无界网络体验。
+      </span>
     </Fragment>
-  </Hero>
-
-  <!-- Note Widget ******************* -->
-
-  <Note />
+  </Hero2>
 
   <!-- Features Widget *************** -->
 
   <Features
     id="features"
-    tagline="Features"
-    title="What you get with AstroWind"
-    subtitle="One of the most professional and comprehensive templates currently on the market. Most starred & forked Astro theme in 2022."
+    title="为什么选择IpFlex?"
+    subtitle="每个功能都增强了IpFlex的价值主张。"
+    columns={2}
     items={[
       {
-        title: 'Astro + Tailwind CSS Integration',
+        title: '全球IP资源池',
         description:
-          'A seamless integration between two great frameworks that offer high productivity, performance and versatility.',
-        icon: 'tabler:brand-tailwind',
+          '覆盖全球的IP资源池，稳定可靠的连接质量，灵活的计费模式，即刻开启您的无界网络体验。',
+        icon: 'tabler:layers-union',
       },
       {
-        title: 'Ready-to-use Components',
-        description:
-          'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
-        icon: 'tabler:components',
+        title: '灵活的计费模式',
+        description: `灵活的计费模式，即用即付，无需预付。`,
+        icon: 'tabler:artboard',
       },
       {
-        title: 'Best Practices',
+        title: '高效的技术支持',
         description:
-          'Creating secure, efficient, and user-friendly websites that deliver exceptional experiences and lasting value.',
-        icon: 'tabler:list-check',
+          '24小时技术支持，随时为您解答疑问。',
+        icon: 'tabler:writing',
       },
       {
-        title: 'Excellent Page Speed',
-        description:
-          'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
+        title: '丰富的IP类型',
+        description: `住宅代理、数据中心代理，轮换IP，满足您的各种需求。`,
+        icon: 'tabler:podium',
+      },
+      {
+        title: '快速稳定的连接',
+        description: `使用IpFlex的IP代理，您可以享受到快速稳定的连接，无需担心网络延迟和连接不稳定的问题。`,
         icon: 'tabler:rocket',
       },
       {
-        title: 'Search Engine Optimization (SEO)',
-        description:
-          "SEO lies in its ability to enhance a website's visibility, driving organic traffic and enabling it to reach a wider audience.",
-        icon: 'tabler:arrows-right-left',
-      },
-      {
-        title: 'Open to new ideas and contributions',
-        description:
-          'Embracing a culture that is open to new ideas and contributions is integral fostering innovation, collaboration, and a dynamic user experience.',
-        icon: 'tabler:bulb',
+        title: '无限带宽',
+        description: `IpFlex提供无限带宽，让您无需担心流量限制的问题，超高速率，超低延迟。`,
+        icon: 'tabler:eyeglass',
       },
     ]}
   />
@@ -107,34 +120,37 @@ const metadata = {
   <!-- Content Widget **************** -->
 
   <Content
+    title="应用场景"
+    subtitle="IpFlex的灵活性和可定制性使其成为各种应用场景的理想解决方案。"
     isReversed
-    tagline="Inside template"
-    title="AstroWind's Blueprint: Fun Meets Functionality!"
     items={[
       {
-        title: 'Built on top of Astro 4.0',
+        title: '多地域展示',
         description:
-          'Benefiting from the performance and developer-friendly features of this modern static site generator.',
+          '企业能够灵活展示品牌形象，触达全球受众，洞悉各地市场动态。',
       },
       {
-        title: 'Styled using Tailwind CSS',
-        description:
-          'Facilitating rapid design and consistent styling with this highly popular utility-first CSS framework.',
+        title: '安全防护',
+        description: `提升网络安全，隐藏真实IP，有效防范恶意攻击，保护品牌声誉免受威胁。`,
       },
       {
-        title: 'Cross-browser compatibility',
-        description:
-          'Ensure your website looks and functions consistently across various web browsers, delivering a seamless experience to all users.',
+        title: '绕过地区限制',
+        description: `克服社交媒体平台地区限制，确保营销信息无阻碍地传达到目标受众。`,
+      },
+      {
+        title: '实时监测竞争对手',
+        description: `以匿名方式观察竞争对手，获取实时市场情报，为企业策略调整提供关键信息。`,
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Colorful Image',
+      src: 'https://images.unsplash.com/photo-1620558138198-cfb9b4f3c294?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1671&q=80',
+      alt: '跨境电商 Image',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3>
-      Gain a competitive advantage by incorporating industry leading practices
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        社媒营销: <br /><span class="text-2xl">助力企业全球化，洞悉全球市场</span>
+      </h3>
     </Fragment>
 
     <Fragment slot="bg">
@@ -145,34 +161,35 @@ const metadata = {
   <!-- Content Widget **************** -->
 
   <Content
-    isAfterContent
+    isAfterContent={true}
     items={[
       {
-        title: 'High level of customization',
-        description: `Tailor the template effortlessly to match your brand's identity and requirements, making your website distinct and saving you time.`,
+        title: '地域解锁',
+        description: `IpFlex提供全球IP资源池，帮助您轻松解锁地域限制，畅游全球网络。`,
       },
       {
-        title: 'Multiple layout possibilities',
-        description:
-          'Explore various layout options to find the structure that best presents your content, enhancing user engagement and navigation.',
+        title: '价格比较与优化',
+        description: `实时比较不同市场的价格水平，优化产品定价，提高在国际市场的竞争力。`,
       },
       {
-        title: 'Fully responsive design',
-        description:
-          "Ensure your website's optimal performance on various devices and screen sizes, providing a consistent and enjoyable user experience.",
+        title: '安全支付与数据保护',
+        description: `提高电商平台上的支付安全性，隐藏用户数据，有效保护用户隐私。`,
       },
       {
-        title: 'Integration of media',
-        description:
-          'Seamlessly incorporate images, videos, and multimedia elements that enhance your content and engage visitors effectively.',
+        title: '实时市场洞察',
+        description: `以匿名方式观察国际竞争对手，获取实时市场信息，为跨境电商制定灵活战略提供关键支持。`,
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
-      alt: 'Blueprint Image',
+      src: 'https://images.unsplash.com/photo-1531973486364-5fa64260d75b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1658&q=80',
+      alt: 'SaaS Businesses Image',
     }}
   >
-    <Fragment slot="content">Ensure your online presence truly represents you.</Fragment>
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        跨境电商 <br /><span class="text-2xl">开启您的跨境电商之旅</span>
+      </h3>
+    </Fragment>
 
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
@@ -183,220 +200,203 @@ const metadata = {
 
   <Content
     isReversed
-    isAfterContent
+    isAfterContent={true}
     items={[
       {
-        title: 'Enhanced user engagement',
-        description:
-          'Captivate your audience with interactive elements, intuitive navigation, and visually appealing layouts, encouraging longer visits.',
+        title: '对抗欺诈',
+        description: `有助于识别和防范欺诈行为，保障广告投放的真实性和有效性。`,
       },
       {
-        title: 'Continuous improvement',
-        description:
-          'Ensure your website stays aligned with the latest trends and technologies through regular updates and enhancements.',
+        title: '提升广告效果',
+        description: `实现地域差异化验证，广告可以更精准地匹配目标受众，提高广告的点击率和转化率。`,
       },
       {
-        title: 'Time and resource efficiency',
-        description:
-          'Skip the time-consuming process of building a website from scratch and launch your online presence sooner with AstroWind.',
+        title: '保障账号安全',
+        description: `轮流验证广告，减少因高频操作而引起的账号封禁风险，确保稳定广告投放。`,
       },
       {
-        title: 'Community support',
-        description: `Join the growing AstroWind community for insights, resources, and assistance, ensuring you're never alone on your web development journey.`,
+        title: '实时监测广告竞品',
+        description: `以匿名方式监测竞争对手的广告策略，获取实时市场信息，为广告优化和调整提供有力支持。`,
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Astronauts Image',
+      src: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Portfolio Image',
     }}
   >
-    <Fragment slot="content">Designed to foster growth and success.</Fragment>
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        广告验证<br /><span class="text-2xl">护航广告战场，广告投放更精准有力！</span>
+      </h3>
+    </Fragment>
 
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
 
-  <!-- Steps Widget ****************** -->
+  <!-- Content Widget **************** -->
 
-  <Steps
-    title="Get your dream website up and running in no time with AstroWind."
+  <Content
     items={[
       {
-        title: 'Step 1: <span class="font-medium">Download</span>',
-        description:
-          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
-        icon: 'tabler:package',
+        title: '匿名保护',
+        description: `确保企业品牌在互联网上的匿名性，减少品牌被追踪、恶意攻击的风险。`,
       },
       {
-        title: 'Step 2: <span class="font-medium">Add content</span>',
-        description:
-          "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
-        icon: 'tabler:letter-case',
+        title: '防范恶意行为:',
+        description: `隐藏真实信息，有效预防黑客攻击、虚假宣传等恶意行为，保持品牌声誉完整。`,
       },
       {
-        title: 'Step 3: <span class="font-medium">Customize styles</span>',
-        description:
-          'Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right. Your unique flair, amplified by AstroWind! Precision in design ensures a seamless user experience.',
-        icon: 'tabler:paint',
+        title: '规遍地域监管',
+        description: `绕过地域监管，保护品牌在各地市场的一致性，规遍地域差异带来的潜在风险。`,
       },
       {
-        title: 'Ready!',
-        icon: 'tabler:check',
+        title: '保护敏感信息',
+        description: `隐藏企业敏感信息，如服务器位置等，有效防范信息泄露，维护品牌隐私。`,
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'Steps image',
+      src: 'https://images.unsplash.com/photo-1514621166532-aa7eb1a3a2f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+      alt: 'Small Business Image',
     }}
-  />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Most used widgets"
-    subtitle="Provides frequently used components for building websites using Tailwind CSS"
-    tagline="Components"
-    items={[
-      {
-        title: 'Headers',
-        description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
-        icon: 'flat-color-icons:template',
-      },
-      {
-        title: 'Heros',
-        description:
-          "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
-        icon: 'flat-color-icons:gallery',
-      },
-      {
-        title: 'Features',
-        description:
-          'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
-        icon: 'flat-color-icons:approval',
-      },
-      {
-        title: 'Content',
-        description:
-          "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
-        icon: 'flat-color-icons:document',
-      },
-      {
-        title: 'Call-to-Action',
-        description:
-          'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
-        icon: 'flat-color-icons:advertising',
-      },
-      {
-        title: 'Pricing',
-        description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
-        icon: 'flat-color-icons:currency-exchange',
-      },
-      {
-        title: 'Testimonial',
-        description: 'Step into the gossip corner! Here, other visitors spill the beans and share the juicy details.',
-        icon: 'flat-color-icons:voice-presentation',
-      },
-      {
-        title: 'Contact',
-        description:
-          'Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in.',
-        icon: 'flat-color-icons:business-contact',
-      },
-      {
-        title: 'Footers',
-        description: "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!",
-        icon: 'flat-color-icons:database',
-      },
-    ]}
   >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        品牌保护<br /><span class="text-2xl">保护品牌声誉，维护企业形象</span>
+      </h3>
+    </Fragment>
+
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Features2>
+  </Content>
 
-  <!-- HighlightedPosts Widget ******* -->
+  <!-- Pricing Widget ******************* -->
 
-  <BlogLatestPosts
-    title="Find out more content in our Blog"
-    information={`The blog is used to display AstroWind documentation.
-                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
-                        Astro is a very interesting technology. Thanks.
-                `}
+  <Pricing
+    title="产品价格"
+    prices={[
+      {
+        title: '固定流量',
+        subtitle: '长效有效的静态住宅IP，IP地址固定，按使用量扣费',
+        price: '5',
+        period: '/ GB',
+        callToAction: {
+          target: '_blank',
+          text: '免费试用',
+          href: SITE?.dashboard,
+        },
+      },
+      {
+        title: '轮换流量',
+        subtitle: '轮换住宅IP，IP地址轮换，指定地区内随机切换，按使用量扣费',
+        price: '5',
+        period: '/ GB',
+        callToAction: {
+          target: '_blank',
+          text: '免费试用',
+          href: SITE?.dashboard,
+        },
+        hasRibbon: true,
+        ribbonTitle: '热门',
+      },
+      {
+        title: '固定IP',
+        subtitle: '长效有效的静态数据中心IP，IP地址固定，按天扣费',
+        price: '3',
+        period: '/ IP / 天',
+        callToAction: {
+          target: '_blank',
+          text: '免费试用',
+          href: SITE?.dashboard,
+        },
+      },
+      {
+        title: '轮换IP',
+        subtitle: '短暂有效的轮换住宅IP，IP地址轮换，指定地区内随机切换，按个收费',
+        price: '0.1',
+        period: '/ 个',
+        callToAction: {
+          target: '_blank',
+          text: '免费试用',
+          href: SITE?.dashboard,
+        },
+      },
+    ]}
   />
 
   <!-- FAQs Widget ******************* -->
 
   <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
-    tagline="FAQs"
-    classes={{ container: 'max-w-6xl' }}
+    title="常见问题"
     items={[
       {
-        title: 'Why AstroWind?',
+        title: 'AstroWind与Astro和Tailwind CSS兼容吗？',
         description:
-          "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
+          '是的，AstroWind设计为与Astro和Tailwind CSS的最新版本兼容。这将确保您可以充分利用这些技术的能力，同时受益于AstroWind提供的功能。',
+        icon: 'tabler:chevrons-right',
       },
       {
-        title: 'What do I need to start?',
-        description:
-          'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
+        title: 'Can I use AstroWind for both personal and commercial projects?',
+        description: `Certainly! AstroWind is versatile and can be used for a wide range of projects, including both personal and commercial endeavors. Whether you're building a professional portfolio, launching a startup, or creating a marketing website, AstroWind has you covered.`,
+        icon: 'tabler:chevrons-right',
       },
       {
-        title: 'How to install the Astro + Tailwind CSS template?',
+        title: 'What level of coding knowledge is required to use AstroWind?',
         description:
-          "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
+          'While some familiarity with HTML, CSS, and web development concepts is helpful, the user-friendly interface and customization options allow those with limited coding experience to create impressive websites. For more advanced users, AstroWind offers extensive customization capabilities.',
+        icon: 'tabler:chevrons-right',
       },
       {
-        title: "What's something that you don't understand?",
-        description:
-          "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
-      },
-      {
-        title: 'What is something that you would like to try again?',
-        description:
-          "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
-      },
-      {
-        title: 'If you could only ask one question to each person you meet, what would that question be?',
-        description:
-          "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
-      },
-    ]}
-  />
-
-  <!-- Stats Widget ****************** -->
-
-  <Stats
-    stats={[
-      { title: 'Downloads', amount: '132K' },
-      { title: 'Stars', amount: '24.8K' },
-      { title: 'Forks', amount: '10.3K' },
-      { title: 'Users', amount: '48.4K' },
-    ]}
-  />
-
-  <!-- CallToAction Widget *********** -->
-
-  <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/onwidget/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
+        title: 'Is customer support available for AstroWind users seeking guidance?',
+        description: `Absolutely, our dedicated customer support team is here to assist you with any questions or challenges you may encounter. Feel free to reach out to us through our support channels, and we'll be happy to provide the help you need.`,
+        icon: 'tabler:chevrons-right',
       },
     ]}
   >
-    <Fragment slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
+  </FAQs>
 
-    <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
+  <!-- Steps2 Widget ****************** -->
+
+  <Steps2
+    title="Reach out to us"
+    subtitle="Have questions? Feel free to contact us using the form below. We're here to help!"
+    callToAction={{
+      text: 'Contact us',
+      href: '/',
+    }}
+    items={[
+      {
+        title: 'Email us',
+        description: 'contact@support.com',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Call us',
+        description: '+1 (234) 567-890',
+        icon: 'tabler:headset',
+      },
+      {
+        title: 'Follow us',
+        description: '@example',
+        icon: 'tabler:brand-twitter',
+      },
+    ]}
+  />
+
+  <!-- BlogLatestPost Widget **************** -->
+
+  <BlogLatestPosts
+    id="blog"
+    title="Stay informed with AstroWind's blog"
+    information={`Explore our collection of articles, guides, and tutorials on web development, design trends, and using AstroWind effectively for your projects.`}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </CallToAction>
+  </BlogLatestPosts>
 </Layout>

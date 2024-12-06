@@ -3,86 +3,41 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'Homes',
+      text: '产品',
       links: [
         {
-          text: 'SaaS',
+          text: '转换流量',
           href: getPermalink('/homes/saas'),
         },
         {
-          text: 'Startup',
+          text: '固定流量',
           href: getPermalink('/homes/startup'),
         },
         {
-          text: 'Mobile App',
+          text: '机房流量',
           href: getPermalink('/homes/mobile-app'),
         },
         {
-          text: 'Personal',
+          text: '辅助工具',
           href: getPermalink('/homes/personal'),
         },
       ],
     },
     {
-      text: 'Pages',
-      links: [
-        {
-          text: 'Features (Anchor Link)',
-          href: getPermalink('/#features'),
-        },
-        {
-          text: 'Services',
-          href: getPermalink('/services'),
-        },
-        {
-          text: 'Pricing',
-          href: getPermalink('/pricing'),
-        },
-        {
-          text: 'About us',
-          href: getPermalink('/about'),
-        },
-        {
-          text: 'Contact',
-          href: getPermalink('/contact'),
-        },
-        {
-          text: 'Terms',
-          href: getPermalink('/terms'),
-        },
-        {
-          text: 'Privacy policy',
-          href: getPermalink('/privacy'),
-        },
-      ],
+      text: '定价',
+      href: getPermalink('/pricing'), 
     },
     {
-      text: 'Landing',
+      text: '支持',
       links: [
         {
-          text: 'Lead Generation',
+          text: '常见问题',
           href: getPermalink('/landing/lead-generation'),
         },
         {
-          text: 'Long-form Sales',
+          text: '联系我们',
           href: getPermalink('/landing/sales'),
-        },
-        {
-          text: 'Click-Through',
-          href: getPermalink('/landing/click-through'),
-        },
-        {
-          text: 'Product Details (or Services)',
-          href: getPermalink('/landing/product'),
-        },
-        {
-          text: 'Coming Soon or Pre-Launch',
-          href: getPermalink('/landing/pre-launch'),
-        },
-        {
-          text: 'Subscription',
-          href: getPermalink('/landing/subscription'),
-        },
+        }
       ],
     },
     {
@@ -95,25 +50,10 @@ export const headerData = {
         {
           text: 'English',
           href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
-        },
-        {
-          text: 'Article (with MDX)',
-          href: getPermalink('markdown-elements-demo-post', 'post'),
-        },
-        {
-          text: 'Category Page',
-          href: getPermalink('tutorials', 'category'),
-        },
-        {
-          text: 'Tag Page',
-          href: getPermalink('astro', 'tag'),
-        },
+        }
       ],
     },
-    {
-      text: 'Widgets',
-      href: '#',
-    },
+    
   ],
   actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
 };
