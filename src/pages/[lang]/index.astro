@@ -1,0 +1,24 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { useTranslations } from '~/utils/i18n';
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'zh' } }
+  ];
+}
+
+const { lang } = Astro.params;
+const t = await useTranslations(lang);
+
+const metadata = {
+  title: await t('site.title'),
+  description: await t('site.description'),
+};
+---
+
+<Layout metadata={metadata} lang={lang}>
+  <h1>{t('site.title')}</h1>
+  <p>{t('site.description')}</p>
+</Layout>

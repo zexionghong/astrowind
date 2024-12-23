@@ -1,6 +1,6 @@
 site:
-  name: AstroWind
-  site: 'https://astrowind.vercel.app'
+  name: IPFLEX
+  site: 'https://ipflex.ink'
   base: '/'
   trailingSlash: false
 
@@ -9,14 +9,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: IPFLEX
+    template: '%s — IPFLEX'
+  description: "\U0001F680 专业的IP代理服务提供商"
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: IPFLEX
     images:
       - url: '~/assets/images/default.png'
         width: 1200
@@ -28,14 +28,15 @@ metadata:
     cardType: summary_large_image
 
 i18n:
-  language: en
+  languages: ['en', 'zh']
+  defaultLanguage: 'en'
   textDirection: ltr
 
 apps:
   blog:
-    isEnabled: true
+    isEnabled: false
     postsPerPage: 6
-
+  
     post:
       isEnabled: true
       permalink: '/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%

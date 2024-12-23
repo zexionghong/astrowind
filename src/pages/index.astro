@@ -13,7 +13,7 @@ import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
+  title: 'ipflex — 专业的IP代理服务提供商',
   ignoreTitleTemplate: true,
 };
 ---
@@ -25,28 +25,25 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/onwidget/astrowind',
+        text: '开始试用',
+        href: 'https://ipflex.com',
         target: '_blank',
-        icon: 'tabler:download',
+        // icon: 'tabler:download',
       },
-      { text: 'Learn more', href: '#features' },
+      { text: '了解更多', href: '#features' },
     ]}
-    image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
   >
     <Fragment slot="title">
-      Free template for <span class="hidden xl:inline">creating websites with</span>
-      <span class="text-accent dark:text-white highlight"> Astro 4.0</span> + Tailwind CSS
+      专业的 <span class="hidden xl:inline">IP代理服务</span>
+      <span class="text-accent dark:text-white highlight"> ipflex</span>
     </Fragment>
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 4.0
-        + Tailwind CSS.</span
+        <span class="font-semibold">ipflex</span> 提供高效、稳定、安全的IP代理服务，适用于各种业务需求。</span
       >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
-      Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages &
-      Blogs.
+      <span class="block mb-1 sm:hidden font-bold text-blue-600">ipflex: 专业的IP代理服务。</span>
+      适用于电商、社交媒体、数据采集等多种场景。
     </Fragment>
   </Hero>
 
@@ -58,44 +55,44 @@ const metadata = {
 
   <Features
     id="features"
-    tagline="Features"
-    title="What you get with AstroWind"
-    subtitle="One of the most professional and comprehensive templates currently on the market. Most starred & forked Astro theme in 2022."
+    tagline="特点"
+    title="ipflex的优势"
+    subtitle="我们提供市场上最专业、最全面的IP代理服务。"
     items={[
       {
-        title: 'Astro + Tailwind CSS Integration',
+        title: '高效稳定',
         description:
-          'A seamless integration between two great frameworks that offer high productivity, performance and versatility.',
+          '我们的IP代理服务具有高效稳定的特点，确保您的业务不间断运行。',
         icon: 'tabler:brand-tailwind',
       },
       {
-        title: 'Ready-to-use Components',
+        title: '多种IP类型',
         description:
-          'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
+          '提供静态住宅IP、动态住宅IP、机房IP等多种类型，满足不同业务需求。',
         icon: 'tabler:components',
       },
       {
-        title: 'Best Practices',
+        title: '安全可靠',
         description:
-          'Creating secure, efficient, and user-friendly websites that deliver exceptional experiences and lasting value.',
+          '我们采用先进的加密技术，确保您的数据安全。',
         icon: 'tabler:list-check',
       },
       {
-        title: 'Excellent Page Speed',
+        title: '全球覆盖',
         description:
-          'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
+          '我们的IP代理服务覆盖全球，支持多国家和地区的IP切换。',
         icon: 'tabler:rocket',
       },
       {
-        title: 'Search Engine Optimization (SEO)',
+        title: '灵活计费',
         description:
-          "SEO lies in its ability to enhance a website's visibility, driving organic traffic and enabling it to reach a wider audience.",
+          '根据您的需求灵活计费，我们没有套餐捆绑。您可以按需购买，按流量计费。',
         icon: 'tabler:arrows-right-left',
       },
       {
-        title: 'Open to new ideas and contributions',
+        title: '专业支持',
         description:
-          'Embracing a culture that is open to new ideas and contributions is integral fostering innovation, collaboration, and a dynamic user experience.',
+          '我们的专业团队随时为您提供技术支持和服务。',
         icon: 'tabler:bulb',
       },
     ]}
@@ -105,33 +102,33 @@ const metadata = {
 
   <Content
     isReversed
-    tagline="Inside template"
-    title="AstroWind's Blueprint: Fun Meets Functionality!"
+    tagline="服务内容"
+    title="ipflex的服务内容"
     items={[
       {
-        title: 'Built on top of Astro 4.0',
+        title: '静态住宅IP',
         description:
-          'Benefiting from the performance and developer-friendly features of this modern static site generator.',
+          '提供长效静态IP，适用于需要24小时在线稳定IP的业务。',
       },
       {
-        title: 'Styled using Tailwind CSS',
+        title: '动态住宅IP',
         description:
-          'Facilitating rapid design and consistent styling with this highly popular utility-first CSS framework.',
+          '提供短效动态IP，适用于需要频繁更换IP的业务。',
       },
       {
-        title: 'Cross-browser compatibility',
+        title: '机房IP',
         description:
-          'Ensure your website looks and functions consistently across various web browsers, delivering a seamless experience to all users.',
+          '提供高效稳定的机房IP，适用于大流量业务。',
       },
     ]}
     image={{
       src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Colorful Image',
+      alt: '服务内容图片',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3>
-      Gain a competitive advantage by incorporating industry leading practices
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">专业的IP代理服务</h3>
+      我们致力于为客户提供高效、稳定、安全的IP代理服务。
     </Fragment>
 
     <Fragment slot="bg">
@@ -145,31 +142,31 @@ const metadata = {
     isAfterContent
     items={[
       {
-        title: 'High level of customization',
-        description: `Tailor the template effortlessly to match your brand's identity and requirements, making your website distinct and saving you time.`,
+        title: '灵活定制',
+        description: `根据您的业务需求，灵活定制IP代理服务，确保最佳效果。`,
       },
       {
-        title: 'Multiple layout possibilities',
+        title: '多种套餐选择',
         description:
-          'Explore various layout options to find the structure that best presents your content, enhancing user engagement and navigation.',
+          '提供多种套餐选择，满足不同业务需求。',
       },
       {
-        title: 'Fully responsive design',
+        title: '全天候支持',
         description:
-          "Ensure your website's optimal performance on various devices and screen sizes, providing a consistent and enjoyable user experience.",
+          "我们的专业团队提供24/7全天候技术支持，确保您的业务顺利进行。",
       },
       {
-        title: 'Integration of media',
+        title: '高效切换',
         description:
-          'Seamlessly incorporate images, videos, and multimedia elements that enhance your content and engage visitors effectively.',
+          '支持快速切换IP，确保您的业务不间断运行。',
       },
     ]}
     image={{
       src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
-      alt: 'Blueprint Image',
+      alt: '灵活定制图片',
     }}
   >
-    <Fragment slot="content">Ensure your online presence truly represents you.</Fragment>
+    <Fragment slot="content">确保您的业务始终在线。</Fragment>
 
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
@@ -183,31 +180,31 @@ const metadata = {
     isAfterContent
     items={[
       {
-        title: 'Enhanced user engagement',
+        title: '提升用户体验',
         description:
-          'Captivate your audience with interactive elements, intuitive navigation, and visually appealing layouts, encouraging longer visits.',
+          '通过高效稳定的IP代理服务，提升用户体验，增加用户粘性。',
       },
       {
-        title: 'Continuous improvement',
+        title: '持续改进',
         description:
-          'Ensure your website stays aligned with the latest trends and technologies through regular updates and enhancements.',
+          '我们不断优化和改进服务，确保为客户提供最优质的IP代理服务。',
       },
       {
-        title: 'Time and resource efficiency',
+        title: '节省时间和资源',
         description:
-          'Skip the time-consuming process of building a website from scratch and launch your online presence sooner with AstroWind.',
+          '通过我们的IP代理服务，节省您的时间和资源，快速上线业务。',
       },
       {
-        title: 'Community support',
-        description: `Join the growing AstroWind community for insights, resources, and assistance, ensuring you're never alone on your web development journey.`,
+        title: '社区支持',
+        description: `加入ipflex社区，获取更多资源和支持，确保您的业务顺利进行。`,
       },
     ]}
     image={{
       src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Astronauts Image',
+      alt: '提升用户体验图片',
     }}
   >
-    <Fragment slot="content">Designed to foster growth and success.</Fragment>
+    <Fragment slot="content">致力于为客户提供最佳服务。</Fragment>
 
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
@@ -217,92 +214,92 @@ const metadata = {
   <!-- Steps Widget ****************** -->
 
   <Steps
-    title="Get your dream website up and running in no time with AstroWind."
+    title="快速开始使用ipflex的IP代理服务"
     items={[
       {
-        title: 'Step 1: <span class="font-medium">Download</span>',
+        title: '步骤 1: <span class="font-medium">注册账号</span>',
         description:
-          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
+          "在ipflex官网注册账号，开始您的IP代理服务之旅。",
         icon: 'tabler:package',
       },
       {
-        title: 'Step 2: <span class="font-medium">Add content</span>',
+        title: '步骤 2: <span class="font-medium">选择套餐</span>',
         description:
-          "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
+          "根据您的业务需求，选择合适的IP代理套餐。",
         icon: 'tabler:letter-case',
       },
       {
-        title: 'Step 3: <span class="font-medium">Customize styles</span>',
+        title: '步骤 3: <span class="font-medium">开始使用</span>',
         description:
-          'Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right. Your unique flair, amplified by AstroWind! Precision in design ensures a seamless user experience.',
+          '配置您的IP代理服务，开始使用我们的高效稳定的IP代理服务。',
         icon: 'tabler:paint',
       },
       {
-        title: 'Ready!',
+        title: '完成!',
         icon: 'tabler:check',
       },
     ]}
     image={{
       src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'Steps image',
+      alt: '步骤图片',
     }}
   />
 
   <!-- Features2 Widget ************** -->
 
   <Features2
-    title="Most used widgets"
-    subtitle="Provides frequently used components for building websites using Tailwind CSS"
-    tagline="Components"
+    title="常用组件"
+    subtitle="提供构建网站常用的组件，使用Tailwind CSS"
+    tagline="组件"
     items={[
       {
         title: 'Headers',
-        description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
+        description: "网站的导航部分，帮助用户快速找到所需内容。",
         icon: 'flat-color-icons:template',
       },
       {
         title: 'Heros',
         description:
-          "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
+          "网站的首屏部分，展示最重要的信息和内容。",
         icon: 'flat-color-icons:gallery',
       },
       {
         title: 'Features',
         description:
-          'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
+          '展示网站的主要特点和优势。',
         icon: 'flat-color-icons:approval',
       },
       {
         title: 'Content',
         description:
-          "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
+          "网站的主要内容部分，展示详细信息。",
         icon: 'flat-color-icons:document',
       },
       {
         title: 'Call-to-Action',
         description:
-          'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
+          '引导用户进行下一步操作的按钮或链接。',
         icon: 'flat-color-icons:advertising',
       },
       {
         title: 'Pricing',
-        description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
+        description: '展示服务的价格和套餐选择。',
         icon: 'flat-color-icons:currency-exchange',
       },
       {
         title: 'Testimonial',
-        description: 'Step into the gossip corner! Here, other visitors spill the beans and share the juicy details.',
+        description: '展示用户的评价和反馈。',
         icon: 'flat-color-icons:voice-presentation',
       },
       {
         title: 'Contact',
         description:
-          'Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in.',
+          '提供联系方式，方便用户与我们联系。',
         icon: 'flat-color-icons:business-contact',
       },
       {
         title: 'Footers',
-        description: "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!",
+        description: "网站的底部部分，展示版权信息和其他链接。",
         icon: 'flat-color-icons:database',
       },
     ]}
@@ -315,50 +312,49 @@ const metadata = {
   <!-- HighlightedPosts Widget ******* -->
 
   <BlogLatestPosts
-    title="Find out more content in our Blog"
-    information={`The blog is used to display AstroWind documentation.
-                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
-                        Astro is a very interesting technology. Thanks.
-                `}
+    title="了解更多内容"
+    information={`我们的博客提供最新的IP代理服务资讯和技术文章。
+                        每篇新文章都是您了解IP代理服务的重要一步。
+                        ipflex致力于为您提供最优质的服务。`}
   />
 
   <!-- FAQs Widget ******************* -->
 
   <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
+    title="常见问题"
+    subtitle="了解ipflex的强大功能以及如何提升您的业务。"
     tagline="FAQs"
     classes={{ container: 'max-w-6xl' }}
     items={[
       {
-        title: 'Why AstroWind?',
+        title: '为什么选择ipflex?',
         description:
-          "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
+          "ipflex提供高效、稳定、安全的IP代理服务，适用于各种业务需求。",
       },
       {
-        title: 'What do I need to start?',
+        title: '我需要什么来开始使用?',
         description:
-          'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
+          '只需在ipflex官网注册账号，选择合适的套餐，即可开始使用我们的IP代理服务。',
       },
       {
-        title: 'How to install the Astro + Tailwind CSS template?',
+        title: '如何安装和配置ipflex的IP代理服务?',
         description:
-          "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
+          "在官网注册账号后，根据提示选择套餐并配置IP代理服务，即可开始使用。",
       },
       {
-        title: "What's something that you don't understand?",
+        title: "ipflex的IP代理服务有哪些优势?",
         description:
-          "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
+          "ipflex提供高效稳定的IP代理服务，支持全球覆盖，灵活计费，专业支持。",
       },
       {
-        title: 'What is something that you would like to try again?',
+        title: 'ipflex的IP代理服务适用于哪些场景?',
         description:
-          "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
+          "ipflex的IP代理服务适用于电商、社交媒体、数据采集等多种场景。",
       },
       {
-        title: 'If you could only ask one question to each person you meet, what would that question be?',
+        title: '如何获取技术支持?',
         description:
-          "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
+          "我们的专业团队提供24/7全天候技术支持，确保您的业务顺利进行。",
       },
     ]}
   />
@@ -367,10 +363,10 @@ const metadata = {
 
   <Stats
     stats={[
-      { title: 'Downloads', amount: '132K' },
-      { title: 'Stars', amount: '24.8K' },
-      { title: 'Forks', amount: '10.3K' },
-      { title: 'Users', amount: '48.4K' },
+      { title: '用户数量', amount: '132K' },
+      { title: '服务次数', amount: '24.8K' },
+      { title: '覆盖国家', amount: '10.3K' },
+      { title: '满意度', amount: '98%' },
     ]}
   />
 
@@ -380,20 +376,19 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/onwidget/astrowind',
+        text: '获取服务',
+        href: 'https://ipflex.com',
         target: '_blank',
         icon: 'tabler:download',
       },
     ]}
   >
     <Fragment slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
+      ipflex&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">专业的IP代理服务</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
+      立即体验ipflex的高效稳定的IP代理服务。<br class="hidden md:inline" />不要再犹豫了，立即行动！
     </Fragment>
   </CallToAction>
 </Layout>

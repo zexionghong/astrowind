@@ -1,0 +1,11 @@
+{
+  "site": {
+    "title": "AstroWind",
+    "description": "Template built with Astro and Tailwind CSS"
+  },
+  "menu": {
+    "home": "Home",
+    "about": "About",
+    "blog": "Blog"
+  }
+} 

@@ -1,0 +1,19 @@
+---
+const { lang } = Astro.params;
+const path = Astro.url.pathname.replace(`/${lang}`, '');
+---
+
+<div class="language-picker">
+  <a href={`/en${path}`} class={lang === 'en' ? 'active' : ''}>English</a>
+  <a href={`/zh${path}`} class={lang === 'zh' ? 'active' : ''}>中文</a>
+</div>
+
+<style>
+  .language-picker {
+    display: flex;
+    gap: 1rem;
+  }
+  .active {
+    font-weight: bold;
+  }
+</style> 
