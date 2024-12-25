@@ -13,7 +13,7 @@ import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'ipflex — 专业的IP代理服务提供商',
+  title: 'IpFlex — 专业的IP代理服务提供商',
   ignoreTitleTemplate: true,
 };
 ---
@@ -25,25 +25,28 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: '开始试用',
-        href: 'https://ipflex.com',
+        text: '立即使用',
+        href: 'https://dashboard.ipflex.ink/register',
         target: '_blank',
         // icon: 'tabler:download',
       },
-      { text: '了解更多', href: '#features' },
+      {   
+        text: '了解更多',
+        href: '/detail',
+        target: '_blank',
+        type: 'button',
+       },
     ]}
   >
     <Fragment slot="title">
-      专业的 <span class="hidden xl:inline">IP代理服务</span>
-      <span class="text-accent dark:text-white highlight"> ipflex</span>
+      企业级 <span class="hidden xl:inline">全球IP，稳定</span>
+      <span class="text-accent dark:text-white highlight"> 独享代理</span>
     </Fragment>
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        <span class="font-semibold">ipflex</span> 提供高效、稳定、安全的IP代理服务，适用于各种业务需求。</span
+        <span class="font-semibold">IpFlex</span> 致力于为每位客户提供量身定制的IP代理服务，凭借广泛的IP资源和卓越的连接质量，确保您在任何环境下都能获得最佳的网络性能和安全保障。</span
       >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">ipflex: 专业的IP代理服务。</span>
-      适用于电商、社交媒体、数据采集等多种场景。
     </Fragment>
   </Hero>
 
@@ -116,9 +119,9 @@ const metadata = {
           '提供短效动态IP，适用于需要频繁更换IP的业务。',
       },
       {
-        title: '机房IP',
+        title: '数据中心IP',
         description:
-          '提供高效稳定的机房IP，适用于大流量业务。',
+          '提供高效稳定的数据中心IP，适用于大流量业务。',
       },
     ]}
     image={{
