@@ -27,7 +27,10 @@ const {
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <div
-    class="max-w-3xl mx-auto text-center p-6 rounded-md shadow-xl dark:shadow-none dark:border dark:border-slate-600"
+    class="max-w-3xl mx-auto text-center p-6 rounded-md -mt-15
+    shadow-[0_4px_20px_-2px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_20px_-2px_rgba(255,255,255,0.03)]
+    border border-gray-100 dark:border-slate-600
+    bg-white dark:bg-slate-900"
   >
     <Headline
       title={title}

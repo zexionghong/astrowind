@@ -1,0 +1,32 @@
+---
+import bg from '~/assets/images/hero-image.png';
+---
+
+<Hero
+  actions={[
+    {
+      variant: 'primary',
+      text: '立即使用',
+      href: 'https://dashboard.ipflex.ink/register',
+      target: '_blank',
+    },
+    {   
+      text: '了解更多',
+      href: '/detail',
+      target: '_blank',
+      type: 'button',
+    },
+  ]}
+  bg={`<div class='absolute inset-0 bg-cover bg-center' style='background-image: url(${bg});'></div>`}
+>
+  <Fragment slot="title">
+    企业级 <span class="hidden xl:inline">全球IP，稳定</span>
+    <span class="text-accent dark:text-white highlight"> 独享代理</span>
+  </Fragment>
+
+  <Fragment slot="subtitle">
+    <span class="hidden sm:inline">
+      <span class="font-semibold">IpFlex</span> 致力于为每位客户提供量身定制的IP代理服务，凭借广泛的IP资源和卓越的连接质量，确保您在任何环境下都能获得最佳的网络性能和安全保障。
+    </span>
+  </Fragment>
+</Hero> 
