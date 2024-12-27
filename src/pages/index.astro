@@ -53,6 +53,121 @@ const metadata = {
 
   <!-- <Note /> -->
 
+
+  <Content
+    isReversed
+    title="住宅代理"
+    items={[
+      {
+        title:
+          '真实长效住宅IP',
+      },
+      {
+        title:
+          '可用率高达99.9%',
+      },
+      {
+        title: '精准城市定位',
+      },
+      {
+        title: 'HTTP、Socks5协议支持',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/proxy1.png',
+      alt: '服务内容图片',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">静态住宅代理</h3>
+      基于真实住宅网络的代理服务，提供长期不变的固定IP地址。具有极高的匿名性和可信度，能够有效避免被识别为代理或被封禁，适用于跨境电商、市场调研、社媒营销、品牌保护等多种业务场景。
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent
+    items={[{title: '真实短效住宅IP'},{title: '千万+日活跃IP'},{title: '可定位至城市'},{title: 'HTTP、Socks5协议支持'}]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
+      alt: '灵活定制图片',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">动态住宅代理</h3>
+      基于不断变化的IP地址池的代理服务，提供短期内频繁更换的IP地址。此服务具有高度灵活性和广泛的IP覆盖，能够有效地规避IP封禁和限制，适用于需要频繁更换IP的业务场景，如网络爬虫、数据抓取、广告验证和自动化测试等。
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    title="数据中心代理"
+    items={[
+      {title: '长效数据中心IP'},
+      {title: '可定位至城市'},
+      {title: 'HTTP、Socks5协议支持'},
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: '提升用户体验图片',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">静态数据中心代理</h3>
+      基于数据中心网络的代理服务，提供长期不变的固定IP地址。这种代理服务通过位于数据中心的服务器提供IP，通常具有较高的速度和稳定性，在成本和性能上具有优势，尤其适合需要快速、大规模数据抓取和访问的业务场景，如网站测试、数据分析、SEO监控和在线广告验证等。
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+
+   <!-- Steps Widget ****************** -->
+
+   <Steps
+   title="快速开始使用ipflex的IP代理服务"
+   items={[
+     {
+       title: '步骤 1: <span class="font-medium">注册账号</span>',
+       description:
+         "在ipflex官网注册账号，开始您的IP代理服务之旅。",
+       icon: 'tabler:package',
+     },
+     {
+       title: '步骤 2: <span class="font-medium">选择套餐</span>',
+       description:
+         "根据您的业务需求，选择合适的IP代理套餐。",
+       icon: 'tabler:letter-case',
+     },
+     {
+       title: '步骤 3: <span class="font-medium">开始使用</span>',
+       description:
+         '配置您的IP代理服务，开始使用我们的高效稳定的IP代理服务。',
+       icon: 'tabler:paint',
+     },
+     {
+       title: '完成!',
+       icon: 'tabler:check',
+     },
+   ]}
+   image={{
+     src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+     alt: '步骤图片',
+   }}
+ />
+
   <!-- Features Widget *************** -->
 
   <Features
@@ -61,43 +176,45 @@ const metadata = {
     subtitle="我们提供市场上最专业、最全面的IP代理服务。"
     items={[
       {
-        title: '高效稳定',
+        title: '全球IP资源池',
         description:
-          '我们的IP代理服务具有高效稳定的特点，确保您的业务不间断运行。',
-        icon: 'tabler:brand-tailwind',
+          'IPFlex拥有广泛覆盖的全球IP资源池，涵盖多个国家和地区，能够为您提供多样化的IP地址选择，开启您的无界网络体验。',
+        icon: 'tabler:world',
       },
       {
-        title: '多种IP类型',
+        title: '高效技术支持', 
         description:
-          '提供静态住宅IP、动态住宅IP、机房IP等多种类型，满足不同业务需求。',
-        icon: 'tabler:components',
+          'IPFlex提供全天候24/7的专业技术支持，无论您遇到任何问题技术团队都会迅速响应，确保您的体验始终顺畅无忧。',
+        icon: 'tabler:headset',
       },
       {
-        title: '安全可靠',
+        title: '丰富的IP类型',
         description:
-          '我们采用先进的加密技术，确保您的数据安全。',
-        icon: 'tabler:list-check',
+          'IPFlex为您提供多样化的IP类型选择，包括住宅代理、数据中心代理；静态代理、动态代理等，以满足不同业务场景的需求，让您的业务更加高效。',
+        icon: 'tabler:list-details',
       },
       {
-        title: '全球覆盖',
+        title: '快速稳定的连接',
         description:
-          '我们的IP代理服务覆盖全球，支持多国家和地区的IP切换。',
+          '使用IPFlex，您将享受卓越的网络性能，快速且稳定的连接让您告别网络延迟和不稳定的烦恼，提升工作效率和用户体验。',
         icon: 'tabler:rocket',
       },
       {
-        title: '灵活计费',
+        title: '无限带宽',
         description:
-          '根据您的需求灵活计费，我们没有套餐捆绑。您可以按需购买，按流量计费。',
-        icon: 'tabler:arrows-right-left',
+          'IPFlex为您提供无限制的带宽使用，彻底消除流量限制的束缚，让您在任何情况下都能享受超高速率和极低延迟的网络服务。',
+        icon: 'tabler:infinity',
       },
       {
-        title: '专业支持',
+        title: '高级安全保障',
         description:
-          '我们的专业团队随时为您提供技术支持和服务。',
-        icon: 'tabler:bulb',
+          'IPFlex提供顶级的安全保障措施，全面保护您的隐私和数据安全，确保您的信息安全无虞，安心使用我们的服务。',
+        icon: 'tabler:shield-lock',
       },
     ]}
   />
+
+ 
 
 
   <!-- Stats Widget ****************** -->
@@ -246,40 +363,7 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <!-- Steps Widget ****************** -->
-
-  <Steps
-    title="快速开始使用ipflex的IP代理服务"
-    items={[
-      {
-        title: '步骤 1: <span class="font-medium">注册账号</span>',
-        description:
-          "在ipflex官网注册账号，开始您的IP代理服务之旅。",
-        icon: 'tabler:package',
-      },
-      {
-        title: '步骤 2: <span class="font-medium">选择套餐</span>',
-        description:
-          "根据您的业务需求，选择合适的IP代理套餐。",
-        icon: 'tabler:letter-case',
-      },
-      {
-        title: '步骤 3: <span class="font-medium">开始使用</span>',
-        description:
-          '配置您的IP代理服务，开始使用我们的高效稳定的IP代理服务。',
-        icon: 'tabler:paint',
-      },
-      {
-        title: '完成!',
-        icon: 'tabler:check',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: '步骤图片',
-    }}
-  />
-
+  
   <!-- Features2 Widget ************** -->
 
   
