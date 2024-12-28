@@ -1,46 +1,46 @@
 import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 
-export const headerData = {
+export const getHeaderData = (lang: string = 'zh') => ({
   links: [
     {
-      text: '产品',
+      text: lang === 'zh' ? '产品' : 'Products',
       links: [
         {
-          text: '静态住宅代理',
-          href: getPermalink('/detail'),
+          text: lang === 'zh' ? '静态住宅代理' : 'Static Residential Proxy',
+          href: `/${lang}/detail`,
         },
         {
-          text: '动态住宅代理',
-          href: getPermalink('/detail'),
+          text: lang === 'zh' ? '动态住宅代理' : 'Dynamic Residential Proxy',
+          href: `/${lang}/detail`,
         },
         {
-          text: '数据中心代理',
-          href: getPermalink('/detail'),
+          text: lang === 'zh' ? '数据中心代理' : 'Data Center Proxy',
+          href: `/${lang}/detail`,
         },
       ],
     },
     {
-      text: '定价',
+      text: lang === 'zh' ? '定价' : 'Pricing',
       href: 'https://baidu.com'
     },
     {
-      text: '应用场景',
-      href: getPermalink('/services')
+      text: lang === 'zh' ? '应用场景' : 'Cases',
+      href: `/${lang}/services`
     },
     {
-      text: '帮助中心',
-      href: getPermalink('/help')
+      text: lang === 'zh' ? '帮助中心' : 'Help',
+      href: `/${lang}/help`
     },
     {
-      text: '资讯中心',
+      text: lang === 'zh' ? '资讯中心' : 'News',
       href: '#',
     },
   ],
   actions: [
-    { text: '注册', href: 'https://dashboard.ipflex.ink', target: '_blank' , color: 'blue' },
-    { text: '登录', href: 'https://dashboard.ipflex.ink/login', target: '_blank'  },
+    { text: lang === 'zh' ? '注册' : 'Sign Up', href: 'https://dashboard.ipflex.ink', target: '_blank', color: 'blue' },
+    { text: lang === 'zh' ? '登录' : 'Login', href: 'https://dashboard.ipflex.ink/login', target: '_blank' },
   ],
-};
+});
 
 export const footerData = {
   links: [

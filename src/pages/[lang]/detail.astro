@@ -1,12 +1,25 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
+import { useTranslations } from '~/utils/i18n';
 import Content from '~/components/widgets/Content.astro';
+
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'zh' } }
+  ];
+}
+
+const { lang } = Astro.params;
+const t = await useTranslations(lang);
 
 const metadata = {
   title: 'IpFlex — 专业的IP代理服务提供商',
   ignoreTitleTemplate: true,
 };
+
 ---
 
 <Layout metadata={metadata}>
@@ -14,7 +27,7 @@ const metadata = {
 
   <Content
     isReversed
-    title="住宅代理"
+    title={ t('detail.title')}
     items={[
       {
         title:

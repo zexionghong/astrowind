@@ -29,7 +29,7 @@ metadata:
 
 i18n:
   languages: ['en', 'zh']
-  defaultLanguage: 'en'
+  defaultLanguage: zh
   textDirection: ltr
 
 apps:
