@@ -1,0 +1,215 @@
+{
+  "index": {
+    "metadata": {
+      "title": "IpFlex — Professional IP Proxy Service Provider"
+    },
+    "hero": {
+      "primaryAction": "Get Started",
+      "secondaryAction": "Learn More",
+      "title": "Enterprise-Grade <span class=\"hidden xl:inline\">Global IP, Stable</span><span class=\"text-accent dark:text-white highlight\"> Dedicated Proxy</span>",
+      "subtitle": "<span class=\"hidden sm:inline\"><span class=\"font-semibold\">IpFlex</span> is committed to providing customized IP proxy services for every client. With extensive IP resources and excellent connection quality, we ensure optimal network performance and security in any environment.</span>"
+    },
+    "content": {
+        "residentialProxyTitle": "Residential Proxy",
+        "dataCenterProxyTile": "Data Center Proxy",
+      "residentialProxy": {
+        "title": "Static Residential Proxy",
+        "description": "A proxy service based on real residential networks, providing fixed IP addresses that remain unchanged for long periods. With high anonymity and credibility, it effectively avoids being identified as a proxy or being blocked, suitable for cross-border e-commerce, market research, social media marketing, brand protection, and various other business scenarios.",
+        "items": [
+          "Real Long-term Residential IP",
+          "99.9% Availability",
+          "Precise City Targeting",
+          "HTTP, Socks5 Protocol Support"
+        ],
+        "contentTitle": "Static Residential Proxy"
+      },
+      "dynamicProxy":{
+        "title": "Dynamic Residential Proxy",
+        "description": "A proxy service based on a constantly changing IP address pool, providing IP addresses that change frequently within short periods. This service offers high flexibility and extensive IP coverage, effectively avoiding IP bans and restrictions, suitable for scenarios requiring frequent IP changes such as web crawling, data scraping, ad verification, and automated testing.",
+        "items": [
+          "Real Short-term Residential IP",
+          "10M+ Daily Active IPs",
+          "City-level Targeting",
+          "HTTP, Socks5 Protocol Support"
+        ]
+      },
+      "dataCenterProxy": {
+        "title": "Static Data Center Proxy",
+        "description": "A proxy service based on data center networks, providing fixed IP addresses that remain unchanged for long periods. This proxy service delivers IPs through data center servers, typically offering high speed and stability, with advantages in cost and performance. Particularly suitable for business scenarios requiring fast, large-scale data scraping and access, such as website testing, data analysis, SEO monitoring, and online ad verification.",
+        "items": [
+          "Long-term Data Center IP",
+          "Precise City Targeting",
+          "99.9% Availability",
+          "HTTP, Socks5 Protocol Support"
+        ]
+      }
+    },
+    "steps": {
+      "title": "Quick Start Guide for ipflex IP Proxy Service",
+      "items": [
+        {
+          "title": "Step 1: <span class=\"font-medium\">Register Account</span>",
+          "description": "Register an account on ipflex's official website to begin your IP proxy service journey.",
+          "icon": "tabler:package"
+        },
+        {
+          "title": "Step 2: <span class=\"font-medium\">Choose Plan</span>",
+          "description": "Select an appropriate IP proxy plan based on your business needs.",
+          "icon": "tabler:letter-case"
+        },
+        {
+          "title": "Step 3: <span class=\"font-medium\">Start Using</span>",
+          "description": "Configure your IP proxy service and start using our efficient and stable IP proxy service.",
+          "icon": "tabler:paint"
+        },
+        {
+          "title": "Complete!",
+          "icon": "tabler:check"
+        }
+      ]
+    },
+    "features": {
+      "title": "ipflex Advantages",
+      "subtitle": "We provide the most professional and comprehensive IP proxy services in the market.",
+      "items": [
+        {
+          "title": "Global IP Resource Pool",
+          "description": "IPFlex has a globally extensive IP resource pool covering multiple countries and regions, providing diverse IP address options to unlock your borderless network experience.",
+          "icon": "tabler:world"
+        },
+        {
+          "title": "Efficient Technical Support",
+          "description": "IPFlex provides 24/7 professional technical support, with our technical team responding quickly to any issues you encounter, ensuring your experience remains smooth and worry-free.",
+          "icon": "tabler:headset"
+        },
+        {
+          "title": "Diverse IP Types",
+          "description": "IPFlex offers diverse IP type options, including residential proxies, data center proxies, static proxies, and dynamic proxies, to meet different business scenario needs and make your operations more efficient.",
+          "icon": "tabler:list-details"
+        },
+        {
+          "title": "Fast and Stable Connection",
+          "description": "With IPFlex, you'll enjoy excellent network performance, with fast and stable connections that eliminate network latency and instability concerns, improving work efficiency and user experience.",
+          "icon": "tabler:rocket"
+        },
+        {
+          "title": "Unlimited Bandwidth",
+          "description": "IPFlex provides unlimited bandwidth usage, completely eliminating traffic restrictions, allowing you to enjoy ultra-high speeds and ultra-low latency network services in any situation.",
+          "icon": "tabler:infinity"
+        },
+        {
+          "title": "Advanced Security Protection",
+          "description": "IPFlex provides top-tier security measures, comprehensively protecting your privacy and data security, ensuring your information remains secure while using our services.",
+          "icon": "tabler:shield-lock"
+        }
+      ]
+    },
+    "stats": {
+      "items": [
+        {
+          "title": "Users",
+          "amount": "132K"
+        },
+        {
+          "title": "Services",
+          "amount": "24.8K"
+        },
+        {
+          "title": "Countries Covered",
+          "amount": "10.3K"
+        },
+        {
+          "title": "Satisfaction Rate",
+          "amount": "98%"
+        }
+      ]
+    },
+    "callToAction": {
+      "title": "Professional IP Proxy Service",
+      "subtitle1": "Experience ipflex's efficient and stable IP proxy service now.",
+      "subtitle2": "Don't hesitate, take action now!",
+      "primaryAction": "Get Service"
+    },
+    "features2": {
+      "title": "Common Use Cases",
+      "items": [
+        {
+          "title": "Web Data Collection",
+          "description": "Easily bypass website restrictions with proxy IPs, navigate through massive web pages, accurately capture text, images, and data, providing strong support for market analysis and competitive research, empowering business decisions.",
+          "icon": "tabler:spider"
+        },
+        {
+          "title": "E-commerce Operations",
+          "description": "Real-time collection of e-commerce platform product details, price fluctuations, and sales rankings, helping merchants seize opportunities and optimize product selection and pricing strategies in the competitive e-commerce field.",
+          "icon": "tabler:shopping-cart"
+        },
+        {
+          "title": "Market Research Insights",
+          "description": "Deep dive into industry data, simulate research across different regions and demographics, precisely analyze market demands and consumer preferences, helping enterprises plan ahead and lead market trends.",
+          "icon": "tabler:chart-pie"
+        },
+        {
+          "title": "Social Media Expansion",
+          "description": "Worry-free multi-account operation, switch identities through proxy IPs, batch operate likes, comments, shares, safely increase brand exposure, efficiently attract target audiences, and ignite social media buzz.",
+          "icon": "tabler:share"
+        },
+        {
+          "title": "SEO Strategy Optimization",
+          "description": "Simulate search requests from various locations, accurately monitor website keyword rankings and traffic sources, optimize page content and structure accordingly, making your website stand out in search engines.",
+          "icon": "tabler:search"
+        },
+        {
+          "title": "Ad Campaign Enhancement",
+          "description": "Verify ad placements from multiple regional perspectives, ensure precise targeting, compare effectiveness across different regions, timely adjust placement details, leverage limited budgets for maximum traffic conversion.",
+          "icon": "tabler:ad"
+        },
+        {
+          "title": "Website Performance Testing",
+          "description": "Simulate diverse network environments and regional access, comprehensively check website vulnerabilities and loading bottlenecks, ensure smooth access for global users, improve website reliability and user experience.",
+          "icon": "tabler:gauge"
+        },
+        {
+          "title": "Brand Security Protection",
+          "description": "Conceal real IPs, reduce brand network attack risks, monitor counterfeit and infringement information in real-time, defend brand reputation, and solidify market position.",
+          "icon": "tabler:shield"
+        },
+        {
+          "title": "Public Opinion Tracking",
+          "description": "Real-time collection of public opinion from mainstream media and social platforms, analyze public opinion trends and public sentiment, help enterprises respond quickly, skillfully resolve crises, and maintain brand image.",
+          "icon": "tabler:news"
+        }
+      ]
+    },
+    "faqs": {
+      "title": "Frequently Asked Questions",
+      "sub": "FAQs",
+      "subtitle": "Learn about ipflex's powerful features and how to enhance your business.",
+      "items": [
+        {
+          "title": "Why choose ipflex?",
+          "description": "ipflex provides efficient, stable, and secure IP proxy services suitable for various business needs."
+        },
+        {
+          "title": "What do I need to get started?",
+          "description": "Simply register an account on ipflex's official website, choose a suitable plan, and start using our IP proxy service."
+        },
+        {
+          "title": "How do I install and configure ipflex's IP proxy service?",
+          "description": "After registering an account on the official website, follow the prompts to select a plan and configure the IP proxy service to begin using it."
+        },
+        {
+          "title": "What are the advantages of ipflex's IP proxy service?",
+          "description": "ipflex provides efficient and stable IP proxy services with global coverage, flexible billing, and professional support."
+        },
+        {
+          "title": "What scenarios is ipflex's IP proxy service suitable for?",
+          "description": "ipflex's IP proxy service is suitable for various scenarios including e-commerce, social media, and data collection."
+        },
+        {
+          "title": "How can I get technical support?",
+          "description": "Our professional team provides 24/7 technical support to ensure your business runs smoothly."
+        }
+      ]
+    }
+  }
+}

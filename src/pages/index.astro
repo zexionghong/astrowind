@@ -2,7 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
-import Note from '~/components/widgets/Note.astro';
+// import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro';
@@ -11,10 +11,22 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import { useTranslations } from '~/utils/i18n';
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'zh' } }
+  ];
+}
+
+const { lang='zh' } = Astro.params;
+const t = await useTranslations(lang);
 const metadata = {
-  title: 'IpFlex — 专业的IP代理服务提供商',
+  title: t('metadata.title'),
   ignoreTitleTemplate: true,
 };
+console.log(t('index.hero.primaryAction'));
 ---
 
 <Layout metadata={metadata}>
@@ -24,29 +36,22 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: '立即使用',
+        text: t('index.hero.primaryAction'),
         href: 'https://dashboard.ipflex.ink/register',
         target: '_blank',
         // icon: 'tabler:download',
       },
       {   
-        text: '了解更多',
+        text: t('index.hero.secondaryAction'),
         href: '/detail',
         target: '_blank',
         type: 'button',
        },
     ]}
   >
-    <Fragment slot="title">
-      企业级 <span class="hidden xl:inline">全球IP，稳定</span>
-      <span class="text-accent dark:text-white highlight"> 独享代理</span>
-    </Fragment>
+    <Fragment slot="title" set:html={t('index.hero.title')} />
 
-    <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        <span class="font-semibold">IpFlex</span> 致力于为每位客户提供量身定制的IP代理服务，凭借广泛的IP资源和卓越的连接质量，确保您在任何环境下都能获得最佳的网络性能和安全保障。</span
-      >
-    </Fragment>
+    <Fragment slot="subtitle" set:html={t('index.hero.subtitle')} />
   </Hero>
 
   <!-- Note Widget ******************* -->
@@ -56,21 +61,21 @@ const metadata = {
 
   <Content
     isReversed
-    title="住宅代理"
+    title={t('index.content.residentialProxyTitle')}
     items={[
       {
         title:
-          '真实长效住宅IP',
+          t('index.content.residentialProxy.items.0'),
       },
       {
         title:
-          '可用率高达99.9%',
+          t('index.content.residentialProxy.items.1'),
       },
       {
-        title: '精准城市定位',
+        title: t('index.content.residentialProxy.items.2'),
       },
       {
-        title: 'HTTP、Socks5协议支持',
+        title: t('index.content.residentialProxy.items.3'),
       },
     ]}
     image={{
@@ -79,8 +84,8 @@ const metadata = {
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">静态住宅代理</h3>
-      基于真实住宅网络的代理服务，提供长期不变的固定IP地址。具有极高的匿名性和可信度，能够有效避免被识别为代理或被封禁，适用于跨境电商、市场调研、社媒营销、品牌保护等多种业务场景。
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">{t('index.content.residentialProxy.title')}</h3>
+      {t('index.content.residentialProxy.description')}
     </Fragment>
 
     <Fragment slot="bg">
@@ -92,15 +97,15 @@ const metadata = {
 
   <Content
     isAfterContent
-    items={[{title: '真实短效住宅IP'},{title: '千万+日活跃IP'},{title: '可定位至城市'},{title: 'HTTP、Socks5协议支持'}]}
+    items={[{title: t('index.content.dynamicProxy.items.0')},{title: t('index.content.dynamicProxy.items.1')},{title: t('index.content.dynamicProxy.items.2')},{title: t('index.content.dynamicProxy.items.3')}]}
     image={{
       src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
       alt: '灵活定制图片',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">动态住宅代理</h3>
-      基于不断变化的IP地址池的代理服务，提供短期内频繁更换的IP地址。此服务具有高度灵活性和广泛的IP覆盖，能够有效地规避IP封禁和限制，适用于需要频繁更换IP的业务场景，如网络爬虫、数据抓取、广告验证和自动化测试等。
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">{t('index.content.dynamicProxy.title')}</h3>
+      {t('index.content.dynamicProxy.description')}
     </Fragment>
 
     <Fragment slot="bg">
@@ -112,11 +117,12 @@ const metadata = {
 
   <Content
     isReversed
-    title="数据中心代理"
+    title={t('index.content.dataCenterProxyTile')}
     items={[
-      {title: '长效数据中心IP'},
-      {title: '可定位至城市'},
-      {title: 'HTTP、Socks5协议支持'},
+      {title: t('index.content.dataCenterProxy.items.0')},
+      {title: t('index.content.dataCenterProxy.items.1')},
+      {title: t('index.content.dataCenterProxy.items.2')},
+      {title: t('index.content.dataCenterProxy.items.3')},
     ]}
     image={{
       src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
@@ -124,8 +130,8 @@ const metadata = {
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">静态数据中心代理</h3>
-      基于数据中心网络的代理服务，提供长期不变的固定IP地址。这种代理服务通过位于数据中心的服务器提供IP，通常具有较高的速度和稳定性，在成本和性能上具有优势，尤其适合需要快速、大规模数据抓取和访问的业务场景，如网站测试、数据分析、SEO监控和在线广告验证等。
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">{t('index.content.dataCenterProxy.title')}</h3>
+      {t('index.content.dataCenterProxy.description')}
     </Fragment>
 
     <Fragment slot="bg">
@@ -137,28 +143,28 @@ const metadata = {
    <!-- Steps Widget ****************** -->
 
    <Steps
-   title="快速开始使用ipflex的IP代理服务"
+   title={t('index.steps.title')}
    items={[
      {
-       title: '步骤 1: <span class="font-medium">注册账号</span>',
+       title: t('index.steps.items.0.title'),
        description:
-         "在ipflex官网注册账号，开始您的IP代理服务之旅。",
+         t('index.steps.items.0.description'),
        icon: 'tabler:package',
      },
      {
-       title: '步骤 2: <span class="font-medium">选择套餐</span>',
+       title: t('index.steps.items.1.title'),
        description:
-         "根据您的业务需求，选择合适的IP代理套餐。",
+         t('index.steps.items.1.description'),
        icon: 'tabler:letter-case',
      },
      {
-       title: '步骤 3: <span class="font-medium">开始使用</span>',
+       title: t('index.steps.items.2.title'),
        description:
-         '配置您的IP代理服务，开始使用我们的高效稳定的IP代理服务。',
+         t('index.steps.items.2.description'),
        icon: 'tabler:paint',
      },
      {
-       title: '完成!',
+       title: t('index.steps.items.3.title'),
        icon: 'tabler:check',
      },
    ]}
@@ -172,43 +178,43 @@ const metadata = {
 
   <Features
     id="features"
-    title="ipflex的优势"
-    subtitle="我们提供市场上最专业、最全面的IP代理服务。"
+    title={t('index.features.title')}
+    subtitle={t('index.features.subtitle')}
     items={[
       {
-        title: '全球IP资源池',
+        title: t('index.features.items.0.title'),
         description:
-          'IPFlex拥有广泛覆盖的全球IP资源池，涵盖多个国家和地区，能够为您提供多样化的IP地址选择，开启您的无界网络体验。',
+          t('index.features.items.0.description'),
         icon: 'tabler:world',
       },
       {
-        title: '高效技术支持', 
+        title: t('index.features.items.1.title'), 
         description:
-          'IPFlex提供全天候24/7的专业技术支持，无论您遇到任何问题技术团队都会迅速响应，确保您的体验始终顺畅无忧。',
+          t('index.features.items.1.description'),
         icon: 'tabler:headset',
       },
       {
-        title: '丰富的IP类型',
+        title: t('index.features.items.2.title'),
         description:
-          'IPFlex为您提供多样化的IP类型选择，包括住宅代理、数据中心代理；静态代理、动态代理等，以满足不同业务场景的需求，让您的业务更加高效。',
+          t('index.features.items.2.description'),
         icon: 'tabler:list-details',
       },
       {
-        title: '快速稳定的连接',
+        title: t('index.features.items.3.title'),
         description:
-          '使用IPFlex，您将享受卓越的网络性能，快速且稳定的连接让您告别网络延迟和不稳定的烦恼，提升工作效率和用户体验。',
+          t('index.features.items.3.description'),
         icon: 'tabler:rocket',
       },
       {
-        title: '无限带宽',
+        title: t('index.features.items.4.title'),
         description:
-          'IPFlex为您提供无限制的带宽使用，彻底消除流量限制的束缚，让您在任何情况下都能享受超高速率和极低延迟的网络服务。',
+          t('index.features.items.4.description'),
         icon: 'tabler:infinity',
       },
       {
-        title: '高级安全保障',
+        title: t('index.features.items.5.title'),
         description:
-          'IPFlex提供顶级的安全保障措施，全面保护您的隐私和数据安全，确保您的信息安全无虞，安心使用我们的服务。',
+          t('index.features.items.5.description'),
         icon: 'tabler:shield-lock',
       },
     ]}
@@ -221,10 +227,10 @@ const metadata = {
 
   <Stats
     stats={[
-      { title: '用户数量', amount: '132K' },
-      { title: '服务次数', amount: '24.8K' },
-      { title: '覆盖国家', amount: '10.3K' },
-      { title: '满意度', amount: '98%' },
+      { title: t('index.stats.items.0.title'), amount: t('index.stats.items.0.amount') },
+      { title: t('index.stats.items.1.title'), amount: t('index.stats.items.1.amount') },
+      { title: t('index.stats.items.2.title'), amount: t('index.stats.items.2.amount') },
+      { title: t('index.stats.items.3.title'), amount: t('index.stats.items.3.amount') },
     ]}
   />
 
@@ -235,7 +241,7 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: '获取服务',
+        text: t('index.callToAction.primaryAction'),
         href: 'https://ipflex.com',
         target: '_blank',
         // icon: 'tabler:download',
@@ -243,11 +249,13 @@ const metadata = {
     ]}
   >
     <Fragment slot="title">
-      IpFlex&nbsp;&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">专业的IP代理服务</span>
+      IpFlex&nbsp;&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">{t('index.callToAction.title')}</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      立即体验ipflex的高效稳定的IP代理服务。<br class="hidden md:inline" />不要再犹豫了，立即行动！
+      {t('index.callToAction.subtitle1')}
+      <br class="hidden md:inline" />
+      {t('index.callToAction.subtitle2')}
     </Fragment>
   </CallToAction>
   <!-- Content Widget **************** -->
@@ -255,27 +263,24 @@ const metadata = {
 
   <!-- Content Widget **************** -->
 
-  <Content
+  <!-- <Content
     isAfterContent
     items={[
       {
-        title: '灵活定制',
-        description: `根据您的业务需求，灵活定制IP代理服务，确保最佳效果。`,
+        title: t('index.content.residentialProxy.title'),
+        description: t('index.content.residentialProxy.description'),
       },
       {
-        title: '多种套餐选择',
-        description:
-          '提供多种套餐选择，满足不同业务需求。',
+        title: t('index.content.dynamicProxy.title'),
+        description: t('index.content.dynamicProxy.description'),
       },
       {
-        title: '全天候支持',
-        description:
-          "我们的专业团队提供24/7全天候技术支持，确保您的业务顺利进行。",
+        title: t('index.content.dataCenterProxy.title'),
+        description: t('index.content.dataCenterProxy.description'),
       },
       {
-        title: '高效切换',
-        description:
-          '支持快速切换IP，确保您的业务不间断运行。',
+        title: t('index.content.residentialProxy.title'),
+        description: t('index.content.residentialProxy.description'),
       },
     ]}
     image={{
@@ -283,37 +288,34 @@ const metadata = {
       alt: '灵活定制图片',
     }}
   >
-    <Fragment slot="content">确保您的业务始终在线。</Fragment>
+    <Fragment slot="content">{t('index.content.residentialProxy.title')}</Fragment>
 
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </Content> -->
 
   <!-- Content Widget **************** -->
 
-  <Content
+  <!-- <Content
     isReversed
     isAfterContent
     items={[
       {
-        title: '提升用户体验',
-        description:
-          '通过高效稳定的IP代理服务，提升用户体验，增加用户粘性。',
+        title: t('index.content.residentialProxy.title'),
+        description: t('index.content.residentialProxy.description'),
       },
       {
-        title: '持续改进',
-        description:
-          '我们不断优化和改进服务，确保为客户提供最优质的IP代理服务。',
+        title: t('index.content.dynamicProxy.title'),
+        description: t('index.content.dynamicProxy.description'),
       },
       {
-        title: '节省时间和资源',
-        description:
-          '通过我们的IP代理服务，节省您的时间和资源，快速上线业务。',
+        title: t('index.content.dataCenterProxy.title'),
+        description: t('index.content.dataCenterProxy.description'),
       },
       {
-        title: '社区支持',
-        description: `加入ipflex社区，获取更多资源和支持，确保您的业务顺利进行。`,
+        title: t('index.content.residentialProxy.title'),
+        description: t('index.content.residentialProxy.description'),
       },
     ]}
     image={{
@@ -321,70 +323,65 @@ const metadata = {
       alt: '提升用户体验图片',
     }}
   >
-    <Fragment slot="content">致力于为客户提供最佳服务。</Fragment>
+    <Fragment slot="content">{t('index.content.residentialProxy.title')}</Fragment>
 
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </Content> -->
 
   
   <!-- Features2 Widget ************** -->
 
   
   <Features2
-    title="常用场景"
-    subtitle=""
+    title={t('index.features2.title')}
+    subtitle={t('index.features2.subtitle')}
     items={[
       {
-        title: '网页数据采集',
+        title: t('index.features2.items.0.title'),
         href: '/detail',
-        description: "借助代理 IP，轻松突破网站限制，穿梭于海量网页间，精准抓取文本、图片、数据等信息，为市场分析、竞品调研提供有力支撑，赋能业务决策。",
+        description: t('index.features2.items.0.description'),
         icon: 'tabler:spider',
       },
       {
-        title: '电子商务运营',
-        description:
-          "实时采集电商平台产品详情、价格波动、销量排行，帮商家把握商机，及时优化选品、定价策略，在竞争激烈的电商赛道抢占先机。",
+        title: t('index.features2.items.1.title'),
+        description: t('index.features2.items.1.description'),
         icon: 'tabler:shopping-cart',
       },
       {
-        title: '市场调研洞察',
-        description:
-          '深入挖掘各行业数据，模拟不同地域、人群调研，精准剖析市场需求、消费者偏好，助企业提前布局，领航市场走向。',
+        title: t('index.features2.items.2.title'),
+        description: t('index.features2.items.2.description'),
         icon: 'tabler:chart-pie',
       },
       {
-        title: '社交媒体拓展',
-        description:
-          '多账号运营无忧，通过代理 IP 切换身份，批量操作点赞、评论、分享，安全提升品牌曝光，高效吸引目标受众，引爆社交热度。',
+        title: t('index.features2.items.3.title'),
+        description: t('index.features2.items.3.description'),
         icon: 'tabler:share',
       },
       {
-        title: 'SEO 策略优化',
-        description:
-          '模拟各地搜索请求，精准监测网站关键词排名、流量来源，依此优化页面内容、结构，让网站在搜索引擎中脱颖而出。',
+        title: t('index.features2.items.4.title'),
+        description: t('index.features2.items.4.description'),
         icon: 'tabler:search',
       },
       {
-        title: '广告投放增效',
-        description: '从多地区视角验证广告投放，确保精准触达，对比不同区域成效，及时调整投放细节，用有限预算撬动最大流量转化。',
+        title: t('index.features2.items.5.title'),
+        description: t('index.features2.items.5.description'),
         icon: 'tabler:ad',
       },
       {
-        title: '网站性能测试',
-        description: '模拟多样网络环境与地域访问，全面排查网站漏洞、加载瓶颈，保障全球用户访问顺畅，提升网站可靠性与用户体验。',
+        title: t('index.features2.items.6.title'),
+        description: t('index.features2.items.6.description'),
         icon: 'tabler:gauge',
       },
       {
-        title: '品牌安全守护',
-        description:
-          '隐匿真实 IP，降低品牌网络被攻击风险，实时监测假冒侵权信息，捍卫品牌声誉，稳固市场地位。',
+        title: t('index.features2.items.7.title'),
+        description: t('index.features2.items.7.description'),
         icon: 'tabler:shield',
       },
       {
-        title: '舆情动态追踪',
-        description: '实时收集主流媒体、社交平台舆情，分析舆论风向、公众情绪，助力企业快速回应，巧妙化解危机，维护品牌形象。',
+        title: t('index.features2.items.8.title'),
+        description: t('index.features2.items.8.description'),
         icon: 'tabler:news',
       },
     ]}
@@ -397,49 +394,47 @@ const metadata = {
   <!-- HighlightedPosts Widget ******* -->
 
   <BlogLatestPosts
-    title="了解更多内容"
-    information={`我们的博客提供最新的IP代理服务资讯和技术文章。
-                        每篇新文章都是您了解IP代理服务的重要一步。
-                        ipflex致力于为您提供最优质的服务。`}
+    title={t('index.blogLatestPosts.title')}
+    information={t('index.blogLatestPosts.information')}
   />
 
   <!-- FAQs Widget ******************* -->
 
   <FAQs
-    title="常见问题"
-    subtitle="了解ipflex的强大功能以及如何提升您的业务。"
-    tagline="FAQs"
+    title={t('index.faqs.title')}
+    subtitle={t('index.faqs.subtitle')}
+    tagline={t('index.faqs.sub')}
     classes={{ container: 'max-w-6xl' }}
     items={[
       {
-        title: '为什么选择ipflex?',
+        title: t('index.faqs.items.0.title'),
         description:
-          "ipflex提供高效、稳定、安全的IP代理服务，适用于各种业务需求。",
+          t('index.faqs.items.0.description'),
       },
       {
-        title: '我需要什么来开始使用?',
+        title: t('index.faqs.items.1.title'),
         description:
-          '只需在ipflex官网注册账号，选择合适的套餐，即可开始使用我们的IP代理服务。',
+          t('index.faqs.items.1.description'),
       },
       {
-        title: '如何安装和配置ipflex的IP代理服务?',
+        title: t('index.faqs.items.2.title'),
         description:
-          "在官网注册账号后，根据提示选择套餐并配置IP代理服务，即可开始使用。",
+          t('index.faqs.items.2.description'),
       },
       {
-        title: "ipflex的IP代理服务有哪些优势?",
+        title: t('index.faqs.items.3.title'),
         description:
-          "ipflex提供高效稳定的IP代理服务，支持全球覆盖，灵活计费，专业支持。",
+          t('index.faqs.items.3.description'),
       },
       {
-        title: 'ipflex的IP代理服务适用于哪些场景?',
+        title: t('index.faqs.items.4.title'),
         description:
-          "ipflex的IP代理服务适用于电商、社交媒体、数据采集等多种场景。",
+          t('index.faqs.items.4.description'),
       },
       {
-        title: '如何获取技术支持?',
+        title: t('index.faqs.items.5.title'),
         description:
-          "我们的专业团队提供24/7全天候技术支持，确保您的业务顺利进行。",
+          t('index.faqs.items.5.description'),
       },
     ]}
   />

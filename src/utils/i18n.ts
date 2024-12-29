@@ -5,7 +5,7 @@ interface Translations {
   [key: string]: any;
 }
 
-const translationsCache: { [lang: string]: Translations } = {};
+const translationsCache: Translations = {};
 
 function loadTranslations(dir: string): Translations {
   let translations: Translations = {};
@@ -27,7 +27,6 @@ export function initializeTranslations() {
   languages.forEach((lang) => {
     const dir = path.resolve(`./src/i18n/${lang}`);
     translationsCache[lang] = loadTranslations(dir);
-    console.log(translationsCache[lang]);
   });
 }
 
