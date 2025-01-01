@@ -1,0 +1,149 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Form from '~/components/ui/Form.astro';
+import { useTranslations } from '~/utils/i18n';
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'zh' } }
+  ];
+}
+
+const { lang } = Astro.params;
+const t = await useTranslations(lang);
+
+const metadata = {
+  title: lang === 'zh' ? 'IpFlex — 用户注册' : 'IpFlex — User Registration',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata} has_header={false} has_footer={false}>
+  <div class="min-h-screen flex flex-col md:flex-row">
+    <!-- 左侧产品介绍 -->
+    <div class="w-full md:w-[45%] bg-[#2B3178] text-white p-12 flex flex-col justify-between">
+      <div>
+        <h1 class="text-3xl font-bold mb-4">IpFlex</h1>
+        <p class="text-lg opacity-90 mb-12">{lang === 'zh' ? '专业的代理服务提供商' : 'Professional Proxy Service Provider'}</p>
+        
+        <div class="space-y-8">
+          <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-medium mb-2">{lang === 'zh' ? '高速稳定' : 'Fast & Stable'}</h3>
+              <p class="text-sm opacity-75">{lang === 'zh' ? '采用优质线路，确保代理服务的稳定性和速度' : 'Premium network ensures stability and speed'}</p>
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-medium mb-2">{lang === 'zh' ? '安全匿名' : 'Safe & Anonymous'}</h3>
+              <p class="text-sm opacity-75">{lang === 'zh' ? '采用加密技术，保护您的隐私安全' : 'Encryption technology protects your privacy'}</p>
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-medium mb-2">{lang === 'zh' ? '按量计费' : 'Pay As You Go'}</h3>
+              <p class="text-sm opacity-75">{lang === 'zh' ? '无需月付，充值即可使用，余额永久有效' : 'No monthly fee, pay as you go, balance never expires'}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-auto pt-12">
+        <div class="p-6 bg-white/10 rounded-xl backdrop-blur-sm">
+          <p class="text-sm font-medium mb-2">{lang === 'zh' ? '新用户专享' : 'New User Special'}</p>
+          <div class="flex items-baseline space-x-2">
+            <span class="text-4xl font-bold">￥1</span>
+            <span class="text-sm opacity-75">{lang === 'zh' ? '体验金' : 'Trial Balance'}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 右侧注册表单 -->
+    <div class="w-full md:w-[55%] bg-white p-12 flex items-center">
+      <div class="w-full max-w-md mx-auto">
+        <h2 class="text-2xl font-bold text-gray-900 mb-8">{lang === 'zh' ? '创建账户' : 'Create Account'}</h2>
+        
+        <Form 
+          inputs={[
+            {
+              type: 'text',
+              name: 'username',
+              label: lang === 'zh' ? '用户名' : 'Username',
+              placeholder: lang === 'zh' ? '4-16位字符' : '4-16 characters',
+              required: true,
+              containerClassName: 'mb-6'
+            },
+            {
+              type: 'email',
+              name: 'email',
+              label: lang === 'zh' ? '邮箱' : 'Email',
+              placeholder: lang === 'zh' ? '请输入邮箱' : 'Enter your email',
+              required: true,
+              containerClassName: 'mb-6'
+            },
+            {
+              type: 'password',
+              name: 'password',
+              label: lang === 'zh' ? '密码' : 'Password',
+              placeholder: lang === 'zh' ? '6-20位字符' : '6-20 characters',
+              required: true,
+              containerClassName: 'mb-6'
+            },
+            {
+              type: 'text',
+              name: 'invite',
+              label: lang === 'zh' ? '邀请码' : 'Invite Code',
+              placeholder: lang === 'zh' ? '选填' : 'Optional',
+              containerClassName: 'mb-6'
+            },
+            {
+              type: 'text',
+              name: 'captcha',
+              label: lang === 'zh' ? '验证码' : 'Captcha',
+              placeholder: lang === 'zh' ? '请输入验证码' : 'Enter captcha',
+              required: true,
+              containerClassName: 'mb-6'
+            }
+          ]}
+          button={{
+            text: lang === 'zh' ? '注册' : 'Register',
+            className: 'w-full bg-[#2B3178] hover:bg-[#373D8F] text-white font-medium py-3 px-4 rounded-lg transition-colors'
+          }}
+        />
+
+        <div class="mt-6 text-center text-sm text-gray-500">
+          {lang === 'zh' ? '已有账号？' : 'Already have an account?'}
+          <a href="/login" class="text-[#2B3178] hover:text-[#373D8F] font-medium ml-1">
+            {lang === 'zh' ? '立即登录' : 'Sign in'}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  /* 移除页面默认内边距 */
+  :global(main) {
+    padding: 0 !important;
+  }
+</style> 
