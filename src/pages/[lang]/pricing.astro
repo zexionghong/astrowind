@@ -1,0 +1,91 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Prices from '~/components/widgets/Pricing.astro';
+// import FAQs from '~/components/widgets/FAQs.astro';
+// import Steps from '~/components/widgets/Steps.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import { SITE } from 'astrowind:config';
+import { useTranslations } from '~/utils/i18n';
+
+const { lang } = Astro.params;
+const t = useTranslations(lang);
+
+const metadata = {
+  title: t('pricing.metadata.title'),
+};
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'zh' } },
+  ];
+}
+
+const prices = [
+  {
+    title: t('pricing.plans.static.title'),
+    subtitle: t('pricing.plans.static.subtitle'),
+    price: t('pricing.plans.static.price'),
+    period: t('pricing.plans.static.period'),
+    items: t('pricing.plans.static.features').map(feature => ({
+      description: feature,
+    })),
+    callToAction: {
+      target: '_blank',
+      text: t('pricing.plans.static.action'),
+      href: SITE.dashboard,
+    },
+  },
+  {
+    title: t('pricing.plans.dynamic.title'),
+    subtitle: t('pricing.plans.dynamic.subtitle'),
+    price: t('pricing.plans.dynamic.price'),
+    period: t('pricing.plans.dynamic.period'),
+    items: t('pricing.plans.dynamic.features').map(feature => ({
+      description: feature,
+    })),
+    callToAction: {
+      target: '_blank',
+      text: t('pricing.plans.dynamic.action'),
+      href: SITE.dashboard,
+    },
+    hasRibbon: true,
+    ribbonTitle: t('pricing.plans.dynamic.ribbon'),
+  },
+  {
+    title: t('pricing.plans.datacenter.title'),
+    subtitle: t('pricing.plans.datacenter.subtitle'),
+    price: t('pricing.plans.datacenter.price'),
+    period: t('pricing.plans.datacenter.period'),
+    items: t('pricing.plans.datacenter.features').map(feature => ({
+      description: feature,
+    })),
+    callToAction: {
+      target: '_blank',
+      text: t('pricing.plans.datacenter.action'),
+      href: SITE.dashboard,
+    },
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    title={t('pricing.hero.title')}
+    subtitle={t('pricing.hero.subtitle')}
+  />
+
+  <Prices prices={prices} />
+
+  <Features3
+    title={t('pricing.features.title')}
+    subtitle={t('pricing.features.subtitle')}
+    columns={2}
+    items={t('pricing.features.items')}
+    classes={{ container: 'max-w-5xl' }}
+  />
+
+  <!-- 其他组件的国际化... -->
+
+</Layout>

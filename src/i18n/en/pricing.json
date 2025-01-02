@@ -1,0 +1,92 @@
+{
+  "pricing": {
+    "metadata": {
+      "title": "Pricing Plans"
+    },
+    "hero": {
+      "title": "Limited Time Offer! As low as ￥2/IP ￥10/GB",
+      "subtitle": "Choose the plan that best fits your business needs"
+    },
+    "plans": {
+      "static": {
+        "title": "Static Residential Proxy",
+        "subtitle": "Stable and reliable long-term residential IPs",
+        "price": "40",
+        "period": "/GB",
+        "features": [
+          "Real long-term residential IPs",
+          "99.9% uptime guarantee",
+          "Precise city targeting",
+          "HTTP & Socks5 protocol support",
+          "￥4/day or ￥60/month"
+        ],
+        "action": "Buy Now"
+      },
+      "dynamic": {
+        "title": "Dynamic Residential Proxy",
+        "subtitle": "Massive real residential IP resources",
+        "price": "2",
+        "period": "/IP",
+        "features": [
+          "Real short-term residential IPs",
+          "10M+ daily active IPs",
+          "City-level targeting",
+          "HTTP & Socks5 protocol support",
+          "￥40/GB"
+        ],
+        "action": "Buy Now",
+        "ribbon": "Popular"
+      },
+      "datacenter": {
+        "title": "Static Datacenter Proxy",
+        "subtitle": "Cost-effective datacenter IPs",
+        "price": "10",
+        "period": "/GB",
+        "features": [
+          "Long-term datacenter IPs",
+          "Unlimited traffic with daily purchase",
+          "City-level targeting",
+          "HTTP & Socks5 protocol support",
+          "￥2/day or ￥30/month"
+        ],
+        "action": "Buy Now"
+      }
+    },
+    "features": {
+      "title": "Pricing Features",
+      "subtitle": "Understand the advantages of choosing our plans",
+      "items": [
+        {
+          "title": "Tiered Pricing",
+          "description": "Multiple pricing options to meet different budgets and needs",
+          "icon": "tabler:stairs"
+        },
+        {
+          "title": "Transparent Pricing",
+          "description": "Clear display of pricing details for each plan, no hidden fees",
+          "icon": "tabler:flip-vertical"
+        },
+        {
+          "title": "Secure Payment",
+          "description": "Secure payment gateway to protect your transaction information",
+          "icon": "tabler:shield-lock"
+        },
+        {
+          "title": "Instant Access",
+          "description": "Access to all features immediately after payment",
+          "icon": "tabler:accessible"
+        },
+        {
+          "title": "Upgrade Benefits",
+          "description": "Unlock more features and benefits by upgrading to higher-tier plans",
+          "icon": "tabler:chevrons-up"
+        },
+        {
+          "title": "24/7 Support",
+          "description": "Daily support via live chat, email, or phone",
+          "icon": "tabler:headset"
+        }
+      ]
+    }
+  }
+}

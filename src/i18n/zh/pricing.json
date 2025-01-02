@@ -1,0 +1,92 @@
+{
+  "pricing": {
+    "metadata": {
+      "title": "定价方案"
+    },
+    "hero": {
+      "title": "限时优惠！低至￥2/IP ￥10/GB",
+      "subtitle": "选择最适合您业务需求的方案"
+    },
+    "plans": {
+      "static": {
+        "title": "静态住宅代理",
+        "subtitle": "稳定可靠的长效住宅IP",
+        "price": "40",
+        "period": "/GB",
+        "features": [
+          "真实长效住宅IP",
+          "可用率高达99.9%",
+          "精准城市定位",
+          "HTTP、Socks5协议支持",
+          "4元/天 或 60元/月"
+        ],
+        "action": "立即购买"
+      },
+      "dynamic": {
+        "title": "动态住宅代理",
+        "subtitle": "海量真实住宅IP资源",
+        "price": "2",
+        "period": "/IP",
+        "features": [
+          "真实短效住宅IP",
+          "千万+日活跃IP",
+          "可定位至城市",
+          "HTTP、Socks5协议支持",
+          "40元/GB"
+        ],
+        "action": "立即购买",
+        "ribbon": "热门"
+      },
+      "datacenter": {
+        "title": "静态数据中心代理",
+        "subtitle": "高性价比的数据中心IP",
+        "price": "10",
+        "period": "/GB",
+        "features": [
+          "长效数据中心IP",
+          "按天购买不限流量",
+          "可定位至城市",
+          "HTTP、Socks5协议支持",
+          "2元/天 或 30元/月"
+        ],
+        "action": "立即购买"
+      }
+    },
+    "features": {
+      "title": "价格相关特性",
+      "subtitle": "了解选择我们方案的优势",
+      "items": [
+        {
+          "title": "分级定价方案",
+          "description": "提供多种价格方案，满足不同预算和需求",
+          "icon": "tabler:stairs"
+        },
+        {
+          "title": "透明定价",
+          "description": "清晰展示每个方案的价格详情，无隐藏费用",
+          "icon": "tabler:flip-vertical"
+        },
+        {
+          "title": "安全支付",
+          "description": "安全的支付网关保护您的交易信息",
+          "icon": "tabler:shield-lock"
+        },
+        {
+          "title": "即时访问",
+          "description": "支付完成后即可使用所有功能",
+          "icon": "tabler:accessible"
+        },
+        {
+          "title": "升级优惠",
+          "description": "升级到更高级方案可解锁更多功能和优势",
+          "icon": "tabler:chevrons-up"
+        },
+        {
+          "title": "24小时支持",
+          "description": "每天通过在线聊天、邮件或电话提供支持",
+          "icon": "tabler:headset"
+        }
+      ]
+    }
+  }
+} 

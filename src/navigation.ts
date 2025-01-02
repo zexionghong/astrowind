@@ -21,7 +21,7 @@ export const getHeaderData = (lang: string = 'zh') => ({
     },
     {
       text: lang === 'zh' ? '定价' : 'Pricing',
-      href: 'https://baidu.com'
+      href: `/${lang}/pricing`
     },
     {
       text: lang === 'zh' ? '应用场景' : 'Cases',
