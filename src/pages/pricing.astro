@@ -5,7 +5,8 @@ import Prices from '~/components/widgets/Pricing.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Features3 from '~/components/widgets/Features3.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+// import CallToAction from '~/components/widgets/CallToAction.astro';
+import { SITE } from 'astrowind:config';
 
 const metadata = {
   title: 'Pricing',
@@ -16,95 +17,97 @@ const metadata = {
   <!-- HeroText Widget ******************* -->
 
   <HeroText
-    tagline="Pricing"
-    title="Stellar Pricing for Every Journey"
+    title="限时优惠！低至￥2/IP ￥10/GB"
     subtitle="Choose the perfect plan that aligns with your cosmic goals."
   />
 
   <!-- Pricing Widget ******************* -->
-
   <Prices
-    title="Our prices"
-    subtitle="Only pay for what you need"
     prices={[
       {
-        title: 'basic',
-        subtitle: 'Optimal choice for personal use',
-        price: 29,
-        period: 'per month',
+        title: '静态住宅代理',
+        subtitle: '稳定可靠的长效住宅IP',
+        price: 40,
+        period: '/GB',
         items: [
           {
-            description: 'Etiam in libero, et volutpat',
+            description: '真实长效住宅IP',
           },
           {
-            description: 'Aenean ac nunc dolor tristique',
+            description: '可用率高达99.9%',
           },
           {
-            description: 'Cras scelerisque accumsan lib',
+            description: '精准城市定位',
           },
           {
-            description: 'In hac habitasse',
+            description: 'HTTP、Socks5协议支持',
+          },
+          {
+            description: '4元/天 或 60元/月',
           },
         ],
         callToAction: {
           target: '_blank',
-          text: 'Get started',
-          href: '#',
+          text: '立即购买',
+          href: SITE.dashboard,
         },
       },
       {
-        title: 'standard',
-        subtitle: 'Optimal choice for small teams',
-        price: 69,
-        period: 'Per Month',
+        title: '动态住宅代理',
+        subtitle: '海量真实住宅IP资源',
+        price: 2,
+        period: '/IP',
         items: [
           {
-            description: 'Proin vel laoreet',
+            description: '真实短效住宅IP',
           },
           {
-            description: 'Ut efficitur habitasse egestas',
+            description: '千万+日活跃IP',
           },
           {
-            description: 'Volutpat hac curabitur',
+            description: '可定位至城市',
           },
           {
-            description: 'Pellentesque blandit ut nibh',
+            description: 'HTTP、Socks5协议支持',
           },
           {
-            description: 'Donec fringilla sem',
+            description: '40元/GB',
           },
         ],
         callToAction: {
           target: '_blank',
-          text: 'Get started',
-          href: '#',
+          text: '立即购买',
+          href: SITE.dashboard,
         },
         hasRibbon: true,
-        ribbonTitle: 'popular',
+        ribbonTitle: '热门',
       },
       {
-        title: 'premium',
-        subtitle: 'Optimal choice for companies',
-        price: 199,
-        period: 'Per Month',
+        title: '静态数据中心代理',
+        subtitle: '高性价比的数据中心IP',
+        price: 10,
+        period: '/GB',
         items: [
           {
-            description: 'Curabitur suscipit risus',
+            description: '长效数据中心IP',
           },
           {
-            description: 'Aliquam habitasse malesuada',
+            description: '按天购买不限流量',
           },
           {
-            description: 'Suspendisse sit amet blandit',
+            description: '可定位至城市',
           },
           {
-            description: 'Suspendisse auctor blandit dui',
+            description: 'HTTP、Socks5协议支持',
+          },
+          {
+            description: '2元/天 或 30元/月',
           },
         ],
         callToAction: {
           target: '_blank',
-          text: 'Get started',
-          href: '#',
+          text: '立即购买',
+          href: SITE.dashboard,
         },
       },
     ]}
@@ -230,15 +233,4 @@ const metadata = {
 
   <!-- CallToAction Widget *********** -->
 
-  <CallToAction
-    title="Ready to boost your projects?"
-    subtitle="Join our community of satisfied customers who have transformed their work with our templates."
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Get started now',
-        href: '/',
-      },
-    ]}
-  />
 </Layout>
