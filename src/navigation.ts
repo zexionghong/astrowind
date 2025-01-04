@@ -1,5 +1,5 @@
 import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
-
+import { SITE } from 'astrowind:config';
 export const getHeaderData = (lang: string = 'zh') => ({
   links: [
     {
@@ -35,6 +35,7 @@ export const getHeaderData = (lang: string = 'zh') => ({
       text: lang === 'zh' ? '资讯中心' : 'News',
       href: '#',
     },
+    
   ],
   actions: [
     { text: lang === 'zh' ? '注册' : 'Sign Up', href: 'https://dashboard.ipflex.ink', target: '_blank', color: 'blue' },
@@ -45,63 +46,45 @@ export const getHeaderData = (lang: string = 'zh') => ({
 export const footerData = {
   links: [
     {
-      title: 'Product',
+      title: "产品",
       links: [
-        { text: 'Features', href: '#' },
-        { text: 'Security', href: '#' },
-        { text: 'Team', href: '#' },
-        { text: 'Enterprise', href: '#' },
-        { text: 'Customer stories', href: '#' },
-        { text: 'Pricing', href: '#' },
-        { text: 'Resources', href: '#' },
+        { text: '静态住宅代理', href: '/detail' },
+        { text: '动态住宅代理', href: '/detail' },
+        { text: '数据中心代理', href: '/detail' },
       ],
     },
     {
-      title: 'Platform',
+      title: "解决方案",
       links: [
-        { text: 'Developer API', href: '#' },
-        { text: 'Partners', href: '#' },
-        { text: 'Atom', href: '#' },
-        { text: 'Electron', href: '#' },
-        { text: 'AstroWind Desktop', href: '#' },
+        { text: '跨境电商', href: '#' },
+        { text: '品牌保护', href: '#' },
+        { text: '市场调研', href: '#' },
+        { text: '广告验证', href: '#' },
       ],
     },
     {
-      title: 'Support',
+      title: "支持",
       links: [
-        { text: 'Docs', href: '#' },
-        { text: 'Community Forum', href: '#' },
-        { text: 'Professional Services', href: '#' },
-        { text: 'Skills', href: '#' },
-        { text: 'Status', href: '#' },
+        { text: '帮助中心', href: '/help' },
+        { text: '开发文档', href: '#' },
+        { text: '联系我们', href: '#' },
       ],
     },
     {
-      title: 'Company',
+      title: "公司",
       links: [
-        { text: 'About', href: '#' },
-        { text: 'Blog', href: '#' },
-        { text: 'Careers', href: '#' },
-        { text: 'Press', href: '#' },
-        { text: 'Inclusion', href: '#' },
-        { text: 'Social Impact', href: '#' },
-        { text: 'Shop', href: '#' },
+        { text: '关于我们', href: '#' },
+        { text: '使用条款', href: '#' },
+        { text: '隐私政策', href: '#' },
       ],
     },
-  ],
-  secondaryLinks: [
-    { text: 'Terms', href: getPermalink('/terms') },
-    { text: 'Privacy Policy', href: getPermalink('/privacy') },
   ],
   socialLinks: [
     { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
-    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
-    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
-    { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
-    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/onwidget/astrowind' },
+    { ariaLabel: 'Telegram', icon: 'tabler:brand-telegram', href: '#' },
+    { ariaLabel: 'Discord', icon: 'tabler:brand-discord', href: '#' },
   ],
   footNote: `
-    <img class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm" src="https://onwidget.com/favicon/favicon-32x32.png" alt="onWidget logo" loading="lazy"></img>
-    Made by <a class="text-blue-600 underline dark:text-muted" href="https://onwidget.com/"> onWidget</a> · All rights reserved.
+    © ${new Date().getFullYear()} ${SITE.name}. All rights reserved.
   `,
 };

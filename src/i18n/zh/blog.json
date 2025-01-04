@@ -1,0 +1,8 @@
+{
+  "blog": {
+    "title": "博客",
+    "subtitle": "最新文章和更新",
+    "page": "第 %s 页",
+    "backToBlog": "返回博客"
+  }
+} 

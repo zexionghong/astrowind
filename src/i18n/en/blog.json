@@ -1,0 +1,8 @@
+{
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Latest Articles and Updates",
+    "page": "Page %s",
+    "backToBlog": "Back to Blog"
+  }
+} 

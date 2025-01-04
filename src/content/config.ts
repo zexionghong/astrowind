@@ -45,24 +45,21 @@ const metadataDefinition = () =>
     })
     .optional();
 
-const postCollection = defineCollection({
+const post = defineCollection({
   schema: z.object({
-    publishDate: z.date().optional(),
-    updateDate: z.date().optional(),
-    draft: z.boolean().optional(),
-
     title: z.string(),
     excerpt: z.string().optional(),
-    image: z.string().optional(),
-
     category: z.string().optional(),
     tags: z.array(z.string()).optional(),
+    image: z.string().optional(),
+    publishDate: z.date().optional(),
     author: z.string().optional(),
-
+    language: z.enum(['en', 'zh']).default('zh'),
+    draft: z.boolean().optional(),
     metadata: metadataDefinition(),
   }),
 });
 
 export const collections = {
-  post: postCollection,
+  post: post,
 };

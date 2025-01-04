@@ -40,9 +40,12 @@ const generatePermalink = async ({
     .join('/');
 };
 
-const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> => {
+export const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> => {
   const { id, slug: rawSlug = '', data } = post;
   const { Content, remarkPluginFrontmatter } = await post.render();
+
+  // 使用 post.slug 而不是文件路径
+  const slug = rawSlug.split('/').pop() || rawSlug;
 
   const {
     publishDate: rawPublishDate = new Date(),
@@ -55,9 +58,9 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     author,
     draft = false,
     metadata = {},
+    language,
   } = data;
 
-  const slug = cleanSlug(rawSlug); // cleanSlug(rawSlug.split('/').pop());
   const publishDate = new Date(rawPublishDate);
   const updateDate = rawUpdateDate ? new Date(rawUpdateDate) : undefined;
 
@@ -76,33 +79,30 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
   return {
     id: id,
     slug: slug,
-    permalink: await generatePermalink({ id, slug, publishDate, category: category?.slug }),
-
+    language,
+    permalink: `${language}/blog/${slug}`,
     publishDate: publishDate,
     updateDate: updateDate,
-
     title: title,
     excerpt: excerpt,
     image: image,
-
     category: category,
     tags: tags,
     author: author,
-
     draft: draft,
-
     metadata,
-
     Content: Content,
-    // or 'content' in case you consume from API
-
     readingTime: remarkPluginFrontmatter?.readingTime,
   };
 };
 
-const load = async function (): Promise<Array<Post>> {
+const load = async function (lang: string = 'zh'): Promise<Array<Post>> {
   const posts = await getCollection('post');
-  const normalizedPosts = posts.map(async (post) => await getNormalizedPost(post));
+  
+  // 根据语言过滤文章
+  const langPosts = posts.filter(post => post.data.language === lang);
+  
+  const normalizedPosts = langPosts.map(async (post) => await getNormalizedPost(post));
 
   const results = (await Promise.all(normalizedPosts))
     .sort((a, b) => b.publishDate.valueOf() - a.publishDate.valueOf())
@@ -111,7 +111,7 @@ const load = async function (): Promise<Array<Post>> {
   return results;
 };
 
-let _posts: Array<Post>;
+let _posts: Record<string, Array<Post>> = {};
 
 /** */
 export const isBlogEnabled = APP_BLOG.isEnabled;
@@ -129,12 +129,11 @@ export const blogTagRobots = APP_BLOG.tag.robots;
 export const blogPostsPerPage = APP_BLOG?.postsPerPage;
 
 /** */
-export const fetchPosts = async (): Promise<Array<Post>> => {
-  if (!_posts) {
-    _posts = await load();
+export const fetchPosts = async (lang: string = 'zh'): Promise<Array<Post>> => {
+  if (!_posts[lang]) {
+    _posts[lang] = await load(lang);
   }
-
-  return _posts;
+  return _posts[lang];
 };
 
 /** */
@@ -166,9 +165,9 @@ export const findPostsByIds = async (ids: Array<string>): Promise<Array<Post>> =
 };
 
 /** */
-export const findLatestPosts = async ({ count }: { count?: number }): Promise<Array<Post>> => {
+export const findLatestPosts = async ({ count, lang }: { count?: number, lang?: string }): Promise<Array<Post>> => {
   const _count = count || 4;
-  const posts = await fetchPosts();
+  const posts = await fetchPosts(lang);
 
   return posts ? posts.slice(0, _count) : [];
 };
