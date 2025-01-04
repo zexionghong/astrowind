@@ -1,0 +1,54 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCollection } from 'astro:content';
+import Layout from '~/layouts/PageLayout.astro';
+import SinglePost from '~/components/blog/SinglePost.astro';
+import ToBlogLink from '~/components/blog/ToBlogLink.astro';
+import { useTranslations } from '~/utils/i18n';
+import type { CollectionEntry } from 'astro:content';
+import { getNormalizedPost } from '~/utils/blog';
+
+export const getStaticPaths = (async () => {
+  const posts = await getCollection('post');
+  const paths = [];
+
+  for (const post of posts) {
+    const { language } = post.data;
+    const slug = post.slug.split('/').pop() || post.slug;
+    
+    const normalizedPost = await getNormalizedPost(post);
+    paths.push({
+      params: {
+        slug,
+        lang: language
+      },
+      props: { post, normalizedPost },
+    });
+  }
+
+  return paths;
+}) satisfies GetStaticPaths;
+
+interface Props {
+  post: CollectionEntry<'post'>;
+  normalizedPost: any;
+}
+
+const { post, normalizedPost } = Astro.props;
+const { lang } = Astro.params;
+const t = await useTranslations(lang);
+
+const { Content } = await post.render();
+
+const metadata = {
+  title: post.data.title,
+  description: post.data.excerpt,
+};
+---
+
+<Layout metadata={metadata}>
+  <SinglePost post={normalizedPost}>
+    <Content />
+  </SinglePost>
+  <ToBlogLink lang={lang} />
+</Layout> 

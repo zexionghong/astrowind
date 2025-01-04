@@ -1,0 +1,55 @@
+---
+import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
+import Layout from '~/layouts/PageLayout.astro';
+import BlogList from '~/components/blog/List.astro';
+import Headline from '~/components/blog/Headline.astro';
+import Pagination from '~/components/blog/Pagination.astro';
+import { useTranslations } from '~/utils/i18n';
+import { blogListRobots, fetchPosts } from '~/utils/blog';
+import type { Post } from '~/types';
+
+export const prerender = true;
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const languages = ['en', 'zh'];
+  const paths = [];
+
+  for (const lang of languages) {
+    const posts = await fetchPosts(lang);
+    const paginatedPaths = paginate(posts, {
+      params: { lang },
+      pageSize: 6,
+    });
+    paths.push(...paginatedPaths);
+  }
+
+  return paths;
+}) satisfies GetStaticPaths;
+
+const { lang = 'zh' } = Astro.params;
+const { page } = Astro.props;
+const t = await useTranslations(lang);
+
+const metadata = {
+  title: `${t('blog.title')}${page.currentPage > 1 ? ` - ${t('blog.page')}${page.currentPage}` : ''}`,
+  robots: {
+    index: blogListRobots?.index && page.currentPage === 1,
+    follow: blogListRobots?.follow,
+  },
+  openGraph: {
+    type: 'blog',
+  },
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 md:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
+    <Headline
+      subtitle={t('blog.subtitle')}
+    >
+      {t('blog.title')}
+    </Headline>
+    <BlogList posts={page.data} />
+    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+  </section>
+</Layout> 

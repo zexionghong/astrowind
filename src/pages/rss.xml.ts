@@ -4,7 +4,7 @@ import { SITE, METADATA, APP_BLOG } from 'astrowind:config';
 import { fetchPosts } from '~/utils/blog';
 import { getPermalink } from '~/utils/permalinks';
 
-export const GET = async () => {
+export const GET = async ({ params }) => {
   if (!APP_BLOG.isEnabled) {
     return new Response(null, {
       status: 404,
@@ -12,10 +12,11 @@ export const GET = async () => {
     });
   }
 
-  const posts = await fetchPosts();
+  const lang = params.lang || 'zh';
+  const posts = await fetchPosts(lang);
 
   const rss = await getRssString({
-    title: `${SITE.name}’s Blog`,
+    title: `${SITE.name}'s Blog`,
     description: METADATA?.description || '',
     site: import.meta.env.SITE,
 

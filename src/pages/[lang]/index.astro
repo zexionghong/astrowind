@@ -20,7 +20,7 @@ export async function getStaticPaths() {
   ];
 }
 
-const { lang='zh' } = Astro.params;
+const { lang = 'zh' } = Astro.params;
 const t = await useTranslations(lang);
 const metadata = {
   title: t('metadata.title'),
@@ -396,6 +396,7 @@ console.log(t('index.hero.primaryAction'));
   <BlogLatestPosts
     title={t('index.blogLatestPosts.title')}
     information={t('index.blogLatestPosts.information')}
+    lang={lang}
   />
 
   <!-- FAQs Widget ******************* -->
