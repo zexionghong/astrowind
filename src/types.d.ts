@@ -166,6 +166,7 @@ export interface Input {
   type: HTMLInputTypeAttribute;
   name: string;
   label?: string;
+  required?: boolean;
   autocomplete?: string;
   placeholder?: string;
 }
