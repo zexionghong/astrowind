@@ -6,7 +6,7 @@ import ToggleMenu from '~/components/common/ToggleMenu.astro';
 import Button from '~/components/ui/Button.astro';
 import LanguagePicker from '~/components/LanguagePicker.astro';
 
-import { getHomePermalink } from '~/utils/permalinks';
+import { getHomePermalinkEn, getHomePermalinkZh } from '~/utils/permalinks';
 import { trimSlash, getAsset } from '~/utils/permalinks';
 import type { CallToAction } from '~/types';
 import { getHeaderData } from '~/navigation';
@@ -49,6 +49,7 @@ const {
 const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 
 const { lang = 'zh' } = Astro.params;
+const homePermalink = lang === 'zh' ? getHomePermalinkZh() : getHomePermalinkEn();
 const headerData = getHeaderData(lang);
 ---
 
@@ -76,7 +77,7 @@ const headerData = getHeaderData(lang);
     ]}
   >
     <div class:list={[{ 'mr-auto rtl:mr-0 rtl:ml-auto': position === 'right' }, 'flex justify-between']}>
-      <a class="flex items-center" href={getHomePermalink()}>
+      <a class="flex items-center" href={homePermalink}>
         <Logo />
       </a>
       <div class="flex items-center md:hidden">

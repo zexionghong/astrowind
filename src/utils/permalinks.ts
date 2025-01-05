@@ -87,7 +87,8 @@ export const getPermalink = (slug = '', type = 'page'): string => {
 };
 
 /** */
-export const getHomePermalink = (): string => getPermalink('/');
+export const getHomePermalinkZh = () => '/zh';
+export const getHomePermalinkEn = () => '/en';
 
 /** */
 export const getBlogPermalink = (): string => getPermalink(BLOG_BASE);
@@ -132,3 +133,6 @@ export const applyGetPermalinks = (menu: object = {}) => {
   }
   return menu;
 };
+
+/** */
+export const getHomePermalink = (): string => '/';
