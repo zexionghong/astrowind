@@ -132,6 +132,7 @@
     },
     "features2": {
       "title": "常用场景",
+      "subtitle": "ipflex的IP代理服务适用于各种业务场景。",
       "items": [
         {
           "title": "网页数据采集",

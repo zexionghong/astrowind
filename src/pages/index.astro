@@ -23,7 +23,7 @@ export async function getStaticPaths() {
 const { lang='zh' } = Astro.params;
 const t = await useTranslations(lang);
 const metadata = {
-  title: t('metadata.title'),
+  title: t('index.metadata.title'),
   ignoreTitleTemplate: true,
 };
 console.log(t('index.hero.primaryAction'));

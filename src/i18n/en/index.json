@@ -132,6 +132,7 @@
     },
     "features2": {
       "title": "Common Use Cases",
+      "subtitle": "ipflex's IP proxy service is suitable for various business scenarios.",
       "items": [
         {
           "title": "Web Data Collection",

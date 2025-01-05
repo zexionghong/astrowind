@@ -35,11 +35,11 @@ i18n:
 
 apps:
   blog:
-    isEnabled: true
+    isEnabled: false
     postsPerPage: 6
   
     post:
-      isEnabled: true
+      isEnabled: false
       permalink: '/blog/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
       robots:
         index: true
