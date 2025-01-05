@@ -1,4 +1,3 @@
-import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 import { SITE } from 'astrowind:config';
 export const getHeaderData = (lang: string = 'zh') => ({
   links: [
@@ -50,15 +49,15 @@ export const getFooterData = (lang: string = 'zh') => ({
       links: [
         { 
           text: lang === 'zh' ? '静态住宅代理' : 'Static Residential Proxy', 
-          href: `/${lang}/detail` 
+          href: `/${lang}/detail#static-residential` 
         },
         { 
           text: lang === 'zh' ? '动态住宅代理' : 'Dynamic Residential Proxy', 
-          href: `/${lang}/detail` 
+          href: `/${lang}/detail#dynamic-residential` 
         },
         { 
           text: lang === 'zh' ? '数据中心代理' : 'Data Center Proxy', 
-          href: `/${lang}/detail` 
+          href: `/${lang}/detail#datacenter` 
         },
       ],
     },
