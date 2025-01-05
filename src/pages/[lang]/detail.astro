@@ -20,76 +20,82 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <!-- 静态住宅代理 -->
-  <Content
-    isReversed
-    items={[
-      {title: t('detail.staticResidential.items.0')},
-      {title: t('detail.staticResidential.items.1')},
-      {title: t('detail.staticResidential.items.2')},
-      {title: t('detail.staticResidential.items.3')},
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: t('detail.staticResidential.title'),
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        {t('detail.staticResidential.title')}
-      </h3>
-      {t('detail.staticResidential.description')}
-    </Fragment>
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
+  <div id="static-residential" class="scroll-mt-20">
+    <Content
+      isReversed
+      items={[
+        {title: t('detail.staticResidential.items.0')},
+        {title: t('detail.staticResidential.items.1')},
+        {title: t('detail.staticResidential.items.2')},
+        {title: t('detail.staticResidential.items.3')},
+      ]}
+      image={{
+        src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        alt: t('detail.staticResidential.title'),
+      }}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+          {t('detail.staticResidential.title')}
+        </h3>
+        {t('detail.staticResidential.description')}
+      </Fragment>
+      <Fragment slot="bg">
+        <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+      </Fragment>
+    </Content>
+  </div>
 
   <!-- 动态住宅代理 -->
-  <Content
-    isAfterContent
-    items={[
-      {title: t('detail.dynamicResidential.items.0')},
-      {title: t('detail.dynamicResidential.items.1')},
-      {title: t('detail.dynamicResidential.items.2')},
-      {title: t('detail.dynamicResidential.items.3')},
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
-      alt: t('detail.dynamicResidential.title'),
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        {t('detail.dynamicResidential.title')}
-      </h3>
-      {t('detail.dynamicResidential.description')}
-    </Fragment>
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
+  <div id="dynamic-residential" class="scroll-mt-20">
+    <Content
+      isAfterContent
+      items={[
+        {title: t('detail.dynamicResidential.items.0')},
+        {title: t('detail.dynamicResidential.items.1')},
+        {title: t('detail.dynamicResidential.items.2')},
+        {title: t('detail.dynamicResidential.items.3')},
+      ]}
+      image={{
+        src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
+        alt: t('detail.dynamicResidential.title'),
+      }}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+          {t('detail.dynamicResidential.title')}
+        </h3>
+        {t('detail.dynamicResidential.description')}
+      </Fragment>
+      <Fragment slot="bg">
+        <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+      </Fragment>
+    </Content>
+  </div>
 
   <!-- 数据中心代理 -->
-  <Content
-    isReversed
-    items={[
-      {title: t('detail.datacenter.items.0')},
-      {title: t('detail.datacenter.items.1')},
-      {title: t('detail.datacenter.items.2')},
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: t('detail.datacenter.title'),
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        {t('detail.datacenter.title')}
-      </h3>
-      {t('detail.datacenter.description')}
-    </Fragment>
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
+  <div id="datacenter" class="scroll-mt-20">
+    <Content
+      isReversed
+      items={[
+        {title: t('detail.datacenter.items.0')},
+        {title: t('detail.datacenter.items.1')},
+        {title: t('detail.datacenter.items.2')},
+      ]}
+      image={{
+        src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        alt: t('detail.datacenter.title'),
+      }}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+          {t('detail.datacenter.title')}
+        </h3>
+        {t('detail.datacenter.description')}
+      </Fragment>
+      <Fragment slot="bg">
+        <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+      </Fragment>
+    </Content>
+  </div>
 </Layout>
