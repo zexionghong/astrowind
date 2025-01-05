@@ -51,6 +51,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 const { lang = 'zh' } = Astro.params;
 const homePermalink = lang === 'zh' ? getHomePermalinkZh() : getHomePermalinkEn();
 const headerData = getHeaderData(lang);
+console.log(headerData.links[0].links[0].href);
 ---
 
 <header
