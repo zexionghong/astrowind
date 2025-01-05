@@ -1,9 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
 import { useTranslations } from '~/utils/i18n';
 import Content from '~/components/widgets/Content.astro';
-
 
 export async function getStaticPaths() {
   return [
@@ -16,42 +14,25 @@ const { lang } = Astro.params;
 const t = await useTranslations(lang);
 
 const metadata = {
-  title: 'IpFlex — 专业的IP代理服务提供商',
+  title: t('detail.metadata.title'),
   ignoreTitleTemplate: true,
 };
-
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-
   <Content
     isReversed
-    title={ t('detail.title')}
-    items={[
-      {
-        title:
-          '真实长效住宅IP',
-      },
-      {
-        title:
-          '可用率高达99.9%',
-      },
-      {
-        title: '精准城市定位',
-      },
-      {
-        title: 'HTTP、Socks5协议支持',
-      },
-    ]}
+    items={t('detail.staticResidential.items').map(item => ({ title: item }))}
     image={{
       src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
       alt: '服务内容图片',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">静态住宅代理</h3>
-      基于真实住宅网络的代理服务，提供长期不变的固定IP地址。具有极高的匿名性和可信度，能够有效避免被识别为代理或被封禁，适用于跨境电商、市场调研、社媒营销、品牌保护等多种业务场景。
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        {t('detail.staticResidential.title')}
+      </h3>
+      {t('detail.staticResidential.description')}
     </Fragment>
 
     <Fragment slot="bg">
@@ -59,19 +40,19 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <!-- Content Widget **************** -->
-
   <Content
     isAfterContent
-    items={[{title: '真实短效住宅IP'},{title: '千万+日活跃IP'},{title: '可定位至城市'},{title: 'HTTP、Socks5协议支持'}]}
+    items={t('detail.dynamicResidential.items').map(item => ({ title: item }))}
     image={{
       src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
       alt: '灵活定制图片',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">动态住宅代理</h3>
-      基于不断变化的IP地址池的代理服务，提供短期内频繁更换的IP地址。此服务具有高度灵活性和广泛的IP覆盖，能够有效地规避IP封禁和限制，适用于需要频繁更换IP的业务场景，如网络爬虫、数据抓取、广告验证和自动化测试等。
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        {t('detail.dynamicResidential.title')}
+      </h3>
+      {t('detail.dynamicResidential.description')}
     </Fragment>
 
     <Fragment slot="bg">
@@ -79,24 +60,19 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <!-- Content Widget **************** -->
-
   <Content
     isReversed
-    title="数据中心代理"
-    items={[
-      {title: '长效数据中心IP'},
-      {title: '可定位至城市'},
-      {title: 'HTTP、Socks5协议支持'},
-    ]}
+    items={t('detail.dataCenterProxy.items').map(item => ({ title: item }))}
     image={{
       src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
       alt: '提升用户体验图片',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">静态数据中心代理</h3>
-      基于数据中心网络的代理服务，提供长期不变的固定IP地址。这种代理服务通过位于数据中心的服务器提供IP，通常具有较高的速度和稳定性，在成本和性能上具有优势，尤其适合需要快速、大规模数据抓取和访问的业务场景，如网站测试、数据分析、SEO监控和在线广告验证等。
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        {t('detail.dataCenterProxy.title')}
+      </h3>
+      {t('detail.dataCenterProxy.description')}
     </Fragment>
 
     <Fragment slot="bg">
@@ -104,5 +80,11 @@ const metadata = {
     </Fragment>
   </Content>
 
-
 </Layout>
+
+<style>
+  /* 移除页面默认内边距 */
+  :global(main) {
+    padding: 0 !important;
+  }
+</style>

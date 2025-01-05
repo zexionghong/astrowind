@@ -1,0 +1,37 @@
+{
+  "detail": {
+    "metadata": {
+      "title": "IpFlex — Professional IP Proxy Service Provider"
+    },
+    "staticResidential": {
+      "title": "Static Residential Proxy",
+      "description": "A proxy service based on real residential networks, providing fixed IP addresses that remain unchanged for long periods. With high anonymity and credibility, it effectively avoids being identified as a proxy or being blocked, suitable for cross-border e-commerce, market research, social media marketing, brand protection, and various other business scenarios.",
+      "items": [
+        "Real Long-term Residential IP",
+        "99.9% Availability",
+        "Precise City Targeting",
+        "HTTP, Socks5 Protocol Support"
+      ]
+    },
+    "dynamicResidential": {
+      "title": "Dynamic Residential Proxy",
+      "description": "A proxy service based on a constantly changing IP address pool, providing IP addresses that change frequently within short periods. This service offers high flexibility and extensive IP coverage, effectively avoiding IP bans and restrictions, suitable for scenarios requiring frequent IP changes such as web crawling, data scraping, ad verification, and automated testing.",
+      "items": [
+        "Real Short-term Residential IP",
+        "10M+ Daily Active IPs",
+        "City-level Targeting",
+        "HTTP, Socks5 Protocol Support"
+      ]
+    },
+    "dataCenterProxy": {
+      "title": "Static Data Center Proxy",
+      "description": "A proxy service based on data center networks, providing fixed IP addresses that remain unchanged for long periods. This proxy service delivers IPs through data center servers, typically offering high speed and stability, with advantages in cost and performance. Particularly suitable for business scenarios requiring fast, large-scale data scraping and access, such as website testing, data analysis, SEO monitoring, and online ad verification.",
+      "items": [
+        "Long-term Data Center IP",
+        "Precise City Targeting",
+        "99.9% Availability", 
+        "HTTP, Socks5 Protocol Support"
+      ]
+    }
+  }
+} 
