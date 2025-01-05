@@ -43,39 +43,48 @@ export const getHeaderData = (lang: string = 'zh') => ({
   ],
 });
 
-export const footerData = {
+export const getFooterData = (lang: string = 'zh') => ({
   links: [
     {
-      title: "产品",
+      title: lang === 'zh' ? '产品' : 'Products',
       links: [
-        { text: '静态住宅代理', href: '/detail' },
-        { text: '动态住宅代理', href: '/detail' },
-        { text: '数据中心代理', href: '/detail' },
+        { 
+          text: lang === 'zh' ? '静态住宅代理' : 'Static Residential Proxy', 
+          href: `/${lang}/detail` 
+        },
+        { 
+          text: lang === 'zh' ? '动态住宅代理' : 'Dynamic Residential Proxy', 
+          href: `/${lang}/detail` 
+        },
+        { 
+          text: lang === 'zh' ? '数据中心代理' : 'Data Center Proxy', 
+          href: `/${lang}/detail` 
+        },
       ],
     },
     {
-      title: "解决方案",
+      title: lang === 'zh' ? '解决方案' : 'Solutions',
       links: [
-        { text: '跨境电商', href: '#' },
-        { text: '品牌保护', href: '#' },
-        { text: '市场调研', href: '#' },
-        { text: '广告验证', href: '#' },
+        { text: lang === 'zh' ? '跨境电商' : 'Cross-border E-commerce', href: '#' },
+        { text: lang === 'zh' ? '品牌保护' : 'Brand Protection', href: '#' },
+        { text: lang === 'zh' ? '市场调研' : 'Market Research', href: '#' },
+        { text: lang === 'zh' ? '广告验证' : 'Ad Verification', href: '#' },
       ],
     },
     {
-      title: "支持",
+      title: lang === 'zh' ? '支持' : 'Support',
       links: [
-        { text: '帮助中心', href: '/help' },
-        { text: '开发文档', href: '#' },
-        { text: '联系我们', href: '#' },
+        { text: lang === 'zh' ? '帮助中心' : 'Help Center', href: `/${lang}/help` },
+        { text: lang === 'zh' ? '开发文档' : 'Documentation', href: '#' },
+        { text: lang === 'zh' ? '联系我们' : 'Contact Us', href: '#' },
       ],
     },
     {
-      title: "公司",
+      title: lang === 'zh' ? '公司' : 'Company',
       links: [
-        { text: '关于我们', href: '#' },
-        { text: '使用条款', href: '#' },
-        { text: '隐私政策', href: '#' },
+        { text: lang === 'zh' ? '关于我们' : 'About Us', href: '#' },
+        { text: lang === 'zh' ? '使用条款' : 'Terms of Service', href: '#' },
+        { text: lang === 'zh' ? '隐私政策' : 'Privacy Policy', href: '#' },
       ],
     },
   ],
@@ -85,6 +94,6 @@ export const footerData = {
     { ariaLabel: 'Discord', icon: 'tabler:brand-discord', href: '#' },
   ],
   footNote: `
-    © ${new Date().getFullYear()} ${SITE.name}. All rights reserved.
+    © ${new Date().getFullYear()} ${SITE.name}. ${lang === 'zh' ? '版权所有' : 'All rights reserved'}.
   `,
-};
+});

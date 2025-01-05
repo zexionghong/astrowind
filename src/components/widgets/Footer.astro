@@ -1,25 +1,49 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { getFooterData } from '~/navigation';
 import { SITE } from 'astrowind:config';
-import { getHomePermalink } from '~/utils/permalinks';
-import { footerData } from '~/navigation';
-import logoImage from '~/assets/images/logo.png';
+import Logo from '~/components/Logo.astro';
 
-const { socialLinks = [], links = [], footNote = '', theme = 'light' } = footerData;
+interface Link {
+  text?: string;
+  href?: string;
+  ariaLabel?: string;
+  icon?: string;
+}
+
+interface Links {
+  title?: string;
+  links: Array<Link>;
+}
+
+interface Props {
+  links?: Array<Links>;
+  secondaryLinks?: Array<Link>;
+  socialLinks?: Array<Link>;
+  theme?: string;
+  footNote?: string;
+  lang?: string;
+}
+
+const { theme = 'light', lang = 'zh' } = Astro.props;
+
+const footerData = getFooterData(lang);
+const links = footerData.links;
+const socialLinks = footerData.socialLinks;
+const footNote = footerData.footNote;
 ---
 
-<footer class="bg-blue-50 dark:bg-slate-900 border-t border-blue-100 dark:border-slate-800">
+<footer class:list={[{ dark: theme === 'dark' }, 'relative border-t border-gray-200 dark:border-slate-800 not-prose']}>
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
     <div class="grid grid-cols-2 md:grid-cols-5 gap-8 py-8 md:py-12">
       <div class="col-span-2 md:col-span-5 lg:col-span-2 lg:pr-8">
         <div class="mb-4">
-          <a class="inline-flex items-center gap-3 font-bold text-xl text-blue-900 dark:text-white" href={getHomePermalink()}>
-            <img src={logoImage.src} alt={SITE?.name} class="h-8" />
-            <span>{SITE?.name}</span>
+          <a class="inline-flex items-center gap-3 font-bold text-xl text-blue-900 dark:text-white" href={`/${lang}`}>
+            <Logo />
           </a>
         </div>
         <div class="text-sm text-blue-700/80 dark:text-gray-400 mb-6 max-w-md">
-          专业的IP代理服务提供商，为您提供优质的代理服务
+          {lang === 'zh' ? '专业的IP代理服务提供商，为您提供优质的代理服务' : 'Professional proxy service provider offering high-quality proxy services'}
         </div>
         {
           socialLinks?.length ? (

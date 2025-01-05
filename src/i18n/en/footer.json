@@ -1,0 +1,37 @@
+{
+  "footer": {
+    "products": {
+      "title": "Products",
+      "links": [
+        { "text": "Static Residential Proxy", "href": "/en/detail" },
+        { "text": "Dynamic Residential Proxy", "href": "/en/detail" },
+        { "text": "Data Center Proxy", "href": "/en/detail" }
+      ]
+    },
+    "solutions": {
+      "title": "Solutions",
+      "links": [
+        { "text": "Cross-border E-commerce", "href": "#" },
+        { "text": "Brand Protection", "href": "#" },
+        { "text": "Market Research", "href": "#" },
+        { "text": "Ad Verification", "href": "#" }
+      ]
+    },
+    "support": {
+      "title": "Support",
+      "links": [
+        { "text": "Help Center", "href": "/en/help" },
+        { "text": "Documentation", "href": "#" },
+        { "text": "Contact Us", "href": "#" }
+      ]
+    },
+    "company": {
+      "title": "Company",
+      "links": [
+        { "text": "About Us", "href": "#" },
+        { "text": "Terms of Service", "href": "#" },
+        { "text": "Privacy Policy", "href": "#" }
+      ]
+    }
+  }
+} 
