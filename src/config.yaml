@@ -12,7 +12,7 @@ metadata:
   title:
     default: IPFlex
     template: '%s — IPFlex'
-  description: "\U0001F680 专业的IP代理服务提供商"
+  description: "专业的IP代理服务提供商"
   robots:
     index: true
     follow: true
