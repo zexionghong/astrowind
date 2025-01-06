@@ -72,9 +72,16 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
   {
     button && (
       <div class="mt-10 grid">
-        <Button variant="primary" type="submit">
-          {button}
-        </Button>
+        {typeof button === 'string' ? (
+          <Button type="submit" text={button} />
+        ) : (
+          <Button 
+            type="submit" 
+            text={button.text}
+            class={button.className}
+            onclick={button.onclick}
+          />
+        )}
       </div>
     )
   }

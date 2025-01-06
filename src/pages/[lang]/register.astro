@@ -14,9 +14,43 @@ const { lang } = Astro.params;
 const t = await useTranslations(lang);
 
 const metadata = {
-  title: lang === 'zh' ? 'IpFlex — 用户注册' : 'IpFlex — User Registration',
+  title: lang === 'zh' ? 'IPFlex — 用户注册' : 'IPFlex — User Registration',
   ignoreTitleTemplate: true,
 };
+
+const handleSubmit = `
+  async function handleClick(e) {
+    e.preventDefault();
+    const form = e.target.closest('form');
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch('https://api.IPFlex.ink/regisger', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error('${lang === 'zh' ? '注册失败' : 'Registration failed'}');
+      }
+
+      const result = await response.json();
+      if (result.success) {
+        alert('${lang === 'zh' ? '注册成功！' : 'Registration successful!'}');
+        window.location.href = '/${lang}/login';
+      } else {
+        alert(result.message || '${lang === 'zh' ? '注册失败，请重试' : 'Registration failed, please try again'}');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('${lang === 'zh' ? '注册失败，请重试' : 'Registration failed, please try again'}');
+    }
+  }
+`;
 ---
 
 <Layout metadata={metadata} has_header={false} has_footer={false}>
@@ -24,7 +58,7 @@ const metadata = {
     <!-- 左侧产品介绍 -->
     <div class="w-full md:w-[45%] bg-[#2B3178] text-white p-12 flex flex-col justify-between">
       <div>
-        <h1 class="text-3xl font-bold mb-4">IpFlex</h1>
+        <h1 class="text-3xl font-bold mb-4">IPFlex</h1>
         <p class="text-lg opacity-90 mb-12">{lang === 'zh' ? '专业的代理服务提供商' : 'Professional Proxy Service Provider'}</p>
         
         <div class="space-y-8">
@@ -126,13 +160,14 @@ const metadata = {
           ]}
           button={{
             text: lang === 'zh' ? '注册' : 'Register',
-            className: 'w-full bg-[#2B3178] hover:bg-[#373D8F] text-white font-medium py-3 px-4 rounded-lg transition-colors'
+            className: 'w-full bg-[#2B3178] hover:bg-[#373D8F] text-white font-medium py-3 px-4 rounded-lg transition-colors',
+            onclick: handleSubmit
           }}
         />
 
         <div class="mt-6 text-center text-sm text-gray-500">
           {lang === 'zh' ? '已有账号？' : 'Already have an account?'}
-          <a href="/login" class="text-[#2B3178] hover:text-[#373D8F] font-medium ml-1">
+          <a href={`/${lang}/login`} class="text-[#2B3178] hover:text-[#373D8F] font-medium ml-1">
             {lang === 'zh' ? '立即登录' : 'Sign in'}
           </a>
         </div>

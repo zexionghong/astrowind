@@ -1,13 +1,13 @@
 {
   "index": {
     "metadata": {
-      "title": "IpFlex — Professional IP Proxy Service Provider"
+      "title": "IPFlex — Professional IP Proxy Service Provider"
     },
     "hero": {
       "primaryAction": "Get Started",
       "secondaryAction": "Learn More",
       "title": "Enterprise-Grade <span class=\"hidden xl:inline\">Global IP, Stable</span><span class=\"text-accent dark:text-white highlight\"> Dedicated Proxy</span>",
-      "subtitle": "<span class=\"hidden sm:inline\"><span class=\"font-semibold\">IpFlex</span> is committed to providing customized IP proxy services for every client. With extensive IP resources and excellent connection quality, we ensure optimal network performance and security in any environment.</span>"
+      "subtitle": "<span class=\"hidden sm:inline\"><span class=\"font-semibold\">IPFlex</span> is committed to providing customized IP proxy services for every client. With extensive IP resources and excellent connection quality, we ensure optimal network performance and security in any environment.</span>"
     },
     "content": {
         "residentialProxyTitle": "Residential Proxy",
@@ -45,11 +45,11 @@
       }
     },
     "steps": {
-      "title": "Quick Start Guide for ipflex IP Proxy Service",
+      "title": "Quick Start Guide for IPFlex IP Proxy Service",
       "items": [
         {
           "title": "Step 1: <span class=\"font-medium\">Register Account</span>",
-          "description": "Register an account on ipflex's official website to begin your IP proxy service journey.",
+          "description": "Register an account on IPFlex's official website to begin your IP proxy service journey.",
           "icon": "tabler:package"
         },
         {
@@ -69,7 +69,7 @@
       ]
     },
     "features": {
-      "title": "ipflex Advantages",
+      "title": "IPFlex Advantages",
       "subtitle": "We provide the most professional and comprehensive IP proxy services in the market.",
       "items": [
         {
@@ -126,13 +126,13 @@
     },
     "callToAction": {
       "title": "Professional IP Proxy Service",
-      "subtitle1": "Experience ipflex's efficient and stable IP proxy service now.",
+      "subtitle1": "Experience IPFlex's efficient and stable IP proxy service now.",
       "subtitle2": "Don't hesitate, take action now!",
       "primaryAction": "Get Service"
     },
     "features2": {
       "title": "Common Use Cases",
-      "subtitle": "ipflex's IP proxy service is suitable for various business scenarios.",
+      "subtitle": "IPFlex's IP proxy service is suitable for various business scenarios.",
       "items": [
         {
           "title": "Web Data Collection",
@@ -184,27 +184,27 @@
     "faqs": {
       "title": "Frequently Asked Questions",
       "sub": "FAQs",
-      "subtitle": "Learn about ipflex's powerful features and how to enhance your business.",
+      "subtitle": "Learn about IPFlex's powerful features and how to enhance your business.",
       "items": [
         {
-          "title": "Why choose ipflex?",
-          "description": "ipflex provides efficient, stable, and secure IP proxy services suitable for various business needs."
+          "title": "Why choose IPFlex?",
+          "description": "IPFlex provides efficient, stable, and secure IP proxy services suitable for various business needs."
         },
         {
           "title": "What do I need to get started?",
-          "description": "Simply register an account on ipflex's official website, choose a suitable plan, and start using our IP proxy service."
+          "description": "Simply register an account on IPFlex's official website, choose a suitable plan, and start using our IP proxy service."
         },
         {
-          "title": "How do I install and configure ipflex's IP proxy service?",
+          "title": "How do I install and configure IPFlex's IP proxy service?",
           "description": "After registering an account on the official website, follow the prompts to select a plan and configure the IP proxy service to begin using it."
         },
         {
-          "title": "What are the advantages of ipflex's IP proxy service?",
-          "description": "ipflex provides efficient and stable IP proxy services with global coverage, flexible billing, and professional support."
+          "title": "What are the advantages of IPFlex's IP proxy service?",
+          "description": "IPFlex provides efficient and stable IP proxy services with global coverage, flexible billing, and professional support."
         },
         {
-          "title": "What scenarios is ipflex's IP proxy service suitable for?",
-          "description": "ipflex's IP proxy service is suitable for various scenarios including e-commerce, social media, and data collection."
+          "title": "What scenarios is IPFlex's IP proxy service suitable for?",
+          "description": "IPFlex's IP proxy service is suitable for various scenarios including e-commerce, social media, and data collection."
         },
         {
           "title": "How can I get technical support?",

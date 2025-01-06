@@ -169,6 +169,13 @@ export interface Input {
   required?: boolean;
   autocomplete?: string;
   placeholder?: string;
+  containerClassName?: string;
+}
+
+export interface ButtonProps {
+  text: string;
+  className?: string;
+  onclick?: string;
 }
 
 export interface Textarea {
@@ -210,7 +217,7 @@ export interface Form {
   inputs?: Array<Input>;
   textarea?: Textarea;
   disclaimer?: Disclaimer;
-  button?: string;
+  button?: string | ButtonProps;
   description?: string;
 }
 

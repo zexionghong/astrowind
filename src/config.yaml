@@ -1,5 +1,5 @@
 site:
-  name: IPFLEX
+  name: IPFlex
   site: 'https://ipflex.ink'
   base: '/'
   dashboard: 'https://dashboard.ipflex.ink'
@@ -10,14 +10,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: IPFLEX
-    template: '%s — IPFLEX'
+    default: IPFlex
+    template: '%s — IPFlex'
   description: "\U0001F680 专业的IP代理服务提供商"
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: IPFLEX
+    site_name: IPFlex
     images:
       - url: '~/assets/images/default.png'
         width: 1200

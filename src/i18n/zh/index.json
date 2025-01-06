@@ -1,13 +1,13 @@
 {
   "index": {
     "metadata": {
-      "title": "IpFlex — 专业的IP代理服务提供商"
+      "title": "IPFlex — 专业的IP代理服务提供商"
     },
     "hero": {
       "primaryAction": "立即使用",
       "secondaryAction": "了解更多",
       "title": "企业级 <span class=\"hidden xl:inline\">全球IP，稳定</span><span class=\"text-accent dark:text-white highlight\"> 独享代理</span>",
-      "subtitle": "<span class=\"hidden sm:inline\"><span class=\"font-semibold\">IpFlex</span> 致力于为每位客户提供量身定制的IP代理服务，凭借广泛的IP资源和卓越的连接质量，确保您在任何环境下都能获得最佳的网络性能和安全保障。</span>"
+      "subtitle": "<span class=\"hidden sm:inline\"><span class=\"font-semibold\">IPFlex</span> 致力于为每位客户提供量身定制的IP代理服务，凭借广泛的IP资源和卓越的连接质量，确保您在任何环境下都能获得最佳的网络性能和安全保障。</span>"
     },
     "content": {
         "residentialProxyTitle": "住宅代理",
@@ -45,11 +45,11 @@
       }
     },
     "steps": {
-      "title": "快速开始使用ipflex的IP代理服务",
+      "title": "快速开始使用IPFlex的IP代理服务",
       "items": [
         {
           "title": "步骤 1: <span class=\"font-medium\">注册账号</span>",
-          "description": "在ipflex官网注册账号，开始您的IP代理服务之旅。",
+          "description": "在IPFlex官网注册账号，开始您的IP代理服务之旅。",
           "icon": "tabler:package"
         },
         {
@@ -69,7 +69,7 @@
       ]
     },
     "features": {
-      "title": "ipflex的优势",
+      "title": "IPFlex的优势",
       "subtitle": "我们提供市场上最专业、最全面的IP代理服务。",
       "items": [
         {
@@ -126,13 +126,13 @@
     },
     "callToAction": {
       "title": "专业的IP代理服务",
-      "subtitle1": "立即体验ipflex的高效稳定的IP代理服务。",
+      "subtitle1": "立即体验IPFlex的高效稳定的IP代理服务。",
       "subtitle2": "不要再犹豫了，立即行动！",
       "primaryAction": "获取服务"
     },
     "features2": {
       "title": "常用场景",
-      "subtitle": "ipflex的IP代理服务适用于各种业务场景。",
+      "subtitle": "IPFlex的IP代理服务适用于各种业务场景。",
       "items": [
         {
           "title": "网页数据采集",
@@ -184,27 +184,27 @@
     "faqs": {
       "title": "常见问题",
       "sub":"FAQs",
-      "subtitle": "了解ipflex的强大功能以及如何提升您的业务。",
+      "subtitle": "了解IPFlex的强大功能以及如何提升您的业务。",
       "items": [
         {
-          "title": "为什么选择ipflex?",
-          "description": "ipflex提供高效、稳定、安全的IP代理服务，适用于各种业务需求。"
+          "title": "为什么选择IPFlex?",
+          "description": "IPFlex提供高效、稳定、安全的IP代理服务，适用于各种业务需求。"
         },
         {
           "title": "我需要什么来开始使用?",
-          "description": "只需在ipflex官网注册账号，选择合适的套餐，即可开始使用我们的IP代理服务。"
+          "description": "只需在IPFlex官网注册账号，选择合适的套餐，即可开始使用我们的IP代理服务。"
         },
         {
-          "title": "如何安装和配置ipflex的IP代理服务?",
+          "title": "如何安装和配置IPFlex的IP代理服务?",
           "description": "在官网注册账号后，根据提示选择套餐并配置IP代理服务，即可开始使用。"
         },
         {
-          "title": "ipflex的IP代理服务有哪些优势?",
-          "description": "ipflex提供高效稳定的IP代理服务，支持全球覆盖，灵活计费，专业支持。"
+          "title": "IPFlex的IP代理服务有哪些优势?",
+          "description": "IPFlex提供高效稳定的IP代理服务，支持全球覆盖，灵活计费，专业支持。"
         },
         {
-          "title": "ipflex的IP代理服务适用于哪些场景?",
-          "description": "ipflex的IP代理服务适用于电商、社交媒体、数据采集等多种场景。"
+          "title": "IPFlex的IP代理服务适用于哪些场景?",
+          "description": "IPFlex的IP代理服务适用于电商、社交媒体、数据采集等多种场景。"
         },
         {
           "title": "如何获取技术支持?",
