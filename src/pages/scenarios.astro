@@ -1,0 +1,286 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Button from '~/components/ui/Button.astro';
+const metadata = {
+  title: 'IPFlex应用场景',
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="scenarios-section px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-6xl relative">
+    <div class="mb-10 md:mx-auto text-center md:mb-12 max-w-3xl relative z-10">
+      <h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading text-gray-800 dark:text-gray-100">
+        IPFlex应用场景
+      </h2>
+      <p class="text-xl text-gray-600 dark:text-slate-400">
+        解锁边界，IPFlex 代理让每一业务场景畅行无忧，畅享世界网络资源
+      </p>
+      <div class="mt-6">
+        <a href="https://dashboard.ipflex.ink/register" 
+           class="relative inline-flex items-center justify-center rounded-full border-2 border-blue-400 bg-white px-6 py-3 text-base font-medium text-blue-500 shadow-sm hover:bg-blue-50 hover:text-blue-600 transition-all duration-300">
+          立即使用
+        </a>
+      </div>
+    </div>
+
+    <div class="grid gap-8 relative z-[1]">
+      {/* 网页数据采集 */}
+      <div class="group relative overflow-hidden bg-gradient-to-br from-violet-50 to-fuchsia-100 dark:from-slate-800 dark:to-slate-700 rounded-2xl p-8 ml-0 mr-[20%] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-violet-100 dark:border-slate-600">
+        <div class="text-gray-700 dark:text-gray-100">
+          <h3 class="text-2xl font-bold mb-4 text-violet-600 dark:text-violet-300">网页数据采集</h3>
+          <p class="mb-4 text-gray-600 dark:text-gray-300">突破网站反爬虫限制，隐藏真实 IP，模拟多用户访问，让数据采集持续、高效，助您精准获取海量网页信息，用于市场分析、竞品研究。</p>
+          <ul class="space-y-2">
+            <li class="flex items-center text-gray-600 dark:text-gray-300">
+              <span class="w-2 h-2 bg-violet-400 rounded-full mr-2"></span>
+              数据获取全面广泛，无遗漏
+            </li>
+            <li class="flex items-center text-gray-600 dark:text-gray-300">
+              <span class="w-2 h-2 bg-violet-400 rounded-full mr-2"></span>
+              采集过程高效快速，省时间
+            </li>
+            <li class="flex items-center text-gray-600 dark:text-gray-300">
+              <span class="w-2 h-2 bg-violet-400 rounded-full mr-2"></span>
+              定位目标精准准确，质量高
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* 电子商务运营 */}
+      <div class="group relative overflow-hidden bg-gradient-to-br from-pink-50 to-rose-100 dark:from-slate-800 dark:to-slate-700 rounded-2xl p-8 ml-[20%] mr-0 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-pink-100 dark:border-slate-600">
+        <div class="text-gray-700 dark:text-gray-100">
+          <h3 class="text-2xl font-bold mb-4 text-pink-600 dark:text-pink-300">电子商务运营</h3>
+          <p class="mb-4 text-gray-600 dark:text-gray-300">监控竞品价格、库存，跨境时突破地域限制，模拟各地用户访问，助力商家灵活制定策略，抢占市场先机。</p>
+          <ul class="space-y-2">
+            <li class="flex items-center text-gray-600 dark:text-gray-300">
+              <span class="w-2 h-2 bg-pink-400 rounded-full mr-2"></span>
+              敏锐洞察商机，抢占市场先机
+            </li>
+            <li class="flex items-center text-gray-600 dark:text-gray-300">
+              <span class="w-2 h-2 bg-pink-400 rounded-full mr-2"></span>
+              精准优化策略，提升产品竞争力
+            </li>
+            <li class="flex items-center text-gray-600 dark:text-gray-300">
+              <span class="w-2 h-2 bg-pink-400 rounded-full mr-2"></span>
+              突显竞争优势，稳固市场地位
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* 市场调研洞察 */}
+      <div class="group relative overflow-hidden bg-gradient-to-br from-green-50 to-emerald-100 dark:from-slate-800 dark:to-slate-700 rounded-2xl p-8 ml-0 mr-[20%] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-green-100 dark:border-slate-600">
+        <div class="text-gray-700 dark:text-gray-100">
+          <h3 class="text-2xl font-bold mb-4 text-green-600 dark:text-green-300">市场调研洞察</h3>
+          <p class="mb-4 text-gray-600 dark:text-gray-300">跨越地域与访问频率阻碍，深入各地数据源，确保调研数据精准、可靠，为您呈现真实市场全貌。</p>
+          <ul class="space-y-2">
+            <li class="flex items-center text-gray-600 dark:text-gray-300">
+              <span class="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
+              深度洞察需求，助力产品研发
+            </li>
+            <li class="flex items-center text-gray-600 dark:text-gray-300">
+              <span class="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
+              精准定位市场，优化推广策略
+            </li>
+            <li class="flex items-center text-gray-600 dark:text-gray-300">
+              <span class="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
+              准确预测趋势，引领行业发展
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* 社交媒体拓展 */}
+      <div class="group relative overflow-hidden bg-gradient-to-br from-purple-50 to-violet-100 dark:from-slate-800 dark:to-slate-700 rounded-2xl p-8 ml-[20%] mr-0 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-purple-100 dark:border-slate-600">
+        <div class="text-gray-700 dark:text-gray-100">
+          <h3 class="text-2xl font-bold mb-4 text-purple-600 dark:text-purple-300">社交媒体拓展</h3>
+          <p class="mb-4 text-gray-600 dark:text-gray-300">突破平台地域限制，伪装多样用户操作，提升账号曝光与互动，帮您挖掘全球潜在粉丝，扩大品牌影响力。</p>
+          <ul class="space-y-2">
+            <li class="flex items-center text-gray-600 dark:text-gray-300">
+              <span class="w-2 h-2 bg-purple-400 rounded-full mr-2"></span>
+              大幅加速品牌曝光，吸引潜在客户
+            </li>
+            <li class="flex items-center text-gray-600 dark:text-gray-300">
+              <span class="w-2 h-2 bg-purple-400 rounded-full mr-2"></span>
+              精准定位目标受众，提高粉丝质量
+            </li>
+            <li class="flex items-center text-gray-600 dark:text-gray-300">
+              <span class="w-2 h-2 bg-purple-400 rounded-full mr-2"></span>
+              有效规避平台限制，保障营销稳定
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* SEO策略优化 */}
+      <div class="group relative overflow-hidden bg-gradient-to-br from-orange-50 to-amber-100 dark:from-slate-800 dark:to-slate-700 rounded-2xl p-8 ml-0 mr-[20%] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-orange-100 dark:border-slate-600">
+        <div class="text-gray-700 dark:text-gray-100">
+          <h3 class="text-2xl font-bold mb-4 text-orange-600 dark:text-orange-300">SEO策略优化</h3>
+          <p class="mb-4 text-gray-600 dark:text-gray-300">模拟各地搜索行为，精准洞察排名，优化网站内容与关键词，躲避外链监测屏蔽，强化链接建设。</p>
+          <ul class="space-y-2">
+            <li class="flex items-center text-gray-600 dark:text-gray-300">
+              <span class="w-2 h-2 bg-orange-400 rounded-full mr-2"></span>
+              显著提升排名位置，增加自然流量
+            </li>
+            <li class="flex items-center text-gray-600 dark:text-gray-300">
+              <span class="w-2 h-2 bg-orange-400 rounded-full mr-2"></span>
+              优化流量质量来源，提高转化率
+            </li>
+            <li class="flex items-center text-gray-600 dark:text-gray-300">
+              <span class="w-2 h-2 bg-orange-400 rounded-full mr-2"></span>
+              及时调整优化策略，适应算法变化
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* 广告投放增效 */}
+      <div class="group relative overflow-hidden bg-gradient-to-br from-cyan-50 to-blue-100 dark:from-slate-800 dark:to-slate-700 rounded-2xl p-8 ml-[20%] mr-0 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-cyan-100 dark:border-slate-600">
+        <div class="text-gray-700 dark:text-gray-100">
+          <h3 class="text-2xl font-bold mb-4 text-cyan-600 dark:text-cyan-300">广告投放增效</h3>
+          <p class="mb-4 text-gray-600 dark:text-gray-300">模拟多元用户投放反馈，精准优化广告，识别过滤欺诈点击，提升投资回报率，让每一分投入都物超所值。</p>
+          <ul class="space-y-2">
+            <li class="flex items-center text-gray-600 dark:text-gray-300">
+              <span class="w-2 h-2 bg-cyan-400 rounded-full mr-2"></span>
+              提高投放精准程度，直击目标客户
+            </li>
+            <li class="flex items-center text-gray-600 dark:text-gray-300">
+              <span class="w-2 h-2 bg-cyan-400 rounded-full mr-2"></span>
+              实现效果评估全面，数据详细精准
+            </li>
+            <li class="flex items-center text-gray-600 dark:text-gray-300">
+              <span class="w-2 h-2 bg-cyan-400 rounded-full mr-2"></span>
+              优化成本效益比例，提升投资回报
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* 网站性能测试 */}
+      <div class="group relative overflow-hidden bg-gradient-to-br from-violet-50 to-purple-100 dark:from-slate-800 dark:to-slate-700 rounded-2xl p-8 ml-0 mr-[20%] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-violet-100 dark:border-slate-600">
+        <div class="text-gray-700 dark:text-gray-100">
+          <h3 class="text-2xl font-bold mb-4 text-violet-600 dark:text-violet-300">网站性能测试</h3>
+          <p class="mb-4 text-gray-600 dark:text-gray-300">模拟不同网络、地域用户访问，精准定位性能瓶颈，优化服务器与 CDN，保障网站流畅运行。</p>
+          <ul class="space-y-2">
+            <li class="flex items-center text-gray-600 dark:text-gray-300">
+              <span class="w-2 h-2 bg-violet-400 rounded-full mr-2"></span>
+              提前发现潜在问题，防患于未然
+            </li>
+            <li class="flex items-center text-gray-600 dark:text-gray-300">
+              <span class="w-2 h-2 bg-violet-400 rounded-full mr-2"></span>
+              保障全球用户体验，提升满意度
+            </li>
+            <li class="flex items-center text-gray-600 dark:text-gray-300">
+              <span class="w-2 h-2 bg-violet-400 rounded-full mr-2"></span>
+              提供技术决策依据，优化资源配置
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* 品牌安全守护 */}
+      <div class="group relative overflow-hidden bg-gradient-to-br from-red-50 to-pink-100 dark:from-slate-800 dark:to-slate-700 rounded-2xl p-8 ml-[20%] mr-0 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-red-100 dark:border-slate-600">
+        <div class="text-gray-700 dark:text-gray-100">
+          <h3 class="text-2xl font-bold mb-4 text-red-600 dark:text-red-300">品牌安全守护</h3>
+          <p class="mb-4 text-gray-600 dark:text-gray-300">全网扫描侵权假冒，追踪攻击源头，加密数据共享，全方位捍卫品牌声誉与权益。</p>
+          <ul class="space-y-2">
+            <li class="flex items-center text-gray-600 dark:text-gray-300">
+              <span class="w-2 h-2 bg-red-400 rounded-full mr-2"></span>
+              强化攻击防御能力，保障业务安全
+            </li>
+            <li class="flex items-center text-gray-600 dark:text-gray-300">
+              <span class="w-2 h-2 bg-red-400 rounded-full mr-2"></span>
+              及时监测侵权行为，维护品牌权益
+            </li>
+            <li class="flex items-center text-gray-600 dark:text-gray-300">
+              <span class="w-2 h-2 bg-red-400 rounded-full mr-2"></span>
+              长效维护品牌声誉，增强市场信任
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* 舆情动态追踪 */}
+      <div class="group relative overflow-hidden bg-gradient-to-br from-amber-50 to-orange-100 dark:from-slate-800 dark:to-slate-700 rounded-2xl p-8 ml-0 mr-[20%] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-amber-100 dark:border-slate-600">
+        <div class="text-gray-700 dark:text-gray-100">
+          <h3 class="text-2xl font-bold mb-4 text-amber-600 dark:text-amber-300">舆情动态追踪</h3>
+          <p class="mb-4 text-gray-600 dark:text-gray-300">突破信息获取限制，汇集全球舆情，助您第一时间掌握舆论风向，及时调整公关策略。</p>
+          <ul class="space-y-2">
+            <li class="flex items-center text-gray-600 dark:text-gray-300">
+              <span class="w-2 h-2 bg-amber-400 rounded-full mr-2"></span>
+              危机预警及时迅速，降低负面影响
+            </li>
+            <li class="flex items-center text-gray-600 dark:text-gray-300">
+              <span class="w-2 h-2 bg-amber-400 rounded-full mr-2"></span>
+              精准反馈市场动态，助力策略调整
+            </li>
+            <li class="flex items-center text-gray-600 dark:text-gray-300">
+              <span class="w-2 h-2 bg-amber-400 rounded-full mr-2"></span>
+              有效维护品牌形象，提升公众好感
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .scenarios-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8fafc 0%, #f0f4ff 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scenarios-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      linear-gradient(120deg, rgba(99, 102, 241, 0.03) 0%, transparent 50%),
+      linear-gradient(240deg, rgba(244, 114, 182, 0.03) 0%, transparent 50%),
+      repeating-linear-gradient(45deg, rgba(99, 102, 241, 0.01) 0%, rgba(99, 102, 241, 0.01) 1px, transparent 1px, transparent 12px),
+      repeating-linear-gradient(-45deg, rgba(244, 114, 182, 0.01) 0%, rgba(244, 114, 182, 0.01) 1px, transparent 1px, transparent 12px);
+    z-index: 0;
+  }
+
+  .scenarios-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 0% 0%, rgba(99, 102, 241, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 100% 100%, rgba(244, 114, 182, 0.03) 0%, transparent 50%);
+    z-index: 0;
+  }
+
+  .grid {
+    position: relative;
+  }
+
+  .group {
+    backdrop-filter: blur(8px);
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.group');
+    cards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        card.style.setProperty('--mouse-x', `${x}%`);
+        card.style.setProperty('--mouse-y', `${y}%`);
+      });
+    });
+  });
+</script> 
