@@ -1,0 +1,175 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { getI18N, type SupportedLanguage } from "~/i18n/utils";
+
+export const getStaticPaths = () => {
+  return [
+    { params: { lang: 'zh' } },
+    { params: { lang: 'en' } },
+  ];
+};
+
+const { lang = 'zh' } = Astro.params;
+const t = getI18N(lang as SupportedLanguage);
+
+const metadata = {
+  title: t('scenarios.title'),
+};
+
+const scenarios = [
+  {
+    id: 'web-data',
+    color: 'violet',
+    title: t('scenarios.web_data.title'),
+    description: t('scenarios.web_data.description'),
+    benefits: [
+      t('scenarios.web_data.benefits.1'),
+      t('scenarios.web_data.benefits.2'),
+      t('scenarios.web_data.benefits.3'),
+    ]
+  },
+  {
+    id: 'ecommerce',
+    color: 'pink',
+    title: t('scenarios.ecommerce.title'),
+    description: t('scenarios.ecommerce.description'),
+    benefits: [
+      t('scenarios.ecommerce.benefits.1'),
+      t('scenarios.ecommerce.benefits.2'),
+      t('scenarios.ecommerce.benefits.3'),
+    ]
+  },
+  {
+    id: 'market-research',
+    color: 'green',
+    title: t('scenarios.market_research.title'),
+    description: t('scenarios.market_research.description'),
+    benefits: [
+      t('scenarios.market_research.benefits.1'),
+      t('scenarios.market_research.benefits.2'),
+      t('scenarios.market_research.benefits.3'),
+    ]
+  },
+  {
+    id: 'social-media',
+    color: 'purple',
+    title: t('scenarios.social_media.title'),
+    description: t('scenarios.social_media.description'),
+    benefits: [
+      t('scenarios.social_media.benefits.1'),
+      t('scenarios.social_media.benefits.2'),
+      t('scenarios.social_media.benefits.3'),
+    ]
+  },
+  {
+    id: 'seo',
+    color: 'orange',
+    title: t('scenarios.seo.title'),
+    description: t('scenarios.seo.description'),
+    benefits: [
+      t('scenarios.seo.benefits.1'),
+      t('scenarios.seo.benefits.2'),
+      t('scenarios.seo.benefits.3'),
+    ]
+  },
+  {
+    id: 'advertising',
+    color: 'cyan',
+    title: t('scenarios.advertising.title'),
+    description: t('scenarios.advertising.description'),
+    benefits: [
+      t('scenarios.advertising.benefits.1'),
+      t('scenarios.advertising.benefits.2'),
+      t('scenarios.advertising.benefits.3'),
+    ]
+  },
+  {
+    id: 'performance',
+    color: 'violet',
+    title: t('scenarios.performance.title'),
+    description: t('scenarios.performance.description'),
+    benefits: [
+      t('scenarios.performance.benefits.1'),
+      t('scenarios.performance.benefits.2'),
+      t('scenarios.performance.benefits.3'),
+    ]
+  },
+  {
+    id: 'brand-safety',
+    color: 'red',
+    title: t('scenarios.brand_safety.title'),
+    description: t('scenarios.brand_safety.description'),
+    benefits: [
+      t('scenarios.brand_safety.benefits.1'),
+      t('scenarios.brand_safety.benefits.2'),
+      t('scenarios.brand_safety.benefits.3'),
+    ]
+  },
+  {
+    id: 'public-opinion',
+    color: 'amber',
+    title: t('scenarios.public_opinion.title'),
+    description: t('scenarios.public_opinion.description'),
+    benefits: [
+      t('scenarios.public_opinion.benefits.1'),
+      t('scenarios.public_opinion.benefits.2'),
+      t('scenarios.public_opinion.benefits.3'),
+    ]
+  }
+];
+---
+
+<Layout metadata={metadata}>
+  <section class="scenarios-section px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-6xl relative">
+    <div class="mb-10 md:mx-auto text-center md:mb-12 max-w-3xl relative z-10">
+      <h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading text-gray-800 dark:text-gray-100">
+        {t('scenarios.title')}
+      </h2>
+      <p class="text-xl text-gray-600 dark:text-slate-400">
+        {t('scenarios.subtitle')}
+      </p>
+      <div class="mt-6">
+        <a href="https://dashboard.ipflex.ink/register" 
+           class="relative inline-flex items-center justify-center rounded-full border-2 border-blue-400 bg-white px-6 py-3 text-base font-medium text-blue-500 shadow-sm hover:bg-blue-50 hover:text-blue-600 transition-all duration-300">
+          {t('scenarios.cta')}
+        </a>
+      </div>
+    </div>
+
+    <div class="grid gap-8 relative z-[1]">
+      {scenarios.map((scenario, index) => (
+        <div class={`group relative overflow-hidden bg-gradient-to-br from-${scenario.color}-50 to-${scenario.color === 'amber' ? 'orange' : scenario.color}-100 dark:from-slate-800 dark:to-slate-700 rounded-2xl p-8 ${index % 2 === 0 ? 'ml-0 mr-[20%]' : 'ml-[20%] mr-0'} hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-${scenario.color}-100 dark:border-slate-600`}>
+          <div class="text-gray-700 dark:text-gray-100">
+            <h3 class={`text-2xl font-bold mb-4 text-${scenario.color}-600 dark:text-${scenario.color}-300`}>{scenario.title}</h3>
+            <p class="mb-4 text-gray-600 dark:text-gray-300">{scenario.description}</p>
+            <ul class="space-y-2">
+              {scenario.benefits.map((benefit) => (
+                <li class="flex items-center text-gray-600 dark:text-gray-300">
+                  <span class={`w-2 h-2 bg-${scenario.color}-400 rounded-full mr-2`}></span>
+                  {benefit}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .scenarios-section {
+    min-height: 100vh;
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .grid {
+    position: relative;
+  }
+
+  .group {
+    backdrop-filter: blur(8px);
+  }
+</style> 

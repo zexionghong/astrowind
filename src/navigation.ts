@@ -24,7 +24,7 @@ export const getHeaderData = (lang: string = 'zh') => ({
     },
     {
       text: lang === 'zh' ? '应用场景' : 'Cases',
-      href: `/${lang}/services`
+      href: `/${lang}/scenarios`
     },
     {
       text: lang === 'zh' ? '帮助中心' : 'Help',
