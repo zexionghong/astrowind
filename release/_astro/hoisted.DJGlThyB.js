@@ -1,0 +1,1 @@
+import"./hoisted.KlofP4n3.js";document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll(".group").forEach(e=>{e.addEventListener("mousemove",o=>{const t=e.getBoundingClientRect(),n=(o.clientX-t.left)/t.width*100,s=(o.clientY-t.top)/t.height*100;e.style.setProperty("--mouse-x",`${n}%`),e.style.setProperty("--mouse-y",`${s}%`)})})});

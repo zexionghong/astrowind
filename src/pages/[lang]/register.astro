@@ -13,6 +13,13 @@ export async function getStaticPaths() {
 const { lang } = Astro.params;
 const t = await useTranslations(lang);
 
+// 添加更详细的调试日志
+const url = Astro.url;
+const inviteCode = url.searchParams.get('invite') || '';
+console.log('[DEBUG] Full URL:', url.toString());
+console.log('[DEBUG] Search Params:', Object.fromEntries(url.searchParams));
+console.log('[DEBUG] Invite Code:', inviteCode);
+
 const metadata = {
   title: lang === 'zh' ? 'IPFlex — 用户注册' : 'IPFlex — User Registration',
   ignoreTitleTemplate: true,
@@ -24,9 +31,16 @@ const handleSubmit = `async function(e) {
   
   try {
     const formData = new FormData(e.target);
-    formData.set('name', formData.get('username')); // 将username字段映射为name
-    formData.set('confirm_password', formData.get('password')); // 设置确认密码
-    formData.set('invite_code', formData.get('invite')); // 将invite字段映射为invite_code
+    
+    // 如果邀请码输入框被禁用，确保添加到 formData
+    const inviteInput = document.querySelector('input[name="invite"]');
+    if (inviteInput && inviteInput.disabled) {
+      formData.set('invite', inviteInput.value);
+    }
+    
+    formData.set('name', formData.get('username')); 
+    formData.set('confirm_password', formData.get('password')); 
+    formData.set('invite_code', formData.get('invite')); 
     
     const response = await fetch('https://api.ipflex.ink/user/register', {
       method: 'POST',
@@ -37,7 +51,6 @@ const handleSubmit = `async function(e) {
     console.log(result);
   
     if (result.code === 0) {
-      // 注册成功,提示用户查看邮箱
       alert('${alert_msg}');
     } else {
       alert(result.msg || '注册失败，请重试');
@@ -48,6 +61,17 @@ const handleSubmit = `async function(e) {
   }
 }`;
 ---
+
+<script>
+  console.log('[DEBUG] Client-side loaded');
+  console.log('[DEBUG] Current URL:', window.location.href);
+  console.log('[DEBUG] Invite Input:', document.querySelector('input[name="invite"]')?.value);
+</script>
+
+<!-- 在Form组件之前添加调试信息 -->
+<div style="display: none">
+  Debug Info: {JSON.stringify({url: url.toString(), inviteCode})}
+</div>
 
 <Layout metadata={metadata} has_header={false} has_footer={false}>
   <div class="min-h-screen flex flex-col md:flex-row">
@@ -143,7 +167,9 @@ const handleSubmit = `async function(e) {
               name: 'invite',
               label: lang === 'zh' ? '邀请码' : 'Invite Code',
               placeholder: lang === 'zh' ? '选填' : 'Optional',
-              containerClassName: 'mb-6'
+              containerClassName: 'mb-6',
+              value: inviteCode,
+              disabled: !!inviteCode,
             },
           ]}
           button={{
@@ -170,3 +196,19 @@ const handleSubmit = `async function(e) {
     padding: 0 !important;
   }
 </style> 
+
+<script>
+  // 确保在页面加载后设置邀请码
+  document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const inviteCode = urlParams.get('invite');
+    if (inviteCode) {
+      const inviteInput = document.querySelector('input[name="invite"]');
+      if (inviteInput) {
+        inviteInput.value = inviteCode;
+        inviteInput.disabled = true;
+        console.log('[DEBUG] Set invite code:', inviteCode);
+      }
+    }
+  });
+</script> 

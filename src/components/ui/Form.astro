@@ -8,7 +8,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
   {
     inputs &&
       inputs.map(
-        ({ type = 'text', name, label = '', autocomplete = 'on', placeholder = '', required = false, containerClassName = '' }) =>
+        ({ type = 'text', name, label = '', autocomplete = 'on', placeholder = '', required = false, containerClassName = '', value = '', disabled = false }) =>
           name && (
             <div class={`mb-6 ${containerClassName} flex items-center gap-4`}>
               {label && (
@@ -24,7 +24,10 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
                 autocomplete={autocomplete}
                 placeholder={placeholder}
                 required={required}
-                class="flex-1 px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-slate-900"
+                value={value}
+                disabled={disabled}
+                data-debug={`value:${value},disabled:${disabled}`}
+                class="flex-1 px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-slate-900 disabled:bg-gray-100 dark:disabled:bg-gray-800 disabled:cursor-not-allowed"
               />
             </div>
           )
