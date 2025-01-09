@@ -1,11 +1,10 @@
 ---
 import type { Form as Props } from '~/types';
-import Button from '~/components/ui/Button.astro';
 
 const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } = Astro.props;
 ---
 
-<form>
+<form id="form">
   {
     inputs &&
       inputs.map(
@@ -72,16 +71,12 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
   {
     button && (
       <div class="mt-10 grid">
-        {typeof button === 'string' ? (
-          <Button type="submit" text={button} />
-        ) : (
-          <Button 
-            type="submit" 
-            text={button.text}
-            class={button.className}
-            onclick={button.onclick}
-          />
-        )}
+        <button 
+          type="submit" 
+          class={typeof button === 'object' ? button.className : 'btn-primary'}
+        >
+          {typeof button === 'object' ? button.text : button}
+        </button>
       </div>
     )
   }
@@ -94,3 +89,15 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
     )
   }
 </form>
+
+<script define:vars={{ button }}>
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('form');
+  if (form && typeof button === 'object' && button.onclick) {
+    form.addEventListener('submit', function(e) {
+      const fn = new Function('return ' + button.onclick)();
+      fn(e);
+    });
+  }
+});
+</script>
