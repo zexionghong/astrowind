@@ -1,0 +1,29 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { getEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'zh' } }
+  ];
+}
+
+const { lang } = Astro.params;
+const privacy = await getEntry('privacy', lang);
+const { Content } = await privacy.render();
+
+const metadata = {
+  title: privacy.data.title,
+  description: `IPFlex ${lang === 'zh' ? '隐私政策' : 'Privacy Policy'}`,
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
+    <div class="prose prose-lg lg:prose-xl dark:prose-invert max-w-4xl mx-auto">
+      <h1 class="text-center mb-8">{privacy.data.title}</h1>
+      <Content />
+    </div>
+  </section>
+</Layout> 
