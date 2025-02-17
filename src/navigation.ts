@@ -26,15 +26,16 @@ export const getHeaderData = (lang: string = 'zh') => ({
       text: lang === 'zh' ? '应用场景' : 'Cases',
       href: `/${lang}/scenarios`
     },
-    {
-      text: lang === 'zh' ? '帮助中心' : 'Help',
-      href: `/${lang}/help`
-    },
-    {
-      text: lang === 'zh' ? '资讯中心' : 'News',
-      href: '#',
-    },
-    
+    ...(lang === 'zh' ? [
+      {
+        text: '帮助中心',
+        href: `https://ipflex-helpcenter.helplook.net/`
+      },
+      {
+        text: '资讯中心',
+        href: 'https://ipflex-news.helplook.com/',
+      }
+    ] : [])
   ],
   actions: [
     { text: lang === 'zh' ? '注册' : 'Sign Up', href: 'https://dashboard.ipflex.ink', target: '_blank', color: 'blue' },
@@ -93,6 +94,6 @@ export const getFooterData = (lang: string = 'zh') => ({
     { ariaLabel: 'Discord', icon: 'tabler:brand-discord', href: '#' },
   ],
   footNote: `
-    © ${new Date().getFullYear()} ${SITE.name}. ${lang === 'zh' ? '版权所有' : 'All rights reserved'}.
+    ${new Date().getFullYear()} ${SITE.name}. ${lang === 'zh' ? '版权所有' : 'All rights reserved'}.
   `,
 });
