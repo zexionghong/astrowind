@@ -7,11 +7,12 @@ export interface Props {
   title?: string;
   subtitle?: string;
   description: string;
+  descriptionList: string[];
   features: Feature[];
   isEven?: boolean;
 }
 
-const { title, subtitle, description, features, isEven = false } = Astro.props;
+const { title, subtitle,  features,description="",descriptionList=[], isEven = false } = Astro.props;
 ---
 
 <div class={`mx-auto px-4 sm:px-6 ${title ? 'py-12' : 'pb-12'} mb-12`}>
@@ -23,19 +24,26 @@ const { title, subtitle, description, features, isEven = false } = Astro.props;
     }
     {subtitle && 
       <div class="max-w-16xl mx-auto">
-        <h3 class={`text-xl text-blue-500 mb-6 pb-2 border-b border-blue-100 ${isEven ? 'text-right' : 'text-left'}`}>
+        <h2 class={`text-2xl text-blue-500 mb-6 relative ${isEven ? 'text-right' : 'text-left'}`}>
           {subtitle}
-        </h3>
+          <div class={`absolute bottom-0 h-0.5 w-[300px] ${
+            isEven 
+              ? 'right-0 bg-gradient-to-l from-purple-500 via-blue-500 to-transparent' 
+              : 'left-0 bg-gradient-to-r from-purple-500 via-blue-500 to-transparent'
+          }`}></div>
+        </h2>
       </div>
     }
     <div class="max-w-16xl mx-auto">
-      <p class={`text-gray-600 dark:text-gray-300 mb-16 text-lg ${isEven ? 'text-right' : 'text-left'}`}>
-        {description}
+      <p class={`text-gray-600 dark:text-gray-300 mb-12 text-lg ${isEven ? 'text-right' : 'text-left'}`}>
+        {description?description:descriptionList.map((l) => (
+          <span>{l}</span><br/>
+        ))}
       </p>
     </div>
     <div class="grid grid-cols-4 gap-8">
       {features.map((feature) => (
-        <div class="bg-blue-50 backdrop-blur-sm rounded-2xl p-6 flex items-center shadow-sm">
+        <div class="bg-blue-50/50 backdrop-blur-sm rounded-2xl p-6 flex items-center shadow-sm">
           <span class="text-blue-600 mr-3 text-lg">✓</span>
           <span class="text-gray-700 dark:text-gray-300">{feature.title}</span>
         </div>
