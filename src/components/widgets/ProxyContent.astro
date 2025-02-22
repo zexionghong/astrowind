@@ -6,10 +6,10 @@ const{ bg} = Astro.props;
 ---
 
 <WidgetWrapper
-  containerClass="max-w-7xl mx-auto pt-0"
+  containerClass="max-w-10xl mx-auto !pt-0 !py-0 !mt-0"
 >
   <div slot="bg" set:html={bg} />
-  <div class="bg-white dark:bg-slate-900 rounded-[40px] shadow-xl p-8 relative z-10">
+  <div class="bg-white dark:bg-slate-900 rounded-[50px] shadow-xl pb-8 px-8 relative z-10 backdrop-blur-sm">
     <ProxyService
     title="住宅代理"
     subtitle="静态住宅代理"
