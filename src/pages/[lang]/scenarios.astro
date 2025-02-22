@@ -1,7 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import { getI18N, type SupportedLanguage } from "~/i18n/utils";
-
+import { useTranslations } from '~/utils/i18n';
 export const getStaticPaths = () => {
   return [
     { params: { lang: 'zh' } },
@@ -10,7 +9,7 @@ export const getStaticPaths = () => {
 };
 
 const { lang = 'zh' } = Astro.params;
-const t = getI18N(lang as SupportedLanguage);
+const t = await useTranslations(lang);
 
 const metadata = {
   title: t('scenarios.title'),
