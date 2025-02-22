@@ -1,0 +1,39 @@
+---
+interface Feature {
+  title: string;
+}
+
+export interface Props {
+  title: string;
+  subtitle?: string;
+  description: string;
+  features: Feature[];
+  isEven?: boolean;
+}
+
+const { title, subtitle, description, features, isEven = false } = Astro.props;
+---
+
+<div class="mx-auto px-4 sm:px-6 py-12 bg-white dark:bg-slate-900 rounded-[40px] mb-12">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-8">
+      <h2 class="text-4xl font-bold text-blue-600">{title}</h2>
+    </div>
+    {subtitle && 
+      <h3 class={`text-xl text-blue-500 mb-6 pb-2 border-b border-blue-100 ${isEven ? 'text-right' : 'text-left'}`}>
+        {subtitle}
+      </h3>
+    }
+    <p class="text-gray-600 dark:text-gray-300 mb-16 max-w-4xl mx-auto text-lg">
+      {description}
+    </p>
+    <div class="grid grid-cols-4 gap-8">
+      {features.map((feature) => (
+        <div class="bg-blue-50/50 backdrop-blur-sm rounded-2xl p-6 flex items-center shadow-sm">
+          <span class="text-blue-600 mr-3 text-lg">✓</span>
+          <span class="text-gray-700">{feature.title}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</div> 
