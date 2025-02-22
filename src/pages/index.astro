@@ -10,8 +10,8 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import ProxyService from '~/components/widgets/ProxyService.astro';
 import { useTranslations } from '~/utils/i18n';
+import ProxyContent from '~/components/widgets/ProxyContent.astro';
 
 export async function getStaticPaths() {
   return [
@@ -55,47 +55,10 @@ console.log(t('index.hero.primaryAction'));
   </Hero>
 
   <!-- Note Widget ******************* -->
-
+<ProxyContent
+bg={`<div class="absolute inset-0" style="background-image: url('/images/background/1.png'); background-size: cover; background-position: center;"></div>`}
+/>
   <!-- <Note /> -->
-
-  <ProxyService
-    title="住宅代理"
-    subtitle="静态住宅代理"
-    description="基于真实住宅网络的代理服务，提供长期不变的固定IP地址，具有真高度隐私性和可信度。能够有效避免被识别为代理或被封锁，适用于跨境电商、市场调研、社媒营销、品牌保护等多业务场景。"
-    features={[
-      { title: '真实长效住宅IP' },
-      { title: '可用率高达99.9%' },
-      { title: '精准城市定位' },
-      { title: 'HTTP、SOCKS5协议支持' },
-    ]}
-  />
-
-  <ProxyService
-    
-    subtitle="动态住宅代理"
-    description="基于不同运营商的动态住宅IP代理服务，提供动态切换的住宅IP地址。让您可以有效避免各类反爬虫和封锁机制，适用于数据采集、竞品分析、广告投放等多业务场景。"
-    features={[
-      { title: '真实动态住宅IP' },
-      { title: '千万+自动更IP' },
-      { title: '可选区域城市' },
-      { title: 'HTTP、SOCKS5协议支持' },
-    ]}
-    isEven={true}
-  />
-
-  <ProxyService
-    title="数据中心代理"
-    subtitle="静态数据中心代理"
-    description="基于数据中心网络的代理服务，提供长期不变的固定IP地址，适用于需要稳定的数据中心IP地址的场景。在全球布局建立上百个数据中心，大规模部署稳定高效的代理服务器，支持HTTP、SOCKS5等多种协议。"
-    features={[
-      { title: '长效数据中心IP' },
-      { title: '精准城市定位' },
-      { title: '可用率高达99.9%' },
-      { title: 'HTTP、SOCKS5协议支持' },
-    ]}
-  />
-
-  <!-- Content Widget **************** -->
 
   <Content
     isAfterContent

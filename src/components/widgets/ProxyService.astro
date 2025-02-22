@@ -22,13 +22,13 @@ const { title, subtitle, description, features, isEven = false } = Astro.props;
       </div>
     }
     {subtitle && 
-      <div class="max-w-4xl mx-auto">
+      <div class="max-w-16xl mx-auto">
         <h3 class={`text-xl text-blue-500 mb-6 pb-2 border-b border-blue-100 ${isEven ? 'text-right' : 'text-left'}`}>
           {subtitle}
         </h3>
       </div>
     }
-    <div class="max-w-4xl mx-auto">
+    <div class="max-w-16xl mx-auto">
       <p class={`text-gray-600 dark:text-gray-300 mb-16 text-lg ${isEven ? 'text-right' : 'text-left'}`}>
         {description}
       </p>
