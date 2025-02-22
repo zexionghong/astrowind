@@ -4,7 +4,7 @@ interface Feature {
 }
 
 export interface Props {
-  title: string;
+  title?: string;
   subtitle?: string;
   description: string;
   features: Feature[];
@@ -14,19 +14,25 @@ export interface Props {
 const { title, subtitle, description, features, isEven = false } = Astro.props;
 ---
 
-<div class="mx-auto px-4 sm:px-6 py-12 bg-white dark:bg-slate-900 rounded-[40px] mb-12">
+<div class={`mx-auto px-4 sm:px-6 ${title ? 'py-12' : 'pb-12'} bg-white dark:bg-slate-900 rounded-[40px] mb-12`}>
   <div class="max-w-7xl mx-auto">
-    <div class="text-center mb-8">
-      <h2 class="text-4xl font-bold text-blue-600">{title}</h2>
-    </div>
-    {subtitle && 
-      <h3 class={`text-xl text-blue-500 mb-6 pb-2 border-b border-blue-100 ${isEven ? 'text-right' : 'text-left'}`}>
-        {subtitle}
-      </h3>
+    {title && 
+      <div class="text-center mb-8">
+        <h2 class="text-4xl font-bold text-blue-600">{title}</h2>
+      </div>
     }
-    <p class="text-gray-600 dark:text-gray-300 mb-16 max-w-4xl mx-auto text-lg">
-      {description}
-    </p>
+    {subtitle && 
+      <div class="max-w-4xl mx-auto">
+        <h3 class={`text-xl text-blue-500 mb-6 pb-2 border-b border-blue-100 ${isEven ? 'text-right' : 'text-left'}`}>
+          {subtitle}
+        </h3>
+      </div>
+    }
+    <div class="max-w-4xl mx-auto">
+      <p class={`text-gray-600 dark:text-gray-300 mb-16 text-lg ${isEven ? 'text-right' : 'text-left'}`}>
+        {description}
+      </p>
+    </div>
     <div class="grid grid-cols-4 gap-8">
       {features.map((feature) => (
         <div class="bg-blue-50/50 backdrop-blur-sm rounded-2xl p-6 flex items-center shadow-sm">
