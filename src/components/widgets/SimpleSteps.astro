@@ -1,47 +1,31 @@
 ---
-interface Item {
-  title: string;
-  description: string;
-}
+import { useTranslations } from '~/utils/i18n';
 
 export interface Props {
-  items?: Array<Item>;
-  title?: string;
+  lang?: string;
 }
 
 const {
-  items = [
-    {
-      title: '注册账号',
-      description: '在IPFLEX官网注册账号\n开始您的IP代理服务之旅',
-    },
-    {
-      title: '选择套餐',
-      description: '根据您的业务需求\n选择合适的IP代理套餐',
-    },
-    {
-      title: '开始使用',
-      description: '配置您的IP代理服务\n开始使用稳定高效的IP代理服务',
-    },
-  ],
-  title = '快速开始使用IPFlex的IP代理服务'
+  lang = 'zh'
 } = Astro.props;
+
+const t = await useTranslations(lang);
 ---
 
-<div class="relative bg-[#1D4ED8] py-20">
+<div class="relative py-20">
   <div class="mx-auto max-w-6xl px-4 sm:px-6">
-    <h2 class="text-center text-3xl font-bold text-white mb-16">{title}</h2>
+    <h2 class="text-center text-3xl font-bold text-white mb-16">{t('index.steps.title')}</h2>
     <div class="flex justify-center items-start relative">
       <div class="grid grid-cols-4 gap-4 w-full max-w-4xl relative">
-        {items.map((item, index) => (
+        {[1, 2, 3].map((step) => (
           <div class="flex flex-col items-center text-center relative z-10">
             <div class="mb-6 relative">
               <div class="w-16 h-16 rounded-full border-[1px] border-white flex items-center justify-center">
                 <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center">
-                  
+                  <span class="text-xl font-bold text-[#1D4ED8]">0{step}</span>
                 </div>
               </div>
-              {index < items.length && (
+              {step < 4 && (
                 <div class="absolute left-[calc(50%)] top-[50%] -translate-y-1/2 w-[240px]">
                   <div class="absolute left-[50px] right-[10px] top-0 h-[2px] bg-white"></div>
                   <div class="w-full h-[2px]"></div>
@@ -49,10 +33,12 @@ const {
               )}
             </div>
             <div class="flex items-center mb-2">
-              <span class="text-white text-sm font-medium mr-2">步骤{index + 1}:</span>
-              <h3 class="text-lg font-bold text-white">{item.title}</h3>
+              <span class="text-white text-sm font-medium mr-2">{t('index.steps.stepPrefix')}{step}:</span>
+              <h3 class="text-lg font-bold text-white">{t(`index.steps.stepPrefix${step}`)}</h3>
             </div>
-            <p class="text-sm text-blue-100 max-w-[200px] whitespace-pre-line leading-relaxed">{item.description}</p>
+            <p class="text-sm text-blue-100 max-w-[200px] whitespace-pre-line leading-relaxed">
+              {t(`index.steps.stepPrefix${step}Description`)}
+            </p>
           </div>
         ))}
         <!-- 完成圆圈 -->
@@ -65,7 +51,7 @@ const {
             </div>
           </div>
           <div class="flex items-center mb-2">
-            <h3 class="text-lg font-bold text-white">完成！</h3>
+            <h3 class="text-lg font-bold text-white">{t('index.steps.completedText')}</h3>
           </div>
         </div>
       </div>

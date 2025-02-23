@@ -1,0 +1,15 @@
+{
+ 
+    "steps": {
+      "title": "Quick Start Guide for IPFlex Proxy Service",
+      "stepPrefix": "Step",
+      "stepPrefix1": "Register Account",
+      "stepPrefix2": "Choose Plan",
+      "stepPrefix3": "Start Using",
+      "stepPrefix1Description": "Register an account on IPFlex website and start your IP proxy service journey.",
+      "stepPrefix2Description": "Select the suitable IP proxy plan based on your business requirements.",
+      "stepPrefix3Description": "Configure your IP proxy service and start using our efficient and stable proxy service.",
+      "completedText": "Done!"
+    
+  }
+} 

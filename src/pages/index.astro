@@ -10,7 +10,7 @@ import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import { useTranslations } from '~/utils/i18n';
 import ProxyContent from '~/components/widgets/ProxyContent.astro';
-import SimpleSteps from '~/components/widgets/SimpleSteps.astro';
+import SetpsContent from '~/components/widgets/SetpsContent.astro';
 
 export async function getStaticPaths() {
   return [
@@ -60,7 +60,9 @@ bg={`<div class="absolute inset-0" style="background-image: url('/images/backgro
   <!-- <Note /> -->
 
   <!-- Steps Widget ****************** -->
-  <SimpleSteps />
+  <SetpsContent
+  bg={`<div class="absolute inset-0" style="background-image: url('/images/background/3.png'); background-size: cover; background-position: center;"></div>`}
+ />
 
   <!-- Features Widget *************** -->
 
