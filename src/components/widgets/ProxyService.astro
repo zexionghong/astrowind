@@ -24,7 +24,7 @@ const { title, subtitle,  features,description="",descriptionList=[], isEven = f
     }
     {subtitle && 
       <div class="max-w-16xl mx-auto">
-        <h2 class={`text-2xl text-blue-500 mb-6 relative ${isEven ? 'text-right' : 'text-left'}`}>
+        <h2 class={`text-xl text-blue-500 mb-6 relative ${isEven ? 'text-right' : 'text-left'}`}>
           {subtitle}
           <div class={`absolute bottom-0 h-0.5 w-[300px] ${
             isEven 
@@ -35,7 +35,7 @@ const { title, subtitle,  features,description="",descriptionList=[], isEven = f
       </div>
     }
     <div class="max-w-16xl mx-auto">
-      <p class={`text-gray-600 dark:text-gray-300 mb-12 text-lg ${isEven ? 'text-right' : 'text-left'}`}>
+      <p class={`text-gray-600 dark:text-gray-300 mb-12 text-sm ${isEven ? 'text-right' : 'text-left'}`}>
         {description?description:descriptionList.map((l) => (
           <span>{l}</span><br/>
         ))}

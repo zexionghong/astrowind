@@ -6,10 +6,10 @@ const{ bg} = Astro.props;
 ---
 
 <WidgetWrapper
-  containerClass="max-w-10xl mx-auto !pt-0 !py-0 !mt-0"
+  containerClass="!pt-0 !py-0 !mt-0 !px-0"
 >
   <div slot="bg" set:html={bg} />
-  <div class="bg-white dark:bg-slate-900 rounded-[50px] shadow-xl pb-8 px-8 relative z-10 backdrop-blur-sm">
+  <div class="bg-white/60 dark:bg-slate-900/60 rounded-[50px] shadow-xl pb-8 relative z-10 backdrop-blur-sm">
     <ProxyService
     title="住宅代理"
     subtitle="静态住宅代理"
@@ -39,7 +39,8 @@ const{ bg} = Astro.props;
     <ProxyService
     title="数据中心代理"
     subtitle="静态数据中心代理"
-    description="基于数据中心网络的代理服务，提供长期不变的固定IP地址，适用于需要稳定的数据中心IP地址的场景。在全球布局建立上百个数据中心，大规模部署稳定高效的代理服务器，支持HTTP、SOCKS5等多种协议。"
+    description=""
+    descriptionList={["基于数据中心网络的代理服务，提供长期不变的固定IP地址，适用于需要稳定的数据中心IP地址的场景。在全球布局建立上百个数据中心，大规模部署稳定高效的代理服务器，支持HTTP、SOCKS5等多种协议。"]}
     features={[
       { title: '长效数据中心IP' },
       { title: '精准城市定位' },
