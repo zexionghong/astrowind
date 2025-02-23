@@ -45,28 +45,15 @@
       }
     },
     "steps": {
-      "title": "Quick Start Guide for IPFlex IP Proxy Service",
-      "items": [
-        {
-          "title": "Step 1: <span class=\"font-medium\">Register Account</span>",
-          "description": "Register an account on IPFlex's official website to begin your IP proxy service journey.",
-          "icon": "tabler:package"
-        },
-        {
-          "title": "Step 2: <span class=\"font-medium\">Choose Plan</span>",
-          "description": "Select an appropriate IP proxy plan based on your business needs.",
-          "icon": "tabler:letter-case"
-        },
-        {
-          "title": "Step 3: <span class=\"font-medium\">Start Using</span>",
-          "description": "Configure your IP proxy service and start using our efficient and stable IP proxy service.",
-          "icon": "tabler:paint"
-        },
-        {
-          "title": "Complete!",
-          "icon": "tabler:check"
-        }
-      ]
+      "title": "Quick Start Guide for IPFlex Proxy Service",
+      "stepPrefix": "Step",
+      "stepPrefix1": "Register Account",
+      "stepPrefix2": "Choose Plan",
+      "stepPrefix3": "Start Using",
+      "stepPrefix1Description": "Register an account on IPFlex website and start your IP proxy service journey.",
+      "stepPrefix2Description": "Select the suitable IP proxy plan based on your business requirements.",
+      "stepPrefix3Description": "Configure your IP proxy service and start using our efficient and stable proxy service.",
+      "completedText": "Done!"
     },
     "features": {
       "title": "IPFlex Advantages",

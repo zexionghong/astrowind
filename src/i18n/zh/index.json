@@ -46,28 +46,16 @@
     },
     "steps": {
       "title": "快速开始使用IPFlex的IP代理服务",
-      "items": [
-        {
-          "title": "步骤 1: <span class=\"font-medium\">注册账号</span>",
-          "description": "在IPFlex官网注册账号，开始您的IP代理服务之旅。",
-          "icon": "tabler:package"
-        },
-        {
-          "title": "步骤 2: <span class=\"font-medium\">选择套餐</span>",
-          "description": "根据您的业务需求，选择合适的IP代理套餐。",
-          "icon": "tabler:letter-case"
-        },
-        {
-          "title": "步骤 3: <span class=\"font-medium\">开始使用</span>",
-          "description": "配置您的IP代理服务，开始使用我们的高效稳定的IP代理服务。",
-          "icon": "tabler:paint"
-        },
-        {
-          "title": "完成!",
-          "icon": "tabler:check"
-        }
-      ]
+      "stepPrefix": "步骤",
+      "stepPrefix1": "注册账号",
+      "stepPrefix2": "选择套餐",
+      "stepPrefix3": "开始使用",
+      "stepPrefix1Description": "在IPFlex官网注册账号，开始您的IP代理服务之旅。",
+      "stepPrefix2Description": "根据您的业务需求，选择合适的IP代理套餐。",
+      "stepPrefix3Description": "配置您的IP代理服务，开始使用我们的高效稳定的IP代理服务。",
+      "completedText": "完成！"
     },
+    
     "features": {
       "title": "IPFlex的优势",
       "subtitle": "我们提供市场上最专业、最全面的IP代理服务。",
