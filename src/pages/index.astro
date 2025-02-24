@@ -54,6 +54,20 @@ console.log(t('index.hero.primaryAction'));
     <Fragment slot="subtitle" set:html={t('index.hero.subtitle')} />
   </Hero>
 
+
+
+  <!-- Note Widget ******************* -->
+<ProxyContent
+bg={`<div class="absolute inset-0" style="background-image: url('/images/background/2.png'); background-size: cover; background-position: center;"></div>`}
+/>
+  <!-- <Note /> -->
+
+  <!-- Steps Widget ****************** -->
+  <SetpsContent
+  bg={`<div class="absolute inset-0" style="background-image: url('/images/background/3.png'); background-size: cover; background-position: center;"></div>`}
+ />
+
+  <!-- Features Widget *************** -->
   <!-- Advantages Widget ************* -->
   <Advantages
     title="IPFlex的优势"
@@ -91,64 +105,6 @@ console.log(t('index.hero.primaryAction'));
       },
     ]}
   />
-
-  <!-- Note Widget ******************* -->
-<ProxyContent
-bg={`<div class="absolute inset-0" style="background-image: url('/images/background/2.png'); background-size: cover; background-position: center;"></div>`}
-/>
-  <!-- <Note /> -->
-
-  <!-- Steps Widget ****************** -->
-  <SetpsContent
-  bg={`<div class="absolute inset-0" style="background-image: url('/images/background/3.png'); background-size: cover; background-position: center;"></div>`}
- />
-
-  <!-- Features Widget *************** -->
-
-  <Features
-    id="features"
-    title={t('index.features.title')}
-    subtitle={t('index.features.subtitle')}
-    items={[
-      {
-        title: t('index.features.items.0.title'),
-        description:
-          t('index.features.items.0.description'),
-        icon: 'tabler:world',
-      },
-      {
-        title: t('index.features.items.1.title'), 
-        description:
-          t('index.features.items.1.description'),
-        icon: 'tabler:headset',
-      },
-      {
-        title: t('index.features.items.2.title'),
-        description:
-          t('index.features.items.2.description'),
-        icon: 'tabler:list-details',
-      },
-      {
-        title: t('index.features.items.3.title'),
-        description:
-          t('index.features.items.3.description'),
-        icon: 'tabler:rocket',
-      },
-      {
-        title: t('index.features.items.4.title'),
-        description:
-          t('index.features.items.4.description'),
-        icon: 'tabler:infinity',
-      },
-      {
-        title: t('index.features.items.5.title'),
-        description:
-          t('index.features.items.5.description'),
-        icon: 'tabler:shield-lock',
-      },
-    ]}
-  />
-
  
 
 
