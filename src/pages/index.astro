@@ -12,6 +12,7 @@ import ProxyContent from '~/components/widgets/ProxyContent.astro';
 import SetpsContent from '~/components/widgets/SetpsContent.astro';
 import Advantages from '~/components/widgets/Advantages.astro';
 import HeroTitle from '~/components/widgets/HeroTitle.astro';
+import UsageScenarios from '~/components/widgets/UsageScenarios.astro';
 
 export async function getStaticPaths() {
   return [
@@ -128,9 +129,63 @@ bg={`<div class="absolute inset-0" style="background-image: url('/images/backgro
     buttonHref="https://dashboard.ipflex.ink/register"
   />
 
+  <!-- UsageScenarios Widget ********* -->
+  <UsageScenarios
+    bg={`<div class="absolute inset-0" style="background-image: url('/images/background/1.png'); background-size: cover; background-position: center;"></div>`}
+    title="常用场景"
+    subtitle="IPFLEX为各行各业提供丰富的应用场景。"
+    items={[
+      {
+        title: '网页数据采集',
+        description: '数据采集、爬虫、SEO监测、竞品分析、舆情监控、价格监测等，需要大量IP资源支持。',
+        icon: '🌐'
+      },
+      {
+        title: '电子商务运营',
+        description: '跨境电商、店铺管理、营销推广、价格比对、库存监控、自动化运营等场景。',
+        icon: '🛍️'
+      },
+      {
+        title: '市场调研探索',
+        description: '市场调研、用户画像、品牌分析、竞品监控、广告投放等营销场景。',
+        icon: '📊'
+      },
+      {
+        title: '社交媒体拓展',
+        description: '社交媒体运营、账号管理、粉丝互动、内容发布、数据分析等场景。',
+        icon: '💬'
+      },
+      {
+        title: 'SEO策略优化',
+        description: '搜索引擎优化、关键词排名、网站分析、流量监控、竞争对手分析等。',
+        icon: '🎯'
+      },
+      {
+        title: '广告投放效果',
+        description: '广告投放、效果监测、ROI分析、A/B测试、转化追踪等营销场景。',
+        icon: '📈'
+      },
+      {
+        title: '网站性能测试',
+        description: '网站测试、性能监控、可用性验证、负载测试、安全性测试等场景。',
+        icon: '🔍'
+      },
+      {
+        title: '品牌安全守护',
+        description: '品牌保护、防刷监控、安全防护、风险控制、合规性检查等场景。',
+        icon: '🛡️'
+      },
+      {
+        title: '舆情动态追踪',
+        description: '舆情监控、品牌口碑、市场动态、热点追踪、竞品分析等场景。',
+        icon: '📰'
+      }
+    ]}
+  />
+
   <!-- CallToAction Widget *********** -->
 
-  <CallToAction
+  <!-- <CallToAction
     actions={[
       {
         variant: 'primary',
@@ -150,7 +205,7 @@ bg={`<div class="absolute inset-0" style="background-image: url('/images/backgro
       <br class="hidden md:inline" />
       {t('index.callToAction.subtitle2')}
     </Fragment>
-  </CallToAction>
+  </CallToAction> -->
   <!-- Content Widget **************** -->
 
 
@@ -227,7 +282,7 @@ bg={`<div class="absolute inset-0" style="background-image: url('/images/backgro
   <!-- Features2 Widget ************** -->
 
   
-  <Features2
+  <!-- <Features2
     title={t('index.features2.title')}
     subtitle={t('index.features2.subtitle')}
     items={[
@@ -282,7 +337,7 @@ bg={`<div class="absolute inset-0" style="background-image: url('/images/backgro
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Features2>
+  </Features2> -->
 
   <!-- HighlightedPosts Widget ******* -->
 
