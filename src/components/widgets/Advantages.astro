@@ -10,24 +10,28 @@ export interface Props {
   title?: string;
   subtitle?: string;
   items?: Array<Item>;
+  bg?: string;
 }
 
 const {
   title = '',
   subtitle = '',
-  items = []
+  items = [],
+  bg = ''
 } = Astro.props;
+
+const itemsArray = Array.isArray(items) ? items : [];
 ---
 
-<section class="relative bg-blue-600">
-  <div class="absolute inset-0 bg-gradient-to-b from-blue-500 to-blue-700"></div>
+<section class="relative">
+  <Fragment set:html={bg} />
   <div class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
     <div class="mb-16 text-center">
-      <h2 class="text-4xl font-bold text-white mb-4">{title}</h2>
-      <p class="text-xl text-blue-100">{subtitle}</p>
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">{title}</h2>
+      <p class="text-xl text-gray-600">{subtitle}</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-      {items.map(({ title, description, icon, image }) => (
+      {itemsArray.map(({ title, description, icon, image }) => (
         <div class="bg-white rounded-2xl p-8 min-w-[380px]">
           <div class="flex items-start gap-6">
             <div class="flex-shrink-0">

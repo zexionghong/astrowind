@@ -1,12 +1,8 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
-// import Note from '~/components/widgets/Note.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import DataStats from '~/components/widgets/DataStats.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 import { useTranslations } from '~/utils/i18n';
 import ProxyContent from '~/components/widgets/ProxyContent.astro';
 import SetpsContent from '~/components/widgets/SetpsContent.astro';
@@ -31,100 +27,90 @@ console.log(t('index.hero.primaryAction'));
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-  <Hero
-    bg={`<div class="absolute inset-0" style="background-image: url('/images/background/1.png'); background-size: cover; background-position: center;"></div>`}
-    actions={[
-      {
-        variant: 'primary',
-        text: t('index.hero.primaryAction'),
-        href: 'https://dashboard.ipflex.ink/register',
-        target: '_blank',
-        // icon: 'tabler:download',
-      },
-      {   
-        text: t('index.hero.secondaryAction'),
-        href: '/detail',
-        target: '_blank',
-        type: 'button',
-       },
-    ]}
-  >
-    <Fragment slot="title" set:html={t('index.hero.title')} />
+  <div class="relative min-h-screen before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0 before:bg-[url('/images/background/bg.png')] before:bg-cover before:bg-center before:bg-no-repeat before:-z-10">
+    <!-- Hero Widget ******************* -->
+    <Hero
+      actions={[
+        {
+          variant: 'primary',
+          text: t('index.hero.primaryAction'),
+          href: 'https://dashboard.ipflex.ink/register',
+          target: '_blank',
+        },
+        {   
+          text: t('index.hero.secondaryAction'),
+          href: '/detail',
+          target: '_blank',
+          type: 'button',
+         },
+      ]}
+    >
+      <Fragment slot="title" set:html={t('index.hero.title')} />
+      <Fragment slot="subtitle" set:html={t('index.hero.subtitle')} />
+    </Hero>
 
-    <Fragment slot="subtitle" set:html={t('index.hero.subtitle')} />
-  </Hero>
+    <!-- Note Widget ******************* -->
+    <ProxyContent
+      residentialProxy={{
+        title: t('index.content.residentialProxyTitle'),
+        subtitle: t('index.content.residentialProxy.title'),
+        description: "",
+        descriptionList: [t('index.content.residentialProxy.description')],
+        features: (Array.isArray(t('index.content.residentialProxy.items')) ? t('index.content.residentialProxy.items') : []).map(item => ({ title: item }))
+      }}
+      dynamicProxy={{
+        subtitle: t('index.content.dynamicProxy.title'),
+        description: "",
+        descriptionList: [t('index.content.dynamicProxy.description')],
+        features: (Array.isArray(t('index.content.dynamicProxy.items')) ? t('index.content.dynamicProxy.items') : []).map(item => ({ title: item }))
+      }}
+      dataCenterProxy={{
+        title: t('index.content.dataCenterProxyTile'),
+        subtitle: t('index.content.dataCenterProxy.title'),
+        description: "",
+        descriptionList: [t('index.content.dataCenterProxy.description')],
+        features: (Array.isArray(t('index.content.dataCenterProxy.items')) ? t('index.content.dataCenterProxy.items') : []).map(item => ({ title: item }))
+      }}
+    />
+    <!-- <Note /> -->
 
+    <!-- Steps Widget ****************** -->
+    <SetpsContent
+    />
 
-
-  <!-- Note Widget ******************* -->
-<ProxyContent
-  bg={`<div class="absolute inset-0" style="background-image: url('/images/background/2.png'); background-size: cover; background-position: center;"></div>`}
-  residentialProxy={{
-    title: t('index.content.residentialProxyTitle'),
-    subtitle: t('index.content.residentialProxy.title'),
-    description: "",
-    descriptionList: [t('index.content.residentialProxy.description')],
-    features: t('index.content.residentialProxy.items').map(item => ({ title: item }))
-  }}
-  dynamicProxy={{
-    subtitle: t('index.content.dynamicProxy.title'),
-    description: "",
-    descriptionList: [t('index.content.dynamicProxy.description')],
-    features: t('index.content.dynamicProxy.items').map(item => ({ title: item }))
-  }}
-  dataCenterProxy={{
-    title: t('index.content.dataCenterProxyTile'),
-    subtitle: t('index.content.dataCenterProxy.title'),
-    description: "",
-    descriptionList: [t('index.content.dataCenterProxy.description')],
-    features: t('index.content.dataCenterProxy.items').map(item => ({ title: item }))
-  }}
-/>
-  <!-- <Note /> -->
-
-  <!-- Steps Widget ****************** -->
-  <SetpsContent
-  bg={`<div class="absolute inset-0" style="background-image: url('/images/background/3.png'); background-size: cover; background-position: center;"></div>`}
- />
-
-  <!-- Features Widget *************** -->
-  <!-- Advantages Widget ************* -->
-  <Advantages
-    title={t('index.features.title')}
-    subtitle={t('index.features.subtitle')}
-    items={t('index.features.items')}
-  />
- 
+    <!-- Features Widget *************** -->
+    <!-- Advantages Widget ************* -->
+    <Advantages
+      title={t('index.features.title')}
+      subtitle={t('index.features.subtitle')}
+      items={t('index.features.items')}
+    />
+   
 
 
-  <!-- Stats Widget ****************** -->
-  <DataStats
-    bg={`<div class="absolute inset-0" style="background-image: url('/images/background/1.png'); background-size: cover; background-position: center;"></div>`}
-    items={t("index.stats.items")}
-  />
+    <!-- Stats Widget ****************** -->
+    <DataStats
+      items={t("index.stats.items")}
+    />
 
-  <!-- HeroTitle Widget ************** -->
-  <HeroTitle
-    bg={`<div class="absolute inset-0" style="background-image: url('/images/background/1.png'); background-size: cover; background-position: center;"></div>`}
-    title={t('index.callToAction.title')}
-    subtitle={`${t('index.callToAction.subtitle1')}\n${t('index.callToAction.subtitle2')}`}
-    buttonText={t('index.callToAction.primaryAction')}
-    buttonHref="https://dashboard.ipflex.ink/register"
-  />
+    <!-- HeroTitle Widget ************** -->
+    <HeroTitle
+      title={t('index.callToAction.title')}
+      subtitle={`${t('index.callToAction.subtitle1')}\n${t('index.callToAction.subtitle2')}`}
+      buttonText={t('index.callToAction.primaryAction')}
+      buttonHref="https://dashboard.ipflex.ink/register"
+    />
 
-  <!-- UsageScenarios Widget ********* -->
-  <UsageScenarios
-    bg={`<div class="absolute inset-0" style="background-image: url('/images/background/1.png'); background-size: cover; background-position: center;"></div>`}
-    title={t('index.features2.title')}
-    subtitle={t('index.features2.subtitle')}
-    items={t('index.features2.items')}
-  />
+    <!-- UsageScenarios Widget ********* -->
+    <UsageScenarios
+      title={t('index.features2.title')}
+      subtitle={t('index.features2.subtitle')}
+      items={t('index.features2.items')}
+    />
 
-  
+  </div>
 
   <!-- FAQs Widget ******************* -->
-
   <FAQs
     title={t('index.faqs.title')}
     subtitle={t('index.faqs.subtitle')}
@@ -132,6 +118,4 @@ console.log(t('index.hero.primaryAction'));
     classes={{ container: 'max-w-6xl' }}
     items={t("index.faqs.items")}
   />
-
-  
 </Layout>
