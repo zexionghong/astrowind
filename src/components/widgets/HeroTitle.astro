@@ -3,10 +3,10 @@ import { twMerge } from 'tailwind-merge';
 import type { HTMLAttributes } from 'astro/types';
 
 interface Props extends HTMLAttributes<'section'> {
-  title?: string;
-  subtitle?: string;
-  buttonText?: string;
-  buttonHref?: string;
+  title: string;
+  subtitle: string;
+  buttonText: string;
+  buttonHref: string;
   classes?: {
     container?: string;
     title?: string;
@@ -18,10 +18,10 @@ interface Props extends HTMLAttributes<'section'> {
 }
 
 const {
-  title = 'IPFLEX专业的IP服务',
-  subtitle = '立即体验IPFLEX的高效稳定的IP代理服务。\n不要再犹豫了，立即行动！',
-  buttonText = '获取服务',
-  buttonHref = '#',
+  title,
+  subtitle,
+  buttonText,
+  buttonHref,
   classes = {},
   bg = '',
   id,
