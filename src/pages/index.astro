@@ -2,11 +2,10 @@
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 // import Note from '~/components/widgets/Note.astro';
-import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
+import DataStats from '~/components/widgets/DataStats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import { useTranslations } from '~/utils/i18n';
 import ProxyContent from '~/components/widgets/ProxyContent.astro';
@@ -109,9 +108,9 @@ bg={`<div class="absolute inset-0" style="background-image: url('/images/backgro
 
 
   <!-- Stats Widget ****************** -->
-
-  <Stats
-    stats={[
+  <DataStats
+    bg={`<div class="absolute inset-0" style="background-image: url('/images/background/1.png'); background-size: cover; background-position: center;"></div>`}
+    items={[
       { title: t('index.stats.items.0.title'), amount: t('index.stats.items.0.amount') },
       { title: t('index.stats.items.1.title'), amount: t('index.stats.items.1.amount') },
       { title: t('index.stats.items.2.title'), amount: t('index.stats.items.2.amount') },
