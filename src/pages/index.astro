@@ -11,6 +11,7 @@ import { useTranslations } from '~/utils/i18n';
 import ProxyContent from '~/components/widgets/ProxyContent.astro';
 import SetpsContent from '~/components/widgets/SetpsContent.astro';
 import Advantages from '~/components/widgets/Advantages.astro';
+import HeroTitle from '~/components/widgets/HeroTitle.astro';
 
 export async function getStaticPaths() {
   return [
@@ -118,6 +119,14 @@ bg={`<div class="absolute inset-0" style="background-image: url('/images/backgro
     ]}
   />
 
+  <!-- HeroTitle Widget ************** -->
+  <HeroTitle
+    bg={`<div class="absolute inset-0" style="background-image: url('/images/background/1.png'); background-size: cover; background-position: center;"></div>`}
+    title="IPFLEX专业的IP服务"
+    subtitle="立即体验IPFLEX的高效稳定的IP代理服务。\n不要再犹豫了，立即行动！"
+    buttonText="获取服务"
+    buttonHref="https://dashboard.ipflex.ink/register"
+  />
 
   <!-- CallToAction Widget *********** -->
 
