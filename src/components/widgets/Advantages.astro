@@ -2,7 +2,8 @@
 interface Item {
   title: string;
   description: string;
-  image: string;
+  icon?: string;
+  image?: string;
 }
 
 export interface Props {
@@ -12,40 +13,9 @@ export interface Props {
 }
 
 const {
-  title = 'IPFlex的优势',
-  subtitle = '我们提供市场上最专业、最全面的IP代理服务。',
-  items = [
-    {
-      title: '全球IP资源池',
-      description: 'IPFLEX拥有广泛覆盖的全球IP资源池，遍布多个国家和地区，能够为您提供多样化的IP地址选择，开拓您的全球网络体验。',
-      image: '/images/advantages/global-ip.png'
-    },
-    {
-      title: '高效技术支持',
-      description: 'IPFLEX提供全天候24/7的专业技术支持，无论您遇到任何问题技术团队都会迅速响应，确保您的体验始终顺畅无忧。',
-      image: '/images/advantages/tech-support.png'
-    },
-    {
-      title: '丰富的IP类型',
-      description: 'IPFLEX为您提供多样化的IP类型选择，包括住宅代理、数据中心代理、静态代理、动态代理等，以满足不同业务场景的需求。',
-      image: '/images/advantages/ip-types.png'
-    },
-    {
-      title: '快速稳定的连接',
-      description: '使用IPFLEX，您将享受卓越的网络连接，快速且稳定的连接让您告别网络延迟和不稳定的烦恼，提升工作效率和用户体验。',
-      image: '/images/advantages/fast-connection.png'
-    },
-    {
-      title: '无限带宽',
-      description: 'IPFLEX为您提供无限制的带宽使用，彻底消除流量限制的束缚，让您在任何情况下都能享受超高速率和极低延迟的网络服务。',
-      image: '/images/advantages/unlimited-bandwidth.png'
-    },
-    {
-      title: '高级安全保障',
-      description: 'IPFLEX提供顶级的安全保障措施，全面保护您的隐私和数据安全，确保您的信息安全无虞，安心使用我们的服务。',
-      image: '/images/advantages/security.png'
-    }
-  ]
+  title = '',
+  subtitle = '',
+  items = []
 } = Astro.props;
 ---
 
@@ -57,11 +27,15 @@ const {
       <p class="text-xl text-blue-100">{subtitle}</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-      {items.map(({ title, description, image }) => (
+      {items.map(({ title, description, icon, image }) => (
         <div class="bg-white rounded-2xl p-8 min-w-[380px]">
           <div class="flex items-start gap-6">
             <div class="flex-shrink-0">
-              <img src={image} alt={title} class="w-20 h-20 object-contain" />
+              {image ? (
+                <img src={image} alt={title} class="w-20 h-20 object-contain" />
+              ) : icon ? (
+                <i class={`${icon} w-20 h-20 text-4xl text-blue-600`}></i>
+              ) : null}
             </div>
             <div class="flex-1 min-w-0">
               <h3 class="text-2xl font-bold text-gray-900 mb-3">{title}</h3>
