@@ -1,6 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
 import { getFooterData } from '~/navigation';
+import { SITE } from 'astrowind:config';
 import Logo from '~/components/Logo.astro';
 
 interface Link {
@@ -32,96 +33,64 @@ const socialLinks = footerData.socialLinks;
 const footNote = footerData.footNote;
 ---
 
-<footer class:list={[{ dark: theme === 'dark' }, 'relative not-prose text-white']}>
-  <div class="wave-wrapper">
-    <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 20V20C560 30 720 120 1080 40C1260 0 1440 40 1440 40V120H0Z" fill="#2563eb"/>
-    </svg>
-  </div>
-
-  <div class="footer-content">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 py-8 md:py-12">
-        <div class="col-span-2 md:col-span-5 lg:col-span-2 lg:pr-8">
-          <div class="mb-4">
-            <a class="inline-flex items-center gap-3 font-bold text-xl text-white" href={`/${lang}`}>
-              <Logo />
-            </a>
-          </div>
-          <div class="text-sm text-white/90 mb-6 max-w-md">
-            {lang === 'zh' ? '专业的IP代理服务提供商，为您提供优质的代理服务' : 'Professional proxy service provider offering high-quality proxy services'}
-          </div>
+<footer class:list={[{ dark: theme === 'dark' }, 'relative border-t border-gray-200 dark:border-slate-800 not-prose']}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-8 py-8 md:py-12">
+      <div class="col-span-2 md:col-span-5 lg:col-span-2 lg:pr-8">
+        <div class="mb-4">
+          <a class="inline-flex items-center gap-3 font-bold text-xl text-blue-900 dark:text-white" href={`/${lang}`}>
+            <Logo />
+          </a>
+        </div>
+        <div class="text-sm text-blue-700/80 dark:text-gray-400 mb-6 max-w-md">
+          {lang === 'zh' ? '专业的IP代理服务提供商，为您提供优质的代理服务' : 'Professional proxy service provider offering high-quality proxy services'}
+        </div>
+        {
+          socialLinks?.length ? (
+            <div class="flex gap-3">
+              {socialLinks.map(({ ariaLabel, href, icon }) => (
+                <a
+                  class="text-blue-600 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-100 dark:focus:ring-gray-700 rounded-lg p-2.5 inline-flex items-center text-sm"
+                  aria-label={ariaLabel}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {icon && <Icon name={icon} class="w-5 h-5" />}
+                </a>
+              ))}
+            </div>
+          ) : null
+        }
+      </div>
+      <div class="col-span-2 md:col-span-5 lg:col-span-3">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
           {
-            socialLinks?.length ? (
-              <div class="flex gap-3">
-                {socialLinks.map(({ ariaLabel, href, icon }) => (
-                  <a
-                    class="text-white hover:bg-white/10 focus:outline-none focus:ring-4 focus:ring-white/20 rounded-lg p-2.5 inline-flex items-center text-sm"
-                    aria-label={ariaLabel}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {icon && <Icon name={icon} class="w-5 h-5" />}
-                  </a>
-                ))}
+            links.map(({ title, links }) => (
+              <div>
+                <div class="font-semibold text-blue-900 dark:text-gray-300 mb-3">{title}</div>
+                {links && Array.isArray(links) && links.length > 0 && (
+                  <ul class="text-sm">
+                    {links.map(({ text, href }) => (
+                      <li class="mb-2">
+                        <a
+                          class="text-blue-700/80 dark:text-gray-400 hover:text-blue-600 dark:hover:text-white transition duration-150 ease-in-out"
+                          href={href}
+                        >
+                          <Fragment set:html={text} />
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
-            ) : null
+            ))
           }
         </div>
-        <div class="col-span-2 md:col-span-5 lg:col-span-3">
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {
-              links.map(({ title, links }) => (
-                <div>
-                  <div class="font-semibold text-white mb-3">{title}</div>
-                  {links && Array.isArray(links) && links.length > 0 && (
-                    <ul class="text-sm">
-                      {links.map(({ text, href }) => (
-                        <li class="mb-2">
-                          <a
-                            class="text-white/90 hover:text-white transition duration-150 ease-in-out"
-                            href={href}
-                          >
-                            <Fragment set:html={text} />
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              ))
-            }
-          </div>
-        </div>
       </div>
-      <div class="text-sm text-center py-6 border-t border-white/10 text-white/90">
-        <Fragment set:html={footNote} />
-      </div>
+    </div>
+    <div class="text-sm text-center py-6 border-t border-blue-100 dark:border-gray-800 text-blue-700/80 dark:text-slate-400">
+      <Fragment set:html={footNote} />
     </div>
   </div>
 </footer>
-
-<style>
-.wave-wrapper {
-  width: 100%;
-  line-height: 0;
-  background: white;
-}
-
-.wave-wrapper svg {
-  width: 100%;
-  height: auto;
-}
-
-.footer-content {
-  background: #2563eb;
-  padding-top: 1rem;
-}
-
-@media (max-width: 768px) {
-  .wave-wrapper svg {
-    height: 60px;
-  }
-}
-</style>
