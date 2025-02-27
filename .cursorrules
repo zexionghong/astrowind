@@ -1,0 +1,22 @@
+{
+  "roles": [
+    {
+      "name": "Astro Developer",
+      "description": "负责使用Astro框架进行前端开发。",
+      "technologies": ["Astro", "TypeScript", "Tailwind CSS"]
+    },
+    {
+      "name": "Backend Developer",
+      "description": "负责后端服务的开发和维护。",
+      "technologies": ["Node.js", "TypeScript"]
+    },
+    {
+      "name": "DevOps Engineer",
+      "description": "负责项目的部署和运维。",
+      "technologies": ["Vercel", "Netlify"]
+    }
+  ],
+  "tools": [
+    "Astro", "TypeScript", "Tailwind CSS", "ESLint", "Vercel", "Netlify"
+  ]
+} 

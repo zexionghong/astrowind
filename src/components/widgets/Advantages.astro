@@ -1,4 +1,6 @@
 ---
+import { findImage } from '~/utils/images';
+
 interface Item {
   title: string;
   description: string;
@@ -31,12 +33,14 @@ const itemsArray = Array.isArray(items) ? items : [];
       <span class="text-sm text-white">{subtitle}</span>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-      {itemsArray.map(({ title, description, icon, image }) => (
-        <div class="bg-white rounded-2xl p-8 min-w-[380px]">
-          <div class="flex items-start gap-6">
-            <div class="flex-shrink-0">
+      {itemsArray.map(async ({ title, description, icon, image }) => {
+        const imageUrl = await findImage(image);
+        return (
+          <div class="bg-white rounded-2xl p-8 min-w-[380px]">
+            <div class="flex items-center gap-6">
+              <div class="flex-shrink-0">
               {image ? (
-                <img src={image} alt={title} class="w-20 h-20 object-contain" />
+                <img src={imageUrl.src} alt={title} class="w-20 h-20 object-contain" />
               ) : icon ? (
                 <i class={`${icon} w-20 h-20 text-4xl text-blue-600`}></i>
               ) : null}
@@ -47,7 +51,9 @@ const itemsArray = Array.isArray(items) ? items : [];
             </div>
           </div>
         </div>
-      ))}
+      )
+
+      })}
     </div>
   </div>
 </section> 

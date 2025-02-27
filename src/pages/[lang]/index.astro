@@ -1,17 +1,14 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
 import Hero from '~/components/widgets/Hero.astro';
-// import Note from '~/components/widgets/Note.astro';
-import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Steps from '~/components/widgets/Steps.astro';
-import Content from '~/components/widgets/Content.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+import DataStats from '~/components/widgets/DataStats.astro';
 import { useTranslations } from '~/utils/i18n';
+import ProxyContent from '~/components/widgets/ProxyContent.astro';
+import SetpsContent from '~/components/widgets/SetpsContent.astro';
+import Advantages from '~/components/widgets/Advantages.astro';
+import HeroTitle from '~/components/widgets/HeroTitle.astro';
+import UsageScenarios from '~/components/widgets/UsageScenarios.astro';
 
 export async function getStaticPaths() {
   return [
@@ -20,7 +17,7 @@ export async function getStaticPaths() {
   ];
 }
 
-const { lang = 'zh' } = Astro.params;
+const { lang='zh' } = Astro.params;
 const t = await useTranslations(lang);
 const metadata = {
   title: t('index.metadata.title'),
@@ -30,415 +27,98 @@ console.log(t('index.hero.primaryAction'));
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+  <div class="relative min-h-screen before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0 before:bg-[url('/images/background/bg.webp')] before:bg-cover before:bg-center before:bg-no-repeat before:-z-10">
+    <!-- Hero Widget ******************* -->
+    <Hero
+      actions={[
+        {
+          variant: 'primary',
+          text: t('index.hero.primaryAction'),
+          href: 'https://dashboard.ipflex.ink/register',
+          target: '_blank',
+        },
+        {   
+          text: t('index.hero.secondaryAction'),
+          href: '/detail',
+          target: '_blank',
+          type: 'button',
+         },
+      ]}
+    >
+      <Fragment slot="title" set:html={t('index.hero.title')} />
+      <Fragment slot="subtitle" set:html={t('index.hero.subtitle')} />
+    </Hero>
 
-  <Hero
-    actions={[
-      {
-        variant: 'primary',
-        text: t('index.hero.primaryAction'),
-        href: 'https://dashboard.ipflex.ink/register',
-        target: '_blank',
-        // icon: 'tabler:download',
-      },
-      {   
-        text: t('index.hero.secondaryAction'),
-        href: '/detail',
-        target: '_blank',
-        type: 'button',
-       },
-    ]}
-  >
-    <Fragment slot="title" set:html={t('index.hero.title')} />
+    <!-- Note Widget ******************* -->
+    <ProxyContent
+      residentialProxy={{
+        title: t('index.content.residentialProxyTitle'),
+        subtitle: t('index.content.residentialProxy.title'),
+        description: "",
+        descriptionList: t('index.content.residentialProxy.descriptionList'),
+        features: (Array.isArray(t('index.content.residentialProxy.items')) ? t('index.content.residentialProxy.items') : []).map(item => ({ title: item }))
+      }}
+      dynamicProxy={{
+        subtitle: t('index.content.dynamicProxy.title'),
+        description: "",
+        descriptionList: t('index.content.dynamicProxy.descriptionList'),
+        features: (Array.isArray(t('index.content.dynamicProxy.items')) ? t('index.content.dynamicProxy.items') : []).map(item => ({ title: item }))
+      }}
+      dataCenterProxy={{
+        title: t('index.content.dataCenterProxyTile'),
+        subtitle: t('index.content.dataCenterProxy.title'),
+        description: "",
+        descriptionList: t('index.content.dataCenterProxy.descriptionList'),
+        features: (Array.isArray(t('index.content.dataCenterProxy.items')) ? t('index.content.dataCenterProxy.items') : []).map(item => ({ title: item }))
+      }}
+    />
+    <!-- <Note /> -->
 
-    <Fragment slot="subtitle" set:html={t('index.hero.subtitle')} />
-  </Hero>
+    <!-- Steps Widget ****************** -->
+    <SetpsContent
+    />
 
-  <!-- Note Widget ******************* -->
-
-  <!-- <Note /> -->
-
-
-  <Content
-    isReversed
-    title={t('index.content.residentialProxyTitle')}
-    items={[
-      {
-        title:
-          t('index.content.residentialProxy.items.0'),
-      },
-      {
-        title:
-          t('index.content.residentialProxy.items.1'),
-      },
-      {
-        title: t('index.content.residentialProxy.items.2'),
-      },
-      {
-        title: t('index.content.residentialProxy.items.3'),
-      },
-    ]}
-    image={{
-      src: '~/assets/images/proxy1.png',
-      alt: '服务内容图片',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">{t('index.content.residentialProxy.title')}</h3>
-      {t('index.content.residentialProxy.description')}
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isAfterContent
-    items={[{title: t('index.content.dynamicProxy.items.0')},{title: t('index.content.dynamicProxy.items.1')},{title: t('index.content.dynamicProxy.items.2')},{title: t('index.content.dynamicProxy.items.3')}]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
-      alt: '灵活定制图片',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">{t('index.content.dynamicProxy.title')}</h3>
-      {t('index.content.dynamicProxy.description')}
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    title={t('index.content.dataCenterProxyTile')}
-    items={[
-      {title: t('index.content.dataCenterProxy.items.0')},
-      {title: t('index.content.dataCenterProxy.items.1')},
-      {title: t('index.content.dataCenterProxy.items.2')},
-      {title: t('index.content.dataCenterProxy.items.3')},
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: '提升用户体验图片',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">{t('index.content.dataCenterProxy.title')}</h3>
-      {t('index.content.dataCenterProxy.description')}
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
+    <!-- Features Widget *************** -->
+    <!-- Advantages Widget ************* -->
+    <Advantages
+      title={t('index.features.title')}
+      subtitle={t('index.features.subtitle')}
+      items={t('index.features.items')}
+    />
+   
 
 
-   <!-- Steps Widget ****************** -->
+    <!-- Stats Widget ****************** -->
+    <DataStats
+      items={t("index.stats.items")}
+    />
 
-   <Steps
-   title={t('index.steps.title')}
-   items={[
-     {
-       title: t('index.steps.items.0.title'),
-       description:
-         t('index.steps.items.0.description'),
-       icon: 'tabler:package',
-     },
-     {
-       title: t('index.steps.items.1.title'),
-       description:
-         t('index.steps.items.1.description'),
-       icon: 'tabler:letter-case',
-     },
-     {
-       title: t('index.steps.items.2.title'),
-       description:
-         t('index.steps.items.2.description'),
-       icon: 'tabler:paint',
-     },
-     {
-       title: t('index.steps.items.3.title'),
-       icon: 'tabler:check',
-     },
-   ]}
-   image={{
-     src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-     alt: '步骤图片',
-   }}
- />
+    <!-- HeroTitle Widget ************** -->
+     <div>
+    <HeroTitle
+      title={t('index.callToAction.title')}
+      subtitle={`${t('index.callToAction.subtitle1')}\n${t('index.callToAction.subtitle2')}`}
+      buttonText={t('index.callToAction.primaryAction')}
+      buttonHref="https://dashboard.ipflex.ink/register"
+    />
 
-  <!-- Features Widget *************** -->
+    <!-- UsageScenarios Widget ********* -->
+    <UsageScenarios
+      title={t('index.features2.title')}
+      subtitle={t('index.features2.subtitle')}
+      items={t('index.features2.items')}
+    />
+    <br />
+  </div>
 
-  <Features
-    id="features"
-    title={t('index.features.title')}
-    subtitle={t('index.features.subtitle')}
-    items={[
-      {
-        title: t('index.features.items.0.title'),
-        description:
-          t('index.features.items.0.description'),
-        icon: 'tabler:world',
-      },
-      {
-        title: t('index.features.items.1.title'), 
-        description:
-          t('index.features.items.1.description'),
-        icon: 'tabler:headset',
-      },
-      {
-        title: t('index.features.items.2.title'),
-        description:
-          t('index.features.items.2.description'),
-        icon: 'tabler:list-details',
-      },
-      {
-        title: t('index.features.items.3.title'),
-        description:
-          t('index.features.items.3.description'),
-        icon: 'tabler:rocket',
-      },
-      {
-        title: t('index.features.items.4.title'),
-        description:
-          t('index.features.items.4.description'),
-        icon: 'tabler:infinity',
-      },
-      {
-        title: t('index.features.items.5.title'),
-        description:
-          t('index.features.items.5.description'),
-        icon: 'tabler:shield-lock',
-      },
-    ]}
-  />
-
- 
-
-
-  <!-- Stats Widget ****************** -->
-
-  <Stats
-    stats={[
-      { title: t('index.stats.items.0.title'), amount: t('index.stats.items.0.amount') },
-      { title: t('index.stats.items.1.title'), amount: t('index.stats.items.1.amount') },
-      { title: t('index.stats.items.2.title'), amount: t('index.stats.items.2.amount') },
-      { title: t('index.stats.items.3.title'), amount: t('index.stats.items.3.amount') },
-    ]}
-  />
-
-
-  <!-- CallToAction Widget *********** -->
-
-  <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        text: t('index.callToAction.primaryAction'),
-        href: 'https://ipflex.com',
-        target: '_blank',
-        // icon: 'tabler:download',
-      },
-    ]}
-  >
-    <Fragment slot="title">
-      IpFlex&nbsp;&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">{t('index.callToAction.title')}</span>
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      {t('index.callToAction.subtitle1')}
-      <br class="hidden md:inline" />
-      {t('index.callToAction.subtitle2')}
-    </Fragment>
-  </CallToAction>
-  <!-- Content Widget **************** -->
-
-
-  <!-- Content Widget **************** -->
-
-  <!-- <Content
-    isAfterContent
-    items={[
-      {
-        title: t('index.content.residentialProxy.title'),
-        description: t('index.content.residentialProxy.description'),
-      },
-      {
-        title: t('index.content.dynamicProxy.title'),
-        description: t('index.content.dynamicProxy.description'),
-      },
-      {
-        title: t('index.content.dataCenterProxy.title'),
-        description: t('index.content.dataCenterProxy.description'),
-      },
-      {
-        title: t('index.content.residentialProxy.title'),
-        description: t('index.content.residentialProxy.description'),
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
-      alt: '灵活定制图片',
-    }}
-  >
-    <Fragment slot="content">{t('index.content.residentialProxy.title')}</Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content> -->
-
-  <!-- Content Widget **************** -->
-
-  <!-- <Content
-    isReversed
-    isAfterContent
-    items={[
-      {
-        title: t('index.content.residentialProxy.title'),
-        description: t('index.content.residentialProxy.description'),
-      },
-      {
-        title: t('index.content.dynamicProxy.title'),
-        description: t('index.content.dynamicProxy.description'),
-      },
-      {
-        title: t('index.content.dataCenterProxy.title'),
-        description: t('index.content.dataCenterProxy.description'),
-      },
-      {
-        title: t('index.content.residentialProxy.title'),
-        description: t('index.content.residentialProxy.description'),
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: '提升用户体验图片',
-    }}
-  >
-    <Fragment slot="content">{t('index.content.residentialProxy.title')}</Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content> -->
-
-  
-  <!-- Features2 Widget ************** -->
-
-  
-  <Features2
-    title={t('index.features2.title')}
-    subtitle={t('index.features2.subtitle')}
-    items={[
-      {
-        title: t('index.features2.items.0.title'),
-        href: '/detail',
-        description: t('index.features2.items.0.description'),
-        icon: 'tabler:spider',
-      },
-      {
-        title: t('index.features2.items.1.title'),
-        description: t('index.features2.items.1.description'),
-        icon: 'tabler:shopping-cart',
-      },
-      {
-        title: t('index.features2.items.2.title'),
-        description: t('index.features2.items.2.description'),
-        icon: 'tabler:chart-pie',
-      },
-      {
-        title: t('index.features2.items.3.title'),
-        description: t('index.features2.items.3.description'),
-        icon: 'tabler:share',
-      },
-      {
-        title: t('index.features2.items.4.title'),
-        description: t('index.features2.items.4.description'),
-        icon: 'tabler:search',
-      },
-      {
-        title: t('index.features2.items.5.title'),
-        description: t('index.features2.items.5.description'),
-        icon: 'tabler:ad',
-      },
-      {
-        title: t('index.features2.items.6.title'),
-        description: t('index.features2.items.6.description'),
-        icon: 'tabler:gauge',
-      },
-      {
-        title: t('index.features2.items.7.title'),
-        description: t('index.features2.items.7.description'),
-        icon: 'tabler:shield',
-      },
-      {
-        title: t('index.features2.items.8.title'),
-        description: t('index.features2.items.8.description'),
-        icon: 'tabler:news',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
-
-  <!-- HighlightedPosts Widget ******* -->
-
-  <BlogLatestPosts
-    title={t('index.blogLatestPosts.title')}
-    information={t('index.blogLatestPosts.information')}
-    lang={lang}
-  />
+  </div>
 
   <!-- FAQs Widget ******************* -->
-
   <FAQs
     title={t('index.faqs.title')}
     subtitle={t('index.faqs.subtitle')}
     tagline={t('index.faqs.sub')}
     classes={{ container: 'max-w-6xl' }}
-    items={[
-      {
-        title: t('index.faqs.items.0.title'),
-        description:
-          t('index.faqs.items.0.description'),
-      },
-      {
-        title: t('index.faqs.items.1.title'),
-        description:
-          t('index.faqs.items.1.description'),
-      },
-      {
-        title: t('index.faqs.items.2.title'),
-        description:
-          t('index.faqs.items.2.description'),
-      },
-      {
-        title: t('index.faqs.items.3.title'),
-        description:
-          t('index.faqs.items.3.description'),
-      },
-      {
-        title: t('index.faqs.items.4.title'),
-        description:
-          t('index.faqs.items.4.description'),
-      },
-      {
-        title: t('index.faqs.items.5.title'),
-        description:
-          t('index.faqs.items.5.description'),
-      },
-    ]}
+    items={t("index.faqs.items")}
   />
-
-  
 </Layout>

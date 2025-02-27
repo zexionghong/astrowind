@@ -43,7 +43,7 @@ const { title, subtitle,  features,description="",descriptionList=[], isEven = f
     </div>
     <div class="grid grid-cols-4 gap-8">
       {features.map((feature) => (
-        <div class="bg-blue-50/50 backdrop-blur-sm rounded-2xl p-6 flex items-center shadow-sm">
+        <div class="bg-blue-50/50 backdrop-blur-sm rounded-2xl p-6 flex items-center justify-center shadow-sm hover:translate-y-[-8px] transition-transform duration-300 ease-in-out hover:shadow-md">
           <span class="text-blue-600 mr-3 text-lg">✓</span>
           <span class="text-gray-700 dark:text-gray-300">{feature.title}</span>
         </div>
