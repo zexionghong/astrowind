@@ -1,0 +1,35 @@
+<script is:inline>
+  const loadChatwoot = () => {
+    const BASE_URL = 'https://chat.ipflex.ink';
+    const g = document.createElement('script');
+    const s = document.getElementsByTagName('script')[0];
+    g.src = BASE_URL + '/packs/js/sdk.js';
+    g.defer = true;
+    g.async = true;
+    s.parentNode.insertBefore(g, s);
+    
+    g.onload = () => {
+      window.chatwootSDK.run({
+        websiteToken: 'uULu1FZLoJa3GmnmNaksgi1C',
+        baseUrl: BASE_URL,
+      });
+
+      window.addEventListener('chatwoot:ready', function() {
+        // 生成随机游客名称
+        let guestName = sessionStorage.getItem('guestName');
+        if (!guestName) {
+          guestName = 'Guest_' + Math.random().toString(36).substring(2, 15);
+          sessionStorage.setItem('guestName', guestName);
+        }
+        
+        window.$chatwoot.setUser(guestName, {
+          email: guestName + '@example.com',
+          name: guestName,
+        });
+      });
+    };
+  };
+
+  // 当页面加载完成时初始化Chatwoot
+  window.addEventListener('load', loadChatwoot);
+</script> 
