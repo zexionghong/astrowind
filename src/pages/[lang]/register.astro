@@ -29,6 +29,7 @@ const handleSubmit = `async function(e) {
   
   try {
     const formData = new FormData(e.target);
+    const inviteInput = e.target.querySelector('input[name="invite"]');
     
     if (inviteInput && inviteInput.disabled) {
       formData.set('invite', inviteInput.value);
