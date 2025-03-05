@@ -5,12 +5,19 @@ import { AstroSeo } from '@astrolib/seo';
 import type { Props as AstroSeoProps } from '@astrolib/seo';
 
 import { SITE, METADATA, I18N } from 'astrowind:config';
-import type { MetaData } from '~/types';
+import type { MetaData, MetaDataOpenGraph, MetaDataTwitter, MetaDataRobots } from '~/types';
 import { getCanonical } from '~/utils/permalinks';
 
 import { adaptOpenGraphImages } from '~/utils/images';
 
-export interface Props extends MetaData {
+export interface Props {
+  title?: string;
+  ignoreTitleTemplate?: boolean;
+  canonical?: string;
+  robots?: MetaDataRobots;
+  description?: string;
+  openGraph?: MetaDataOpenGraph;
+  twitter?: MetaDataTwitter;
   dontUseTitleTemplate?: boolean;
 }
 
@@ -63,6 +70,101 @@ const seoProps: AstroSeoProps = merge(
     twitter: twitter,
   }
 );
+
+// 添加结构化数据
+const mainStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'IPFlex',
+  applicationCategory: 'Proxy Service',
+  operatingSystem: 'All',
+  offers: {
+    '@type': 'Offer',
+    availability: 'https://schema.org/InStock',
+    price: '0',
+    priceCurrency: 'USD'
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.8',
+    ratingCount: '1320'
+  },
+  description: description || METADATA?.description,
+  provider: {
+    '@type': 'Organization',
+    name: 'IPFlex',
+    description: 'Enterprise-grade proxy solutions provider',
+    url: 'https://ipflex.ink',
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'customer service',
+      availableLanguage: ['en', 'zh']
+    }
+  },
+  serviceType: [
+    'Static Residential Proxies',
+    'Dynamic Datacenter IPs',
+    'Web Scraping Proxy API',
+    'Enterprise IP Solutions'
+  ],
+  areaServed: {
+    '@type': 'Country',
+    name: 'Global'
+  }
+};
+
+const faqStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: '代理IP如何工作？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '代理IP作为中间服务器，可以隐藏您的真实IP地址，帮助您访问受地理限制的内容，同时提供额外的安全性和匿名性保护。'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: '静态住宅IP和动态IP有什么区别？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '静态住宅IP是固定不变的真实住宅IP地址，适合需要保持IP稳定的业务场景；动态IP则会定期自动更换，适合需要频繁切换IP的数据采集任务。'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'IPFlex的IP资源覆盖哪些地区？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '我们的IP资源池覆盖全球200+国家和地区，支持精确到城市的地理位置定位，满足您的全球业务需求。'
+      }
+    }
+  ]
+};
+
+const productStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: 'IPFlex Proxy Services',
+  description: description || METADATA?.description,
+  brand: {
+    '@type': 'Brand',
+    name: 'IPFlex'
+  },
+  offers: {
+    '@type': 'AggregateOffer',
+    priceCurrency: 'USD',
+    availability: 'https://schema.org/InStock',
+    highPrice: '999',
+    lowPrice: '0',
+    offerCount: '5'
+  }
+};
 ---
 
 <AstroSeo {...{ ...seoProps, openGraph: await adaptOpenGraphImages(seoProps?.openGraph, Astro.site) }} />
+<script type="application/ld+json" set:html={JSON.stringify(mainStructuredData)} />
+<script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
+<script type="application/ld+json" set:html={JSON.stringify(productStructuredData)} />

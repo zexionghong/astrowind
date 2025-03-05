@@ -1,20 +1,21 @@
 {
   "index": {
     "metadata": {
-      "title": "IPFlex — Professional IP Proxy Service Provider"
+      "title": "Global Proxy IP Provider | IPFlex Enterprise IP Solutions",
+      "description": "IPFlex delivers enterprise-grade proxy solutions with 200+ countries coverage, offering premium static residential IPs & dynamic datacenter IPs. Supports web scraping, social media management, ad verification, and cross-border e-commerce."
     },
     "hero": {
       "primaryAction": "Get Started",
       "secondaryAction": "Learn More",
-      "title": "Enterprise-Grade <span class=\"hidden xl:inline\">Global IP, Stable Dedicated Proxy",
-      "subtitle": "<span class=\"hidden sm:inline\"><span class=\"font-semibold\">IPFlex</span> is committed to providing customized IP proxy services for every client. With extensive IP resources and excellent connection quality, we ensure optimal network performance and security in any environment.</span>"
+      "title": "Premium Proxy IP Service | Global Static Residential Proxies",
+      "subtitle": "<span class=\"text-lg sm:text-xl\"><span class=\"font-semibold\">IPFlex</span> provides enterprise-grade proxy solutions covering 200+ countries with premium static residential IPs and datacenter dynamic IP pools. Supporting data collection, social media management, ad verification, and cross-border e-commerce with 99.9% uptime guarantee.</span>"
     },
     "content": {
-        "residentialProxyTitle": "Residential Proxy",
-        "dataCenterProxyTile": "Data Center Proxy",
+        "residentialProxyTitle": "Residential Proxy Services",
+        "dataCenterProxyTile": "Data Center Proxy Services",
       "residentialProxy": {
         "title": "Static Residential Proxy",
-        "description": "",
+        "description": "Enterprise-Grade Static Residential IP Solutions",
         "descriptionList": [
           "A proxy service based on real residential networks, providing fixed IP addresses that remain unchanged for long periods.",
           "With high anonymity and credibility, it effectively avoids being identified as a proxy or being blocked,",
@@ -26,7 +27,7 @@
           "Precise City Targeting",
           "HTTP, Socks5 Protocol Support"
         ],
-        "contentTitle": "Static Residential Proxy"
+        "contentTitle": "Enterprise-Grade Static Residential Proxy Services"
       },
       "dynamicProxy":{
         "title": "Dynamic Residential Proxy",
@@ -204,28 +205,44 @@
       "subtitle": "Learn about IPFlex's powerful features and how to enhance your business.",
       "items": [
         {
-          "title": "Why choose IPFlex?",
-          "description": "IPFlex provides efficient, stable, and secure IP proxy services suitable for various business needs."
+          "title": "How do proxy IPs work?",
+          "description": "Proxy IPs act as intermediary servers that hide your real IP address, helping you access geo-restricted content while providing additional security and anonymity protection."
         },
         {
-          "title": "What do I need to get started?",
-          "description": "Simply register an account on IPFlex's official website, choose a suitable plan, and start using our IP proxy service."
+          "title": "What's the difference between static residential IPs and dynamic IPs?",
+          "description": "Static residential IPs are fixed, real residential addresses ideal for businesses requiring stable IPs, while dynamic IPs automatically rotate periodically, perfect for data collection tasks requiring frequent IP changes."
         },
         {
-          "title": "How do I install and configure IPFlex's IP proxy service?",
-          "description": "After registering an account on the official website, follow the prompts to select a plan and configure the IP proxy service to begin using it."
+          "title": "How is IPFlex's proxy IP service priced?",
+          "description": "We offer flexible billing plans, including traffic-based and IP quantity-based options. You can choose the most suitable package for your business needs, and we also provide customized enterprise solutions."
         },
         {
-          "title": "What are the advantages of IPFlex's IP proxy service?",
-          "description": "IPFlex provides efficient and stable IP proxy services with global coverage, flexible billing, and professional support."
+          "title": "How to choose the right proxy IP type?",
+          "description": "Choosing the right proxy IP type depends on your specific use case. Dynamic IPs are recommended for data collection, static residential IPs for cross-border e-commerce, and dedicated datacenter IPs for enterprise applications."
         },
         {
-          "title": "What scenarios is IPFlex's IP proxy service suitable for?",
-          "description": "IPFlex's IP proxy service is suitable for various scenarios including e-commerce, social media, and data collection."
+          "title": "What regions does IPFlex's IP pool cover?",
+          "description": "Our IP resource pool covers 200+ countries and regions worldwide, supporting city-level geographic targeting to meet your global business needs."
         },
         {
-          "title": "How can I get technical support?",
-          "description": "Our professional team provides 24/7 technical support to ensure your business runs smoothly."
+          "title": "What about proxy IP bandwidth and speed?",
+          "description": "IPFlex provides high-speed, stable proxy services using advanced load balancing technology, ensuring low latency and high bandwidth with unlimited traffic usage."
+        },
+        {
+          "title": "How do you ensure proxy IP stability?",
+          "description": "We employ multiple backup mechanisms and intelligent monitoring systems to track IP status in real-time, ensuring 99.9% availability with automatic failover capabilities."
+        },
+        {
+          "title": "Do you support API integration?",
+          "description": "Yes, we provide comprehensive API documentation and SDKs supporting multiple programming languages, making it easy to integrate our proxy services into your systems."
+        },
+        {
+          "title": "How do you ensure data security?",
+          "description": "IPFlex uses enterprise-grade encryption technology, supports HTTPS and SOCKS5 protocols, and ensures secure data transmission. We strictly comply with data protection regulations and never log or leak user data."
+        },
+        {
+          "title": "What technical support do you provide?",
+          "description": "We offer 24/7 technical support, including online documentation, technical consultation, and troubleshooting services to ensure your business runs smoothly."
         }
       ]
     }

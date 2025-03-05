@@ -1,20 +1,21 @@
 {
   "index": {
     "metadata": {
-      "title": "IPFlex — 专业的IP代理服务提供商"
+      "title": "全球代理IP供应商 | IPFlex企业级IP代理解决方案",
+      "description": "IPFlex专业提供企业级代理IP解决方案，覆盖全球200+国家的高质量静态住宅IP与动态数据中心IP资源。支持大规模数据采集、社交媒体管理、广告验证及跨境电商运营，99.9%可用性保证。"
     },
     "hero": {
       "primaryAction": "立即使用",
       "secondaryAction": "了解更多",
-      "title": "企业级全球IP，稳定独享代理",
-      "subtitle": "<span class=\"hidden sm:inline\"><span class=\"font-semibold\">IPFlex</span> 致力于为每位客户提供量身定制的IP代理服务，凭借广泛的IP资源和卓越的连接质量，<br/>确保您在任何环境下都能获得最佳的网络性能和安全保障。</span>"
+      "title": "高质量代理IP服务 | 全球静态住宅代理",
+      "subtitle": "<span class=\"text-lg sm:text-xl\"><span class=\"font-semibold\">IPFlex</span> 提供企业级IP代理解决方案，覆盖全球200+国家，提供高质量静态住宅IP和数据中心动态IP池。支持数据采集、社交媒体管理、广告验证及跨境电商运营，99.9%可用性保证。</span>"
     },
     "content": {
-        "residentialProxyTitle": "住宅代理",
-        "dataCenterProxyTile": "数据中心代理",
+      "residentialProxyTitle": "住宅代理服务",
+      "dataCenterProxyTile": "数据中心代理服务",
       "residentialProxy": {
         "title": "静态住宅代理",
-        "description": "",
+        "description": "企业级静态住宅IP解决方案",
         "descriptionList": [
           "基于真实住宅网络的代理服务，提供长期不变的固定IP地址。",
           "具有极高的匿名性和可信度，能够有效避免被识别为代理或被封禁，",
@@ -26,11 +27,11 @@
           "精准城市定位",
           "HTTP、Socks5协议支持"
         ],
-        "contentTitle": "静态住宅代理"
+        "contentTitle": "企业级静态住宅代理服务"
       },
-      "dynamicProxy":{
+      "dynamicProxy": {
         "title": "动态住宅代理",
-        "description": "",
+        "description": "高性能动态IP池解决方案",
         "descriptionList": [
           "基于不断变化的IP地址池的代理服务，提供短期内频繁更换的IP地址。",
           "此服务具有高度灵活性和广泛的IP覆盖，能够有效地规避IP封禁和限制，",
@@ -74,14 +75,17 @@
     },
     
     "features": {
-      "title": "IPFlex的优势",
-      "subtitle": "我们提供市场上最专业、最全面的IP代理服务。",
+      "title": "为什么选择IPFlex",
+      "subtitle": "专业的IP代理服务提供商，助力企业数字化转型",
       "items": [
         {
           "title": "全球IP资源池",
-          "description": "IPFlex拥有广泛覆盖的全球IP资源池，涵盖多个国家和地区，能够为您提供多样化的IP地址选择，开启您的无界网络体验。",
+          "description": "IPFlex拥有广泛覆盖的全球IP资源池，涵盖200+国家和地区，为您提供多样化的IP地址选择，开启无界网络体验。",
           "icon": "tabler:world",
-          "image": "~/assets/images/features/1.png"
+          "image": {
+            "src": "~/assets/images/features/1.png",
+            "alt": "IPFlex全球IP资源池分布图"
+          }
         },
         {
           "title": "高效技术支持",
@@ -207,28 +211,44 @@
       "subtitle": "了解IPFlex的强大功能以及如何提升您的业务。",
       "items": [
         {
-          "title": "为什么选择IPFlex?",
-          "description": "IPFlex提供高效、稳定、安全的IP代理服务，适用于各种业务需求。"
+          "title": "代理IP如何工作？",
+          "description": "代理IP作为中间服务器，可以隐藏您的真实IP地址，帮助您访问受地理限制的内容，同时提供额外的安全性和匿名性保护。"
         },
         {
-          "title": "我需要什么来开始使用?",
-          "description": "只需在IPFlex官网注册账号，选择合适的套餐，即可开始使用我们的IP代理服务。"
+          "title": "静态住宅IP和动态IP有什么区别？",
+          "description": "静态住宅IP是固定不变的真实住宅IP地址，适合需要保持IP稳定的业务场景；动态IP则会定期自动更换，适合需要频繁切换IP的数据采集任务。"
         },
         {
-          "title": "如何安装和配置IPFlex的IP代理服务?",
-          "description": "在官网注册账号后，根据提示选择套餐并配置IP代理服务，即可开始使用。"
+          "title": "IPFlex的代理IP服务价格如何？",
+          "description": "我们提供灵活的计费方案，包括按流量计费、按IP数量计费等多种选择。您可以根据业务需求选择最适合的套餐，我们也提供定制化的企业解决方案。"
         },
         {
-          "title": "IPFlex的IP代理服务有哪些优势?",
-          "description": "IPFlex提供高效稳定的IP代理服务，支持全球覆盖，灵活计费，专业支持。"
+          "title": "如何选择合适的代理IP类型？",
+          "description": "选择代理IP类型需要考虑您的具体使用场景。数据采集建议使用动态IP，跨境电商建议使用静态住宅IP，企业应用则可以选择专用数据中心IP。"
         },
         {
-          "title": "IPFlex的IP代理服务适用于哪些场景?",
-          "description": "IPFlex的IP代理服务适用于电商、社交媒体、数据采集等多种场景。"
+          "title": "IPFlex的IP资源覆盖哪些地区？",
+          "description": "我们的IP资源池覆盖全球200+国家和地区，支持精确到城市的地理位置定位，满足您的全球业务需求。"
         },
         {
-          "title": "如何获取技术支持?",
-          "description": "我们的专业团队提供24/7全天候技术支持，确保您的业务顺利进行。"
+          "title": "代理IP的带宽和速度如何？",
+          "description": "IPFlex提供高速稳定的代理服务，采用先进的负载均衡技术，确保低延迟和高带宽，支持无限流量使用。"
+        },
+        {
+          "title": "如何保证代理IP的稳定性？",
+          "description": "我们采用多重备份机制和智能监控系统，实时监测IP状态，确保99.9%的可用性，同时提供自动故障转移功能。"
+        },
+        {
+          "title": "是否支持API接入？",
+          "description": "是的，我们提供完整的API文档和SDK，支持多种编程语言，方便您将代理服务集成到自己的系统中。"
+        },
+        {
+          "title": "如何确保数据安全？",
+          "description": "IPFlex采用企业级加密技术，支持HTTPS和SOCKS5协议，确保数据传输安全。我们严格遵守数据保护法规，不会记录或泄露用户数据。"
+        },
+        {
+          "title": "提供哪些技术支持？",
+          "description": "我们提供7x24小时技术支持，包括在线文档、技术咨询、故障排查等服务，确保您的业务顺利运行。"
         }
       ]
     }
