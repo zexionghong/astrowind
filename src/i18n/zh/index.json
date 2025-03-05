@@ -82,10 +82,7 @@
           "title": "全球IP资源池",
           "description": "IPFlex拥有广泛覆盖的全球IP资源池，涵盖200+国家和地区，为您提供多样化的IP地址选择，开启无界网络体验。",
           "icon": "tabler:world",
-          "image": {
-            "src": "~/assets/images/features/1.png",
-            "alt": "IPFlex全球IP资源池分布图"
-          }
+          "image": "~/assets/images/features/1.png"
         },
         {
           "title": "高效技术支持",
