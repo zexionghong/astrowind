@@ -45,12 +45,14 @@ const { title, subtitle,  features,description="",descriptionList=[], isEven = f
       </p>
     </div>
     <div class="grid grid-cols-4 gap-8">
-      {features.map(async (feature, index) => {
+      {features.map(async (feature) => {
+        console.log(feature);
         const bgUrl = await findImage(feature.bg);
         const src = bgUrl?.src;
         return (
-        <div class="bg-blue-50/50 backdrop-blur-sm rounded-2xl p-12 flex items-end justify-start shadow-sm hover:translate-y-[-8px] transition-transform duration-300 ease-in-out hover:shadow-md relative overflow-hidden h-32" style={`background-image: url(${src}); background-size: cover; background-position: center;`}>
-            <span class={`absolute bottom-2 left-2 ${index % 2 === 1 ? 'text-white' : 'text-gray-700 dark:text-gray-300'}`}>{feature.title}</span>
+        <div class="bg-blue-50/50 backdrop-blur-sm rounded-2xl p-12 flex items-center justify-center shadow-sm hover:translate-y-[-8px] transition-transform duration-300 ease-in-out hover:shadow-md relative overflow-hidden h-32" style={`background-image: url(${src}); background-size: cover; background-position: center;`}>
+            <span class="text-blue-600 mr-3 text-lg">✓</span>
+            <span class="text-gray-700 dark:text-gray-300">{feature.title}</span>
         </div>
       )
       })}

@@ -22,10 +22,10 @@
           "适用于跨境电商、市场调研、社媒营销、品牌保护等多种业务场景。"
         ],
         "items": [
-          "真实长效住宅IP",
-          "可用率高达99.9%",
-          "精准城市定位",
-          "HTTP、Socks5协议支持"
+          {"title":"真实长效住宅IP","bg":"~/assets/images/proxy_content/lsp/1.png"},
+          {"title":"可用率高达99.9%","bg":"~/assets/images/proxy_content/lsp/2.png"},
+          {"title":"精准城市定位","bg":"~/assets/images/proxy_content/lsp/3.png"},
+          {"title":"HTTP、Socks5协议支持","bg":"~/assets/images/proxy_content/lsp/4.png"}
         ],
         "contentTitle": "企业级静态住宅代理服务"
       },
@@ -38,10 +38,10 @@
           "适用于需要频繁更换IP的业务场景，如网络爬虫、数据抓取、广告验证和自动化测试等。"
         ],
         "items": [
-          "真实短效住宅IP",
-          "千万+日活跃IP",
-          "可定位至城市",
-          "HTTP、Socks5协议支持"
+          {"title":"真实短效住宅IP","bg":"~/assets/images/proxy_content/dy/1.png"},
+          {"title":"千万+日活跃IP","bg":"~/assets/images/proxy_content/dy/2.png"},
+          {"title":"可定位至城市","bg":"~/assets/images/proxy_content/dy/3.png"},
+          {"title":"HTTP、Socks5协议支持","bg":"~/assets/images/proxy_content/dy/4.png"}
         ]
       },
       "dataCenterProxy": {
@@ -55,10 +55,10 @@
           "如网站测试、数据分析、SEO监控和在线广告验证等。"
         ],
         "items": [
-          "长效数据中心IP",
-          "精准城市定位",
-          "可用率高达99.9%",
-          "HTTP、Socks5协议支持"
+          {"title":"长效数据中心IP","bg":"~/assets/images/proxy_content/dc/1.png"},
+          {"title":"精准城市定位","bg":"~/assets/images/proxy_content/dc/2.png"},
+          {"title":"可用率高达99.9%","bg":"~/assets/images/proxy_content/dc/3.png"},
+          {"title":"HTTP、Socks5协议支持","bg":"~/assets/images/proxy_content/dc/4.png"}
         ]
       }
     },

@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Content from '~/components/widgets/Content.astro';
 import { useTranslations } from '~/utils/i18n';
+import ProxyService from '~/components/widgets/ProxyService.astro';
 
 export async function getStaticPaths() {
   return [
@@ -19,83 +19,41 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- 静态住宅代理 -->
-  <div id="static-residential" class="scroll-mt-20">
-    <Content
-      isReversed
-      items={[
-        {title: t('detail.staticResidential.items.0')},
-        {title: t('detail.staticResidential.items.1')},
-        {title: t('detail.staticResidential.items.2')},
-        {title: t('detail.staticResidential.items.3')},
-      ]}
-      image={{
-        src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-        alt: t('detail.staticResidential.title'),
-      }}
-    >
-      <Fragment slot="content">
-        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-          {t('detail.staticResidential.title')}
-        </h3>
-        {t('detail.staticResidential.description')}
-      </Fragment>
-      <Fragment slot="bg">
-        <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-      </Fragment>
-    </Content>
+  <!-- 波浪形状背景 -->
+  <div class="relative w-full h-[300px]">
+    <div class="absolute bottom-0 left-0 w-full ">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#2a64f4" fill-opacity="1" d="M0,160L60,170.7C120,181,240,203,360,192C480,181,600,139,720,101.3C840,64,960,32,1080,26.7C1200,21,1320,43,1380,53.3L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z" transform="scale(1, -1) translate(0, -320)"></path>
+      </svg>
+      
+      
+      
+      
+    </div>
   </div>
+  <ProxyService
+  subtitle={t('index.content.residentialProxy.title')}
+  description=""
+  descriptionList={t('index.content.residentialProxy.descriptionList')}
+  features={(Array.isArray(t('index.content.residentialProxy.items')) ? t('index.content.residentialProxy.items') : [])}
+/>
 
-  <!-- 动态住宅代理 -->
-  <div id="dynamic-residential" class="scroll-mt-20">
-    <Content
-      isAfterContent
-      items={[
-        {title: t('detail.dynamicResidential.items.0')},
-        {title: t('detail.dynamicResidential.items.1')},
-        {title: t('detail.dynamicResidential.items.2')},
-        {title: t('detail.dynamicResidential.items.3')},
-      ]}
-      image={{
-        src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
-        alt: t('detail.dynamicResidential.title'),
-      }}
-    >
-      <Fragment slot="content">
-        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-          {t('detail.dynamicResidential.title')}
-        </h3>
-        {t('detail.dynamicResidential.description')}
-      </Fragment>
-      <Fragment slot="bg">
-        <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-      </Fragment>
-    </Content>
-  </div>
+<br/>
+<br/>
+<ProxyService
+  subtitle={t('index.content.dynamicProxy.title')}
+  isEven={true}
+  descriptionList={t('index.content.dynamicProxy.descriptionList')}
+  features={(Array.isArray(t('index.content.dynamicProxy.items')) ? t('index.content.dynamicProxy.items') : [])}
+/>
+<br/>
+<br/>
+<ProxyService
+  subtitle={t('index.content.dataCenterProxy.title')}
 
-  <!-- 数据中心代理 -->
-  <div id="datacenter" class="scroll-mt-20">
-    <Content
-      isReversed
-      items={[
-        {title: t('detail.datacenter.items.0')},
-        {title: t('detail.datacenter.items.1')},
-        {title: t('detail.datacenter.items.2')},
-      ]}
-      image={{
-        src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-        alt: t('detail.datacenter.title'),
-      }}
-    >
-      <Fragment slot="content">
-        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-          {t('detail.datacenter.title')}
-        </h3>
-        {t('detail.datacenter.description')}
-      </Fragment>
-      <Fragment slot="bg">
-        <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-      </Fragment>
-    </Content>
-  </div>
+  descriptionList={t('index.content.dataCenterProxy.descriptionList')}
+  features={(Array.isArray(t('index.content.dataCenterProxy.items')) ? t('index.content.dataCenterProxy.items') : [])}
+/>
+
+ 
 </Layout>
