@@ -68,23 +68,29 @@ const prices = [
     },
   },
 ];
+
+const features = {
+  title: t('pricing.features.title'),
+    subtitle: t('pricing.features.subtitle'),
+    items: t('pricing.features.items'),
+};
 ---
 
 <Layout metadata={metadata}>
-  <HeroText
+  <!-- <HeroText
     title={t('pricing.hero.title')}
     subtitle={t('pricing.hero.subtitle')}
-  />
+  /> -->
 
-  <Prices prices={prices} />
+  <Prices prices={prices} title={t('pricing.hero.title')} subtitle={t('pricing.hero.subtitle')} features={features} />
 
-  <Features3
+  <!-- <Features3
     title={t('pricing.features.title')}
     subtitle={t('pricing.features.subtitle')}
     columns={2}
     items={t('pricing.features.items')}
     classes={{ container: 'max-w-5xl' }}
-  />
+  /> -->
 
   <!-- 其他组件的国际化... -->
 

@@ -59,32 +59,38 @@
         {
           "title": "分级定价方案",
           "description": "提供多种价格方案，满足不同预算和需求",
-          "icon": "tabler:stairs"
+          "icon": "tabler:stairs",
+          "img":"~/assets/images/pricing/a.png"
         },
         {
           "title": "透明定价",
           "description": "清晰展示每个方案的价格详情，无隐藏费用",
-          "icon": "tabler:flip-vertical"
+          "icon": "tabler:flip-vertical",
+          "img":"~/assets/images/pricing/b.png"
         },
         {
           "title": "安全支付",
           "description": "安全的支付网关保护您的交易信息",
-          "icon": "tabler:shield-lock"
+          "icon": "tabler:shield-lock",
+          "img":"~/assets/images/pricing/c.png"
         },
         {
           "title": "即时访问",
           "description": "支付完成后即可使用所有功能",
-          "icon": "tabler:accessible"
+          "icon": "tabler:accessible",
+          "img":"~/assets/images/pricing/d.png"
         },
         {
           "title": "升级优惠",
           "description": "升级到更高级方案可解锁更多功能和优势",
-          "icon": "tabler:chevrons-up"
+          "icon": "tabler:chevrons-up",
+          "img":"~/assets/images/pricing/e.png"
         },
         {
           "title": "24小时支持",
           "description": "每天通过在线聊天、邮件或电话提供支持",
-          "icon": "tabler:headset"
+          "icon": "tabler:headset",
+          "img":"~/assets/images/pricing/f.png"
         }
       ]
     }

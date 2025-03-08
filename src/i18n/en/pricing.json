@@ -59,32 +59,38 @@
         {
           "title": "Tiered Pricing",
           "description": "Multiple pricing options to meet different budgets and needs",
-          "icon": "tabler:stairs"
+          "icon": "tabler:stairs",
+          "img":"~/assets/images/pricing/a.png"
         },
         {
           "title": "Transparent Pricing",
           "description": "Clear display of pricing details for each plan, no hidden fees",
-          "icon": "tabler:flip-vertical"
+          "icon": "tabler:flip-vertical",
+          "img":"~/assets/images/pricing/b.png"
         },
         {
           "title": "Secure Payment",
           "description": "Secure payment gateway to protect your transaction information",
-          "icon": "tabler:shield-lock"
+          "icon": "tabler:shield-lock",
+          "img":"~/assets/images/pricing/c.png"
         },
         {
           "title": "Instant Access",
           "description": "Access to all features immediately after payment",
-          "icon": "tabler:accessible"
+          "icon": "tabler:accessible",
+          "img":"~/assets/images/pricing/d.png"
         },
         {
           "title": "Upgrade Benefits",
           "description": "Unlock more features and benefits by upgrading to higher-tier plans",
-          "icon": "tabler:chevrons-up"
+          "icon": "tabler:chevrons-up",
+          "img":"~/assets/images/pricing/e.png"
         },
         {
           "title": "24/7 Support",
           "description": "Daily support via live chat, email, or phone",
-          "icon": "tabler:headset"
+          "icon": "tabler:headset",
+          "img":"~/assets/images/pricing/f.png"
         }
       ]
     }
