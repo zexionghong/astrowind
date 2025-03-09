@@ -22,10 +22,10 @@
           "suitable for cross-border e-commerce, market research, social media marketing, brand protection, and various other business scenarios."
         ],
         "items": [
-          {"title":"Real Long-term Residential IP","bg":"/assets/images/proxy_content/lsp/1.png"},
-          {"title":"99.9% Availability","bg":"/assets/images/proxy_content/lsp/2.png"},
-          {"title":"Precise City Targeting","bg":"/assets/images/proxy_content/lsp/3.png"},
-          {"title":"HTTP, Socks5 Protocol Support","bg":"/assets/images/proxy_content/lsp/4.png"}
+          {"title":"Real Long-term Residential IP","bg":"~/assets/images/proxy_content/lsp/1.png"},
+          {"title":"99.9% Availability","bg":"~/assets/images/proxy_content/lsp/2.png"},
+          {"title":"Precise City Targeting","bg":"~/assets/images/proxy_content/lsp/3.png"},
+          {"title":"HTTP, Socks5 Protocol Support","bg":"~/assets/images/proxy_content/lsp/4.png"}
         ],
         "contentTitle": "Enterprise-Grade Static Residential Proxy Services"
       },
@@ -38,10 +38,10 @@
           "suitable for scenarios requiring frequent IP changes such as web crawling, data scraping, ad verification, and automated testing."
         ],
         "items": [
-          {"title":"Real Short-term Residential IP","bg":"/assets/images/proxy_content/dy/1.png"},
-          {"title":"10M+ Daily Active IPs","bg":"/assets/images/proxy_content/dy/2.png"},
-          {"title":"City-level Targeting","bg":"/assets/images/proxy_content/dy/3.png"},
-          {"title":"HTTP, Socks5 Protocol Support","bg":"/assets/images/proxy_content/dy/4.png"}
+          {"title":"Real Short-term Residential IP","bg":"~/assets/images/proxy_content/dy/1.png"},
+          {"title":"10M+ Daily Active IPs","bg":"~/assets/images/proxy_content/dy/2.png"},
+          {"title":"City-level Targeting","bg":"~/assets/images/proxy_content/dy/3.png"},
+          {"title":"HTTP, Socks5 Protocol Support","bg":"~/assets/images/proxy_content/dy/4.png"}
         ]
       },
       "dataCenterProxy": {
@@ -53,10 +53,10 @@
           "Particularly suitable for business scenarios requiring fast, large-scale data scraping and access, such as website testing, data analysis, SEO monitoring, and online ad verification."
         ],  
         "items": [
-          {"title":"Long-term Data Center IP","bg":"/assets/images/proxy_content/dc/1.png"},
-          {"title":"Precise City Targeting","bg":"/assets/images/proxy_content/dc/2.png"},
-          {"title":"99.9% Availability","bg":"/assets/images/proxy_content/dc/3.png"},
-          {"title":"HTTP, Socks5 Protocol Support","bg":"/assets/images/proxy_content/dc/4.png"}
+          {"title":"Long-term Data Center IP","bg":"~/assets/images/proxy_content/dc/1.png"},
+          {"title":"Precise City Targeting","bg":"~/assets/images/proxy_content/dc/2.png"},
+          {"title":"99.9% Availability","bg":"~/assets/images/proxy_content/dc/3.png"},
+          {"title":"HTTP, Socks5 Protocol Support","bg":"~/assets/images/proxy_content/dc/4.png"}
         ]
       }
     },
