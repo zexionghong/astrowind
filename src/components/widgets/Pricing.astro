@@ -3,7 +3,7 @@ import type { PriceCardProps } from '../common/PriceCard.astro';
 import PriceCard from '../common/PriceCard.astro';
 import { Image } from 'astro:assets';
 import { findImage } from '~/utils/images';
-
+import bg from '~/assets/images/bg/pricing_bg.png'
 export interface FeatureCardProps {
   title: string;
   subtitle: string;
@@ -31,8 +31,15 @@ const {
 } = Astro.props as Pricing;
 ---
 
-<div class="w-full bg-gradient-to-b from-blue-500 to-blue-600 py-16 text-white" id={id}>
-  <div class="container mx-auto max-w-7xl px-4">
+<div class="w-full relative py-16 text-white" id={id}>
+  <Image
+    src={bg}
+    alt="pricing background"
+    class="absolute inset-0 w-full h-full object-cover"
+    width={1920}
+    height={1080}
+  />
+  <div class="container mx-auto max-w-7xl px-4 relative z-10">
     <div class="text-center mb-32">
       <h2 class="text-4xl font-bold mb-2">{title}</h2>
       <p class="text-lg">{subtitle}</p>
