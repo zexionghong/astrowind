@@ -23,7 +23,6 @@ const metadata = {
   title: t('index.metadata.title'),
   ignoreTitleTemplate: true,
 };
-console.log(t('index.hero.primaryAction'));
 ---
 
 <Layout metadata={metadata}>
@@ -56,20 +55,20 @@ console.log(t('index.hero.primaryAction'));
         subtitle: t('index.content.residentialProxy.title'),
         description: "",
         descriptionList: t('index.content.residentialProxy.descriptionList'),
-        features: (Array.isArray(t('index.content.residentialProxy.items')) ? t('index.content.residentialProxy.items') : []).map(item => ({ title: item }))
+        features: (Array.isArray(t('index.content.residentialProxy.items')) ? t('index.content.residentialProxy.items') : [])
       }}
       dynamicProxy={{
         subtitle: t('index.content.dynamicProxy.title'),
         description: "",
         descriptionList: t('index.content.dynamicProxy.descriptionList'),
-        features: (Array.isArray(t('index.content.dynamicProxy.items')) ? t('index.content.dynamicProxy.items') : []).map(item => ({ title: item }))
+        features: (Array.isArray(t('index.content.dynamicProxy.items')) ? t('index.content.dynamicProxy.items') : [])
       }}
       dataCenterProxy={{
         title: t('index.content.dataCenterProxyTile'),
         subtitle: t('index.content.dataCenterProxy.title'),
         description: "",
         descriptionList: t('index.content.dataCenterProxy.descriptionList'),
-        features: (Array.isArray(t('index.content.dataCenterProxy.items')) ? t('index.content.dataCenterProxy.items') : []).map(item => ({ title: item }))
+        features: (Array.isArray(t('index.content.dataCenterProxy.items')) ? t('index.content.dataCenterProxy.items') : [])
       }}
     />
     <!-- <Note /> -->
@@ -108,6 +107,7 @@ console.log(t('index.hero.primaryAction'));
       subtitle={t('index.features2.subtitle')}
       items={t('index.features2.items')}
     />
+    <br />
   </div>
 
   </div>
