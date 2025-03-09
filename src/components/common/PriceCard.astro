@@ -36,13 +36,13 @@ const {
   isHighlighted = false
 } = Astro.props;
 
-let opacity = 100;
+let opacity = "";
 let isWhite = false;
 if (index % 2 === 0) {
-  opacity = 10
+  opacity = "opacity-10"
   isWhite = false
 } else {
-  opacity = 100
+  opacity = "opacity-100"
   isWhite = true
 }
 ---
@@ -51,7 +51,7 @@ if (index % 2 === 0) {
   <div class="w-full max-w-xs transform scale-70 origin-center">
     <div class={`rounded-xl overflow-hidden shadow-lg h-full flex flex-col relative ${isHighlighted ? 'bg-blue-600 text-white' : 'bg-white text-gray-800'}`}>
       {!isHighlighted && (
-        <div class={`absolute inset-0 z-0 opacity-${opacity}`}>
+        <div class={`absolute inset-0 z-0 ${opacity}`}>
           <Image src={cardBg} alt="" class="w-full h-full object-cover" />
         </div>
       )}
