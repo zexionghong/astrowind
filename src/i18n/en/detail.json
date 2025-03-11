@@ -1,6 +1,10 @@
 {
   "detail": {
     "title": "Product Details",
+    "slogan": {
+      "line1": "Millions of Global Real IPs, Unlimited Possibilities",
+      "line2": "Stable, Reliable, Lightning-Fast - Break Through All Data Barriers!"
+    },
     "staticResidential": {
       "title": "Static Residential Proxy",
       "description": "A proxy service based on real residential networks, providing fixed IP addresses that remain unchanged for long periods. It features high anonymity and credibility, effectively avoiding proxy detection or blocking, suitable for various business scenarios such as cross-border e-commerce, market research, social media marketing, and brand protection.",

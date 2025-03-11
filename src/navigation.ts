@@ -3,20 +3,8 @@ export const getHeaderData = (lang: string = 'zh') => ({
   links: [
     {
       text: lang === 'zh' ? '产品' : 'Products',
-      links: [
-        {
-          text: lang === 'zh' ? '静态住宅代理' : 'Static Residential Proxy',
-          href: `/${lang}/detail#static-residential`,
-        },
-        {
-          text: lang === 'zh' ? '动态住宅代理' : 'Dynamic Residential Proxy',
-          href: `/${lang}/detail#dynamic-residential`,
-        },
-        {
-          text: lang === 'zh' ? '数据中心代理' : 'Data Center Proxy',
-          href: `/${lang}/detail#datacenter`,
-        },
-      ],
+      href: `/${lang}/detail`,
+      
     },
     {
       text: lang === 'zh' ? '定价' : 'Pricing',
@@ -38,7 +26,7 @@ export const getHeaderData = (lang: string = 'zh') => ({
     ] : [])
   ],
   actions: [
-    { text: lang === 'zh' ? '注册' : 'Sign Up', href: 'https://dashboard.ipflex.ink', target: '_blank', color: 'blue' },
+    { text: lang === 'zh' ? '注册' : 'Sign Up', href: `/${lang}/register`, color: 'blue' },
     { text: lang === 'zh' ? '登录' : 'Login', href: 'https://dashboard.ipflex.ink/login', target: '_blank' },
   ],
 });
