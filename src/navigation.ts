@@ -62,7 +62,7 @@ export const getFooterData = (lang: string = 'zh') => ({
     {
       title: lang === 'zh' ? '支持' : 'Support',
       links: [
-        { text: lang === 'zh' ? '帮助中心' : 'Help Center', href: `/${lang}/help` },
+        { text: lang === 'zh' ? '帮助中心' : 'Help Center', href: 'https://ipflex-helpcenter.helplook.net/' },
         { text: lang === 'zh' ? '开发文档' : 'Documentation', href: '#' },
         { text: lang === 'zh' ? '联系我们' : 'Contact Us', href: '#' },
       ],

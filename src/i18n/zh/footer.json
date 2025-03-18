@@ -20,7 +20,7 @@
     "support": {
       "title": "支持",
       "links": [
-        { "text": "帮助中心", "href": "/zh/help" },
+        { "text": "帮助中心", "href": "https://ipflex-helpcenter.helplook.net/" },
         { "text": "开发文档", "href": "#" },
         { "text": "联系我们", "href": "#" }
       ]
