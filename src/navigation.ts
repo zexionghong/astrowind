@@ -77,7 +77,7 @@ export const getFooterData = (lang: string = 'zh') => ({
     },
   ],
   socialLinks: [
-    { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
+    { ariaLabel: 'X', icon: 'tabler:brand-x', href: 'https://x.com/IPFlexSupport' },
     { ariaLabel: 'Telegram', icon: 'tabler:brand-telegram', href: '#' },
     { ariaLabel: 'Discord', icon: 'tabler:brand-discord', href: '#' },
   ],
