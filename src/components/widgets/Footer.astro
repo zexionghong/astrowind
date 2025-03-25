@@ -1,7 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
 import { getFooterData } from '~/navigation';
-import { SITE } from 'astrowind:config';
 import Logo from '~/components/Logo.astro';
 
 interface Link {
@@ -16,10 +15,20 @@ interface Links {
   links: Array<Link>;
 }
 
+interface FriendLink {
+  name: string;
+  nameCn: string;
+  nameEn: string;
+  logo: string;
+  description: string;
+  href: string;
+}
+
 interface Props {
   links?: Array<Links>;
   secondaryLinks?: Array<Link>;
   socialLinks?: Array<Link>;
+  friendLinks?: Array<FriendLink>;
   theme?: string;
   footNote?: string;
   lang?: string;
@@ -30,8 +39,47 @@ const { theme = 'light', lang = 'zh' } = Astro.props;
 const footerData = getFooterData(lang);
 const links = footerData.links;
 const socialLinks = footerData.socialLinks;
+const friendLinks = footerData.friendLinks;
 const footNote = footerData.footNote;
 ---
+
+<!-- 友链区域 -->
+<section class="relative border-t border-gray-200 dark:border-slate-800 not-prose">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="py-8 md:py-12">
+      <h2 class="text-2xl font-bold text-blue-900 dark:text-white mb-8 text-center">
+        {lang === 'zh' ? '友情链接' : 'Friend Links'}
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {
+          friendLinks?.map((link) => (
+            <a 
+              href={link.href} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="group flex items-center p-4 border border-gray-200 dark:border-slate-800 rounded-lg hover:bg-blue-50 dark:hover:bg-slate-800 transition duration-300"
+            >
+              <div class="w-[50px] h-[50px] flex-shrink-0 flex items-center justify-center">
+                <img src={`/images/friends/${link.logo}`} alt={link.name} class="max-w-full max-h-full" />
+              </div>
+              <div class="ml-4 flex-grow min-w-0">
+                <div>
+                  <h3 class="font-medium text-blue-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 truncate">
+                    {lang === 'zh' ? link.nameCn : link.nameEn}
+                  </h3>
+                  <div class="text-xs text-gray-500 dark:text-gray-400 truncate">
+                    {lang === 'zh' ? link.nameEn : link.nameCn}
+                  </div>
+                </div>
+                <p class="text-xs text-blue-700/80 dark:text-gray-400 mt-1 line-clamp-2">{link.description}</p>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer class:list={[{ dark: theme === 'dark' }, 'relative border-t border-gray-200 dark:border-slate-800 not-prose']}>
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
