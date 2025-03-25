@@ -15,8 +15,7 @@ const { lang } = Astro.params;
 const t = await useTranslations(lang);
 
 const url = Astro.url;
-const inviteCode = url.searchParams.get('invite') || '';
-
+const inviteCode = url.searchParams.get('ref') || url.searchParams.get('ref') || url.searchParams.get('code');
 const metadata = {
   title: lang === 'zh' ? 'IPFlex — 用户注册' : 'IPFlex — User Registration',
   ignoreTitleTemplate: true,
@@ -200,7 +199,7 @@ const handleSubmit = `async function(e) {
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
-    const inviteCode = urlParams.get('invite');
+    const inviteCode = urlParams.get('invite') || urlParams.get('ref') || urlParams.get('code') ;
     if (inviteCode) {
       const inviteInput = document.querySelector('input[name="invite"]');
       if (inviteInput) {
