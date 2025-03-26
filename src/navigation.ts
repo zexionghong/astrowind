@@ -78,44 +78,20 @@ export const getFooterData = (lang: string = 'zh') => ({
   ],
   friendLinks: [
     { 
-      name: 'AdsPower',
-      nameCn: 'AdsPower',
-      nameEn: 'AdsPower', 
-      logo: 'adspower-logo.png',
-      description: lang === 'zh' ? 'AdsPower是一款专注出海多账号安全管理工具' : 'AdsPower is a multi-account secure management tool for overseas business',
-      href: 'https://www.adspower.com/' 
+      name: '拉力猫指纹浏览器',
+      nameCn: '拉力猫指纹浏览器',
+      nameEn: '拉力猫指纹浏览器', 
+      logo: 'lalimao.png',
+      description: lang === 'zh' ? '拉力猫指纹浏览器，为您的电商平台、独立站、社媒营销提供安全保障。每个账号独立浏览器指纹、独立IP登录环境，实现防关联批量管理、注册和养号，确保账号安全隔离。' : '拉力猫指纹浏览器，为您的电商平台、独立站、社媒营销提供安全保障。每个账号独立浏览器指纹、独立IP登录环境，实现防关联批量管理、注册和养号，确保账号安全隔离。',
+      href: 'https://www.lalimao.com/' 
     },
     { 
-      name: 'IXBrowser',
-      nameCn: 'IXBrowser',
-      nameEn: 'IXBrowser', 
-      logo: 'ixbrowser-logo.png',
-      description: lang === 'zh' ? 'IXBrowser是一款专为互联网研究和数据收集而设计的浏览器' : 'IXBrowser is a browser designed for internet research and data collection',
-      href: 'https://www.ixbrowser.com/' 
-    },
-    { 
-      name: 'BrowserScan',
-      nameCn: 'BrowserScan',
-      nameEn: 'BrowserScan', 
-      logo: 'browserscan-logo.png',
-      description: lang === 'zh' ? 'BrowserScan是一个提供网站安全性检测服务的工具' : 'BrowserScan is a tool providing website security detection services',
-      href: 'https://browserscan.com/' 
-    },
-    { 
-      name: '宝塔云',
-      nameCn: '宝塔云',
-      nameEn: 'BaoTa Cloud', 
-      logo: 'baotayun-logo.png',
-      description: lang === 'zh' ? '宝塔云是一家提供全方位云计算服务的公司' : 'BaoTa Cloud is a company providing comprehensive cloud computing services',
-      href: 'https://www.bt.cn/' 
-    },
-    { 
-      name: '候鸟',
-      nameCn: '候鸟',
-      nameEn: 'HouNiao', 
-      logo: 'houniao-logo.png',
-      description: lang === 'zh' ? '候鸟是一款专注于隐私保护的网络浏览器' : 'HouNiao is a browser focused on privacy protection',
-      href: '#' 
+      name: 'DuoPlus云手机',
+      nameCn: 'DuoPlus云手机',
+      nameEn: 'DuoPlus云手机', 
+      logo: 'duplus.png',
+      description: lang === 'zh' ? '专注打造全球社媒营销、Tiktok、WhatsApp专用云手机，不需要下载客户端，流畅运用实体手机所有的功能。' : '专注打造全球社媒营销、Tiktok、WhatsApp专用云手机，不需要下载客户端，流畅运用实体手机所有的功能。',
+      href: 'https://www.duoplus.cn/?r=IPFlex' 
     }
   ],
   socialLinks: [
