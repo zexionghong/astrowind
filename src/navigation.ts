@@ -92,6 +92,14 @@ export const getFooterData = (lang: string = 'zh') => ({
       logo: 'duplus.png',
       description: lang === 'zh' ? '专注打造全球社媒营销、Tiktok、WhatsApp专用云手机，不需要下载客户端，流畅运用实体手机所有的功能。' : '专注打造全球社媒营销、Tiktok、WhatsApp专用云手机，不需要下载客户端，流畅运用实体手机所有的功能。',
       href: 'https://www.duoplus.cn/?r=IPFlex' 
+    },
+    {
+      name: 'FastTK',
+      nameCn: 'FastTK',
+      nameEn: 'FastTK',
+      logo: 'fasttk.png',
+      description: lang === 'zh' ? '提供TikTok/YouTube/Instagram等海外社媒涨粉、点赞、曝光等服务' : 'Provide TikTok/YouTube/Instagram and other overseas social media to increase followers, likes, exposure and other services',
+      href: 'https://www.fasttk.com/?affId=iqdrYBs9zo'
     }
   ],
   socialLinks: [
