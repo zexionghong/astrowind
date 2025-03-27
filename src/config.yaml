@@ -8,6 +8,7 @@ site:
   googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
   bingSiteVerificationId: 8D799482CF9CE9E195F399D5BD19E2DC
   s360SiteVerificationId: f2330f13ce1669019105431474dad8dd
+  baiduSiteVerificationId: codeva-DsczgTJKSi  # 百度站长 ipflexproxy.com
 
 # Default SEO metadata
 metadata:
