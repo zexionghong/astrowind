@@ -5,10 +5,10 @@ Disallow: /admin/
 Disallow: /dashboard/
 
 # Sitemap
-Sitemap: https://ipflex.ink/sitemap-index.xml
+Sitemap: https://ipflexproxy.com/sitemap-index.xml
 
 # Crawl-delay
 Crawl-delay: 10
 
 # Host
-Host: https://ipflex.ink
+Host: https://ipflexproxy.com

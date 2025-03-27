@@ -1,6 +1,6 @@
 site:
   name: IPFlex
-  site: 'https://ipflex.ink'
+  site: 'https://ipflexproxy.com'
   base: '/'
   dashboard: 'https://dashboard.ipflex.ink'
   trailingSlash: false
