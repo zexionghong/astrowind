@@ -2,7 +2,7 @@
 import { Icon } from 'astro-icon/components';
 import { getFooterData } from '~/navigation';
 import Logo from '~/components/Logo.astro';
-import { getFriendLinks } from '~/services/api';
+import FriendLinks from '~/components/FriendLinks.astro';
 
 interface Link {
   text?: string;
@@ -31,10 +31,6 @@ const footerData = getFooterData(lang);
 const links = footerData.links;
 const socialLinks = footerData.socialLinks;
 const footNote = footerData.footNote;
-
-// 获取友链数据
-const friendLinksData = await getFriendLinks();
-const friendLinks = friendLinksData.links;
 ---
 
 <!-- 友链区域 -->
@@ -44,39 +40,7 @@ const friendLinks = friendLinksData.links;
       <h2 class="text-2xl font-bold text-blue-900 dark:text-white mb-8 text-center">
         {lang === 'zh' ? '友情链接' : 'Friend Links'}
       </h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {
-          friendLinks?.map((link) => (
-            <a 
-              href={link.url} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              class="group flex items-center p-4 border border-gray-200 dark:border-slate-800 rounded-lg hover:bg-blue-50 dark:hover:bg-slate-800 transition duration-300"
-            >
-              <div class="w-[50px] h-[50px] flex-shrink-0 flex items-center justify-center overflow-hidden">
-                <img 
-                  src={link.logo} 
-                  alt={link.name} 
-                  class="w-full h-full object-contain"
-                />
-              </div>
-              <div class="ml-4 flex-grow min-w-0">
-                <div>
-                  <h3 class="font-medium text-blue-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 truncate">
-                    {lang === 'zh' ? link.name : link.en_name}
-                  </h3>
-                  <div class="text-xs text-gray-500 dark:text-gray-400 truncate">
-                    {lang === 'zh' ? link.en_name : link.name}
-                  </div>
-                </div>
-                <p class="text-xs text-blue-700/80 dark:text-gray-400 mt-1 line-clamp-2">
-                  {lang === 'zh' ? link.description : link.en_description}
-                </p>
-              </div>
-            </a>
-          ))
-        }
-      </div>
+      <FriendLinks lang={lang} />
     </div>
   </div>
 </section>
