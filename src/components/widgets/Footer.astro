@@ -2,6 +2,7 @@
 import { Icon } from 'astro-icon/components';
 import { getFooterData } from '~/navigation';
 import Logo from '~/components/Logo.astro';
+import { getFriendLinks } from '~/services/api';
 
 interface Link {
   text?: string;
@@ -15,20 +16,10 @@ interface Links {
   links: Array<Link>;
 }
 
-interface FriendLink {
-  name: string;
-  nameCn: string;
-  nameEn: string;
-  logo: string;
-  description: string;
-  href: string;
-}
-
 interface Props {
   links?: Array<Links>;
   secondaryLinks?: Array<Link>;
   socialLinks?: Array<Link>;
-  friendLinks?: Array<FriendLink>;
   theme?: string;
   footNote?: string;
   lang?: string;
@@ -39,8 +30,11 @@ const { theme = 'light', lang = 'zh' } = Astro.props;
 const footerData = getFooterData(lang);
 const links = footerData.links;
 const socialLinks = footerData.socialLinks;
-const friendLinks = footerData.friendLinks;
 const footNote = footerData.footNote;
+
+// 获取友链数据
+const friendLinksData = await getFriendLinks();
+const friendLinks = friendLinksData.links;
 ---
 
 <!-- 友链区域 -->
@@ -54,14 +48,14 @@ const footNote = footerData.footNote;
         {
           friendLinks?.map((link) => (
             <a 
-              href={link.href} 
+              href={link.url} 
               target="_blank" 
               rel="noopener noreferrer"
               class="group flex items-center p-4 border border-gray-200 dark:border-slate-800 rounded-lg hover:bg-blue-50 dark:hover:bg-slate-800 transition duration-300"
             >
               <div class="w-[50px] h-[50px] flex-shrink-0 flex items-center justify-center overflow-hidden">
                 <img 
-                  src={`/images/friends/${link.logo}`} 
+                  src={link.logo} 
                   alt={link.name} 
                   class="w-full h-full object-contain"
                 />
@@ -69,13 +63,15 @@ const footNote = footerData.footNote;
               <div class="ml-4 flex-grow min-w-0">
                 <div>
                   <h3 class="font-medium text-blue-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 truncate">
-                    {lang === 'zh' ? link.nameCn : link.nameEn}
+                    {lang === 'zh' ? link.name : link.en_name}
                   </h3>
                   <div class="text-xs text-gray-500 dark:text-gray-400 truncate">
-                    {lang === 'zh' ? link.nameEn : link.nameCn}
+                    {lang === 'zh' ? link.en_name : link.name}
                   </div>
                 </div>
-                <p class="text-xs text-blue-700/80 dark:text-gray-400 mt-1 line-clamp-2">{link.description}</p>
+                <p class="text-xs text-blue-700/80 dark:text-gray-400 mt-1 line-clamp-2">
+                  {lang === 'zh' ? link.description : link.en_description}
+                </p>
               </div>
             </a>
           ))
