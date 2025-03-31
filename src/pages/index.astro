@@ -33,7 +33,7 @@ const metadata = {
         {
           variant: 'primary',
           text: t('index.hero.primaryAction'),
-          href: 'https://dashboard.ipflex.ink/register',
+          href: `/${lang}/register`,
           target: '_blank',
         },
         {   
@@ -98,7 +98,7 @@ const metadata = {
       title={t('index.callToAction.title')}
       subtitle={`${t('index.callToAction.subtitle1')}\n${t('index.callToAction.subtitle2')}`}
       buttonText={t('index.callToAction.primaryAction')}
-      buttonHref="https://dashboard.ipflex.ink/register"
+      buttonHref={`/${lang}/register`}
     />
 
     <!-- UsageScenarios Widget ********* -->
@@ -121,3 +121,13 @@ const metadata = {
     items={t("index.faqs.items")}
   />
 </Layout>
+
+<script>
+  // 导入参数缓存工具函数
+  import { cacheUrlParams } from '../utils/paramCache';
+
+  // 在页面加载时缓存URL参数
+  document.addEventListener('DOMContentLoaded', () => {
+    cacheUrlParams();
+  });
+</script>

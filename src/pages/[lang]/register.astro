@@ -197,6 +197,17 @@ const handleSubmit = `async function(e) {
 </style>
 
 <script>
+import { getCachedParam } from "~/utils/paramCache";
+
+  document.addEventListener('DOMContentLoaded', () => {
+    console.log('页面加载完成');
+    const inviteInput = document.querySelector('input[name="invite"]');
+    if (inviteInput && !inviteInput.value) {
+      const cachedParams = getCachedParam('ref');
+      inviteInput.value = cachedParams;
+      inviteInput.disabled = true;
+    }
+  });
   document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const inviteCode = urlParams.get('invite') || urlParams.get('ref') || urlParams.get('code') ;
