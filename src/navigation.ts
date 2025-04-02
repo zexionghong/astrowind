@@ -17,11 +17,11 @@ export const getHeaderData = (lang: string = 'zh') => ({
     ...(lang === 'zh' ? [
       {
         text: '帮助中心',
-        href: `https://ipflex-helpcenter.helplook.net/`
+        href: `https://helpcenter.ipflex.ink/`
       },
       {
         text: '资讯中心',
-        href: 'https://ipflex-news.helplook.com/',
+        href: 'https://news.ipflex.ink/',
       }
     ] : [])
   ],
@@ -62,7 +62,7 @@ export const getFooterData = (lang: string = 'zh') => ({
     {
       title: lang === 'zh' ? '支持' : 'Support',
       links: [
-        { text: lang === 'zh' ? '帮助中心' : 'Help Center', href: 'https://ipflex-helpcenter.helplook.net/' },
+        { text: lang === 'zh' ? '帮助中心' : 'Help Center', href: 'https://helpcenter.ipflex.ink/' },
         { text: lang === 'zh' ? '开发文档' : 'Documentation', href: '#' },
         { text: lang === 'zh' ? '联系我们' : 'Contact Us', href: '#' },
       ],
