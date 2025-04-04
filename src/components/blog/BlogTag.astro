@@ -1,0 +1,48 @@
+---
+import type { Page } from 'astro';
+import type { Post } from '~/types';
+import PageLayout from '~/layouts/PageLayout.astro';
+import { SITE } from 'astrowind:config';
+import { getPermalink } from '~/utils/permalinks';
+import Pagination from '~/components/blog/Pagination.astro';
+import GridItem from '~/components/blog/GridItem.astro';
+
+interface Props {
+  page: Page<Post>;
+  tag: { slug: string; title: string };
+  lang?: string;
+}
+
+const { page, tag, lang } = Astro.props;
+const { currentPage } = page;
+const { data: posts, total } = page;
+---
+
+<PageLayout metadata={{
+  title: `${tag.title} - ${SITE.title}`,
+  description: `${tag.title} - ${SITE.title}`,
+}} lang={lang}>
+  <div class="container mx-auto px-4 py-8">
+    <div class="mb-8">
+      <h1 class="text-4xl font-bold mb-4">{tag.title}</h1>
+      <p class="text-gray-600">
+        {total} {total === 1 ? 'post' : 'posts'} tagged with "{tag.title}"
+      </p>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {
+        posts.map((post) => (
+          <GridItem post={post} />
+        ))
+      }
+    </div>
+
+    <Pagination
+      class="mt-8"
+      currentPage={currentPage}
+      totalPages={page.lastPage}
+      baseUrl={getPermalink(`/${lang}/tag/${tag.slug}`, 'tag')}
+    />
+  </div>
+</PageLayout> 

@@ -39,7 +39,7 @@ export const getCanonical = (path = ''): string | URL => {
 };
 
 /** */
-export const getPermalink = (slug = '', type = 'page'): string => {
+export const getPermalink = (slug = '', type = 'page', lang?: string): string => {
   let permalink: string;
 
   if (
@@ -66,20 +66,20 @@ export const getPermalink = (slug = '', type = 'page'): string => {
       break;
 
     case 'category':
-      permalink = createPath(CATEGORY_BASE, trimSlash(slug));
+      permalink = createPath(lang || '', CATEGORY_BASE, trimSlash(slug));
       break;
 
     case 'tag':
-      permalink = createPath(TAG_BASE, trimSlash(slug));
+      permalink = createPath(lang || '', TAG_BASE, trimSlash(slug));
       break;
 
     case 'post':
-      permalink = createPath(trimSlash(slug));
+      permalink = createPath(lang || '', trimSlash(slug));
       break;
 
     case 'page':
     default:
-      permalink = createPath(slug);
+      permalink = createPath(lang || '', slug);
       break;
   }
 

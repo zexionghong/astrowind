@@ -1,0 +1,51 @@
+---
+import type { GetStaticPaths, Page } from 'astro';
+import Layout from '~/layouts/PageLayout.astro';
+import BlogList from '~/components/blog/List.astro';
+import Headline from '~/components/blog/Headline.astro';
+import Pagination from '~/components/blog/Pagination.astro';
+import { useTranslations } from '~/utils/i18n';
+import { blogTagRobots, getStaticPathsBlogTag } from '~/utils/blog';
+import type { Post } from '~/types';
+
+export const prerender = true;
+
+export const getStaticPaths = (async ({ paginate }) => {
+  return getStaticPathsBlogTag({ paginate });
+}) satisfies GetStaticPaths;
+
+interface Props {
+  page: Page<Post>;
+  tag: {
+    title: string;
+    slug: string;
+  };
+}
+
+const { page, tag } = Astro.props;
+const { lang = 'zh' } = Astro.params;
+const t = await useTranslations(lang);
+
+const metadata = {
+  title: `${tag.title}${page.currentPage > 1 ? ` - ${t('blog.page')}${page.currentPage}` : ''}`,
+  robots: {
+    index: blogTagRobots?.index && page.currentPage === 1,
+    follow: blogTagRobots?.follow,
+  },
+  openGraph: {
+    type: 'blog',
+  },
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 md:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
+    <Headline
+      subtitle={t('blog.tag')}
+    >
+      {tag.title}
+    </Headline>
+    <BlogList posts={page.data} />
+    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+  </section>
+</Layout> 

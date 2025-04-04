@@ -1,0 +1,21 @@
+---
+import { type GetStaticPaths } from 'astro';
+import { getStaticPathsBlogTag } from '~/utils/blog';
+import BlogTag from '~/components/blog/BlogTag.astro';
+import { type Page } from 'astro';
+import { type Post } from '~/types';
+
+export const getStaticPaths = (async ({ paginate }) => {
+  return getStaticPathsBlogTag({ paginate });
+}) satisfies GetStaticPaths;
+
+type Props = {
+  page: Page<Post>;
+  tag: { slug: string; title: string };
+};
+
+const { page, tag } = Astro.props;
+const { lang } = Astro.params;
+---
+
+<BlogTag page={page} tag={tag} lang={lang} /> 
