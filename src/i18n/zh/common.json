@@ -7,5 +7,11 @@
     "home": "首页",
     "about": "关于",
     "blog": "博客"
+  },
+  "promotion": {
+    "title": "新用户专享福利",
+    "description": "注册即送15元免费试用额度，立即体验我们的优质服务！",
+    "register": "立即注册",
+    "later": "稍后再说"
   }
 } 

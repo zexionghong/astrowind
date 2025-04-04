@@ -3,6 +3,8 @@ import Layout from '~/layouts/Layout.astro';
 import Header from '~/components/widgets/Header.astro';
 import Footer from '~/components/widgets/Footer.astro';
 // import { useTranslations } from '~/utils/i18n';
+import NewUserPromotion from '~/components/common/NewUserPromotion.astro';
+
 
 const { lang = 'zh' } = Astro.params; // 从URL参数获取语言
 
@@ -32,6 +34,7 @@ initializeTranslations();
   <!-- <slot name="announcement">
     <Announcement />
   </slot> -->
+  <NewUserPromotion lang={lang} />
   { has_header &&
     <slot name="header">
       <Header {...headerData} isSticky  />

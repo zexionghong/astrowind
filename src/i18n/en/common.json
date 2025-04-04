@@ -7,5 +7,11 @@
     "home": "Home",
     "about": "About",
     "blog": "Blog"
+  },
+  "promotion": {
+    "title": "New User Special Offer",
+    "description": "Get 15 CNY free trial credit upon registration. Experience our premium service now!",
+    "register": "Register Now",
+    "later": "Maybe Later"
   }
 } 

@@ -1,0 +1,76 @@
+---
+import { Icon } from 'astro-icon/components';
+import Button from '~/components/ui/Button.astro';
+import { useTranslations } from '~/utils/i18n';
+
+interface Props {
+  lang?: string;
+}
+
+const { lang = 'zh' } = Astro.props;
+const t = useTranslations(lang);
+---
+<div id="new-user-promotion" class="fixed inset-0 z-50 hidden">
+  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md">
+    <div class="bg-white dark:bg-slate-800 rounded-lg shadow-xl p-6 relative">
+      <button id="close-promotion" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+        <Icon name="tabler:x" class="w-6 h-6" />
+      </button>
+      
+      <div class="text-center">
+        <div class="mb-4">
+          <Icon name="tabler:gift" class="w-16 h-16 text-blue-600 mx-auto" />
+        </div>
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+          {t('promotion.title')}
+        </h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+          {t('promotion.description')}
+        </p>
+        <div class="flex justify-center gap-4">
+          <Button
+            href={`/${lang}/register`}
+            variant="primary"
+            class="px-6"
+          >
+            {t('promotion.register')}
+          </Button>
+          <Button
+            id="close-promotion-btn"
+            variant="secondary"
+            class="px-6"
+          >
+            {t('promotion.later')}
+          </Button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const promotion = document.getElementById('new-user-promotion');
+    const closeBtn = document.getElementById('close-promotion');
+    const closeBtnSecondary = document.getElementById('close-promotion-btn');
+    
+    // 检查是否已经显示过弹窗
+    const hasShownPromotion = localStorage.getItem('hasShownPromotion');
+    
+    if (!hasShownPromotion) {
+      // 延迟2秒显示弹窗
+      setTimeout(() => {
+        promotion?.classList.remove('hidden');
+        localStorage.setItem('hasShownPromotion', 'true');
+      }, 2000);
+    }
+    
+    const closePromotion = () => {
+      promotion?.classList.add('hidden');
+    };
+    
+    closeBtn?.addEventListener('click', closePromotion);
+    closeBtnSecondary?.addEventListener('click', closePromotion);
+  });
+</script> 
