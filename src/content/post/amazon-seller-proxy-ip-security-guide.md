@@ -133,6 +133,14 @@ language: "zh"
 
 记住，在亚马逊这个平台上，安全合规的操作才是长期稳定经营的基石。短期的"钻空子"可能带来暂时便利，但长期看必然得不偿失。希望本指南能帮助你在使用代理IP时，既享受其便利，又能将风险控制在最低水平。
 
+## 推荐阅读
+
+- [HTTP代理IP从入门到精通](https://ipflex.ink/zh/blog/http-proxy-usage)
+- [静态IP与轮换IP对比分析](https://ipflex.ink/zh/blog/static-vs-rotating-ip)
+- [代理IP测试与验证指南](https://ipflex.ink/zh/blog/proxy-ip-testing)
+- [Python代理IP使用全攻略](https://ipflex.ink/zh/blog/python-proxy-ip-usage)
+- [跨境电商代理IP应用指南](https://ipflex.ink/zh/blog/cross-border-ecommerce-proxy-ip)
+
 ---
 
 **免责声明：** 本文提供的信息仅供参考，不构成任何法律或商业建议。亚马逊的政策可能随时变更，卖家应自行查阅并遵守最新的平台规则。使用代理IP及运营多账户本身存在风险，请谨慎决策。

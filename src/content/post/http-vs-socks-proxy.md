@@ -868,7 +868,14 @@ context.setAttribute("socks.address", socksaddr);
 
 选择HTTP代理还是SOCKS代理，不应该基于"跟风"或"偏好"，而是要根据你的实际技术需求来决定。HTTP代理专注于Web流量处理，提供内容感知和优化能力；SOCKS代理则是通用数据管道，支持多种协议，延迟更低。
 
-**
+## 推荐阅读
+
+- [HTTP代理IP从入门到精通](https://ipflex.ink/zh/blog/http-proxy-usage)
+- [静态IP与轮换IP对比分析](https://ipflex.ink/zh/blog/static-vs-rotating-ip)
+- [代理IP测试与验证指南](https://ipflex.ink/zh/blog/proxy-ip-testing)
+- [Python代理IP使用全攻略](https://ipflex.ink/zh/blog/python-proxy-ip-usage)
+- [跨境电商代理IP应用指南](https://ipflex.ink/zh/blog/cross-border-ecommerce-proxy-ip)
+
 ---
 
-**需要专业的HTTP/SOCKS代理服务？我们提供全球200+地区的高质量代理IP资源，支持多种认证方式，API接口丰富，7*24小时技术支持随时待命。[立即联系我们](https://ipflex.ink)，免费试用等你来体验！**
+**需要专业的HTTP代理IP服务？我们提供全球优质代理资源，支持多种认证方式，7*24小时技术支持随叫随到。[立即联系我们](https://ipflex.ink)，免费试用等你来撩，专业顾问1对1咨询！**

@@ -370,6 +370,14 @@ language: "zh"
 
 值得一提的是，代理IP的使用应当遵循合法合规原则。在享受代理带来便利的同时，请尊重网站服务条款、用户隐私和相关法律法规，做一个负责任的网络公民。
 
+## 推荐阅读
+
+- [HTTP代理IP从入门到精通](https://ipflex.ink/zh/blog/http-proxy-usage)
+- [静态IP与轮换IP对比分析](https://ipflex.ink/zh/blog/static-vs-rotating-ip)
+- [Python代理IP使用全攻略](https://ipflex.ink/zh/blog/python-proxy-ip-usage)
+- [亚马逊卖家代理IP安全指南](https://ipflex.ink/zh/blog/amazon-seller-proxy-ip-security-guide)
+- [跨境电商代理IP应用指南](https://ipflex.ink/zh/blog/cross-border-ecommerce-proxy-ip)
+
 ---
 
-**需要专业的代理IP测试工具和方案？我们提供一站式代理IP质量评估服务，包括定制测试方案、性能监控平台和优化建议。[立即联系我们](https://ipflex.ink)，开启免费测试评估，让您的代理资源管理更上一层楼！** 
+**需要专业的HTTP代理IP服务？我们提供全球优质代理资源，支持多种认证方式，7*24小时技术支持随叫随到。[立即联系我们](https://ipflex.ink)，免费试用等你来撩，专业顾问1对1咨询！** 
