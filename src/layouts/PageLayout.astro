@@ -52,3 +52,41 @@ initializeTranslations();
     </slot>
   }
 </Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const inviteCode = urlParams.get('invite') || urlParams.get('ref') || urlParams.get('code');
+    
+    if (inviteCode) {
+      // 检查缓存是否存在且未过期
+      const cachedData = localStorage.getItem('inviteCodeData');
+      const now = new Date().getTime();
+      
+      if (cachedData) {
+        const { code, timestamp } = JSON.parse(cachedData);
+        const isExpired = now - timestamp > 3 * 60 * 60 * 1000; // 3小时过期
+        
+        if (!isExpired) {
+          // 缓存未过期，使用缓存的邀请码
+          console.log('使用缓存的邀请码:', code);
+        } else {
+          // 缓存已过期，更新缓存
+          updateInviteCodeCache(inviteCode);
+        }
+      } else {
+        // 没有缓存，创建新缓存
+        updateInviteCodeCache(inviteCode);
+      }
+    }
+
+    function updateInviteCodeCache(code: string) {
+      const data = {
+        code,
+        timestamp: new Date().getTime()
+      };
+      localStorage.setItem('inviteCodeData', JSON.stringify(data));
+      console.log('更新邀请码缓存:', code);
+    }
+  });
+</script> 

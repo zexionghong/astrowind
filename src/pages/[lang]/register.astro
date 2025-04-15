@@ -1,7 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Form from '~/components/ui/Form.astro';
-import { useTranslations } from '~/utils/i18n';
 import registerBg from '~/assets/images/bg/register.png';
 
 export async function getStaticPaths() {
@@ -12,16 +11,35 @@ export async function getStaticPaths() {
 }
 
 const { lang } = Astro.params;
-const t = await useTranslations(lang);
 
 const url = Astro.url;
-const inviteCode = url.searchParams.get('ref') || url.searchParams.get('ref') || url.searchParams.get('code');
+const urlInviteCode = url.searchParams.get('invite') || url.searchParams.get('ref') || url.searchParams.get('code');
 const metadata = {
   title: lang === 'zh' ? 'IPFlex — 用户注册' : 'IPFlex — User Registration',
   ignoreTitleTemplate: true,
 };
 
 const alert_msg = lang === 'zh' ? '注册成功!请查看邮箱中的验证邮件完成注册。' : 'Registration successful! Please check your email for verification.';
+
+// 获取缓存的邀请码
+const getCachedInviteCode = () => {
+  if (typeof window !== 'undefined') {
+    const cachedData = localStorage.getItem('inviteCodeData');
+    if (cachedData) {
+      const { code, timestamp } = JSON.parse(cachedData);
+      const now = new Date().getTime();
+      const isExpired = now - timestamp > 24 * 60 * 60 * 1000; // 24小时过期
+      
+      if (!isExpired) {
+        return code;
+      }
+    }
+  }
+  return null;
+};
+
+// 优先使用URL参数中的邀请码，如果没有则使用缓存的邀请码
+const inviteCode = urlInviteCode || getCachedInviteCode();
 
 const handleSubmit = `async function(e) {
   e.preventDefault();
@@ -157,7 +175,7 @@ const handleSubmit = `async function(e) {
               placeholder: lang === 'zh' ? '选填' : 'Optional',
               containerClassName: 'mb-6',
               value: inviteCode,
-              disabled: !!inviteCode,
+              disabled: !!urlInviteCode,
             },
           ]}
           button={{
@@ -197,25 +215,33 @@ const handleSubmit = `async function(e) {
 </style>
 
 <script>
-import { getCachedParam } from "~/utils/paramCache";
-
-  document.addEventListener('DOMContentLoaded', () => {
-    console.log('页面加载完成');
-    const inviteInput = document.querySelector('input[name="invite"]');
-    if (inviteInput && !inviteInput.value) {
-      const cachedParams = getCachedParam('ref');
-      inviteInput.value = cachedParams;
-      inviteInput.disabled = true;
-    }
-  });
   document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
-    const inviteCode = urlParams.get('invite') || urlParams.get('ref') || urlParams.get('code') ;
+    const urlInviteCode = urlParams.get('invite') || urlParams.get('ref') || urlParams.get('code');
+    
+    // 获取缓存的邀请码
+    const getCachedInviteCode = () => {
+      const cachedData = localStorage.getItem('inviteCodeData');
+      if (cachedData) {
+        const { code, timestamp } = JSON.parse(cachedData);
+        const now = new Date().getTime();
+        const isExpired = now - timestamp > 24 * 60 * 60 * 1000; // 24小时过期
+        
+        if (!isExpired) {
+          return code;
+        }
+      }
+      return null;
+    };
+
+    // 优先使用URL参数中的邀请码，如果没有则使用缓存的邀请码
+    const inviteCode = urlInviteCode || getCachedInviteCode();
+
     if (inviteCode) {
-      const inviteInput = document.querySelector('input[name="invite"]');
+      const inviteInput = document.querySelector('input[name="invite"]') as HTMLInputElement;
       if (inviteInput) {
         inviteInput.value = inviteCode;
-        inviteInput.disabled = true;
+        inviteInput.disabled = !!urlInviteCode;
       }
     }
   });
