@@ -20,7 +20,7 @@ const { post, url } = Astro.props;
 <section class="relative bg-white dark:bg-slate-900">
   {
     post.image && (
-      <div class="w-full h-[40vh] relative overflow-hidden">
+      <div class="w-full h-[50vh] relative overflow-hidden">
         <Image
           src={post.image}
           class="w-full h-full object-cover"
@@ -39,10 +39,10 @@ const { post, url } = Astro.props;
   
   <article class="relative">
     <div class="max-w-screen-xl mx-auto px-4">
-      <div class={`relative ${post.image ? '-mt-32' : 'pt-12'}`}>
+      <div class="pt-12">
         <div class="max-w-4xl mx-auto">
-          <header class="mb-16 text-center">
-            <div class="flex items-center justify-center flex-wrap gap-4 text-sm text-gray-500 dark:text-gray-400 mb-6">
+          <header class="mb-16">
+            <div class="flex items-center flex-wrap gap-4 text-sm text-gray-500 dark:text-gray-400 mb-6">
               <p class="flex items-center">
                 <Icon name="tabler:clock" class="w-4 h-4 mr-2" />
                 <time datetime={String(post.publishDate)}>{getFormattedDate(post.publishDate)}</time>
@@ -65,10 +65,10 @@ const { post, url } = Astro.props;
               }
             </div>
 
-            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight max-w-3xl mx-auto">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
               {post.title}
             </h1>
-            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl mx-auto">
+            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
               {post.excerpt}
             </p>
           </header>

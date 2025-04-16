@@ -76,9 +76,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
           post.category && (
             <p class="flex items-center">
               <Icon name="tabler:folder" class="w-4 h-4 mr-1" />
-              <a class="hover:text-primary transition-colors duration-200" href={getPermalink(post.category.slug, 'category')}>
                 {post.category.title}
-              </a>
             </p>
           )
         }
