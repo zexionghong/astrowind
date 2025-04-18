@@ -23,6 +23,9 @@ const metadata = {
   title: t('index.metadata.title'),
   ignoreTitleTemplate: true,
 };
+// 静态构建模式下不能访问请求头
+// const browserLanguages = Astro.request.headers.get('accept-language');
+// console.log(browserLanguages);
 ---
 
 <Layout metadata={metadata}>
@@ -129,5 +132,46 @@ const metadata = {
   // 在页面加载时缓存URL参数
   document.addEventListener('DOMContentLoaded', () => {
     cacheUrlParams();
+    
+    // 检测浏览器语言
+    const detectBrowserLanguage = () => {
+      // 获取当前URL中的语言参数
+      const urlPath = window.location.pathname;
+      const urlLangMatch = urlPath.match(/^\/(en|zh)\//);
+      const currentLang = urlLangMatch ? urlLangMatch[1] : 'zh'; // 默认中文
+      
+      // 获取浏览器语言
+      const browserLang = navigator.language;
+      const preferredLang = getPreferredLanguage(browserLang);
+      
+      // 如果浏览器语言与当前页面语言不匹配，并且是首页，则重定向
+      if (preferredLang !== currentLang && (urlPath === '/' || urlPath === '/en' || urlPath === '/zh')) {
+        // 保存当前URL的查询参数
+        const queryParams = window.location.search;
+        // 重定向到正确的语言版本
+        window.location.href = `/${preferredLang}${queryParams}`;
+      }
+    };
+    
+    // 从浏览器语言中获取首选语言
+    const getPreferredLanguage = (browserLang) => {
+      // 简化版的语言检测
+      if (browserLang.startsWith('zh')) {
+        return 'zh';
+      }
+      return 'en'; // 默认英语
+    };
+    
+    // 检查是否已经存储了语言偏好
+    const storedLang = localStorage.getItem('preferredLanguage');
+    if (!storedLang) {
+      // 如果没有存储语言偏好，则检测浏览器语言并存储
+      const browserLang = navigator.language;
+      const preferredLang = getPreferredLanguage(browserLang);
+      localStorage.setItem('preferredLanguage', preferredLang);
+      
+      // 执行语言检测和重定向
+      detectBrowserLanguage();
+    }
   });
 </script>
