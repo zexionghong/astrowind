@@ -3,9 +3,9 @@ title: "代理IP自动化管理：解放双手的智能方案"
 excerpt: "探索代理IP自动化管理的解决方案，从自动化工具到智能调度系统，让你的代理IP管理更高效、更智能。"
 category: "代理IP"
 tags: ["自动化", "管理", "智能调度", "效率提升"]
-publishDate: "2024-03-20"
+publishDate: 2024-03-20
 author: "IPFlex"
-language: "zh-CN"
+language: "zh"
 image: "https://oss.ipflex.ink/imgs/blog/proxy-automation.jpg"
 ---
 
