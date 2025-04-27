@@ -1,19 +1,18 @@
 <script is:inline>
-  const loadChatwoot = () => {
-    const BASE_URL = 'https://chat.ipflex.ink';
-    const g = document.createElement('script');
-    const s = document.getElementsByTagName('script')[0];
-    g.src = BASE_URL + '/packs/js/sdk.js';
+  window.chatwootSettings = {"position":"right","type":"standard","launcherTitle":"联系我们"};
+  (function(d,t) {
+    const BASE_URL="https://chat.ipflex.ink";
+    const g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=BASE_URL+"/packs/js/sdk.js";
     g.defer = true;
     g.async = true;
-    s.parentNode.insertBefore(g, s);
-    
-    g.onload = () => {
+    s.parentNode.insertBefore(g,s);
+    g.onload=function(){
       window.chatwootSDK.run({
         websiteToken: 'uULu1FZLoJa3GmnmNaksgi1C',
-        baseUrl: BASE_URL,
+        baseUrl: BASE_URL
       });
-
+      
       window.addEventListener('chatwoot:ready', function() {
         // 生成随机游客名称
         let guestName = sessionStorage.getItem('guestName');
@@ -27,9 +26,6 @@
           name: guestName,
         });
       });
-    };
-  };
-
-  // 当页面加载完成时初始化Chatwoot
-  window.addEventListener('load', loadChatwoot);
+    }
+  })(document,"script");
 </script> 
