@@ -90,7 +90,8 @@ const { lang = 'zh' } = Astro.props;
     if (!container) return;
 
     const links = await fetchFriendLinks();
-    const lang = document.getElementById('current-lang')?.value || 'zh';
+    const langElement = document.getElementById('current-lang') as HTMLInputElement;
+    const lang = langElement?.value || 'zh';
 
     container.innerHTML = links.map(link => `
       <a 
@@ -102,7 +103,9 @@ const { lang = 'zh' } = Astro.props;
         <div class="w-[50px] h-[50px] flex-shrink-0 flex items-center justify-center overflow-hidden">
           <img 
             src="${link.logo}" 
-            alt="${link.name}" 
+            alt="${lang === 'zh' 
+              ? `${link.name} - IPFlex代理IP服务合作伙伴` 
+              : `${link.name} - IPFlex Proxy IP Service Partner`}" 
             class="w-full h-full object-contain"
           />
         </div>

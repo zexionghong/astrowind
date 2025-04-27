@@ -39,6 +39,8 @@ const {
   subtitle: subtitleClass = '',
   items: itemsClass = '',
 } = classes;
+
+const { lang = 'zh' } = Astro.params;
 ---
 
 <div class="bg-white rounded-3xl shadow-xl p-6 md:p-8 lg:p-10">
@@ -71,7 +73,7 @@ const {
                   <img 
                     src={typeof imageUrl === 'string' ? imageUrl : imageUrl.src} 
                     class="w-full h-full object-cover opacity-90"
-                    alt={title}
+                    alt={`${title} - ${lang === 'zh' ? 'IPFlex代理IP服务应用场景' : 'IPFlex Proxy IP Service Usage Scenario'}`}
                   />
                 </div>
               )}

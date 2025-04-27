@@ -16,9 +16,13 @@ type ImageType = {
 };
 
 const props = Astro.props;
+const { lang = 'zh' } = Astro.params;
 
+// 如果没有提供alt属性，则添加默认的alt文本
 if (props.alt === undefined || props.alt === null) {
-  throw new Error();
+  props.alt = lang === 'zh' 
+    ? 'IPFlex代理IP服务 - 全球优质IP代理资源提供商' 
+    : 'IPFlex Proxy IP Service - Global Quality IP Resource Provider';
 }
 
 if (typeof props.width === 'string') {

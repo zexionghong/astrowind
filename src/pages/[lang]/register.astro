@@ -80,7 +80,7 @@ const handleSubmit = `async function(e) {
   <div class="min-h-screen flex">
     <!-- 左侧背景图和文案 -->
     <div class="hidden md:block relative" style="width: min(45%, 714px);">
-      <img src={registerBg.src} alt="background" class="h-screen w-full object-cover object-left" />
+      <img src={registerBg.src} alt={lang === 'zh' ? "IPFlex代理IP服务注册背景 - 高速稳定的IP代理" : "IPFlex proxy IP service registration background - Fast and stable IP proxy"} class="h-screen w-full object-cover object-left" />
       <div class="absolute inset-0 flex flex-col justify-between p-12">
         <div>
           <p class="text-xl font-medium text-gray-800 mb-16 text-center">{lang === 'zh' ? '专业的代理服务提供商' : 'Professional Proxy Service Provider'}</p>
