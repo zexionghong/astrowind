@@ -2,7 +2,6 @@
 import Headline from '~/components/ui/Headline.astro';
 import ItemGrid from '~/components/ui/ItemGrid.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
-import type { Faqs as Props } from '~/types';
 
 const {
   title = '',
@@ -30,4 +29,17 @@ const {
       icon: 'flex-shrink-0 mt-1 w-6 h-6 text-primary',
     }}
   />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": items.map(item => ({
+      "@type": "Question",
+      "name": item.title,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.description
+      }
+    }))
+  })} />
 </WidgetWrapper>

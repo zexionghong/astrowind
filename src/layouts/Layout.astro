@@ -23,11 +23,12 @@ export interface Props {
 }
 
 const { metadata = {} } = Astro.props;
-const { language, textDirection } = I18N;
+const { textDirection } = I18N;
+const { lang = 'zh' } = Astro.params; // 从URL参数获取语言
 ---
 
 <!doctype html>
-<html lang={language} dir={textDirection} class="2xl:text-[20px]">
+<html lang={lang} dir={textDirection} class="2xl:text-[20px]">
   <head>
     <CommonMeta />
     <Favicons />
