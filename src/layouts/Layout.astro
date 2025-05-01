@@ -46,6 +46,6 @@ const { lang = 'zh' } = Astro.params; // 从URL参数获取语言
     <slot />
 
     <BasicScripts />
-    <LiveChat />
+    <LiveChat lang={lang} />
   </body>
 </html>

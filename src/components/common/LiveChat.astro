@@ -1,5 +1,14 @@
-<script is:inline>
-  window.chatwootSettings = {"position":"right","type":"standard","launcherTitle":"联系我们"};
+---
+const { lang } = Astro.params;
+---
+
+<script define:vars={{ lang }}>
+  window.chatwootSettings = {
+    "position":"right",
+    "type":"standard",
+    "launcherTitle":"联系我们",
+    "locale": lang || 'zh'
+  };
   (function(d,t) {
     const BASE_URL="https://chat.ipflex.ink";
     const g=d.createElement(t),s=d.getElementsByTagName(t)[0];
@@ -12,6 +21,7 @@
         websiteToken: 'uULu1FZLoJa3GmnmNaksgi1C',
         baseUrl: BASE_URL
       });
+      
       
       window.addEventListener('chatwoot:ready', function() {
         // 生成随机游客名称
