@@ -75,6 +75,10 @@ export interface AnalyticsConfig {
       id?: string;
       partytown?: boolean;
     };
+    googleAds?: {
+      id?: string;
+      partytown?: boolean;
+    };
   };
 }
 
@@ -184,6 +188,10 @@ const getAnalytics = (config: Config) => {
   const _default = {
     vendors: {
       googleAnalytics: {
+        id: undefined,
+        partytown: true,
+      },
+      googleAds: {
         id: undefined,
         partytown: true,
       },

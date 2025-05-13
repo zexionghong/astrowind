@@ -1,12 +1,22 @@
 ---
 import { GoogleAnalytics } from '@astrolib/analytics';
 import { ANALYTICS } from 'astrowind:config';
+import GoogleAdsTag from './GoogleAdsTag.astro';
 ---
 
 {
   ANALYTICS?.vendors?.googleAnalytics?.id ? (
     <GoogleAnalytics
       id={String(ANALYTICS.vendors.googleAnalytics.id)}
+      partytown={ANALYTICS?.vendors?.googleAnalytics?.partytown}
+    />
+  ) : null
+}
+
+{
+  ANALYTICS?.vendors?.googleAds?.id ? (
+    <GoogleAdsTag
+      id={String(ANALYTICS.vendors.googleAds.id)}
       partytown={ANALYTICS?.vendors?.googleAnalytics?.partytown}
     />
   ) : null
