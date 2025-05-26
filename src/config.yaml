@@ -74,6 +74,7 @@ analytics:
       id: G-P98M0QPTW5 # or "G-XXXXXXXXXX"
     googleAds:
       id: AW-17073122218
+      # id: AW-17073122218
 
 ui:
   theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
