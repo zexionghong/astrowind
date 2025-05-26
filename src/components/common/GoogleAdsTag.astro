@@ -19,14 +19,14 @@ declare global {
 {id && (
   <>
     <!-- Google tag (gtag.js) -->
-    <script async src=`https://www.googletagmanager.com/gtag/js?id=${id}`></script>
-    <script>
+    <script  async src=`https://www.googletagmanager.com/gtag/js?id=${id}`> </script>
+    <script define:vars={{ id }}>
       window.dataLayer = window.dataLayer || [];
-      function gtag(...args: unknown[]) {
+      function gtag(...args) {
         window.dataLayer.push(args);
       }
       gtag('js', new Date());
-      gtag('config', '${id}');
+      gtag('config', id);
     </script>
   </>
 )} 
