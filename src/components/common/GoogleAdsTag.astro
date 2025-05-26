@@ -6,19 +6,27 @@ export interface Props {
 
 const { id = "AW-MEASUREMENT_ID", partytown = false } = Astro.props;
 
-const attrs = partytown ? { type: "text/partytown" } : {};
+// 声明全局类型
+declare global {
+  interface Window {
+    dataLayer: unknown[][];
+  }
+}
+
+// const attrs = partytown ? { type: "text/partytown" } : {};
 ---
 
 {id && (
   <>
-    <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${id}`} {...attrs}></script>
-    <script is:inline define:vars={{ id }} {...attrs}>
+    <!-- Google tag (gtag.js) -->
+    <script async src=`https://www.googletagmanager.com/gtag/js?id=${id}`></script>
+    <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(...args) {
+      function gtag(...args: unknown[]) {
         window.dataLayer.push(args);
       }
-      gtag("js", new Date());
-      gtag("config", id);
+      gtag('js', new Date());
+      gtag('config', '${id}');
     </script>
   </>
 )} 
