@@ -1,0 +1,304 @@
+---
+export async function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'zh' } }
+  ];
+}
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero2.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+
+// Import images
+import heroImage from '~/assets/images/hero-image.png';
+import proxyImage from '~/assets/images/proxy1.png';
+
+const metadata = {
+  title: '静态住宅代理 - 高稳定性IP解决方案 | IPFlex',
+  description: 'IPFlex静态住宅代理，专为跨境电商、数据采集等场景设计，提供高稳定性、低封禁风险的住宅IP服务。支持中国及全球地区，助力业务合规高效。',
+  ignoreTitleTemplate: true,
+};
+
+const stats = [
+  { amount: '9000万+', title: '全球住宅IP资源' },
+  { amount: '200+', title: '覆盖国家/地区' },
+  { amount: '99.9%', title: '服务可用性' },
+  { amount: '24/7', title: '技术支持' },
+];
+
+const features = [
+  {
+    title: '全球IP资源',
+    description: '覆盖200+国家和地区，9000万+真实住宅IP',
+    icon: 'tabler:globe',
+  },
+  {
+    title: '高匿名性',
+    description: '真实住宅网络出口，极难被识别为代理',
+    icon: 'tabler:shield-lock',
+  },
+  {
+    title: 'IP稳定性',
+    description: 'IP长期不变，适合账号养护和长期业务',
+    icon: 'tabler:clock',
+  },
+  {
+    title: '企业级带宽',
+    description: '低延迟高并发，保障业务连续性',
+    icon: 'tabler:rocket',
+  },
+  {
+    title: '灵活套餐',
+    description: '按需付费，性价比高',
+    icon: 'tabler:coin',
+  },
+  {
+    title: '技术支持',
+    description: '7x24小时技术支持，快速响应',
+    icon: 'tabler:headset',
+  },
+];
+
+const faqs = [
+  {
+    title: '静态住宅代理和动态住宅代理有什么区别？',
+    description: '静态住宅代理的IP长期不变，适合需要长期、稳定IP的业务场景；动态住宅代理的IP会定期更换，适合大规模数据抓取等灵活性需求。'
+  },
+  {
+    title: '静态住宅代理适合哪些应用场景？',
+    description: '适用于跨境电商账号养护、社交媒体运营、长期数据采集、广告投放等对IP稳定性要求高的场景。'
+  },
+  {
+    title: '如何购买和使用静态住宅代理？',
+    description: '注册IPFlex账号后，可在控制台选择静态住宅代理套餐，获取IP和端口信息，按需配置到您的业务系统中。'
+  }
+];
+
+const steps = [
+  {
+    title: '注册账号',
+    description: '填写基本信息，快速注册IPFlex账号',
+    icon: 'tabler:user-plus',
+  },
+  {
+    title: '选择套餐',
+    description: '根据业务需求选择合适的静态住宅代理套餐',
+    icon: 'tabler:package',
+  },
+  {
+    title: '获取代理',
+    description: '在控制台获取代理IP和端口信息',
+    icon: 'tabler:key',
+  },
+  {
+    title: '开始使用',
+    description: '将代理配置到您的业务系统中即可使用',
+    icon: 'tabler:check',
+  },
+];
+
+const comparison = {
+  title: '服务对比',
+  subtitle: 'IPFlex静态住宅代理 vs 传统动态住宅代理',
+  items: [
+    {
+      title: 'IP类型',
+      description: '真实住宅IP，长期不变 vs 住宅IP，定期更换',
+    },
+    {
+      title: '适用场景',
+      description: '账号养护、长期业务 vs 大规模抓取、短期任务',
+    },
+    {
+      title: '匿名性',
+      description: '极高 vs 高',
+    },
+    {
+      title: '带宽',
+      description: '企业级，独享 vs 共享',
+    },
+    {
+      title: '价格',
+      description: '灵活套餐，按需付费 vs 按流量计费',
+    },
+  ],
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget -->
+  <div class="relative">
+    <div class="absolute inset-0 bg-gradient-to-b from-blue-700 to-blue-10"></div>
+    <Hero
+      image={{
+        src: heroImage,
+        alt: '住宅代理示意图',
+      }}
+      class="relative z-10 pt-16 pb-10"
+    >
+      <Fragment slot="title">
+        <div class="flex flex-col items-start gap-2 mb-6">
+          <h1 class="text-5xl font-bold text-white leading-tight">
+            Residential Proxies
+          </h1>
+        </div>
+      </Fragment>
+      <Fragment slot="subtitle">
+        <div class="text-gray-200 space-y-6">
+          <p class="text-xl font-light leading-relaxed">
+            The fastest and largest Residential Proxies network, made of 175M+ highest-quality proxies.
+          </p>
+          <ul class="space-y-3 text-lg">
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-[#00E062]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-lg">Free geo-targeting</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-[#00E062]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-lg">Fastest proxies in the market</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-[#00E062]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-lg">Real profile, human-like Residential IPs</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-[#00E062]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-lg">Quality assurance framework for most reliable IPs</span>
+            </li>
+          </ul>
+          <div class="flex items-center gap-4 pt-4">
+            <a href="#" class="bg-[#00E062] hover:bg-[#00C054] text-[#1A1147] font-semibold px-6 py-3 rounded-lg transition-all duration-200">
+              Try Oxylabs today
+            </a>
+            <a href="#" class="flex items-center gap-2 bg-white hover:bg-gray-100 text-gray-800 font-semibold px-6 py-3 rounded-lg transition-all duration-200">
+              <img src="/images/google.svg" alt="Google" class="w-5 h-5" />
+              Get started with Google
+            </a>
+          </div>
+        </div>
+      </Fragment>
+    </Hero>
+  </div>
+
+  <!-- Stats Widget -->
+    <Stats
+      stats={stats}
+      title="全球资源覆盖"
+      subtitle="IPFlex拥有海量优质住宅IP资源，为您的业务保驾护航"
+      classes={{
+        container: 'max-w-6xl',
+        title: 'text-white',
+        subtitle: 'text-blue-100',
+      }}
+    />
+
+  <!-- Features Widget -->
+  <Features2
+    title="产品核心优势"
+    subtitle="专为高并发、低封禁、全球业务场景打造"
+    columns={3}
+    items={features}
+    classes={{
+      container: 'max-w-6xl py-16',
+      title: 'text-4xl font-bold',
+      subtitle: 'text-xl text-gray-600',
+      items: {
+        container: 'gap-6',
+        title: 'text-xl font-bold',
+        description: 'text-gray-600',
+        icon: 'text-blue-600',
+      },
+    }}
+  />
+
+  <!-- Comparison Widget -->
+  <Content
+    isReversed
+    title={comparison.title}
+    subtitle={comparison.subtitle}
+    items={comparison.items}
+    image={{
+      src: proxyImage,
+      alt: '服务对比',
+    }}
+    classes={{
+      container: 'max-w-6xl py-16 bg-gray-50',
+      title: 'text-3xl font-bold',
+      subtitle: 'text-xl text-gray-600',
+    }}
+  />
+
+  <!-- Steps Widget -->
+  <Steps
+    title="快速开始使用"
+    subtitle="四步轻松开启静态住宅代理服务"
+    items={steps}
+    classes={{
+      container: 'max-w-5xl py-16',
+      title: 'text-3xl font-bold',
+      subtitle: 'text-xl text-gray-600',
+    }}
+  />
+
+  <!-- FAQs Widget -->
+  <FAQs
+    title="常见问题"
+    subtitle="关于静态住宅代理的常见疑问解答"
+    tagline="如有更多问题，欢迎联系客服"
+    items={faqs}
+    classes={{
+      container: 'max-w-6xl py-16 bg-gray-50',
+      title: 'text-3xl font-bold',
+      subtitle: 'text-xl text-gray-600',
+    }}
+  />
+
+  <!-- Call to Action -->
+  <div class="text-center py-20 bg-gradient-to-b from-purple-900 to-blue-900">
+    <a
+      href="https://dashboard.ipflex.ink/register"
+      class="inline-block bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
+      target="_blank"
+    >
+      立即注册，体验高质量静态住宅代理服务
+    </a>
+    <p class="mt-4 text-blue-100">IPFlex，值得信赖的企业级代理服务商</p>
+  </div>
+</Layout>
+
+<style>
+  .bg-gradient-to-b {
+    background-size: 100% 100%;
+    background-position: 0% 0%;
+  }
+  
+  .from-purple-900 {
+    --tw-gradient-from: #581c87;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(88 28 135 / 0));
+  }
+  
+  .to-blue-900 {
+    --tw-gradient-to: #1e3a8a;
+  }
+  
+  .from-blue-900 {
+    --tw-gradient-from: #1e3a8a;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(30 58 138 / 0));
+  }
+  
+  .to-purple-900 {
+    --tw-gradient-to: #581c87;
+  }
+</style>
