@@ -12,10 +12,13 @@ import Stats from '~/components/widgets/Stats.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
+import PerformanceFeatures from '~/components/widgets/PerformanceFeatures.astro';
+import WhyChooseUs from '~/components/widgets/WhyChooseUs.astro';
 
 // Import images
 import heroImage from '~/assets/images/hero-image.png';
 import proxyImage from '~/assets/images/proxy1.png';
+import comparisonImage from '~/assets/images/proxy1.png'; // 使用已有的图片作为替代
 
 const metadata = {
   title: '静态住宅代理 - 高稳定性IP解决方案 | IPFlex',
@@ -192,6 +195,8 @@ const comparison = {
     </Hero>
   </div>
 
+
+
   <!-- Stats Widget -->
     <Stats
       stats={stats}
@@ -203,6 +208,65 @@ const comparison = {
         subtitle: 'text-blue-100',
       }}
     />
+    
+  <!-- Performance Features Widget -->
+  <PerformanceFeatures
+    title="卓越性能，无限制"
+    description="使用互联网服务提供商代理，被封锁的情况非常罕见，因为网站不希望限制来自知名自治系统号码的流量。由AT&T、Comcast、Lumen和Frontier等高级自治系统号码提供商提供的互联网服务提供商代理旨在以99.9%的成功率解锁最具挑战性的目标。"
+    features={[
+      { title: '半专用代理' },
+      { title: '不限时长会话' },
+      { title: 'HTTP、HTTPS和SOCKS5协议' },
+      { title: 'UDP和TCP连接' }
+    ]}
+    image={{
+      src: comparisonImage,
+      alt: '代理服务对比'
+    }}
+    classes={{
+      container: 'py-16'
+    }}
+  />
+  <!-- Why Choose Us Widget -->
+  <WhyChooseUs
+    title="用户为何选择奥科世®互联网服务提供商代理"
+    features={[
+      {
+        icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-zap"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>',
+        title: '非常快',
+        description: '非常适合高流量和时间敏感的任务，具有出色的响应时间。'
+      },
+      {
+        icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>',
+        title: '高级互联网服务提供商',
+        description: '类住宅互联网协议地址来自顶级自治系统，号码提供商：AT&T、Comcast、Lumen、Frontier等。'
+      },
+      {
+        icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-infinity"><path d="M13.833 8.875S15.085 7 18.043 7C21 7 23 9.5 23 12s-1.784 5-4.864 5-4.914-3.124-6.136-5c-1.222 1.876-3.296 5-6.446 5A4.79 4.79 0 0 1 1 12c0-2.5 2-5 4.957-5 2.958 0 4.208 1.875 4.208 1.875"></path></svg>',
+        title: '无限带宽',
+        description: '按代理计费模式下，流量费用无额外收费。'
+      }
+    ]}
+  />
+  <!-- Unlimited Session Widget -->
+  <PerformanceFeatures
+    title="不限时长会话和代理轮换"
+    description="选择动态轮换和不限时长会话之间。您可以根据需要保留代理地址，无需担心会话时间。通过连续请求，Oxylabs代理非常适合网络安全、电子商务、市场研究和广告验证中的长期大规模网络爬取任务。"
+    features={[
+      { title: '动态轮换或保持会话' },
+      { title: '适合大规模数据采集' },
+      { title: '支持电子商务和市场研究' },
+      { title: '高效的网络爬虫解决方案' }
+    ]}
+    image={{
+      src: comparisonImage,
+      alt: '不限时长会话和代理轮换'
+    }}
+    isReversed={true}
+    classes={{
+      container: 'py-16 bg-gray-50'
+    }}
+  />
 
   <!-- Features Widget -->
   <Features2

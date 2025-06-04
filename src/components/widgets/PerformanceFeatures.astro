@@ -1,0 +1,88 @@
+---
+import Image from '~/components/common/Image.astro';
+
+interface Feature {
+  title: string;
+  icon?: string;
+}
+
+export interface Props {
+  title?: string;
+  subtitle?: string;
+  description?: string;
+  features?: Array<Feature>;
+  image?: any;
+  isReversed?: boolean;
+  classes?: Record<string, string>;
+}
+
+const {
+  title = '卓越性能，无限制',
+  subtitle = '',
+  description = '',
+  features = [],
+  image = {},
+  isReversed = false,
+  classes = {},
+} = Astro.props;
+---
+
+<section class="relative">
+  <div class="absolute inset-0 pointer-events-none -z-[1]" aria-hidden="true">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-slate-900"></div>
+  </div>
+  <div class={`relative mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-20 ${classes?.container ?? ''}`}>
+    <div class={`md:flex ${isReversed ? 'md:flex-row-reverse' : ''} md:gap-16`}>
+      <div aria-hidden="true" class="mt-10 md:mt-0 md:basis-1/2">
+        {
+          image && (
+            <div class="relative m-auto max-w-4xl">
+              {typeof image === 'string' ? (
+                <Fragment set:html={image} />
+              ) : (
+                <Image
+                  class="mx-auto w-full rounded-lg bg-gray-100 shadow-lg"
+                  width={500}
+                  height={500}
+                  widths={[400, 768]}
+                  sizes="(max-width: 768px) 100vw"
+                  layout="responsive"
+                  {...image}
+                />
+              )}
+            </div>
+          )
+        }
+      </div>
+      
+      <div class="md:basis-1/2 self-center mt-10 md:mt-0">
+        <h2 class="text-4xl md:text-5xl font-bold mb-8 text-gray-900 dark:text-white">{title}</h2>
+        
+        {subtitle && <p class="text-xl mb-8 text-gray-700 dark:text-slate-400">{subtitle}</p>}
+        
+        {description && <p class="mb-8 text-gray-700 dark:text-slate-400">{description}</p>}
+        
+        <div class="space-y-6">
+          {
+            features.map((feature) => (
+              <div class="flex items-start">
+                <div class="flex-shrink-0">
+                  {feature.icon ? (
+                    <span class="flex h-7 w-7 items-center justify-center text-[#00E062]">
+                      <Fragment set:html={feature.icon} />
+                    </span>
+                  ) : (
+                    <svg class="w-6 h-6 text-[#00E062]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                  )}
+                </div>
+                <p class="ml-4 text-lg text-gray-700 dark:text-slate-300">{feature.title}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

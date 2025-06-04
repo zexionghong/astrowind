@@ -1,0 +1,58 @@
+---
+interface Feature {
+  icon?: string;
+  title: string;
+  description: string;
+}
+
+export interface Props {
+  title?: string;
+  subtitle?: string;
+  features?: Array<Feature>;
+  classes?: Record<string, string>;
+}
+
+const {
+  title = '用户为何选择奥科世®互联网服务提供商代理',
+  subtitle = '',
+  features = [
+    {
+      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-zap"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>',
+      title: '非常快',
+      description: '非常适合高流量和时间敏感的任务，具有出色的响应时间。'
+    },
+    {
+      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>',
+      title: '高级互联网服务提供商',
+      description: '类住宅互联网协议地址来自顶级自治系统，号码提供商：AT&T、Comcast、Lumen、Frontier等。'
+    },
+    {
+      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-infinity"><path d="M13.833 8.875S15.085 7 18.043 7C21 7 23 9.5 23 12s-1.784 5-4.864 5-4.914-3.124-6.136-5c-1.222 1.876-3.296 5-6.446 5A4.79 4.79 0 0 1 1 12c0-2.5 2-5 4.957-5 2.958 0 4.208 1.875 4.208 1.875"></path></svg>',
+      title: '无限带宽',
+      description: '按代理计费模式下，流量费用无额外收费。'
+    }
+  ],
+  classes = {},
+} = Astro.props;
+---
+
+<section class="py-16">
+  <div class={`mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ${classes?.container ?? ''}`}>
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">{title}</h2>
+      {subtitle && <p class="text-xl text-gray-600 dark:text-slate-400">{subtitle}</p>}
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {features.map((feature) => (
+        <div class="flex flex-col items-center md:items-start">
+          <div class="mb-4 text-purple-500 w-16 h-16 flex items-center justify-center rounded-full bg-purple-100">
+            <Fragment set:html={feature.icon} />
+          </div>
+          <h3 class="text-2xl font-bold mb-2 text-gray-900 dark:text-white">{feature.title}</h3>
+          <p class="text-gray-600 dark:text-slate-400 text-center md:text-left">{feature.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
