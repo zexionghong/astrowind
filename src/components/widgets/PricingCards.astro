@@ -1,0 +1,185 @@
+---
+interface PricingCard {
+  icon?: string;
+  title: string;
+  dataAmount?: string;
+  originalPrice?: string;
+  price: string;
+  priceUnit: string;
+  monthlyPlan?: string;
+  ctaText: string;
+  ctaLink: string;
+  couponCode?: string;
+  description: string;
+  discount?: string;
+  isPopular?: boolean;
+}
+
+export interface Props {
+  title?: string;
+  subtitle?: string;
+  callToAction?: {
+    text: string;
+    href: string;
+    icon?: string;
+    description?: string;
+  };
+  cards?: Array<PricingCard>;
+  classes?: Record<string, string>;
+}
+
+const {
+  title = '选择最适合您的套餐',
+  subtitle = '',
+  callToAction = {
+    text: '立即注册，首次充值，即可获得相应奖励，最高可达 $500。',
+    href: '#',
+    icon: '马上开始',
+    description: '',
+  },
+  cards = [
+    {
+      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-500"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>',
+      title: '体验套餐',
+      originalPrice: '$8.4',
+      price: '$5.04',
+      priceUnit: '/ GB',
+      ctaText: '免费试用',
+      ctaLink: '#',
+      couponCode: 'RES140',
+      description: '无需月度承诺即可使用我们的代理',
+      discount: '40% OFF'
+    },
+    {
+      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-500"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>',
+      title: '包含138 GB',
+      originalPrice: '$7.14',
+      price: '$4.28',
+      priceUnit: '/ GB',
+      monthlyPlan: '$499',
+      ctaText: '免费试用',
+      ctaLink: '#',
+      couponCode: 'RES140',
+      description: '非常适合使用量适中的小型企业',
+      discount: '40% OFF'
+    },
+    {
+      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-500"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>',
+      title: '包含316 GB',
+      originalPrice: '$6.3',
+      price: '$3.78',
+      priceUnit: '/ GB',
+      monthlyPlan: '$999',
+      ctaText: '免费试用',
+      ctaLink: '#',
+      couponCode: 'RES140',
+      description: '为具有广泛运营需求的大型团队设计',
+      discount: '40% OFF'
+    },
+    {
+      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-500"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>',
+      title: '包含678 GB',
+      originalPrice: '$5.88',
+      price: '$3.53',
+      priceUnit: '/ GB',
+      monthlyPlan: '$1999',
+      ctaText: '免费试用',
+      ctaLink: '#',
+      couponCode: 'RES140',
+      description: '为运行大规模操作的企业优化',
+      discount: '40% OFF'
+    }
+  ],
+  classes = {},
+} = Astro.props;
+---
+
+<section class="py-16 bg-navy-900">
+  <div class={`mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ${classes?.container ?? ''}`}>
+    {(title || subtitle) && (
+      <div class="text-center mb-16">
+        {title && <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">{title}</h2>}
+        {subtitle && <p class="text-xl text-gray-300">{subtitle}</p>}
+      </div>
+    )}
+    
+    <!-- Call to Action Banner -->
+    {callToAction && (
+      <div class="bg-gradient-to-r from-blue-500 to-cyan-400 rounded-xl p-6 mb-16 flex flex-col md:flex-row items-center justify-between">
+        <p class="text-white text-xl font-medium mb-4 md:mb-0">{callToAction.text}</p>
+        <a href={callToAction.href} class="bg-white hover:bg-gray-100 text-blue-600 font-semibold px-8 py-3 rounded-lg transition-all duration-200 flex items-center">
+          {callToAction.icon && (
+            <span class="mr-2">{callToAction.icon}</span>
+          )}
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    )}
+    
+    <!-- Pricing Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {cards.map((card) => (
+        <div class="bg-navy-800 rounded-lg overflow-hidden transition-all duration-300 hover:transform hover:scale-105 hover:shadow-xl hover:bg-navy-700 relative">
+          {card.discount && (
+            <div class="absolute top-4 right-4 bg-cyan-400 text-navy-900 text-sm font-bold px-3 py-1 rounded-full">
+              {card.discount}
+            </div>
+          )}
+          
+          <div class="p-6">
+            <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-lg bg-navy-700">
+              <Fragment set:html={card.icon} />
+            </div>
+            
+            <h3 class="text-xl font-bold text-white mb-2">{card.title}</h3>
+            
+            {card.dataAmount && (
+              <p class="text-cyan-400 font-medium mb-4">{card.dataAmount}</p>
+            )}
+            
+            <div class="flex items-end mb-4">
+              {card.originalPrice && (
+                <span class="text-gray-400 line-through mr-2">{card.originalPrice}</span>
+              )}
+              <span class="text-4xl font-bold text-white">{card.price}</span>
+              <span class="text-gray-300 ml-1">{card.priceUnit}</span>
+            </div>
+            
+            {card.monthlyPlan && (
+              <div class="mb-6">
+                <span class="text-2xl font-bold text-white">{card.monthlyPlan}</span>
+                <span class="text-gray-300 ml-1">月付计划</span>
+              </div>
+            )}
+            
+            <a href={card.ctaLink} class="block w-full bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-600 hover:to-cyan-500 text-center text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 mb-4">
+              {card.ctaText}
+            </a>
+            
+            {card.couponCode && (
+              <p class="text-sm text-gray-400 mb-6 text-center">Use this coupon code: <span class="text-cyan-400 font-medium">{card.couponCode}</span></p>
+            )}
+            
+            <p class="text-gray-300 text-sm">{card.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .bg-navy-900 {
+    background-color: #0a192f;
+  }
+  
+  .bg-navy-800 {
+    background-color: #112240;
+  }
+  
+  .bg-navy-700 {
+    background-color: #1e3a8a;
+  }
+</style>

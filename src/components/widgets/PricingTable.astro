@@ -1,0 +1,170 @@
+---
+interface PricingFeature {
+  name: string;
+  leftValue: string;
+  rightValue: string;
+}
+
+export interface Props {
+  title?: string;
+  subtitle?: string;
+  features?: Array<PricingFeature>;
+  leftPlan?: {
+    title: string;
+    price: string;
+    period: string;
+    pricePerIp: string;
+    ctaText: string;
+    ctaLink: string;
+    description: string;
+    inputLabel?: string;
+    selectOptions?: Array<string>;
+  };
+  rightPlan?: {
+    title: string;
+    ipCount: string;
+    comingSoon: string;
+    pricePerIp: string;
+    ctaText: string;
+    ctaLink: string;
+    description: string;
+  };
+  highlights?: Array<string>;
+  classes?: Record<string, string>;
+}
+
+const {
+  title = '',
+  subtitle = '',
+  features = [
+    { name: '最适合', leftValue: '使用受信任的自治系统号码提供代理如天猫期刊会话和最赚钱的目标。', rightValue: '针对复杂采集的流量大的项目。' },
+    { name: '带宽', leftValue: '无限', rightValue: '无限' },
+    { name: '自治系统编号', leftValue: 'AT&T、Lumen、Frontier、Orange', rightValue: '各种提供商' },
+    { name: '会话', leftValue: '无限期', rightValue: '无限期' },
+    { name: '互联网协议类型', leftValue: '最多与3位用户共享', rightValue: '独入的' },
+    { name: '成功率', leftValue: '99.9%', rightValue: '99.9%' },
+    { name: '协议', leftValue: 'HTTP、HTTPS、SOCKS5', rightValue: 'HTTP、HTTPS、SOCKS5' },
+  ],
+  leftPlan = {
+    title: '互联网服务提供商代理',
+    price: '16',
+    period: '美元/月',
+    pricePerIp: '价格/IP: 1.60美元',
+    ctaText: '立即购买',
+    ctaLink: '#',
+    description: '使用受信任的自治系统号码提供代理如天猫期刊会话和最赚钱的目标。',
+    inputLabel: '输入或选择IP数:',
+    selectOptions: ['10', '20', '50', '100']
+  },
+  rightPlan = {
+    title: '优质互联网服务提供商',
+    ipCount: '1000+个IP',
+    comingSoon: '即将推出',
+    pricePerIp: '每个IP价格起价: $3.80',
+    ctaText: '联系销售',
+    ctaLink: '#',
+    description: '针对复杂采集的流量大的项目。'
+  },
+  highlights = ['不限时长会话', '透明的代理计费定价', '关住名代理'],
+  classes = {},
+} = Astro.props;
+---
+
+<section class="py-16 bg-gray-50">
+  <div class={`mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ${classes?.container ?? ''}`}>
+    {(title || subtitle) && (
+      <div class="text-center mb-16">
+        {title && <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">{title}</h2>}
+        {subtitle && <p class="text-xl text-gray-600 dark:text-slate-400">{subtitle}</p>}
+      </div>
+    )}
+    
+    <!-- Highlights -->
+    {highlights && highlights.length > 0 && (
+      <div class="flex flex-wrap justify-center gap-8 mb-12">
+        {highlights.map((highlight) => (
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-800 dark:text-gray-200">{highlight}</span>
+          </div>
+        ))}
+      </div>
+    )}
+    
+    <!-- Pricing Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Left Plan -->
+      <div class="bg-white dark:bg-slate-800 rounded-lg shadow-md p-8">
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">{leftPlan.title}</h3>
+        
+        <div class="flex items-end mb-6">
+          <span class="text-5xl font-bold text-gray-900 dark:text-white">{leftPlan.price}</span>
+          <span class="text-gray-600 dark:text-gray-300 ml-2">{leftPlan.period}</span>
+        </div>
+        
+        <p class="text-gray-600 dark:text-gray-300 mb-6">{leftPlan.pricePerIp}</p>
+        
+        <div class="mb-6">
+          <label class="block text-gray-700 dark:text-gray-300 mb-2">{leftPlan.inputLabel}</label>
+          <div class="relative">
+            <select class="block appearance-none w-full bg-white dark:bg-slate-700 border border-gray-300 dark:border-gray-600 rounded-md py-2 px-4 pr-8 text-gray-700 dark:text-gray-200 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-500">
+              {leftPlan.selectOptions?.map((option) => (
+                <option>{option}</option>
+              ))}
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 dark:text-gray-300">
+              <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        
+        <a href={leftPlan.ctaLink} class="block w-full bg-yellow-400 hover:bg-yellow-500 text-center text-gray-900 font-semibold py-3 px-4 rounded-md transition-colors duration-200 mb-6">
+          <span class="flex justify-center items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+            </svg>
+            {leftPlan.ctaText}
+          </span>
+        </a>
+      </div>
+      
+      <!-- Right Plan -->
+      <div class="bg-white dark:bg-slate-800 rounded-lg shadow-md p-8">
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">{rightPlan.title}</h3>
+        
+        <div class="mb-2">
+          <span class="text-xl font-bold text-gray-900 dark:text-white">{rightPlan.ipCount}</span>
+        </div>
+        
+        <div class="mb-6">
+          <span class="text-2xl font-bold text-purple-600">{rightPlan.comingSoon}</span>
+        </div>
+        
+        <p class="text-gray-600 dark:text-gray-300 mb-6">{rightPlan.pricePerIp}</p>
+        
+        <a href={rightPlan.ctaLink} class="block w-full bg-white hover:bg-gray-100 border-2 border-gray-300 text-center text-gray-800 font-semibold py-3 px-4 rounded-md transition-colors duration-200 mb-6">
+          {rightPlan.ctaText}
+        </a>
+      </div>
+    </div>
+    
+    <!-- Features Comparison Table -->
+    <div class="mt-16 overflow-x-auto">
+      <table class="w-full border-collapse">
+        <tbody>
+          {features.map((feature, index) => (
+            <tr class={index % 2 === 0 ? 'bg-white dark:bg-slate-800' : 'bg-gray-50 dark:bg-slate-700'}>
+              <td class="py-4 px-6 font-medium text-gray-900 dark:text-white">{feature.name}</td>
+              <td class="py-4 px-6 text-gray-600 dark:text-gray-300">{feature.leftValue}</td>
+              <td class="py-4 px-6 text-gray-600 dark:text-gray-300">{feature.rightValue}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
