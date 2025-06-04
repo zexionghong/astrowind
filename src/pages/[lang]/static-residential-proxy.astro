@@ -16,10 +16,12 @@ import PerformanceFeatures from '~/components/widgets/PerformanceFeatures.astro'
 import WhyChooseUs from '~/components/widgets/WhyChooseUs.astro';
 import UseCases from '~/components/widgets/UseCases.astro';
 import PricingTable from '~/components/widgets/PricingTable.astro';
+// 计费方式对比组件
+import DeductionMethods from '~/components/widgets/DeductionMethods.astro';
 import PricingCards from '~/components/widgets/PricingCards.astro';
 
 // Import images
-import heroImage from '~/assets/images/hero-image.png';
+import heroImage from '~/assets/images/hero.webp';
 import proxyImage from '~/assets/images/proxy1.png';
 import comparisonImage from '~/assets/images/proxy1.png'; // 使用已有的图片作为替代
 
@@ -198,90 +200,7 @@ const comparison = {
     </Hero>
   </div>
 
-  <!-- Why Choose Us Widget -->
-  <WhyChooseUs
-    title="用户为何选择奥科世®互联网服务提供商代理"
-    features={[
-      {
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-zap"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>',
-        title: '非常快',
-        description: '非常适合高流量和时间敏感的任务，具有出色的响应时间。'
-      },
-      {
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>',
-        title: '高级互联网服务提供商',
-        description: '类住宅互联网协议地址来自顶级自治系统，号码提供商：AT&T、Comcast、Lumen、Frontier等。'
-      },
-      {
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-infinity"><path d="M13.833 8.875S15.085 7 18.043 7C21 7 23 9.5 23 12s-1.784 5-4.864 5-4.914-3.124-6.136-5c-1.222 1.876-3.296 5-6.446 5A4.79 4.79 0 0 1 1 12c0-2.5 2-5 4.957-5 2.958 0 4.208 1.875 4.208 1.875"></path></svg>',
-        title: '无限带宽',
-        description: '按代理计费模式下，流量费用无额外收费。'
-      }
-    ]}
-  />
-
-  <!-- Use Cases Widget -->
-  <UseCases
-    title="互联网服务提供商代理的使用案例"
-    useCases={[
-      {
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><path d="M9 12l2 2 4-4"></path></svg>',
-        title: '广告验证',
-        description: '确保您的广告能够正确展示给不同的受众。'
-      },
-      {
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
-        title: '市场研究',
-        description: '在地域限制的网站上收集公共数据，以便进行数据驱动的决策。'
-      },
-      {
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>',
-        title: '电子商务',
-        description: '从市场中提取公共数据，以提高竞争情报。'
-      },
-      {
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>',
-        title: '网络安全',
-        description: '识别威胁、测试应用程序和监控网站，以控制风险并保护您的品牌。'
-      }
-    ]}
-  />
-
-  <!-- Pricing Table Widget -->
-  <PricingTable
-    highlights={['不限时长会话', '透明的代理计费定价', '关注名代理']}
-    leftPlan={{
-      title: '互联网服务提供商代理',
-      price: '16',
-      period: '美元/月',
-      pricePerIp: '价格/IP: 1.60美元',
-      ctaText: '立即购买',
-      ctaLink: '#',
-      description: '使用受信任的自治系统号码提供代理如天猫期刊会话和最赚钱的目标。',
-      inputLabel: '输入或选择IP数:',
-      selectOptions: ['10', '20', '50', '100']
-    }}
-    rightPlan={{
-      title: '优质互联网服务提供商',
-      ipCount: '1000+个IP',
-      comingSoon: '即将推出',
-      pricePerIp: '每个IP价格起价: $3.80',
-      ctaText: '联系销售',
-      ctaLink: '#',
-      description: '针对复杂采集的流量大的项目。'
-    }}
-    features={[
-      { name: '最适合', leftValue: '使用受信任的自治系统号码提供代理如天猫期刊会话和最赚钱的目标。', rightValue: '针对复杂采集的流量大的项目。' },
-      { name: '带宽', leftValue: '无限', rightValue: '无限' },
-      { name: '自治系统编号', leftValue: 'AT&T、Lumen、Frontier、Orange', rightValue: '各种提供商' },
-      { name: '会话', leftValue: '无限期', rightValue: '无限期' },
-      { name: '互联网协议类型', leftValue: '最多与3位用户共享', rightValue: '独入的' },
-      { name: '成功率', leftValue: '99.9%', rightValue: '99.9%' },
-      { name: '协议', leftValue: 'HTTP、HTTPS、SOCKS5', rightValue: 'HTTP、HTTPS、SOCKS5' },
-    ]}
-  />
-
-  <!-- Stats Widget -->
+    <!-- Stats Widget -->
     <Stats
       stats={stats}
       title="全球资源覆盖"
@@ -292,8 +211,9 @@ const comparison = {
         subtitle: 'text-blue-100',
       }}
     />
-    
-  <!-- Performance Features Widget -->
+
+
+     <!-- Performance Features Widget -->
   <PerformanceFeatures
     title="卓越性能，无限制"
     description="使用互联网服务提供商代理，被封锁的情况非常罕见，因为网站不希望限制来自知名自治系统号码的流量。由AT&T、Comcast、Lumen和Frontier等高级自治系统号码提供商提供的互联网服务提供商代理旨在以99.9%的成功率解锁最具挑战性的目标。"
@@ -311,6 +231,58 @@ const comparison = {
       container: 'py-16'
     }}
   />
+  <!-- Why Choose Us Widget -->
+  <WhyChooseUs
+    title="为什么要选择IPFlex？"
+    features={[
+      {
+      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dollar-sign"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>',
+      title: '性价比高',
+      description: '灵活套餐，按需付费，满足不同业务需求，经济实惠。'
+      },
+      {
+      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>',
+      title: '地区资源多',
+      description: '覆盖全球200+国家和地区，IP资源丰富，满足多样化需求。'
+      },
+      {
+      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-infinity"><path d="M13.833 8.875S15.085 7 18.043 7C21 7 23 9.5 23 12s-1.784 5-4.864 5-4.914-3.124-6.136-5c-1.222 1.876-3.296 5-6.446 5A4.79 4.79 0 0 1 1 12c0-2.5 2-5 4.957-5 2.958 0 4.208 1.875 4.208 1.875"></path></svg>',
+      title: '无限带宽',
+      description: '按代理计费模式下，流量费用无额外收费，无限带宽畅享。'
+      }
+    ]}
+  />
+
+  <!-- Use Cases Widget -->
+  <UseCases
+    title="使用场景"
+    useCases={[
+      {
+      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><path d="M9 12l2 2 4-4"></path></svg>',
+      title: '广告验证',
+      description: '依托住宅代理和全球IP资源，广告主可真实模拟用户访问，精准完成广告验证，有效防止广告欺诈，提升广告ROI。IPFlex每日为500+企业提供广告验证、反欺诈等合规检测服务。'
+      },
+      {
+      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
+      title: '市场研究与数据采集',
+      description: '通过9000万+住宅IP，轻松突破反爬虫限制，助力企业高效进行数据采集和市场调研。日均采集量超1亿条，支持API自动化，满足数据驱动决策需求。'
+      },
+      {
+      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>',
+      title: '电子商务账号养护',
+      description: '为跨境电商卖家提供长期稳定的住宅IP，降低账号被封风险，支持Amazon、eBay、Shopee等多平台账号养护和批量管理，账号安全率高达99.9%。'
+      },
+      {
+      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>',
+      title: '网络安全与风控',
+      description: '利用住宅代理进行渗透测试、品牌保护和风控监控，帮助企业识别网络安全威胁，防范黑产活动。IPFlex已为100+金融及互联网企业提供住宅代理风控解决方案。'
+      }
+    ]}
+    />
+
+
+    
+ 
   <!-- Unlimited Session Widget -->
   <PerformanceFeatures
     title="不限时长会话和代理轮换"
@@ -331,116 +303,9 @@ const comparison = {
     }}
   />
 
-  <!-- Pricing Cards Widget -->
-  <PricingCards
-    title="选择最适合您的套餐"
-    callToAction={{
-      text: '立即注册，首次充值，即可获得相应奖励，最高可达 $500。',
-      href: '#',
-      icon: '马上开始'
-    }}
-    cards={[
-      {
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-500"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>',
-        title: '体验套餐',
-        originalPrice: '$8.4',
-        price: '$5.04',
-        priceUnit: '/ GB',
-        ctaText: '免费试用',
-        ctaLink: '#',
-        couponCode: 'RES140',
-        description: '无需月度承诺即可使用我们的代理',
-        discount: '40% OFF'
-      },
-      {
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-500"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>',
-        title: '包含138 GB',
-        originalPrice: '$7.14',
-        price: '$4.28',
-        priceUnit: '/ GB',
-        monthlyPlan: '$499',
-        ctaText: '免费试用',
-        ctaLink: '#',
-        couponCode: 'RES140',
-        description: '非常适合使用量适中的小型企业',
-        discount: '40% OFF'
-      },
-      {
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-500"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>',
-        title: '包含316 GB',
-        originalPrice: '$6.3',
-        price: '$3.78',
-        priceUnit: '/ GB',
-        monthlyPlan: '$999',
-        ctaText: '免费试用',
-        ctaLink: '#',
-        couponCode: 'RES140',
-        description: '为具有广泛运营需求的大型团队设计',
-        discount: '40% OFF'
-      },
-      {
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-500"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>',
-        title: '包含678 GB',
-        originalPrice: '$5.88',
-        price: '$3.53',
-        priceUnit: '/ GB',
-        monthlyPlan: '$1999',
-        ctaText: '免费试用',
-        ctaLink: '#',
-        couponCode: 'RES140',
-        description: '为运行大规模操作的企业优化',
-        discount: '40% OFF'
-      }
-    ]}
-  />
+  <!-- 计费方式对比 -->
+  <DeductionMethods />
 
-  <!-- Features Widget -->
-  <Features2
-    title="产品核心优势"
-    subtitle="专为高并发、低封禁、全球业务场景打造"
-    columns={3}
-    items={features}
-    classes={{
-      container: 'max-w-6xl py-16',
-      title: 'text-4xl font-bold',
-      subtitle: 'text-xl text-gray-600',
-      items: {
-        container: 'gap-6',
-        title: 'text-xl font-bold',
-        description: 'text-gray-600',
-        icon: 'text-blue-600',
-      },
-    }}
-  />
-
-  <!-- Comparison Widget -->
-  <Content
-    isReversed
-    title={comparison.title}
-    subtitle={comparison.subtitle}
-    items={comparison.items}
-    image={{
-      src: proxyImage,
-      alt: '服务对比',
-    }}
-    classes={{
-      container: 'max-w-6xl py-16 bg-gray-50',
-      title: 'text-3xl font-bold',
-      subtitle: 'text-xl text-gray-600',
-    }}
-  />
-
-  <!-- Steps Widget -->
-  <Steps
-    title="快速开始使用"
-    subtitle="四步轻松开启静态住宅代理服务"
-    items={steps}
-    classes={{
-      container: 'max-w-5xl py-16',
-      title: 'text-3xl font-bold',
-      subtitle: 'text-xl text-gray-600',
-    }}
-  />
 
   <!-- FAQs Widget -->
   <FAQs
@@ -455,17 +320,6 @@ const comparison = {
     }}
   />
 
-  <!-- Call to Action -->
-  <div class="text-center py-20 bg-gradient-to-b from-purple-900 to-blue-900">
-    <a
-      href="https://dashboard.ipflex.ink/register"
-      class="inline-block bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
-      target="_blank"
-    >
-      立即注册，体验高质量静态住宅代理服务
-    </a>
-    <p class="mt-4 text-blue-100">IPFlex，值得信赖的企业级代理服务商</p>
-  </div>
 </Layout>
 
 <style>

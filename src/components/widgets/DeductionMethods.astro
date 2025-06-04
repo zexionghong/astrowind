@@ -1,0 +1,101 @@
+---
+/**
+ * 计费方式组件：介绍按流量扣费 和 按IP个数扣费方案
+ * 适用于静态住宅代理页面
+ */
+const deductionMethods = [
+  {
+    type: "按流量扣费",
+    key: "traffic",
+    title: "按流量扣费",
+    icon: "tabler:chart-bar",
+    scenes: [
+      "爬虫采集有波动、不可确定访问量的项目",
+      "大部分分布式采集/监测业务",
+      "营销/广告投放等高变动性需求"
+    ],
+    advantages: [
+      "用多少付多少，灵活不浪费",
+      "适合临时项目或不确定用量的初创团队",
+      "流量单价可阶梯减价，量大更优惠"
+    ],
+    pricing: [
+      "按实际消耗GB数计价，最低 $3.53/GB",
+      "套餐越大单价越低，详见价格页"
+    ]
+  },
+  {
+    type: "按IP个数扣费",
+    key: "ip",
+    title: "按IP个数扣费",
+    icon: "tabler:users",
+    scenes: [
+      "跨境电商账号养护/站群维护",
+      "长期稳定业务，对IP独占持续性有强需求",
+      "高并发、定向权重监测"
+    ],
+    advantages: [
+      "IP独享，稳定性强",
+      "无需担心流量突发，适合集中管理",
+      "按需扩容，预算可控"
+    ],
+    pricing: [
+      "按IP数量阶梯计价，最低 $1.60/IP/月起",
+      "支持定制套餐，请咨询客服"
+    ]
+  }
+];
+---
+
+<div class="py-16 bg-white">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-4">
+      计费方式对比
+    </h2>
+    <p class="text-lg text-gray-600 text-center mb-12">IPFlex支持【按流量】和【按IP个数】两种灵活计费方式，满足不同业务场景和团队预算。请选择适合您的模式开始体验。</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {deductionMethods.map((item) => (
+        <div class="border rounded-2xl shadow-lg hover:shadow-2xl p-8 flex flex-col items-center bg-gray-50 transition-all duration-200 group">
+          <div class="mb-4">
+            <span class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-blue-100">
+              <svg class="w-7 h-7 text-blue-600" aria-hidden="true">
+                <use xlink:href={`#${item.icon.replace("tabler:", "")}`}></use>
+              </svg>
+            </span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-2">{item.title}</h3>
+          <div class="w-full mb-3">
+            <div class="font-semibold text-gray-700 mb-1">适用场景：</div>
+            <ul class="list-disc list-inside text-gray-600 text-base space-y-1">
+              {item.scenes.map(s => <li>{s}</li>)}
+            </ul>
+          </div>
+          <div class="w-full mb-3">
+            <div class="font-semibold text-gray-700 mb-1">优势：</div>
+            <ul class="list-disc list-inside text-gray-600 text-base space-y-1">
+              {item.advantages.map(a => <li>{a}</li>)}
+            </ul>
+          </div>
+          <div class="w-full mb-5">
+            <div class="font-semibold text-gray-700 mb-1">价格示例：</div>
+            <ul class="list-disc list-inside text-blue-600 text-base space-y-1">
+              {item.pricing.map(p => <li>{p}</li>)}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+    <div class="text-center mt-12">
+      <a
+        href="https://dashboard.ipflex.ink/register"
+        class="inline-block bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 shadow-lg"
+        target="_blank" rel="noopener"
+      >立即注册，专享灵活计费体验</a>
+      <p class="mt-2 text-gray-400 text-sm">新用户注册赠送￥15免费使用</p>
+    </div>
+    <svg style="display:none;">
+      <symbol id="chart-bar" viewBox="0 0 24 24"><rect x="3" y="12" width="4" height="8" /><rect x="9" y="8" width="4" height="12" /><rect x="15" y="4" width="4" height="16" /></symbol>
+      <symbol id="users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></symbol>
+    </svg>
+  </div>
+</div>
