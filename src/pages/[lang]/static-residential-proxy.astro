@@ -17,8 +17,9 @@ import DeductionMethods from '~/components/widgets/DeductionMethods.astro';
 import { useTranslations } from '~/utils/i18n';
 
 // Import images
-import heroImage from '~/assets/images/hero.webp';
-import comparisonImage from '~/assets/images/proxy1.png';
+import heroImage from '~/assets/images/proxies/hero-static.webp';
+import comparisonImage from '~/assets/images/proxies/performance.webp';
+import googlesvg from "~/assets/images/proxies/google.svg"
 
 const { lang = 'zh' } = Astro.params;
 const t = useTranslations(lang);
@@ -64,15 +65,15 @@ const useCasesItems = t('useCases.items').map((item, index) => ({
       class="relative z-10 pt-16 pb-10"
     >
       <Fragment slot="title">
-        <div class="flex flex-col items-start gap-2 mb-6">
+        <div class="flex flex-col items-start gap-2 mb-6" style="margin-left:50px;">
           <h1 class="text-5xl font-bold text-white leading-tight">
             {t('hero.title')}
           </h1>
         </div>
       </Fragment>
       <Fragment slot="subtitle">
-        <div class="text-gray-200 space-y-6">
-          <p class="text-xl font-light leading-relaxed">
+        <div class="text-gray-200 space-y-6" style="margin-left:50px;">
+            <p class="text-xl font-light leading-relaxed text-left">
             {t('hero.subtitle')}
           </p>
           <ul class="space-y-3 text-lg">
@@ -86,13 +87,13 @@ const useCasesItems = t('useCases.items').map((item, index) => ({
             ))}
           </ul>
           <div class="flex items-center gap-4 pt-4">
-            <a href="#" class="bg-[#00E062] hover:bg-[#00C054] text-[#1A1147] font-semibold px-6 py-3 rounded-lg transition-all duration-200">
+             <a  href="https://dashboard.ipflex.ink/register" class="bg-[#00E062] hover:bg-[#00C054] text-[#1A1147] font-semibold px-6 py-3 rounded-lg transition-all duration-200">
               {t('hero.cta.primary')}
             </a>
-            <a href="#" class="flex items-center gap-2 bg-white hover:bg-gray-100 text-gray-800 font-semibold px-6 py-3 rounded-lg transition-all duration-200">
-              <img src="/images/google.svg" alt="Google" class="w-5 h-5" />
+            <!-- <a href="#" class="flex items-center gap-2 bg-white hover:bg-gray-100 text-gray-800 font-semibold px-6 py-3 rounded-lg transition-all duration-200">
+              <img src={googlesvg.src} alt="Google" class="w-5 h-5" />
               {t('hero.cta.secondary')}
-            </a>
+            </a> -->
           </div>
         </div>
       </Fragment>
@@ -132,13 +133,14 @@ const useCasesItems = t('useCases.items').map((item, index) => ({
   />
 
   <!-- Use Cases Widget -->
+   
   <UseCases
     title={t('useCases.title')}
     useCases={useCasesItems}
   />
 
   <!-- Unlimited Session Widget -->
-  <PerformanceFeatures
+  <!-- <PerformanceFeatures
     title={t('unlimitedSession.title')}
     description={t('unlimitedSession.description')}
     features={t('unlimitedSession.features').map(feature => ({ title: feature }))}
@@ -150,7 +152,7 @@ const useCasesItems = t('useCases.items').map((item, index) => ({
     classes={{
       container: 'py-16 bg-gray-50'
     }}
-  />
+  /> -->
 
   <!-- 计费方式对比 -->
   <DeductionMethods lang={lang} deductionData={t('deductionMethods')} />

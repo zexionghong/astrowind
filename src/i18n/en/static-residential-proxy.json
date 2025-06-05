@@ -21,16 +21,22 @@
     "title": "Global Resource Coverage",
     "subtitle": "IPFlex has massive high-quality residential IP resources to escort your business",
     "items": [
-      { "amount": "90M+", "title": "Global Residential IP Resources" },
-      { "amount": "200+", "title": "Countries/Regions Covered" },
+      { "amount": "0.4s", "title": "Average Response Time" },
+      { "amount": "80+", "title": "Countries/Regions Covered" },
       { "amount": "99.9%", "title": "Service Availability" },
       { "amount": "24/7", "title": "Technical Support" }
     ]
   },
   "performance": {
-    "title": "Excellent Performance, Unlimited",
-    "description": "Using Internet Service Provider proxies, blocking is very rare because websites do not want to restrict traffic from well-known Autonomous System Numbers. Internet Service Provider proxies provided by premium ASN providers such as AT&T, Comcast, Lumen, and Frontier are designed to unlock the most challenging targets with a 99.9% success rate.",
-    "features": ["Semi-dedicated proxies", "Unlimited session duration", "HTTP, HTTPS and SOCKS5 protocols", "UDP and TCP connections"]
+    "title": "Excellent Performance & Unlimited Bandwidth",
+    "description": "Experience top-tier performance with IPFlex static residential proxies, built on genuine residential networks. Enjoy unlimited bandwidth and session duration, with support for HTTP and SOCKS5 protocols. Benefit from high anonymity and stability, ideal for SEO monitoring, data collection, cross-border e-commerce, ad verification, and more. Enhance business efficiency and minimize ban risks with our reliable residential IP solution.",
+    "features": [
+      "Unlimited bandwidth",
+      "Unlimited session duration",
+      "Supports HTTP and SOCKS5 protocols",
+      "High anonymity and stability",
+      "Optimized for SEO monitoring"
+    ]
   },
   "whyChooseUs": {
     "title": "Why Choose IPFlex?",
@@ -45,11 +51,11 @@
     "items": [
       {
         "title": "Ad Verification",
-        "description": "Relying on residential proxies and global IP resources, advertisers can truly simulate user access, accurately complete ad verification, effectively prevent ad fraud, and improve ad ROI. IPFlex provides ad verification, anti-fraud and other compliance testing services for 500+ enterprises daily."
+        "description": "Relying on residential proxies and global IP resources, advertisers can truly simulate user access, accurately complete ad verification, effectively prevent ad fraud, and improve ad ROI. IPFlex provides ad verification, anti-fraud and other compliance testing services for 50+ enterprises daily."
       },
       {
         "title": "Market Research & Data Collection",
-        "description": "Through 90M+ residential IPs, easily break through anti-crawler restrictions, help enterprises efficiently conduct data collection and market research. Daily collection volume exceeds 100 million, supports API automation, meets data-driven decision-making needs."
+        "description": "Easily break through anti-crawler restrictions with 700K+ residential IPs, helping enterprises efficiently conduct data collection and market research. Daily collection volume exceeds 100 million, supports API automation, and meets data-driven decision-making needs."
       },
       {
         "title": "E-commerce Account Maintenance",
@@ -57,7 +63,7 @@
       },
       {
         "title": "Network Security & Risk Control",
-        "description": "Use residential proxies for penetration testing, brand protection and risk control monitoring, help enterprises identify network security threats and prevent black industry activities. IPFlex has provided residential proxy risk control solutions for 100+ financial and Internet enterprises."
+        "description": "Use residential proxies for penetration testing, brand protection and risk control monitoring, help enterprises identify network security threats and prevent black industry activities. IPFlex has provided residential proxy risk control solutions for 60+  Internet enterprises."
       }
     ]
   },
@@ -120,8 +126,7 @@
           "Traffic unit price can be tiered, more cost-effective for larger volumes"
         ],
         "pricing": [
-          "Priced by actual GB consumption, starting from $3.53/GB",
-          "Larger packages have lower unit prices, see pricing page for details"
+            "Priced by actual GB consumption, starting from ￥40/GB"
         ]
       },
       {
@@ -139,14 +144,13 @@
           "Scale on demand, controllable budget"
         ],
         "pricing": [
-          "Tiered pricing by IP count, starting from $1.60/IP/month",
-          "Support custom packages, please contact customer service"
+          "Tiered pricing by IP count, starting from ￥4/IP/day"
         ]
       }
     ],
     "cta": {
       "button": "Register Now for Flexible Billing Experience",
-      "note": "New users get $15 free credit upon registration"
+      "note": "New users get ￥15 free credit upon registration"
     },
     "labels": {
       "scenes": "Use Cases:",

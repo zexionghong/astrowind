@@ -3,7 +3,12 @@ export const getHeaderData = (lang: string = 'zh') => ({
   links: [
     {
       text: lang === 'zh' ? '产品' : 'Products',
-      href: `/${lang}/detail`,
+      // href: `/${lang}/detail`,
+      links: [
+        { text: lang === 'zh' ? '静态住宅代理' : 'Static Residential Proxy', href: `/${lang}/static-residential-proxy` },
+        { text: lang === 'zh' ? '动态住宅代理' : 'Dynamic Residential Proxy', href: `/${lang}/dynamic-residential-proxy` },
+        { text: lang === 'zh' ? '数据中心代理' : 'Data Center Proxy', href: `/${lang}/data-center-proxy` },
+      ]
       
     },
     {
@@ -42,15 +47,15 @@ export const getFooterData = (lang: string = 'zh') => ({
       links: [
         { 
           text: lang === 'zh' ? '静态住宅代理' : 'Static Residential Proxy', 
-          href: `/${lang}/detail#static-residential` 
+          href: `/${lang}/static-residential-proxy` 
         },
         { 
           text: lang === 'zh' ? '动态住宅代理' : 'Dynamic Residential Proxy', 
-          href: `/${lang}/detail#dynamic-residential` 
+          href: `/${lang}/dynamic-residential-proxy` 
         },
         { 
           text: lang === 'zh' ? '数据中心代理' : 'Data Center Proxy', 
-          href: `/${lang}/detail#datacenter` 
+          href: `/${lang}/data-center-proxy` 
         },
       ],
     },
