@@ -25,12 +25,17 @@ function loadTranslations(dir: string): Translations {
 export function initializeTranslations() {
   const languages = ['en', 'zh'];
   languages.forEach((lang) => {
-    const dir = path.resolve(`./src/i18n/${lang}`);
+    const dir = path.resolve(process.cwd(), `src/i18n/${lang}`);
     translationsCache[lang] = loadTranslations(dir);
   });
 }
 
 export function useTranslations(lang: string) {
+  // 如果缓存为空，则初始化翻译
+  if (Object.keys(translationsCache).length === 0) {
+    initializeTranslations();
+  }
+
   return function t(key: string) {
     const parts = key.split('.');
     let value = translationsCache[lang];
@@ -44,5 +49,5 @@ export function useTranslations(lang: string) {
 
 export async function getLanguageFromURL(pathname: string) {
   const [, lang] = pathname.split('/');
-  return lang in ['en', 'zh'] ? lang : 'en';
-} 
+  return ['en', 'zh'].includes(lang) ? lang : 'en';
+}
