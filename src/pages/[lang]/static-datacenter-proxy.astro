@@ -1,0 +1,182 @@
+---
+export async function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'zh' } }
+  ];
+}
+
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero2.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import PerformanceFeatures from '~/components/widgets/PerformanceFeatures.astro';
+import WhyChooseUs from '~/components/widgets/WhyChooseUs.astro';
+import UseCases from '~/components/widgets/UseCases.astro';
+import DeductionMethods from '~/components/widgets/DeductionMethods.astro';
+import { useTranslations } from '~/utils/i18n';
+
+// Import images
+import heroImage from '~/assets/images/proxies/hero-static.webp';
+import comparisonImage from '~/assets/images/proxies/performance.webp';
+import googlesvg from "~/assets/images/proxies/google.svg"
+
+const { lang = 'zh' } = Astro.params;
+
+// Load specific translation file for static datacenter proxy
+import staticDatacenterZh from '~/i18n/zh/static-datacenter-proxy.json';
+import staticDatacenterEn from '~/i18n/en/static-datacenter-proxy.json';
+
+const translations = lang === 'zh' ? staticDatacenterZh.staticDatacenterProxy : staticDatacenterEn.staticDatacenterProxy;
+const t = (key: string) => {
+  const parts = key.split('.');
+  let value = translations;
+  for (const part of parts) {
+    value = value?.[part];
+  }
+  return value || key;
+};
+
+const metadata = {
+  title: t('metadata.title'),
+  description: t('metadata.description'),
+  ignoreTitleTemplate: true,
+};
+
+const stats = t('stats.items') as any[];
+const faqs = t('faqs.items') as any[];
+
+const whyChooseUsFeatures = (t('whyChooseUs.features') as any[]).map((feature, index) => ({
+  ...feature,
+  icon: [
+    '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-zap"><polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"></polygon></svg>',
+    '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dollar-sign"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>',
+    '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield"><path d="M12,22s8-4 8-10V5l-8-3-8,3v7c0,6 8,10 8,10z"></path></svg>'
+  ][index]
+}));
+
+const useCasesItems = (t('useCases.items') as any[]).map((item, index) => ({
+  ...item,
+  icon: [
+    '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>',
+    '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16,18 22,12 16,6"></polyline><polyline points="8,6 2,12 8,18"></polyline></svg>',
+    '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>',
+    '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12,6 12,12 16,14"></polyline></svg>'
+  ][index]
+}));
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget -->
+  <div class="relative">
+    <div class="absolute inset-0 bg-gradient-to-b from-green-600 to-green-10"></div>
+    <Hero
+      image={{
+        src: heroImage,
+        alt: t('hero.title'),
+      }}
+      class="relative z-10 pt-16 pb-10"
+    >
+      <Fragment slot="title">
+        <div class="flex flex-col items-start gap-2 mb-6" style="margin-left:50px;">
+          <h1 class="text-5xl font-bold text-white leading-tight">
+            {t('hero.title')}
+          </h1>
+        </div>
+      </Fragment>
+      <Fragment slot="subtitle">
+        <div class="text-gray-200 space-y-6" style="margin-left:50px;">
+            <p class="text-xl font-light leading-relaxed text-left">
+            {t('hero.subtitle')}
+          </p>
+          <ul class="space-y-3 text-lg">
+            {(t('hero.features') as any[]).map((feature) => (
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-[#00E062]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-lg">{feature}</span>
+              </li>
+            ))}
+          </ul>
+          <div class="flex items-center gap-4 pt-4">
+             <a  href="https://dashboard.ipflex.ink/register" class="bg-[#00E062] hover:bg-[#00C054] text-[#1A1147] font-semibold px-6 py-3 rounded-lg transition-all duration-200">
+              {t('hero.cta.primary')}
+            </a>
+          </div>
+        </div>
+      </Fragment>
+    </Hero>
+  </div>
+
+  <!-- Stats Widget -->
+  <Stats
+    stats={stats}
+    title={t('stats.title')}
+    subtitle={t('stats.subtitle')}
+    classes={{
+      container: 'max-w-6xl',
+      title: 'text-white',
+      subtitle: 'text-green-100',
+    }}
+  />
+
+  <!-- Performance Features Widget -->
+  <PerformanceFeatures
+    title={t('performance.title') as string}
+    description={t('performance.description') as string}
+    features={(t('performance.features') as any[]).map(feature => ({ title: feature }))}
+    image={{
+      src: comparisonImage,
+      alt: t('performance.title') as string
+    }}
+    classes={{
+      container: 'py-16'
+    }}
+  />
+
+  <!-- Why Choose Us Widget -->
+  <WhyChooseUs
+    title={t('whyChooseUs.title') as string}
+    features={whyChooseUsFeatures}
+  />
+
+  <!-- Use Cases Widget -->
+  <UseCases
+    title={t('useCases.title') as string}
+    useCases={useCasesItems}
+  />
+
+  <!-- 计费方式对比 -->
+  <DeductionMethods lang={lang} deductionData={t('deductionMethods') as any} />
+
+  <!-- FAQs Widget -->
+  <FAQs
+    title={t('faqs.title') as string}
+    subtitle={t('faqs.subtitle') as string}
+    tagline={t('faqs.tagline') as string}
+    items={faqs}
+    classes={{
+      container: 'max-w-6xl py-16 bg-gray-50',
+      title: 'text-3xl font-bold',
+      subtitle: 'text-xl text-gray-600',
+    }}
+  />
+
+</Layout>
+
+<style>
+  .bg-gradient-to-b {
+    background-size: 100% 100%;
+    background-position: 0% 0%;
+  }
+  
+  .from-green-600 {
+    --tw-gradient-from: #16a34a;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(22 163 74 / 0));
+  }
+  
+  .to-green-10 {
+    --tw-gradient-to: #f0fdf4;
+  }
+</style>

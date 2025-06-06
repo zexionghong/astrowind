@@ -1,0 +1,148 @@
+{
+  "staticDatacenterProxy": {
+    "metadata": {
+    "title": "Static Datacenter Proxy - High-Speed Stable IP Solution | IPFlex",
+    "description": "IPFlex static datacenter proxy provides high-speed stable datacenter IP services, designed for high-concurrency access, API calls, and automated testing. Ultra-low latency, high bandwidth, extremely cost-effective."
+  },
+  "hero": {
+    "title": "Static Datacenter Proxies",
+    "subtitle": "High-speed proxy service based on datacenters, providing ultra-low latency and extremely high performance network access solutions",
+    "features": [
+      "Ultra-low latency, millisecond response",
+      "High bandwidth, supports high-traffic access",
+      "99.9% stability guarantee",
+      "Extremely cost-effective, controllable costs"
+    ],
+    "cta": {
+      "primary": "Try IPFlex today",
+      "secondary": "Get started with Google"
+    }
+  },
+  "stats": {
+    "title": "Global Datacenter Resources",
+    "subtitle": "IPFlex deploys high-performance datacenters globally, providing ultra-fast access experience for your business",
+    "items": [
+      { "amount": "500K+", "title": "Datacenter IP Pool" },
+      { "amount": "100+", "title": "Global Datacenters" },
+      { "amount": "0.1s", "title": "Average Latency" },
+      { "amount": "10Gbps", "title": "Single IP Bandwidth" }
+    ]
+  },
+  "performance": {
+    "title": "Ultra-Fast Performance & Unlimited Bandwidth",
+    "description": "IPFlex static datacenter proxies are based on global top-tier datacenter infrastructure, providing millisecond response speeds and unlimited bandwidth. Designed specifically for high-concurrency API calls, automated testing, batch data processing and other high-performance scenarios. Supports HTTP/HTTPS/SOCKS5 protocols with enterprise-grade stability guarantee.",
+    "features": ["Millisecond response speed", "Unlimited bandwidth guarantee", "Enterprise-grade stability", "Multi-protocol support", "Global node coverage"]
+  },
+  "whyChooseUs": {
+    "title": "Why Choose IPFlex Datacenter Proxies?",
+    "features": [
+      { "title": "Ultra-Fast Performance", "description": "Based on top-tier datacenter infrastructure, providing millisecond response and 10Gbps bandwidth to meet high-performance needs." },
+      { "title": "Cost Advantage", "description": "Compared to residential proxies, datacenter proxies have lower costs, suitable for large-scale, high-frequency access needs." },
+      { "title": "Stable & Reliable", "description": "99.9% uptime guarantee with professional operations team 24/7 monitoring to ensure stable service operation." }
+    ]
+  },
+  "useCases": {
+    "title": "Use Cases",
+    "items": [
+      {
+        "title": "API Interface Calls",
+        "description": "Provide stable proxy services for high-frequency API calls, supporting various interface access including RESTful API, GraphQL. Suitable for data synchronization, third-party service integration, microservice architecture and other scenarios, ensuring stability and efficiency of interface calls."
+      },
+      {
+        "title": "Automated Testing",
+        "description": "Provide stable network environment for automated testing, supporting web application testing, API testing, performance testing and other scenarios. Simulate access from different regions through datacenter proxies to ensure accuracy and reliability of test results."
+      },
+      {
+        "title": "Batch Data Processing",
+        "description": "Support large-scale batch data processing tasks such as data import/export, batch file upload/download, database synchronization. High bandwidth and low latency characteristics ensure efficiency of data processing."
+      },
+      {
+        "title": "Content Distribution Acceleration",
+        "description": "Provide proxy acceleration services for CDN and content distribution networks, optimizing global user access experience. Reduce network latency and improve content loading speed through nearby datacenter node access."
+      }
+    ]
+  },
+  "faqs": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Common questions and answers about static datacenter proxies",
+    "tagline": "If you have more questions, please contact customer service",
+    "items": [
+      {
+        "title": "What is a datacenter proxy?",
+        "description": "A datacenter proxy is a proxy service based on datacenter servers, using IP addresses allocated by datacenters. Compared to residential proxies, datacenter proxies have higher speed, larger bandwidth and lower cost, suitable for application scenarios with high performance requirements."
+      },
+      {
+        "title": "What's the difference between datacenter and residential proxies?",
+        "description": "Datacenter proxies are based on server IPs with fast speed, large bandwidth and low cost, but may be more easily identified; residential proxies are based on real user IPs with higher anonymity but relatively slower speed and higher cost. The choice depends on your specific needs."
+      },
+      {
+        "title": "How fast are datacenter proxies?",
+        "description": "IPFlex datacenter proxies have an average latency of less than 100 milliseconds, with single IP bandwidth up to 10Gbps. Based on global top-tier datacenter infrastructure, ensuring ultra-fast network access experience, especially suitable for applications with extremely high speed requirements."
+      },
+      {
+        "title": "What protocols and ports are supported?",
+        "description": "IPFlex datacenter proxies support HTTP, HTTPS and SOCKS5 protocols, providing multiple port options. Support both username/password authentication and IP whitelist authentication to meet different application access needs."
+      },
+      {
+        "title": "How stable are datacenter proxies?",
+        "description": "IPFlex datacenter proxies provide 99.9% uptime guarantee with professional operations team 24/7 monitoring. Based on enterprise-grade datacenter infrastructure, ensuring high availability and stability of services."
+      },
+      {
+        "title": "How to choose the right datacenter node?",
+        "description": "It's recommended to choose datacenter nodes closer to target servers for optimal performance. IPFlex deploys nodes in 100+ datacenters globally, you can choose the optimal geographic location based on your business needs."
+      }
+    ]
+  },
+  "deductionMethods": {
+    "title": "Billing Methods Comparison",
+    "subtitle": "IPFlex datacenter proxies support two flexible billing methods: [By Bandwidth] and [By IP Count], meeting different scales of business needs.",
+    "methods": [
+      {
+        "type": "By Bandwidth Billing",
+        "key": "bandwidth",
+        "title": "By Bandwidth Billing",
+        "scenes": [
+          "High-concurrency API calls",
+          "Large file transfer and download",
+          "Real-time data stream processing"
+        ],
+        "advantages": [
+          "Suitable for high bandwidth demand scenarios",
+          "Billing by actual bandwidth usage",
+          "Support burst traffic handling"
+        ],
+        "pricing": [
+          "Priced by bandwidth usage, starting from ￥0.5/Mbps/hour"
+        ]
+      },
+      {
+        "type": "By IP Count Billing",
+        "key": "ip",
+        "title": "By IP Count Billing",
+        "scenes": [
+          "Automated testing environments",
+          "Long-term stable API services",
+          "Enterprise application deployment"
+        ],
+        "advantages": [
+          "Dedicated IP, stable performance",
+          "Predictable costs, easy budgeting",
+          "Support long-term monthly discounts"
+        ],
+        "pricing": [
+          "Priced by IP count, starting from ￥2/IP/day"
+        ]
+      }
+    ],
+    "cta": {
+      "button": "Register Now to Experience Ultra-Fast Proxy Service",
+      "note": "New users get ￥15 free credit upon registration"
+    },
+    "labels": {
+      "scenes": "Use Cases:",
+      "advantages": "Advantages:",
+      "pricing": "Pricing Examples:"
+    }
+  }
+  }
+}

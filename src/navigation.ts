@@ -7,7 +7,7 @@ export const getHeaderData = (lang: string = 'zh') => ({
       links: [
         { text: lang === 'zh' ? '静态住宅代理' : 'Static Residential Proxy', href: `/${lang}/static-residential-proxy` },
         { text: lang === 'zh' ? '动态住宅代理' : 'Dynamic Residential Proxy', href: `/${lang}/dynamic-residential-proxy` },
-        { text: lang === 'zh' ? '数据中心代理' : 'Data Center Proxy', href: `/${lang}/data-center-proxy` },
+        { text: lang === 'zh' ? '数据中心代理' : 'Data Center Proxy', href: `/${lang}/static-datacenter-proxy` },
       ]
       
     },
@@ -55,7 +55,7 @@ export const getFooterData = (lang: string = 'zh') => ({
         },
         { 
           text: lang === 'zh' ? '数据中心代理' : 'Data Center Proxy', 
-          href: `/${lang}/data-center-proxy` 
+          href: `/${lang}/static-datacenter-proxy` 
         },
       ],
     },
