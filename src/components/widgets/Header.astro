@@ -8,14 +8,21 @@ import LanguagePicker from '~/components/LanguagePicker.astro';
 
 import { getHomePermalinkEn, getHomePermalinkZh } from '~/utils/permalinks';
 import { trimSlash, getAsset } from '~/utils/permalinks';
-import type { CallToAction } from '~/types';
 import { getHeaderData } from '~/navigation';
+
+interface CallToAction {
+  text?: string;
+  href?: string;
+  target?: string;
+  color?: string;
+}
 
 interface Link {
   text?: string;
   href?: string;
   ariaLabel?: string;
   icon?: string;
+  links?: Array<Link>;
 }
 
 interface MenuLink extends Link {
@@ -92,65 +99,68 @@ const headerData = getHeaderData(lang);
         class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium md:justify-center"
       >
         {
-          headerData.links.map(({ text, href, links }) => (
-            <li class={links?.length ? 'dropdown' : ''}>
-              {links?.length ? (
-                <>
-                  <button
-                    type="button"
-                    class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center whitespace-nowrap"
-                  >
-                    {text}{' '}
-                    <Icon name="tabler:chevron-down" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" />
-                  </button>
-                  <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl">
-                    {links.map(({ text: text2, href: href2, links: subLinks }) => (
-                      subLinks ? (
-                        subLinks.map(({ text: subText, href: subHref }) => (
+          headerData.links.map((link: any) => {
+            const { text, href, links } = link;
+            return (
+              <li class={links?.length ? 'dropdown' : ''}>
+                {links?.length ? (
+                  <>
+                    <button
+                      type="button"
+                      class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center whitespace-nowrap"
+                    >
+                      {text}{' '}
+                      <Icon name="tabler:chevron-down" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" />
+                    </button>
+                    <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl">
+                      {links.map(({ text: text2, href: href2, links: subLinks }) => (
+                        subLinks ? (
+                          subLinks.map(({ text: subText, href: subHref }) => (
+                            <li>
+                              <a
+                                class:list={[
+                                  'first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap',
+                                  { 'aw-link-active': subHref === currentPath },
+                                ]}
+                                href={subHref || '#'}
+                                {...(subHref && subHref.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                              >
+                                {subText}
+                              </a>
+                            </li>
+                          ))
+                        ) : (
                           <li>
                             <a
                               class:list={[
                                 'first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap',
-                                { 'aw-link-active': subHref === currentPath },
+                                { 'aw-link-active': href2 === currentPath },
                               ]}
-                              href={subHref}
-                              {...(subHref.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                              href={href2 || '#'}
+                              {...(href2 && href2.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                             >
-                              {subText}
+                              {text2}
                             </a>
                           </li>
-                        ))
-                      ) : (
-                        <li>
-                          <a
-                            class:list={[
-                              'first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap',
-                              { 'aw-link-active': href2 === currentPath },
-                            ]}
-                            href={href2}
-                            {...(href2.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                          >
-                            {text2}
-                          </a>
-                        </li>
-                      )
-                    ))}
-                  </ul>
-                </>
-              ) : (
-                <a
-                  class:list={[
-                    'hover:text-link dark:hover:text-white px-4 py-3 flex items-center whitespace-nowrap',
-                    { 'aw-link-active': href === currentPath },
-                  ]}
-                  href={href}
-                  {...(href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                >
-                  {text}
-                </a>
-              )}
-            </li>
-          ))
+                        )
+                      ))}
+                    </ul>
+                  </>
+                ) : (
+                  <a
+                    class:list={[
+                      'hover:text-link dark:hover:text-white px-4 py-3 flex items-center whitespace-nowrap',
+                      { 'aw-link-active': href === currentPath },
+                    ]}
+                    href={href || '#'}
+                    {...(href && href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  >
+                    {text}
+                  </a>
+                )}
+              </li>
+            );
+          })
         }
       </ul>
     </nav>
@@ -179,8 +189,16 @@ const headerData = getHeaderData(lang);
         {
           headerData.actions?.length ? (
             <span class="ml-4 rtl:ml-0 rtl:mr-4">
-              {headerData.actions.map((btnProps) => (
-                <Button {...btnProps} class="ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm w-auto" />
+              {headerData.actions.map((btnProps, index) => (
+                <div class="relative inline-block">
+                  <Button {...btnProps} class="ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm w-auto" />
+                  {/* 为注册按钮添加促销标签 */}
+                  {index === 0 && (btnProps.text === '注册' || btnProps.text === 'Sign Up') && (
+                    <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full whitespace-nowrap transform rotate-12 shadow-lg">
+                      {btnProps.text === '注册' ? '注册就送￥15' : 'Get ¥15 Free'}
+                    </span>
+                  )}
+                </div>
               ))}
             </span>
           ) : (

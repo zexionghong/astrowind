@@ -14,7 +14,7 @@ const { lang = 'zh' } = Astro.params; // 从URL参数获取语言
 
 import { getHeaderData } from '~/navigation';
 
-import type { MetaData } from '~/types';
+import type { MetaData } from '~/types/index';
 import { initializeTranslations } from '~/utils/i18n';
 
 export interface Props {
@@ -89,4 +89,4 @@ initializeTranslations();
       console.log('更新邀请码缓存:', code);
     }
   });
-</script> 
+</script>
