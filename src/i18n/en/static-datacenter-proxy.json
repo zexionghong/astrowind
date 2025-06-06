@@ -95,12 +95,12 @@
   },
   "deductionMethods": {
     "title": "Billing Methods Comparison",
-    "subtitle": "IPFlex datacenter proxies support two flexible billing methods: [By Bandwidth] and [By IP Count], meeting different scales of business needs.",
+    "subtitle": "IPFlex datacenter proxies support two flexible billing methods: [By Traffic] and [By IP Count], meeting different scales of business needs.",
     "methods": [
       {
-        "type": "By Bandwidth Billing",
-        "key": "bandwidth",
-        "title": "By Bandwidth Billing",
+        "type": "By Traffic Billing",
+        "key": "traffic",
+        "title": "By Traffic Billing",
         "scenes": [
           "High-concurrency API calls",
           "Large file transfer and download",
@@ -108,11 +108,11 @@
         ],
         "advantages": [
           "Suitable for high bandwidth demand scenarios",
-          "Billing by actual bandwidth usage",
-          "Support burst traffic handling"
+          "Billing by actual traffic usage",
+          "Supports burst traffic handling"
         ],
         "pricing": [
-          "Priced by bandwidth usage, starting from ￥0.5/Mbps/hour"
+          "Priced by traffic usage, ￥10/GB"
         ]
       },
       {
@@ -127,7 +127,7 @@
         "advantages": [
           "Dedicated IP, stable performance",
           "Predictable costs, easy budgeting",
-          "Support long-term monthly discounts"
+          "Supports long-term monthly discounts"
         ],
         "pricing": [
           "Priced by IP count, starting from ￥2/IP/day"
