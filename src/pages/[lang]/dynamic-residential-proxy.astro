@@ -22,31 +22,18 @@ import comparisonImage from '~/assets/images/proxies/performance.webp';
 import googlesvg from "~/assets/images/proxies/google.svg"
 
 const { lang = 'zh' } = Astro.params;
-
-// Load specific translation file for dynamic residential proxy
-import dynamicResidentialZh from '~/i18n/zh/dynamic-residential-proxy.json';
-import dynamicResidentialEn from '~/i18n/en/dynamic-residential-proxy.json';
-
-const translations = lang === 'zh' ? dynamicResidentialZh.dynamicResidentialProxy : dynamicResidentialEn.dynamicResidentialProxy;
-const t = (key: string) => {
-  const parts = key.split('.');
-  let value = translations;
-  for (const part of parts) {
-    value = value?.[part];
-  }
-  return value || key;
-};
+const t = useTranslations(lang);
 
 const metadata = {
-  title: t('metadata.title'),
-  description: t('metadata.description'),
+  title: t('dynamicResidentialProxy.metadata.title'),
+  description: t('dynamicResidentialProxy.metadata.description'),
   ignoreTitleTemplate: true,
 };
 
-const stats = t('stats.items') as any[];
-const faqs = t('faqs.items') as any[];
+const stats = t('dynamicResidentialProxy.stats.items');
+const faqs = t('dynamicResidentialProxy.faqs.items');
 
-const whyChooseUsFeatures = (t('whyChooseUs.features') as any[]).map((feature, index) => ({
+const whyChooseUsFeatures = t('dynamicResidentialProxy.whyChooseUs.features').map((feature, index) => ({
   ...feature,
   icon: [
     '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-refresh-cw"><polyline points="23,4 23,10 17,10"></polyline><polyline points="1,20 1,14 7,14"></polyline><path d="M20.49,9A9,9,0,0,0,5.64,5.64L1,10m22,4L18.36,18.36A9,9,0,0,1,3.51,15"></path></svg>',
@@ -55,7 +42,7 @@ const whyChooseUsFeatures = (t('whyChooseUs.features') as any[]).map((feature, i
   ][index]
 }));
 
-const useCasesItems = (t('useCases.items') as any[]).map((item, index) => ({
+const useCasesItems = t('dynamicResidentialProxy.useCases.items').map((item, index) => ({
   ...item,
   icon: [
     '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27,6.96 12,12.01 20.73,6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>',
@@ -73,24 +60,24 @@ const useCasesItems = (t('useCases.items') as any[]).map((item, index) => ({
     <Hero
       image={{
         src: heroImage,
-        alt: t('hero.title'),
+        alt: t('dynamicResidentialProxy.hero.title'),
       }}
       class="relative z-10 pt-16 pb-10"
     >
       <Fragment slot="title">
         <div class="flex flex-col items-start gap-2 mb-6" style="margin-left:50px;">
           <h1 class="text-5xl font-bold text-white leading-tight">
-            {t('hero.title')}
+            {t('dynamicResidentialProxy.hero.title')}
           </h1>
         </div>
       </Fragment>
       <Fragment slot="subtitle">
         <div class="text-gray-200 space-y-6" style="margin-left:50px;">
             <p class="text-xl font-light leading-relaxed text-left">
-            {t('hero.subtitle')}
+            {t('dynamicResidentialProxy.hero.subtitle')}
           </p>
           <ul class="space-y-3 text-lg">
-            {(t('hero.features') as any[]).map((feature) => (
+            {t('dynamicResidentialProxy.hero.features').map((feature) => (
               <li class="flex items-center gap-3">
                 <svg class="w-5 h-5 text-[#00E062]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -101,7 +88,7 @@ const useCasesItems = (t('useCases.items') as any[]).map((item, index) => ({
           </ul>
           <div class="flex items-center gap-4 pt-4">
              <a  href="https://dashboard.ipflex.ink/register" class="bg-[#00E062] hover:bg-[#00C054] text-[#1A1147] font-semibold px-6 py-3 rounded-lg transition-all duration-200">
-              {t('hero.cta.primary')}
+              {t('dynamicResidentialProxy.hero.cta.primary')}
             </a>
           </div>
         </div>
@@ -112,8 +99,8 @@ const useCasesItems = (t('useCases.items') as any[]).map((item, index) => ({
   <!-- Stats Widget -->
   <Stats
     stats={stats}
-    title={t('stats.title')}
-    subtitle={t('stats.subtitle')}
+    title={t('dynamicResidentialProxy.stats.title')}
+    subtitle={t('dynamicResidentialProxy.stats.subtitle')}
     classes={{
       container: 'max-w-6xl',
       title: 'text-white',
@@ -123,12 +110,12 @@ const useCasesItems = (t('useCases.items') as any[]).map((item, index) => ({
 
   <!-- Performance Features Widget -->
   <PerformanceFeatures
-    title={t('performance.title') as string}
-    description={t('performance.description') as string}
-    features={(t('performance.features') as any[]).map(feature => ({ title: feature }))}
+    title={t('dynamicResidentialProxy.performance.title')}
+    description={t('dynamicResidentialProxy.performance.description')}
+    features={t('dynamicResidentialProxy.performance.features').map(feature => ({ title: feature }))}
     image={{
       src: comparisonImage,
-      alt: t('performance.title') as string
+      alt: t('dynamicResidentialProxy.performance.title')
     }}
     classes={{
       container: 'py-16'
@@ -137,24 +124,24 @@ const useCasesItems = (t('useCases.items') as any[]).map((item, index) => ({
 
   <!-- Why Choose Us Widget -->
   <WhyChooseUs
-    title={t('whyChooseUs.title') as string}
+    title={t('dynamicResidentialProxy.whyChooseUs.title')}
     features={whyChooseUsFeatures}
   />
 
   <!-- Use Cases Widget -->
   <UseCases
-    title={t('useCases.title') as string}
+    title={t('dynamicResidentialProxy.useCases.title')}
     useCases={useCasesItems}
   />
 
   <!-- 计费方式对比 -->
-  <DeductionMethods lang={lang} deductionData={t('deductionMethods') as any} />
+  <DeductionMethods lang={lang} deductionData={t('dynamicResidentialProxy.deductionMethods')} />
 
   <!-- FAQs Widget -->
   <FAQs
-    title={t('faqs.title') as string}
-    subtitle={t('faqs.subtitle') as string}
-    tagline={t('faqs.tagline') as string}
+    title={t('dynamicResidentialProxy.faqs.title')}
+    subtitle={t('dynamicResidentialProxy.faqs.subtitle')}
+    tagline={t('dynamicResidentialProxy.faqs.tagline')}
     items={faqs}
     classes={{
       container: 'max-w-6xl py-16 bg-gray-50',

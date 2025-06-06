@@ -22,31 +22,18 @@ import comparisonImage from '~/assets/images/proxies/performance.webp';
 import googlesvg from "~/assets/images/proxies/google.svg"
 
 const { lang = 'zh' } = Astro.params;
-
-// Load specific translation file for static datacenter proxy
-import staticDatacenterZh from '~/i18n/zh/static-datacenter-proxy.json';
-import staticDatacenterEn from '~/i18n/en/static-datacenter-proxy.json';
-
-const translations = lang === 'zh' ? staticDatacenterZh.staticDatacenterProxy : staticDatacenterEn.staticDatacenterProxy;
-const t = (key: string) => {
-  const parts = key.split('.');
-  let value = translations;
-  for (const part of parts) {
-    value = value?.[part];
-  }
-  return value || key;
-};
+const t = useTranslations(lang);
 
 const metadata = {
-  title: t('metadata.title'),
-  description: t('metadata.description'),
+  title: t('staticDatacenterProxy.metadata.title'),
+  description: t('staticDatacenterProxy.metadata.description'),
   ignoreTitleTemplate: true,
 };
 
-const stats = t('stats.items') as any[];
-const faqs = t('faqs.items') as any[];
+const stats = t('staticDatacenterProxy.stats.items');
+const faqs = t('staticDatacenterProxy.faqs.items');
 
-const whyChooseUsFeatures = (t('whyChooseUs.features') as any[]).map((feature, index) => ({
+const whyChooseUsFeatures = t('staticDatacenterProxy.whyChooseUs.features').map((feature, index) => ({
   ...feature,
   icon: [
     '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-zap"><polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"></polygon></svg>',
@@ -55,7 +42,7 @@ const whyChooseUsFeatures = (t('whyChooseUs.features') as any[]).map((feature, i
   ][index]
 }));
 
-const useCasesItems = (t('useCases.items') as any[]).map((item, index) => ({
+const useCasesItems = t('staticDatacenterProxy.useCases.items').map((item, index) => ({
   ...item,
   icon: [
     '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>',
@@ -73,24 +60,24 @@ const useCasesItems = (t('useCases.items') as any[]).map((item, index) => ({
     <Hero
       image={{
         src: heroImage,
-        alt: t('hero.title'),
+        alt: t('staticDatacenterProxy.hero.title'),
       }}
       class="relative z-10 pt-16 pb-10"
     >
       <Fragment slot="title">
         <div class="flex flex-col items-start gap-2 mb-6" style="margin-left:50px;">
           <h1 class="text-5xl font-bold text-white leading-tight">
-            {t('hero.title')}
+            {t('staticDatacenterProxy.hero.title')}
           </h1>
         </div>
       </Fragment>
       <Fragment slot="subtitle">
         <div class="text-gray-200 space-y-6" style="margin-left:50px;">
             <p class="text-xl font-light leading-relaxed text-left">
-            {t('hero.subtitle')}
+            {t('staticDatacenterProxy.hero.subtitle')}
           </p>
           <ul class="space-y-3 text-lg">
-            {(t('hero.features') as any[]).map((feature) => (
+            {t('staticDatacenterProxy.hero.features').map((feature) => (
               <li class="flex items-center gap-3">
                 <svg class="w-5 h-5 text-[#00E062]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -101,7 +88,7 @@ const useCasesItems = (t('useCases.items') as any[]).map((item, index) => ({
           </ul>
           <div class="flex items-center gap-4 pt-4">
              <a  href="https://dashboard.ipflex.ink/register" class="bg-[#00E062] hover:bg-[#00C054] text-[#1A1147] font-semibold px-6 py-3 rounded-lg transition-all duration-200">
-              {t('hero.cta.primary')}
+              {t('staticDatacenterProxy.hero.cta.primary')}
             </a>
           </div>
         </div>
@@ -112,8 +99,8 @@ const useCasesItems = (t('useCases.items') as any[]).map((item, index) => ({
   <!-- Stats Widget -->
   <Stats
     stats={stats}
-    title={t('stats.title')}
-    subtitle={t('stats.subtitle')}
+    title={t('staticDatacenterProxy.stats.title')}
+    subtitle={t('staticDatacenterProxy.stats.subtitle')}
     classes={{
       container: 'max-w-6xl',
       title: 'text-white',
@@ -123,12 +110,12 @@ const useCasesItems = (t('useCases.items') as any[]).map((item, index) => ({
 
   <!-- Performance Features Widget -->
   <PerformanceFeatures
-    title={t('performance.title') as string}
-    description={t('performance.description') as string}
-    features={(t('performance.features') as any[]).map(feature => ({ title: feature }))}
+    title={t('staticDatacenterProxy.performance.title')}
+    description={t('staticDatacenterProxy.performance.description')}
+    features={t('staticDatacenterProxy.performance.features').map(feature => ({ title: feature }))}
     image={{
       src: comparisonImage,
-      alt: t('performance.title') as string
+      alt: t('staticDatacenterProxy.performance.title')
     }}
     classes={{
       container: 'py-16'
@@ -137,24 +124,24 @@ const useCasesItems = (t('useCases.items') as any[]).map((item, index) => ({
 
   <!-- Why Choose Us Widget -->
   <WhyChooseUs
-    title={t('whyChooseUs.title') as string}
+    title={t('staticDatacenterProxy.whyChooseUs.title')}
     features={whyChooseUsFeatures}
   />
 
   <!-- Use Cases Widget -->
   <UseCases
-    title={t('useCases.title') as string}
+    title={t('staticDatacenterProxy.useCases.title')}
     useCases={useCasesItems}
   />
 
   <!-- 计费方式对比 -->
-  <DeductionMethods lang={lang} deductionData={t('deductionMethods') as any} />
+  <DeductionMethods lang={lang} deductionData={t('staticDatacenterProxy.deductionMethods')} />
 
   <!-- FAQs Widget -->
   <FAQs
-    title={t('faqs.title') as string}
-    subtitle={t('faqs.subtitle') as string}
-    tagline={t('faqs.tagline') as string}
+    title={t('staticDatacenterProxy.faqs.title')}
+    subtitle={t('staticDatacenterProxy.faqs.subtitle')}
+    tagline={t('staticDatacenterProxy.faqs.tagline')}
     items={faqs}
     classes={{
       container: 'max-w-6xl py-16 bg-gray-50',
