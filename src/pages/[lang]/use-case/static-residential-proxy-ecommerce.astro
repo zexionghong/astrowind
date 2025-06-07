@@ -94,21 +94,11 @@ const cases = t('moreCases');
         </ol>
       </div>
       <div class="flex-1 flex flex-wrap gap-3 justify-center items-center min-h-[170px]">
-        <div class="bg-green-100/80 text-green-900 text-base rounded-full px-4 py-1 font-bold shadow-sm">
-          长效独占
-        </div>
-        <div class="bg-green-100 text-green-800 text-lg rounded-full px-5 py-1 font-bold shadow">
-          自动绑定
-        </div>
-        <div class="bg-green-50 text-green-700 text-base rounded-full px-4 py-1 font-semibold shadow">
-          健康检测
-        </div>
-        <div class="bg-emerald-100 text-emerald-700 text-base rounded-full px-4 py-1 font-normal shadow">
-          动态扩容
-        </div>
-        <div class="bg-green-200 text-green-900 text-base rounded-full px-4 py-1 font-bold shadow">
-          站群矩阵
-        </div>
+        {(t('ecommerce.flowTags') || []).map((tag: string, idx: number) => (
+          <div class="bg-green-100/80 text-green-900 text-base rounded-full px-4 py-1 font-bold shadow-sm">
+            {tag}
+          </div>
+        ))}
       </div>
     </div>
 
@@ -131,12 +121,12 @@ const cases = t('moreCases');
       <div class="rounded-xl border bg-gradient-to-br from-yellow-50 to-white p-6 shadow flex flex-col gap-2">
         <h3 class="text-lg font-bold text-[#ba732c] mb-2 flex items-center gap-2">
           <svg width="21" height="21" stroke="#F59E42" fill="none"><rect x="3" y="3" width="15" height="15" rx="6.5" /></svg>
-          养号实战Tips
+          {t('ecommerce.tips.title')}
         </h3>
         <div class="text-yellow-900 text-sm">
-          <b>• 账号管理建议结合ERP与代理，批量多地同时养号</b><br/>
-          <b>• IP独占策略及自动化绑定脚本可显著降低封号率</b><br/>
-          <b>• 风控高发区建议分国分段分批养号，避免集中异常波及整梯队</b>
+          {(t('ecommerce.tips.items') || []).map((item: string) => (
+            <b key={item}>{item}<br/></b>
+          ))}
         </div>
       </div>
     </div>

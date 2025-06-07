@@ -93,21 +93,11 @@ const cases = t('moreCases');
         </ol>
       </div>
       <div class="flex-1 flex flex-wrap gap-3 justify-center items-center min-h-[170px]">
-        <div class="bg-green-100/80 text-green-900 text-base rounded-full px-4 py-1 font-bold shadow-sm">
-          区域定向
-        </div>
-        <div class="bg-green-100 text-green-800 text-lg rounded-full px-5 py-1 font-bold shadow">
-          自动巡检
-        </div>
-        <div class="bg-green-50 text-green-700 text-base rounded-full px-4 py-1 font-semibold shadow">
-          并发检测
-        </div>
-        <div class="bg-emerald-100 text-emerald-700 text-base rounded-full px-4 py-1 font-normal shadow">
-          风险归因
-        </div>
-        <div class="bg-green-200 text-green-900 text-base rounded-full px-4 py-1 font-bold shadow">
-          取证报告
-        </div>
+        {(t('security.flowTags') || []).map((tag: string, idx: number) => (
+          <div class="bg-green-100/80 text-green-900 text-base rounded-full px-4 py-1 font-bold shadow-sm">
+            {tag}
+          </div>
+        ))}
       </div>
     </div>
 
@@ -130,12 +120,12 @@ const cases = t('moreCases');
       <div class="rounded-xl border bg-gradient-to-br from-yellow-50 to-white p-6 shadow flex flex-col gap-2">
         <h3 class="text-lg font-bold text-[#ba732c] mb-2 flex items-center gap-2">
           <svg width="21" height="21" stroke="#F59E42" fill="none"><rect x="3" y="3" width="15" height="15" rx="6.5" /></svg>
-          风控实战Tips
+          {t('security.tips.title')}
         </h3>
         <div class="text-yellow-900 text-sm">
-          <b>• 巡检务必用真实分布式多地IP防止漏检、误报</b><br/>
-          <b>• 可与主流渗透/攻防平台联合用API集成批量检测</b><br/>
-          <b>• 所有节点数据定期追溯留档，自动合规归档</b>
+          {(t('security.tips.items') || []).map((item: string) => (
+            <b key={item}>{item}<br/></b>
+          ))}
         </div>
       </div>
     </div>
