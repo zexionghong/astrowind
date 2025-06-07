@@ -51,13 +51,25 @@ const {
     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       {useCases.map((useCase) => (
-        <div class="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-          <div class="mb-4 text-[#00E062] w-16 h-16 flex items-center justify-center">
-            <Fragment set:html={useCase.icon} />
+        useCase.url
+        ? (
+          <a href={useCase.url} class="block bg-white dark:bg-slate-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer border border-gray-100 hover:border-[#00E062] hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-[#00E062]" style="text-decoration: none;">
+            <div class="mb-4 text-[#00E062] w-16 h-16 flex items-center justify-center">
+              <Fragment set:html={useCase.icon} />
+            </div>
+            <h3 class="text-2xl font-bold mb-2 text-gray-900 dark:text-white">{useCase.title}</h3>
+            <p class="text-gray-600 dark:text-slate-400">{useCase.description}</p>
+          </a>
+        )
+        : (
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+            <div class="mb-4 text-[#00E062] w-16 h-16 flex items-center justify-center">
+              <Fragment set:html={useCase.icon} />
+            </div>
+            <h3 class="text-2xl font-bold mb-2 text-gray-900 dark:text-white">{useCase.title}</h3>
+            <p class="text-gray-600 dark:text-slate-400">{useCase.description}</p>
           </div>
-          <h3 class="text-2xl font-bold mb-2 text-gray-900 dark:text-white">{useCase.title}</h3>
-          <p class="text-gray-600 dark:text-slate-400">{useCase.description}</p>
-        </div>
+        )
       ))}
     </div>
   </div>

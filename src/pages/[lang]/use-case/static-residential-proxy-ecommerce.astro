@@ -1,0 +1,168 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { useTranslations } from '~/utils/i18n';
+import WhyChooseUs from '~/components/widgets/WhyChooseUs.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import heroImage from '~/assets/images/proxies/1-1.webp';
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'zh' } }
+  ];
+}
+
+const { lang } = Astro.params;
+const t = useTranslations(lang);
+const cases = t('moreCases');
+---
+
+<Layout metadata={{ title: t('ecommerce.metadata.title'), description: t('ecommerce.metadata.description') }}>
+  <div class="relative">
+    <div class="absolute inset-0 bg-gradient-to-b from-blue-600 to-blue-10"></div>
+    <section class="relative z-10 pt-16 pb-10 flex flex-col items-start gap-2" style="margin-left:50px;">
+      <h1 class="text-5xl font-bold text-white leading-tight mb-4">
+        {t('ecommerce.hero.title')}
+      </h1>
+      <div class="text-gray-200 space-y-6 mb-6">
+        <p class="text-xl font-light leading-relaxed">{t('ecommerce.hero.subtitle')}</p>
+        <ul class="space-y-3 text-lg">
+          {(t('ecommerce.hero.features') || []).map((f: string) => (
+            <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-[#00E062] inline-block"></span>{f}</li>
+          ))}
+        </ul>
+      </div>
+      <a href="https://dashboard.ipflex.ink/register" class="bg-[#00E062] hover:bg-[#00C054] text-[#1A1147] font-semibold px-6 py-3 rounded-lg transition-all duration-200">
+        {t('ecommerce.hero.cta.primary')}
+      </a>
+    </section>
+  </div>
+
+  <section class="max-w-6xl mx-auto py-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+      <!-- 养号场景流程 -->
+      <div class="rounded-xl shadow-lg border p-7 bg-gradient-to-br from-green-50 to-white">
+        <h2 class="text-3xl font-bold mb-4 text-[#17452f] flex items-center gap-2">
+          <svg width="30" height="30" fill="none" stroke="#00E062" stroke-width="3"><circle cx="15" cy="15" r="14" /></svg>
+          {t('ecommerce.scenario.title')}
+        </h2>
+        <ul class="divide-y divide-[#a4e9cd]">
+          {(t('ecommerce.scenario.steps') || []).map((step: string, idx: number) => (
+            <li class="py-4 flex items-center gap-3">
+              <span class="inline-flex items-center justify-center w-10 h-10 text-lg bg-[#00e06a33] rounded-full font-bold text-[#117a4d]">{idx + 1}</span>
+              {step}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- 优势/痛点卡片 -->
+      <div class="rounded-xl shadow-lg border p-7 bg-gradient-to-br from-slate-50 to-white">
+        <h2 class="text-2xl font-bold mb-4 text-[#ba732c] flex items-center gap-2">
+          <svg width="28" height="28" fill="none" stroke="#F59E42" stroke-width="2.5"><rect x="4" y="4" width="20" height="20" rx="10" /></svg>
+          {t('ecommerce.painGain.title')}
+        </h2>
+        <div class="flex flex-col gap-2">
+          {(t('ecommerce.painGain.pros') || []).map((pro: string) => (
+            <div class="bg-green-100/80 px-3 py-2 rounded flex gap-2 items-center">
+              <span class="font-bold text-[#14a67d]">✓</span> {pro}
+            </div>
+          ))}
+          {(t('ecommerce.painGain.cons') || []).map((con: string) => (
+            <div class="bg-red-100/70 px-3 py-2 rounded flex gap-2 items-center">
+              <span class="font-bold text-red-500">✗</span> {con}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- 流程模块 -->
+    <div class="mt-12 bg-white/80 border rounded-xl shadow flex flex-col md:flex-row items-center p-7 gap-7">
+      <div class="flex-1 min-w-[270px] flex-shrink-0">
+        <div class="text-xl font-bold mb-4 flex items-center gap-2 text-[#1c5077]">
+          <svg width="26" height="26" fill="none" stroke="#00B9E0" stroke-width="2.2"><path d="M13 2v22M2 13h22"/></svg>
+          {t('ecommerce.flow.title')}
+        </div>
+        <ol class="ml-6 space-y-2 text-base">
+          {(t('ecommerce.flow.steps') || []).map((step: string, idx: number) => (
+            <li>
+              <span class="inline-block px-2 py-0.5 bg-[#00E062]/20 text-[#077c4b] rounded">{idx + 1}</span> {step}
+            </li>
+          ))}
+        </ol>
+      </div>
+      <div class="flex-1 flex flex-wrap gap-3 justify-center items-center min-h-[170px]">
+        <div class="bg-green-100/80 text-green-900 text-base rounded-full px-4 py-1 font-bold shadow-sm">
+          长效独占
+        </div>
+        <div class="bg-green-100 text-green-800 text-lg rounded-full px-5 py-1 font-bold shadow">
+          自动绑定
+        </div>
+        <div class="bg-green-50 text-green-700 text-base rounded-full px-4 py-1 font-semibold shadow">
+          健康检测
+        </div>
+        <div class="bg-emerald-100 text-emerald-700 text-base rounded-full px-4 py-1 font-normal shadow">
+          动态扩容
+        </div>
+        <div class="bg-green-200 text-green-900 text-base rounded-full px-4 py-1 font-bold shadow">
+          站群矩阵
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="rounded-xl border bg-white p-6 shadow flex flex-col gap-4">
+        <h3 class="text-lg font-bold mb-2 text-[#226549] flex items-center gap-2">
+          <svg width="21" height="21" stroke="#00E062" fill="none"><circle cx="10.5" cy="10.5" r="10" /></svg>
+          {t('ecommerce.faqs.title')}
+        </h3>
+        <ul class="space-y-4">
+          {(t('ecommerce.faqs.items') || []).map((q: { title: string, description: string }) => (
+            <li>
+              <span class="font-bold inline-block mb-1">Q: {q.title}</span>
+              <div class="text-gray-600">A: {q.description}</div>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="rounded-xl border bg-gradient-to-br from-yellow-50 to-white p-6 shadow flex flex-col gap-2">
+        <h3 class="text-lg font-bold text-[#ba732c] mb-2 flex items-center gap-2">
+          <svg width="21" height="21" stroke="#F59E42" fill="none"><rect x="3" y="3" width="15" height="15" rx="6.5" /></svg>
+          养号实战Tips
+        </h3>
+        <div class="text-yellow-900 text-sm">
+          <b>• 账号管理建议结合ERP与代理，批量多地同时养号</b><br/>
+          <b>• IP独占策略及自动化绑定脚本可显著降低封号率</b><br/>
+          <b>• 风控高发区建议分国分段分批养号，避免集中异常波及整梯队</b>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <WhyChooseUs
+    title={t('ecommerce.whyChooseUs.title')}
+    features={t('ecommerce.whyChooseUs.features')}
+  />
+
+  <section class="max-w-5xl mx-auto py-10">
+    <h2 class="text-2xl font-semibold mb-4">{t('moreCasesTitle') || '更多静态住宅代理应用场景'}</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+      {cases.map((x) => (
+        <a href={x.url} class="block p-4 rounded-lg border-2 border-[#00E062] bg-green-50 text-[#125c3f] font-semibold cursor-pointer">
+          {x.title}
+          <div class="text-xs text-gray-500 mt-2">{x.description}</div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <FAQs
+    title={t('ecommerce.faqs.title')}
+    subtitle={t('ecommerce.faqs.subtitle')}
+    tagline={t('ecommerce.faqs.tagline')}
+    items={t('ecommerce.faqs.items')}
+  />
+</Layout>
