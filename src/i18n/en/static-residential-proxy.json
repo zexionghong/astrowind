@@ -51,18 +51,22 @@
     "items": [
       {
         "title": "Ad Verification",
+        "url": "/en/use-case/static-residential-proxy-ad-verification",
         "description": "Relying on residential proxies and global IP resources, advertisers can truly simulate user access, accurately complete ad verification, effectively prevent ad fraud, and improve ad ROI. IPFlex provides ad verification, anti-fraud and other compliance testing services for 50+ enterprises daily."
       },
       {
         "title": "Market Research & Data Collection",
+        "url": "/en/use-case/static-residential-proxy-market-research",
         "description": "Easily break through anti-crawler restrictions with 700K+ residential IPs, helping enterprises efficiently conduct data collection and market research. Daily collection volume exceeds 100 million, supports API automation, and meets data-driven decision-making needs."
       },
       {
         "title": "E-commerce Account Maintenance",
+        "url": "/en/use-case/static-residential-proxy-ecommerce", 
         "description": "Provide long-term stable residential IPs for cross-border e-commerce sellers, reduce account ban risk, support Amazon, eBay, Shopee and other multi-platform account maintenance and batch management, account security rate up to 99.9%."
       },
       {
         "title": "Network Security & Risk Control",
+        "url": "/en/use-case/static-residential-proxy-security",
         "description": "Use residential proxies for penetration testing, brand protection and risk control monitoring, help enterprises identify network security threats and prevent black industry activities. IPFlex has provided residential proxy risk control solutions for 60+  Internet enterprises."
       }
     ]

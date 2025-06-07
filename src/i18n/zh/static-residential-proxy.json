@@ -45,18 +45,22 @@
     "items": [
       {
         "title": "广告验证",
+        "url": "/zh/use-case/static-residential-proxy-ad-verification",
         "description": "依托住宅代理和全球IP资源，广告主可真实模拟用户访问，精准完成广告验证，有效防止广告欺诈，提升广告ROI。IPFlex每日为50+企业提供广告验证、反欺诈等合规检测服务。"
       },
       {
         "title": "市场研究与数据采集",
+        "url": "/zh/use-case/static-residential-proxy-scraping",
         "description": "通过70万+住宅IP，轻松突破反爬虫限制，助力企业高效进行数据采集和市场调研。日均采集量超1亿条，支持API自动化，满足数据驱动决策需求。"
       },
       {
         "title": "电子商务账号养护",
+        "url": "/zh/use-case/static-residential-proxy-ecommerce",
         "description": "为跨境电商卖家提供长期稳定的住宅IP，降低账号被封风险，支持Amazon、eBay、Shopee等多平台账号养护和批量管理，账号安全率高达99.9%。"
       },
       {
         "title": "网络安全与风控",
+        "url": "/zh/use-case/static-residential-proxy-security",
         "description": "利用住宅代理进行渗透测试、品牌保护和风控监控，帮助企业识别网络安全威胁，防范黑产活动。IPFlex已为60+互联网企业提供住宅代理风控解决方案。"
       }
     ]
