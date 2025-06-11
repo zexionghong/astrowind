@@ -44,14 +44,17 @@
       "title": "Why Choose Static Datacenter Proxies for API Interface Calls?",
       "features": [
         {
+          "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-zap\"><polygon points=\"13,2 3,14 12,14 11,22 21,10 12,10 13,2\"></polygon></svg>",
           "title": "Ultra-Fast Performance Guarantee",
           "description": "Based on top-tier datacenter infrastructure, providing millisecond response and 10Gbps bandwidth, ensuring ultra-fast performance and stability of API calls."
         },
         {
+          "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-shield\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"></path></svg>",
           "title": "High Availability Architecture",
           "description": "99.9% uptime guarantee with professional operations team 24/7 monitoring, ensuring high availability and business continuity of API services."
         },
         {
+          "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-dollar-sign\"><line x1=\"12\" y1=\"1\" x2=\"12\" y2=\"23\"></line><path d=\"M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6\"></path></svg>",
           "title": "Cost-Effectiveness Optimization",
           "description": "Compared to residential proxies, datacenter proxies have lower costs, especially suitable for high-frequency API call scenarios, providing optimal cost-effectiveness."
         }
@@ -129,14 +132,17 @@
       "title": "Why Choose Static Datacenter Proxies for Automated Testing?",
       "features": [
         {
+          "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-check-circle\"><path d=\"M22 11.08V12a10 10 0 1 1-5.93-9.14\"></path><polyline points=\"22,4 12,14.01 9,11.01\"></polyline></svg>",
           "title": "Stable Testing Environment",
           "description": "Based on enterprise-grade datacenter infrastructure, providing stable and reliable network environment, ensuring test result consistency and accuracy."
         },
         {
+          "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-globe\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"2\" y1=\"12\" x2=\"22\" y2=\"12\"></line><path d=\"M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z\"></path></svg>",
           "title": "Global Node Coverage",
           "description": "Deployed nodes in 100+ datacenters globally, supporting simulation of different regional access environments, ensuring global compatibility of applications."
         },
         {
+          "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-trending-up\"><polyline points=\"23,6 13.5,15.5 8.5,10.5 1,18\"></polyline><polyline points=\"17,6 23,6 23,12\"></polyline></svg>",
           "title": "High Concurrency Support",
           "description": "Supports large-scale concurrent testing, meeting performance testing and stress testing needs, ensuring application stability under high loads."
         }
@@ -214,14 +220,17 @@
       "title": "Why Choose Static Datacenter Proxies for Batch Data Processing?",
       "features": [
         {
+          "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-activity\"><polyline points=\"22,12 18,12 15,21 9,3 6,12 2,12\"></polyline></svg>",
           "title": "Ultra-High Bandwidth Performance",
           "description": "Single IP bandwidth up to 10Gbps with unlimited bandwidth guarantee, ensuring efficiency and stability of large-scale data transmission."
         },
         {
+          "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-clock\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><polyline points=\"12,6 12,12 16,14\"></polyline></svg>",
           "title": "Ultra-Low Network Latency",
           "description": "Based on global top-tier datacenter infrastructure with average latency below 100ms, ensuring real-time data processing tasks."
         },
         {
+          "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-award\"><circle cx=\"12\" cy=\"8\" r=\"7\"></circle><polyline points=\"8.21,13.89 7,23 12,20 17,23 15.79,13.88\"></polyline></svg>",
           "title": "Enterprise-Grade Reliability",
           "description": "99.9% uptime guarantee with professional operations team 24/7 monitoring, ensuring continuity and reliability of batch data processing tasks."
         }
@@ -299,14 +308,17 @@
       "title": "Why Choose Static Datacenter Proxies for Content Distribution Acceleration?",
       "features": [
         {
+          "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-map\"><polygon points=\"1,6 1,22 8,18 16,22 23,18 23,2 16,6 8,2 1,6\"></polygon><line x1=\"8\" y1=\"2\" x2=\"8\" y2=\"18\"></line><line x1=\"16\" y1=\"6\" x2=\"16\" y2=\"22\"></line></svg>",
           "title": "Global Node Coverage",
           "description": "Deployed nodes in 100+ datacenters globally, supporting nearby access, significantly reducing network latency and improving user access experience."
         },
         {
+          "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-navigation\"><polygon points=\"3,11 22,2 13,21 11,13 3,11\"></polygon></svg>",
           "title": "Intelligent Routing Optimization",
           "description": "Using intelligent routing algorithms to automatically select optimal access paths, ensuring efficiency and stability of content distribution."
         },
         {
+          "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-cpu\"><rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"2\" ry=\"2\"></rect><rect x=\"9\" y=\"9\" width=\"6\" height=\"6\"></rect><line x1=\"9\" y1=\"1\" x2=\"9\" y2=\"4\"></line><line x1=\"15\" y1=\"1\" x2=\"15\" y2=\"4\"></line><line x1=\"9\" y1=\"20\" x2=\"9\" y2=\"23\"></line><line x1=\"15\" y1=\"20\" x2=\"15\" y2=\"23\"></line><line x1=\"20\" y1=\"9\" x2=\"23\" y2=\"9\"></line><line x1=\"20\" y1=\"14\" x2=\"23\" y2=\"14\"></line><line x1=\"1\" y1=\"9\" x2=\"4\" y2=\"9\"></line><line x1=\"1\" y1=\"14\" x2=\"4\" y2=\"14\"></line></svg>",
           "title": "High Performance Guarantee",
           "description": "Based on top-tier datacenter infrastructure, providing high bandwidth and low latency, meeting large-scale content distribution needs."
         }

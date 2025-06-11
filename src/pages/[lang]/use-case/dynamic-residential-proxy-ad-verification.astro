@@ -20,8 +20,8 @@ const cases = t('moreCases');
 
 <Layout
   metadata={{
-    title: t('adVerification.metadata.title'),
-    description: t('adVerification.metadata.description'),
+    title: t('adVerificationDynamic.metadata.title'),
+    description: t('adVerificationDynamic.metadata.description'),
     ignoreTitleTemplate: true,
   }}
 >
@@ -32,13 +32,13 @@ const cases = t('moreCases');
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
           <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-            {t('adVerification.hero.title')}
+            {t('adVerificationDynamic.hero.title')}
           </h1>
           <p class="text-xl mb-8 text-purple-100">
-            {t('adVerification.hero.subtitle')}
+            {t('adVerificationDynamic.hero.subtitle')}
           </p>
           <ul class="space-y-4 mb-8">
-            {(t('adVerification.hero.features') || []).map((feature: string) => (
+            {(t('adVerificationDynamic.hero.features') || []).map((feature: string) => (
               <li class="flex items-center gap-3">
                 <svg class="w-6 h-6 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -49,7 +49,7 @@ const cases = t('moreCases');
           </ul>
           <div class="flex items-center gap-4 pt-4">
              <a  href="https://dashboard.ipflex.ink/register" class="bg-[#00E062] hover:bg-[#00C054] text-[#1A1147] font-semibold px-6 py-3 rounded-lg transition-all duration-200">
-              {t('adVerification.hero.cta.primary')}
+              {t('adVerificationDynamic.hero.cta.primary')}
             </a>
           </div>
         </div>
@@ -66,10 +66,10 @@ const cases = t('moreCases');
       <div class="rounded-xl shadow-lg border p-7 bg-gradient-to-br from-purple-50 to-white">
         <h2 class="text-3xl font-bold mb-4 text-[#6B46C1] flex items-center gap-2">
           <svg width="30" height="30" fill="none" stroke="#8B5CF6" stroke-width="3"><circle cx="15" cy="15" r="14" /></svg>
-          {t('adVerification.scenario.title')}
+          {t('adVerificationDynamic.scenario.title')}
         </h2>
         <ul class="divide-y divide-[#C4B5FD]">
-          {(t('adVerification.scenario.steps') || []).map((step: string, idx: number) => (
+          {(t('adVerificationDynamic.scenario.steps') || []).map((step: string, idx: number) => (
             <li class="py-4 flex items-center gap-3">
               <span class="inline-flex items-center justify-center w-10 h-10 text-lg bg-[#8B5CF633] rounded-full font-bold text-[#6B46C1]">{idx + 1}</span>
               {step}
@@ -82,15 +82,15 @@ const cases = t('moreCases');
       <div class="rounded-xl shadow-lg border p-7 bg-gradient-to-br from-slate-50 to-white">
         <h2 class="text-2xl font-bold mb-4 text-[#ba732c] flex items-center gap-2">
           <svg width="28" height="28" fill="none" stroke="#F59E42" stroke-width="2.5"><rect x="4" y="4" width="20" height="20" rx="10" /></svg>
-          {t('adVerification.painGain.title')}
+          {t('adVerificationDynamic.painGain.title')}
         </h2>
         <div class="flex flex-col gap-2">
-          {(t('adVerification.painGain.pros') || []).map((pro: string) => (
+          {(t('adVerificationDynamic.painGain.pros') || []).map((pro: string) => (
             <div class="bg-green-100/80 px-3 py-2 rounded flex gap-2 items-center">
               <span class="font-bold text-[#14a67d]">✓</span> {pro}
             </div>
           ))}
-          {(t('adVerification.painGain.cons') || []).map((con: string) => (
+          {(t('adVerificationDynamic.painGain.cons') || []).map((con: string) => (
             <div class="bg-red-100/80 px-3 py-2 rounded flex gap-2 items-center">
               <span class="font-bold text-[#dc2626]">✗</span> {con}
             </div>
@@ -102,9 +102,9 @@ const cases = t('moreCases');
 
   <!-- 工作流程 -->
   <section class="max-w-6xl mx-auto py-10">
-    <h2 class="text-3xl font-bold text-center mb-8">{t('adVerification.flow.title')}</h2>
+    <h2 class="text-3xl font-bold text-center mb-8">{t('adVerificationDynamic.flow.title')}</h2>
     <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
-      {(t('adVerification.flow.steps') || []).map((step: string, idx: number) => (
+      {(t('adVerificationDynamic.flow.steps') || []).map((step: string, idx: number) => (
         <div class="text-center">
           <div class="w-16 h-16 bg-[#8B5CF6] text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
             {idx + 1}
@@ -116,8 +116,8 @@ const cases = t('moreCases');
   </section>
 
   <WhyChooseUs
-    title={t('adVerification.whyChooseUs.title')}
-    items={t('adVerification.whyChooseUs.features')}
+    title={t('adVerificationDynamic.whyChooseUs.title')}
+    features={t('adVerificationDynamic.whyChooseUs.features')}
     classes={{
       container: 'max-w-6xl',
       title: 'text-3xl font-bold text-center mb-12',
@@ -137,9 +137,9 @@ const cases = t('moreCases');
   </section>
 
   <FAQs
-    title={t('adVerification.faqs.title')}
-    subtitle={t('adVerification.faqs.subtitle')}
-    tagline={t('adVerification.faqs.tagline')}
-    items={t('adVerification.faqs.items')}
+    title={t('adVerificationDynamic.faqs.title')}
+    subtitle={t('adVerificationDynamic.faqs.subtitle')}
+    tagline={t('adVerificationDynamic.faqs.tagline')}
+    items={t('adVerificationDynamic.faqs.items')}
   />
 </Layout>
