@@ -5,102 +5,159 @@
     "cta": "Get Started",
     "data_list": [
       {
-        "id": "web_data",
-        "title": "Web Data Collection",
+        "id": "static_residential_ad_verification",
+        "title": "Ad Verification",
         "image": "~/assets/images/scenarios/1.png",
-        "description": "Break through anti-crawler restrictions, hide real IP, simulate multi-user access for continuous and efficient data collection, helping you accurately obtain massive web information for market analysis and competitor research.",
+        "color": "blue",
+        "url": "/en/use-case/static-residential-proxy-ad-verification",
+        "description": "Relying on residential proxies and global IP resources, advertisers can truly simulate user access, accurately complete ad verification, effectively prevent ad fraud, and improve ad ROI. IPFlex provides ad verification, anti-fraud and other compliance testing services for 50+ enterprises daily.",
         "benefits": [
-          "Comprehensive and extensive data collection",
-          "Fast and efficient collection process",
-          "Precise and accurate targeting"
+          "Real user simulation for accurate ad placement verification",
+          "Prevent ad fraud and protect advertising ROI",
+          "Global IP coverage supporting multi-region ad verification"
         ]
       },
       {
-        "id": "ecommerce", 
-        "title": "E-commerce Operations",
+        "id": "static_residential_scraping",
+        "title": "Market Research & Data Collection",
         "image": "~/assets/images/scenarios/2.png",
-        "description": "Monitor competitor prices and inventory, break geographical restrictions in cross-border trade, simulate user access from different regions to help merchants develop flexible strategies and seize market opportunities.",
+        "color": "green",
+        "url": "/en/use-case/static-residential-proxy-scraping",
+        "description": "Easily break through anti-crawler restrictions with 700K+ residential IPs, helping enterprises efficiently conduct data collection and market research. Daily collection volume exceeds 100 million, supports API automation, and meets data-driven decision-making needs.",
         "benefits": [
-          "Keen business insight, seize market opportunities",
-          "Precise strategy optimization, enhance product competitiveness",
-          "Highlight competitive advantages, secure market position"
+          "Break through anti-bot restrictions, ensure data collection stability",
+          "Support large-scale concurrency, process over 100M data daily",
+          "Global geographic coverage for multi-dimensional market insights"
         ]
       },
       {
-        "id": "market_research",
-        "title": "Market Research Insights",
+        "id": "static_residential_ecommerce",
+        "title": "E-commerce Account Maintenance",
         "image": "~/assets/images/scenarios/3.png",
-        "description": "Overcome geographical and access frequency barriers, access data sources from various regions to ensure accurate and reliable research data, presenting a true market overview.",
+        "color": "purple",
+        "url": "/en/use-case/static-residential-proxy-ecommerce",
+        "description": "Provide long-term stable residential IPs for cross-border e-commerce sellers, reduce account ban risk, support Amazon, eBay, Shopee and other multi-platform account maintenance and batch management, account security rate up to 99.9%.",
         "benefits": [
-          "Deep insight into needs, support product development",
-          "Precise market positioning, optimize promotion strategies",
-          "Accurate trend prediction, lead industry development"
+          "Reduce account ban risk, ensure business continuity",
+          "Support multi-platform batch management, improve operational efficiency",
+          "Long-term stable IPs suitable for account maintenance"
         ]
       },
       {
-        "id": "social_media",
-        "title": "Social Media Expansion",
+        "id": "static_residential_security",
+        "title": "Network Security & Risk Control",
         "image": "~/assets/images/scenarios/4.png",
-        "description": "Break through platform geographical restrictions, simulate diverse user operations, increase account exposure and interaction, help you discover global potential followers and expand brand influence.",
+        "color": "red",
+        "url": "/en/use-case/static-residential-proxy-security",
+        "description": "Use residential proxies for penetration testing, brand protection and risk control monitoring, help enterprises identify network security threats and prevent black industry activities. IPFlex has provided residential proxy risk control solutions for 60+ Internet enterprises.",
         "benefits": [
-          "Significantly accelerate brand exposure, attract potential customers",
-          "Precisely target audience, improve follower quality",
-          "Effectively avoid platform restrictions, ensure marketing stability"
+          "Penetration testing & security assessment, discover potential threats",
+          "Brand protection monitoring, maintain corporate reputation",
+          "Risk control system support, prevent malicious activities"
         ]
       },
       {
-        "id": "seo",
-        "title": "SEO Strategy Optimization",
+        "id": "dynamic_residential_data_collection",
+        "title": "Large-Scale Data Collection",
         "image": "~/assets/images/scenarios/5.png",
-        "description": "Simulate search behaviors from different regions, gain precise ranking insights, optimize website content and keywords, avoid backlink monitoring blocks, strengthen link building.",
+        "color": "emerald",
+        "url": "/en/use-case/dynamic-residential-proxy-data-collection",
+        "description": "Use dynamic IP rotation technology to break through website access restrictions and achieve efficient large-scale data collection. Support e-commerce price monitoring, social media data scraping, news content collection and other scenarios, processing over 50 million requests daily.",
         "benefits": [
-          "Significantly improve ranking positions, increase organic traffic",
-          "Optimize traffic quality sources, improve conversion rates",
-          "Timely adjust optimization strategies, adapt to algorithm changes"
+          "Smart IP rotation, effectively avoid anti-bot detection",
+          "High concurrency processing, handle over 50M requests daily",
+          "Global geographic coverage, meet cross-border data collection needs"
         ]
       },
       {
-        "id": "advertising",
-        "title": "Advertising Performance Enhancement",
+        "id": "dynamic_residential_crawling",
+        "title": "Web Crawling & Monitoring",
         "image": "~/assets/images/scenarios/6.png",
-        "description": "Simulate diverse user feedback for ad placement, precisely optimize advertising, identify and filter fraudulent clicks, improve ROI, making every investment worthwhile.",
+        "color": "cyan",
+        "url": "/en/use-case/dynamic-residential-proxy-crawling",
+        "description": "Provide high-anonymity IP rotation services for web crawlers, effectively avoiding anti-crawler detection. Support SEO monitoring, competitor analysis, content aggregation and other applications, helping enterprises obtain key business data.",
         "benefits": [
-          "Improve targeting precision, reach target customers directly",
-          "Achieve comprehensive performance evaluation with detailed data",
-          "Optimize cost-effectiveness ratio, enhance investment returns"
+          "High anonymity protection, simulate real user behavior",
+          "Smart rotation algorithm, adapt to different anti-bot strategies",
+          "Comprehensive monitoring support, obtain key business insights"
         ]
       },
       {
-        "id": "performance",
-        "title": "Website Performance Testing",
+        "id": "dynamic_residential_privacy",
+        "title": "Anonymous Browsing & Privacy Protection",
         "image": "~/assets/images/scenarios/7.png",
-        "description": "Simulate user access from different networks and regions, precisely identify performance bottlenecks, optimize servers and CDN to ensure smooth website operation.",
+        "color": "violet",
+        "url": "/en/use-case/dynamic-residential-proxy-privacy",
+        "description": "Protect user real identity through dynamic IP rotation, achieve anonymous browsing and privacy protection. Suitable for sensitive information queries, geo-restricted content access, network security research and other scenarios.",
         "benefits": [
-          "Early detection of potential issues, prevent problems",
-          "Ensure global user experience, improve satisfaction",
-          "Provide technical decision basis, optimize resource allocation"
+          "Real identity protection, effectively hide user information",
+          "Geo-restriction breakthrough, access global internet resources",
+          "Advanced anonymity protection, suitable for security research"
         ]
       },
       {
-        "id": "brand_safety",
-        "title": "Brand Safety Protection",
+        "id": "dynamic_residential_ad_verification",
+        "title": "Ad Verification & Anti-Fraud",
         "image": "~/assets/images/scenarios/8.png",
-        "description": "Scan for infringement and counterfeiting across the web, track attack sources, encrypt data sharing, comprehensively defend brand reputation and rights.",
+        "color": "orange",
+        "url": "/en/use-case/dynamic-residential-proxy-ad-verification",
+        "description": "Simulate real user behavior for ad verification, detect ad fraud and click farms. Through geographically distributed dynamic IPs, ensure the authenticity and accuracy of ad placement effects.",
         "benefits": [
-          "Strengthen attack defense capabilities, ensure business security",
-          "Timely monitor infringement, protect brand rights",
-          "Long-term maintain brand reputation, enhance market trust"
+          "Simulate real users, detect ad fraud behavior",
+          "Geographic distribution verification, ensure placement effect authenticity",
+          "Anti-fraud detection, protect advertising investment security"
         ]
       },
       {
-        "id": "public_opinion",
-        "title": "Public Opinion Tracking",
+        "id": "static_datacenter_api",
+        "title": "API Interface Calls",
         "image": "~/assets/images/scenarios/9.png",
-        "description": "Break through information access restrictions, gather global public opinion, help you grasp public sentiment trends in real-time, and adjust PR strategies promptly.",
+        "color": "indigo",
+        "url": "/en/use-case/static-datacenter-proxy-api",
+        "description": "Provide stable proxy services for high-frequency API calls, supporting RESTful API, GraphQL and other interface access. Suitable for data synchronization, third-party service integration, microservice architecture and other scenarios, ensuring stability and efficiency of interface calls.",
         "benefits": [
-          "Timely crisis warning, reduce negative impact",
-          "Precise market dynamics feedback, assist strategy adjustment",
-          "Effectively maintain brand image, improve public goodwill"
+          "Ultra-low latency response, suitable for high-frequency API calls",
+          "Stable and reliable service, ensure interface call success rate",
+          "High-performance guarantee, support large-scale concurrent access"
+        ]
+      },
+      {
+        "id": "static_datacenter_testing",
+        "title": "Automated Testing",
+        "image": "~/assets/images/scenarios/10.png",
+        "color": "teal",
+        "url": "/en/use-case/static-datacenter-proxy-testing",
+        "description": "Provide stable network environment for automated testing, supporting web application testing, API testing, performance testing and other scenarios. Simulate access from different regions through datacenter proxies, ensuring accuracy and reliability of test results.",
+        "benefits": [
+          "Stable testing environment, ensure result consistency",
+          "Global node coverage, simulate access from different regions",
+          "High concurrency support, meet performance testing needs"
+        ]
+      },
+      {
+        "id": "static_datacenter_batch_processing",
+        "title": "Batch Data Processing",
+        "image": "~/assets/images/scenarios/11.png",
+        "color": "amber",
+        "url": "/en/use-case/static-datacenter-proxy-batch-processing",
+        "description": "Support large-scale batch data processing tasks, such as data import/export, batch file upload/download, database synchronization, etc. High bandwidth and low latency characteristics ensure efficiency of data processing.",
+        "benefits": [
+          "High bandwidth support, handle large-scale data tasks",
+          "Low latency guarantee, improve data processing efficiency",
+          "Stable and reliable, ensure completion of batch tasks"
+        ]
+      },
+      {
+        "id": "static_datacenter_cdn",
+        "title": "Content Distribution Acceleration",
+        "image": "~/assets/images/scenarios/12.png",
+        "color": "rose",
+        "url": "/en/use-case/static-datacenter-proxy-cdn",
+        "description": "Provide proxy acceleration services for CDN and content distribution networks, optimizing global user access experience. Through nearby access to datacenter nodes, reduce network latency and improve content loading speed.",
+        "benefits": [
+          "Global node coverage, nearby access reduces latency",
+          "Intelligent routing optimization, automatically select optimal paths",
+          "High-performance guarantee, improve content loading speed"
         ]
       }
     ]

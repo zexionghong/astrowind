@@ -35,34 +35,28 @@ export const getHeaderData = (lang: string = 'zh') => ({
       text: lang === 'zh' ? '应用场景' : 'Use Cases',
       links: [
         {
-          text: lang === 'zh' ? '跨境电商' : 'Cross-border E-commerce',
-          href: `/${lang}/use-case/ecommerce`,
-          icon: 'tabler:shopping-cart',
-          description: lang === 'zh' ? '电商平台账号管理，防关联批量操作' : 'E-commerce account management and anti-detection operations'
-        },
-        {
-          text: lang === 'zh' ? '数据采集' : 'Web Scraping',
-          href: `/${lang}/use-case/scraping`,
-          icon: 'tabler:database',
-          description: lang === 'zh' ? '大规模数据采集，突破反爬虫限制' : 'Large-scale data collection, bypass anti-bot protection'
-        },
-        {
           text: lang === 'zh' ? '广告验证' : 'Ad Verification',
-          href: `/${lang}/use-case/ad-verification`,
+          href: `/${lang}/use-case/static-residential-proxy-ad-verification`,
           icon: 'tabler:shield-check',
-          description: lang === 'zh' ? '广告投放验证，防止广告欺诈' : 'Ad placement verification and fraud prevention'
+          description: lang === 'zh' ? '真实访问还原，精准阻击广告欺诈' : 'Real user simulation, precise ad fraud prevention'
         },
         {
-          text: lang === 'zh' ? '品牌保护' : 'Brand Protection',
-          href: `/${lang}/use-case/brand-protection`,
+          text: lang === 'zh' ? '市场研究与数据采集' : 'Market Research & Data Collection',
+          href: `/${lang}/use-case/static-residential-proxy-scraping`,
+          icon: 'tabler:database',
+          description: lang === 'zh' ? '突破反爬虫，低风险批量采集' : 'Bypass anti-bot, low-risk bulk data collection'
+        },
+        {
+          text: lang === 'zh' ? '电商账号养护' : 'E-commerce Account Management',
+          href: `/${lang}/use-case/static-residential-proxy-ecommerce`,
+          icon: 'tabler:shopping-cart',
+          description: lang === 'zh' ? '防止封号，多平台批量运营' : 'Prevent bans, manage multiple accounts across platforms'
+        },
+        {
+          text: lang === 'zh' ? '网络安全与风控' : 'Network Security & Risk Control',
+          href: `/${lang}/use-case/static-residential-proxy-security`,
           icon: 'tabler:shield',
-          description: lang === 'zh' ? '品牌监控保护，知识产权维护' : 'Brand monitoring and intellectual property protection'
-        },
-        {
-          text: lang === 'zh' ? '市场调研' : 'Market Research',
-          href: `/${lang}/use-case/market-research`,
-          icon: 'tabler:chart-line',
-          description: lang === 'zh' ? '竞品分析，市场情报收集' : 'Competitor analysis and market intelligence gathering'
+          description: lang === 'zh' ? '渗透测试、品牌保护与风控巡检' : 'Penetration testing, brand protection, risk inspection'
         },
         {
           text: lang === 'zh' ? '查看所有场景' : 'View All Cases',
