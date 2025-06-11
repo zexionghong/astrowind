@@ -32,8 +32,46 @@ export const getHeaderData = (lang: string = 'zh') => ({
       href: `/${lang}/pricing`
     },
     {
-      text: lang === 'zh' ? '应用场景' : 'Cases',
-      href: `/${lang}/scenarios`
+      text: lang === 'zh' ? '应用场景' : 'Use Cases',
+      links: [
+        {
+          text: lang === 'zh' ? '跨境电商' : 'Cross-border E-commerce',
+          href: `/${lang}/use-case/ecommerce`,
+          icon: 'tabler:shopping-cart',
+          description: lang === 'zh' ? '电商平台账号管理，防关联批量操作' : 'E-commerce account management and anti-detection operations'
+        },
+        {
+          text: lang === 'zh' ? '数据采集' : 'Web Scraping',
+          href: `/${lang}/use-case/scraping`,
+          icon: 'tabler:database',
+          description: lang === 'zh' ? '大规模数据采集，突破反爬虫限制' : 'Large-scale data collection, bypass anti-bot protection'
+        },
+        {
+          text: lang === 'zh' ? '广告验证' : 'Ad Verification',
+          href: `/${lang}/use-case/ad-verification`,
+          icon: 'tabler:shield-check',
+          description: lang === 'zh' ? '广告投放验证，防止广告欺诈' : 'Ad placement verification and fraud prevention'
+        },
+        {
+          text: lang === 'zh' ? '品牌保护' : 'Brand Protection',
+          href: `/${lang}/use-case/brand-protection`,
+          icon: 'tabler:shield',
+          description: lang === 'zh' ? '品牌监控保护，知识产权维护' : 'Brand monitoring and intellectual property protection'
+        },
+        {
+          text: lang === 'zh' ? '市场调研' : 'Market Research',
+          href: `/${lang}/use-case/market-research`,
+          icon: 'tabler:chart-line',
+          description: lang === 'zh' ? '竞品分析，市场情报收集' : 'Competitor analysis and market intelligence gathering'
+        },
+        {
+          text: lang === 'zh' ? '查看所有场景' : 'View All Cases',
+          href: `/${lang}/scenarios`,
+          icon: 'tabler:arrow-right',
+          description: lang === 'zh' ? '探索更多应用场景和解决方案' : 'Explore more use cases and solutions',
+          badge: lang === 'zh' ? '更多' : 'More'
+        }
+      ]
     },
     {
       text: lang == 'zh'?"博客":"Blog",

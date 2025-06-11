@@ -3,17 +3,57 @@ import { Icon } from 'astro-icon/components';
 
 const { lang = 'zh' } = Astro.params;
 const path = Astro.url.pathname.replace(`/${lang}`, '');
+
+const languages = [
+  {
+    code: 'zh',
+    name: '简体中文',
+    flag: '🇨🇳',
+    icon: 'tabler:language'
+  },
+  {
+    code: 'en',
+    name: 'English',
+    flag: '🇺🇸',
+    icon: 'tabler:language'
+  }
+];
+
+const currentLanguage = languages.find(l => l.code === lang) || languages[0];
 ---
 
-<div class="language-picker">
+<div class="language-picker relative">
   <div class="dropdown">
-    <button class="dropdown-toggle" aria-label="Language Switcher">
-      <span class="language-text">{lang === 'zh' ? '简体中文' : 'English'}</span>
-      <span class="dropdown-arrow">▼</span>
+    <button
+      class="dropdown-toggle flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors duration-200"
+      aria-label="Language Switcher"
+    >
+      <span class="flag mr-2">{currentLanguage.flag}</span>
+      <span class="language-text">{currentLanguage.name}</span>
+      <Icon name="tabler:chevron-down" class="w-4 h-4 ml-1 transition-transform duration-200" />
     </button>
-    <div class="dropdown-menu">
-      <a href={`/en${path.endsWith('/') ? path.slice(0, -1) : path}`} class={lang === 'en' ? 'active' : ''}>English</a>
-      <a href={`/zh${path.endsWith('/') ? path.slice(0, -1) : path}`} class={lang === 'zh' ? 'active' : ''}>简体中文</a>
+    <div class="dropdown-menu absolute top-full mt-1 w-48 bg-white/95 backdrop-blur-md rounded-lg shadow-xl border border-gray-200/50 py-2 z-50">
+      {languages.map((language) => (
+        <a
+          href={`/${language.code}${path.endsWith('/') ? path.slice(0, -1) : path}`}
+          class={`group flex items-center px-4 py-3 text-sm transition-colors duration-200 ${
+            lang === language.code
+              ? 'bg-blue-50 text-blue-700 font-medium'
+              : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
+          }`}
+        >
+          <span class="flag mr-3 text-lg">{language.flag}</span>
+          <div class="flex-1">
+            <div class="font-medium">{language.name}</div>
+            <div class="text-xs text-gray-500 mt-0.5">
+              {language.code === 'zh' ? '中国大陆' : 'United States'}
+            </div>
+          </div>
+          {lang === language.code && (
+            <Icon name="tabler:check" class="w-4 h-4 text-blue-600" />
+          )}
+        </a>
+      ))}
     </div>
   </div>
 </div>
@@ -23,52 +63,93 @@ const path = Astro.url.pathname.replace(`/${lang}`, '');
     position: relative;
     display: inline-block;
   }
+
   .dropdown-toggle {
-    /* background: none;
+    background: none;
     border: none;
     cursor: pointer;
-    font-weight: bold; */
-    /* font-size: 1rem; */
-    /* color: #333; */
-    padding: 8px 16px;
-    border-radius: 4px;
-    /* transition: background-color 0.3s ease; */
-    display: flex;
-    align-items: center;
   }
-  .dropdown-arrow {
-    margin-left: 8px;
-    font-size: 0.8rem;
-    color: #666;
-  }
-  .dropdown-toggle:hover {
-    background-color: #f0f0f0;
-  }
+
   .dropdown-menu {
     display: none;
+    animation: fadeInDown 0.2s ease-out;
+    transform-origin: top center;
+    /* 使用负margin来居中对齐，避免transform导致的位置问题 */
+    left: 50%;
+    margin-left: -96px; /* w-48 = 12rem = 192px, 所以 -192px/2 = -96px */
+  }
+
+  /* 创建一个无缝的hover区域，防止鼠标移动时丢失hover状态 */
+  .dropdown::before {
+    content: '';
     position: absolute;
-    background-color: white;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    min-width: 120px;
-    border-radius: 4px;
-    overflow: hidden;
+    top: 100%;
+    left: 50%;
+    margin-left: -96px; /* 与下拉菜单保持一致 */
+    width: 192px; /* w-48 = 12rem = 192px */
+    height: 4px;
+    background: transparent;
+    z-index: 49;
+    pointer-events: auto;
   }
-  .dropdown:hover .dropdown-menu {
+
+  /* 扩展dropdown的hover区域 */
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -96px; /* 与下拉菜单保持一致 */
+    width: 192px; /* w-48 = 12rem = 192px */
+    height: 12px;
+    background: transparent;
+    z-index: 48;
+    pointer-events: auto;
+  }
+
+  .dropdown:hover .dropdown-menu,
+  .dropdown:hover::before,
+  .dropdown:hover::after {
     display: block;
   }
-  .dropdown-menu a {
-    color: #333;
-    padding: 10px 16px;
-    text-decoration: none;
+
+  .dropdown:focus .dropdown-menu,
+  .dropdown:focus-within .dropdown-menu {
     display: block;
-    transition: background-color 0.3s ease;
   }
-  .dropdown-menu a:hover {
-    background-color: #f0f0f0;
+
+  .flag {
+    font-style: normal;
+    line-height: 1;
   }
-  .active {
-    font-weight: bold;
-    background-color: #e0e0e0;
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
   }
-</style> 
+
+  /* Dark mode support */
+  .dark .dropdown-menu {
+    background-color: rgb(31 41 55 / 0.95);
+    border-color: rgb(75 85 99 / 0.5);
+  }
+
+  .dark .dropdown-toggle {
+    color: rgb(229 231 235);
+  }
+
+  .dark .dropdown-toggle:hover {
+    color: rgb(255 255 255);
+    background-color: rgb(55 65 81);
+  }
+</style>
