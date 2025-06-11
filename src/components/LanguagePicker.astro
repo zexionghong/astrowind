@@ -25,32 +25,33 @@ const currentLanguage = languages.find(l => l.code === lang) || languages[0];
 <div class="language-picker relative">
   <div class="dropdown">
     <button
-      class="dropdown-toggle flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors duration-200"
+      class="dropdown-toggle flex items-center px-2 md:px-3 py-1.5 md:py-2 text-xs md:text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors duration-200"
       aria-label="Language Switcher"
     >
-      <span class="flag mr-2">{currentLanguage.flag}</span>
-      <span class="language-text">{currentLanguage.name}</span>
-      <Icon name="tabler:chevron-down" class="w-4 h-4 ml-1 transition-transform duration-200" />
+      <span class="flag mr-1 md:mr-2">{currentLanguage.flag}</span>
+      <span class="language-text hidden md:inline">{currentLanguage.name}</span>
+      <span class="language-text-mobile md:hidden">{currentLanguage.code.toUpperCase()}</span>
+      <Icon name="tabler:chevron-down" class="w-3 h-3 md:w-4 md:h-4 ml-0.5 md:ml-1 transition-transform duration-200" />
     </button>
-    <div class="dropdown-menu absolute top-full mt-1 w-48 bg-white/95 backdrop-blur-md rounded-lg shadow-xl border border-gray-200/50 py-2 z-50">
+    <div class="dropdown-menu absolute top-full mt-1 w-36 md:w-48 bg-white/95 backdrop-blur-md rounded-lg shadow-xl border border-gray-200/50 py-2 z-50">
       {languages.map((language) => (
         <a
           href={`/${language.code}${path.endsWith('/') ? path.slice(0, -1) : path}`}
-          class={`group flex items-center px-4 py-3 text-sm transition-colors duration-200 ${
+          class={`group flex items-center px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm transition-colors duration-200 ${
             lang === language.code
-              ? 'bg-blue-50 text-blue-700 font-medium'
-              : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
+              ? 'bg-blue-50 text-blue-700 font-medium dark:bg-blue-900/30 dark:text-blue-300'
+              : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white'
           }`}
         >
-          <span class="flag mr-3 text-lg">{language.flag}</span>
+          <span class="flag mr-2 md:mr-3 text-base md:text-lg">{language.flag}</span>
           <div class="flex-1">
             <div class="font-medium">{language.name}</div>
-            <div class="text-xs text-gray-500 mt-0.5">
+            <div class="text-xs text-gray-500 dark:text-gray-400 mt-0.5 hidden md:block">
               {language.code === 'zh' ? '中国大陆' : 'United States'}
             </div>
           </div>
           {lang === language.code && (
-            <Icon name="tabler:check" class="w-4 h-4 text-blue-600" />
+            <Icon name="tabler:check" class="w-3 h-3 md:w-4 md:h-4 text-blue-600 dark:text-blue-400" />
           )}
         </a>
       ))}
@@ -74,9 +75,16 @@ const currentLanguage = languages.find(l => l.code === lang) || languages[0];
     display: none;
     animation: fadeInDown 0.2s ease-out;
     transform-origin: top center;
-    /* 使用负margin来居中对齐，避免transform导致的位置问题 */
+    /* 移动端和桌面端的不同对齐方式 */
     left: 50%;
-    margin-left: -96px; /* w-48 = 12rem = 192px, 所以 -192px/2 = -96px */
+    margin-left: -72px; /* w-36 = 9rem = 144px, 所以 -144px/2 = -72px (移动端) */
+  }
+
+  /* 桌面端下拉菜单位置调整 */
+  @media (min-width: 768px) {
+    .dropdown-menu {
+      margin-left: -96px; /* w-48 = 12rem = 192px, 所以 -192px/2 = -96px (桌面端) */
+    }
   }
 
   /* 创建一个无缝的hover区域，防止鼠标移动时丢失hover状态 */
@@ -85,8 +93,8 @@ const currentLanguage = languages.find(l => l.code === lang) || languages[0];
     position: absolute;
     top: 100%;
     left: 50%;
-    margin-left: -96px; /* 与下拉菜单保持一致 */
-    width: 192px; /* w-48 = 12rem = 192px */
+    margin-left: -72px; /* 移动端：与下拉菜单保持一致 */
+    width: 144px; /* 移动端：w-36 = 9rem = 144px */
     height: 4px;
     background: transparent;
     z-index: 49;
@@ -103,12 +111,25 @@ const currentLanguage = languages.find(l => l.code === lang) || languages[0];
     position: absolute;
     top: 100%;
     left: 50%;
-    margin-left: -96px; /* 与下拉菜单保持一致 */
-    width: 192px; /* w-48 = 12rem = 192px */
+    margin-left: -72px; /* 移动端：与下拉菜单保持一致 */
+    width: 144px; /* 移动端：w-36 = 9rem = 144px */
     height: 12px;
     background: transparent;
     z-index: 48;
     pointer-events: auto;
+  }
+
+  /* 桌面端hover区域调整 */
+  @media (min-width: 768px) {
+    .dropdown::before {
+      margin-left: -96px; /* 桌面端：与下拉菜单保持一致 */
+      width: 192px; /* 桌面端：w-48 = 12rem = 192px */
+    }
+
+    .dropdown::after {
+      margin-left: -96px; /* 桌面端：与下拉菜单保持一致 */
+      width: 192px; /* 桌面端：w-48 = 12rem = 192px */
+    }
   }
 
   .dropdown:hover .dropdown-menu,

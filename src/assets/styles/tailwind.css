@@ -58,6 +58,20 @@
   right: 0;
   bottom: 70px !important;
   padding: 0 5px;
+  background: white;
+  z-index: 50;
+}
+
+.dark #header.expanded nav {
+  background: rgb(15 23 42);
+}
+
+/* 移动端展开菜单时隐藏所有的语言切换和登录注册按钮 */
+@media (max-width: 767px) {
+  #header.expanded .mobile-header-actions,
+  #header.expanded .desktop-header-actions {
+    display: none !important;
+  }
 }
 
 .dropdown:focus .dropdown-menu,
