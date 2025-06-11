@@ -5,11 +5,27 @@ export const getHeaderData = (lang: string = 'zh') => ({
       text: lang === 'zh' ? '产品' : 'Products',
       // href: `/${lang}/detail`,
       links: [
-        { text: lang === 'zh' ? '静态住宅代理' : 'Static Residential Proxy', href: `/${lang}/static-residential-proxy` },
-        { text: lang === 'zh' ? '动态住宅代理' : 'Dynamic Residential Proxy', href: `/${lang}/dynamic-residential-proxy` },
-        { text: lang === 'zh' ? '数据中心代理' : 'Data Center Proxy', href: `/${lang}/static-datacenter-proxy` },
+        {
+          text: lang === 'zh' ? '静态住宅代理' : 'Static Residential Proxy',
+          href: `/${lang}/static-residential-proxy`,
+          icon: 'tabler:home',
+          description: lang === 'zh' ? '高质量住宅IP，稳定可靠，适合长期使用' : 'High-quality residential IPs, stable and reliable for long-term use',
+          badge: lang === 'zh' ? '推荐' : 'Recommended'
+        },
+        {
+          text: lang === 'zh' ? '动态住宅代理' : 'Dynamic Residential Proxy',
+          href: `/${lang}/dynamic-residential-proxy`,
+          icon: 'tabler:refresh',
+          description: lang === 'zh' ? '动态轮换IP，适合大规模数据采集' : 'Dynamic rotating IPs, perfect for large-scale data collection'
+        },
+        {
+          text: lang === 'zh' ? '数据中心代理' : 'Data Center Proxy',
+          href: `/${lang}/static-datacenter-proxy`,
+          icon: 'tabler:server',
+          description: lang === 'zh' ? '高速数据中心IP，性价比高' : 'High-speed datacenter IPs with great value'
+        },
       ]
-      
+
     },
     {
       text: lang === 'zh' ? '定价' : 'Pricing',

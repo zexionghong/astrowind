@@ -66,6 +66,32 @@
   display: block;
 }
 
+/* Enhanced dropdown menu styles */
+.dropdown-menu {
+  animation: fadeInDown 0.2s ease-out;
+  transform-origin: top center;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Line clamp utility for description text */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 [astro-icon].icon-light > * {
   stroke-width: 1.2;
 }
