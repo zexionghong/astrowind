@@ -46,18 +46,22 @@
       "items": [
         {
           "title": "API Interface Calls",
+          "url": "/en/use-case/static-datacenter-proxy-api",
           "description": "Provide stable proxy services for high-frequency API calls, supporting various interface access including RESTful API, GraphQL. Suitable for data synchronization, third-party service integration, microservice architecture scenarios, ensuring stability and efficiency of interface calls."
         },
         {
           "title": "Automated Testing",
+          "url": "/en/use-case/static-datacenter-proxy-testing",
           "description": "Provide stable network environment for automated testing, supporting web application testing, API testing, performance testing scenarios. Simulate access from different regions through datacenter proxies, ensuring accuracy and reliability of test results."
         },
         {
           "title": "Batch Data Processing",
+          "url": "/en/use-case/static-datacenter-proxy-batch-processing",
           "description": "Support large-scale batch data processing tasks such as data import/export, batch file upload/download, database synchronization. High bandwidth and low latency characteristics ensure efficiency of data processing."
         },
         {
           "title": "Content Distribution Acceleration",
+          "url": "/en/use-case/static-datacenter-proxy-cdn",
           "description": "Provide proxy acceleration services for CDN and content distribution networks, optimizing global user access experience. Reduce network latency and improve content loading speed through nearby datacenter node access."
         }
       ]

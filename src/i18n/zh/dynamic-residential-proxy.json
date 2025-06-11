@@ -47,18 +47,22 @@
       "items": [
         {
           "title": "大规模数据采集",
+          "url": "/zh/use-case/dynamic-residential-proxy-data-collection",
           "description": "利用动态IP轮换技术，突破网站访问限制，实现高效大规模数据采集。支持电商价格监控、社交媒体数据抓取、新闻资讯采集等场景，日均处理请求超过5000万次。"
         },
         {
           "title": "网络爬虫与监控",
+          "url": "/zh/use-case/dynamic-residential-proxy-crawling",
           "description": "为网络爬虫提供高匿名性IP轮换服务，有效规避反爬虫检测。支持SEO监控、竞品分析、内容聚合等应用，帮助企业获取关键业务数据。"
         },
         {
           "title": "匿名浏览与隐私保护",
+          "url": "/zh/use-case/dynamic-residential-proxy-privacy",
           "description": "通过动态IP轮换保护用户真实身份，实现匿名浏览和隐私保护。适用于敏感信息查询、地理限制内容访问、网络安全研究等场景。"
         },
         {
           "title": "广告验证与反欺诈",
+          "url": "/zh/use-case/dynamic-residential-proxy-ad-verification",
           "description": "模拟真实用户行为进行广告验证，检测广告欺诈和点击农场。通过地理分布的动态IP，确保广告投放效果的真实性和准确性。"
         }
       ]

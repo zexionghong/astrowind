@@ -47,18 +47,22 @@
       "items": [
         {
           "title": "Large-Scale Data Collection",
+          "url": "/en/use-case/dynamic-residential-proxy-data-collection",
           "description": "Utilize dynamic IP rotation technology to break through website access restrictions and achieve efficient large-scale data collection. Support e-commerce price monitoring, social media data scraping, news content collection and other scenarios, processing over 50 million requests daily."
         },
         {
           "title": "Web Crawling & Monitoring",
+          "url": "/en/use-case/dynamic-residential-proxy-crawling",
           "description": "Provide high anonymity IP rotation services for web crawlers, effectively avoiding anti-crawler detection. Support SEO monitoring, competitor analysis, content aggregation and other applications, helping enterprises obtain key business data."
         },
         {
           "title": "Anonymous Browsing & Privacy Protection",
+          "url": "/en/use-case/dynamic-residential-proxy-privacy",
           "description": "Protect user real identity through dynamic IP rotation, achieving anonymous browsing and privacy protection. Suitable for sensitive information queries, geo-restricted content access, network security research and other scenarios."
         },
         {
           "title": "Ad Verification & Anti-Fraud",
+          "url": "/en/use-case/dynamic-residential-proxy-ad-verification",
           "description": "Simulate real user behavior for ad verification, detecting ad fraud and click farms. Through geographically distributed dynamic IPs, ensure the authenticity and accuracy of advertising effectiveness."
         }
       ]

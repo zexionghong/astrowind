@@ -46,18 +46,22 @@
       "items": [
         {
           "title": "API接口调用",
+          "url": "/zh/use-case/static-datacenter-proxy-api",
           "description": "为高频API调用提供稳定的代理服务，支持RESTful API、GraphQL等各类接口访问。适用于数据同步、第三方服务集成、微服务架构等场景，确保接口调用的稳定性和高效性。"
         },
         {
           "title": "自动化测试",
+          "url": "/zh/use-case/static-datacenter-proxy-testing",
           "description": "为自动化测试提供稳定的网络环境，支持Web应用测试、API测试、性能测试等场景。通过数据中心代理模拟不同地区的访问，确保测试结果的准确性和可靠性。"
         },
         {
           "title": "批量数据处理",
+          "url": "/zh/use-case/static-datacenter-proxy-batch-processing",
           "description": "支持大规模批量数据处理任务，如数据导入导出、批量文件上传下载、数据库同步等。高带宽和低延迟特性确保数据处理的高效性。"
         },
         {
           "title": "内容分发加速",
+          "url": "/zh/use-case/static-datacenter-proxy-cdn",
           "description": "为CDN、内容分发网络提供代理加速服务，优化全球用户访问体验。通过就近接入数据中心节点，减少网络延迟，提升内容加载速度。"
         }
       ]
