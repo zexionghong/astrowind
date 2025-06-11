@@ -92,22 +92,18 @@ console.log(t)
           ))}
         </ol>
       </div>
-      <div class="flex-1 flex flex-wrap gap-3 justify-center items-center min-h-[170px]">
-        <div class="bg-green-100/80 text-green-900 text-base rounded-full px-4 py-1 font-bold shadow-sm">
-          需求对接
-        </div>
-        <div class="bg-green-100 text-green-800 text-lg rounded-full px-5 py-1 font-bold shadow">
-          API配置
-        </div>
-        <div class="bg-green-50 text-green-700 text-base rounded-full px-4 py-1 font-semibold shadow">
-          指标采集
-        </div>
-        <div class="bg-emerald-100 text-emerald-700 text-base rounded-full px-4 py-1 font-normal shadow">
-          分析归因&异常检测
-        </div>
-        <div class="bg-green-200 text-green-900 text-base rounded-full px-4 py-1 font-bold shadow">
-          生成报告
-        </div>
+      <div class="flex-1 flex flex-col gap-3 justify-center items-center min-h-[170px]">
+        {(t('adVerification.flow.tags') || []).map((tag: string, idx: number) => (
+          <div class={`text-base rounded-full px-4 py-1 shadow ${
+            idx === 0 ? 'bg-green-100/80 text-green-900 font-bold' :
+            idx === 1 ? 'bg-green-100 text-green-800 text-lg px-5 font-bold' :
+            idx === 2 ? 'bg-green-50 text-green-700 font-semibold' :
+            idx === 3 ? 'bg-emerald-100 text-emerald-700 font-normal' :
+            'bg-green-200 text-green-900 font-bold'
+          }`}>
+            {tag}
+          </div>
+        ))}
       </div>
     </div>
 
@@ -130,12 +126,12 @@ console.log(t)
       <div class="rounded-xl border bg-gradient-to-br from-yellow-50 to-white p-6 shadow flex flex-col gap-2">
         <h3 class="text-lg font-bold text-[#ba732c] mb-2 flex items-center gap-2">
           <svg width="21" height="21" stroke="#F59E42" fill="none"><rect x="3" y="3" width="15" height="15" rx="6.5" /></svg>
-          实战经验·Tips
+          {t('adVerification.tips.title')}
         </h3>
-        <div class="text-yellow-900 text-sm">
-          <b>• 配合运营报表工具，结果高效落地决策。</b><br/>
-          <b>• 选用API管理批量住宅代理，日常自动切换低风险。</b><br/>
-          <b>• 可结合主流广告平台风控SDK，检测数据更权威。</b>
+        <div class="text-yellow-900 text-base leading-relaxed space-y-3">
+          {(t('adVerification.tips.items') || []).map((tip: string) => (
+            <div><b>• {tip}</b></div>
+          ))}
         </div>
       </div>
     </div>

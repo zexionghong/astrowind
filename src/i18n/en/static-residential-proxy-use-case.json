@@ -69,6 +69,21 @@
         "Crawling: Simulate real visits in bulk, track traffic chains",
         "Data collection: Capture key metrics like impressions, clicks, landing, conversions",
         "Attribution analysis: Multi-dimensional fraud/config/system diagnosis, auto-generate reports"
+      ],
+      "tags": [
+        "Requirements Alignment",
+        "API Configuration",
+        "Metrics Collection",
+        "Analysis & Anomaly Detection",
+        "Report Generation"
+      ]
+    },
+    "tips": {
+      "title": "Pro Tips & Best Practices",
+      "items": [
+        "Integrate with operational reporting tools for efficient decision-making.",
+        "Use API-managed bulk residential proxies with automatic low-risk rotation.",
+        "Combine with mainstream ad platform risk control SDKs for more authoritative detection."
       ]
     },
     "faqs": {
