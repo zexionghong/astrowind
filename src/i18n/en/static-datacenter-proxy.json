@@ -1,7 +1,7 @@
 {
   "staticDatacenterProxy": {
     "metadata": {
-      "title": "Static Datacenter Proxy - High-Speed Stable IP Solution | IPFlex",
+      "title": "Static Datacenter Proxy - High-Speed Stable Proxy Solution | IPFlex",
       "description": "IPFlex static datacenter proxy, high-speed proxy service based on data centers, providing ultra-low latency and extremely high performance network access solutions. Suitable for high concurrency and large bandwidth demand scenarios."
     },
     "hero": {
@@ -22,10 +22,10 @@
       "title": "Global Datacenter Resources",
       "subtitle": "IPFlex deploys high-performance data centers globally, providing ultra-fast access experience for your business",
       "items": [
-        { "amount": "500K+", "title": "Datacenter IP Pool" },
+        { "amount": "500K+", "title": "Datacenter Proxy Pool" },
         { "amount": "100+", "title": "Global Data Centers" },
         { "amount": "0.1s", "title": "Average Latency" },
-        { "amount": "10Gbps", "title": "Single IP Bandwidth" }
+        { "amount": "10Gbps", "title": "Single Proxy Bandwidth" }
       ]
     },
     "performance": {
@@ -73,19 +73,19 @@
       "items": [
         {
           "title": "What is a datacenter proxy?",
-          "description": "A datacenter proxy is a proxy service based on datacenter servers, using IP addresses allocated by data centers. Compared to residential proxies, datacenter proxies have higher speed, larger bandwidth, and lower cost, suitable for application scenarios with high performance requirements."
+          "description": "A datacenter proxy is a proxy service based on datacenter servers, using Proxy addresses allocated by data centers. Compared to residential proxies, datacenter proxies have higher speed, larger bandwidth, and lower cost, suitable for application scenarios with high performance requirements."
         },
         {
           "title": "What's the difference between datacenter and residential proxies?",
-          "description": "Datacenter proxies are based on server IPs with fast speed, large bandwidth, and low cost, but may be more easily identified; residential proxies are based on real user IPs with higher anonymity but relatively slower speed and higher cost. The choice depends on your specific needs."
+          "description": "Datacenter proxies are based on server Proxy with fast speed, large bandwidth, and low cost, but may be more easily identified; residential proxies are based on real user Proxy with higher anonymity but relatively slower speed and higher cost. The choice depends on your specific needs."
         },
         {
           "title": "How fast are datacenter proxies?",
-          "description": "IPFlex datacenter proxies have an average latency below 100 milliseconds, with single IP bandwidth up to 10Gbps. Based on global top-tier datacenter infrastructure, ensuring ultra-fast network access experience, especially suitable for applications with extremely high speed requirements."
+          "description": "IPFlex datacenter proxies have an average latency below 100 milliseconds, with single Proxy bandwidth up to 10Gbps. Based on global top-tier datacenter infrastructure, ensuring ultra-fast network access experience, especially suitable for applications with extremely high speed requirements."
         },
         {
           "title": "Which protocols and ports are supported?",
-          "description": "IPFlex datacenter proxies support HTTP, HTTPS, and SOCKS5 protocols, providing multiple port options. Support username/password authentication and IP whitelist authentication, meeting different application access needs."
+          "description": "IPFlex datacenter proxies support HTTP, HTTPS, and SOCKS5 protocols, providing multiple port options. Support username/password authentication and Proxy whitelist authentication, meeting different application access needs."
         },
         {
           "title": "How stable are datacenter proxies?",
@@ -99,7 +99,7 @@
     },
     "deductionMethods": {
       "title": "Billing Methods Comparison",
-      "subtitle": "IPFlex datacenter proxies support two flexible billing methods: [By Traffic] and [By Number of IPs], meeting different scales of business needs.",
+      "subtitle": "IPFlex datacenter proxies support two flexible billing methods: [By Traffic] and [By Number of Proxy], meeting different scales of business needs.",
       "methods": [
         {
           "type": "By Traffic Billing",
@@ -120,21 +120,21 @@
           ]
         },
         {
-          "type": "By Number of IPs Billing",
+          "type": "By Number of Proxy Billing",
           "key": "ip",
-          "title": "By Number of IPs Billing",
+          "title": "By Number of Proxy Billing",
           "scenes": [
             "Automated testing environment",
             "Long-term stable API services",
             "Enterprise-level application deployment"
           ],
           "advantages": [
-            "Dedicated IPs, stable performance",
+            "Dedicated Proxy, stable performance",
             "Predictable costs, easy budgeting",
             "Supports long-term monthly discounts"
           ],
           "pricing": [
-            "Priced by number of IPs, starting from ￥2/IP/day"
+            "Priced by number of Proxy, starting from ￥2/Proxy/day"
           ]
         }
       ],

@@ -1,14 +1,14 @@
 {
   "dynamicResidentialProxy": {
     "metadata": {
-      "title": "Dynamic Residential Proxy - Smart IP Rotation Solution | IPFlex",
-      "description": "IPFlex dynamic residential proxy with automatic IP rotation service, providing high anonymity and flexible network access solutions. Supporting 200+ countries and regions worldwide for data collection, ad verification and more."
+      "title": "Dynamic Residential Proxy - Smart Proxy Rotation Solution | IPFlex",
+      "description": "IPFlex dynamic residential proxy with automatic Proxy rotation service, providing high anonymity and flexible network access solutions. Supporting 200+ countries and regions worldwide for data collection, ad verification and more."
     },
     "hero": {
       "title": "Dynamic Residential Proxies",
-      "subtitle": "Automatic rotating residential IP proxy service providing high anonymity and flexible network access solutions",
+      "subtitle": "Automatic rotating residential proxy service providing high anonymity and flexible network access solutions",
       "features": [
-        "Automatic IP rotation with high anonymity",
+        "Automatic proxy rotation with high anonymity",
         "Covers 200+ countries and regions globally",
         "Supports HTTP/HTTPS/SOCKS5 protocols",
         "99.9% high availability guarantee"
@@ -19,10 +19,10 @@
       }
     },
     "stats": {
-      "title": "Global Dynamic IP Resource Pool",
-      "subtitle": "IPFlex has over 1.75 million dynamic residential IPs providing powerful support for your business",
+      "title": "Global Dynamic Proxy Resource Pool",
+      "subtitle": "IPFlex has over 1.75 million dynamic residential Proxy providing powerful support for your business",
       "items": [
-        { "amount": "40M+", "title": "Dynamic IP Pool Size" },
+        { "amount": "40M+", "title": "Dynamic Proxy Pool Size" },
         { "amount": "200+", "title": "Countries/Regions Covered" },
         { "amount": "0.4s+", "title": "Response Speed" },
         { "amount": "99.9%", "title": "Success Rate Guarantee" }
@@ -31,14 +31,14 @@
     "performance": {
       "title": "Smart Rotation & High Performance Access",
       "description": "IPFlex dynamic residential proxies use intelligent rotation algorithms based on real residential networks to provide high anonymity access. Support custom rotation strategies, unlimited bandwidth, suitable for large-scale data collection, web crawling, market research, ad verification and other scenarios. Effectively avoid anti-crawler detection and improve collection efficiency.",
-      "features": ["Smart IP rotation algorithm", "Custom rotation strategies", "Unlimited bandwidth access", "High anonymity protection", "Anti-crawler evasion"]
+      "features": ["Smart proxy rotation algorithm", "Custom rotation strategies", "Unlimited bandwidth access", "High anonymity protection", "Anti-crawler evasion"]
     },
     "whyChooseUs": {
       "title": "Why Choose IPFlex Dynamic Residential Proxies?",
       "features": [
-        { "title": "Smart Rotation", "description": "AI-based intelligent IP rotation that automatically adjusts strategies based on target website characteristics to maximize success rates." },
-        { "title": "Session Persistence", "description": "Supports session persistence to ensure the same IP is used within a session, suitable for applications requiring session consistency." },
-        { "title": "Global Coverage", "description": "Residential IP resources covering 200+ countries and regions, supporting precise city-level geolocation." },
+        { "title": "Smart Rotation", "description": "AI-based intelligent proxy rotation that automatically adjusts strategies based on target website characteristics to maximize success rates." },
+        { "title": "Session Persistence", "description": "Supports session persistence to ensure the same proxy is used within a session, suitable for applications requiring session consistency." },
+        { "title": "Global Coverage", "description": "Residential proxy resources covering 200+ countries and regions, supporting precise city-level geolocation." },
         { "title": "Cost-Effective", "description": "Pay-as-you-go model supporting billing by traffic and request count, flexible cost control." }
       ]
     },
@@ -48,53 +48,53 @@
         {
           "title": "Large-Scale Data Collection",
           "url": "/en/use-case/dynamic-residential-proxy-data-collection",
-          "description": "Utilize dynamic IP rotation technology to break through website access restrictions and achieve efficient large-scale data collection. Support e-commerce price monitoring, social media data scraping, news content collection and other scenarios, processing over 50 million requests daily."
+          "description": "Utilize dynamic proxy rotation technology to break through website access restrictions and achieve efficient large-scale data collection. Support e-commerce price monitoring, social media data scraping, news content collection and other scenarios, processing over 50 million requests daily."
         },
         {
           "title": "Web Crawling & Monitoring",
           "url": "/en/use-case/dynamic-residential-proxy-crawling",
-          "description": "Provide high anonymity IP rotation services for web crawlers, effectively avoiding anti-crawler detection. Support SEO monitoring, competitor analysis, content aggregation and other applications, helping enterprises obtain key business data."
+          "description": "Provide high anonymity proxy rotation services for web crawlers, effectively avoiding anti-crawler detection. Support SEO monitoring, competitor analysis, content aggregation and other applications, helping enterprises obtain key business data."
         },
         {
           "title": "Anonymous Browsing & Privacy Protection",
           "url": "/en/use-case/dynamic-residential-proxy-privacy",
-          "description": "Protect user real identity through dynamic IP rotation, achieving anonymous browsing and privacy protection. Suitable for sensitive information queries, geo-restricted content access, network security research and other scenarios."
+          "description": "Protect user real identity through dynamic proxy rotation, achieving anonymous browsing and privacy protection. Suitable for sensitive information queries, geo-restricted content access, network security research and other scenarios."
         },
         {
           "title": "Ad Verification & Anti-Fraud",
           "url": "/en/use-case/dynamic-residential-proxy-ad-verification",
-          "description": "Simulate real user behavior for ad verification, detecting ad fraud and click farms. Through geographically distributed dynamic IPs, ensure the authenticity and accuracy of advertising effectiveness."
+          "description": "Simulate real user behavior for ad verification, detecting ad fraud and click farms. Through geographically distributed dynamic Proxy, ensure the authenticity and accuracy of advertising effectiveness."
         }
       ]
     },
     "faqs": {
       "title": "Dynamic Residential Proxy FAQs",
-      "subtitle": "Answers to common questions about IP proxy services, residential IPs, and dynamic IP rotation",
-      "tagline": "For more questions about IP proxy services, please contact customer support for professional assistance",
+      "subtitle": "Answers to common questions about proxy proxy services, residential Proxy, and dynamic proxy rotation",
+      "tagline": "For more questions about proxy proxy services, please contact customer support for professional assistance",
       "items": [
         {
           "title": "What is a dynamic residential proxy?",
-          "description": "A dynamic residential proxy is a high-anonymity IP proxy service based on real residential IPs, supporting automatic IP rotation. With dynamic residential proxies, users can bypass website restrictions and improve the success rate of data collection and web scraping. They are widely used for large-scale data collection, anonymous browsing, ad verification, and more."
+          "description": "A dynamic residential proxy is a high-anonymity Proxy proxy service based on real residential Proxy, supporting automatic Proxy rotation. With dynamic residential proxies, users can bypass website restrictions and improve the success rate of data collection and web scraping. They are widely used for large-scale data collection, anonymous browsing, ad verification, and more."
         },
         {
           "title": "What rotation strategies are available for dynamic residential proxies?",
-          "description": "IPFlex dynamic residential proxies support multiple IP rotation strategies, including automatic rotation at set time intervals, session-based rotation, and smart rotation (which automatically adjusts based on the target website's anti-crawling mechanisms). Users can flexibly configure these options to improve stability and anonymity."
+          "description": "IPFlex dynamic residential proxies support multiple Proxy rotation strategies, including automatic rotation at set time intervals, session-based rotation, and smart rotation (which automatically adjusts based on the target website's anti-crawling mechanisms). Users can flexibly configure these options to improve stability and anonymity."
         },
         {
           "title": "What's the difference between dynamic and static residential proxies?",
-          "description": "Dynamic residential proxies automatically rotate residential IPs and are suitable for scenarios requiring high anonymity and large-scale access. Static residential proxies provide fixed residential IPs, ideal for use cases that need long-term IP stability. The choice depends on your specific needs."
+          "description": "Dynamic residential proxies automatically rotate residential Proxy and are suitable for scenarios requiring high anonymity and large-scale access. Static residential proxies provide fixed residential Proxy, ideal for use cases that need long-term Proxy stability. The choice depends on your specific needs."
         },
         {
-          "title": "How do I set the IP rotation frequency?",
+          "title": "How do I set the Proxy rotation frequency?",
           "description": "You can customize the rotation frequency for residential proxies, including time-based intervals (1–30 minutes), session-based rotation, or enabling smart rotation mode. Flexible rotation settings help improve the success rate of data collection and web scraping."
         },
         {
           "title": "How reliable and stable are dynamic residential proxies?",
-          "description": "IPFlex dynamic residential proxies use intelligent health checks to monitor IP quality in real time and automatically remove problematic IPs. The average success rate is up to 99.9%. High-quality residential IP resources ensure stable and efficient data collection and anonymous access."
+          "description": "IPFlex dynamic residential proxies use intelligent health checks to monitor Proxy quality in real time and automatically remove problematic Proxy. The average success rate is up to 99.9%. High-quality residential Proxy resources ensure stable and efficient data collection and anonymous access."
         },
         {
           "title": "Which protocols and authentication methods are supported?",
-          "description": "IPFlex dynamic residential proxies support HTTP and SOCKS5 protocols, compatible with mainstream proxy software and crawler tools. Authentication methods include username/password and IP whitelist, and an API is provided for easy integration into your applications."
+          "description": "IPFlex dynamic residential proxies support HTTP and SOCKS5 protocols, compatible with mainstream proxy software and crawler tools. Authentication methods include username/password and Proxy whitelist, and an API is provided for easy integration into your applications."
         }
       ]
     },
@@ -121,9 +121,9 @@
           ]
         },
         {
-          "type": "By Number of IPs Billing",
+          "type": "By Number of Proxy Billing",
           "key": "ip",
-          "title": "By Number of IPs Billing",
+          "title": "By Number of Proxy Billing",
           "scenes": [
             "API data collection",
             "Scheduled monitoring tasks",
@@ -137,7 +137,7 @@
             "Supports session persistence"
           ],
           "pricing": [
-            "Billed by number of generated IPs, ￥2/IP"
+            "Billed by number of generated proxy, ￥2/Proxy"
           ]
         }
       ],

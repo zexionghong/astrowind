@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "Static Residential Proxy - High Stability IP Solution | IPFlex",
-    "description": "IPFlex static residential proxy, designed for cross-border e-commerce, data collection and other scenarios, providing high stability, low ban risk residential IP services. Support China and global regions, help business compliance and efficiency."
+    "title": "Static Residential Proxy - High Stability Proxy Solution | IPFlex",
+    "description": "IPFlex static residential proxy, designed for cross-border e-commerce, data collection and other scenarios, providing high stability, low ban risk residential Proxy services. Support China and global regions, help business compliance and efficiency."
   },
   "hero": {
     "title": "Residential Proxies",
@@ -9,8 +9,8 @@
     "features": [
       "Free geo-targeting",
       "Fastest proxies in the market",
-      "Real profile, human-like Residential IPs",
-      "Quality assurance framework for most reliable IPs"
+      "Real profile, human-like Residential Proxy",
+      "Quality assurance framework for most reliable Proxy"
     ],
     "cta": {
       "primary": "Try IPFlex today",
@@ -19,7 +19,7 @@
   },
   "stats": {
     "title": "Global Resource Coverage",
-    "subtitle": "IPFlex has massive high-quality residential IP resources to escort your business",
+    "subtitle": "IPFlex has massive high-quality residential Proxy resources to escort your business",
     "items": [
       { "amount": "0.4s", "title": "Average Response Time" },
       { "amount": "80+", "title": "Countries/Regions Covered" },
@@ -29,7 +29,7 @@
   },
   "performance": {
     "title": "Excellent Performance & Unlimited Bandwidth",
-    "description": "Experience top-tier performance with IPFlex static residential proxies, built on genuine residential networks. Enjoy unlimited bandwidth and session duration, with support for HTTP and SOCKS5 protocols. Benefit from high anonymity and stability, ideal for SEO monitoring, data collection, cross-border e-commerce, ad verification, and more. Enhance business efficiency and minimize ban risks with our reliable residential IP solution.",
+    "description": "Experience top-tier performance with IPFlex static residential proxies, built on genuine residential networks. Enjoy unlimited bandwidth and session duration, with support for HTTP and SOCKS5 protocols. Benefit from high anonymity and stability, ideal for SEO monitoring, data collection, cross-border e-commerce, ad verification, and more. Enhance business efficiency and minimize ban risks with our reliable residential Proxy solution.",
     "features": [
       "Unlimited bandwidth",
       "Unlimited session duration",
@@ -42,7 +42,7 @@
     "title": "Why Choose IPFlex?",
     "features": [
       { "title": "Cost-effective", "description": "Flexible packages, pay-as-you-go, meet different business needs, economical and affordable." },
-      { "title": "Rich Regional Resources", "description": "Covering 200+ countries and regions worldwide, rich IP resources, meeting diverse needs." },
+      { "title": "Rich Regional Resources", "description": "Covering 200+ countries and regions worldwide, rich Proxy resources, meeting diverse needs." },
       { "title": "Unlimited Bandwidth", "description": "Under the proxy billing model, traffic costs are free of additional charges, unlimited bandwidth enjoyment." }
     ]
   },
@@ -52,17 +52,17 @@
       {
         "title": "Ad Verification",
         "url": "/en/use-case/static-residential-proxy-ad-verification",
-        "description": "Relying on residential proxies and global IP resources, advertisers can truly simulate user access, accurately complete ad verification, effectively prevent ad fraud, and improve ad ROI. IPFlex provides ad verification, anti-fraud and other compliance testing services for 50+ enterprises daily."
+        "description": "Relying on residential proxies and global Proxy resources, advertisers can truly simulate user access, accurately complete ad verification, effectively prevent ad fraud, and improve ad ROI. IPFlex provides ad verification, anti-fraud and other compliance testing services for 50+ enterprises daily."
       },
       {
         "title": "Market Research & Data Collection",
         "url": "/en/use-case/static-residential-proxy-market-research",
-        "description": "Easily break through anti-crawler restrictions with 700K+ residential IPs, helping enterprises efficiently conduct data collection and market research. Daily collection volume exceeds 100 million, supports API automation, and meets data-driven decision-making needs."
+        "description": "Easily break through anti-crawler restrictions with 700K+ residential Proxy, helping enterprises efficiently conduct data collection and market research. Daily collection volume exceeds 100 million, supports API automation, and meets data-driven decision-making needs."
       },
       {
         "title": "E-commerce Account Maintenance",
         "url": "/en/use-case/static-residential-proxy-ecommerce", 
-        "description": "Provide long-term stable residential IPs for cross-border e-commerce sellers, reduce account ban risk, support Amazon, eBay, Shopee and other multi-platform account maintenance and batch management, account security rate up to 99.9%."
+        "description": "Provide long-term stable residential Proxy for cross-border e-commerce sellers, reduce account ban risk, support Amazon, eBay, Shopee and other multi-platform account maintenance and batch management, account security rate up to 99.9%."
       },
       {
         "title": "Network Security & Risk Control",
@@ -83,37 +83,37 @@
     "items": [
       {
         "title": "What is a residential proxy?",
-        "description": "Residential Proxy is an IP address allocated through real home broadband networks, which can simulate ordinary users' online behavior. Compared with data center proxies, residential IP proxies are more difficult to be identified and blocked by target websites, and are the first choice for data collection, web crawling, account registration, ad verification and other scenarios."
+        "description": "Residential Proxy is an Proxy address allocated through real home broadband networks, which can simulate ordinary users' online behavior. Compared with data center proxies, residential Proxy proxies are more difficult to be identified and blocked by target websites, and are the first choice for data collection, web crawling, account registration, ad verification and other scenarios."
       },
       {
-        "title": "Why use residential proxy IPs?",
-        "description": "Using residential proxy IPs can effectively break through website anti-crawler mechanisms and reduce the risk of being banned. Residential IP proxies have high anonymity and high stability, suitable for cross-border e-commerce, social media operations, market research, SEO monitoring, ad verification and other businesses that require a large number of high-quality IPs."
+        "title": "Why use residential proxy Proxy?",
+        "description": "Using residential proxy Proxy can effectively break through website anti-crawler mechanisms and reduce the risk of being banned. Residential Proxy proxies have high anonymity and high stability, suitable for cross-border e-commerce, social media operations, market research, SEO monitoring, ad verification and other businesses that require a large number of high-quality Proxy."
       },
       {
         "title": "What is the difference between static residential proxies and dynamic residential proxies?",
-        "description": "Static Residential Proxy provides long-term unchanged residential IPs, suitable for account maintenance, long-term data collection and other scenarios with high requirements for IP stability. Dynamic Residential Proxy (Rotating Residential Proxy) will regularly change IPs, suitable for large-scale crawling, short-term tasks, anonymous browsing and other flexibility needs."
+        "description": "Static Residential Proxy provides long-term unchanged residential Proxy, suitable for account maintenance, long-term data collection and other scenarios with high requirements for Proxy stability. Dynamic Residential Proxy (Rotating Residential Proxy) will regularly change Proxy, suitable for large-scale crawling, short-term tasks, anonymous browsing and other flexibility needs."
       },
       {
         "title": "What application scenarios are static residential proxies suitable for?",
-        "description": "Static residential proxies are suitable for cross-border e-commerce account maintenance, social media account management, long-term data collection, advertising, brand protection, network security testing and other scenarios with high requirements for IP stability and security. It is also the best choice to prevent account anomalies and improve account security rates."
+        "description": "Static residential proxies are suitable for cross-border e-commerce account maintenance, social media account management, long-term data collection, advertising, brand protection, network security testing and other scenarios with high requirements for Proxy stability and security. It is also the best choice to prevent account anomalies and improve account security rates."
       },
       {
         "title": "What are the billing methods for static residential proxies?",
-        "description": "Common billing methods for static residential proxies include billing by IP quantity, billing by traffic and monthly package. Users can choose the optimal solution according to business needs to achieve cost-effective residential IP proxy services."
+        "description": "Common billing methods for static residential proxies include billing by Proxy quantity, billing by traffic and monthly package. Users can choose the optimal solution according to business needs to achieve cost-effective residential Proxy proxy services."
       },
       {
-        "title": "How to purchase and use static residential proxy IPs?",
-        "description": "After registering an IPFlex account, choose the appropriate static residential proxy package to get high-quality residential IP and port information. Support API automated management, quickly integrate into your data collection, SEO monitoring, ad verification and other business systems, help efficient compliance operations."
+        "title": "How to purchase and use static residential proxy Proxy?",
+        "description": "After registering an IPFlex account, choose the appropriate static residential proxy package to get high-quality residential Proxy and port information. Support API automated management, quickly integrate into your data collection, SEO monitoring, ad verification and other business systems, help efficient compliance operations."
       },
       {
         "title": "What is the difference between static residential proxies and dynamic residential proxies?",
-        "description": "Static residential proxies provide long-term, unchanged residential IPs, ideal for scenarios requiring high IP stability such as account maintenance and long-term data collection. Dynamic residential proxies (rotating residential proxies) change IPs regularly, making them suitable for large-scale crawling, short-term tasks, anonymous browsing, and other scenarios needing flexibility."
+        "description": "Static residential proxies provide long-term, unchanged residential Proxy, ideal for scenarios requiring high Proxy stability such as account maintenance and long-term data collection. Dynamic residential proxies (rotating residential proxies) change Proxy regularly, making them suitable for large-scale crawling, short-term tasks, anonymous browsing, and other scenarios needing flexibility."
       }
     ]
   },
   "deductionMethods": {
     "title": "Billing Methods Comparison",
-    "subtitle": "IPFlex supports two flexible billing methods: [By Traffic] and [By IP Count], meeting different business scenarios and team budgets. Please choose the mode that suits you to start experiencing.",
+    "subtitle": "IPFlex supports two flexible billing methods: [By Traffic] and [By Proxy Count], meeting different business scenarios and team budgets. Please choose the mode that suits you to start experiencing.",
     "methods": [
       {
         "type": "By Traffic Billing",
@@ -134,21 +134,21 @@
         ]
       },
       {
-        "type": "By IP Count Billing",
+        "type": "By Proxy Count Billing",
         "key": "ip",
-        "title": "By IP Count Billing",
+        "title": "By Proxy Count Billing",
         "scenes": [
           "Cross-border e-commerce account maintenance/site group maintenance",
-          "Long-term stable business with strong demand for IP exclusivity and continuity",
+          "Long-term stable business with strong demand for Proxy exclusivity and continuity",
           "High concurrency, targeted weight monitoring"
         ],
         "advantages": [
-          "Dedicated IP, strong stability",
+          "Dedicated Proxy, strong stability",
           "No need to worry about traffic bursts, suitable for centralized management",
           "Scale on demand, controllable budget"
         ],
         "pricing": [
-          "Tiered pricing by IP count, starting from ￥4/IP/day"
+          "Tiered pricing by Proxy count, starting from ￥4/Proxy/day"
         ]
       }
     ],

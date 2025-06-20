@@ -10,11 +10,11 @@
         "image": "~/assets/images/scenarios/1.png",
         "color": "blue",
         "url": "/en/use-case/static-residential-proxy-ad-verification",
-        "description": "Relying on residential proxies and global IP resources, advertisers can truly simulate user access, accurately complete ad verification, effectively prevent ad fraud, and improve ad ROI. IPFlex provides ad verification, anti-fraud and other compliance testing services for 50+ enterprises daily.",
+        "description": "Relying on residential proxies and global Proxy resources, advertisers can truly simulate user access, accurately complete ad verification, effectively prevent ad fraud, and improve ad ROI. IPFlex provides ad verification, anti-fraud and other compliance testing services for 50+ enterprises daily.",
         "benefits": [
           "Real user simulation for accurate ad placement verification",
           "Prevent ad fraud and protect advertising ROI",
-          "Global IP coverage supporting multi-region ad verification"
+          "Global Proxy coverage supporting multi-region ad verification"
         ]
       },
       {
@@ -62,9 +62,9 @@
         "image": "~/assets/images/scenarios/5.png",
         "color": "emerald",
         "url": "/en/use-case/dynamic-residential-proxy-data-collection",
-        "description": "Use dynamic IP rotation technology to break through website access restrictions and achieve efficient large-scale data collection. Support e-commerce price monitoring, social media data scraping, news content collection and other scenarios, processing over 50 million requests daily.",
+        "description": "Use dynamic Proxy rotation technology to break through website access restrictions and achieve efficient large-scale data collection. Support e-commerce price monitoring, social media data scraping, news content collection and other scenarios, processing over 50 million requests daily.",
         "benefits": [
-          "Smart IP rotation, effectively avoid anti-bot detection",
+          "Smart Proxy rotation, effectively avoid anti-bot detection",
           "High concurrency processing, handle over 50M requests daily",
           "Global geographic coverage, meet cross-border data collection needs"
         ]
@@ -75,7 +75,7 @@
         "image": "~/assets/images/scenarios/6.png",
         "color": "cyan",
         "url": "/en/use-case/dynamic-residential-proxy-crawling",
-        "description": "Provide high-anonymity IP rotation services for web crawlers, effectively avoiding anti-crawler detection. Support SEO monitoring, competitor analysis, content aggregation and other applications, helping enterprises obtain key business data.",
+        "description": "Provide high-anonymity Proxy rotation services for web crawlers, effectively avoiding anti-crawler detection. Support SEO monitoring, competitor analysis, content aggregation and other applications, helping enterprises obtain key business data.",
         "benefits": [
           "High anonymity protection, simulate real user behavior",
           "Smart rotation algorithm, adapt to different anti-bot strategies",
@@ -88,7 +88,7 @@
         "image": "~/assets/images/scenarios/7.png",
         "color": "violet",
         "url": "/en/use-case/dynamic-residential-proxy-privacy",
-        "description": "Protect user real identity through dynamic IP rotation, achieve anonymous browsing and privacy protection. Suitable for sensitive information queries, geo-restricted content access, network security research and other scenarios.",
+        "description": "Protect user real identity through dynamic Proxy rotation, achieve anonymous browsing and privacy protection. Suitable for sensitive information queries, geo-restricted content access, network security research and other scenarios.",
         "benefits": [
           "Real identity protection, effectively hide user information",
           "Geo-restriction breakthrough, access global internet resources",

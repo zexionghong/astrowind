@@ -3,7 +3,7 @@
   "moreCases": [
     {
       "title": "Large-Scale Data Collection",
-      "description": "Smart IP rotation, break through access restrictions",
+      "description": "Smart Proxy rotation, break through access restrictions",
       "url": "/en/use-case/dynamic-residential-proxy-data-collection"
     },
     {
@@ -24,20 +24,20 @@
   ],
   "dataCollection": {
     "metadata": {
-      "title": "Dynamic Residential Proxy for Large-Scale Data Collection - Smart IP Rotation to Break Restrictions | IPFlex",
-      "description": "In-depth analysis of the core value of dynamic residential proxies in large-scale data collection, helping enterprises break through website access restrictions through smart IP rotation technology."
+      "title": "Dynamic Residential Proxy for Large-Scale Data Collection - Smart Proxy Rotation to Break Restrictions | IPFlex",
+      "description": "In-depth analysis of the core value of dynamic residential proxies in large-scale data collection, helping enterprises break through website access restrictions through smart Proxy rotation technology."
     },
     "hero": {
       "title": "Dynamic Residential Proxy for Large-Scale Data Collection",
-      "subtitle": "How enterprises leverage smart IP rotation technology to break through website access restrictions and achieve efficient, reliable large-scale data collection",
+      "subtitle": "How enterprises leverage smart Proxy rotation technology to break through website access restrictions and achieve efficient, reliable large-scale data collection",
       "features": [
-        "Smart IP rotation algorithm effectively avoids anti-crawler detection mechanisms",
+        "Smart Proxy rotation algorithm effectively avoids anti-crawler detection mechanisms",
         "Supports 200+ countries and regions globally, meeting multi-regional data collection needs",
         "High concurrency processing capability, handling over 50 million requests daily",
         "Flexible rotation strategies adapted to different websites' anti-crawler mechanisms"
       ],
       "cta": {
-        "primary": "Free Trial: Data Collection Dynamic IP"
+        "primary": "Free Trial: Data Collection Dynamic Proxy"
       }
     },
     "whyChooseUs": {
@@ -46,7 +46,7 @@
         {
           "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-refresh-cw\"><polyline points=\"23,4 23,10 17,10\"></polyline><polyline points=\"1,20 1,14 7,14\"></polyline><path d=\"M20.49,9A9,9,0,0,0,5.64,5.64L1,10m22,4L18.36,18.36A9,9,0,0,1,3.51,15\"></path></svg>",
           "title": "Smart Rotation & Detection Avoidance",
-          "description": "AI-based smart IP rotation automatically adjusts strategies based on target website characteristics, effectively avoiding anti-crawler detection and ensuring continuous stable operation of collection tasks."
+          "description": "AI-based smart Proxy rotation automatically adjusts strategies based on target website characteristics, effectively avoiding anti-crawler detection and ensuring continuous stable operation of collection tasks."
         },
         {
           "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-layers\"><polygon points=\"12,2 2,7 12,12 22,7 12,2\"></polygon><polyline points=\"2,17 12,22 22,17\"></polyline><polyline points=\"2,12 12,17 22,12\"></polyline></svg>",
@@ -56,7 +56,7 @@
         {
           "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-globe\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"2\" y1=\"12\" x2=\"22\" y2=\"12\"></line><path d=\"M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z\"></path></svg>",
           "title": "Global Geographic Coverage",
-          "description": "Covers residential IP resources in 200+ countries and regions, supports city-level geographic targeting, meeting cross-border data collection needs."
+          "description": "Covers residential Proxy resources in 200+ countries and regions, supports city-level geographic targeting, meeting cross-border data collection needs."
         }
       ]
     },
@@ -72,18 +72,18 @@
     "painGain": {
       "title": "Data Collection Advantages & Pain Points",
       "pros": [
-        "Smart IP rotation effectively breaks through website access restrictions, improving collection success rates",
+        "Smart Proxy rotation effectively breaks through website access restrictions, improving collection success rates",
         "Supports multi-regional, multi-device simulation for more comprehensive data perspectives"
       ],
       "cons": [
         "Fixed IPs are easily identified and banned, affecting collection task continuity",
-        "Manual IP pool management is inefficient and difficult to handle large-scale collection needs"
+        "Manual Proxy pool management is inefficient and difficult to handle large-scale collection needs"
       ]
     },
     "flow": {
       "title": "Automated Data Collection Workflow",
       "steps": [
-        "Requirements configuration: Select residential IP pools in target regions, set rotation strategies",
+        "Requirements configuration: Select residential Proxy pools in target regions, set rotation strategies",
         "API integration: Automatically configure proxy parameters to collection scripts via API",
         "Smart collection: Simulate real user access, intelligently adjust request frequency and rotation strategies",
         "Data processing: Real-time data cleaning, deduplication, and structured processing",
@@ -97,7 +97,7 @@
       "items": [
         {
           "title": "Why use dynamic residential proxies for large-scale data collection?",
-          "description": "Dynamic residential proxies use smart IP rotation technology to effectively avoid website anti-crawler detection, ensuring stability and continuity of large-scale data collection tasks. Compared to fixed IPs, dynamic rotation greatly reduces the risk of being banned."
+          "description": "Dynamic residential proxies use smart Proxy rotation technology to effectively avoid website anti-crawler detection, ensuring stability and continuity of large-scale data collection tasks. Compared to fixed IPs, dynamic rotation greatly reduces the risk of being banned."
         },
         {
           "title": "How do dynamic residential proxies improve data collection efficiency?",
@@ -105,7 +105,7 @@
         },
         {
           "title": "What is the recommended data collection workflow?",
-          "description": "1. Obtain dynamic residential proxy IP pools from IPFlex; 2. Configure proxies and rotation strategies in collection tools; 3. Set reasonable request frequencies and User-Agents; 4. Implement data quality monitoring and exception handling; 5. Regularly optimize collection strategies."
+          "description": "1. Obtain dynamic residential proxy Proxy pools from IPFlex; 2. Configure proxies and rotation strategies in collection tools; 3. Set reasonable request frequencies and User-Agents; 4. Implement data quality monitoring and exception handling; 5. Regularly optimize collection strategies."
         }
       ]
     }
@@ -113,19 +113,19 @@
   "crawling": {
     "metadata": {
       "title": "Dynamic Residential Proxy for Web Crawling - High Anonymity to Avoid Anti-Crawler Detection | IPFlex",
-      "description": "In-depth analysis of the core value of dynamic residential proxies in web crawling and monitoring, helping enterprises avoid anti-crawler detection through high anonymity IP rotation services."
+      "description": "In-depth analysis of the core value of dynamic residential proxies in web crawling and monitoring, helping enterprises avoid anti-crawler detection through high anonymity Proxy rotation services."
     },
     "hero": {
       "title": "Dynamic Residential Proxy for Web Crawling & Monitoring",
-      "subtitle": "How enterprises leverage high anonymity IP rotation services to avoid anti-crawler detection and obtain key business data",
+      "subtitle": "How enterprises leverage high anonymity Proxy rotation services to avoid anti-crawler detection and obtain key business data",
       "features": [
-        "High anonymity IP rotation effectively avoids anti-crawler detection mechanisms",
+        "High anonymity Proxy rotation effectively avoids anti-crawler detection mechanisms",
         "Supports SEO monitoring, competitor analysis, content aggregation and other applications",
         "Smart rotation strategies adapted to different websites' anti-crawler mechanisms",
         "24/7 stable operation ensuring continuous execution of monitoring tasks"
       ],
       "cta": {
-        "primary": "Free Trial: Web Crawling Dynamic IP"
+        "primary": "Free Trial: Web Crawling Dynamic Proxy"
       }
     },
     "whyChooseUs": {
@@ -134,12 +134,12 @@
         {
           "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-eye-off\"><path d=\"M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24\"></path><line x1=\"1\" y1=\"1\" x2=\"23\" y2=\"23\"></line></svg>",
           "title": "High Anonymity Protection",
-          "description": "Based on real residential network IP addresses with extremely high anonymity, effectively simulating real user behavior and avoiding various anti-crawler detection mechanisms."
+          "description": "Based on real residential network Proxy addresses with extremely high anonymity, effectively simulating real user behavior and avoiding various anti-crawler detection mechanisms."
         },
         {
           "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-cpu\"><rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"2\" ry=\"2\"></rect><rect x=\"9\" y=\"9\" width=\"6\" height=\"6\"></rect><line x1=\"9\" y1=\"1\" x2=\"9\" y2=\"4\"></line><line x1=\"15\" y1=\"1\" x2=\"15\" y2=\"4\"></line><line x1=\"9\" y1=\"20\" x2=\"9\" y2=\"23\"></line><line x1=\"15\" y1=\"20\" x2=\"15\" y2=\"23\"></line><line x1=\"20\" y1=\"9\" x2=\"23\" y2=\"9\"></line><line x1=\"20\" y1=\"14\" x2=\"23\" y2=\"14\"></line><line x1=\"1\" y1=\"9\" x2=\"4\" y2=\"9\"></line><line x1=\"1\" y1=\"14\" x2=\"4\" y2=\"14\"></line></svg>",
           "title": "Smart Rotation Algorithm",
-          "description": "AI-driven smart rotation algorithm automatically adjusts IP rotation frequency and mode based on target website's anti-crawler strategies, maximizing crawler success rates."
+          "description": "AI-driven smart rotation algorithm automatically adjusts Proxy rotation frequency and mode based on target website's anti-crawler strategies, maximizing crawler success rates."
         },
         {
           "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-monitor\"><rect x=\"2\" y=\"3\" width=\"20\" height=\"14\" rx=\"2\" ry=\"2\"></rect><line x1=\"8\" y1=\"21\" x2=\"16\" y2=\"21\"></line><line x1=\"12\" y1=\"17\" x2=\"12\" y2=\"21\"></line></svg>",
@@ -160,7 +160,7 @@
     "painGain": {
       "title": "Web Crawling Advantages & Challenges",
       "pros": [
-        "High anonymity IP rotation effectively avoids anti-crawler detection",
+        "High anonymity Proxy rotation effectively avoids anti-crawler detection",
         "Smart algorithm optimization improves crawler efficiency and success rates"
       ],
       "cons": [
@@ -171,7 +171,7 @@
     "flow": {
       "title": "Automated Web Crawling Workflow",
       "steps": [
-        "Target configuration: Set crawler targets and monitoring metrics, select appropriate IP pools",
+        "Target configuration: Set crawler targets and monitoring metrics, select appropriate Proxy pools",
         "Strategy deployment: Configure smart rotation strategies and crawler parameters",
         "Execute monitoring: 24/7 automatic execution of crawler tasks, real-time monitoring of target changes",
         "Data analysis: Automatically analyze collected data, generate monitoring reports",
@@ -185,7 +185,7 @@
       "items": [
         {
           "title": "Why do web crawlers need dynamic residential proxies?",
-          "description": "Dynamic residential proxies provide high anonymity IP rotation services that effectively simulate real user behavior, avoiding website anti-crawler detection mechanisms and ensuring stable execution of crawler tasks."
+          "description": "Dynamic residential proxies provide high anonymity Proxy rotation services that effectively simulate real user behavior, avoiding website anti-crawler detection mechanisms and ensuring stable execution of crawler tasks."
         },
         {
           "title": "How do dynamic residential proxies improve crawler success rates?",
@@ -201,19 +201,19 @@
   "privacy": {
     "metadata": {
       "title": "Dynamic Residential Proxy for Anonymous Browsing & Privacy Protection - Protect Real Identity for Secure Access | IPFlex",
-      "description": "In-depth analysis of the core value of dynamic residential proxies in anonymous browsing and privacy protection, helping users protect their real identity through IP rotation technology."
+      "description": "In-depth analysis of the core value of dynamic residential proxies in anonymous browsing and privacy protection, helping users protect their real identity through Proxy rotation technology."
     },
     "hero": {
       "title": "Dynamic Residential Proxy for Anonymous Browsing & Privacy Protection",
-      "subtitle": "How users leverage dynamic IP rotation technology to protect their real identity and achieve anonymous browsing and privacy protection",
+      "subtitle": "How users leverage dynamic Proxy rotation technology to protect their real identity and achieve anonymous browsing and privacy protection",
       "features": [
-        "Dynamic IP rotation effectively protects user real identity and location information",
+        "Dynamic Proxy rotation effectively protects user real identity and location information",
         "Supports access to geo-restricted content, breaking through regional blocks",
         "High anonymity protection suitable for sensitive information queries and research",
         "24/7 stable service ensuring continuous privacy protection effectiveness"
       ],
       "cta": {
-        "primary": "Free Trial: Privacy Protection Dynamic IP"
+        "primary": "Free Trial: Privacy Protection Dynamic Proxy"
       }
     },
     "whyChooseUs": {
@@ -222,17 +222,17 @@
         {
           "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-shield\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"></path></svg>",
           "title": "Real Identity Protection",
-          "description": "Through dynamic IP rotation technology, effectively hide user real IP address and geographic location, protecting personal privacy from tracking and identification."
+          "description": "Through dynamic Proxy rotation technology, effectively hide user real Proxy address and geographic location, protecting personal privacy from tracking and identification."
         },
         {
           "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-unlock\"><rect x=\"3\" y=\"11\" width=\"18\" height=\"11\" rx=\"2\" ry=\"2\"></rect><circle cx=\"12\" cy=\"16\" r=\"1\"></circle><path d=\"M7 11V7a5 5 0 0 1 9.9-1\"></path></svg>",
           "title": "Geographic Restriction Breakthrough",
-          "description": "Supports IP addresses from 200+ countries and regions globally, helping users access geo-restricted content and enjoy global internet resources."
+          "description": "Supports Proxy addresses from 200+ countries and regions globally, helping users access geo-restricted content and enjoy global internet resources."
         },
         {
           "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-user-x\"><path d=\"M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2\"></path><circle cx=\"8.5\" cy=\"7\" r=\"4\"></circle><line x1=\"18\" y1=\"8\" x2=\"23\" y2=\"13\"></line><line x1=\"23\" y1=\"8\" x2=\"18\" y2=\"13\"></line></svg>",
           "title": "Advanced Anonymous Protection",
-          "description": "Based on real residential network IP addresses, providing the highest level of anonymity protection, suitable for network security research and sensitive information queries."
+          "description": "Based on real residential network Proxy addresses, providing the highest level of anonymity protection, suitable for network security research and sensitive information queries."
         }
       ]
     },
@@ -248,7 +248,7 @@
     "painGain": {
       "title": "Privacy Protection Advantages & Risks",
       "pros": [
-        "Dynamic IP rotation effectively prevents identity tracking and location exposure",
+        "Dynamic Proxy rotation effectively prevents identity tracking and location exposure",
         "Global geographic coverage breaks through various geographic restrictions and content blocks"
       ],
       "cons": [
@@ -260,8 +260,8 @@
       "title": "Anonymous Browsing & Privacy Protection Workflow",
       "steps": [
         "Needs assessment: Determine privacy protection needs and target regions",
-        "Proxy configuration: Select appropriate dynamic residential proxy IP pools",
-        "Anonymous access: Achieve anonymous browsing through dynamic IP rotation",
+        "Proxy configuration: Select appropriate dynamic residential proxy Proxy pools",
+        "Anonymous access: Achieve anonymous browsing through dynamic Proxy rotation",
         "Privacy monitoring: Real-time monitoring of privacy protection effectiveness",
         "Security assessment: Regular assessment of privacy protection measures' effectiveness"
       ]
@@ -273,15 +273,15 @@
       "items": [
         {
           "title": "Why choose dynamic residential proxies for privacy protection?",
-          "description": "Dynamic residential proxies are based on real residential networks, providing the highest level of anonymity protection. Through smart IP rotation, they effectively prevent identity tracking and protect user privacy security."
+          "description": "Dynamic residential proxies are based on real residential networks, providing the highest level of anonymity protection. Through smart Proxy rotation, they effectively prevent identity tracking and protect user privacy security."
         },
         {
           "title": "How do dynamic residential proxies protect user privacy?",
-          "description": "Through continuously rotating residential IP addresses, hide user real identity and geographic location, prevent website tracking and data collection, ensuring anonymity of user online activities."
+          "description": "Through continuously rotating residential Proxy addresses, hide user real identity and geographic location, prevent website tracking and data collection, ensuring anonymity of user online activities."
         },
         {
           "title": "Do you support access to geo-restricted content?",
-          "description": "Yes. IPFlex dynamic residential proxies cover 200+ countries and regions globally. Users can select IP addresses from different regions to break through geographic restrictions and access global internet content."
+          "description": "Yes. IPFlex dynamic residential proxies cover 200+ countries and regions globally. Users can select Proxy addresses from different regions to break through geographic restrictions and access global internet content."
         }
       ]
     }
@@ -301,7 +301,7 @@
         "Real-time monitoring and reporting, timely detection and handling of ad fraud"
       ],
       "cta": {
-        "primary": "Free Trial: Ad Verification Dynamic IP"
+        "primary": "Free Trial: Ad Verification Dynamic Proxy"
       }
     },
     "whyChooseUs": {
@@ -310,7 +310,7 @@
         {
           "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-users\"><path d=\"M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2\"></path><circle cx=\"9\" cy=\"7\" r=\"4\"></circle><path d=\"M23 21v-2a4 4 0 0 0-3-3.87\"></path><path d=\"M16 3.13a4 4 0 0 1 0 7.75\"></path></svg>",
           "title": "Real User Simulation",
-          "description": "Based on real residential network IP addresses, perfectly simulate real user access behavior, effectively detecting ad fraud and fake traffic."
+          "description": "Based on real residential network Proxy addresses, perfectly simulate real user access behavior, effectively detecting ad fraud and fake traffic."
         },
         {
           "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-map-pin\"><path d=\"M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z\"></path><circle cx=\"12\" cy=\"10\" r=\"3\"></circle></svg>",
@@ -320,7 +320,7 @@
         {
           "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-search\"><circle cx=\"11\" cy=\"11\" r=\"8\"></circle><path d=\"M21 21l-4.35-4.35\"></path></svg>",
           "title": "Anti-Fraud Detection",
-          "description": "Through dynamic IP rotation and smart algorithms, effectively identify click farms, bot traffic and other ad fraud behaviors, protecting advertising investments."
+          "description": "Through dynamic Proxy rotation and smart algorithms, effectively identify click farms, bot traffic and other ad fraud behaviors, protecting advertising investments."
         }
       ]
     },
@@ -336,7 +336,7 @@
     "painGain": {
       "title": "Ad Verification Advantages & Challenges",
       "pros": [
-        "Dynamic IP rotation simulates real users, effectively detecting ad fraud",
+        "Dynamic Proxy rotation simulates real users, effectively detecting ad fraud",
         "Geographic distribution verification ensures geographic accuracy of ad delivery"
       ],
       "cons": [
@@ -348,7 +348,7 @@
       "title": "Automated Ad Verification Workflow",
       "steps": [
         "Verification configuration: Set ad verification targets and detection parameters",
-        "IP deployment: Select dynamic residential proxy IP pools in target regions",
+        "Proxy deployment: Select dynamic residential proxy Proxy pools in target regions",
         "Simulate access: Simulate real user access behavior through dynamic IPs",
         "Data collection: Collect key data including ad impressions, clicks, conversions",
         "Fraud analysis: Multi-dimensional analysis to detect ad fraud behaviors, generate verification reports"
@@ -361,11 +361,11 @@
       "items": [
         {
           "title": "Why does ad verification need dynamic residential proxies?",
-          "description": "Dynamic residential proxies can simulate real user access behavior, ensuring accuracy of ad verification through geographically distributed IP addresses, effectively detecting ad fraud and fake traffic."
+          "description": "Dynamic residential proxies can simulate real user access behavior, ensuring accuracy of ad verification through geographically distributed Proxy addresses, effectively detecting ad fraud and fake traffic."
         },
         {
           "title": "How do dynamic residential proxies detect ad fraud?",
-          "description": "Through smart IP rotation and real user behavior simulation, dynamic residential proxies can identify abnormal behaviors like click farms and bot traffic, protecting advertisers' investment security."
+          "description": "Through smart Proxy rotation and real user behavior simulation, dynamic residential proxies can identify abnormal behaviors like click farms and bot traffic, protecting advertisers' investment security."
         },
         {
           "title": "Which ad platforms are supported for verification?",
