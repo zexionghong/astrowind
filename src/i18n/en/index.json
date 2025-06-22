@@ -7,8 +7,8 @@
     "hero": {
       "primaryAction": "Get Started",
       "secondaryAction": "Learn More",
-      "title": "Premium Proxy Proxy Service | Global Static Residential Proxies",
-      "subtitle": "<span class=\"text-lg sm:text-xl\"><span class=\"font-semibold\">IPFlex</span> provides enterprise-grade proxy solutions covering 200+ countries with premium static residential IPs and datacenter dynamic Proxy pools. Supporting data collection, social media management, ad verification, and cross-border e-commerce with 99.9% uptime guarantee.</span>"
+      "title": "Premium Proxy Service | Global Static Residential Proxies",
+      "subtitle": "<span class=\"text-lg sm:text-xl\"><span class=\"font-semibold\">IPFlex</span> provides enterprise-grade proxy solutions covering 200+ countries with premium static residential proxies and datacenter dynamic proxies pools. Supporting data collection, social media management, ad verification, and cross-border e-commerce with 99.9% uptime guarantee.</span>"
     },
     "content": {
         "residentialProxyTitle": "Residential Proxy Services",
@@ -17,7 +17,7 @@
         "title": "Static Residential Proxy",
         "description": "Enterprise-Grade Static Residential Proxy Solutions",
         "descriptionList": [
-          "A proxy service based on real residential networks, providing fixed Proxy addresses that remain unchanged for long periods.",
+          "A proxy service based on real residential networks, providing fixed proxy addresses that remain unchanged for long periods.",
           "With high anonymity and credibility, it effectively avoids being identified as a proxy or being blocked,",
           "suitable for cross-border e-commerce, market research, social media marketing, brand protection, and various other business scenarios."
         ],
@@ -33,9 +33,9 @@
         "title": "Dynamic Residential Proxy",
         "description": "",
         "descriptionList": [
-          "A proxy service based on a constantly changing Proxy address pool, providing Proxy addresses that change frequently within short periods.",
-          "This service offers high flexibility and extensive Proxy coverage, effectively avoiding Proxy bans and restrictions,",
-          "suitable for scenarios requiring frequent Proxy changes such as web crawling, data scraping, ad verification, and automated testing."
+          "A proxy service based on a constantly changing proxy address pool, providing proxy addresses that change frequently within short periods.",
+          "This service offers high flexibility and extensive proxy coverage, effectively avoiding proxy bans and restrictions,",
+          "suitable for scenarios requiring frequent proxy changes such as web crawling, data scraping, ad verification, and automated testing."
         ],
         "items": [
           {"title":"Real Short-term Residential Proxy","bg":"~/assets/images/proxy_content/dy/1.png"},
@@ -48,8 +48,8 @@
         "title": "Static Data Center Proxy",
         "description": "",
         "descriptionList": [
-          "A proxy service based on data center networks, providing fixed Proxy addresses that remain unchanged for long periods.",
-          "This proxy service delivers IPs through data center servers, typically offering high speed and stability, with advantages in cost and performance.",
+          "A proxy service based on data center networks, providing fixed proxy addresses that remain unchanged for long periods.",
+          "This proxy service delivers proxies through data center servers, typically offering high speed and stability, with advantages in cost and performance.",
           "Particularly suitable for business scenarios requiring fast, large-scale data scraping and access, such as website testing, data analysis, SEO monitoring, and online ad verification."
         ],  
         "items": [
@@ -66,18 +66,18 @@
       "stepPrefix1": "Register Account",
       "stepPrefix2": "Choose Plan",
       "stepPrefix3": "Start Using",
-      "stepPrefix1Description": "Register an account on IPFlex website and start your Proxy proxy service journey.",
-      "stepPrefix2Description": "Select the suitable Proxy proxy plan based on your business requirements.",
-      "stepPrefix3Description": "Configure your Proxy proxy service and start using our efficient and stable proxy service.",
+      "stepPrefix1Description": "Register an account on IPFlex website and start your proxy service journey.",
+      "stepPrefix2Description": "Select the suitable proxy plan based on your business requirements.",
+      "stepPrefix3Description": "Configure your proxy service and start using our efficient and stable proxy service.",
       "completedText": "Done!"
     },
     "features": {
       "title": "IPFlex Advantages",
-      "subtitle": "We provide the most professional and comprehensive Proxy proxy services in the market.",
+      "subtitle": "We provide the most professional and comprehensive proxy proxy services in the market.",
       "items": [
         {
           "title": "Global Proxy Resource Pool",
-          "description": "IPFlex has a globally extensive Proxy resource pool covering multiple countries and regions, providing diverse Proxy address options to unlock your borderless network experience.",
+          "description": "IPFlex has a globally extensive proxy resource pool covering multiple countries and regions, providing diverse Proxy address options to unlock your borderless network experience.",
           "icon": "tabler:world",
           "image": "~/assets/images/features/1.png"
         },
@@ -89,7 +89,7 @@
         },
         {
           "title": "Diverse Proxy Types",
-          "description": "IPFlex offers diverse Proxy type options, including residential proxies, data center proxies, static proxies, and dynamic proxies, to meet different business scenario needs and make your operations more efficient.",
+          "description": "IPFlex offers diverse proxy type options, including residential proxies, data center proxies, static proxies, and dynamic proxies, to meet different business scenario needs and make your operations more efficient.",
           "icon": "tabler:list-details",
           "image": "~/assets/images/features/3.png"
         },
@@ -134,8 +134,8 @@
       ]
     },
     "callToAction": {
-      "title": "Professional Proxy Proxy Service",
-      "subtitle1": "Experience IPFlex's efficient and stable Proxy proxy service now.",
+      "title": "Professional Proxy Service",
+      "subtitle1": "Experience IPFlex's efficient and stable proxy service now.",
       "subtitle2": "Don't hesitate, take action now!",
       "primaryAction": "Get Service"
     },
@@ -163,7 +163,7 @@
         },
         {
           "title": "Social Media Expansion",
-          "description": "Worry-free multi-account operation, switch identities through proxy IPs, batch operate likes, comments, shares, safely increase brand exposure, efficiently attract target audiences, and ignite social media buzz.",
+          "description": "Worry-free multi-account operation, switch identities through proxies, batch operate likes, comments, shares, safely increase brand exposure, efficiently attract target audiences, and ignite social media buzz.",
           "icon": "tabler:share",
           "backgroundImage": "~/assets/images/usage/4.png"
         },
@@ -205,32 +205,32 @@
       "subtitle": "Learn about IPFlex's powerful features and how to enhance your business.",
       "items": [
         {
-          "title": "How do proxy IPs work?",
-          "description": "Proxy IPs act as intermediary servers that hide your real Proxy address, helping you access geo-restricted content while providing additional security and anonymity protection."
+          "title": "How do proxy proxies work?",
+          "description": "Proxies act as intermediary servers that hide your real Proxy address, helping you access geo-restricted content while providing additional security and anonymity protection."
         },
         {
-          "title": "What's the difference between static residential IPs and dynamic IPs?",
-          "description": "Static residential IPs are fixed, real residential addresses ideal for businesses requiring stable IPs, while dynamic IPs automatically rotate periodically, perfect for data collection tasks requiring frequent Proxy changes."
+          "title": "What's the difference between static residential IPs and dynamic proxies?",
+          "description": "Static residential proxies are fixed, real residential addresses ideal for businesses requiring stable proxies, while dynamic proxies automatically rotate periodically, perfect for data collection tasks requiring frequent proxy changes."
         },
         {
           "title": "How is IPFlex's proxy Proxy service priced?",
           "description": "We offer flexible billing plans, including traffic-based and Proxy quantity-based options. You can choose the most suitable package for your business needs, and we also provide customized enterprise solutions."
         },
         {
-          "title": "How to choose the right proxy Proxy type?",
-          "description": "Choosing the right proxy Proxy type depends on your specific use case. Dynamic IPs are recommended for data collection, static residential IPs for cross-border e-commerce, and dedicated datacenter IPs for enterprise applications."
+          "title": "How to choose the right proxy type?",
+          "description": "Choosing the right proxy type depends on your specific use case. Dynamic proxies are recommended for data collection, static residential proxies for cross-border e-commerce, and dedicated datacenter proxies for enterprise applications."
         },
         {
-          "title": "What regions does IPFlex's Proxy pool cover?",
-          "description": "Our Proxy resource pool covers 200+ countries and regions worldwide, supporting city-level geographic targeting to meet your global business needs."
+          "title": "What regions does IPFlex's proxy pool cover?",
+          "description": "Our proxy resource pool covers 200+ countries and regions worldwide, supporting city-level geographic targeting to meet your global business needs."
         },
         {
-          "title": "What about proxy Proxy bandwidth and speed?",
+          "title": "What about proxy bandwidth and speed?",
           "description": "IPFlex provides high-speed, stable proxy services using advanced load balancing technology, ensuring low latency and high bandwidth with unlimited traffic usage."
         },
         {
-          "title": "How do you ensure proxy Proxy stability?",
-          "description": "We employ multiple backup mechanisms and intelligent monitoring systems to track Proxy status in real-time, ensuring 99.9% availability with automatic failover capabilities."
+          "title": "How do you ensure proxy stability?",
+          "description": "We employ multiple backup mechanisms and intelligent monitoring systems to track proxy status in real-time, ensuring 99.9% availability with automatic failover capabilities."
         },
         {
           "title": "Do you support API integration?",
