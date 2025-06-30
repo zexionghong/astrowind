@@ -1,6 +1,6 @@
 {
-  "moreCasesTitle": "More Static Residential Proxy Use Cases",
-  "moreCases": [
+  "staticResidentialmoreCasesTitle": "More Static Residential Proxy Use Cases",
+  "staticResidentialMoreCases": [
     {
       "title": "Ad Verification",
       "description": "Real user simulation, precise ad fraud prevention",

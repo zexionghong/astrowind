@@ -1,6 +1,6 @@
 {
-  "moreCasesTitle": "More Static Datacenter Proxy Use Cases",
-  "moreCases": [
+  "datacenterMoreCasesTitle": "More Static Datacenter Proxy Use Cases",
+  "datacenterMoreCases": [
     {
       "title": "API Interface Calls",
       "description": "High-frequency calls, stable and reliable",

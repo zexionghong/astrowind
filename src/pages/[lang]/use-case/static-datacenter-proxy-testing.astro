@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 
 const { lang } = Astro.params;
 const t = useTranslations(lang);
-const cases = t('moreCases');
+const cases = t('datacenterMoreCases');
 
 ---
 
@@ -125,7 +125,7 @@ const cases = t('moreCases');
   />
 
   <section class="max-w-5xl mx-auto py-10">
-    <h2 class="text-2xl font-semibold mb-4">{t('moreCasesTitle') || '更多静态数据中心代理应用场景'}</h2>
+    <h2 class="text-2xl font-semibold mb-4">{t('datacenterMoreCasesTitle') || '更多静态数据中心代理应用场景'}</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
       {cases.map((x) => (
         <a href={x.url} class="block p-4 rounded-lg border-2 border-[#3B82F6] bg-blue-50 text-[#1E40AF] font-semibold cursor-pointer">

@@ -1,6 +1,6 @@
 {
-  "moreCasesTitle": "更多静态数据中心代理应用场景",
-  "moreCases": [
+  "datacenterMoreCasesTitle": "更多静态数据中心代理应用场景",
+  "datacenterMoreCases": [
     {
       "title": "API接口调用",
       "description": "高频调用，稳定可靠",

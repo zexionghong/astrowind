@@ -1,6 +1,6 @@
 {
-  "moreCasesTitle": "More Dynamic Residential Proxy Use Cases",
-  "moreCases": [
+  "dynamicResidentialMoreCasesTitle": "More Dynamic Residential Proxy Use Cases",
+  "dynamicResidentialMoreCases": [
     {
       "title": "Large-Scale Data Collection",
       "description": "Smart Proxy rotation, break through access restrictions",
