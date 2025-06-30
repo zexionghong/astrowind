@@ -10,7 +10,7 @@
         "image": "~/assets/images/scenarios/1.png",
         "color": "blue",
         "url": "/en/use-case/static-residential-proxy-ad-verification",
-        "description": "Relying on residential proxies and global Proxy resources, advertisers can truly simulate user access, accurately complete ad verification, effectively prevent ad fraud, and improve ad ROI. IPFlex provides ad verification, anti-fraud and other compliance testing services for 50+ enterprises daily.",
+        "description": "Relying on residential proxies and global proxy resources, advertisers can truly simulate user access, accurately complete ad verification, effectively prevent ad fraud, and improve ad ROI. IPFlex provides ad verification, anti-fraud and other compliance testing services for 50+ enterprises daily.",
         "benefits": [
           "Real user simulation for accurate ad placement verification",
           "Prevent ad fraud and protect advertising ROI",
@@ -36,7 +36,7 @@
         "image": "~/assets/images/scenarios/3.png",
         "color": "purple",
         "url": "/en/use-case/static-residential-proxy-ecommerce",
-        "description": "Provide long-term stable residential IPs for cross-border e-commerce sellers, reduce account ban risk, support Amazon, eBay, Shopee and other multi-platform account maintenance and batch management, account security rate up to 99.9%.",
+        "description": "Provide long-term stable residential proxies for cross-border e-commerce sellers, reduce account ban risk, support Amazon, eBay, Shopee and other multi-platform account maintenance and batch management, account security rate up to 99.9%.",
         "benefits": [
           "Reduce account ban risk, ensure business continuity",
           "Support multi-platform batch management, improve operational efficiency",
@@ -62,9 +62,9 @@
         "image": "~/assets/images/scenarios/5.png",
         "color": "emerald",
         "url": "/en/use-case/dynamic-residential-proxy-data-collection",
-        "description": "Use dynamic Proxy rotation technology to break through website access restrictions and achieve efficient large-scale data collection. Support e-commerce price monitoring, social media data scraping, news content collection and other scenarios, processing over 50 million requests daily.",
+        "description": "Use dynamic proxy rotation technology to break through website access restrictions and achieve efficient large-scale data collection. Support e-commerce price monitoring, social media data scraping, news content collection and other scenarios, processing over 50 million requests daily.",
         "benefits": [
-          "Smart Proxy rotation, effectively avoid anti-bot detection",
+          "Smart proxy rotation, effectively avoid anti-bot detection",
           "High concurrency processing, handle over 50M requests daily",
           "Global geographic coverage, meet cross-border data collection needs"
         ]
@@ -88,7 +88,7 @@
         "image": "~/assets/images/scenarios/7.png",
         "color": "violet",
         "url": "/en/use-case/dynamic-residential-proxy-privacy",
-        "description": "Protect user real identity through dynamic Proxy rotation, achieve anonymous browsing and privacy protection. Suitable for sensitive information queries, geo-restricted content access, network security research and other scenarios.",
+        "description": "Protect user real identity through dynamic proxy rotation, achieve anonymous browsing and privacy protection. Suitable for sensitive information queries, geo-restricted content access, network security research and other scenarios.",
         "benefits": [
           "Real identity protection, effectively hide user information",
           "Geo-restriction breakthrough, access global internet resources",
@@ -101,7 +101,7 @@
         "image": "~/assets/images/scenarios/8.png",
         "color": "orange",
         "url": "/en/use-case/dynamic-residential-proxy-ad-verification",
-        "description": "Simulate real user behavior for ad verification, detect ad fraud and click farms. Through geographically distributed dynamic IPs, ensure the authenticity and accuracy of ad placement effects.",
+        "description": "Simulate real user behavior for ad verification, detect ad fraud and click farms. Through geographically distributed dynamic proxies, ensure the authenticity and accuracy of ad placement effects.",
         "benefits": [
           "Simulate real users, detect ad fraud behavior",
           "Geographic distribution verification, ensure placement effect authenticity",

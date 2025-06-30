@@ -73,19 +73,19 @@
       "items": [
         {
           "title": "What is a datacenter proxy?",
-          "description": "A datacenter proxy is a proxy service based on datacenter servers, using Proxy addresses allocated by data centers. Compared to residential proxies, datacenter proxies have higher speed, larger bandwidth, and lower cost, suitable for application scenarios with high performance requirements."
+          "description": "A datacenter proxy is a proxy service based on datacenter servers, using proxy addresses allocated by data centers. Compared to residential proxies, datacenter proxies have higher speed, larger bandwidth, and lower cost, suitable for application scenarios with high performance requirements."
         },
         {
           "title": "What's the difference between datacenter and residential proxies?",
-          "description": "Datacenter proxies are based on server Proxy with fast speed, large bandwidth, and low cost, but may be more easily identified; residential proxies are based on real user Proxy with higher anonymity but relatively slower speed and higher cost. The choice depends on your specific needs."
+          "description": "Datacenter proxies are based on server proxy with fast speed, large bandwidth, and low cost, but may be more easily identified; residential proxies are based on real user Proxy with higher anonymity but relatively slower speed and higher cost. The choice depends on your specific needs."
         },
         {
           "title": "How fast are datacenter proxies?",
-          "description": "IPFlex datacenter proxies have an average latency below 100 milliseconds, with single Proxy bandwidth up to 10Gbps. Based on global top-tier datacenter infrastructure, ensuring ultra-fast network access experience, especially suitable for applications with extremely high speed requirements."
+          "description": "IPFlex datacenter proxies have an average latency below 100 milliseconds, with single proxy bandwidth up to 10Gbps. Based on global top-tier datacenter infrastructure, ensuring ultra-fast network access experience, especially suitable for applications with extremely high speed requirements."
         },
         {
           "title": "Which protocols and ports are supported?",
-          "description": "IPFlex datacenter proxies support HTTP, HTTPS, and SOCKS5 protocols, providing multiple port options. Support username/password authentication and Proxy whitelist authentication, meeting different application access needs."
+          "description": "IPFlex datacenter proxies support HTTP, HTTPS, and SOCKS5 protocols, providing multiple port options. Support username/password authentication and proxy whitelist authentication, meeting different application access needs."
         },
         {
           "title": "How stable are datacenter proxies?",
@@ -99,12 +99,12 @@
     },
     "deductionMethods": {
       "title": "Billing Methods Comparison",
-      "subtitle": "IPFlex datacenter proxies support two flexible billing methods: [By Traffic] and [By Number of Proxy], meeting different scales of business needs.",
+      "subtitle": "IPFlex datacenter proxies support two adaptable billing options: [By Traffic] and [By Number of Proxy], meeting different scales of business needs.",
       "methods": [
         {
-          "type": "By Traffic Billing",
+          "type": "Charged By Traffic",
           "key": "traffic",
-          "title": "By Traffic Billing",
+          "title": "Charged By Traffic",
           "scenes": [
             "High-concurrency API calls",
             "Large file transfer and download",
@@ -116,13 +116,13 @@
             "Supports burst traffic processing"
           ],
           "pricing": [
-            "Priced by traffic usage, ￥10/GB"
+            "Charged by traffic usage, ￥10/GB"
           ]
         },
         {
-          "type": "By Number of Proxy Billing",
+          "type": "Charged By IP",
           "key": "ip",
-          "title": "By Number of Proxy Billing",
+          "title": "Charged By IP",
           "scenes": [
             "Automated testing environment",
             "Long-term stable API services",
@@ -134,7 +134,7 @@
             "Supports long-term monthly discounts"
           ],
           "pricing": [
-            "Priced by number of Proxy, starting from ￥2/Proxy/day"
+            "Charged by IP, starting from ￥2/IP/day"
           ]
         }
       ],

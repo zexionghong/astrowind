@@ -20,7 +20,7 @@
     },
     "stats": {
       "title": "Global Dynamic Proxy Resource Pool",
-      "subtitle": "IPFlex has over 1.75 million dynamic residential Proxy providing powerful support for your business",
+      "subtitle": "IPFlex has over 1.75 million dynamic residential proxy providing powerful support for your business",
       "items": [
         { "amount": "40M+", "title": "Dynamic Proxy Pool Size" },
         { "amount": "200+", "title": "Countries/Regions Covered" },
@@ -39,7 +39,7 @@
         { "title": "Smart Rotation", "description": "AI-based intelligent proxy rotation that automatically adjusts strategies based on target website characteristics to maximize success rates." },
         { "title": "Session Persistence", "description": "Supports session persistence to ensure the same proxy is used within a session, suitable for applications requiring session consistency." },
         { "title": "Global Coverage", "description": "Residential proxy resources covering 200+ countries and regions, supporting precise city-level geolocation." },
-        { "title": "Cost-Effective", "description": "Pay-as-you-go model supporting billing by traffic and request count, flexible cost control." }
+        { "title": "Cost-Effective", "description": "Pay-as-you-go: Charges apply based on data traffic volume and request counts, enabling granular cost control." }
       ]
     },
     "useCases": {
@@ -63,49 +63,49 @@
         {
           "title": "Ad Verification & Anti-Fraud",
           "url": "/en/use-case/dynamic-residential-proxy-ad-verification",
-          "description": "Simulate real user behavior for ad verification, detecting ad fraud and click farms. Through geographically distributed dynamic Proxy, ensure the authenticity and accuracy of advertising effectiveness."
+          "description": "Simulate real user behavior for ad verification, detecting ad fraud and click farms. Through geographically distributed dynamic proxy, ensure the authenticity and accuracy of advertising effectiveness."
         }
       ]
     },
     "faqs": {
       "title": "Dynamic Residential Proxy FAQs",
-      "subtitle": "Answers to common questions about proxy proxy services, residential Proxy, and dynamic proxy rotation",
-      "tagline": "For more questions about proxy proxy services, please contact customer support for professional assistance",
+      "subtitle": "Answers to common questions about proxy services, residential proxy, and dynamic proxy rotation",
+      "tagline": "For more questions about proxy services, please contact customer support for professional assistance",
       "items": [
         {
           "title": "What is a dynamic residential proxy?",
-          "description": "A dynamic residential proxy is a high-anonymity Proxy proxy service based on real residential Proxy, supporting automatic Proxy rotation. With dynamic residential proxies, users can bypass website restrictions and improve the success rate of data collection and web scraping. They are widely used for large-scale data collection, anonymous browsing, ad verification, and more."
+          "description": "A dynamic residential proxy is a high-anonymity proxy service based on real residential proxy, supporting automatic proxy rotation. With dynamic residential proxies, users can bypass website restrictions and improve the success rate of data collection and web scraping. They are widely used for large-scale data collection, anonymous browsing, ad verification, and more."
         },
         {
           "title": "What rotation strategies are available for dynamic residential proxies?",
-          "description": "IPFlex dynamic residential proxies support multiple Proxy rotation strategies, including automatic rotation at set time intervals, session-based rotation, and smart rotation (which automatically adjusts based on the target website's anti-crawling mechanisms). Users can flexibly configure these options to improve stability and anonymity."
+          "description": "IPFlex dynamic residential proxies support multiple proxy rotation strategies, including automatic rotation at set time intervals, session-based rotation, and smart rotation (which automatically adjusts based on the target website's anti-crawling mechanisms). Users can flexibly configure these options to improve stability and anonymity."
         },
         {
           "title": "What's the difference between dynamic and static residential proxies?",
-          "description": "Dynamic residential proxies automatically rotate residential Proxy and are suitable for scenarios requiring high anonymity and large-scale access. Static residential proxies provide fixed residential Proxy, ideal for use cases that need long-term Proxy stability. The choice depends on your specific needs."
+          "description": "Dynamic residential proxies automatically rotate residential proxy and are suitable for scenarios requiring high anonymity and large-scale access. Static residential proxies provide fixed residential proxy, ideal for use cases that need long-term proxy stability. The choice depends on your specific needs."
         },
         {
-          "title": "How do I set the Proxy rotation frequency?",
+          "title": "How do I set the proxy rotation frequency?",
           "description": "You can customize the rotation frequency for residential proxies, including time-based intervals (1–30 minutes), session-based rotation, or enabling smart rotation mode. Flexible rotation settings help improve the success rate of data collection and web scraping."
         },
         {
           "title": "How reliable and stable are dynamic residential proxies?",
-          "description": "IPFlex dynamic residential proxies use intelligent health checks to monitor Proxy quality in real time and automatically remove problematic Proxy. The average success rate is up to 99.9%. High-quality residential Proxy resources ensure stable and efficient data collection and anonymous access."
+          "description": "IPFlex dynamic residential proxies use intelligent health checks to monitor proxy quality in real time and automatically remove problematic proxy. The average success rate is up to 99.9%. High-quality residential proxy resources ensure stable and efficient data collection and anonymous access."
         },
         {
           "title": "Which protocols and authentication methods are supported?",
-          "description": "IPFlex dynamic residential proxies support HTTP and SOCKS5 protocols, compatible with mainstream proxy software and crawler tools. Authentication methods include username/password and Proxy whitelist, and an API is provided for easy integration into your applications."
+          "description": "IPFlex dynamic residential proxies support HTTP and SOCKS5 protocols, compatible with mainstream proxy software and crawler tools. Authentication methods include username/password and proxy whitelist, and an API is provided for easy integration into your applications."
         }
       ]
     },
     "deductionMethods": {
-      "title": "Billing Methods Comparison",
-      "subtitle": "IPFlex dynamic residential proxies support two flexible billing methods: [By Traffic] and [By Request Count], meeting different scales of data collection needs.",
+      "title": "Billing Comparison",
+      "subtitle": "IPFlex dynamic residential proxies support adaptable billing options: [By Traffic] and [By IP Count], meeting different scales of data collection needs.",
       "methods": [
         {
-          "type": "By Traffic Billing",
+          "type": "Charged By Traffic",
           "key": "traffic",
-          "title": "By Traffic Billing",
+          "title": "Charged By Traffic",
           "scenes": [
             "Large-scale data collection projects",
             "Content aggregation and media monitoring",
@@ -117,13 +117,13 @@
             "Support unlimited concurrent requests"
           ],
           "pricing": [
-            "Priced by actual GB consumption, starting from ￥35/GB"
+            "Priced by actual GB consumption, starting from ￥40/GB"
           ]
         },
         {
-          "type": "By Number of Proxy Billing",
+          "type": "Charged By IP",
           "key": "ip",
-          "title": "By Number of Proxy Billing",
+          "title": "Charged By IP",
           "scenes": [
             "API data collection",
             "Scheduled monitoring tasks",

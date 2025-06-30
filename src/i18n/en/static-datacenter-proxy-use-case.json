@@ -207,7 +207,7 @@
       "title": "Static Datacenter Proxy for Batch Data Processing",
       "subtitle": "How enterprises leverage high bandwidth, low latency datacenter proxies to achieve efficient batch data processing",
       "features": [
-        "High bandwidth support with single IP bandwidth up to 10Gbps meeting large traffic demands",
+        "High bandwidth support with single proxy bandwidth up to 10Gbps meeting large traffic demands",
         "Ultra-low latency with average latency below 100ms ensuring processing efficiency",
         "Supports data import/export, file transfer, database synchronization scenarios",
         "Enterprise-grade stability with 99.9% uptime guarantee"

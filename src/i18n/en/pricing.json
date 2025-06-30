@@ -10,11 +10,11 @@
     "plans": {
       "static": {
         "title": "Static Residential Proxy",
-        "subtitle": "Stable and reliable long-term residential IPs",
+        "subtitle": "Stable and reliable long-term residential proxies",
         "price": "40",
         "period": "/GB",
         "features": [
-          "Real long-term residential IPs",
+          "Real long-term residential proxies",
           "99.9% uptime guarantee",
           "Precise city targeting",
           "HTTP & Socks5 protocol support",
@@ -24,12 +24,12 @@
       },
       "dynamic": {
         "title": "Dynamic Residential Proxy",
-        "subtitle": "Massive real residential Proxy resources",
+        "subtitle": "Massive real residential proxy resources",
         "price": "2",
         "period": "/IP",
         "features": [
-          "Real short-term residential IPs",
-          "10M+ daily active IPs",
+          "Real short-term residential proxies",
+          "10M+ daily active proxies",
           "City-level targeting",
           "HTTP & Socks5 protocol support",
           "￥40/GB"
@@ -39,11 +39,11 @@
       },
       "datacenter": {
         "title": "Static Datacenter Proxy",
-        "subtitle": "Cost-effective datacenter IPs",
+        "subtitle": "Cost-effective datacenter proxies",
         "price": "10",
         "period": "/GB",
         "features": [
-          "Long-term datacenter IPs",
+          "Long-term datacenter proxies",
           "Unlimited traffic with daily purchase",
           "City-level targeting",
           "HTTP & Socks5 protocol support",
