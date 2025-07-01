@@ -1,14 +1,29 @@
 User-agent: *
 Allow: /
+
+# 优化爬取频率
+Crawl-delay: 1
+
+# 禁止访问的目录
 Disallow: /api/
 Disallow: /admin/
 Disallow: /dashboard/
+Disallow: /_astro/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /src/
+Disallow: /vendor/
 
-# Sitemap
+# 允许访问重要资源
+Allow: /_astro/*.css
+Allow: /_astro/*.js
+Allow: /_astro/*.webp
+Allow: /_astro/*.jpg
+Allow: /_astro/*.png
+
+# Sitemap位置
 Sitemap: https://ipflex.ink/sitemap-index.xml
+Sitemap: https://ipflex.ink/rss.xml
 
-# Crawl-delay
-Crawl-delay: 10
-
-# Host
+# 指定主域名
 Host: https://ipflex.ink

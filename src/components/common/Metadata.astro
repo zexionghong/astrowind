@@ -5,7 +5,7 @@ import { AstroSeo } from '@astrolib/seo';
 import type { Props as AstroSeoProps } from '@astrolib/seo';
 
 import { SITE, METADATA, I18N } from 'astrowind:config';
-import type { MetaData, MetaDataOpenGraph, MetaDataTwitter, MetaDataRobots } from '~/types';
+import type { MetaData } from '~/types';
 import { getCanonical } from '~/utils/permalinks';
 
 import { adaptOpenGraphImages } from '~/utils/images';
@@ -14,10 +14,32 @@ export interface Props {
   title?: string;
   ignoreTitleTemplate?: boolean;
   canonical?: string;
-  robots?: MetaDataRobots;
+  robots?: {
+    index?: boolean;
+    follow?: boolean;
+  };
   description?: string;
-  openGraph?: MetaDataOpenGraph;
-  twitter?: MetaDataTwitter;
+  openGraph?: {
+    title?: string;
+    description?: string;
+    url?: string;
+    type?: string;
+    image?: string;
+    site_name?: string;
+    images?: Array<{
+      url: string;
+      width?: number;
+      height?: number;
+    }>;
+  };
+  twitter?: {
+    card?: string;
+    site?: string;
+    creator?: string;
+    title?: string;
+    description?: string;
+    image?: string;
+  };
   dontUseTitleTemplate?: boolean;
 }
 
@@ -30,6 +52,14 @@ const {
   openGraph = {},
   twitter = {},
 } = Astro.props;
+
+// 获取当前语言和生成hreflang URLs
+const { lang = 'zh' } = Astro.params;
+const currentPath = Astro.url.pathname;
+const alternateUrls = {
+  'zh': currentPath.replace('/en/', '/zh/').replace(/^\/en$/, '/zh').replace(/^\/en\//, '/zh/'),
+  'en': currentPath.replace('/zh/', '/en/').replace(/^\/zh$/, '/en').replace(/^\/zh\//, '/en/')
+};
 
 const seoProps: AstroSeoProps = merge(
   {
@@ -166,11 +196,25 @@ const productStructuredData = {
 
 <AstroSeo {...{ ...seoProps, openGraph: await adaptOpenGraphImages(seoProps?.openGraph, Astro.site) }} />
 
-<!-- 添加缓存控制标签 -->
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-<meta http-equiv="Pragma" content="no-cache" />
-<meta http-equiv="Expires" content="0" />
+<!-- 添加hreflang多语言支持 -->
+<link rel="alternate" hreflang="zh" href={`${SITE.site}${alternateUrls.zh}`} />
+<link rel="alternate" hreflang="en" href={`${SITE.site}${alternateUrls.en}`} />
+<link rel="alternate" hreflang="x-default" href={`${SITE.site}${alternateUrls.zh}`} />
+
+<!-- 优化缓存控制策略 -->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 <meta name="baidu-site-verification" content="codeva-Jb90hwYhf4" />
+
+<!-- 添加更多SEO meta标签 -->
+<meta name="theme-color" content="#0ea5e9" />
+<meta name="msapplication-TileColor" content="#0ea5e9" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+<!-- 预加载关键资源 -->
+<link rel="preload" href="/@fontsource-variable/inter/index.css" as="style" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
 <script type="application/ld+json" set:html={JSON.stringify(mainStructuredData)} />
 <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />

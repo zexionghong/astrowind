@@ -1,5 +1,5 @@
 ---
-import type { HTMLAttributes } from 'astro/types';
+// import type { HTMLAttributes } from 'astro/types';
 import { findImage } from '~/utils/images';
 import {
   getImagesOptimized,
@@ -20,8 +20,8 @@ const { lang = 'zh' } = Astro.params;
 
 // 如果没有提供alt属性，则添加默认的alt文本
 if (props.alt === undefined || props.alt === null) {
-  props.alt = lang === 'zh' 
-    ? 'IPFlex代理IP服务 - 全球优质IP代理资源提供商' 
+  props.alt = lang === 'zh'
+    ? 'IPFlex代理IP服务 - 全球优质IP代理资源提供商'
     : 'IPFlex Proxy IP Service - Global Quality IP Resource Provider';
 }
 
@@ -33,12 +33,27 @@ if (typeof props.height === 'string') {
   props.height = parseInt(props.height);
 }
 
-if (!props.loading) {
-  props.loading = 'lazy';
+// 优化图片加载策略
+const isAboveFold = props.fetchpriority === 'high' || props.loading === 'eager';
+if (isAboveFold) {
+  props.fetchpriority = 'high';
+  props.loading = 'eager';
+} else {
+  if (!props.loading) {
+    props.loading = 'lazy';
+  }
+  if (!props.fetchpriority) {
+    props.fetchpriority = 'auto';
+  }
 }
 
 if (!props.decoding) {
   props.decoding = 'async';
+}
+
+// 优先使用WebP格式（如果没有指定格式）
+if (!props.format && typeof props.src === 'string' && !props.src.includes('.svg')) {
+  props.format = 'webp';
 }
 
 const _image = await findImage(props.src);
@@ -60,6 +75,12 @@ if (
   !image ? (
     <Fragment />
   ) : (
-    <img src={image.src} crossorigin="anonymous" referrerpolicy="no-referrer" {...image.attributes} />
+    <img
+      src={image.src}
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+      fetchpriority={props.fetchpriority}
+      {...image.attributes}
+    />
   )
 }
