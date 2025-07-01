@@ -161,8 +161,8 @@ export const getFooterData = (lang: string = 'zh') => ({
   ],
   socialLinks: [
     { ariaLabel: 'X', icon: 'tabler:brand-x', href: 'https://x.com/IPFlexSupport' },
-    { ariaLabel: 'Telegram', icon: 'tabler:brand-telegram', href: '#' },
-    { ariaLabel: 'Discord', icon: 'tabler:brand-discord', href: '#' },
+    { ariaLabel: 'Telegram', icon: 'tabler:brand-telegram', href: 'https://t.me/IPFlexProxy' },
+    // { ariaLabel: 'Discord', icon: 'tabler:brand-discord', href: '#' },
   ],
   footNote: `
     ${new Date().getFullYear()} ${SITE.name}. ${lang === 'zh' ? '版权所有' : 'All rights reserved'}.
