@@ -6,7 +6,7 @@ tags: [代理IP, 数据安全, 企业防护, 匿名访问, 安全合规]
 publishDate: 2025-05-22
 author: "IPFelx"
 language: "zh"
-image: "https://oss.ipflex.ink/imgs/flux/b97125f6260ceb738e02e955968de400.jpg"
+
 ---
 
 ## 数据安全必备！企业级匿名代理IP如何成为企业数据泄露的"防火墙"？

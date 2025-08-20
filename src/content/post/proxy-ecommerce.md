@@ -6,7 +6,7 @@ tags: [代理IP, 跨境电商, 多账号管理, 价格监控, 业务优化]
 publishDate: 2025-04-24
 author: "IPFelx"
 language: "zh"
-image: "https://oss.ipflex.ink/imgs/flux/09663cd7862f024cbdff8373af26a921.jpg"
+
 ---
 
 ## 代理IP在跨境电商中的实战应用

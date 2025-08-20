@@ -6,7 +6,7 @@ tags: [代理IP, 网络技术, 数据采集, 跨境电商, 网络安全]
 publishDate: 2025-04-20
 author: "IPFelx"
 language: "zh"
-image: "https://oss.ipflex.ink/imgs/flux/9875fa1cd1f56e222f7e1a965089f217.jpg"
+
 ---
 
 ## 代理IP类型全解析：数据中心代理 vs 住宅代理 vs 移动代理，如何选择最适合你的方案？

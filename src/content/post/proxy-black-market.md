@@ -6,7 +6,7 @@ tags: [代理IP, 安全购买, 防骗指南, 黑市揭秘, 网络安全]
 publishDate: 2025-04-20
 author: "IPFelx"
 language: "zh"
-image: "https://oss.ipflex.ink/imgs/flux/a24f7936904040d058da6dffdba92ba3.jpg"
+
 ---
 
 ## 解密代理IP黑市：如何避免买到"假货"？

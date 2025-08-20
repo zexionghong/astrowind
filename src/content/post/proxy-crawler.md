@@ -6,7 +6,7 @@ tags: [代理IP, 爬虫技术, 反爬虫, 数据采集, 技术指南]
 publishDate: 2025-04-23
 author: "IPFelx"
 language: "zh"
-image: "https://oss.ipflex.ink/imgs/flux/f2576573f5d7d9bdf6af8f551c845a0a.jpg"
+
 ---
 
 ## 代理IP与爬虫：如何避免被封IP？
