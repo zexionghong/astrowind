@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:ipflex.ink)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
