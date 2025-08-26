@@ -27,3 +27,39 @@ Sitemap: https://ipflex.ink/rss.xml
 
 # 指定主域名
 Host: https://ipflex.ink
+
+# 清理缓存指令
+Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content
+
+# 特殊爬虫规则
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot  
+Allow: /
+Crawl-delay: 1
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+# 社交媒体爬虫
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# SEO工具爬虫
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Disallow: /

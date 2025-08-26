@@ -1,0 +1,88 @@
+---
+// 页面级别的SEO优化组件
+import { generateBreadcrumbSchema, generateArticleSchema, generateProductSchema } from '~/utils/seo-optimization';
+
+interface Props {
+  type?: 'article' | 'product' | 'page';
+  breadcrumbs?: Array<{ name: string; url: string }>;
+  article?: {
+    title: string;
+    description: string;
+    author: string;
+    publishDate: Date;
+    modifiedDate?: Date;
+    image?: string;
+    url: string;
+  };
+  product?: {
+    name: string;
+    description: string;
+    image?: string;
+    price?: { min: number; max: number; currency: string };
+  };
+}
+
+const { 
+  type = 'page',
+  breadcrumbs = [],
+  article,
+  product
+} = Astro.props;
+
+// 生成面包屑结构化数据
+const breadcrumbSchema = breadcrumbs.length > 0 ? generateBreadcrumbSchema(breadcrumbs) : null;
+
+// 生成文章结构化数据
+const articleSchema = type === 'article' && article ? generateArticleSchema(article) : null;
+
+// 生成产品结构化数据  
+const productSchema = type === 'product' && product ? generateProductSchema(product) : null;
+---
+
+<!-- 面包屑结构化数据 -->
+{breadcrumbSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+)}
+
+<!-- 文章结构化数据 -->
+{articleSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+)}
+
+<!-- 产品结构化数据 -->
+{productSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
+)}
+
+<!-- 页面特定的预加载提示 -->
+{type === 'article' && (
+  <>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+  </>
+)}
+
+{type === 'product' && (
+  <>
+    <link rel="preconnect" href="https://dashboard.ipflex.ink" />
+    <link rel="dns-prefetch" href="https://api.ipflex.ink" />
+  </>
+)}
+
+<!-- 页面特定的meta标签 -->
+{type === 'article' && (
+  <>
+    <meta property="article:publisher" content="IPFlex" />
+    <meta property="article:section" content="Technology" />
+    <meta name="twitter:label1" content="阅读时间" />
+    <meta name="twitter:data1" content="5分钟" />
+  </>
+)}
+
+{type === 'product' && (
+  <>
+    <meta property="product:brand" content="IPFlex" />
+    <meta property="product:availability" content="in stock" />
+    <meta property="product:condition" content="new" />
+  </>
+)}

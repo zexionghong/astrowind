@@ -192,6 +192,72 @@ const productStructuredData = {
     offerCount: '5'
   }
 };
+
+// 添加WebSite结构化数据
+const websiteStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'IPFlex',
+  url: SITE.site,
+  description: description || METADATA?.description,
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: `${SITE.site}/search?q={search_term_string}`,
+    'query-input': 'required name=search_term_string'
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'IPFlex',
+    url: SITE.site
+  }
+};
+
+// 添加Service结构化数据
+const serviceStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'IP代理服务',
+  serviceType: 'Proxy Server Service',
+  provider: {
+    '@type': 'Organization',
+    name: 'IPFlex',
+    url: SITE.site
+  },
+  areaServed: {
+    '@type': 'Place',
+    name: 'Worldwide'
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'IP Proxy Services',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: '静态住宅代理',
+          description: '高质量住宅IP，稳定可靠，适合长期使用'
+        }
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: '动态住宅代理',
+          description: '动态轮换IP，适合大规模数据采集'
+        }
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: '数据中心代理',
+          description: '高速数据中心IP，性价比高'
+        }
+      }
+    ]
+  }
+};
 ---
 
 <AstroSeo {...{ ...seoProps, openGraph: await adaptOpenGraphImages(seoProps?.openGraph, Astro.site) }} />
@@ -203,7 +269,18 @@ const productStructuredData = {
 
 <!-- 优化缓存控制策略 -->
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 <meta name="baidu-site-verification" content="codeva-Jb90hwYhf4" />
+
+<!-- 添加更多搜索引擎优化标签 -->
+<meta name="author" content="IPFlex Team" />
+<meta name="generator" content="Astro" />
+<meta name="rating" content="General" />
+<meta name="distribution" content="Global" />
+<meta name="language" content={lang || 'zh'} />
+<meta name="geo.region" content="Global" />
+<meta name="geo.placename" content="Worldwide" />
 
 <!-- 添加更多SEO meta标签 -->
 <meta name="theme-color" content="#0ea5e9" />
@@ -216,6 +293,14 @@ const productStructuredData = {
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
+<!-- DNS预解析和预连接优化 -->
+<link rel="dns-prefetch" href="https://www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+<link rel="preconnect" href="https://www.google-analytics.com" />
+<link rel="preconnect" href="https://dashboard.ipflex.ink" />
+
 <script type="application/ld+json" set:html={JSON.stringify(mainStructuredData)} />
 <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
 <script type="application/ld+json" set:html={JSON.stringify(productStructuredData)} />
+<script type="application/ld+json" set:html={JSON.stringify(websiteStructuredData)} />
+<script type="application/ld+json" set:html={JSON.stringify(serviceStructuredData)} />
