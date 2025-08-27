@@ -18,7 +18,7 @@ import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehype
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const hasExternalScripts = false;
+const hasExternalScripts = true;
 const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroIntegration)[] = []) =>
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
@@ -70,7 +70,7 @@ export default defineConfig({
     astrowind({
       config: './src/config.yaml',
     }),
-    compressor({ gzip: true, brotli: false })
+    compressor({ gzip: true, brotli: true })
   ],
 
   image: {
@@ -87,6 +87,23 @@ export default defineConfig({
       alias: {
         '~': path.resolve(__dirname, './src'),
       },
+    },
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            vendor: ['lodash.merge'],
+            analytics: ['@astrolib/analytics'],
+          },
+        },
+      },
+      cssCodeSplit: true,
+      minify: 'esbuild',
+      target: 'es2020',
+    },
+    esbuild: {
+      drop: ['console', 'debugger'],
+      legalComments: 'none',
     },
   },
 });

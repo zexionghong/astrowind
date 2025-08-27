@@ -77,9 +77,10 @@ if (!props.decoding) {
   props.decoding = 'async';
 }
 
-// 优先使用WebP格式（如果没有指定格式）
+// 优先使用AVIF格式，回退到WebP（如果没有指定格式）
 if (!props.format && typeof props.src === 'string' && !props.src.includes('.svg')) {
-  props.format = 'webp';
+  // 对于关键图片使用AVIF，其他使用WebP以平衡质量和兼容性
+  props.format = isAboveFold ? 'avif' : 'webp';
 }
 
 const _image = await findImage(props.src);
