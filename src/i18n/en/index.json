@@ -1,14 +1,14 @@
 {
   "index": {
     "metadata": {
-      "title": "【IPFlex's  Official Website】Global Proxy Proxy Provider | IPFlex Enterprise Proxy Solutions",
-      "description": "IPFlex delivers enterprise-grade proxy solutions with 200+ countries coverage, offering premium static residential IPs & dynamic datacenter IPs. Supports web scraping, social media management, ad verification, and cross-border e-commerce."
+      "title": "IPFlex - Premium IP Proxy Service | Residential Proxy | HTTP Proxy | SOCKS5 Proxy",
+      "description": "IPFlex offers enterprise-grade IP proxy services: static residential proxies, dynamic residential proxies, datacenter proxies. Supports HTTP/SOCKS5 protocols, covers 200+ countries, serves web scraping proxy, e-commerce proxy, ad verification proxy scenarios. 99.9% uptime, free trial, 24/7 support. Buy proxy service now!"
     },
     "hero": {
-      "primaryAction": "Get Started",
+      "primaryAction": "Buy Proxy IP",
       "secondaryAction": "Learn More",
-      "title": "Premium Proxy Service | Global Static Residential Proxies",
-      "subtitle": "<span class=\"text-lg sm:text-xl\"><span class=\"font-semibold\">IPFlex</span> provides enterprise-grade proxy solutions covering 200+ countries with premium static residential proxies and datacenter dynamic proxies pools. Supporting data collection, social media management, ad verification, and cross-border e-commerce with 99.9% uptime guarantee.</span>"
+      "title": "Professional IP Proxy Provider | Residential Proxy | HTTP Proxy | SOCKS5 Proxy",
+      "subtitle": "<span class=\"text-lg sm:text-xl\"><span class=\"font-semibold\">IPFlex</span> is the leading IP proxy service provider, offering professional static residential proxies, dynamic residential proxies, and datacenter proxies. Supports HTTP/SOCKS5 protocols, covers 200+ countries, serves web scraping proxy, cross-border e-commerce proxy, ad verification proxy, price monitoring proxy and various application scenarios with 99.9% high availability.</span>"
     },
     "content": {
         "residentialProxyTitle": "Residential Proxy Services",
@@ -22,7 +22,7 @@
           "suitable for cross-border e-commerce, market research, social media marketing, brand protection, and various other business scenarios."
         ],
         "items": [
-          {"title":"Real Long-term Residential Proxy","bg":"~/assets/images/proxy_content/lsp/1.png"},
+          {"title":"Real Long-term Residential IP","bg":"~/assets/images/proxy_content/lsp/1.png"},
           {"title":"99.9% Availability","bg":"~/assets/images/proxy_content/lsp/2.png"},
           {"title":"Precise City Targeting","bg":"~/assets/images/proxy_content/lsp/3.png"},
           {"title":"HTTP, Socks5 Protocol Support","bg":"~/assets/images/proxy_content/lsp/4.png"}
@@ -35,10 +35,10 @@
         "descriptionList": [
           "A proxy service based on a constantly changing proxy address pool, providing proxy addresses that change frequently within short periods.",
           "This service offers high flexibility and extensive proxy coverage, effectively avoiding proxy bans and restrictions,",
-          "suitable for scenarios requiring frequent proxy changes such as web crawling, data scraping, ad verification, and automated testing."
+          "suitable for scenarios requiring frequent proxy changes such as web scraping, data collection, ad verification, and automated testing."
         ],
         "items": [
-          {"title":"Real Short-term Residential Proxy","bg":"~/assets/images/proxy_content/dy/1.png"},
+          {"title":"Real Short-term Residential IP","bg":"~/assets/images/proxy_content/dy/1.png"},
           {"title":"10M+ Daily Active IPs","bg":"~/assets/images/proxy_content/dy/2.png"},
           {"title":"City-level Targeting","bg":"~/assets/images/proxy_content/dy/3.png"},
           {"title":"HTTP, Socks5 Protocol Support","bg":"~/assets/images/proxy_content/dy/4.png"}
@@ -53,7 +53,7 @@
           "Particularly suitable for business scenarios requiring fast, large-scale data scraping and access, such as website testing, data analysis, SEO monitoring, and online ad verification."
         ],  
         "items": [
-          {"title":"Long-term Data Center Proxy","bg":"~/assets/images/proxy_content/dc/1.png"},
+          {"title":"Long-term Data Center IP","bg":"~/assets/images/proxy_content/dc/1.png"},
           {"title":"Precise City Targeting","bg":"~/assets/images/proxy_content/dc/2.png"},
           {"title":"99.9% Availability","bg":"~/assets/images/proxy_content/dc/3.png"},
           {"title":"HTTP, Socks5 Protocol Support","bg":"~/assets/images/proxy_content/dc/4.png"}
@@ -61,7 +61,7 @@
       }
     },
     "steps": {
-      "title": "Quick Start Guide for IPFlex Proxy Service",
+      "title": "Quick Start Guide for IPFlex IP Proxy Service",
       "stepPrefix": "Step",
       "stepPrefix1": "Register Account",
       "stepPrefix2": "Choose Plan",
@@ -72,12 +72,12 @@
       "completedText": "Done!"
     },
     "features": {
-      "title": "IPFlex Advantages",
-      "subtitle": "We provide the most professional and comprehensive proxy proxy services in the market.",
+      "title": "Why Choose IPFlex",
+      "subtitle": "Professional IP proxy service provider, empowering enterprise digital transformation",
       "items": [
         {
-          "title": "Global Proxy Resource Pool",
-          "description": "IPFlex has a globally extensive proxy resource pool covering multiple countries and regions, providing diverse Proxy address options to unlock your borderless network experience.",
+          "title": "Global IP Resource Pool",
+          "description": "IPFlex has a globally extensive IP resource pool covering 200+ countries and regions, providing diverse IP address options to unlock your borderless network experience.",
           "icon": "tabler:world",
           "image": "~/assets/images/features/1.png"
         },
@@ -88,8 +88,8 @@
           "image": "~/assets/images/features/2.png"
         },
         {
-          "title": "Diverse Proxy Types",
-          "description": "IPFlex offers diverse proxy type options, including residential proxies, data center proxies, static proxies, and dynamic proxies, to meet different business scenario needs and make your operations more efficient.",
+          "title": "Diverse IP Types",
+          "description": "IPFlex offers diverse IP type options, including residential proxies, data center proxies, static proxies, and dynamic proxies, to meet different business scenario needs and make your operations more efficient.",
           "icon": "tabler:list-details",
           "image": "~/assets/images/features/3.png"
         },
@@ -134,65 +134,65 @@
       ]
     },
     "callToAction": {
-      "title": "Professional Proxy Service",
-      "subtitle1": "Experience IPFlex's efficient and stable proxy service now.",
+      "title": "IPFlex Professional IP Proxy Service",
+      "subtitle1": "Experience IPFlex's efficient and stable IP proxy service now.",
       "subtitle2": "Don't hesitate, take action now!",
       "primaryAction": "Get Service"
     },
     "features2": {
       "title": "Common Use Cases",
-      "subtitle": "IPFlex's Proxy proxy service is suitable for various business scenarios.",
+      "subtitle": "IPFlex's IP proxy service is suitable for various business scenarios.",
       "items": [
         {
-          "title": "Web Data Collection",
+          "title": "Web Data Scraping Proxy",
           "description": "Easily bypass website restrictions with proxy IPs, navigate through massive web pages, accurately capture text, images, and data, providing strong support for market analysis and competitive research, empowering business decisions.",
           "icon": "tabler:spider",
           "backgroundImage": "~/assets/images/usage/1.png"
         },
         {
-          "title": "E-commerce Operations",
+          "title": "E-commerce Proxy Operations",
           "description": "Real-time collection of e-commerce platform product details, price fluctuations, and sales rankings, helping merchants seize opportunities and optimize product selection and pricing strategies in the competitive e-commerce field.",
           "icon": "tabler:shopping-cart",
           "backgroundImage": "~/assets/images/usage/2.png"
         },
         {
-          "title": "Market Research Insights",
+          "title": "Market Research Proxy",
           "description": "Deep dive into industry data, simulate research across different regions and demographics, precisely analyze market demands and consumer preferences, helping enterprises plan ahead and lead market trends.",
           "icon": "tabler:chart-pie",
           "backgroundImage": "~/assets/images/usage/3.png"
         },
         {
-          "title": "Social Media Expansion",
+          "title": "Social Media Proxy",
           "description": "Worry-free multi-account operation, switch identities through proxies, batch operate likes, comments, shares, safely increase brand exposure, efficiently attract target audiences, and ignite social media buzz.",
           "icon": "tabler:share",
           "backgroundImage": "~/assets/images/usage/4.png"
         },
         {
-          "title": "SEO Strategy Optimization",
+          "title": "SEO Proxy Optimization",
           "description": "Simulate search requests from various locations, accurately monitor website keyword rankings and traffic sources, optimize page content and structure accordingly, making your website stand out in search engines.",
           "icon": "tabler:search",
           "backgroundImage": "~/assets/images/usage/5.png"
         },
         {
-          "title": "Ad Campaign Enhancement",
+          "title": "Ad Verification Proxy",
           "description": "Verify ad placements from multiple regional perspectives, ensure precise targeting, compare effectiveness across different regions, timely adjust placement details, leverage limited budgets for maximum traffic conversion.",
           "icon": "tabler:ad",
           "backgroundImage": "~/assets/images/usage/6.png"
         },
         {
-          "title": "Website Performance Testing",
+          "title": "Website Performance Testing Proxy",
           "description": "Simulate diverse network environments and regional access, comprehensively check website vulnerabilities and loading bottlenecks, ensure smooth access for global users, improve website reliability and user experience.",
           "icon": "tabler:gauge",
           "backgroundImage": "~/assets/images/usage/7.png"
         },
         {
-          "title": "Brand Security Protection",
+          "title": "Brand Protection Proxy",
           "description": "Conceal real IPs, reduce brand network attack risks, monitor counterfeit and infringement information in real-time, defend brand reputation, and solidify market position.",
           "icon": "tabler:shield",
           "backgroundImage": "~/assets/images/usage/8.png"
         },
         {
-          "title": "Public Opinion Tracking",
+          "title": "Public Opinion Tracking Proxy",
           "description": "Real-time collection of public opinion from mainstream media and social platforms, analyze public opinion trends and public sentiment, help enterprises respond quickly, skillfully resolve crises, and maintain brand image.",
           "icon": "tabler:news",
           "backgroundImage": "~/assets/images/usage/9.png"
@@ -205,32 +205,32 @@
       "subtitle": "Learn about IPFlex's powerful features and how to enhance your business.",
       "items": [
         {
-          "title": "How do proxy proxies work?",
-          "description": "Proxies act as intermediary servers that hide your real Proxy address, helping you access geo-restricted content while providing additional security and anonymity protection."
+          "title": "How do IP proxies work?",
+          "description": "IP proxies act as intermediary servers that hide your real IP address, helping you access geo-restricted content while providing additional security and anonymity protection."
         },
         {
           "title": "What's the difference between static residential IPs and dynamic proxies?",
-          "description": "Static residential proxies are fixed, real residential addresses ideal for businesses requiring stable proxies, while dynamic proxies automatically rotate periodically, perfect for data collection tasks requiring frequent proxy changes."
+          "description": "Static residential proxies are fixed, real residential IP addresses ideal for businesses requiring stable IPs, while dynamic proxies automatically rotate periodically, perfect for data collection tasks requiring frequent IP changes."
         },
         {
-          "title": "How is IPFlex's proxy Proxy service priced?",
-          "description": "We offer flexible billing plans, including traffic-based and Proxy quantity-based options. You can choose the most suitable package for your business needs, and we also provide customized enterprise solutions."
+          "title": "How is IPFlex's proxy IP service priced?",
+          "description": "We offer flexible billing plans, including traffic-based and IP quantity-based options. You can choose the most suitable package for your business needs, and we also provide customized enterprise solutions."
         },
         {
-          "title": "How to choose the right proxy type?",
-          "description": "Choosing the right proxy type depends on your specific use case. Dynamic proxies are recommended for data collection, static residential proxies for cross-border e-commerce, and dedicated datacenter proxies for enterprise applications."
+          "title": "How to choose the right proxy IP type?",
+          "description": "Choosing the right proxy type depends on your specific use case. Dynamic IPs are recommended for data collection, static residential proxies for cross-border e-commerce, and dedicated datacenter proxies for enterprise applications."
         },
         {
-          "title": "What regions does IPFlex's proxy pool cover?",
-          "description": "Our proxy resource pool covers 200+ countries and regions worldwide, supporting city-level geographic targeting to meet your global business needs."
+          "title": "What regions does IPFlex's IP pool cover?",
+          "description": "Our IP resource pool covers 200+ countries and regions worldwide, supporting city-level geographic targeting to meet your global business needs."
         },
         {
           "title": "What about proxy bandwidth and speed?",
           "description": "IPFlex provides high-speed, stable proxy services using advanced load balancing technology, ensuring low latency and high bandwidth with unlimited traffic usage."
         },
         {
-          "title": "How do you ensure proxy stability?",
-          "description": "We employ multiple backup mechanisms and intelligent monitoring systems to track proxy status in real-time, ensuring 99.9% availability with automatic failover capabilities."
+          "title": "How do you ensure proxy IP stability?",
+          "description": "We employ multiple backup mechanisms and intelligent monitoring systems to track IP status in real-time, ensuring 99.9% availability with automatic failover capabilities."
         },
         {
           "title": "Do you support API integration?",
