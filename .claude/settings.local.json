@@ -1,7 +1,12 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:ipflex.ink)"
+      "WebFetch(domain:ipflex.ink)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_console_messages",
+      "mcp__playwright__browser_evaluate",
+      "mcp__think__sequentialthinking"
     ],
     "deny": [],
     "ask": []

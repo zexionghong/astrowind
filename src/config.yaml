@@ -15,7 +15,7 @@ metadata:
   title:
     default: IPFlex - 全球领先的IP代理服务商 | 住宅代理 | HTTP代理 | SOCKS5代理
     template: '%s — IPFlex代理IP服务'
-  description: "IPFlex专业提供企业级IP代理服务：静态住宅代理、动态住宅代理、数据中心代理。支持HTTP/SOCKS5协议，覆盖全球200+国家，服务网页抓取、跨境电商、广告验证等场景。99.9%可用性，免费试用，24/7技术支持。立即购买代理IP服务！"
+  description: "IPFlex专业提供企业级IP代理服务：静态住宅代理、动态住宅代理、数据中心代理。支持HTTP/SOCKS5协议，覆盖全球200+国家，服务网页抓取、跨境电商、广告验证、市场调研、SEO优化等场景。99.9%可用性保证，千万IP池资源，免费试用，24/7技术支持。立即体验高质量代理IP服务，助力业务增长！"
   robots:
     index: true
     follow: true

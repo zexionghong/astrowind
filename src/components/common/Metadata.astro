@@ -221,12 +221,31 @@ const serviceStructuredData = {
   provider: {
     '@type': 'Organization',
     name: 'IPFlex',
-    url: SITE.site
+    url: SITE.site,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Global',
+      addressCountry: 'Worldwide'
+    },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'customer service',
+      email: 'support@ipflex.ink',
+      availableLanguage: ['zh-CN', 'en-US']
+    }
   },
-  areaServed: {
-    '@type': 'Place',
-    name: 'Worldwide'
-  },
+  areaServed: [
+    {
+      '@type': 'Place',
+      name: 'China',
+      description: '专为中国用户优化的代理服务'
+    },
+    {
+      '@type': 'Place', 
+      name: 'Worldwide',
+      description: '全球200+国家和地区代理服务'
+    }
+  ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'IP Proxy Services',
@@ -236,7 +255,8 @@ const serviceStructuredData = {
         itemOffered: {
           '@type': 'Service',
           name: '静态住宅代理',
-          description: '高质量住宅IP，稳定可靠，适合长期使用'
+          description: '高质量住宅IP，稳定可靠，适合跨境电商、市场调研等长期业务场景',
+          category: '住宅代理服务'
         }
       },
       {
@@ -244,7 +264,8 @@ const serviceStructuredData = {
         itemOffered: {
           '@type': 'Service',
           name: '动态住宅代理',
-          description: '动态轮换IP，适合大规模数据采集'
+          description: '动态轮换IP池，千万级IP资源，适合大规模数据采集、网页抓取等场景',
+          category: '动态代理服务'
         }
       },
       {
@@ -252,7 +273,8 @@ const serviceStructuredData = {
         itemOffered: {
           '@type': 'Service',
           name: '数据中心代理',
-          description: '高速数据中心IP，性价比高'
+          description: '高速数据中心IP，性价比高，适合API调用、自动化测试等场景',
+          category: '数据中心服务'
         }
       }
     ]
@@ -271,7 +293,11 @@ const serviceStructuredData = {
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<meta name="baiduspider" content="index, follow, max-snippet:-1, max-image-preview:large" />
+<meta name="sogou" content="index, follow" />
+<meta name="360spider" content="index, follow" />
 <meta name="baidu-site-verification" content="codeva-Jb90hwYhf4" />
+<meta name="baidu-site-verification" content="codeva-DsczgTJKSi" />
 
 <!-- 添加更多搜索引擎优化标签 -->
 <meta name="author" content="IPFlex Team" />
@@ -288,16 +314,51 @@ const serviceStructuredData = {
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="default" />
 
+<!-- 中国搜索引擎特定优化 -->
+<meta name="keywords" content="IP代理,住宅代理,数据中心代理,SOCKS5代理,HTTP代理,网页抓取,跨境电商,代理服务器,动态IP,静态IP" />
+<meta name="Classification" content="Business" />
+<meta name="copyright" content="IPFlex" />
+<meta name="revisit-after" content="7 days" />
+<meta name="resource-type" content="document" />
+
 <!-- 预加载关键资源 -->
-<link rel="preload" href="/@fontsource-variable/inter/index.css" as="style" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
 <!-- DNS预解析和预连接优化 -->
 <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 <link rel="preconnect" href="https://www.google-analytics.com" />
 <link rel="preconnect" href="https://dashboard.ipflex.ink" />
+
+<!-- 中国本地化结构化数据 -->
+{lang === 'zh' && (
+<script type="application/ld+json" set:html={JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'IPFlex代理IP服务',
+  description: 'IPFlex专业提供企业级IP代理服务，覆盖全球200+国家，为中国企业出海提供稳定可靠的网络解决方案',
+  url: SITE.site,
+  telephone: '+86-400-xxx-xxxx',
+  email: 'support@ipflex.ink',
+  areaServed: {
+    '@type': 'Country',
+    name: 'China'
+  },
+  serviceArea: {
+    '@type': 'GeoCircle',
+    geoMidpoint: {
+      '@type': 'GeoCoordinates', 
+      latitude: 39.9042,
+      longitude: 116.4074
+    },
+    geoRadius: 5000
+  },
+  knowsAbout: ['IP代理', '住宅代理', '数据中心代理', 'HTTP代理', 'SOCKS5代理', '跨境电商', '网页抓取']
+})} />
+)}
 
 <script type="application/ld+json" set:html={JSON.stringify(mainStructuredData)} />
 <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
