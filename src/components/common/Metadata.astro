@@ -321,18 +321,7 @@ const serviceStructuredData = {
 <meta name="revisit-after" content="7 days" />
 <meta name="resource-type" content="document" />
 
-<!-- 优化字体加载策略 - 使用本地字体避免render blocking -->
-<link rel="preload" href="/_astro/inter-variable.woff2" as="font" type="font/woff2" crossorigin />
-<style>
-  /* Critical font display optimization */
-  @font-face {
-    font-family: 'Inter Variable';
-    font-style: normal;
-    font-display: swap;
-    src: url('/_astro/inter-variable.woff2') format('woff2-variations');
-    font-weight: 100 900;
-  }
-</style>
+<!-- Inter font is loaded automatically by Astro from Tailwind CSS -->
 
 <!-- DNS预解析和预连接优化 -->
 <link rel="dns-prefetch" href="https://www.google-analytics.com" />
@@ -340,10 +329,7 @@ const serviceStructuredData = {
 <link rel="preconnect" href="https://www.google-analytics.com" />
 <link rel="preconnect" href="https://dashboard.ipflex.ink" />
 
-<!-- 关键资源预加载优化 -->
-<link rel="preload" href="/_astro/main.css" as="style" />
-<link rel="preload" href="/_astro/main.js" as="script" />
-<link rel="modulepreload" href="/_astro/client.js" />
+<!-- CSS and JS assets are loaded automatically by Astro -->
 
 <!-- 中国本地化结构化数据 -->
 {lang === 'zh' && (
