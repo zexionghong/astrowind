@@ -13,14 +13,14 @@ declare global {
   }
 }
 
-// const attrs = partytown ? { type: "text/partytown" } : {};
+const attrs = partytown ? { type: "text/partytown" } : {};
 ---
 
 {id && (
   <>
     <!-- Google tag (gtag.js) -->
-    <script  async src=`https://www.googletagmanager.com/gtag/js?id=${id}`> </script>
-    <script define:vars={{ id }}>
+    <script {...attrs} async src=`https://www.googletagmanager.com/gtag/js?id=${id}`></script>
+    <script {...attrs} define:vars={{ id }}>
       window.dataLayer = window.dataLayer || [];
       function gtag(...args) {
         window.dataLayer.push(args);
