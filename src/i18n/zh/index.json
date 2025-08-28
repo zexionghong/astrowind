@@ -7,7 +7,7 @@
     "hero": {
       "primaryAction": "购买代理IP",
       "secondaryAction": "了解更多",
-      "title": "专业IP代理服务商 | 住宅代理 | HTTP代理 | SOCKS5代理",
+      "title": "专业IP代理服务商",
       "subtitle": "<span class=\"text-lg sm:text-xl\"><span class=\"font-semibold\">IPFlex</span> 全球领先的IP代理服务提供商，专业提供静态住宅代理、动态住宅代理、数据中心代理。支持HTTP/SOCKS5协议，覆盖200+国家，服务网页抓取代理、跨境电商代理、广告验证代理、价格监控代理等多种应用场景，99.9%高可用性保证。</span>"
     },
     "content": {
