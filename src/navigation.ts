@@ -2,7 +2,7 @@ import { SITE } from 'astrowind:config';
 export const getHeaderData = (lang: string = 'zh') => ({
   links: [
     {
-      text: lang === 'zh' ? 'IP代理产品' : 'IP Proxy Products',
+      text: lang === 'zh' ? '代理产品' : 'Products',
       // href: `/${lang}/detail`,
       links: [
         {
@@ -28,7 +28,7 @@ export const getHeaderData = (lang: string = 'zh') => ({
 
     },
     {
-      text: lang === 'zh' ? '代理IP定价' : 'Proxy IP Pricing',
+      text: lang === 'zh' ? '定价' : 'Pricing',
       href: `/${lang}/pricing`
     },
     {
@@ -41,7 +41,7 @@ export const getHeaderData = (lang: string = 'zh') => ({
           description: lang === 'zh' ? '真实访问还原，精准阻击广告欺诈' : 'Real user simulation, precise ad fraud prevention'
         },
         {
-          text: lang === 'zh' ? '数据采集代理' : 'Data Collection Proxy',
+          text: lang === 'zh' ? '市场研究与数据采集' : 'Market Research & Data Collection',
           href: `/${lang}/use-case/static-residential-proxy-scraping`,
           icon: 'tabler:database',
           description: lang === 'zh' ? '突破反爬虫，低风险批量采集' : 'Bypass anti-bot, low-risk bulk data collection'
@@ -68,7 +68,7 @@ export const getHeaderData = (lang: string = 'zh') => ({
       ]
     },
     {
-      text: lang == 'zh'?"代理IP技术博客":"Proxy IP Blog",
+      text: lang == 'zh'?"博客":"Blog",
       href:`/${lang}/blog`
     },
     ...(lang === 'zh' ? [
@@ -83,7 +83,7 @@ export const getHeaderData = (lang: string = 'zh') => ({
     ] : [])
   ],
   actions: [
-    { text: lang === 'zh' ? '购买代理IP' : 'Buy Proxy IP', href: `/${lang}/register`, color: 'blue' },
+    { text: lang === 'zh' ? '注册' : 'Sign Up', href: `/${lang}/register`, color: 'blue' },
     { text: lang === 'zh' ? '登录' : 'Login', href: 'https://dashboard.ipflex.ink/login', target: '_blank' },
   ],
 });
@@ -91,7 +91,7 @@ export const getHeaderData = (lang: string = 'zh') => ({
 export const getFooterData = (lang: string = 'zh') => ({
   links: [
     {
-      title: lang === 'zh' ? 'IP代理产品' : 'IP Proxy Products',
+      title: lang === 'zh' ? '代理产品' : 'Proxy Products',
       links: [
         { 
           text: lang === 'zh' ? '静态住宅代理' : 'Static Residential Proxy', 
@@ -108,12 +108,12 @@ export const getFooterData = (lang: string = 'zh') => ({
       ],
     },
     {
-      title: lang === 'zh' ? '代理IP解决方案' : 'Proxy IP Solutions',
+      title: lang === 'zh' ? '解决方案' : 'Solutions',
       links: [
-        { text: lang === 'zh' ? '跨境电商代理' : 'Cross-border E-commerce Proxy', href: '#' },
-        { text: lang === 'zh' ? '品牌保护代理' : 'Brand Protection Proxy', href: '#' },
-        { text: lang === 'zh' ? '市场调研代理' : 'Market Research Proxy', href: '#' },
-        { text: lang === 'zh' ? '广告验证代理' : 'Ad Verification Proxy', href: '#' },
+        { text: lang === 'zh' ? '跨境电商' : 'Cross-border E-commerce', href: '#' },
+        { text: lang === 'zh' ? '品牌保护' : 'Brand Protection', href: '#' },
+        { text: lang === 'zh' ? '市场调研' : 'Market Research', href: '#' },
+        { text: lang === 'zh' ? '广告验证' : 'Ad Verification', href: '#' },
       ],
     },
     {
