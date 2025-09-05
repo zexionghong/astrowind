@@ -15,7 +15,7 @@ const { lang = 'zh' } = Astro.props;
         <path d="M11 5H7a1 1 0 000 2h4a1 1 0 100-2zM7 9a1 1 0 000 2h4a1 1 0 100-2zM7 13a1 1 0 100 2h4a1 1 0 100-2z"></path>
       </svg>
       <span class="text-sm font-medium hidden xl:inline">
-        {lang === 'zh' ? '赚取20%佣金' : 'Earn 20% Commission'}
+        {lang === 'zh' ? '立返10%佣金' : 'Instant 10% Back'}
       </span>
     </div>
   </div>
@@ -35,14 +35,14 @@ const { lang = 'zh' } = Astro.props;
     
     <div class="text-sm text-gray-600 mb-4">
       {lang === 'zh' 
-        ? '邀请好友注册购买代理服务，您可获得最高20%佣金奖励！' 
-        : 'Invite friends to purchase proxy services and earn up to 20% commission!'
+        ? '邀请好友注册充值代理服务，好友完成充值立即返现10%佣金！' 
+        : 'Invite friends to register and recharge proxy services, get instant 10% cashback when they recharge!'
       }
     </div>
 
     <div class="flex items-center justify-between mb-4">
       <div class="text-center">
-        <div class="text-2xl font-bold text-blue-600">20%</div>
+        <div class="text-2xl font-bold text-blue-600">10%</div>
         <div class="text-xs text-gray-500">{lang === 'zh' ? '最高佣金' : 'Max Commission'}</div>
       </div>
       <div class="text-center">
@@ -85,10 +85,10 @@ const { lang = 'zh' } = Astro.props;
       </svg>
       <div>
         <div class="font-semibold text-sm">
-          {lang === 'zh' ? '推荐好友赚取20%佣金' : 'Refer Friends, Earn 20%'}
+          {lang === 'zh' ? '推荐好友充值立返10%' : 'Refer Friends, Instant 10% Back'}
         </div>
         <div class="text-xs opacity-90">
-          {lang === 'zh' ? '无门槛，无限推荐' : 'No threshold, unlimited referrals'}
+          {lang === 'zh' ? '充值立返，无限推荐' : 'Instant cashback, unlimited referrals'}
         </div>
       </div>
     </div>

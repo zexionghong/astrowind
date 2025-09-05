@@ -16,8 +16,8 @@ const { lang = 'zh' } = Astro.params;
 const t = await useTranslations(lang);
 
 const metadata = {
-  title: lang === 'zh' ? 'IPFlex推荐返现计划 - 最高20%佣金奖励 | 邀请好友赚取收益' : 'IPFlex Referral Program - Up to 20% Commission | Earn by Referring Friends',
-  description: lang === 'zh' ? 'IPFlex推荐返现计划，邀请好友注册购买代理服务，获得最高20%佣金奖励。零门槛参与，无限推荐，月结算，支持多种提现方式。立即加入IPFlex合伙人计划！' : 'Join IPFlex Referral Program and earn up to 20% commission by referring friends to our proxy services. No threshold, unlimited referrals, monthly payouts. Become an IPFlex partner today!',
+  title: lang === 'zh' ? 'IPFlex推荐返现计划 - 最高10%佣金奖励 | 邀请好友赚取收益' : 'IPFlex Referral Program - Up to 10% Commission | Earn by Referring Friends',
+  description: lang === 'zh' ? 'IPFlex推荐返现计划，邀请好友注册购买代理服务，好友充值立即返现10%佣金。零门槛参与，无限推荐。立即加入IPFlex合伙人计划！' : 'Join IPFlex Referral Program and earn 10% commission when friends purchase proxy services. Instant cashback when friends recharge. No threshold, unlimited referrals. Become an IPFlex partner today!',
 };
 ---
 
@@ -34,13 +34,13 @@ const metadata = {
             ? '邀请好友，获得' 
             : 'Refer Friends, Earn'}
           <span class="text-blue-600 dark:text-blue-400">
-            {lang === 'zh' ? '20%佣金' : '20% Commission'}
+            {lang === 'zh' ? '10%佣金' : '10% Commission'}
           </span>
         </h1>
         <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
           {lang === 'zh' 
-            ? '加入IPFlex推荐返现计划，每推荐一位好友购买代理服务，您都可以获得丰厚的佣金奖励。零门槛参与，无限推荐次数，月度结算，多种提现方式。'
-            : 'Join the IPFlex referral program and earn generous commissions for every friend you refer who purchases our proxy services. No barriers to entry, unlimited referrals, monthly payouts, multiple withdrawal options.'
+            ? '加入IPFlex推荐返现计划，每推荐一位好友购买代理服务，好友充值时您立即获得丰厚的佣金奖励。零门槛参与，无限推荐次数。'
+            : 'Join the IPFlex referral program and earn generous commissions for every friend you refer who purchases our proxy services. Instant cashback when friends recharge. No barriers to entry, unlimited referrals.'
           }
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -68,7 +68,7 @@ const metadata = {
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
         <div class="text-center">
-          <div class="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">20%</div>
+          <div class="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">10%</div>
           <div class="text-gray-600 dark:text-gray-300">
             {lang === 'zh' ? '最高佣金比例' : 'Maximum Commission Rate'}
           </div>
@@ -86,9 +86,9 @@ const metadata = {
           </div>
         </div>
         <div class="text-center">
-          <div class="text-4xl font-bold text-orange-600 dark:text-orange-400 mb-2">30天</div>
+          <div class="text-4xl font-bold text-orange-600 dark:text-orange-400 mb-2">⚡</div>
           <div class="text-gray-600 dark:text-gray-300">
-            {lang === 'zh' ? '快速结算周期' : 'Fast Settlement Period'}
+            {lang === 'zh' ? '充值立即到账' : 'Instant Credit on Recharge'}
           </div>
         </div>
       </div>
@@ -149,12 +149,12 @@ const metadata = {
             </svg>
           </div>
           <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-            {lang === 'zh' ? '好友完成购买' : 'Friend Completes Purchase'}
+            {lang === 'zh' ? '好友完成充值' : 'Friend Completes Recharge'}
           </h3>
           <p class="text-gray-600 dark:text-gray-300">
             {lang === 'zh'
-              ? '您的好友通过推荐链接注册并购买任意代理套餐'
-              : 'Your friend registers through your referral link and purchases any proxy package'
+              ? '您的好友通过推荐链接注册并购买任意代理套餐，然后充值'
+              : 'Your friend registers through your referral link and purchases any proxy package, then recharges'
             }
           </p>
         </div>
@@ -170,8 +170,8 @@ const metadata = {
           </h3>
           <p class="text-gray-600 dark:text-gray-300">
             {lang === 'zh'
-              ? '系统自动计算佣金，每月结算到您的账户余额，支持多种提现方式'
-              : 'System automatically calculates commission, monthly settlement to your account balance, multiple withdrawal options'
+              ? '系统自动计算佣金，立即结算到您的账户余额'
+              : 'System automatically calculates commission and instantly credits to your account balance'
             }
           </p>
         </div>
@@ -179,59 +179,63 @@ const metadata = {
     </div>
   </section>
 
-  <!-- Commission Tiers -->
+  <!-- Simple Commission Structure -->
   <section class="bg-gray-50 dark:bg-gray-800 py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-          {lang === 'zh' ? '分级佣金制度' : 'Tiered Commission Structure'}
+          {lang === 'zh' ? '简单透明的佣金制度' : 'Simple & Transparent Commission'}
         </h2>
         <p class="text-xl text-gray-600 dark:text-gray-300">
-          {lang === 'zh' ? '推荐越多，佣金比例越高，收益更丰厚' : 'The more you refer, the higher the commission rate, the more you earn'}
+          {lang === 'zh' ? '好友充值，立即返现，统一10%佣金，无需等级升级' : 'Instant cashback when friends recharge, unified 10% commission, no tier upgrades needed'}
         </p>
       </div>
       
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg text-center">
-          <div class="text-4xl mb-4">⭐</div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
-            {lang === 'zh' ? '新手推荐员 (0-9人)' : 'Beginner Referrer (0-9)'}
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-xl text-center border-2 border-blue-500">
+          <div class="text-6xl mb-6">💰</div>
+          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            {lang === 'zh' ? '统一10%佣金 + 充值立返' : 'Unified 10% Commission + Instant Cashback'}
           </h3>
-          <div class="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-4">10%</div>
-          <p class="text-gray-600 dark:text-gray-300">
+          <div class="text-5xl font-bold text-blue-600 dark:text-blue-400 mb-6">10%</div>
+          <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
             {lang === 'zh' 
-              ? '刚开始推荐的用户，每成功推荐一位好友购买，获得订单金额10%的佣金奖励。'
-              : 'New referrers earn 10% commission on each successful referral purchase.'
+              ? '好友通过您的推荐链接注册并完成充值，您立即获得充值金额10%的佣金奖励。无需等待，无分级制度，简单直接！'
+              : 'When friends register through your referral link and complete recharge, you instantly earn 10% commission on the recharge amount. No waiting, no tiers, simple and direct!'
             }
           </p>
-        </div>
-
-        <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg text-center border-2 border-blue-500">
-          <div class="text-4xl mb-4">🌟</div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
-            {lang === 'zh' ? '资深推荐员 (10-49人)' : 'Senior Referrer (10-49)'}
-          </h3>
-          <div class="text-3xl font-bold text-green-600 dark:text-green-400 mb-4">15%</div>
-          <p class="text-gray-600 dark:text-gray-300">
-            {lang === 'zh'
-              ? '累计推荐10人以上，佣金比例提升至15%，适合有一定推广能力的用户。'
-              : 'Users who have referred 10+ people earn 15% commission on all referrals.'
-            }
-          </p>
-        </div>
-
-        <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg text-center">
-          <div class="text-4xl mb-4">👑</div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
-            {lang === 'zh' ? '金牌合伙人 (50人以上)' : 'Gold Partner (50+)'}
-          </h3>
-          <div class="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-4">20%</div>
-          <p class="text-gray-600 dark:text-gray-300">
-            {lang === 'zh'
-              ? '累计推荐50人以上的超级推广者，享受最高20%佣金比例，月收益可观。'
-              : 'Super referrers with 50+ referrals enjoy the highest 20% commission rate.'
-            }
-          </p>
+          
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-blue-50 dark:bg-blue-900/30 p-6 rounded-xl">
+              <div class="text-3xl mb-2">⚡</div>
+              <h4 class="font-bold text-gray-900 dark:text-white mb-2">
+                {lang === 'zh' ? '立即到账' : 'Instant Payout'}
+              </h4>
+              <p class="text-sm text-gray-600 dark:text-gray-300">
+                {lang === 'zh' ? '好友充值完成，佣金立即到账' : 'Commission credited instantly upon friend\'s recharge'}
+              </p>
+            </div>
+            
+            <div class="bg-green-50 dark:bg-green-900/30 p-6 rounded-xl">
+              <div class="text-3xl mb-2">📊</div>
+              <h4 class="font-bold text-gray-900 dark:text-white mb-2">
+                {lang === 'zh' ? '统一比例' : 'Unified Rate'}
+              </h4>
+              <p class="text-sm text-gray-600 dark:text-gray-300">
+                {lang === 'zh' ? '无论推荐多少人，都是10%佣金' : '10% commission regardless of referral count'}
+              </p>
+            </div>
+            
+            <div class="bg-purple-50 dark:bg-purple-900/30 p-6 rounded-xl">
+              <div class="text-3xl mb-2">🔄</div>
+              <h4 class="font-bold text-gray-900 dark:text-white mb-2">
+                {lang === 'zh' ? '无限推荐' : 'Unlimited Referrals'}
+              </h4>
+              <p class="text-sm text-gray-600 dark:text-gray-300">
+                {lang === 'zh' ? '推荐好友数量没有上限限制' : 'No limit on number of friends you can refer'}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
