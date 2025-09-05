@@ -9,6 +9,7 @@ import SetpsContent from '~/components/widgets/SetpsContent.astro';
 import Advantages from '~/components/widgets/Advantages.astro';
 import HeroTitle from '~/components/widgets/HeroTitle.astro';
 import UsageScenarios from '~/components/widgets/UsageScenarios.astro';
+import SimpleReferralWidget from '~/components/widgets/SimpleReferralWidget.astro';
 
 export async function getStaticPaths() {
   return [
@@ -123,6 +124,9 @@ const metadata = {
     classes={{ container: 'max-w-6xl' }}
     items={t("index.faqs.items")}
   />
+
+  <!-- Simple Referral Widget ********** -->
+  <SimpleReferralWidget lang={lang} />
 </Layout>
 
 <script>

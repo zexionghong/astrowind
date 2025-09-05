@@ -85,8 +85,8 @@
           "image": "~/assets/images/features/1.png"
         },
         {
-          "title": "高效技术支持",
-          "description": "IPFlex提供全天候24/7的专业技术支持，无论您遇到任何问题技术团队都会迅速响应，确保您的体验始终顺畅无忧。",
+          "title": "高效技术支持 + 推荐奖励",
+          "description": "IPFlex提供全天候24/7的专业技术支持，确保您的体验始终顺畅无忧。更有推荐返现计划，邀请好友使用可获得最高20%佣金奖励，让您边用边赚！",
           "icon": "tabler:headset",
           "image": "~/assets/images/features/2.png"
         },

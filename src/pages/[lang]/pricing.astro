@@ -5,6 +5,7 @@ import Prices from '~/components/widgets/Pricing.astro';
 // import FAQs from '~/components/widgets/FAQs.astro';
 // import Steps from '~/components/widgets/Steps.astro';
 import Features3 from '~/components/widgets/Features3.astro';
+import SimpleReferralWidget from '~/components/widgets/SimpleReferralWidget.astro';
 import { SITE } from 'astrowind:config';
 import { useTranslations } from '~/utils/i18n';
 
@@ -278,4 +279,6 @@ const productSchema = {
 
   <!-- 其他组件的国际化... -->
 
+  <!-- Simple Referral Widget -->
+  <SimpleReferralWidget lang={lang} />
 </Layout>

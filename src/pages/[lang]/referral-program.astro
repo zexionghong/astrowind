@@ -1,0 +1,270 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import { useTranslations } from '~/utils/i18n';
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'zh' } }
+  ];
+}
+
+const { lang = 'zh' } = Astro.params;
+const t = await useTranslations(lang);
+
+const metadata = {
+  title: lang === 'zh' ? 'IPFlex推荐返现计划 - 最高20%佣金奖励 | 邀请好友赚取收益' : 'IPFlex Referral Program - Up to 20% Commission | Earn by Referring Friends',
+  description: lang === 'zh' ? 'IPFlex推荐返现计划，邀请好友注册购买代理服务，获得最高20%佣金奖励。零门槛参与，无限推荐，月结算，支持多种提现方式。立即加入IPFlex合伙人计划！' : 'Join IPFlex Referral Program and earn up to 20% commission by referring friends to our proxy services. No threshold, unlimited referrals, monthly payouts. Become an IPFlex partner today!',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <section class="bg-white dark:bg-gray-900 py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <p class="text-blue-600 dark:text-blue-400 font-semibold text-lg mb-4">
+          🎉 {lang === 'zh' ? '推荐返现计划' : 'Referral Program'}
+        </p>
+        <h1 class="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+          {lang === 'zh' 
+            ? '邀请好友，获得' 
+            : 'Refer Friends, Earn'}
+          <span class="text-blue-600 dark:text-blue-400">
+            {lang === 'zh' ? '20%佣金' : '20% Commission'}
+          </span>
+        </h1>
+        <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
+          {lang === 'zh' 
+            ? '加入IPFlex推荐返现计划，每推荐一位好友购买代理服务，您都可以获得丰厚的佣金奖励。零门槛参与，无限推荐次数，月度结算，多种提现方式。'
+            : 'Join the IPFlex referral program and earn generous commissions for every friend you refer who purchases our proxy services. No barriers to entry, unlimited referrals, monthly payouts, multiple withdrawal options.'
+          }
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="https://dashboard.ipflex.ink/register"
+            target="_blank"
+            class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold text-lg transition-colors"
+          >
+            {lang === 'zh' ? '立即注册开始推荐' : 'Register to Start Referring'}
+          </a>
+          <a 
+            href="https://dashboard.ipflex.ink/login"
+            target="_blank"
+            class="border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 px-8 py-3 rounded-lg font-semibold text-lg transition-colors"
+          >
+            {lang === 'zh' ? '登录查看推荐收益' : 'Login to View Earnings'}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="bg-gray-50 dark:bg-gray-800 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="text-center">
+          <div class="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">20%</div>
+          <div class="text-gray-600 dark:text-gray-300">
+            {lang === 'zh' ? '最高佣金比例' : 'Maximum Commission Rate'}
+          </div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-bold text-green-600 dark:text-green-400 mb-2">∞</div>
+          <div class="text-gray-600 dark:text-gray-300">
+            {lang === 'zh' ? '无限推荐次数' : 'Unlimited Referrals'}
+          </div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-bold text-purple-600 dark:text-purple-400 mb-2">$0</div>
+          <div class="text-gray-600 dark:text-gray-300">
+            {lang === 'zh' ? '零门槛参与' : 'Zero Entry Threshold'}
+          </div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-bold text-orange-600 dark:text-orange-400 mb-2">30天</div>
+          <div class="text-gray-600 dark:text-gray-300">
+            {lang === 'zh' ? '快速结算周期' : 'Fast Settlement Period'}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it Works -->
+  <section class="bg-white dark:bg-gray-900 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          {lang === 'zh' ? '如何参与推荐返现？' : 'How Does the Referral Program Work?'}
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300">
+          {lang === 'zh' ? '4个简单步骤，开始您的推荐赚钱之旅' : 'Start your earning journey in 4 simple steps'}
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="text-center">
+          <div class="bg-blue-100 dark:bg-blue-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+            {lang === 'zh' ? '注册IPFlex账户' : 'Register IPFlex Account'}
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            {lang === 'zh' 
+              ? '免费注册IPFlex账户，获取您的专属推荐链接和推荐码'
+              : 'Sign up for a free IPFlex account and get your unique referral link and code'
+            }
+          </p>
+        </div>
+
+        <div class="text-center">
+          <div class="bg-green-100 dark:bg-green-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+            {lang === 'zh' ? '分享推荐链接' : 'Share Referral Link'}
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            {lang === 'zh'
+              ? '通过社交媒体、邮件、网站等方式分享您的推荐链接给朋友'
+              : 'Share your referral link with friends via social media, email, websites, etc.'
+            }
+          </p>
+        </div>
+
+        <div class="text-center">
+          <div class="bg-purple-100 dark:bg-purple-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-purple-600 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+            {lang === 'zh' ? '好友完成购买' : 'Friend Completes Purchase'}
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            {lang === 'zh'
+              ? '您的好友通过推荐链接注册并购买任意代理套餐'
+              : 'Your friend registers through your referral link and purchases any proxy package'
+            }
+          </p>
+        </div>
+
+        <div class="text-center">
+          <div class="bg-orange-100 dark:bg-orange-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-orange-600 dark:text-orange-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+            {lang === 'zh' ? '获得佣金奖励' : 'Earn Commission Rewards'}
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            {lang === 'zh'
+              ? '系统自动计算佣金，每月结算到您的账户余额，支持多种提现方式'
+              : 'System automatically calculates commission, monthly settlement to your account balance, multiple withdrawal options'
+            }
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Commission Tiers -->
+  <section class="bg-gray-50 dark:bg-gray-800 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          {lang === 'zh' ? '分级佣金制度' : 'Tiered Commission Structure'}
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300">
+          {lang === 'zh' ? '推荐越多，佣金比例越高，收益更丰厚' : 'The more you refer, the higher the commission rate, the more you earn'}
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg text-center">
+          <div class="text-4xl mb-4">⭐</div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
+            {lang === 'zh' ? '新手推荐员 (0-9人)' : 'Beginner Referrer (0-9)'}
+          </h3>
+          <div class="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-4">10%</div>
+          <p class="text-gray-600 dark:text-gray-300">
+            {lang === 'zh' 
+              ? '刚开始推荐的用户，每成功推荐一位好友购买，获得订单金额10%的佣金奖励。'
+              : 'New referrers earn 10% commission on each successful referral purchase.'
+            }
+          </p>
+        </div>
+
+        <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg text-center border-2 border-blue-500">
+          <div class="text-4xl mb-4">🌟</div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
+            {lang === 'zh' ? '资深推荐员 (10-49人)' : 'Senior Referrer (10-49)'}
+          </h3>
+          <div class="text-3xl font-bold text-green-600 dark:text-green-400 mb-4">15%</div>
+          <p class="text-gray-600 dark:text-gray-300">
+            {lang === 'zh'
+              ? '累计推荐10人以上，佣金比例提升至15%，适合有一定推广能力的用户。'
+              : 'Users who have referred 10+ people earn 15% commission on all referrals.'
+            }
+          </p>
+        </div>
+
+        <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg text-center">
+          <div class="text-4xl mb-4">👑</div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
+            {lang === 'zh' ? '金牌合伙人 (50人以上)' : 'Gold Partner (50+)'}
+          </h3>
+          <div class="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-4">20%</div>
+          <p class="text-gray-600 dark:text-gray-300">
+            {lang === 'zh'
+              ? '累计推荐50人以上的超级推广者，享受最高20%佣金比例，月收益可观。'
+              : 'Super referrers with 50+ referrals enjoy the highest 20% commission rate.'
+            }
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-blue-600 dark:bg-blue-800 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+        {lang === 'zh' ? '准备好开始您的推荐赚钱之旅了吗？' : 'Ready to Start Your Referral Journey?'}
+      </h2>
+      <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+        {lang === 'zh' 
+          ? '加入数千名满意的推荐者行列，立即注册，获取您的专属推荐链接！'
+          : 'Join thousands of satisfied referrers who are already earning with IPFlex. Register now and get your exclusive referral link!'
+        }
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a 
+          href="https://dashboard.ipflex.ink/register"
+          target="_blank"
+          class="bg-white hover:bg-gray-100 text-blue-600 px-8 py-3 rounded-lg font-semibold text-lg transition-colors"
+        >
+          {lang === 'zh' ? '立即注册开始推荐' : 'Start Referring Now'}
+        </a>
+        <a 
+          href="https://dashboard.ipflex.ink/login"
+          target="_blank"
+          class="border border-blue-300 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold text-lg transition-colors"
+        >
+          {lang === 'zh' ? '已有账户？登录查看' : 'Have Account? Login'}
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
