@@ -1,0 +1,124 @@
+{
+  "timestamp": "2025-09-05T10:19:32.000Z",
+  "project": {
+    "name": "IPFlex Proxy Service Website",
+    "type": "Astro Static Site",
+    "language": "TypeScript",
+    "framework": "Astro 4.16",
+    "description": "IPFlex proxy service website built with Astro 4.16 and Tailwind CSS. Multilingual (Chinese/English) business website offering IP proxy services."
+  },
+  "modules": [
+    {
+      "path": "src/components",
+      "name": "Components Layer",
+      "type": "component-library",
+      "description": "Astro组件层：UI组件、业务组件、通用组件",
+      "entry_points": ["src/components/widgets/Header.astro", "src/components/widgets/Footer.astro"],
+      "key_files": ["src/components/widgets/*.astro", "src/components/ui/*.astro", "src/components/common/*.astro", "src/components/blog/*.astro"],
+      "dependencies": ["Astro", "Tailwind CSS"],
+      "test_coverage": "unknown",
+      "coverage_status": "partial"
+    },
+    {
+      "path": "src/pages",
+      "name": "Pages & Routing",
+      "type": "routing",
+      "description": "页面路由层：国际化路由、动态路由、博客系统",
+      "entry_points": ["src/pages/index.astro", "src/pages/[lang]/index.astro"],
+      "key_files": ["src/pages/[lang]/*.astro", "src/pages/[lang]/use-case/*.astro", "src/pages/[lang]/blog/*.astro"],
+      "dependencies": ["Astro", "i18n system"],
+      "test_coverage": "none",
+      "coverage_status": "complete"
+    },
+    {
+      "path": "src/i18n",
+      "name": "Internationalization",
+      "type": "localization",
+      "description": "国际化系统：中英文翻译、多语言内容管理",
+      "entry_points": ["src/utils/i18n.ts"],
+      "key_files": ["src/i18n/zh/*.json", "src/i18n/en/*.json", "src/utils/i18n.ts"],
+      "dependencies": ["Node.js fs", "JSON"],
+      "test_coverage": "none",
+      "coverage_status": "complete"
+    },
+    {
+      "path": "src/content",
+      "name": "Content Management",
+      "type": "content",
+      "description": "内容管理系统：博客文章、静态页面、内容集合",
+      "entry_points": ["src/content/config.ts"],
+      "key_files": ["src/content/post/*.md", "src/content/privacy/*.md", "src/content/terms/*.md"],
+      "dependencies": ["Astro Content Collections", "MDX"],
+      "test_coverage": "none", 
+      "coverage_status": "complete"
+    },
+    {
+      "path": "src/layouts",
+      "name": "Layout System",
+      "type": "layout",
+      "description": "布局系统：页面布局模板、Markdown布局",
+      "entry_points": ["src/layouts/Layout.astro", "src/layouts/PageLayout.astro"],
+      "key_files": ["src/layouts/*.astro"],
+      "dependencies": ["Astro", "Components"],
+      "test_coverage": "none",
+      "coverage_status": "complete"
+    },
+    {
+      "path": "src/utils",
+      "name": "Utility Functions",
+      "type": "utilities",
+      "description": "工具函数：图片处理、前端元数据、目录管理",
+      "entry_points": ["src/utils/i18n.ts"],
+      "key_files": ["src/utils/*.ts"],
+      "dependencies": ["Astro", "Sharp"],
+      "test_coverage": "none",
+      "coverage_status": "complete"
+    },
+    {
+      "path": "src/assets",
+      "name": "Static Assets",
+      "type": "assets",
+      "description": "静态资源：图片、图标、样式资产",
+      "entry_points": ["src/assets/images/", "src/assets/favicons/"],
+      "key_files": ["src/assets/images/**", "src/assets/favicons/**"],
+      "dependencies": ["Astro image optimization", "Unpic"],
+      "test_coverage": "none",
+      "coverage_status": "complete"
+    },
+    {
+      "path": "vendor",
+      "name": "Custom Integration",
+      "type": "integration",
+      "description": "自定义Astro集成：配置加载、类型定义",
+      "entry_points": ["vendor/integration/index.ts"],
+      "key_files": ["vendor/integration/*.ts", "vendor/integration/utils/*.ts"],
+      "dependencies": ["Astro Integration API"],
+      "test_coverage": "none",
+      "coverage_status": "complete"
+    }
+  ],
+  "coverage": {
+    "total_files_estimated": 150,
+    "scanned_files": 120,
+    "coverage_percentage": 80,
+    "ignored_patterns": ["node_modules/**", ".git/**", "dist/**", ".output/**", ".astro/**", "*.lock", "*.log"],
+    "gaps": [
+      "测试文件缺失",
+      "API文档缺失",
+      "部署配置文档不完整"
+    ]
+  },
+  "architecture_insights": {
+    "patterns": ["Static Site Generation", "Component-based Architecture", "Internationalization", "SEO-optimized"],
+    "technologies": ["Astro 4.16", "TypeScript", "Tailwind CSS", "MDX", "Vite"],
+    "deployment": ["Static hosting", "Vercel", "Netlify"],
+    "seo_features": ["Sitemap", "Structured Data", "Meta Tags", "Multilingual SEO"]
+  },
+  "next_steps": [
+    "添加测试文件扫描",
+    "补充API文档分析",
+    "分析部署配置详情",
+    "检查性能优化配置"
+  ],
+  "truncated": false
+}

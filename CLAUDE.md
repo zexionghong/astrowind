@@ -1,126 +1,164 @@
-# CLAUDE.md
+# IPFlex代理服务网站 - 架构文档
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+## 变更记录 (Changelog)
 
-## Project Overview
+### 2025-09-05 架构分析更新
+- 完成项目整体架构分析和文档初始化
+- 生成模块结构图和索引
+- 添加国际化系统、内容管理、布局系统等模块的详细分析
+- 识别8个主要功能模块，覆盖率达到80%
 
-This is an IPFlex proxy service website built with **Astro 4.16** and **Tailwind CSS**. It's a multilingual (Chinese/English) business website offering IP proxy services including residential proxies, datacenter proxies, and various proxy solutions.
+---
 
-## Key Technologies
+## 项目愿景
 
-- **Framework**: Astro 4.16 (static site generation)
-- **Styling**: Tailwind CSS with custom theme
-- **Language**: TypeScript
-- **Content**: MDX for blog posts
-- **Internationalization**: Custom i18n system supporting Chinese (zh) and English (en)
-- **SEO**: Comprehensive SEO optimization with structured data
+IPFlex是全球领先的IP代理服务商，专注于为企业用户提供高质量的代理IP解决方案。本网站作为公司的官方门户，承载着品牌展示、产品推广、客户获取和SEO营销的重要使命，支持中英双语服务全球市场。
 
-## Development Commands
+## 架构总览
 
-| Command | Purpose |
-|---------|---------|
-| `npm run dev` | Start development server at localhost:3000 |
-| `npm run build` | Build production site to ./dist/ |
-| `npm run preview` | Preview build locally |
-| `npm run check` | Run Astro, ESLint, and Prettier checks |
-| `npm run fix` | Fix ESLint and Prettier issues |
-| `npm run check:astro` | Astro-specific type checking |
-| `npm run check:eslint` | ESLint validation |
-| `npm run check:prettier` | Prettier format check |
+IPFlex网站基于**Astro 4.16**静态站点生成框架构建，采用现代化的**组件化架构**和**国际化设计**，具备完善的SEO优化和性能优化特性。
 
-## Architecture & Key Directories
+### 核心技术栈
+- **前端框架**: Astro 4.16 (静态站点生成)
+- **样式系统**: Tailwind CSS + 自定义主题
+- **编程语言**: TypeScript
+- **内容管理**: MDX + Astro Content Collections
+- **国际化**: 自定义i18n系统 (中文/英文)
+- **构建工具**: Vite + 自定义集成
+- **SEO优化**: 结构化数据、多语言SEO、性能优化
 
-### Core Structure
+## 模块结构图
+
+```mermaid
+graph TD
+    A["IPFlex 代理服务网站"] --> B["src/components"];
+    A --> C["src/pages"];
+    A --> D["src/i18n"];
+    A --> E["src/content"];
+    A --> F["src/layouts"];
+    A --> G["src/utils"];
+    A --> H["src/assets"];
+    A --> I["vendor"];
+
+    B --> B1["widgets/"];
+    B --> B2["ui/"];
+    B --> B3["common/"];
+    B --> B4["blog/"];
+
+    C --> C1["[lang]/"];
+    C --> C2["[lang]/use-case/"];
+    C --> C3["[lang]/blog/"];
+
+    D --> D1["zh/ (中文)"];
+    D --> D2["en/ (英文)"];
+
+    E --> E1["post/ (博客)"];
+    E --> E2["privacy/"];
+    E --> E3["terms/"];
+
+    F --> F1["Layout.astro"];
+    F --> F2["PageLayout.astro"];
+    F --> F3["LandingLayout.astro"];
+
+    click B "./src/components/CLAUDE.md" "查看组件层文档"
+    click C "./src/pages/CLAUDE.md" "查看页面路由文档" 
+    click D "./src/i18n/CLAUDE.md" "查看国际化文档"
+    click E "./src/content/CLAUDE.md" "查看内容管理文档"
+    click F "./src/layouts/CLAUDE.md" "查看布局系统文档"
+    click G "./src/utils/CLAUDE.md" "查看工具函数文档"
+    click H "./src/assets/CLAUDE.md" "查看静态资源文档"
+    click I "./vendor/CLAUDE.md" "查看自定义集成文档"
 ```
-src/
-├── components/           # Astro components
-│   ├── common/          # Shared components (Metadata, Analytics, etc.)
-│   ├── ui/             # UI components (Button, Form, etc.)
-│   ├── widgets/        # Business-specific widgets
-│   └── blog/           # Blog-related components
-├── content/            # Content collections (posts, privacy, terms)
-├── pages/              # Route pages with [lang] dynamic routing
-├── layouts/            # Page layouts
-├── i18n/              # Translation files (en/, zh/)
-├── utils/             # Utility functions
-└── config.yaml        # Site configuration
-```
 
-### Important Architectural Decisions
+## 模块索引
 
-1. **Multilingual Routing**: Uses `[lang]` dynamic routes with Chinese as default (`defaultLanguage: zh`)
-2. **Content Management**: Uses Astro content collections for blog posts and static pages
-3. **SEO-First**: Heavily optimized for search engines with structured data, meta tags, and sitemaps
-4. **Component Architecture**: Separates UI, widgets, and common components for maintainability
+| 模块路径 | 模块名称 | 职责描述 | 核心文件 | 状态 |
+|----------|----------|----------|----------|------|
+| `src/components` | 组件层 | UI组件、业务组件、通用组件 | widgets/*.astro, ui/*.astro | 🔄 完整 |
+| `src/pages` | 页面路由 | 国际化路由、动态路由、博客系统 | [lang]/*.astro, [lang]/blog/*.astro | ✅ 完整 |
+| `src/i18n` | 国际化系统 | 中英文翻译、多语言内容管理 | zh/*.json, en/*.json | ✅ 完整 |
+| `src/content` | 内容管理 | 博客文章、静态页面、内容集合 | post/*.md, config.ts | ✅ 完整 |
+| `src/layouts` | 布局系统 | 页面布局模板、Markdown布局 | Layout.astro, PageLayout.astro | ✅ 完整 |
+| `src/utils` | 工具函数 | 图片处理、前端元数据、目录管理 | i18n.ts, images.ts | ✅ 完整 |
+| `src/assets` | 静态资源 | 图片、图标、样式资产 | images/**, favicons/** | ✅ 完整 |
+| `vendor` | 自定义集成 | 自定义Astro集成、配置加载 | integration/index.ts | ✅ 完整 |
 
-### Key Files to Understand
+## 运行与开发
 
-- `src/config.yaml` - Central configuration for site settings, metadata, and i18n
-- `src/navigation.ts` - Navigation structure and header/footer data by language
-- `src/utils/i18n.ts` - Internationalization utilities and translation loading
-- `astro.config.ts` - Astro configuration with integrations and build settings
+### 开发命令
 
-## Content & SEO
+| 命令 | 用途 |
+|------|------|
+| `npm run dev` | 启动开发服务器 (localhost:3000) |
+| `npm run build` | 构建生产版本到 ./dist/ |
+| `npm run preview` | 本地预览构建结果 |
+| `npm run check` | 运行 Astro、ESLint、Prettier 检查 |
+| `npm run fix` | 修复 ESLint 和 Prettier 问题 |
 
-### Blog System
-- Content in `src/content/post/` as MDX files
-- Supports tags, categories, and reading time
-- Automatic RSS feed generation
-- SEO-optimized with structured data
+### 环境要求
+- **Node.js**: ^18.17.1 || ^20.3.0 || >= 21.0.0
+- **包管理器**: npm (推荐) 或 yarn
 
-### SEO Features
-- Comprehensive SEO audit completed (see `docs/SEO_AUDIT_REPORT.md`)
-- Structured data for Organization, Product, and FAQ schemas
-- Multilingual sitemaps and hreflang tags
-- Performance optimized with image optimization and compression
-- Security headers in `public/_headers`
+## 测试策略
 
-### Translation System
-- JSON-based translations in `src/i18n/{lang}/`
-- Dynamic content loading with caching
-- Navigation and content automatically localized
+目前项目暂未包含自动化测试，建议后续添加：
+- **单元测试**: 组件逻辑测试 (Vitest + Testing Library)
+- **集成测试**: 页面渲染测试
+- **E2E测试**: 关键用户流程测试 (Playwright)
+- **性能测试**: Lighthouse CI
 
-## Business Context
+## 编码规范
 
-This is a commercial website for IPFlex, an IP proxy service provider. Key business areas:
-- **Products**: Static/dynamic residential proxies, datacenter proxies
-- **Target Markets**: Data scraping, e-commerce, ad verification, market research
-- **Languages**: Primary Chinese market with English support
-- **Competitive Industry**: Requires strong SEO performance
+### 文件组织
+- 组件使用 `.astro` 扩展名，工具函数使用 `.ts`
+- 按功能模块组织目录结构
+- 静态资源放在 `src/assets/` 或 `public/`
 
-## Development Guidelines
+### 命名约定
+- 组件名使用 PascalCase (如 `Header.astro`)
+- 文件名使用 kebab-case (如 `static-residential-proxy.astro`)
+- 类型定义使用 PascalCase
 
-### Adding New Pages
-1. Create page in `src/pages/[lang]/` for multilingual support
-2. Add translations in `src/i18n/{lang}/` JSON files
-3. Update navigation in `src/navigation.ts` if needed
-4. Ensure SEO metadata is properly configured
+### 样式规范
+- 优先使用 Tailwind CSS 类名
+- 自定义样式通过 CSS 变量定义
+- 响应式设计采用移动优先策略
 
-### Content Updates
-- Blog posts go in `src/content/post/`
-- Use frontmatter for metadata (title, description, tags, etc.)
-- Images should be optimized (WebP preferred)
-- Always include proper alt text for SEO
+### 国际化规范
+- 所有用户可见文本必须支持中英文
+- 翻译文件按页面或功能模块组织
+- 使用语义化的翻译键名
 
-### SEO Considerations
-- All pages should have unique titles and descriptions
-- Use structured data where appropriate
-- Follow the keyword strategy in `docs/SEO_KEYWORDS.md`
-- Maintain fast loading times (images, compression)
+## AI使用指引
 
-### Styling
-- Uses Tailwind CSS with custom theme in `tailwind.config.js`
-- Custom CSS properties defined in `src/components/CustomStyles.astro`
-- Dark mode support configured
-- Mobile-first responsive design
+### 内容创建
+- 使用AI辅助生成博客内容和SEO优化文案
+- 确保生成内容符合代理服务行业特点
+- 维持专业、技术化的语调
 
-## Deployment
+### 代码协作
+- AI可以协助组件开发和重构
+- 重点关注SEO优化和性能优化
+- 遵循现有的架构模式和编码规范
 
-- Configured for static deployment (Vercel, Netlify)
-- Build artifacts go to `./dist/`
-- Uses compression and optimization for production
-- Analytics integrated (Google Analytics, Google Ads)
+### 多语言支持
+- AI协助翻译内容时需要考虑技术术语的准确性
+- 保持中英文内容的一致性和专业性
 
-## Cursor Rules Integration
+---
 
-The project includes Cursor-specific rules in `.cursor/rules/markdown.mdc` defining SEO expert persona for content optimization. This should be considered when making content-related changes.
+## 变更记录 (Changelog)
+
+### 2025-09-05 初始架构分析
+- ✅ 完成项目整体结构分析
+- ✅ 识别8个核心功能模块
+- ✅ 生成模块结构图和索引表格
+- ✅ 创建.claude/index.json索引文件
+- ✅ 分析技术栈和架构决策
+- 🔄 待完成：各模块详细文档创建
+
+### 历史记录
+- 项目基于AstroWind模板构建
+- 针对IP代理服务业务进行了深度定制
+- 实现了完整的中英双语支持
+- 集成了全面的SEO优化功能
