@@ -74,7 +74,7 @@ export const getHeaderData = (lang: string = 'zh') => ({
     ...(lang === 'zh' ? [
       {
         text: '帮助中心',
-        href: `https://helpcenter.ipflex.ink/`
+        href: `https://docs.ipflex.ink`
       },
       {
         text: '资讯中心',
