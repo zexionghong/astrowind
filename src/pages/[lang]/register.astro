@@ -47,7 +47,7 @@ const inviteCode = urlInviteCode || getCachedInviteCode();
 
 const handleSubmit = `async function(e) {
   e.preventDefault();
-  
+  console.log(111111111111111111111111);
   try {
     const formData = new FormData(e.target);
     const inviteInput = e.target.querySelector('input[name="invite"]');
@@ -171,15 +171,15 @@ const handleSubmit = `async function(e) {
               required: true,
               containerClassName: 'mb-4'
             },
-                        {
-              type: 'text',
-              name: 'code',
-              label: lang === 'zh' ? '验证码' : 'Verification Code',
-              placeholder: lang === 'zh' ? '请输入邮箱验证码' : 'Enter the code you received by email',
-              containerClassName: 'mb-6',
-              value: '',
-              required: true
-            },
+            //             {
+            //   type: 'text',
+            //   name: 'code',
+            //   label: lang === 'zh' ? '验证码' : 'Verification Code',
+            //   placeholder: lang === 'zh' ? '请输入邮箱验证码' : 'Enter the code you received by email',
+            //   containerClassName: 'mb-6',
+            //   value: '',
+            //   required: true
+            // },
             {
               type: 'password',
               name: 'password',
@@ -206,10 +206,7 @@ const handleSubmit = `async function(e) {
           }}
         />
 
-        <!-- 发送验证码按钮将移动到邮箱输入框旁边的实现：原按钮在这里隐藏，实际按钮会动态放到输入框旁边 -->
-        <div class="mt-2 mb-6" aria-hidden="true" style="height:0; overflow:hidden;">
-          <button id="send-code-btn" type="button" class="px-3 py-2 bg-green-600 text-white rounded-md hover:bg-green-700">{lang === 'zh' ? '发送' : 'Send'}</button>
-        </div>
+      
 
         <div class="mt-6 text-center text-sm text-gray-500">
           {lang === 'zh' ? '已有账号？' : 'Already have an account?'}
@@ -240,122 +237,7 @@ const handleSubmit = `async function(e) {
   }
 </style>
 
-<!-- 发送验证码和邀请码获取的客户端逻辑：将按钮移动到邮箱输入框旁边，并调用 /user/code 接口 -->
-<script>
-  (function() {
-    // 语言标识
-    const LANG = '${lang}';
-    const isZh = LANG === 'zh';
-    const emailInput = () => document.querySelector('input[name="email"]');
-    const emailWrapper = () => emailInput().closest('div.mb-4');
-    const oldBtnSelector = '#send-code-btn';
-    // 将按钮放到邮箱输入框旁边的辅助函数
-    function placeInlineSendButton() {
-      const emailEl = emailInput();
-      if (!emailEl) return;
 
-      // 确保输入框的父容器存在
-      const wrapper = emailWrapper();
-      if (wrapper) {
-        // 让包裹容器成为行内布局，输入框伸展，按钮放在右侧
-        wrapper.style.display = 'flex';
-        wrapper.style.alignItems = 'center';
-
-        // 让邮箱输入框自适应宽度
-        emailEl.style.flex = '1 1 auto';
-
-        // 找到原始按钮并移动/克隆到包装内
-        let inlineBtn = document.getElementById('send-code-inline');
-        const oldBtn = document.querySelector(oldBtnSelector);
-
-        if (!inlineBtn && oldBtn) {
-          // 把原按钮移动到包装内
-          oldBtn.style.display = 'inline-block';
-          oldBtn.style.marginLeft = '8px';
-          // 将原按钮追加到包装中
-          wrapper.appendChild(oldBtn);
-          inlineBtn = oldBtn;
-        }
-
-        // 如果没有原按钮，创建一个新按钮并放进包装内
-        if (!inlineBtn) {
-          inlineBtn = document.createElement('button');
-          inlineBtn.id = 'send-code-inline';
-          inlineBtn.type = 'button';
-          inlineBtn.className = 'px-3 py-2 bg-green-600 text-white rounded-md hover:bg-green-700';
-          inlineBtn.textContent = isZh ? '发送验证码' : 'Send Code';
-          inlineBtn.addEventListener('click', sendEmailCode);
-          wrapper.appendChild(inlineBtn);
-        }
-
-        // 隐藏原始的按钮（防止重复渲染）
-        if (oldBtn && oldBtn !== inlineBtn) {
-          oldBtn.style.display = 'none';
-        }
-      }
-    }
-
-    // 发送邮箱验证码
-    window.sendEmailCode = async function() {
-      const email = emailInput()?.value || '';
-      if (!email) {
-        alert(isZh ? '请先输入邮箱地址' : 'Please enter an email address');
-        return;
-      }
-
-      const fd = new FormData();
-      fd.append('email', email);
-
-      try {
-        const resp = await fetch('https://api.ipflex.ink/user/code', {
-          method: 'POST',
-          body: fd
-        });
-        const data = await resp.json().catch(() => ({}));
-
-        if (data && (data.code === 0 || data.success)) {
-          alert(isZh ? '验证码已发送，请查收邮箱' : 'Verification code sent, please check your email');
-          startCooldown();
-        } else {
-          alert(data?.msg || (isZh ? '发送验证码失败，请重试' : 'Failed to send code, please try again'));
-        }
-      } catch (err) {
-        console.error('Send code error:', err);
-        alert(isZh ? '发送验证码失败，请重试' : 'Failed to send code, please try again');
-      }
-    };
-
-    function startCooldown() {
-      const btn = document.getElementById('send-code-inline');
-      if (!btn) return;
-      let remaining = 60;
-      btn.disabled = true;
-      const original = btn.textContent;
-      btn.textContent = (isZh ? '等待' : 'Wait') + ` ${remaining}s`;
-      const timer = setInterval(() => {
-        remaining--;
-        btn.textContent = (isZh ? '等待' : 'Wait') + ` ${remaining}s`;
-        if (remaining <= 0) {
-          clearInterval(timer);
-          btn.disabled = false;
-          btn.textContent = original;
-        }
-      }, 1000);
-    }
-
-    // 初始化：把按钮放到邮箱输入框旁边
-    document.addEventListener('DOMContentLoaded', () => {
-      placeInlineSendButton();
-
-      // 如果存在原始按钮，绑定其点击事件
-      const oldBtn = document.querySelector(oldBtnSelector);
-      if (oldBtn) {
-        oldBtn.addEventListener('click', window.sendEmailCode);
-      }
-    });
-
-  })();
-</script>
 
 <!-- 邀请码优先从URL参数获取，若无则读取本地缓存 -->
 <script>
