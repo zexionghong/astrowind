@@ -55,6 +55,13 @@ const {
 
 // 获取当前语言和生成 hreflang URLs（稳定处理 /、/en、/zh 以及子路径）
 const { lang = 'zh' } = Astro.params;
+
+const autoDescription =
+  !description && typeof title === 'string' && title.trim().length > 0
+    ? lang === 'zh'
+      ? `${title} - IPFlex企业级代理IP服务，覆盖静态住宅、动态住宅与数据中心代理，支持HTTP/SOCKS5协议。`
+      : `${title} - IPFlex enterprise proxy services for static residential, dynamic residential, and datacenter proxies with HTTP/SOCKS5 support.`
+    : undefined;
 const currentPath = Astro.url.pathname;
 
 const normalizedPath = currentPath.replace(/\/+$/, '') || '/';
@@ -131,8 +138,8 @@ const seoProps: AstroSeoProps = merge(
     canonical: canonical,
     noindex: typeof robots?.index !== 'undefined' ? !robots.index : undefined,
     nofollow: typeof robots?.follow !== 'undefined' ? !robots.follow : undefined,
-    description: description,
-    openGraph: { url: canonical, ...openGraph },
+    description: description ?? autoDescription,
+    openGraph: { url: canonical, description: openGraph?.description ?? description ?? autoDescription, ...openGraph },
     twitter: twitter,
   }
 );
