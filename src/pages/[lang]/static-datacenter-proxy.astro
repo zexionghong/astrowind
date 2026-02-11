@@ -51,6 +51,14 @@ const useCasesItems = t('staticDatacenterProxy.useCases.items').map((item, index
     '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12,6 12,12 16,14"></polyline></svg>'
   ][index]
 }));
+
+const relatedLinks = [
+  { href: `/${lang}/pricing`, label: lang === 'zh' ? '查看代理定价' : 'View Pricing' },
+  { href: `/${lang}/static-residential-proxy`, label: lang === 'zh' ? '静态住宅代理' : 'Static Residential Proxy' },
+  { href: `/${lang}/dynamic-residential-proxy`, label: lang === 'zh' ? '动态住宅代理' : 'Dynamic Residential Proxy' },
+  { href: `/${lang}/detail`, label: lang === 'zh' ? '产品详情' : 'Product Details' },
+  { href: `/${lang}/blog`, label: lang === 'zh' ? '代理博客' : 'Proxy Blog' },
+];
 ---
 
 <Layout metadata={metadata}>
@@ -149,6 +157,17 @@ const useCasesItems = t('staticDatacenterProxy.useCases.items').map((item, index
       subtitle: 'text-xl text-gray-600',
     }}
   />
+
+  <section class="max-w-6xl mx-auto py-10 px-4 md:px-6">
+    <h2 class="text-2xl font-bold mb-4">{lang === 'zh' ? '相关页面' : 'Related Pages'}</h2>
+    <div class="flex flex-wrap gap-3">
+      {relatedLinks.map((link) => (
+        <a href={link.href} class="px-4 py-2 rounded-lg border border-green-200 bg-green-50 text-green-700 hover:bg-green-100 transition-colors">
+          {link.label}
+        </a>
+      ))}
+    </div>
+  </section>
 
 </Layout>
 
