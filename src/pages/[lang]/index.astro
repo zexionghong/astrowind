@@ -38,12 +38,11 @@ const metadata = {
           href: 'https://dashboard.ipflex.ink/register',
           target: '_blank',
         },
-        {   
+        {
           text: t('index.hero.secondaryAction'),
-          href: '/detail',
-          target: '_blank',
+          href: `/${lang}/detail`,
           type: 'button',
-         },
+        },
       ]}
     >
       <Fragment slot="title" set:html={t('index.hero.title')} />

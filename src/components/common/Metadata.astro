@@ -67,6 +67,8 @@ const alternateUrls = {
   en: `/en${pathWithoutLocale === '/' ? '' : pathWithoutLocale}`,
 };
 
+const currentOgLocale = lang === 'zh' ? 'zh_CN' : 'en_US';
+
 const seoProps: AstroSeoProps = merge(
   {
     title: '',
@@ -79,7 +81,7 @@ const seoProps: AstroSeoProps = merge(
       url: canonical,
       site_name: SITE?.name,
       images: [],
-      locale: I18N?.language || 'en',
+      locale: currentOgLocale,
       type: 'website',
     },
     twitter: {
@@ -291,8 +293,12 @@ const serviceStructuredData = {
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="default" />
 
-<!-- 中国搜索引擎特定优化 -->
-<meta name="keywords" content="IP代理,住宅代理,数据中心代理,SOCKS5代理,HTTP代理,网页抓取,跨境电商,代理服务器,动态IP,静态IP" />
+<!-- 多语言关键词优化 -->
+{lang === 'zh' ? (
+  <meta name="keywords" content="IP代理,住宅代理,数据中心代理,SOCKS5代理,HTTP代理,网页抓取,跨境电商,代理服务器,动态IP,静态IP" />
+) : (
+  <meta name="keywords" content="IP proxy,residential proxy,datacenter proxy,SOCKS5 proxy,HTTP proxy,web scraping proxy,ecommerce proxy,rotating proxy,static IP,dynamic IP" />
+)}
 <meta name="Classification" content="Business" />
 <meta name="copyright" content="IPFlex" />
 <meta name="revisit-after" content="7 days" />
