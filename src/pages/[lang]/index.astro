@@ -22,6 +22,7 @@ const { lang='zh' } = Astro.params;
 const t = await useTranslations(lang);
 const metadata = {
   title: t('index.metadata.title'),
+  description: t('index.metadata.description'),
   ignoreTitleTemplate: true,
 };
 ---

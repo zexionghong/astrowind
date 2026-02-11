@@ -30,7 +30,12 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
     sitemap({
-      filter: (page) => !page.includes('/tag/')
+      filter: (page) => {
+        if (page.includes('/tag/')) return false;
+        if (page.endsWith('/CLAUDE') || page.endsWith('/CLAUDE/')) return false;
+        if (page.includes('/baidu_verify_')) return false;
+        return true;
+      },
     }),
     mdx(),
     icon({
