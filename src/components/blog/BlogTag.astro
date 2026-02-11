@@ -16,12 +16,18 @@ interface Props {
 const { page, tag, lang } = Astro.props;
 const { currentPage } = page;
 const { data: posts, total } = page;
+
+const siteName = SITE?.name || 'IPFlex';
+const isZh = lang === 'zh';
+const metadata = {
+  title: isZh ? `${tag.title} 标签` : `${tag.title} Tag`,
+  description: isZh
+    ? `浏览与“${tag.title}”相关的代理IP文章与实战指南。`
+    : `Browse proxy IP articles and practical guides tagged with "${tag.title}".`,
+};
 ---
 
-<PageLayout metadata={{
-  title: `${tag.title} - ${SITE.title}`,
-  description: `${tag.title} - ${SITE.title}`,
-}} lang={lang}>
+<PageLayout metadata={metadata} lang={lang}>
   <div class="container mx-auto px-4 py-8">
     <div class="mb-8">
       <h1 class="text-4xl font-bold mb-4">{tag.title}</h1>
