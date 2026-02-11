@@ -1,7 +1,8 @@
 {
   "pricing": {
     "metadata": {
-      "title": "定价方案"
+      "title": "定价方案",
+      "description": "查看IPFlex静态住宅代理、动态住宅代理和数据中心代理价格方案。价格透明，开通即用，提供7×24技术支持。"
     },
     "hero": {
       "title": "限时优惠！低至￥2/IP ￥10/GB + 推荐返现",

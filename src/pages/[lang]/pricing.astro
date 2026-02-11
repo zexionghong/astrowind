@@ -14,6 +14,7 @@ const t = useTranslations(lang);
 
 const metadata = {
   title: t('pricing.metadata.title'),
+  description: t('pricing.metadata.description'),
 };
 
 export function getStaticPaths() {
@@ -78,184 +79,31 @@ const features = {
 
 // 产品结构化数据
 const productSchema = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "IPFlex Premium Proxy IP Service",
-  "alternateName": [
-    "IPFlex企业级IP代理解决方案",
-    "全球静态住宅代理",
-    "数据中心动态IP池",
-    "高匿名代理IP供应商",
-    "Premium Proxy IP Service",
-    "Global Static Residential Proxies",
-    "Datacenter Dynamic IP Pool"
-  ],
-  "description": {
-    "@type": "Text",
-    "en": "IPFlex delivers enterprise-grade proxy solutions with 200+ countries coverage, offering premium static residential IPs & dynamic datacenter IPs. Supports web scraping, social media management, ad verification, and cross-border e-commerce. 99.9% uptime, intelligent IP rotation, and high anonymity. Free trial & 24/7 support to bypass geo-blocks and anti-bot systems.",
-    "zh": "IPFlex专业提供企业级代理IP解决方案，覆盖全球200+国家的高质量静态住宅IP与动态数据中心IP资源。支持大规模数据采集、社交媒体管理、广告验证及跨境电商运营，99.9%可用性保证，配备智能IP轮换系统与高匿名技术。免费试用企业级代理服务，24/7专业技术支持，助您突破地域限制与反爬机制。"
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: lang === 'zh' ? 'IPFlex 代理IP定价方案' : 'IPFlex Proxy Pricing Plans',
+  description: t('pricing.metadata.description'),
+  provider: {
+    '@type': 'Organization',
+    name: 'IPFlex',
+    url: 'https://ipflex.ink',
   },
-  "brand": {
-    "@type": "Brand",
-    "name": "IPFlex",
-    "logo": "https://ipflexproxy.com/logo.png",
-    "description": "Leading provider of enterprise-grade proxy IP solutions"
-  },
-  "category": ["Internet Service", "Proxy Service", "IP Provider"],
-  "keywords": [
-    "Premium Proxy IP",
-    "Static Residential Proxies",
-    "Dynamic Datacenter IPs",
-    "Enterprise Proxy Solutions",
-    "High-Anonymity Proxies",
-    "Web Scraping API",
-    "Multi-Country IPs",
-    "E-commerce Proxies",
-    "Social Media IPs",
-    "Ad Verification Proxies",
-    "Long-term IP Rental",
-    "Anti-Anti-Scraping",
-    "IP Rotation Service",
-    "Overseas Proxy Provider",
-    "IP Switching System"
+  areaServed: 'Worldwide',
+  serviceType: [
+    'Static Residential Proxy',
+    'Dynamic Residential Proxy',
+    'Datacenter Proxy',
   ],
-  "offers": {
-    "@type": "AggregateOffer",
-    "priceCurrency": "USD",
-    "lowPrice": "9.99",
-    "highPrice": "299.99",
-    "offerCount": "3",
-    "availability": "https://schema.org/InStock",
-    "seller": {
-      "@type": "Organization",
-      "name": "IPFlex",
-      "url": "https://ipflexproxy.com",
-      "description": "Enterprise-grade proxy IP provider"
-    }
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "reviewCount": "150",
-    "bestRating": "5",
-    "worstRating": "1",
-    "ratingCount": "150",
-    "reviewAspect": [
-      {
-        "@type": "ReviewAspect",
-        "name": "Speed",
-        "ratingValue": "4.9"
-      },
-      {
-        "@type": "ReviewAspect",
-        "name": "Reliability",
-        "ratingValue": "4.8"
-      },
-      {
-        "@type": "ReviewAspect",
-        "name": "Customer Support",
-        "ratingValue": "4.7"
-      },
-      {
-        "@type": "ReviewAspect",
-        "name": "IP Quality",
-        "ratingValue": "4.9"
-      },
-      {
-        "@type": "ReviewAspect",
-        "name": "Service Coverage",
-        "ratingValue": "4.8"
-      }
-    ]
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Michael Chen"
-      },
-      "datePublished": "2024-03-15",
-      "reviewBody": {
-        "@type": "Text",
-        "en": "The static residential IPs are incredibly stable and fast, perfect for our e-commerce data collection needs. The customer support team is always responsive and helpful. I've been using their service for over 6 months and couldn't be happier.",
-        "zh": "静态住宅IP非常稳定和快速，完全满足我们的电商数据采集需求。客服团队总是及时响应并乐于助人。我已经使用他们的服务超过6个月，非常满意。"
-      }
-    },
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "4",
-        "bestRating": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Sarah Johnson"
-      },
-      "datePublished": "2024-03-10",
-      "reviewBody": {
-        "@type": "Text",
-        "en": "Great service for social media management. The dynamic IP rotation works perfectly for our needs. The only minor issue was the initial setup, but support helped us through it quickly. Highly recommended for enterprise use.",
-        "zh": "非常适合社交媒体管理的服务。动态IP轮换完全满足我们的需求。唯一的小问题是初始设置，但支持团队很快就帮我们解决了。强烈推荐企业使用。"
-      }
-    }
-  ],
-  "additionalProperty": [
-    {
-      "@type": "PropertyValue",
-      "name": "Uptime Guarantee",
-      "value": "99.9%"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Global Coverage",
-      "value": "200+ Locations"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "IP Types",
-      "value": ["Static Residential", "Dynamic Datacenter", "Rotating Residential"]
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Support",
-      "value": "24/7 Technical Support"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Service Types",
-      "value": ["Web Scraping", "Social Media Management", "Ad Verification", "E-commerce"]
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Features",
-      "value": ["High Anonymity", "IP Rotation", "Anti-Detection", "Geo-Targeting"]
-    }
-  ],
-  "serviceType": [
-    "Premium Proxy Service",
-    "Enterprise IP Solutions",
-    "Web Scraping API",
-    "Social Media Management",
-    "Ad Verification"
-  ],
-  "serviceArea": {
-    "@type": "GeoCircle",
-    "geoMidpoint": {
-      "@type": "GeoCoordinates",
-      "latitude": "0",
-      "longitude": "0"
-    },
-    "geoRadius": "20000km",
-    "areaServed": "Global"
-  },
-  "url": "https://ipflexproxy.com/pricing"
+  offers: prices.map((plan) => ({
+    '@type': 'Offer',
+    name: plan.title,
+    price: plan.price,
+    priceCurrency: 'USD',
+    category: plan.subtitle,
+    availability: 'https://schema.org/InStock',
+    url: 'https://ipflex.ink/' + lang + '/pricing',
+  })),
+  url: 'https://ipflex.ink/' + lang + '/pricing',
 };
 ---
 
