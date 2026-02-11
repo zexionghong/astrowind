@@ -30,19 +30,41 @@ const { lang = 'zh' } = Astro.params;
 const { page } = Astro.props;
 const t = await useTranslations(lang);
 
+const siteBase = String(Astro.site || '').replace(/\/$/, '');
+const canonicalUrl = `${siteBase}${Astro.url.pathname}`;
+
 const metadata = {
   title: `${t('blog.title')}${page.currentPage > 1 ? ` - ${t('blog.page')}${page.currentPage}` : ''}`,
+  description: t('blog.subtitle'),
   robots: {
     index: blogListRobots?.index && page.currentPage === 1,
     follow: blogListRobots?.follow,
   },
   openGraph: {
     type: 'blog',
+    url: canonicalUrl,
+    title: `${t('blog.title')}${page.currentPage > 1 ? ` - ${t('blog.page')}${page.currentPage}` : ''}`,
+    description: t('blog.subtitle'),
+  },
+};
+
+const blogSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  name: t('blog.title'),
+  description: t('blog.subtitle'),
+  url: canonicalUrl,
+  inLanguage: lang === 'zh' ? 'zh-CN' : 'en-US',
+  publisher: {
+    '@type': 'Organization',
+    name: 'IPFlex',
+    url: 'https://ipflex.ink',
   },
 };
 ---
 
 <Layout metadata={metadata}>
+  <script type="application/ld+json" set:html={JSON.stringify(blogSchema)} />
   <section class="px-4 md:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
     <Headline
       subtitle={t('blog.subtitle')}
