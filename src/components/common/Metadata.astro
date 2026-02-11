@@ -67,7 +67,35 @@ const alternateUrls = {
   en: `/en${pathWithoutLocale === '/' ? '' : pathWithoutLocale}`,
 };
 
+const routePath = normalizedPath;
+const isHomePage = /^\/(zh|en)?$/.test(routePath);
+const isBlogPage = /^\/(zh|en)\/blog(\/|$)/.test(routePath);
+const isCommercialPage = /(proxy|pricing|detail|use-case|scenarios)/.test(routePath);
+
+const shouldRenderWebsiteSchema = isHomePage;
+const shouldRenderProductSchema = !isBlogPage;
+const shouldRenderServiceSchema = isHomePage || isCommercialPage;
+const shouldRenderMainSchema = !isBlogPage;
+
 const currentOgLocale = lang === 'zh' ? 'zh_CN' : 'en_US';
+
+const localizedDefaultMetadata =
+  lang === 'en'
+    ? {
+        title: {
+          default: 'IPFlex - Premium IP Proxy Service | Residential Proxy | HTTP Proxy | SOCKS5 Proxy',
+          template: '%s — IPFlex Proxy Service',
+        },
+        description:
+          'IPFlex offers enterprise-grade IP proxy services: static residential proxies, dynamic residential proxies, datacenter proxies. Supports HTTP/SOCKS5 protocols, covers 200+ countries, serves web scraping proxy, e-commerce proxy, ad verification proxy scenarios. 99.9% uptime, free trial, 24/7 support. Buy proxy service now!',
+      }
+    : {
+        title: {
+          default: METADATA?.title?.default,
+          template: METADATA?.title?.template,
+        },
+        description: METADATA?.description,
+      };
 
 const seoProps: AstroSeoProps = merge(
   {
@@ -89,11 +117,11 @@ const seoProps: AstroSeoProps = merge(
     },
   },
   {
-    title: METADATA?.title?.default,
-    titleTemplate: METADATA?.title?.template,
+    title: localizedDefaultMetadata.title.default,
+    titleTemplate: localizedDefaultMetadata.title.template,
     noindex: typeof METADATA?.robots?.index !== 'undefined' ? !METADATA.robots.index : undefined,
     nofollow: typeof METADATA?.robots?.follow !== 'undefined' ? !METADATA.robots.follow : undefined,
-    description: METADATA?.description,
+    description: localizedDefaultMetadata.description,
     openGraph: METADATA?.openGraph,
     twitter: METADATA?.twitter,
   },
@@ -124,11 +152,15 @@ const mainStructuredData = {
     price: '0',
     priceCurrency: 'USD'
   },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '4.8',
-    ratingCount: '1320'
-  },
+  ...(isHomePage
+    ? {
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: '4.8',
+          ratingCount: '1320',
+        },
+      }
+    : {}),
   description: description || METADATA?.description,
   provider: {
     '@type': 'Organization',
@@ -275,8 +307,6 @@ const serviceStructuredData = {
 <meta name="baiduspider" content="index, follow, max-snippet:-1, max-image-preview:large" />
 <meta name="sogou" content="index, follow" />
 <meta name="360spider" content="index, follow" />
-<meta name="baidu-site-verification" content="codeva-Jb90hwYhf4" />
-<meta name="baidu-site-verification" content="codeva-DsczgTJKSi" />
 
 <!-- 添加更多搜索引擎优化标签 -->
 <meta name="author" content="IPFlex Team" />
@@ -328,7 +358,7 @@ const serviceStructuredData = {
 })} />
 )}
 
-<script type="application/ld+json" set:html={JSON.stringify(mainStructuredData)} />
-<script type="application/ld+json" set:html={JSON.stringify(productStructuredData)} />
-<script type="application/ld+json" set:html={JSON.stringify(websiteStructuredData)} />
-<script type="application/ld+json" set:html={JSON.stringify(serviceStructuredData)} />
+{shouldRenderMainSchema && <script type="application/ld+json" set:html={JSON.stringify(mainStructuredData)} />}
+{shouldRenderProductSchema && <script type="application/ld+json" set:html={JSON.stringify(productStructuredData)} />}
+{shouldRenderWebsiteSchema && <script type="application/ld+json" set:html={JSON.stringify(websiteStructuredData)} />}
+{shouldRenderServiceSchema && <script type="application/ld+json" set:html={JSON.stringify(serviceStructuredData)} />}
