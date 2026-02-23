@@ -19,7 +19,7 @@ const metadata = {
     ? 'IPFlex 企业代理服务账号注册与接入开通中心与新手接入指引'
     : 'IPFlex Enterprise Proxy Account Registration and Onboarding',
   description: lang === 'zh'
-    ? '注册 IPFlex 企业账号，快速开通静态住宅代理、动态住宅代理与数据中心代理。支持 API 接入、用量计费、区域定位、会话管理、访问策略、团队协作、日志审计和实时监控，适配数据采集、广告验证、跨境运营、账号管理、自动化任务与长期稳定接入。'
+    ? '注册 IPFlex 企业账号，快速开通静态住宅、动态住宅与数据中心线路。支持 API 接入、用量计费、区域定位、会话管理、访问策略、团队协作、日志审计和实时监控，适配数据采集、广告核验、跨境运营、账号管理与自动化任务。'
     : 'Create an IPFlex account to activate enterprise proxy services with static residential, dynamic residential and datacenter options, API integration, usage-based billing, and global coverage.',
   robots: {
     index: false,
@@ -244,17 +244,17 @@ const handleSubmit = `async function(e) {
             </p>
             <p class="mt-3 text-sm leading-6 text-gray-700">
               {lang === 'zh'
-                ? 'Registration onboarding checklist: create API credentials, configure endpoint region, validate request success rate, monitor response latency, and scale traffic gradually from staging to production.'
+                ? '建议在接入初期优先完成基础检查项：创建 API 凭证、确认线路区域、验证请求成功率、监测响应时延，并按阶段逐步放量。'
                 : 'Registration onboarding checklist: create API credentials, configure endpoint region, validate request success rate, monitor response latency, and scale traffic gradually from staging to production.'}
             </p>
             <p class="mt-3 text-sm leading-6 text-gray-700">
               {lang === 'zh'
-                ? 'Successful onboarding usually follows a clear sequence: define business goals, map request patterns, configure authentication, validate routing behavior, review error handling, and monitor service quality with consistent metrics. Teams that complete this checklist before production rollout often achieve better stability, clearer capacity planning, and faster troubleshooting when traffic scales. This practical process also reduces avoidable rework in later integration stages.'
+                ? '完整接入流程通常包括：明确业务目标、梳理请求模式、配置鉴权机制、验证路由行为、检查异常处理并建立统一监控指标。上线前做完这些准备，通常能获得更稳定的运行表现、更清晰的容量规划和更高效的排障节奏。'
                 : 'Successful onboarding usually follows a clear sequence: define business goals, map request patterns, configure authentication, validate routing behavior, review error handling, and monitor service quality with consistent metrics. Teams that complete this checklist before production rollout often achieve better stability, clearer capacity planning, and faster troubleshooting when traffic scales. This practical process also reduces avoidable rework in later integration stages.'}
             </p>
             <p class="mt-3 text-sm leading-6 text-gray-700">
               {lang === 'zh'
-                ? 'Production readiness checklist: credential rotation policy, endpoint fallback strategy, request timeout baseline, and weekly quality review cadence.'
+                ? '生产阶段可继续建立凭证轮换策略、线路兜底方案、超时基线和每周质量复盘机制，以保证持续交付的稳定性。'
                 : 'Production readiness checklist: credential rotation policy, endpoint fallback strategy, request timeout baseline, and weekly quality review cadence.'}
             </p>
           </section>

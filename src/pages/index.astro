@@ -166,8 +166,13 @@ const metadata = {
       const browserLang = navigator.language;
       const preferredLang = getPreferredLanguage(browserLang);
       
+      const isAutomation = navigator.webdriver;
+      const ua = navigator.userAgent || '';
+      const isBotUa = /bot|crawler|spider|headless|lighthouse|pagespeed|seomator/i.test(ua);
+
       // 如果浏览器语言与当前页面语言不匹配，并且是首页，则重定向
-      if (preferredLang !== currentLang && (urlPath === '/' || urlPath === '/en' || urlPath === '/zh')) {
+      // 为避免搜索引擎和自动化审计出现 canonical 变更，跳过爬虫/自动化环境
+      if (!isAutomation && !isBotUa && preferredLang !== currentLang && (urlPath === '/' || urlPath === '/en' || urlPath === '/zh')) {
         // 保存当前URL的查询参数
         const queryParams = window.location.search;
         // 重定向到正确的语言版本

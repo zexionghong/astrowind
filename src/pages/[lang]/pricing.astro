@@ -17,7 +17,7 @@ const metadata = {
     ? 'IPFlex 企业代理IP定价方案与套餐选择指南'
     : 'IPFlex Enterprise Proxy Pricing Plans and Selection Guide',
   description: lang === 'zh'
-    ? '查看 IPFlex 企业代理IP定价方案，覆盖静态住宅、动态住宅与数据中心代理。按业务规模灵活计费，支持 API 接入、全球节点、会话管理、请求重试、访问策略、监控告警与成本优化，适配采集、广告验证、跨境运营、自动化业务扩展和长期稳定交付。'
+    ? '查看 IPFlex 企业网络服务定价方案，覆盖静态住宅、动态住宅与数据中心线路。按业务规模灵活计费，支持 API 接入、全球节点、会话管理、重试策略、访问规则、监控告警与成本优化，适配采集分析、广告核验、跨境运营和自动化扩展。'
     : 'Explore IPFlex proxy pricing for static residential, dynamic residential, and datacenter plans with flexible billing, global coverage, API integration, and clear scaling paths for data collection and growth.',
 };
 const pricingIntro = lang === 'zh'
@@ -150,12 +150,12 @@ const productSchema = {
     </ul>
     <p class="mt-4 text-base leading-7 text-gray-700 dark:text-gray-300">
       {lang === 'zh'
-        ? 'Pricing evaluation works best when teams compare measurable outcomes instead of only list price. A reliable baseline should include request success ratio, average completion time, retry overhead, failure classification, and monthly cost per completed workflow. With this method, decision makers can choose a plan that balances throughput, reliability, and operational predictability under real production traffic.'
+        ? '评估套餐时，建议用可量化结果而不是只看标价。基准项可包含成功率、平均完成时长、重试开销、失败类型分布和单业务流程月度成本。按这套方法比较，更容易在真实流量下平衡吞吐、稳定性与运营可预测性。'
         : 'Pricing evaluation works best when teams compare measurable outcomes instead of only list price. A reliable baseline should include request success ratio, average completion time, retry overhead, failure classification, and monthly cost per completed workflow. With this method, decision makers can choose a plan that balances throughput, reliability, and operational predictability under real production traffic.'}
     </p>
     <p class="mt-4 text-base leading-7 text-gray-700 dark:text-gray-300">
       {lang === 'zh'
-        ? 'Operational comparison tip: benchmark at least one full business cycle, including peak hours and retry-heavy scenarios, so the selected plan reflects real execution conditions instead of ideal traffic assumptions.'
+        ? '对比测试建议至少覆盖一个完整业务周期，并包含高峰时段和重试密集场景，这样最终选择更贴近真实执行环境，而不是理想化假设。'
         : 'Operational comparison tip: benchmark at least one full business cycle, including peak hours and retry-heavy scenarios, so the selected plan reflects real execution conditions instead of ideal traffic assumptions.'}
     </p>
   </section>
