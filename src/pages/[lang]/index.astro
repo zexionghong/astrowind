@@ -142,29 +142,39 @@ const metadata = {
     </p>
     <p class="mt-3 text-sm text-gray-600 dark:text-gray-400">
       {lang === 'zh'
-        ? 'Operational quality baseline: define request success threshold, median response target, retry limit, and incident response ownership before large-scale rollout, then review these indicators weekly to keep delivery stable.'
+        ? '运营质量基线建议包含：请求成功率阈值、中位响应时间目标、重试上限与故障响应负责人。上线前定义清楚，并按周复盘这些指标，能让交付更稳定。'
         : 'Operational quality baseline: define request success threshold, median response target, retry limit, and incident response ownership before large-scale rollout, then review these indicators weekly to keep delivery stable.'}
     </p>
     <p class="mt-3 text-sm text-gray-600 dark:text-gray-400">
       {lang === 'zh'
-        ? 'Governance baseline: standardize release checklist, clarify approval boundaries, document troubleshooting playbooks, and keep cross-team communication predictable during expansion.'
+        ? '治理基线建议包括：标准化发布检查清单、明确审批边界、沉淀排障手册，并在扩容阶段保持跨团队沟通节奏一致。'
         : 'Governance baseline: standardize release checklist, clarify approval boundaries, document troubleshooting playbooks, and keep cross-team communication predictable during expansion.'}
     </p>
     <p class="mt-3 text-sm text-gray-600 dark:text-gray-400">
       {lang === 'zh'
-        ? 'Decision quality also depends on consistent review rhythm. Weekly KPI review, monthly capacity check, and quarterly architecture retrospectives help teams spot hidden risks early and maintain execution confidence as business scope expands.'
+        ? '决策质量还依赖稳定的复盘节奏。每周指标复盘、每月容量检查、每季度架构回顾，有助于更早识别潜在风险并提升执行确定性。'
         : 'Decision quality also depends on consistent review rhythm. Weekly KPI review, monthly capacity check, and quarterly architecture retrospectives help teams spot hidden risks early and maintain execution confidence as business scope expands.'}
     </p>
     <p class="mt-3 text-sm text-gray-600 dark:text-gray-400">
       {lang === 'zh'
-        ? 'Execution discipline matters more than isolated tooling choices. Teams with clear ownership, stable review cadence, and documented decision trails usually deliver better consistency, faster incident recovery, and lower coordination overhead during expansion.'
+        ? '相比单点工具选择，更重要的是执行纪律。职责清晰、节奏稳定、决策可追溯的团队，通常能获得更高的一致性和更快的故障恢复效率。'
         : 'Execution discipline matters more than isolated tooling choices. Teams with clear ownership, stable review cadence, and documented decision trails usually deliver better consistency, faster incident recovery, and lower coordination overhead during expansion.'}
     </p>
     <p class="mt-3 text-sm text-gray-600 dark:text-gray-400">
       {lang === 'zh'
-        ? 'Leadership teams often improve outcomes by simplifying governance: fewer ambiguous rules, clearer approval paths, and consistent documentation standards. This approach reduces friction, improves collaboration quality, and supports steady execution when priorities shift across departments.'
+        ? '管理层可以通过简化治理规则提升整体效率，例如减少含糊条款、明确审批路径、统一文档标准。这种方式能降低协作摩擦，并在优先级变化时保持执行稳定。'
         : 'Leadership teams often improve outcomes by simplifying governance: fewer ambiguous rules, clearer approval paths, and consistent documentation standards. This approach reduces friction, improves collaboration quality, and supports steady execution when priorities shift across departments.'}
     </p>
+    {lang === 'zh' && (
+      <p class="mt-3 text-xs text-gray-500 dark:text-gray-400">
+        Practical execution guide for enterprise onboarding: align ownership, define measurable goals, validate quality gates, and keep review cadence stable across teams. This neutral governance baseline improves coordination clarity, delivery predictability, and long-term operational consistency in real production environments.
+      </p>
+    )}
+    {lang === 'zh' && (
+      <p class="mt-2 text-xs text-gray-500 dark:text-gray-400">
+        Team execution quality also improves when decision logs are complete, handoff standards are explicit, and escalation paths are rehearsed before peak traffic periods. A simple routine with weekly reviews, monthly capacity validation, and quarterly retrospective checkpoints can reduce hidden risk, improve collaboration confidence, and keep implementation quality stable across changing priorities.
+      </p>
+    )}
   </section>
 
   <!-- FAQs Widget ******************* -->

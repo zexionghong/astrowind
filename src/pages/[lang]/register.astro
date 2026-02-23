@@ -224,20 +224,34 @@ const handleSubmit = `async function(e) {
           </a>
         </div>
 
-        <section class="mt-3 rounded-lg border border-gray-100 bg-gray-50 px-3 py-2 text-[11px] leading-4 text-gray-500">
+        <section class="mt-3 text-[11px] leading-4 text-gray-500">
           <p>
             {lang === 'zh'
-              ? '接入建议：先做小流量验证，再逐步扩容。Operational baseline: verify endpoint reachability, success ratio, latency trend, and rollback readiness before scale-up to reduce delivery risk and improve execution stability.'
-              : 'Operational baseline: verify endpoint reachability, success ratio, latency trend, and rollback readiness before scale-up to reduce delivery risk and improve execution stability.'}
+              ? '接入提示：建议先完成小流量验证，再按阶段扩容。Operational onboarding checklist: verify authentication flow, endpoint reachability, success ratio trend, latency baseline, and rollback readiness before production expansion.'
+              : 'Operational onboarding checklist: verify authentication flow, endpoint reachability, success ratio trend, latency baseline, and rollback readiness before production expansion.'}
+          </p>
+          <p class="mt-1">
+            {lang === 'zh'
+              ? 'Execution baseline for first launch: document ownership for account setup, credential safety, and incident response; run controlled tests for normal traffic and peak traffic windows; verify retry behavior and error classification; record change history and rollback checkpoints; then expand capacity in phases. This method improves predictability, reduces avoidable rework, and keeps cross-team collaboration stable during onboarding.'
+              : 'Execution baseline for first launch: document ownership for account setup, credential safety, and incident response; run controlled tests for normal traffic and peak traffic windows; verify retry behavior and error classification; record change history and rollback checkpoints; then expand capacity in phases. This method improves predictability, reduces avoidable rework, and keeps cross-team collaboration stable during onboarding.'}
           </p>
           <ul class="mt-1 list-disc pl-4">
-            <li>{lang === 'zh' ? '先验证可用性与异常处理，再放量。' : 'Validate reliability before increasing traffic.'}</li>
-            <li>{lang === 'zh' ? '按周复盘质量指标与改动记录。' : 'Review quality metrics and changes weekly.'}</li>
+            <li>{lang === 'zh' ? '先核对可用性与异常处理，再放量。' : 'Validate reliability and failure handling before scaling.'}</li>
+            <li>{lang === 'zh' ? '保持每周质量复盘与变更记录。' : 'Keep weekly quality review and change logs.'}</li>
           </ul>
-          <p class="mt-2">
+        </section>
+
+        <section class="sr-only" aria-label={lang === 'zh' ? '注册流程补充说明' : 'Registration process notes'}>
+          <h2>{lang === 'zh' ? '注册流程与接入准备' : 'Registration Workflow and Onboarding Readiness'}</h2>
+          <p>
             {lang === 'zh'
-              ? 'Readiness note: define checkpoints before launch, confirm ownership for incident response, verify rollback flow, and keep change logs complete. Teams that follow a repeatable operating cadence usually maintain better stability, clearer accountability, and faster recovery when unexpected conditions appear.'
-              : 'Readiness note: define checkpoints before launch, confirm ownership for incident response, verify rollback flow, and keep change logs complete. Teams that follow a repeatable operating cadence usually maintain better stability, clearer accountability, and faster recovery when unexpected conditions appear.'}
+              ? '完成账号注册后，建议先进行基础连通验证，确认接口鉴权、请求成功率、响应时延与日志记录都符合预期。首轮验证可以使用小规模样本流量，观察失败类型与重试行为，再逐步扩大任务范围。这样可以更快识别配置误差、减少上线前返工，并提升跨团队协作效率。'
+              : 'After creating an account, teams should run a baseline readiness check for authentication, success ratio, response latency, and logging quality. Start with small traffic samples, observe failure patterns and retry behavior, then expand in phases. This process helps identify configuration gaps early, reduces rework before production, and improves collaboration across product, engineering, and operations.'}
+          </p>
+          <p>
+            {lang === 'zh'
+              ? '建议同步建立发布检查清单、异常升级路径和回滚预案，并明确每个阶段的负责人。持续记录关键指标变化，有助于在流量增长时保持交付稳定，降低运维波动风险。'
+              : 'Teams should also define release checklists, escalation paths, and rollback plans with clear ownership for each stage. Consistent tracking of key metrics keeps delivery stable during traffic growth and reduces operational uncertainty.'}
           </p>
         </section>
 

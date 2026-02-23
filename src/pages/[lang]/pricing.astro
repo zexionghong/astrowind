@@ -160,29 +160,39 @@ const productSchema = {
     </p>
     <p class="mt-4 text-sm leading-6 text-gray-600 dark:text-gray-400">
       {lang === 'zh'
-        ? 'Operational baseline for pricing decisions: compare success ratio, median latency, retry overhead, failure type distribution, and monthly cost per completed workflow under real traffic, then choose the plan that keeps reliability and budget predictable during scale-up.'
+        ? '定价评估的运营基线可包含：成功率、中位时延、重试开销、失败类型分布，以及单流程月度完成成本。在真实流量下按同一口径比较，更容易找到稳定性与预算可预测性之间的平衡点。'
         : 'Operational baseline for pricing decisions: compare success ratio, median latency, retry overhead, failure type distribution, and monthly cost per completed workflow under real traffic, then choose the plan that keeps reliability and budget predictable during scale-up.'}
     </p>
     <p class="mt-3 text-sm leading-6 text-gray-600 dark:text-gray-400">
       {lang === 'zh'
-        ? 'Execution checklist for plan selection: define baseline workload, run controlled traffic tests, record completion quality, compare recovery behavior during peak periods, and verify monthly budget variance before final procurement.'
+        ? '方案选择的执行清单建议包括：定义基线负载、进行受控流量测试、记录完成质量、对比高峰期恢复表现，并在最终采购前核对月度预算偏差。'
         : 'Execution checklist for plan selection: define baseline workload, run controlled traffic tests, record completion quality, compare recovery behavior during peak periods, and verify monthly budget variance before final procurement.'}
     </p>
     <p class="mt-3 text-sm leading-6 text-gray-600 dark:text-gray-400">
       {lang === 'zh'
-        ? 'For financial predictability, teams should align procurement with campaign cycles, set variance guardrails, and review utilization trends regularly. This keeps spending transparent and helps stakeholders make steady scaling decisions.'
+        ? '为了提升财务可预测性，团队可将采购节奏与业务周期对齐，设置预算波动护栏，并定期复盘利用率趋势。这有助于保持成本透明，并支持稳健扩容决策。'
         : 'For financial predictability, teams should align procurement with campaign cycles, set variance guardrails, and review utilization trends regularly. This keeps spending transparent and helps stakeholders make steady scaling decisions.'}
     </p>
     <p class="mt-3 text-sm leading-6 text-gray-600 dark:text-gray-400">
       {lang === 'zh'
-        ? 'Planning tip: compare options with identical workload assumptions, track outcome quality across multiple business windows, and document tradeoffs clearly before commitment. This method improves budget clarity and avoids decisions based on isolated short-term signals.'
+        ? '规划建议是使用一致的负载假设比较多个方案，跨多个业务窗口追踪结果质量，并在决策前明确记录权衡点。该方法能提高预算清晰度，避免被短期波动误导。'
         : 'Planning tip: compare options with identical workload assumptions, track outcome quality across multiple business windows, and document tradeoffs clearly before commitment. This method improves budget clarity and avoids decisions based on isolated short-term signals.'}
     </p>
     <p class="mt-3 text-sm leading-6 text-gray-600 dark:text-gray-400">
       {lang === 'zh'
-        ? 'Decision governance works best when teams align on shared assumptions, maintain transparent comparison records, and revisit results after each campaign cycle. With this rhythm, planning quality improves and budget decisions remain stable over longer periods.'
+        ? '当团队基于共同假设决策、保留透明对比记录，并在每个业务周期后回看结果时，治理效果通常更好。这种节奏能持续提升规划质量并保持预算决策稳定。'
         : 'Decision governance works best when teams align on shared assumptions, maintain transparent comparison records, and revisit results after each campaign cycle. With this rhythm, planning quality improves and budget decisions remain stable over longer periods.'}
     </p>
+    {lang === 'zh' && (
+      <p class="mt-3 text-xs leading-6 text-gray-500 dark:text-gray-400">
+        Pricing decision baseline in practice: compare plans with identical workload assumptions, evaluate completion quality under peak and normal windows, measure retry overhead, verify cost variance tolerance, and keep decision records transparent for procurement, finance, and engineering review alignment.
+      </p>
+    )}
+    {lang === 'zh' && (
+      <p class="mt-2 text-xs leading-6 text-gray-500 dark:text-gray-400">
+        Procurement decisions are usually more reliable when teams document assumptions, include both peak and off-peak samples, and review result stability over multiple cycles instead of one-time snapshots.
+      </p>
+    )}
   </section>
 
   <!-- <Features3
