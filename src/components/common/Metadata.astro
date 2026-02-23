@@ -110,6 +110,12 @@ const localizedDefaultMetadata =
         description: METADATA?.description,
       };
 
+const clampMetaText = (text: unknown, maxChars: number) => {
+  if (typeof text !== 'string') return text;
+  const normalized = text.replace(/\s+/g, ' ').trim();
+  return normalized.length > maxChars ? `${normalized.slice(0, maxChars - 1)}…` : normalized;
+};
+
 const seoProps: AstroSeoProps = merge(
   {
     title: '',
@@ -149,6 +155,18 @@ const seoProps: AstroSeoProps = merge(
     twitter: twitter,
   }
 );
+
+// 标题/描述长度规范化（P1）
+seoProps.title = clampMetaText(seoProps.title, lang === 'zh' ? 32 : 60) as string;
+seoProps.description = clampMetaText(seoProps.description, lang === 'zh' ? 90 : 160) as string;
+if (seoProps.openGraph) {
+  seoProps.openGraph.title = clampMetaText(seoProps.openGraph.title || seoProps.title, lang === 'zh' ? 32 : 60) as string;
+  seoProps.openGraph.description = clampMetaText(seoProps.openGraph.description || seoProps.description, lang === 'zh' ? 90 : 160) as string;
+}
+if (seoProps.twitter) {
+  seoProps.twitter.title = clampMetaText(seoProps.twitter.title || seoProps.title, lang === 'zh' ? 32 : 60) as string;
+  seoProps.twitter.description = clampMetaText(seoProps.twitter.description || seoProps.description, lang === 'zh' ? 90 : 160) as string;
+}
 
 // 添加结构化数据
 const mainStructuredData = {
@@ -210,18 +228,18 @@ const productStructuredData = {
   name: schemaServiceName,
   description: schemaDescription,
   url: canonical,
+  image: `${SITE.site}/images/hero-proxy.webp`,
   category: 'Proxy Service',
   brand: {
     '@type': 'Brand',
     name: 'IPFlex'
   },
   offers: {
-    '@type': 'AggregateOffer',
+    '@type': 'Offer',
+    price: '0',
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
-    highPrice: '999',
-    lowPrice: '0',
-    offerCount: '5'
+    url: canonical
   }
 };
 
