@@ -31,7 +31,7 @@ const {
 } = Astro.props as Pricing;
 ---
 
-<div class="w-full relative py-16 text-white" id={id}>
+<div class="w-full relative py-16 text-white overflow-x-clip" id={id}>
   <Image
     src={bg}
     alt="pricing background"
@@ -41,7 +41,7 @@ const {
   />
   <div class="container mx-auto max-w-7xl px-4 relative z-10">
     <div class="text-center mb-32">
-      <h2 class="text-4xl font-bold mb-2">{title}</h2>
+      <h1 class="text-4xl font-bold mb-2">{title}</h1>
       <p class="text-lg">{subtitle}</p>
     </div>
 
@@ -49,7 +49,7 @@ const {
     
     <div class="grid grid-cols-1 md:grid-cols-3 gap-3 max-w-5xl mx-auto">
       {prices && prices.map((price, index) => (
-        <div class={index === 1 ? '-mt-10' : ''}>
+        <div class={index === 1 ? 'md:-mt-10' : ''}>
           <PriceCard {...price} index={index} />
         </div>
       ))}
@@ -63,7 +63,7 @@ const {
   
   <div class="container mx-auto max-w-7xl px-4">
     <div class="text-center mb-10">
-      <h1 class="text-3xl font-bold text-blue-600 mb-2">{features.title}</h1>
+      <h2 class="text-3xl font-bold text-blue-600 mb-2">{features.title}</h2>
       <p class="text-gray-600">{features.subtitle}</p>
     </div>
     
@@ -89,4 +89,3 @@ const {
     </div>
   </div>
 </div>
-

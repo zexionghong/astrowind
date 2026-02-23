@@ -83,7 +83,7 @@ const isCommercialPage = /(proxy|pricing|detail|use-case|scenarios)/.test(routeP
 const shouldRenderWebsiteSchema = isHomePage;
 const shouldRenderProductSchema = isCommercialPage && !isBlogPage;
 const shouldRenderServiceSchema = isCommercialPage;
-const shouldRenderMainSchema = !isBlogPage;
+const shouldRenderMainSchema = isHomePage;
 
 const currentOgLocale = lang === 'zh' ? 'zh_CN' : 'en_US';
 const schemaServiceName = lang === 'zh' ? 'IPFlex IP代理服务' : 'IPFlex Proxy Services';
@@ -159,14 +159,14 @@ const seoProps: AstroSeoProps = merge(
 
 // 标题/描述长度规范化（P1）
 seoProps.title = clampMetaText(seoProps.title, lang === 'zh' ? 32 : 60) as string;
-seoProps.description = clampMetaText(seoProps.description, lang === 'zh' ? 150 : 160) as string;
+seoProps.description = clampMetaText(seoProps.description, lang === 'zh' ? 120 : 145) as string;
 if (seoProps.openGraph) {
   seoProps.openGraph.title = clampMetaText(seoProps.openGraph.title || seoProps.title, lang === 'zh' ? 32 : 60) as string;
-  seoProps.openGraph.description = clampMetaText(seoProps.openGraph.description || seoProps.description, lang === 'zh' ? 150 : 160) as string;
+  seoProps.openGraph.description = clampMetaText(seoProps.openGraph.description || seoProps.description, lang === 'zh' ? 120 : 145) as string;
 }
 if (seoProps.twitter) {
   seoProps.twitter.title = clampMetaText(seoProps.twitter.title || seoProps.title, lang === 'zh' ? 32 : 60) as string;
-  seoProps.twitter.description = clampMetaText(seoProps.twitter.description || seoProps.description, lang === 'zh' ? 150 : 160) as string;
+  seoProps.twitter.description = clampMetaText(seoProps.twitter.description || seoProps.description, lang === 'zh' ? 120 : 145) as string;
 }
 
 // 添加结构化数据

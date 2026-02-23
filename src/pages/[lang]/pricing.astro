@@ -117,6 +117,27 @@ const productSchema = {
 
   <Prices prices={prices} title={t('pricing.hero.title')} subtitle={t('pricing.hero.subtitle')} features={features} />
 
+  <section class="mx-auto max-w-5xl px-4 py-14">
+    <h2 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
+      {lang === 'zh' ? '如何选择合适的代理套餐' : 'How to Choose the Right Proxy Plan'}
+    </h2>
+    <p class="mb-4 text-base leading-7 text-gray-700 dark:text-gray-300">
+      {lang === 'zh'
+        ? '在选择代理套餐时，建议先确认业务目标、请求并发、目标网站反爬强度和预算结构。静态住宅代理更适合需要长期稳定会话的账号运营、支付验证和风控场景；动态住宅代理更适合大规模采集、广告验证和需要频繁切换出口的任务；静态数据中心代理更适合高并发 API 调用、自动化测试和成本敏感业务。'
+        : 'When selecting a proxy plan, start with business goals, request concurrency, anti-bot difficulty, and budget structure. Static residential proxies are ideal for long sessions in account operations and risk control. Dynamic residential proxies are better for large crawling and ad verification workloads. Static datacenter proxies are suitable for high-throughput API calls, automation, and cost-sensitive tasks.'}
+    </p>
+    <p class="mb-4 text-base leading-7 text-gray-700 dark:text-gray-300">
+      {lang === 'zh'
+        ? '如果你的核心 KPI 是成功率与稳定性，优先关注可用率、失败重试策略和地域覆盖；如果你的核心 KPI 是成本效率，优先关注单次请求成本、会话复用能力和批量任务调度。IPFlex 支持按业务阶段组合采购，从小流量验证到生产级扩展可以平滑迁移，避免一次性过度投入。'
+        : 'If your KPI is stability, prioritize success rate, retry strategy, and geo coverage. If your KPI is cost efficiency, prioritize cost per successful request, session reuse, and batch scheduling. IPFlex supports phased scaling so teams can validate with small traffic first and then expand to production without large upfront commitment.'}
+    </p>
+    <ul class="list-disc space-y-2 pl-5 text-base leading-7 text-gray-700 dark:text-gray-300">
+      <li>{lang === 'zh' ? '账号体系任务：优先静态住宅代理，保证会话连续和身份一致。' : 'Account-based workflows: prioritize static residential for persistent identity and session continuity.'}</li>
+      <li>{lang === 'zh' ? '抓取采集任务：优先动态住宅代理，提升覆盖率并降低封禁概率。' : 'Data collection workloads: prioritize dynamic residential for broader coverage and lower block rates.'}</li>
+      <li>{lang === 'zh' ? '高并发接口任务：优先数据中心代理，控制单位成本并提高吞吐。' : 'High-concurrency API tasks: prioritize datacenter proxies for throughput and predictable costs.'}</li>
+    </ul>
+  </section>
+
   <!-- <Features3
     title={t('pricing.features.title')}
     subtitle={t('pricing.features.subtitle')}

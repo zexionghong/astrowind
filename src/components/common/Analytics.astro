@@ -1,23 +1,43 @@
 ---
-import { GoogleAnalytics } from '@astrolib/analytics';
 import { ANALYTICS } from 'astrowind:config';
-import GoogleAdsTag from './GoogleAdsTag.astro';
+
+const gaId = ANALYTICS?.vendors?.googleAnalytics?.id
+  ? String(ANALYTICS.vendors.googleAnalytics.id)
+  : '';
+const adsId = ANALYTICS?.vendors?.googleAds?.id ? String(ANALYTICS.vendors.googleAds.id) : '';
 ---
 
-{
-  ANALYTICS?.vendors?.googleAnalytics?.id ? (
-    <GoogleAnalytics
-      id={String(ANALYTICS.vendors.googleAnalytics.id)}
-      partytown={ANALYTICS?.vendors?.googleAnalytics?.partytown}
-    />
-  ) : null
-}
+<script is:inline define:vars={{ gaId, adsId }}>
+  (() => {
+    const consentKey = 'ipflex-cookie-consent';
+    const acceptedEvent = 'ipflex-cookie-accepted';
+    const consent = localStorage.getItem(consentKey);
+    if (consent !== 'accepted') return;
 
-{
-  ANALYTICS?.vendors?.googleAds?.id ? (
-    <GoogleAdsTag
-      id={String(ANALYTICS.vendors.googleAds.id)}
-      partytown={ANALYTICS?.vendors?.googleAnalytics?.partytown}
-    />
-  ) : null
-}
+    const appendScript = (src) => {
+      if (!src || document.querySelector(`script[src="${src}"]`)) return;
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = src;
+      document.head.appendChild(script);
+    };
+
+    const loadAnalytics = () => {
+      if (gaId) {
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function gtag() {
+          window.dataLayer.push(arguments);
+        };
+        appendScript(`https://www.googletagmanager.com/gtag/js?id=${gaId}`);
+        window.gtag('js', new Date());
+        window.gtag('config', gaId);
+      }
+      if (adsId) {
+        appendScript(`https://www.googletagmanager.com/gtag/js?id=${adsId}`);
+      }
+    };
+
+    loadAnalytics();
+    window.addEventListener(acceptedEvent, loadAnalytics, { once: true });
+  })();
+</script>

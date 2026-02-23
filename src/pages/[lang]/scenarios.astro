@@ -47,5 +47,21 @@ const metadata = {
           </article>
         ))}
     </div>
+
+    <section class="mt-14 rounded-2xl border border-gray-200 bg-gray-50 p-6 md:p-8">
+      <h2 class="text-2xl font-bold text-gray-900">
+        {lang === 'zh' ? '场景落地实施建议' : 'Implementation Guidance by Scenario'}
+      </h2>
+      <p class="mt-4 text-base leading-7 text-gray-700">
+        {lang === 'zh'
+          ? '真实业务落地通常分为三个阶段：第一阶段进行目标站点可达性验证，确认请求头、会话策略与基础成功率；第二阶段进行并发压测，确定在不同时间窗口和地域策略下的稳定区间；第三阶段进入持续运营，建立失败重试、异常告警与成本监控机制。通过这种分阶段方法，团队可以在控制风险的前提下逐步扩大代理流量。'
+          : 'Production rollout usually has three stages: first validate reachability and baseline success rate, then run concurrency stress tests across regions and time windows, and finally operate with retries, alerting, and cost monitoring. This staged approach helps teams scale proxy traffic while keeping risk and spend predictable.'}
+      </p>
+      <p class="mt-4 text-base leading-7 text-gray-700">
+        {lang === 'zh'
+          ? '对于广告验证场景，建议优先覆盖核心投放国家和城市并保留样本日志；对于电商运营场景，建议将登录、浏览、下单等行为拆分为独立会话策略；对于安全风控场景，建议结合黑白名单和频率控制，确保检测结果可复现。IPFlex 的多产品组合能力可支持同一团队在多场景下采用不同代理策略。'
+          : 'For ad verification, prioritize major campaign regions and keep sample logs for traceability. For e-commerce operations, split login, browse, and order actions into separate session policies. For security operations, combine allowlists, denylists, and rate controls to make results reproducible. IPFlex product combinations allow one team to run different strategies for different use cases.'}
+      </p>
+    </section>
   </section>
 </Layout>

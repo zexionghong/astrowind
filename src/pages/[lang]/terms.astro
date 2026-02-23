@@ -25,5 +25,21 @@ const metadata = {
       <h1 class="text-center mb-8">{terms.data.title}</h1>
       <Content />
     </div>
+
+    <section class="mx-auto mt-10 max-w-4xl rounded-2xl border border-gray-200 bg-gray-50 p-6">
+      <h2 class="mb-3 text-2xl font-bold text-gray-900">
+        {lang === 'zh' ? '条款执行与合规说明' : 'Enforcement and Compliance Notes'}
+      </h2>
+      <p class="mb-3 text-base leading-7 text-gray-700">
+        {lang === 'zh'
+          ? '为保障服务稳定与平台安全，IPFlex 会基于服务条款对异常流量、滥用行为和违规接入进行风险识别与处置。客户在使用代理资源时应遵守目标站点政策、所在司法辖区法规以及数据保护相关要求。若发生争议，建议优先通过工单渠道进行事实核验和日志对齐，以提高处理效率。'
+          : 'To protect service stability and platform security, IPFlex enforces these terms against abuse, suspicious traffic, and policy violations. Customers are responsible for complying with destination site policies, local regulations, and data protection obligations. In case of disputes, we recommend resolving issues through support tickets with clear evidence and logs for faster handling.'}
+      </p>
+      <p class="text-base leading-7 text-gray-700">
+        {lang === 'zh'
+          ? '企业用户建议建立内部使用规范，包括访问授权、密钥轮换、日志留存和异常响应流程。对于跨区域业务，应额外评估数据传输和合规义务，并在上线前完成技术与法务双重审查。'
+          : 'Enterprise users should maintain internal controls for access authorization, key rotation, logging retention, and incident response. For cross-region operations, evaluate transfer obligations and legal requirements before production launch.'}
+      </p>
+    </section>
   </section>
 </Layout> 
