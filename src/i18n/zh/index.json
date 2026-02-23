@@ -2,13 +2,13 @@
   "index": {
     "metadata": {
       "title": "企业级代理网络服务｜住宅与数据中心节点覆盖 200+ 地区",
-      "description": "面向跨境运营与数据业务的代理网络方案，覆盖住宅与数据中心节点，支持 HTTP/SOCKS5 协议，提供稳定连接、城市级定位与可扩展接入能力，适用于数据采集、广告验证、账号管理与自动化测试等场景。"
+      "description": "面向跨境运营与数据业务的代理网络方案，覆盖住宅与数据中心节点，提供稳定连接、城市级定位与可扩展接入能力，适用于数据采集、广告验证、账号管理与自动化测试等场景。"
     },
     "hero": {
       "primaryAction": "购买代理IP",
       "secondaryAction": "了解更多",
       "title": "专业IP代理服务商",
-      "subtitle": "<span class=\"text-lg sm:text-xl\"><span class=\"font-semibold\">我们提供</span> 稳定、合规、可扩展的全球网络接入能力，覆盖 200+ 国家与地区，支持 HTTP/SOCKS5 协议，帮助团队高效完成数据采集、跨境运营与广告验证任务。</span>"
+      "subtitle": "<span class=\"text-lg sm:text-xl\"><span class=\"font-semibold\">我们提供</span> 稳定、合规、可扩展的全球网络接入能力，覆盖 200+ 国家与地区，帮助团队高效完成数据采集、跨境运营与广告验证任务。</span>"
     },
     "content": {
       "residentialProxyTitle": "住宅代理服务",
@@ -35,7 +35,7 @@
             "bg": "~/assets/images/proxy_content/lsp/3.png"
           },
           {
-            "title": "HTTP、Socks5协议支持",
+            "title": "多协议兼容",
             "bg": "~/assets/images/proxy_content/lsp/4.png"
           }
         ],
@@ -63,7 +63,7 @@
             "bg": "~/assets/images/proxy_content/dy/3.png"
           },
           {
-            "title": "HTTP、Socks5协议支持",
+            "title": "多协议兼容",
             "bg": "~/assets/images/proxy_content/dy/4.png"
           }
         ]
@@ -92,7 +92,7 @@
             "bg": "~/assets/images/proxy_content/dc/3.png"
           },
           {
-            "title": "HTTP、Socks5协议支持",
+            "title": "多协议兼容",
             "bg": "~/assets/images/proxy_content/dc/4.png"
           }
         ]
