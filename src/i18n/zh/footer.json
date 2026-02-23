@@ -3,35 +3,74 @@
     "products": {
       "title": "产品",
       "links": [
-        { "text": "静态住宅代理", "href": "/zh/detail" },
-        { "text": "动态住宅代理", "href": "/zh/detail" },
-        { "text": "数据中心代理", "href": "/zh/detail" }
+        {
+          "text": "静态住宅代理",
+          "href": "/zh/detail"
+        },
+        {
+          "text": "动态住宅代理",
+          "href": "/zh/detail"
+        },
+        {
+          "text": "数据中心代理",
+          "href": "/zh/detail"
+        }
       ]
     },
     "solutions": {
       "title": "解决方案",
       "links": [
-        { "text": "跨境电商", "href": "#" },
-        { "text": "品牌保护", "href": "#" },
-        { "text": "市场调研", "href": "#" },
-        { "text": "广告验证", "href": "#" }
+        {
+          "text": "跨境电商",
+          "href": "/zh/scenarios"
+        },
+        {
+          "text": "品牌保护",
+          "href": "/zh/scenarios"
+        },
+        {
+          "text": "市场调研",
+          "href": "/zh/scenarios"
+        },
+        {
+          "text": "广告验证",
+          "href": "/zh/scenarios"
+        }
       ]
     },
     "support": {
       "title": "支持",
       "links": [
-        { "text": "帮助中心", "href": "/zh/blog" },
-        { "text": "开发文档", "href": "#" },
-        { "text": "联系我们", "href": "#" }
+        {
+          "text": "帮助中心",
+          "href": "/zh/blog"
+        },
+        {
+          "text": "开发文档",
+          "href": "/zh/blog"
+        },
+        {
+          "text": "联系我们",
+          "href": "/zh/register"
+        }
       ]
     },
     "company": {
       "title": "公司",
       "links": [
-        { "text": "关于我们", "href": "#" },
-        { "text": "使用条款", "href": "#" },
-        { "text": "隐私政策", "href": "#" }
+        {
+          "text": "关于我们",
+          "href": "/zh/detail"
+        },
+        {
+          "text": "使用条款",
+          "href": "/zh/terms"
+        },
+        {
+          "text": "隐私政策",
+          "href": "/zh/privacy"
+        }
       ]
     }
   }
-} 
+}

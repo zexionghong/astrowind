@@ -69,8 +69,9 @@ const pathWithoutLocale = normalizedPath
   .replace(/^\/(zh|en)(?=\/|$)/, '')
   .replace(/^$/, '/');
 
+const isRootWithoutLocale = normalizedPath === '/';
 const alternateUrls = {
-  zh: `/zh${pathWithoutLocale === '/' ? '' : pathWithoutLocale}`,
+  zh: isRootWithoutLocale ? '/' : `/zh${pathWithoutLocale === '/' ? '' : pathWithoutLocale}`,
   en: `/en${pathWithoutLocale === '/' ? '' : pathWithoutLocale}`,
 };
 
