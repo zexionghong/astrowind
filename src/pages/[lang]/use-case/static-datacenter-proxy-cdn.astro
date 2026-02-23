@@ -136,6 +136,17 @@ const cases = t('datacenterMoreCases');
     </div>
   </section>
 
+  <section class="max-w-5xl mx-auto py-8 px-4">
+    <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+      {lang === 'zh' ? 'CDN 加速与代理协同实践' : 'CDN Acceleration with Proxy Coordination'}
+    </h2>
+    <p class="text-base leading-7 text-gray-700 dark:text-gray-300">
+      {lang === 'zh'
+        ? '在 CDN 场景中，代理策略应与缓存命中策略协同设计。静态数据中心代理适合固定地区和固定出口压测，可用于验证不同节点的首包时间、缓存回源比例与错误分布。建议把静态资源、动态接口和鉴权请求分开测试，并记录节点级指标，以便快速定位是回源瓶颈还是边缘缓存失效。'
+        : 'In CDN workflows, proxy routing should be designed alongside cache strategy. Static datacenter proxies are useful for fixed-region and fixed-exit benchmarking, helping validate first-byte latency, cache-hit ratio, and error distribution. Test static assets, dynamic APIs, and authenticated requests separately, and keep node-level metrics to isolate origin bottlenecks from edge cache misses.'}
+    </p>
+  </section>
+
   <FAQs
     title={t('cdn.faqs.title')}
     subtitle={t('cdn.faqs.subtitle')}

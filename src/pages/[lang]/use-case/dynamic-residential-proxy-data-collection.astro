@@ -136,6 +136,17 @@ const cases = t('dynamicResidentialMoreCases');
     </div>
   </section>
 
+  <section class="max-w-5xl mx-auto py-8 px-4">
+    <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+      {lang === 'zh' ? '数据采集链路质量控制要点' : 'Quality Control for Data Collection Pipelines'}
+    </h2>
+    <p class="text-base leading-7 text-gray-700 dark:text-gray-300">
+      {lang === 'zh'
+        ? '高质量数据采集不仅看请求成功率，还要看字段完整度、时效性和重复率。建议为每个采集任务配置样本校验规则，包含页面结构变化检测、字段空值阈值和异常值过滤。动态住宅代理可提升覆盖面，但仍需配合指纹一致性和请求节奏控制，才能减少反爬触发并稳定输出可用数据。'
+        : 'Reliable data collection is measured by field completeness, freshness, and duplication rate, not only request success. Configure validation rules per job: template drift detection, null-value thresholds, and outlier filtering. Dynamic residential proxies improve reach, but stable output still requires fingerprint consistency and request pacing to reduce anti-bot triggers.'}
+    </p>
+  </section>
+
   <FAQs
     title={t('dataCollection.faqs.title')}
     subtitle={t('dataCollection.faqs.subtitle')}

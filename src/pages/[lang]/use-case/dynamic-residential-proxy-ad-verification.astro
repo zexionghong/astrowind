@@ -136,6 +136,17 @@ const cases = t('dynamicResidentialMoreCases');
     </div>
   </section>
 
+  <section class="max-w-5xl mx-auto py-8 px-4">
+    <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+      {lang === 'zh' ? '动态代理广告验证执行标准' : 'Execution Standard for Dynamic Proxy Ad Verification'}
+    </h2>
+    <p class="text-base leading-7 text-gray-700 dark:text-gray-300">
+      {lang === 'zh'
+        ? '建议把广告验证拆成展示检测、落地跳转、像素回传和素材加载四个阶段，并按国家、城市和时段建立独立采样。动态住宅代理更适合持续巡检而非单点测速：当某地区异常率持续升高时，自动切换备用线路并触发人工复核，可显著降低误报并缩短投放纠偏时间。'
+        : 'Split ad verification into impression check, landing redirect, pixel callback, and creative loading. Build sampling by country, city, and time window. Dynamic residential proxies are best for continuous monitoring rather than one-shot speed checks: when anomaly rate rises in a region, switch backup routes and trigger manual review to reduce false positives and accelerate campaign correction.'}
+    </p>
+  </section>
+
   <FAQs
     title={t('adVerificationDynamic.faqs.title')}
     subtitle={t('adVerificationDynamic.faqs.subtitle')}

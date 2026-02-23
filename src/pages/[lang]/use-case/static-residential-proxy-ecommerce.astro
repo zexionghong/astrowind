@@ -149,6 +149,17 @@ const cases = t('staticResidentialMoreCases');
     </div>
   </section>
 
+  <section class="max-w-5xl mx-auto py-8 px-4">
+    <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+      {lang === 'zh' ? '电商运营中的会话连续性策略' : 'Session Continuity Strategy for E-commerce Operations'}
+    </h2>
+    <p class="text-base leading-7 text-gray-700 dark:text-gray-300">
+      {lang === 'zh'
+        ? '电商场景通常涉及登录、浏览、加购与结算等连续动作，静态住宅代理更适合维持账号行为一致性。建议按店铺或账号组绑定固定出口，并配置分时任务避免高峰冲突。通过会话隔离和行为节奏控制，可以降低风控触发概率，同时保持价格监测、库存跟踪与活动分析任务的稳定执行。'
+        : 'E-commerce workflows include continuous actions such as login, browse, cart, and checkout. Static residential proxies are better for maintaining account behavior consistency. Bind fixed exits by store or account group and schedule tasks by time window to avoid peak collisions. Session isolation and pacing controls reduce anti-fraud triggers while keeping price monitoring, inventory tracking, and campaign analysis stable.'}
+    </p>
+  </section>
+
   <FAQs
     title={t('ecommerce.faqs.title')}
     subtitle={t('ecommerce.faqs.subtitle')}

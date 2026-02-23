@@ -148,6 +148,17 @@ const cases = t('staticResidentialMoreCases');
     </div>
   </section>
 
+  <section class="max-w-5xl mx-auto py-8 px-4">
+    <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+      {lang === 'zh' ? '安全风控任务的代理审计框架' : 'Proxy Audit Framework for Security and Risk Control'}
+    </h2>
+    <p class="text-base leading-7 text-gray-700 dark:text-gray-300">
+      {lang === 'zh'
+        ? '风控检测不只关注拦截结果，还应关注证据链完整性。静态住宅代理可提供稳定来源，有助于复盘异常行为与攻击路径。建议为每次检测记录节点信息、请求指纹、返回摘要与时间戳，并将高风险事件接入工单流转。这样可以在威胁响应中同时兼顾实时处置与后续合规审计。'
+        : 'Risk-control tasks should optimize for evidence integrity, not only block rate. Static residential proxies provide stable source context, which improves replay and forensic analysis. For each check, record node metadata, request fingerprint, response summary, and timestamp, then route high-risk events into ticket workflows. This supports both real-time mitigation and post-incident compliance auditing.'}
+    </p>
+  </section>
+
   <FAQs
     title={t('security.faqs.title')}
     subtitle={t('security.faqs.subtitle')}

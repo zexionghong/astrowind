@@ -136,6 +136,17 @@ const cases = t('datacenterMoreCases');
     </div>
   </section>
 
+  <section class="max-w-5xl mx-auto py-8 px-4">
+    <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+      {lang === 'zh' ? '批处理任务的并发与重试模型' : 'Concurrency and Retry Model for Batch Processing'}
+    </h2>
+    <p class="text-base leading-7 text-gray-700 dark:text-gray-300">
+      {lang === 'zh'
+        ? '批处理场景建议采用分批次并行而不是一次性全量并发。静态数据中心代理在批量任务中可以提供更稳定的出口一致性，适合长队列处理。为避免失败放大，建议设置批次级别熔断阈值，并为超时、限流、解析失败建立分级重试策略。这样既能保证任务完成率，也能有效控制单位数据处理成本。'
+        : 'For batch workloads, prefer staged parallel execution over all-at-once bursts. Static datacenter proxies provide consistent exits for long queue processing. To prevent failure amplification, set batch-level circuit breakers and tiered retries for timeout, rate-limit, and parsing errors. This approach improves completion rate while controlling cost per processed record.'}
+    </p>
+  </section>
+
   <FAQs
     title={t('batchProcessing.faqs.title')}
     subtitle={t('batchProcessing.faqs.subtitle')}

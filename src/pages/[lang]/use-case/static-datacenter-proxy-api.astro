@@ -136,6 +136,17 @@ const cases = t('datacenterMoreCases');
     </div>
   </section>
 
+  <section class="max-w-5xl mx-auto py-8 px-4">
+    <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+      {lang === 'zh' ? 'API 代理调用稳定性设计' : 'Stability Design for API Proxy Calls'}
+    </h2>
+    <p class="text-base leading-7 text-gray-700 dark:text-gray-300">
+      {lang === 'zh'
+        ? '面向 API 调用的代理接入应重点关注连接复用、超时分层和错误码分流。静态数据中心代理适合固定出口和高吞吐任务，建议配合连接池策略降低握手开销，并将 4xx 与 5xx 分别进入不同重试逻辑。通过请求签名、频率窗口和幂等保护，可以显著提升自动化接口链路的可预测性。'
+        : 'API-centric proxy integration should focus on connection reuse, layered timeouts, and status-code aware routing. Static datacenter proxies fit fixed-exit, high-throughput jobs. Combine them with connection pooling and separate retry flows for 4xx vs 5xx responses. Request signing, rate windows, and idempotency safeguards make automated API pipelines more predictable and resilient.'}
+    </p>
+  </section>
+
   <FAQs
     title={t('api.faqs.title')}
     subtitle={t('api.faqs.subtitle')}

@@ -136,6 +136,17 @@ const cases = t('datacenterMoreCases');
     </div>
   </section>
 
+  <section class="max-w-5xl mx-auto py-8 px-4">
+    <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+      {lang === 'zh' ? '自动化测试环境的代理基线' : 'Proxy Baseline for Automated Testing Environments'}
+    </h2>
+    <p class="text-base leading-7 text-gray-700 dark:text-gray-300">
+      {lang === 'zh'
+        ? '测试场景对可重复性要求高，建议使用静态数据中心代理维持固定出口，确保回归结果可对比。将功能测试、兼容测试和性能测试拆分到不同执行池，避免相互干扰。对于失败用例，应同时保留请求日志、页面快照和代理节点信息，以便快速判断问题来自被测系统、网络链路还是测试脚本本身。'
+        : 'Testing workloads require reproducibility. Use static datacenter proxies to keep fixed exits and comparable regression results. Separate functional, compatibility, and performance suites into different execution pools to reduce cross-interference. For failures, retain request logs, snapshots, and proxy-node metadata so teams can quickly determine whether issues come from the system under test, network path, or test code.'}
+    </p>
+  </section>
+
   <FAQs
     title={t('testing.faqs.title')}
     subtitle={t('testing.faqs.subtitle')}

@@ -136,6 +136,17 @@ const cases = t('dynamicResidentialMoreCases');
     </div>
   </section>
 
+  <section class="max-w-5xl mx-auto py-8 px-4">
+    <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+      {lang === 'zh' ? '动态抓取任务容量规划建议' : 'Capacity Planning for Dynamic Crawling Workloads'}
+    </h2>
+    <p class="text-base leading-7 text-gray-700 dark:text-gray-300">
+      {lang === 'zh'
+        ? '动态抓取应先定义目标站点响应窗口与可接受失败率，再设置并发上限、重试次数和会话寿命。建议将列表页、详情页和接口页分配到不同代理池，并按目标域名设置请求节流，避免全链路拥塞。通过分层调度和失败重放队列，可以在保持抓取覆盖率的同时控制成本波动。'
+        : 'Start dynamic crawling with clear response windows and acceptable failure rates. Then define concurrency cap, retry policy, and session lifetime. Isolate listing, detail, and API requests into separate proxy pools and throttle by target domain to avoid pipeline congestion. A layered scheduler with replay queue improves crawl coverage while keeping cost variance under control.'}
+    </p>
+  </section>
+
   <FAQs
     title={t('crawling.faqs.title')}
     subtitle={t('crawling.faqs.subtitle')}

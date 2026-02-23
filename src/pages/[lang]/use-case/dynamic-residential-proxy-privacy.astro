@@ -136,6 +136,17 @@ const cases = t('dynamicResidentialMoreCases');
     </div>
   </section>
 
+  <section class="max-w-5xl mx-auto py-8 px-4">
+    <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+      {lang === 'zh' ? '隐私场景下的代理治理策略' : 'Proxy Governance for Privacy-Sensitive Operations'}
+    </h2>
+    <p class="text-base leading-7 text-gray-700 dark:text-gray-300">
+      {lang === 'zh'
+        ? '在隐私敏感业务中，代理策略应与访问控制、日志留存和密钥轮换一起设计。建议按岗位最小权限分配代理凭证，并对高风险任务启用短周期令牌和独立审计日志。动态住宅代理可降低来源暴露风险，但必须配合传输加密和行为合规边界，才能在安全与可用性之间保持平衡。'
+        : 'For privacy-sensitive workloads, proxy policy must be designed together with access control, log retention, and key rotation. Use least-privilege credentials and short-lived tokens for high-risk jobs, with separate audit trails. Dynamic residential proxies reduce source exposure, but only a combined model with encrypted transport and compliance guardrails can balance security with usability.'}
+    </p>
+  </section>
+
   <FAQs
     title={t('privacy.faqs.title')}
     subtitle={t('privacy.faqs.subtitle')}
