@@ -29,11 +29,11 @@ const { title, subtitle,  features,description="",descriptionList=[], isEven = f
       <div class="max-w-16xl mx-auto">
         <h2 class={`text-xl text-blue-500 mb-6 relative ${isEven ? 'text-right' : 'text-left'}`}>
           {subtitle}
-          <div class={`absolute bottom-0 h-0.5 w-[300px] ${
+          <span aria-hidden="true" class={`block absolute bottom-0 h-0.5 w-[300px] ${
             isEven 
               ? 'right-0 bg-gradient-to-l from-purple-500 via-blue-500 to-transparent' 
               : 'left-0 bg-gradient-to-r from-purple-500 via-blue-500 to-transparent'
-          }`}></div>
+          }`}></span>
         </h2>
       </div>
     }
