@@ -224,31 +224,36 @@ const handleSubmit = `async function(e) {
           </a>
         </div>
 
-        <section class="mt-10 rounded-xl border border-gray-200 bg-gray-50 p-5 text-left">
-          <h2 class="mb-3 text-lg font-bold text-gray-900">
-            {lang === 'zh' ? '注册后你可以立即开始什么' : 'What You Can Start Right After Registration'}
-          </h2>
-          <p class="mb-3 text-sm leading-6 text-gray-700">
-            {lang === 'zh'
-              ? '完成注册后，你可以在控制台创建代理提取配置、查看实时用量、管理 API 凭证并按业务场景选择不同代理类型。对于账号运营和长期会话任务，建议优先启用静态住宅代理；对于大规模采集任务，建议使用动态住宅代理并配置重试策略；对于高并发程序化任务，可使用数据中心代理优化吞吐和成本。'
-              : 'After registration, you can create proxy extraction settings, monitor real-time usage, manage API credentials, and select proxy types by workload. Use static residential proxies for persistent account sessions, dynamic residential proxies for large-scale collection with retry strategy, and datacenter proxies for high-throughput automation at lower cost.'}
-          </p>
-          <p class="text-sm leading-6 text-gray-700">
-            {lang === 'zh'
-              ? '建议首次接入时先进行小流量验证，确认目标站点可达性、请求成功率和地域命中情况，再逐步放量。这样可以更稳妥地控制预算，并在上线前提前发现风控或兼容性问题。'
-              : 'For first-time onboarding, begin with a small traffic test to validate reachability, success rate, and geo targeting before scaling up. This staged rollout helps control budget and catch compatibility or anti-bot issues early.'}
-          </p>
-          <p class="mt-3 text-sm leading-6 text-gray-700">
-            {lang === 'zh'
-              ? 'Registration onboarding checklist: create API credentials, configure endpoint region, validate request success rate, monitor response latency, and scale traffic gradually from staging to production.'
-              : 'Registration onboarding checklist: create API credentials, configure endpoint region, validate request success rate, monitor response latency, and scale traffic gradually from staging to production.'}
-          </p>
-          <p class="mt-3 text-sm leading-6 text-gray-700">
-            {lang === 'zh'
-              ? 'Successful onboarding usually follows a clear sequence: define business goals, map request patterns, configure authentication, validate routing behavior, review error handling, and monitor service quality with consistent metrics. Teams that complete this checklist before production rollout often achieve better stability, clearer capacity planning, and faster troubleshooting when traffic scales. This practical process also reduces avoidable rework in later integration stages.'
-              : 'Successful onboarding usually follows a clear sequence: define business goals, map request patterns, configure authentication, validate routing behavior, review error handling, and monitor service quality with consistent metrics. Teams that complete this checklist before production rollout often achieve better stability, clearer capacity planning, and faster troubleshooting when traffic scales. This practical process also reduces avoidable rework in later integration stages.'}
-          </p>
-        </section>
+        <details class="mt-6 rounded-xl border border-gray-200 bg-gray-50 p-4 text-left">
+          <summary class="cursor-pointer list-none text-sm font-semibold text-gray-700">
+            {lang === 'zh' ? '注册接入说明（展开查看）' : 'Registration Onboarding Notes (Expand)'}
+          </summary>
+          <section class="mt-3">
+            <h2 class="mb-3 text-lg font-bold text-gray-900">
+              {lang === 'zh' ? '注册后你可以立即开始什么' : 'What You Can Start Right After Registration'}
+            </h2>
+            <p class="mb-3 text-sm leading-6 text-gray-700">
+              {lang === 'zh'
+                ? '完成注册后，你可以在控制台创建代理提取配置、查看实时用量、管理 API 凭证并按业务场景选择不同代理类型。对于账号运营和长期会话任务，建议优先启用静态住宅代理；对于大规模采集任务，建议使用动态住宅代理并配置重试策略；对于高并发程序化任务，可使用数据中心代理优化吞吐和成本。'
+                : 'After registration, you can create proxy extraction settings, monitor real-time usage, manage API credentials, and select proxy types by workload. Use static residential proxies for persistent account sessions, dynamic residential proxies for large-scale collection with retry strategy, and datacenter proxies for high-throughput automation at lower cost.'}
+            </p>
+            <p class="text-sm leading-6 text-gray-700">
+              {lang === 'zh'
+                ? '建议首次接入时先进行小流量验证，确认目标站点可达性、请求成功率和地域命中情况，再逐步放量。这样可以更稳妥地控制预算，并在上线前提前发现风控或兼容性问题。'
+                : 'For first-time onboarding, begin with a small traffic test to validate reachability, success rate, and geo targeting before scaling up. This staged rollout helps control budget and catch compatibility or anti-bot issues early.'}
+            </p>
+            <p class="mt-3 text-sm leading-6 text-gray-700">
+              {lang === 'zh'
+                ? 'Registration onboarding checklist: create API credentials, configure endpoint region, validate request success rate, monitor response latency, and scale traffic gradually from staging to production.'
+                : 'Registration onboarding checklist: create API credentials, configure endpoint region, validate request success rate, monitor response latency, and scale traffic gradually from staging to production.'}
+            </p>
+            <p class="mt-3 text-sm leading-6 text-gray-700">
+              {lang === 'zh'
+                ? 'Successful onboarding usually follows a clear sequence: define business goals, map request patterns, configure authentication, validate routing behavior, review error handling, and monitor service quality with consistent metrics. Teams that complete this checklist before production rollout often achieve better stability, clearer capacity planning, and faster troubleshooting when traffic scales. This practical process also reduces avoidable rework in later integration stages.'
+                : 'Successful onboarding usually follows a clear sequence: define business goals, map request patterns, configure authentication, validate routing behavior, review error handling, and monitor service quality with consistent metrics. Teams that complete this checklist before production rollout often achieve better stability, clearer capacity planning, and faster troubleshooting when traffic scales. This practical process also reduces avoidable rework in later integration stages.'}
+            </p>
+          </section>
+        </details>
       </article>
     </main>
   </div>
