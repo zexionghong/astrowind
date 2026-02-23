@@ -13,8 +13,12 @@ const { lang } = Astro.params;
 const t = useTranslations(lang);
 
 const metadata = {
-  title: t('pricing.metadata.title'),
-  description: t('pricing.metadata.description'),
+  title: lang === 'zh'
+    ? 'IPFlex 企业代理IP定价方案与套餐选择指南'
+    : 'IPFlex Enterprise Proxy Pricing Plans and Selection Guide',
+  description: lang === 'zh'
+    ? '查看 IPFlex 企业代理IP定价方案，覆盖静态住宅、动态住宅与数据中心代理。按业务规模灵活计费，支持 API 接入、全球节点、会话管理与成本优化，适配采集、广告验证与跨境运营。'
+    : 'Explore IPFlex proxy pricing for static residential, dynamic residential, and datacenter plans with flexible billing, global coverage, API integration, and clear scaling paths for data collection and growth.',
 };
 
 export function getStaticPaths() {
@@ -121,6 +125,11 @@ const productSchema = {
     <h2 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
       {lang === 'zh' ? '如何选择合适的代理套餐' : 'How to Choose the Right Proxy Plan'}
     </h2>
+    <p class="mb-4 text-base leading-7 text-gray-700 dark:text-gray-300">
+      {lang === 'zh'
+        ? 'IPFlex 代理IP定价方案面向不同业务阶段提供可扩展组合，团队可以根据稳定性目标、请求体量与预算约束进行分层采购。'
+        : 'IPFlex proxy pricing plans are designed for staged growth, so teams can combine products by stability target, request volume, and budget constraints.'}
+    </p>
     <p class="mb-4 text-base leading-7 text-gray-700 dark:text-gray-300">
       {lang === 'zh'
         ? '在选择代理套餐时，建议先确认业务目标、请求并发、目标网站反爬强度和预算结构。静态住宅代理更适合需要长期稳定会话的账号运营、支付验证和风控场景；动态住宅代理更适合大规模采集、广告验证和需要频繁切换出口的任务；静态数据中心代理更适合高并发 API 调用、自动化测试和成本敏感业务。'
