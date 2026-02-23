@@ -23,7 +23,7 @@ const t = await useTranslations(lang);
 const metadata = {
   title: t('index.metadata.title'),
   description: lang === 'zh'
-    ? 'IPFlex 提供企业级代理IP服务，覆盖静态住宅、动态住宅与数据中心代理。支持 HTTP/SOCKS5、全球节点、城市级定位、API 接入与弹性计费，适用于数据采集、广告验证、跨境电商、品牌保护和自动化运营。'
+    ? 'IPFlex 提供企业级网络接入能力，覆盖静态住宅、动态住宅与数据中心节点。支持 HTTP/SOCKS5、全球节点、城市级定位、API 接入、弹性计费与团队管理，适用于数据采集、广告验证、跨境电商、品牌保护和自动化运营场景。'
     : t('index.metadata.description'),
   ignoreTitleTemplate: true,
 };
@@ -129,6 +129,11 @@ const metadata = {
       {lang === 'zh'
         ? 'Enterprise proxy onboarding best practice includes baseline testing, retry policy design, regional routing validation, observability setup, and phased traffic rollout. This execution model improves stability, controls cost, and reduces operational risk.'
         : 'Enterprise proxy onboarding best practice includes baseline testing, retry policy design, regional routing validation, observability setup, and phased traffic rollout. This execution model improves stability, controls cost, and reduces operational risk.'}
+    </p>
+    <p class="mt-3">
+      {lang === 'zh'
+        ? 'For long-term operations, teams should also establish clear ownership, change review, incident response playbooks, and weekly quality checkpoints. Consistent process discipline usually delivers better reliability than ad-hoc fixes, especially when projects grow across multiple regions, products, and stakeholder groups.'
+        : 'For long-term operations, teams should also establish clear ownership, change review, incident response playbooks, and weekly quality checkpoints. Consistent process discipline usually delivers better reliability than ad-hoc fixes, especially when projects grow across multiple regions, products, and stakeholder groups.'}
     </p>
   </section>
 

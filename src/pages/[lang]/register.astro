@@ -16,10 +16,10 @@ const url = Astro.url;
 const urlInviteCode = url.searchParams.get('invite') || url.searchParams.get('ref') || url.searchParams.get('code');
 const metadata = {
   title: lang === 'zh'
-    ? 'IPFlex 企业代理服务账号注册与接入开通中心'
+    ? 'IPFlex 企业代理服务账号注册与接入开通中心与新手指引'
     : 'IPFlex Enterprise Proxy Account Registration and Onboarding',
   description: lang === 'zh'
-    ? '注册 IPFlex 企业账号，快速开通静态住宅代理、动态住宅代理与数据中心代理。支持 API 接入、用量计费、区域定位、会话管理与团队协作，适配数据采集、广告验证、跨境运营和自动化任务。'
+    ? '注册 IPFlex 企业账号，快速开通静态住宅代理、动态住宅代理与数据中心代理。支持 API 接入、用量计费、区域定位、会话管理、访问策略、团队协作和实时监控，适配数据采集、广告验证、跨境运营、账号管理与自动化任务。'
     : 'Create an IPFlex account to activate enterprise proxy services with static residential, dynamic residential and datacenter options, API integration, usage-based billing, and global coverage.',
   robots: {
     index: false,
@@ -99,7 +99,7 @@ const handleSubmit = `async function(e) {
 <Layout metadata={metadata} has_header={false} has_footer={false}>
   <div id="page-root" data-lang={lang} class="min-h-screen flex">
     <!-- 左侧背景图和文案 -->
-    <div class="hidden md:block relative" style="width: min(45%, 714px);">
+    <aside class="hidden md:block relative" style="width: min(45%, 714px);">
       <img src={registerBg.src} alt={lang === 'zh' ? "IPFlex代理IP服务注册背景 - 高速稳定的IP代理" : "IPFlex proxy IP service registration background - Fast and stable IP proxy"} class="h-screen w-full object-cover object-left" />
       <div class="absolute inset-0 flex flex-col justify-between p-12">
         <div>
@@ -152,11 +152,11 @@ const handleSubmit = `async function(e) {
           </div>
         </div>
       </div>
-    </div>
+    </aside>
     
     <!-- 右侧注册表单 -->
-    <div class="w-full flex-1 flex items-center justify-center p-4 bg-white">
-      <div class="w-full max-w-md">
+    <main class="w-full flex-1 flex items-center justify-center p-4 bg-white">
+      <article class="w-full max-w-md">
         <div class="flex items-center mb-8">
           <span class="text-2xl font-bold text-blue-600 mr-3">IPFlex</span>
           <h1 class="text-2xl font-bold text-gray-900">{lang === 'zh' ? '立即注册 IPFlex 账号' : 'Create Your IPFlex Account'}</h1>
@@ -243,9 +243,14 @@ const handleSubmit = `async function(e) {
               ? 'Registration onboarding checklist: create API credentials, configure endpoint region, validate request success rate, monitor response latency, and scale traffic gradually from staging to production.'
               : 'Registration onboarding checklist: create API credentials, configure endpoint region, validate request success rate, monitor response latency, and scale traffic gradually from staging to production.'}
           </p>
+          <p class="mt-3 text-sm leading-6 text-gray-700">
+            {lang === 'zh'
+              ? 'Successful onboarding usually follows a clear sequence: define business goals, map request patterns, configure authentication, validate routing behavior, review error handling, and monitor service quality with consistent metrics. Teams that complete this checklist before production rollout often achieve better stability, clearer capacity planning, and faster troubleshooting when traffic scales. This practical process also reduces avoidable rework in later integration stages.'
+              : 'Successful onboarding usually follows a clear sequence: define business goals, map request patterns, configure authentication, validate routing behavior, review error handling, and monitor service quality with consistent metrics. Teams that complete this checklist before production rollout often achieve better stability, clearer capacity planning, and faster troubleshooting when traffic scales. This practical process also reduces avoidable rework in later integration stages.'}
+          </p>
         </section>
-      </div>
-    </div>
+      </article>
+    </main>
   </div>
 </Layout>
 
