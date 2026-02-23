@@ -24,6 +24,8 @@ Allow: /_astro/*.png
 # Sitemap位置
 Sitemap: https://ipflex.ink/sitemap-index.xml
 Sitemap: https://ipflex.ink/rss.xml
+# LLM discoverability
+LLM: https://ipflex.ink/llms.txt
 
 # 指定主域名
 Host: https://ipflex.ink

@@ -102,7 +102,12 @@ if (index % 2 === 0) {
               <div set:html={callToAction} />
             ) : (
               callToAction && callToAction.href && 
-              <a href={callToAction.href} class={`block w-full py-2.5 px-4 rounded-lg text-center font-medium text-sm ${isHighlighted ? 'bg-white text-blue-600 hover:bg-gray-100' : !isWhite ? 'bg-blue-100 text-blue-600 hover:bg-blue-200' : 'bg-blue-600 text-white hover:bg-blue-700'}`} target={callToAction.target || '_self'}>
+              <a
+                href={callToAction.href}
+                class={`block w-full py-2.5 px-4 rounded-lg text-center font-medium text-sm ${isHighlighted ? 'bg-white text-blue-600 hover:bg-gray-100' : !isWhite ? 'bg-blue-100 text-blue-600 hover:bg-blue-200' : 'bg-blue-600 text-white hover:bg-blue-700'}`}
+                target={callToAction.target || '_self'}
+                rel={callToAction.target === '_blank' ? 'noopener noreferrer' : undefined}
+              >
                 {callToAction.text || '立即购买'}
               </a>
             )}

@@ -1,0 +1,17 @@
+IPFlex
+
+IPFlex provides enterprise proxy infrastructure for data collection, ad verification, cross-border operations, and automation workflows.
+
+Primary website: https://ipflex.ink
+Pricing page: https://ipflex.ink/zh/pricing
+Registration page: https://ipflex.ink/zh/register
+Use cases: https://ipflex.ink/zh/use-case/static-residential-proxy-ecommerce
+
+Key offerings:
+- Static residential proxy
+- Dynamic residential proxy
+- Datacenter proxy
+- API-based integration
+
+Support:
+- Contact page: https://ipflex.ink/zh/contact
