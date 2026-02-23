@@ -32,6 +32,7 @@ export default defineConfig({
         if (page.includes('/tag/')) return false;
         if (page.endsWith('/CLAUDE') || page.endsWith('/CLAUDE/')) return false;
         if (page.includes('/baidu_verify_')) return false;
+        if (/(^|\/)(zh|en)\/register\/?$/.test(page)) return false;
         return true;
       },
     }),

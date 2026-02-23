@@ -157,6 +157,8 @@ const seoProps: AstroSeoProps = merge(
   }
 );
 
+const shouldRenderHreflang = seoProps.noindex !== true;
+
 // 标题/描述长度规范化（P1）
 seoProps.title = clampMetaText(seoProps.title, lang === 'zh' ? 32 : 60) as string;
 seoProps.description = clampMetaText(seoProps.description, lang === 'zh' ? 120 : 145) as string;
@@ -332,9 +334,13 @@ const serviceStructuredData = {
 <AstroSeo {...{ ...seoProps, openGraph: await adaptOpenGraphImages(seoProps?.openGraph, Astro.site) }} />
 
 <!-- 添加hreflang多语言支持 -->
-<link rel="alternate" hreflang="zh" href={`${SITE.site}${alternateUrls.zh}`} />
-<link rel="alternate" hreflang="en" href={`${SITE.site}${alternateUrls.en}`} />
-<link rel="alternate" hreflang="x-default" href={`${SITE.site}${alternateUrls.zh}`} />
+{shouldRenderHreflang && (
+  <>
+    <link rel="alternate" hreflang="zh" href={`${SITE.site}${alternateUrls.zh}`} />
+    <link rel="alternate" hreflang="en" href={`${SITE.site}${alternateUrls.en}`} />
+    <link rel="alternate" hreflang="x-default" href={`${SITE.site}${alternateUrls.zh}`} />
+  </>
+)}
 
 <!-- 细化爬虫抓取策略 -->
 <meta name="googlebot" content="index, follow, max-image-preview:large, max-video-preview:-1" />
