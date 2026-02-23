@@ -265,6 +265,11 @@ const handleSubmit = `async function(e) {
               ? 'Onboarding baseline: validate endpoint availability, authentication behavior, success ratio, latency trend, and retry handling before scaling traffic. This reduces integration risk and improves operational predictability.'
               : 'Onboarding baseline: validate endpoint availability, authentication behavior, success ratio, latency trend, and retry handling before scaling traffic. This reduces integration risk and improves operational predictability.'}
           </p>
+          <p class="mt-2">
+            {lang === 'zh'
+              ? 'Delivery checklist: assign ownership, define rollback path, monitor quality drift, and keep weekly review cadence so integration progress remains measurable and stable.'
+              : 'Delivery checklist: assign ownership, define rollback path, monitor quality drift, and keep weekly review cadence so integration progress remains measurable and stable.'}
+          </p>
           <ul class="mt-2 list-disc pl-4">
             <li>{lang === 'zh' ? 'Create credentials and configure access policy.' : 'Create credentials and configure access policy.'}</li>
             <li>{lang === 'zh' ? 'Run small-batch verification and monitor logs.' : 'Run small-batch verification and monitor logs.'}</li>
