@@ -24,7 +24,7 @@ interface Props {
 
 const { page, tag } = Astro.props;
 const { lang = 'zh' } = Astro.params;
-const t = await useTranslations(lang);
+const t = useTranslations(lang);
 
 const metadata = {
   title: `${tag.title}${page.currentPage > 1 ? ` - ${t('blog.page')}${page.currentPage}` : ''}`,
