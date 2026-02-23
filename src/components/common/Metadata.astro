@@ -59,7 +59,7 @@ const { lang = 'zh' } = Astro.params;
 const autoDescription =
   !description && typeof title === 'string' && title.trim().length > 0
     ? lang === 'zh'
-      ? `${title} - IPFlex企业级代理IP服务，覆盖静态住宅、动态住宅与数据中心代理，支持HTTP/SOCKS5协议。`
+      ? `${title}。IPFlex面向企业提供稳定可扩展的代理网络接入能力，覆盖静态住宅、动态住宅与数据中心节点，支持城市级定位、API集成与长期运维支持，适用于数据采集、广告验证与跨境运营。`
       : `${title} - IPFlex enterprise proxy services for static residential, dynamic residential, and datacenter proxies with HTTP/SOCKS5 support.`
     : undefined;
 const currentPath = Astro.url.pathname;
