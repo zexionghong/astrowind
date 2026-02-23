@@ -234,6 +234,11 @@ const handleSubmit = `async function(e) {
             <li>{lang === 'zh' ? '先验证可用性与异常处理，再放量。' : 'Validate reliability before increasing traffic.'}</li>
             <li>{lang === 'zh' ? '按周复盘质量指标与改动记录。' : 'Review quality metrics and changes weekly.'}</li>
           </ul>
+          <p class="mt-2">
+            {lang === 'zh'
+              ? 'Readiness note: define checkpoints before launch, confirm ownership for incident response, verify rollback flow, and keep change logs complete. Teams that follow a repeatable operating cadence usually maintain better stability, clearer accountability, and faster recovery when unexpected conditions appear.'
+              : 'Readiness note: define checkpoints before launch, confirm ownership for incident response, verify rollback flow, and keep change logs complete. Teams that follow a repeatable operating cadence usually maintain better stability, clearer accountability, and faster recovery when unexpected conditions appear.'}
+          </p>
         </section>
 
         <details class="mt-6 rounded-xl border border-gray-200 bg-gray-50 p-4 text-left">
