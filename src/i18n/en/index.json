@@ -11,8 +11,8 @@
       "subtitle": "<span class=\"text-lg sm:text-xl\"><span class=\"font-semibold\">IPFlex</span> is the leading IP proxy service provider, offering professional static residential proxies, dynamic residential proxies, and datacenter proxies. Supports HTTP/SOCKS5 protocols, covers 200+ countries, serves web scraping proxy, cross-border e-commerce proxy, ad verification proxy, price monitoring proxy and various application scenarios with 99.9% high availability.</span>"
     },
     "content": {
-        "residentialProxyTitle": "Residential Proxy Services",
-        "dataCenterProxyTile": "Data Center Proxy Services",
+      "residentialProxyTitle": "Residential Proxy Services",
+      "dataCenterProxyTile": "Data Center Proxy Services",
       "residentialProxy": {
         "title": "Static Residential Proxy",
         "description": "Enterprise-Grade Static Residential Proxy Solutions",
@@ -22,14 +22,26 @@
           "suitable for cross-border e-commerce, market research, social media marketing, brand protection, and various other business scenarios."
         ],
         "items": [
-          {"title":"Real Long-term Residential IP","bg":"~/assets/images/proxy_content/lsp/1.png"},
-          {"title":"99.9% Availability","bg":"~/assets/images/proxy_content/lsp/2.png"},
-          {"title":"Precise City Targeting","bg":"~/assets/images/proxy_content/lsp/3.png"},
-          {"title":"HTTP, Socks5 Protocol Support","bg":"~/assets/images/proxy_content/lsp/4.png"}
+          {
+            "title": "Real Long-term Residential IP",
+            "bg": "~/assets/images/proxy_content/lsp/1.png"
+          },
+          {
+            "title": "99.9% Availability",
+            "bg": "~/assets/images/proxy_content/lsp/2.png"
+          },
+          {
+            "title": "Precise City Targeting",
+            "bg": "~/assets/images/proxy_content/lsp/3.png"
+          },
+          {
+            "title": "HTTP, Socks5 Protocol Support",
+            "bg": "~/assets/images/proxy_content/lsp/4.png"
+          }
         ],
         "contentTitle": "Enterprise-Grade Static Residential Proxy Services"
       },
-      "dynamicProxy":{
+      "dynamicProxy": {
         "title": "Dynamic Residential Proxy",
         "description": "",
         "descriptionList": [
@@ -38,10 +50,22 @@
           "suitable for scenarios requiring frequent proxy changes such as web scraping, data collection, ad verification, and automated testing."
         ],
         "items": [
-          {"title":"Real Short-term Residential IP","bg":"~/assets/images/proxy_content/dy/1.png"},
-          {"title":"10M+ Daily Active IPs","bg":"~/assets/images/proxy_content/dy/2.png"},
-          {"title":"City-level Targeting","bg":"~/assets/images/proxy_content/dy/3.png"},
-          {"title":"HTTP, Socks5 Protocol Support","bg":"~/assets/images/proxy_content/dy/4.png"}
+          {
+            "title": "Real Short-term Residential IP",
+            "bg": "~/assets/images/proxy_content/dy/1.png"
+          },
+          {
+            "title": "10M+ Daily Active IPs",
+            "bg": "~/assets/images/proxy_content/dy/2.png"
+          },
+          {
+            "title": "City-level Targeting",
+            "bg": "~/assets/images/proxy_content/dy/3.png"
+          },
+          {
+            "title": "HTTP, Socks5 Protocol Support",
+            "bg": "~/assets/images/proxy_content/dy/4.png"
+          }
         ]
       },
       "dataCenterProxy": {
@@ -51,12 +75,24 @@
           "A proxy service based on data center networks, providing fixed proxy addresses that remain unchanged for long periods.",
           "This proxy service delivers proxies through data center servers, typically offering high speed and stability, with advantages in cost and performance.",
           "Particularly suitable for business scenarios requiring fast, large-scale data scraping and access, such as website testing, data analysis, SEO monitoring, and online ad verification."
-        ],  
+        ],
         "items": [
-          {"title":"Long-term Data Center IP","bg":"~/assets/images/proxy_content/dc/1.png"},
-          {"title":"Precise City Targeting","bg":"~/assets/images/proxy_content/dc/2.png"},
-          {"title":"99.9% Availability","bg":"~/assets/images/proxy_content/dc/3.png"},
-          {"title":"HTTP, Socks5 Protocol Support","bg":"~/assets/images/proxy_content/dc/4.png"}
+          {
+            "title": "Long-term Data Center IP",
+            "bg": "~/assets/images/proxy_content/dc/1.png"
+          },
+          {
+            "title": "Precise City Targeting",
+            "bg": "~/assets/images/proxy_content/dc/2.png"
+          },
+          {
+            "title": "99.9% Availability",
+            "bg": "~/assets/images/proxy_content/dc/3.png"
+          },
+          {
+            "title": "HTTP, Socks5 Protocol Support",
+            "bg": "~/assets/images/proxy_content/dc/4.png"
+          }
         ]
       }
     },
@@ -245,6 +281,11 @@
           "description": "We offer 24/7 technical support, including online documentation, technical consultation, and troubleshooting services to ensure your business runs smoothly."
         }
       ]
+    },
+    "intro": {
+      "title": "Enterprise Proxy Network Overview",
+      "p1": "Built for cross-border operations, data collection, and automation workflows, this service provides stable and scalable network access for both long-running tasks and burst traffic.",
+      "p2": "In production, teams care most about success rate, latency, geo coverage, and cost balance. With flexible node options and practical integration support, you can bring connectivity into daily operations with less friction."
     }
   }
 }

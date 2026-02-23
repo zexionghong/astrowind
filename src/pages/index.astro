@@ -52,6 +52,13 @@ const metadata = {
       <Fragment slot="subtitle" set:html={t('index.hero.subtitle')} />
     </Hero>
 
+    <!-- Intro Widget ******************* -->
+    <section class="mx-auto max-w-6xl px-4 py-8 sm:py-10 text-base leading-7 text-muted dark:text-slate-300">
+      <h2 class="text-2xl font-bold tracking-tight text-heading dark:text-white mb-4">{t('index.intro.title')}</h2>
+      <p class="mb-3">{t('index.intro.p1')}</p>
+      <p>{t('index.intro.p2')}</p>
+    </section>
+
     <!-- Note Widget ******************* -->
     <ProxyContent
       residentialProxy={{
