@@ -1,14 +1,14 @@
 {
   "index": {
     "metadata": {
-      "title": "【IPFlex官网】专业IP代理服务商 | 住宅代理 | HTTP代理 | SOCKS5代理 | 数据中心代理",
-      "description": "IPFlex专业提供企业级IP代理服务：静态住宅代理、动态住宅代理、数据中心代理。支持HTTP/SOCKS5协议，覆盖全球200+国家，服务网页抓取代理、跨境电商代理、广告验证代理等场景。99.9%可用性，免费试用，24/7技术支持。立即购买代理IP服务！"
+      "title": "IPFlex 企业级代理网络服务",
+      "description": "IPFlex 提供稳定可靠的住宅与数据中心网络资源，支持 HTTP/SOCKS5 协议，覆盖 200+ 国家与地区，适用于数据采集、跨境运营与广告验证等业务场景。"
     },
     "hero": {
       "primaryAction": "购买代理IP",
       "secondaryAction": "了解更多",
       "title": "专业IP代理服务商",
-      "subtitle": "<span class=\"text-lg sm:text-xl\"><span class=\"font-semibold\">IPFlex</span> 全球领先的IP代理服务提供商，专业提供静态住宅代理、动态住宅代理、数据中心代理。支持HTTP/SOCKS5协议，覆盖200+国家，服务网页抓取代理、跨境电商代理、广告验证代理、价格监控代理等多种应用场景，99.9%高可用性保证。</span>"
+      "subtitle": "<span class=\"text-lg sm:text-xl\"><span class=\"font-semibold\">IPFlex</span> 提供稳定、合规、可扩展的全球网络接入能力，覆盖 200+ 国家与地区，支持 HTTP/SOCKS5 协议，帮助团队高效完成数据采集、跨境运营与广告验证任务。</span>"
     },
     "content": {
       "residentialProxyTitle": "住宅代理服务",
