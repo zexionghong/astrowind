@@ -270,6 +270,11 @@ const handleSubmit = `async function(e) {
               ? 'Delivery checklist: assign ownership, define rollback path, monitor quality drift, and keep weekly review cadence so integration progress remains measurable and stable.'
               : 'Delivery checklist: assign ownership, define rollback path, monitor quality drift, and keep weekly review cadence so integration progress remains measurable and stable.'}
           </p>
+          <p class="mt-2">
+            {lang === 'zh'
+              ? 'Execution guidance: document assumptions, keep change records, verify outcomes against predefined checkpoints, and summarize lessons after each rollout. Teams that follow this discipline usually reduce rework and improve delivery consistency over time.'
+              : 'Execution guidance: document assumptions, keep change records, verify outcomes against predefined checkpoints, and summarize lessons after each rollout. Teams that follow this discipline usually reduce rework and improve delivery consistency over time.'}
+          </p>
           <ul class="mt-2 list-disc pl-4">
             <li>{lang === 'zh' ? 'Create credentials and configure access policy.' : 'Create credentials and configure access policy.'}</li>
             <li>{lang === 'zh' ? 'Run small-batch verification and monitor logs.' : 'Run small-batch verification and monitor logs.'}</li>
