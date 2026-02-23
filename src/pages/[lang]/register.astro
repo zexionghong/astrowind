@@ -16,6 +16,13 @@ const url = Astro.url;
 const urlInviteCode = url.searchParams.get('invite') || url.searchParams.get('ref') || url.searchParams.get('code');
 const metadata = {
   title: lang === 'zh' ? 'IPFlex — 用户注册' : 'IPFlex — User Registration',
+  description: lang === 'zh'
+    ? '注册 IPFlex 账号，快速开通企业级代理服务。支持静态住宅、动态住宅与数据中心代理，提供 API 接入、用量计费和全球节点能力。'
+    : 'Create an IPFlex account to activate enterprise proxy services with static residential, dynamic residential and datacenter options, API integration, usage-based billing, and global coverage.',
+  robots: {
+    index: false,
+    follow: false,
+  },
   ignoreTitleTemplate: true,
 };
 
@@ -104,7 +111,7 @@ const handleSubmit = `async function(e) {
                 </svg>
               </div>
               <div>
-                <h3 class="text-lg font-medium mb-1 text-gray-800">{lang === 'zh' ? '高速稳定' : 'Fast & Stable'}</h3>
+                <p class="text-lg font-medium mb-1 text-gray-800">{lang === 'zh' ? '高速稳定' : 'Fast & Stable'}</p>
                 <p class="text-sm text-gray-600">{lang === 'zh' ? '采用优质线路，确保代理服务的稳定性和速度' : 'Premium network ensures stability and speed'}</p>
               </div>
             </div>
@@ -116,7 +123,7 @@ const handleSubmit = `async function(e) {
                 </svg>
               </div>
               <div>
-                <h3 class="text-lg font-medium mb-1 text-gray-800">{lang === 'zh' ? '安全匿名' : 'Safe & Anonymous'}</h3>
+                <p class="text-lg font-medium mb-1 text-gray-800">{lang === 'zh' ? '安全匿名' : 'Safe & Anonymous'}</p>
                 <p class="text-sm text-gray-600">{lang === 'zh' ? '采用加密技术，保护您的隐私安全' : 'Encryption technology protects your privacy'}</p>
               </div>
             </div>
@@ -128,7 +135,7 @@ const handleSubmit = `async function(e) {
                 </svg>
               </div>
               <div>
-                <h3 class="text-lg font-medium mb-1 text-gray-800">{lang === 'zh' ? '按量计费' : 'Pay As You Go'}</h3>
+                <p class="text-lg font-medium mb-1 text-gray-800">{lang === 'zh' ? '按量计费' : 'Pay As You Go'}</p>
                 <p class="text-sm text-gray-600">{lang === 'zh' ? '无需月付，充值即可使用，余额永久有效' : 'No monthly fee, pay as you go, balance never expires'}</p>
               </div>
             </div>
@@ -214,6 +221,22 @@ const handleSubmit = `async function(e) {
             {lang === 'zh' ? '立即登录' : 'Sign in'}
           </a>
         </div>
+
+        <section class="mt-10 rounded-xl border border-gray-200 bg-gray-50 p-5 text-left">
+          <h2 class="mb-3 text-lg font-bold text-gray-900">
+            {lang === 'zh' ? '注册后你可以立即开始什么' : 'What You Can Start Right After Registration'}
+          </h2>
+          <p class="mb-3 text-sm leading-6 text-gray-700">
+            {lang === 'zh'
+              ? '完成注册后，你可以在控制台创建代理提取配置、查看实时用量、管理 API 凭证并按业务场景选择不同代理类型。对于账号运营和长期会话任务，建议优先启用静态住宅代理；对于大规模采集任务，建议使用动态住宅代理并配置重试策略；对于高并发程序化任务，可使用数据中心代理优化吞吐和成本。'
+              : 'After registration, you can create proxy extraction settings, monitor real-time usage, manage API credentials, and select proxy types by workload. Use static residential proxies for persistent account sessions, dynamic residential proxies for large-scale collection with retry strategy, and datacenter proxies for high-throughput automation at lower cost.'}
+          </p>
+          <p class="text-sm leading-6 text-gray-700">
+            {lang === 'zh'
+              ? '建议首次接入时先进行小流量验证，确认目标站点可达性、请求成功率和地域命中情况，再逐步放量。这样可以更稳妥地控制预算，并在上线前提前发现风控或兼容性问题。'
+              : 'For first-time onboarding, begin with a small traffic test to validate reachability, success rate, and geo targeting before scaling up. This staged rollout helps control budget and catch compatibility or anti-bot issues early.'}
+          </p>
+        </section>
       </div>
     </div>
   </div>
