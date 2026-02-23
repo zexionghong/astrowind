@@ -1,14 +1,14 @@
 {
   "index": {
     "metadata": {
-      "title": "IPFlex 企业级代理网络服务",
-      "description": "IPFlex 提供稳定可靠的住宅与数据中心网络资源，支持 HTTP/SOCKS5 协议，覆盖 200+ 国家与地区，适用于数据采集、跨境运营与广告验证等业务场景。"
+      "title": "企业级代理网络服务｜住宅与数据中心节点覆盖 200+ 地区",
+      "description": "面向跨境运营与数据业务的代理网络方案，覆盖住宅与数据中心节点，支持 HTTP/SOCKS5 协议，提供稳定连接、城市级定位与可扩展接入能力，适用于数据采集、广告验证、账号管理与自动化测试等场景。"
     },
     "hero": {
       "primaryAction": "购买代理IP",
       "secondaryAction": "了解更多",
       "title": "专业IP代理服务商",
-      "subtitle": "<span class=\"text-lg sm:text-xl\"><span class=\"font-semibold\">IPFlex</span> 提供稳定、合规、可扩展的全球网络接入能力，覆盖 200+ 国家与地区，支持 HTTP/SOCKS5 协议，帮助团队高效完成数据采集、跨境运营与广告验证任务。</span>"
+      "subtitle": "<span class=\"text-lg sm:text-xl\"><span class=\"font-semibold\">我们提供</span> 稳定、合规、可扩展的全球网络接入能力，覆盖 200+ 国家与地区，支持 HTTP/SOCKS5 协议，帮助团队高效完成数据采集、跨境运营与广告验证任务。</span>"
     },
     "content": {
       "residentialProxyTitle": "住宅代理服务",
@@ -22,10 +22,22 @@
           "适用于跨境电商、市场调研、社媒营销、品牌保护等多种业务场景。"
         ],
         "items": [
-          {"title":"真实长效住宅IP","bg":"~/assets/images/proxy_content/lsp/1.png"},
-          {"title":"可用率高达99.9%","bg":"~/assets/images/proxy_content/lsp/2.png"},
-          {"title":"精准城市定位","bg":"~/assets/images/proxy_content/lsp/3.png"},
-          {"title":"HTTP、Socks5协议支持","bg":"~/assets/images/proxy_content/lsp/4.png"}
+          {
+            "title": "真实长效住宅IP",
+            "bg": "~/assets/images/proxy_content/lsp/1.png"
+          },
+          {
+            "title": "可用率高达99.9%",
+            "bg": "~/assets/images/proxy_content/lsp/2.png"
+          },
+          {
+            "title": "精准城市定位",
+            "bg": "~/assets/images/proxy_content/lsp/3.png"
+          },
+          {
+            "title": "HTTP、Socks5协议支持",
+            "bg": "~/assets/images/proxy_content/lsp/4.png"
+          }
         ],
         "contentTitle": "企业级静态住宅代理服务"
       },
@@ -38,10 +50,22 @@
           "适用于需要频繁更换IP的业务场景，如网络爬虫、数据抓取、广告验证和自动化测试等。"
         ],
         "items": [
-          {"title":"真实短效住宅IP","bg":"~/assets/images/proxy_content/dy/1.png"},
-          {"title":"千万+日活跃IP","bg":"~/assets/images/proxy_content/dy/2.png"},
-          {"title":"可定位至城市","bg":"~/assets/images/proxy_content/dy/3.png"},
-          {"title":"HTTP、Socks5协议支持","bg":"~/assets/images/proxy_content/dy/4.png"}
+          {
+            "title": "真实短效住宅IP",
+            "bg": "~/assets/images/proxy_content/dy/1.png"
+          },
+          {
+            "title": "千万+日活跃IP",
+            "bg": "~/assets/images/proxy_content/dy/2.png"
+          },
+          {
+            "title": "可定位至城市",
+            "bg": "~/assets/images/proxy_content/dy/3.png"
+          },
+          {
+            "title": "HTTP、Socks5协议支持",
+            "bg": "~/assets/images/proxy_content/dy/4.png"
+          }
         ]
       },
       "dataCenterProxy": {
@@ -55,62 +79,73 @@
           "如网站测试、数据分析、SEO监控和在线广告验证等。"
         ],
         "items": [
-          {"title":"长效数据中心IP","bg":"~/assets/images/proxy_content/dc/1.png"},
-          {"title":"精准城市定位","bg":"~/assets/images/proxy_content/dc/2.png"},
-          {"title":"可用率高达99.9%","bg":"~/assets/images/proxy_content/dc/3.png"},
-          {"title":"HTTP、Socks5协议支持","bg":"~/assets/images/proxy_content/dc/4.png"}
+          {
+            "title": "长效数据中心IP",
+            "bg": "~/assets/images/proxy_content/dc/1.png"
+          },
+          {
+            "title": "精准城市定位",
+            "bg": "~/assets/images/proxy_content/dc/2.png"
+          },
+          {
+            "title": "可用率高达99.9%",
+            "bg": "~/assets/images/proxy_content/dc/3.png"
+          },
+          {
+            "title": "HTTP、Socks5协议支持",
+            "bg": "~/assets/images/proxy_content/dc/4.png"
+          }
         ]
       }
     },
     "steps": {
-      "title": "快速开始使用IPFlex的IP代理服务",
+      "title": "快速开始使用企业代理服务",
       "stepPrefix": "步骤",
       "stepPrefix1": "注册账号",
       "stepPrefix2": "选择套餐",
       "stepPrefix3": "开始使用",
-      "stepPrefix1Description": "在IPFlex官网注册账号，开始您的IP代理服务之旅。",
-      "stepPrefix2Description": "根据您的业务需求，选择合适的IP代理套餐。",
-      "stepPrefix3Description": "配置您的IP代理服务，开始使用我们的高效稳定的IP代理服务。",
+      "stepPrefix1Description": "在官网注册账号，开始配置您的网络接入服务。",
+      "stepPrefix2Description": "根据业务目标选择合适套餐与资源类型。",
+      "stepPrefix3Description": "完成配置后即可接入业务流程，稳定开展日常任务。",
       "completedText": "完成！"
     },
-    
     "features": {
-      "title": "为什么选择IPFlex",
-      "subtitle": "专业的IP代理服务提供商，助力企业数字化转型",
+      "title": "为什么选择我们",
+      "subtitle": "面向企业场景的稳定代理网络与服务支持",
       "items": [
         {
           "title": "全球IP资源池",
-          "description": "IPFlex拥有广泛覆盖的全球IP资源池，涵盖200+国家和地区，为您提供多样化的IP地址选择，开启无界网络体验。",
+          "description": "我们拥有广泛覆盖的全球IP资源池，涵盖200+国家和地区，为您提供多样化的IP地址选择，开启无界网络体验。",
           "icon": "tabler:world",
           "image": "~/assets/images/features/1.png"
         },
         {
           "title": "高效技术支持 + 推荐奖励",
-          "description": "IPFlex提供全天候24/7的专业技术支持，确保您的体验始终顺畅无忧。更有推荐返现计划，好友充值立即返现10%佣金，无需等待，让您边用边赚！",
+          "description": "我们提供全天候24/7的专业技术支持，确保您的体验始终顺畅无忧。更有推荐返现计划，好友充值立即返现10%佣金，无需等待，让您边用边赚！",
           "icon": "tabler:headset",
           "image": "~/assets/images/features/2.png"
         },
         {
           "title": "丰富的IP类型",
-          "description": "IPFlex为您提供多样化的IP类型选择，包括住宅代理、数据中心代理；静态代理、动态代理等，以满足不同业务场景的需求，让您的业务更加高效。",
+          "description": "我们为您提供多样化的IP类型选择，包括住宅代理、数据中心代理；静态代理、动态代理等，以满足不同业务场景的需求，让您的业务更加高效。",
           "icon": "tabler:list-details",
           "image": "~/assets/images/features/3.png"
         },
         {
           "title": "快速稳定的连接",
-          "description": "使用IPFlex，您将享受卓越的网络性能，快速且稳定的连接让您告别网络延迟和不稳定的烦恼，提升工作效率和用户体验。",
+          "description": "使用我们，您将享受卓越的网络性能，快速且稳定的连接让您告别网络延迟和不稳定的烦恼，提升工作效率和用户体验。",
           "icon": "tabler:rocket",
           "image": "~/assets/images/features/4.png"
         },
         {
           "title": "无限带宽",
-          "description": "IPFlex为您提供无限制的带宽使用，彻底消除流量限制的束缚，让您在任何情况下都能享受超高速率和极低延迟的网络服务。",
+          "description": "我们为您提供无限制的带宽使用，彻底消除流量限制的束缚，让您在任何情况下都能享受超高速率和极低延迟的网络服务。",
           "icon": "tabler:infinity",
           "image": "~/assets/images/features/5.png"
         },
         {
           "title": "高级安全保障",
-          "description": "IPFlex提供顶级的安全保障措施，全面保护您的隐私和数据安全，确保您的信息安全无虞，安心使用我们的服务。",
+          "description": "我们提供顶级的安全保障措施，全面保护您的隐私和数据安全，确保您的信息安全无虞，安心使用我们的服务。",
           "icon": "tabler:shield-lock",
           "image": "~/assets/images/features/6.png"
         }
@@ -137,14 +172,14 @@
       ]
     },
     "callToAction": {
-      "title": "IPFLEX专业的IP服务",
-      "subtitle1": "立即体验IPFlex的高效稳定的IP代理服务。",
+      "title": "专业稳定的企业网络服务",
+      "subtitle1": "立即体验高效稳定的企业级代理网络能力。",
       "subtitle2": "不要再犹豫了，立即行动！",
       "primaryAction": "获取服务"
     },
     "features2": {
       "title": "常用场景",
-      "subtitle": "IPFlex的IP代理服务适用于各种业务场景。",
+      "subtitle": "适用于多类业务场景。",
       "items": [
         {
           "title": "网页数据采集",
@@ -204,8 +239,8 @@
     },
     "faqs": {
       "title": "常见问题",
-      "sub":"FAQs",
-      "subtitle": "了解IPFlex的强大功能以及如何提升您的业务。",
+      "sub": "FAQs",
+      "subtitle": "了解功能与接入方式，快速开始使用。",
       "items": [
         {
           "title": "代理IP如何工作？",
@@ -216,7 +251,7 @@
           "description": "静态住宅IP是固定不变的真实住宅IP地址，适合需要保持IP稳定的业务场景；动态IP则会定期自动更换，适合需要频繁切换IP的数据采集任务。"
         },
         {
-          "title": "IPFlex的代理IP服务价格如何？",
+          "title": "代理IP服务价格如何？",
           "description": "我们提供灵活的计费方案，包括按流量计费、按IP数量计费等多种选择。您可以根据业务需求选择最适合的套餐，我们也提供定制化的企业解决方案。"
         },
         {
@@ -224,12 +259,12 @@
           "description": "选择代理IP类型需要考虑您的具体使用场景。数据采集建议使用动态IP，跨境电商建议使用静态住宅IP，企业应用则可以选择专用数据中心IP。"
         },
         {
-          "title": "IPFlex的IP资源覆盖哪些地区？",
+          "title": "IP资源覆盖哪些地区？",
           "description": "我们的IP资源池覆盖全球200+国家和地区，支持精确到城市的地理位置定位，满足您的全球业务需求。"
         },
         {
           "title": "代理IP的带宽和速度如何？",
-          "description": "IPFlex提供高速稳定的代理服务，采用先进的负载均衡技术，确保低延迟和高带宽，支持无限流量使用。"
+          "description": "本服务提供高速稳定的代理服务，采用先进的负载均衡技术，确保低延迟和高带宽，支持无限流量使用。"
         },
         {
           "title": "如何保证代理IP的稳定性？",
@@ -241,7 +276,7 @@
         },
         {
           "title": "如何确保数据安全？",
-          "description": "IPFlex采用企业级加密技术，支持HTTPS和SOCKS5协议，确保数据传输安全。我们严格遵守数据保护法规，不会记录或泄露用户数据。"
+          "description": "本服务采用企业级加密技术，支持HTTPS和SOCKS5协议，确保数据传输安全。我们严格遵守数据保护法规，不会记录或泄露用户数据。"
         },
         {
           "title": "提供哪些技术支持？",
