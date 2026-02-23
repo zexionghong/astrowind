@@ -9,15 +9,25 @@ const title = `Error 404`;
   <section class="flex items-center h-full p-16">
     <div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
       <div class="max-w-md text-center">
-        <h2 class="mb-8 font-bold text-9xl">
+        <h1 class="mb-8 font-bold text-9xl">
           <span class="sr-only">Error</span>
           <span class="text-primary">404</span>
-        </h2>
+        </h1>
         <p class="text-3xl font-semibold md:text-3xl">Sorry, we couldn't find this page.</p>
         <p class="mt-4 mb-8 text-lg text-muted dark:text-slate-400">
           But dont worry, you can find plenty of other things on our homepage.
         </p>
         <a rel="noopener noreferrer" href={getHomePermalink()} class="btn ml-4">Back to homepage</a>
+
+        <nav class="mt-8 text-left">
+          <p class="text-sm font-semibold text-gray-700 mb-2">Popular pages</p>
+          <ul class="space-y-1 text-sm">
+            <li><a class="text-primary hover:underline" href="/zh">中文首页</a> / <a class="text-primary hover:underline" href="/en">English Home</a></li>
+            <li><a class="text-primary hover:underline" href="/zh/pricing">定价</a> / <a class="text-primary hover:underline" href="/en/pricing">Pricing</a></li>
+            <li><a class="text-primary hover:underline" href="/zh/detail">产品详情</a> / <a class="text-primary hover:underline" href="/en/detail">Product</a></li>
+            <li><a class="text-primary hover:underline" href="/zh/blog">博客</a> / <a class="text-primary hover:underline" href="/en/blog">Blog</a></li>
+          </ul>
+        </nav>
       </div>
     </div>
   </section>

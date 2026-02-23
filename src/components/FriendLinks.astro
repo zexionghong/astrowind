@@ -5,8 +5,7 @@ interface Props {
 
 const { lang = 'zh' } = Astro.props;
 ---
-<input id="current-lang" hidden value={lang} />
-<div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="friend-links-container">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="friend-links-container" data-current-lang={lang}>
   <!-- 加载状态 -->
 
   <div class="col-span-full text-center py-4">
@@ -90,8 +89,7 @@ const { lang = 'zh' } = Astro.props;
     if (!container) return;
 
     const links = await fetchFriendLinks();
-    const langElement = document.getElementById('current-lang') as HTMLInputElement;
-    const lang = langElement?.value || 'zh';
+    const lang = (container.getAttribute('data-current-lang') || 'zh') as 'zh' | 'en';
 
     container.innerHTML = links.map(link => `
       <a 

@@ -39,12 +39,15 @@ const {
             panelClass,
             itemClasses?.panel
           )}
-          onclick={href ? `window.location.href='${href}'` : undefined}
         >
           {(icon || defaultIcon) && (
             <Icon name={icon || defaultIcon} class={twMerge('mb-2 w-10 h-10', defaultIconClass, itemClasses?.icon)} />
           )}
-          <div class={twMerge('text-xl font-bold', titleClass, itemClasses?.title)}>{title}</div>
+          {href ? (
+            <a href={href} class={twMerge('text-xl font-bold hover:text-primary', titleClass, itemClasses?.title)}>{title}</a>
+          ) : (
+            <div class={twMerge('text-xl font-bold', titleClass, itemClasses?.title)}>{title}</div>
+          )}
           {description && (
             <p class={twMerge('text-muted mt-2', descriptionClass, itemClasses?.description)} set:html={description} />
           )}

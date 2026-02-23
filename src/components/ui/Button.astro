@@ -11,6 +11,7 @@ const {
   class: className = '',
   type,
   color = '',
+  href,
   ...rest
 } = Astro.props;
 
@@ -30,7 +31,6 @@ const colorClass = color ? `bg-${color}-600 hover:bg-${color}-700 text-white` : 
     <button 
       type={type} 
       class={twMerge(variants[variant] || '', colorClass, className)} 
-      onclick={rest.href ? `window.location.href='${rest.href}'` : undefined}
       {...rest}
     >
       <Fragment set:html={text} />
@@ -38,6 +38,7 @@ const colorClass = color ? `bg-${color}-600 hover:bg-${color}-700 text-white` : 
     </button>
   ) : (
     <a
+      href={href}
       class={twMerge(variants[variant] || '', colorClass, className)}
       {...(target ? { target: target, rel: 'noopener noreferrer' } : {})}
       {...rest}
