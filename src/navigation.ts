@@ -71,7 +71,12 @@ export const getHeaderData = (lang: string = 'zh') => ({
       text: lang == 'zh'?"博客":"Blog",
       href:`/${lang}/blog`
     },
-    ...(lang === 'zh' ? [] : [])
+    ...(lang === 'zh' ? [
+      {
+        text: '帮助中心',
+        href: 'https://helpcenter.ipflex.ink/'
+      }
+    ] : [])
   ],
   actions: [
     { text: lang === 'zh' ? '注册' : 'Sign Up', href: `/${lang}/register`, color: 'blue' },
@@ -110,6 +115,7 @@ export const getFooterData = (lang: string = 'zh') => ({
     {
       title: lang === 'zh' ? '支持' : 'Support',
       links: [
+        { text: lang === 'zh' ? '帮助中心' : 'Help Center', href: 'https://helpcenter.ipflex.ink/' },
         { text: lang === 'zh' ? '联系我们: support@ipflex.ink' : 'Contact Us: support@ipflex.ink', href: 'mailto:support@ipflex.ink' },
         { text: lang === 'zh' ? '商务合作: business@ipflex.ink' : 'Business Cooperation: business@ipflex.ink', href: 'mailto:business@ipflex.ink' },
       ],
