@@ -85,6 +85,12 @@ const shouldRenderServiceSchema = isHomePage || isCommercialPage;
 const shouldRenderMainSchema = !isBlogPage;
 
 const currentOgLocale = lang === 'zh' ? 'zh_CN' : 'en_US';
+const schemaServiceName = lang === 'zh' ? 'IPFlex IP代理服务' : 'IPFlex Proxy Services';
+const schemaDescription =
+  description ||
+  (lang === 'zh'
+    ? 'IPFlex提供企业级住宅代理、动态代理与数据中心代理服务，覆盖全球200+国家和地区。'
+    : 'IPFlex provides enterprise-grade residential, rotating, and datacenter proxy services across 200+ countries and regions.');
 
 const localizedDefaultMetadata =
   lang === 'en'
@@ -148,7 +154,7 @@ const seoProps: AstroSeoProps = merge(
 const mainStructuredData = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: 'IPFlex IP代理服务',
+  name: schemaServiceName,
   alternateName: ['IPFlex Proxy Service', 'IPFlex住宅代理', 'IPFlex数据中心代理', 'IPFlex HTTP代理', 'IPFlex SOCKS5代理'],
   applicationCategory: 'IP Proxy Service',
   operatingSystem: 'All',
@@ -168,7 +174,7 @@ const mainStructuredData = {
         },
       }
     : {}),
-  description: description || METADATA?.description,
+  description: schemaDescription,
   provider: {
     '@type': 'Organization',
     name: 'IPFlex',
@@ -201,8 +207,10 @@ const mainStructuredData = {
 const productStructuredData = {
   '@context': 'https://schema.org',
   '@type': 'Product',
-  name: 'IPFlex Proxy Services',
-  description: description || METADATA?.description,
+  name: schemaServiceName,
+  description: schemaDescription,
+  url: canonical,
+  category: 'Proxy Service',
   brand: {
     '@type': 'Brand',
     name: 'IPFlex'
@@ -223,7 +231,8 @@ const websiteStructuredData = {
   '@type': 'WebSite',
   name: 'IPFlex',
   url: SITE.site,
-  description: description || METADATA?.description,
+  description: schemaDescription,
+  inLanguage: lang === 'zh' ? 'zh-CN' : 'en-US',
   publisher: {
     '@type': 'Organization',
     name: 'IPFlex',
@@ -235,7 +244,7 @@ const websiteStructuredData = {
 const serviceStructuredData = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'IP代理服务',
+  name: schemaServiceName,
   serviceType: 'Proxy Server Service',
   provider: {
     '@type': 'Organization',
