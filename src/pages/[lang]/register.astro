@@ -224,6 +224,18 @@ const handleSubmit = `async function(e) {
           </a>
         </div>
 
+        <section class="mt-3 rounded-lg border border-gray-100 bg-gray-50 px-3 py-2 text-[11px] leading-4 text-gray-500">
+          <p>
+            {lang === 'zh'
+              ? '接入建议：先做小流量验证，再逐步扩容。Operational baseline: verify endpoint reachability, success ratio, latency trend, and rollback readiness before scale-up to reduce delivery risk and improve execution stability.'
+              : 'Operational baseline: verify endpoint reachability, success ratio, latency trend, and rollback readiness before scale-up to reduce delivery risk and improve execution stability.'}
+          </p>
+          <ul class="mt-1 list-disc pl-4">
+            <li>{lang === 'zh' ? '先验证可用性与异常处理，再放量。' : 'Validate reliability before increasing traffic.'}</li>
+            <li>{lang === 'zh' ? '按周复盘质量指标与改动记录。' : 'Review quality metrics and changes weekly.'}</li>
+          </ul>
+        </section>
+
         <details class="mt-6 rounded-xl border border-gray-200 bg-gray-50 p-4 text-left">
           <summary class="cursor-pointer list-none text-sm font-semibold text-gray-700">
             {lang === 'zh' ? '注册接入说明（展开查看）' : 'Registration Onboarding Notes (Expand)'}
