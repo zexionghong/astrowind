@@ -52,7 +52,7 @@ if (index % 2 === 0) {
     <div class={`rounded-xl overflow-hidden shadow-lg h-full flex flex-col relative ${isHighlighted ? 'bg-blue-600 text-white' : 'bg-white text-gray-800'}`}>
       {!isHighlighted && (
         <div class={`absolute inset-0 z-0 ${opacity}`}>
-          <Image src={cardBg} alt="" class="w-full h-full object-cover" />
+          <Image src={cardBg} alt="" class="w-full h-full max-w-full object-cover" style="max-width: 100%;" />
         </div>
       )}
       

@@ -17,7 +17,7 @@ const metadata = {
     ? 'IPFlex 企业代理IP定价方案与套餐选择指南'
     : 'IPFlex Enterprise Proxy Pricing Plans and Selection Guide',
   description: lang === 'zh'
-    ? '查看 IPFlex 企业网络服务定价方案，覆盖静态住宅、动态住宅与数据中心线路。按业务规模灵活计费，支持 API 接入、全球节点、会话管理、重试策略、访问规则、监控告警与成本优化，适配采集分析、广告核验、跨境运营和自动化扩展。'
+    ? '查看 IPFlex 企业网络服务定价方案，覆盖静态住宅、动态住宅与数据中心线路。按业务规模灵活计费，支持 API 接入、全球节点、会话管理、重试策略、访问规则、监控告警、权限审计与成本优化，适配采集分析、广告核验、跨境运营、自动化扩展与长期稳定交付。'
     : 'Explore IPFlex proxy pricing for static residential, dynamic residential, and datacenter plans with flexible billing, global coverage, API integration, and clear scaling paths for data collection and growth.',
 };
 const pricingIntro = lang === 'zh'
@@ -157,6 +157,11 @@ const productSchema = {
       {lang === 'zh'
         ? '对比测试建议至少覆盖一个完整业务周期，并包含高峰时段和重试密集场景，这样最终选择更贴近真实执行环境，而不是理想化假设。'
         : 'Operational comparison tip: benchmark at least one full business cycle, including peak hours and retry-heavy scenarios, so the selected plan reflects real execution conditions instead of ideal traffic assumptions.'}
+    </p>
+    <p class="mt-4 text-sm leading-6 text-gray-600 dark:text-gray-400">
+      {lang === 'zh'
+        ? 'Operational baseline for pricing decisions: compare success ratio, median latency, retry overhead, failure type distribution, and monthly cost per completed workflow under real traffic, then choose the plan that keeps reliability and budget predictable during scale-up.'
+        : 'Operational baseline for pricing decisions: compare success ratio, median latency, retry overhead, failure type distribution, and monthly cost per completed workflow under real traffic, then choose the plan that keeps reliability and budget predictable during scale-up.'}
     </p>
   </section>
 
