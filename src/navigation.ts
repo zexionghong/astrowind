@@ -101,10 +101,10 @@ export const getFooterData = (lang: string = 'zh') => ({
     {
       title: lang === 'zh' ? '解决方案' : 'Solutions',
       links: [
-        { text: lang === 'zh' ? '跨境电商' : 'Cross-border E-commerce', href: '#' },
-        { text: lang === 'zh' ? '品牌保护' : 'Brand Protection', href: '#' },
-        { text: lang === 'zh' ? '市场调研' : 'Market Research', href: '#' },
-        { text: lang === 'zh' ? '广告验证' : 'Ad Verification', href: '#' },
+        { text: lang === 'zh' ? '跨境电商' : 'Cross-border E-commerce', href: `/${lang}/use-case/static-residential-proxy-ecommerce` },
+        { text: lang === 'zh' ? '品牌保护' : 'Brand Protection', href: `/${lang}/use-case/static-residential-proxy-security` },
+        { text: lang === 'zh' ? '市场调研' : 'Market Research', href: `/${lang}/use-case/static-residential-proxy-scraping` },
+        { text: lang === 'zh' ? '广告验证' : 'Ad Verification', href: `/${lang}/use-case/static-residential-proxy-ad-verification` },
       ],
     },
     {
