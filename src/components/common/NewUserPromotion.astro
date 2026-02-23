@@ -14,7 +14,7 @@ const t = useTranslations(lang);
   <div class="absolute inset-0 bg-black bg-opacity-50"></div>
   <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md">
     <div class="bg-white dark:bg-slate-800 rounded-lg shadow-xl p-6 relative">
-      <button id="close-promotion" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+      <button id="close-promotion" aria-label={lang === 'zh' ? '关闭优惠弹窗' : 'Close promotion modal'} class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
         <Icon name="tabler:x" class="w-6 h-6" />
       </button>
       
