@@ -125,6 +125,11 @@ const metadata = {
     <h2 class="mb-3 text-2xl font-bold text-heading dark:text-white">
       {lang === 'zh' ? '企业团队如何规划代理接入' : 'How Enterprise Teams Plan Proxy Onboarding'}
     </h2>
+    <p class="rounded-lg border border-blue-100 bg-blue-50/60 p-4 text-sm leading-6 text-blue-900 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">
+      {lang === 'zh'
+        ? '直接结论：代理接入的优先级应是“先稳定，再扩容，再降本”。实际执行中建议先验证成功率与重试开销，再扩展地域与并发，最后按业务周期优化单位成本。'
+        : 'Answer-first: proxy onboarding should prioritize stability first, scale second, and cost optimization third. Validate success ratio and retry overhead before expanding regions and concurrency.'}
+    </p>
     <p>
       {lang === 'zh'
         ? '企业接入代理网络时，建议先完成基线测试、重试策略设计、地域路由验证、监控指标定义与分阶段放量。通过“先验证再扩容”的方式，可以在早期发现可用性瓶颈、控制接入成本，并降低上线后的运维风险。'
@@ -165,14 +170,41 @@ const metadata = {
         ? '管理层可以通过简化治理规则提升整体效率，例如减少含糊条款、明确审批路径、统一文档标准。这种方式能降低协作摩擦，并在优先级变化时保持执行稳定。'
         : 'Leadership teams often improve outcomes by simplifying governance: fewer ambiguous rules, clearer approval paths, and consistent documentation standards. This approach reduces friction, improves collaboration quality, and supports steady execution when priorities shift across departments.'}
     </p>
+    <div class="mt-5 rounded-lg border border-gray-200 bg-white p-4 text-sm leading-6 text-gray-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300">
+      <h3 class="mb-2 text-base font-semibold text-heading dark:text-white">
+        {lang === 'zh' ? '引用友好指标口径（建议统一）' : 'Citation-Ready Metric Definitions'}
+      </h3>
+      <ul class="list-disc space-y-1 pl-5">
+        <li>{lang === 'zh' ? '成功率：完成请求数 / 总请求数（按业务任务口径聚合）。' : 'Success ratio: completed requests divided by total requests under the same workflow scope.'}</li>
+        <li>{lang === 'zh' ? '中位时延：P50 请求完成时间，用于观察日常体验稳定性。' : 'Median latency: P50 completion time for day-to-day stability tracking.'}</li>
+        <li>{lang === 'zh' ? '重试开销：因失败触发的额外请求占比，用于评估成本外溢。' : 'Retry overhead: additional retry traffic share caused by failures.'}</li>
+        <li>{lang === 'zh' ? '月度单位成本：完成一个业务流程的平均月度成本。' : 'Monthly unit cost: average monthly cost per completed workflow.'}</li>
+      </ul>
+      <p class="mt-3 text-xs text-gray-500 dark:text-slate-400">
+        {lang === 'zh'
+          ? '证据入口：可结合定价页、博客方法文档与帮助中心进行统一评估与复盘。'
+          : 'Evidence sources: pricing page, methodology blog posts, and help center documentation.'}
+      </p>
+    </div>
+    <div class="mt-4 grid gap-2 text-sm">
+      <a class="text-blue-700 underline underline-offset-2 dark:text-blue-300" href={`/${lang}/pricing`}>
+        {lang === 'zh' ? '查看定价与套餐评估框架' : 'View pricing and plan evaluation framework'}
+      </a>
+      <a class="text-blue-700 underline underline-offset-2 dark:text-blue-300" href={`/${lang}/blog/enterprise-proxy-onboarding-playbook-2026${lang === 'en' ? '-en' : ''}`}>
+        {lang === 'zh' ? '查看接入执行手册（2026）' : 'Read the onboarding execution playbook (2026)'}
+      </a>
+      <a class="text-blue-700 underline underline-offset-2 dark:text-blue-300" href="https://docs.ipflex.ink/" target="_blank" rel="noopener noreferrer">
+        {lang === 'zh' ? '查看帮助中心与集成文档' : 'Open help center and integration docs'}
+      </a>
+    </div>
     {lang === 'zh' && (
       <p class="mt-3 text-xs text-gray-500 dark:text-gray-400">
-        Practical execution guide for enterprise onboarding: align ownership, define measurable goals, validate quality gates, and keep review cadence stable across teams. This neutral governance baseline improves coordination clarity, delivery predictability, and long-term operational consistency in real production environments.
+        企业接入执行建议：先明确责任归属，定义可量化目标，设置质量检查点，并保持跨团队稳定复盘节奏。这类治理基线有助于提升协作清晰度、交付可预测性和长期运行稳定性。
       </p>
     )}
     {lang === 'zh' && (
       <p class="mt-2 text-xs text-gray-500 dark:text-gray-400">
-        Team execution quality also improves when decision logs are complete, handoff standards are explicit, and escalation paths are rehearsed before peak traffic periods. A simple routine with weekly reviews, monthly capacity validation, and quarterly retrospective checkpoints can reduce hidden risk, improve collaboration confidence, and keep implementation quality stable across changing priorities.
+        当决策记录完整、交接标准明确、升级路径在高峰前经过演练时，团队执行质量通常会明显提升。通过每周复盘、每月容量校验、每季度回顾的固定节奏，可以更早识别隐性风险，并在需求变化时保持实施质量稳定。
       </p>
     )}
   </section>
