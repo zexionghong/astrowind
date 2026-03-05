@@ -59,6 +59,35 @@ const relatedLinks = [
   { href: `/${lang}/detail`, label: lang === 'zh' ? '产品详情' : 'Product Details' },
   { href: `/${lang}/blog`, label: lang === 'zh' ? '代理博客' : 'Proxy Blog' },
 ];
+const geoMethodFaqs = lang === 'zh'
+  ? [
+      {
+        q: '静态数据中心代理适合哪些任务？',
+        a: '适合高并发 API 调用、自动化测试和吞吐优先的批处理任务，重点是性能与成本可预测性。',
+      },
+      {
+        q: '如何判断吞吐与稳定性是否达标？',
+        a: '建议同时观察吞吐能力、P95 时延和失败重试占比，并覆盖峰值与常态窗口。',
+      },
+      {
+        q: '如何降低预算波动？',
+        a: '通过固定负载模型压测、月度偏差复盘和资源配比迭代，可以提升成本可控性。',
+      },
+    ]
+  : [
+      {
+        q: 'What workloads fit static datacenter proxies best?',
+        a: 'They fit high-throughput API calls, automation testing, and batch workflows with strong cost-performance requirements.',
+      },
+      {
+        q: 'How should teams validate throughput stability?',
+        a: 'Measure throughput, P95 latency, and retry ratio across both peak and normal traffic windows.',
+      },
+      {
+        q: 'How can teams reduce budget variance?',
+        a: 'Use fixed-load benchmarking, monthly variance reviews, and iterative resource tuning.',
+      },
+    ];
 ---
 
 <Layout metadata={metadata}>
@@ -193,6 +222,29 @@ const relatedLinks = [
         </a>
       ))}
     </div>
+  </section>
+  <section class="max-w-6xl mx-auto px-4 md:px-6 py-6">
+    <h2 class="text-2xl font-bold mb-4">{lang === 'zh' ? '方法型常见问题' : 'Method FAQ'}</h2>
+    <div class="space-y-3">
+      {geoMethodFaqs.map((item) => (
+        <div class="rounded-lg border border-gray-200 p-4 dark:border-slate-700">
+          <h3 class="font-semibold text-gray-900 dark:text-white">{item.q}</h3>
+          <p class="mt-1 text-sm text-gray-700 dark:text-gray-300">{item.a}</p>
+        </div>
+      ))}
+    </div>
+    <p class="mt-4 text-xs text-gray-500 dark:text-slate-400">
+      {lang === 'zh' ? 'Last updated: 2026-03-05。来源：定价页、数据中心代理评估口径、帮助中心文档。' : 'Last updated: 2026-03-05. Sources: pricing framework, datacenter proxy evaluation baseline, and help center docs.'}
+    </p>
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: geoMethodFaqs.map((item) => ({
+        '@type': 'Question',
+        name: item.q,
+        acceptedAnswer: { '@type': 'Answer', text: item.a },
+      })),
+    })} />
   </section>
 
 </Layout>

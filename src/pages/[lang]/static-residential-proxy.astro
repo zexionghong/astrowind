@@ -60,6 +60,35 @@ const relatedLinks = [
   { href: `/${lang}/detail`, label: lang === 'zh' ? '产品详情' : 'Product Details' },
   { href: `/${lang}/blog`, label: lang === 'zh' ? '代理博客' : 'Proxy Blog' },
 ];
+const geoMethodFaqs = lang === 'zh'
+  ? [
+      {
+        q: '静态住宅代理最适合哪些任务？',
+        a: '最适合需要会话连续性和账号稳定身份的任务，如登录、支付校验、长期账号运营和低波动业务流程。',
+      },
+      {
+        q: '如何量化静态住宅代理效果？',
+        a: '建议持续跟踪会话保持率、登录成功率、异常验证触发率，并在峰值与常态窗口对比趋势。',
+      },
+      {
+        q: '何时从小流量切到生产扩容？',
+        a: '当样本窗口内关键指标连续稳定且重试开销可控时，再按业务优先级逐步扩容。',
+      },
+    ]
+  : [
+      {
+        q: 'What workloads fit static residential proxies best?',
+        a: 'They fit long-session workflows requiring identity consistency, such as login, checkout, and account operations.',
+      },
+      {
+        q: 'How should teams measure static residential proxy performance?',
+        a: 'Track session retention, login success ratio, and challenge trigger rate across peak and normal windows.',
+      },
+      {
+        q: 'When should teams move from pilot traffic to production scale?',
+        a: 'Scale after key metrics remain stable across the baseline window with controlled retry overhead.',
+      },
+    ];
 ---
 
 <Layout metadata={metadata}>
@@ -214,6 +243,29 @@ const relatedLinks = [
         </a>
       ))}
     </div>
+  </section>
+  <section class="max-w-6xl mx-auto px-4 md:px-6 py-6">
+    <h2 class="text-2xl font-bold mb-4">{lang === 'zh' ? '方法型常见问题' : 'Method FAQ'}</h2>
+    <div class="space-y-3">
+      {geoMethodFaqs.map((item) => (
+        <div class="rounded-lg border border-gray-200 p-4 dark:border-slate-700">
+          <h3 class="font-semibold text-gray-900 dark:text-white">{item.q}</h3>
+          <p class="mt-1 text-sm text-gray-700 dark:text-gray-300">{item.a}</p>
+        </div>
+      ))}
+    </div>
+    <p class="mt-4 text-xs text-gray-500 dark:text-slate-400">
+      {lang === 'zh' ? 'Last updated: 2026-03-05。来源：定价页、产品页基线方法、帮助中心文档。' : 'Last updated: 2026-03-05. Sources: pricing framework, product baseline method, and help center docs.'}
+    </p>
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: geoMethodFaqs.map((item) => ({
+        '@type': 'Question',
+        name: item.q,
+        acceptedAnswer: { '@type': 'Answer', text: item.a },
+      })),
+    })} />
   </section>
 
 </Layout>
