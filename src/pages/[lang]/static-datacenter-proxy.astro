@@ -145,6 +145,32 @@ const relatedLinks = [
   <!-- 计费方式对比 -->
   <DeductionMethods lang={lang} deductionData={t('staticDatacenterProxy.deductionMethods')} />
 
+  <section class="max-w-6xl mx-auto px-4 md:px-6 py-10">
+    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+      {lang === 'zh' ? '静态数据中心代理如何评估是否适配' : 'How to Evaluate Static Datacenter Proxy Fit'}
+    </h2>
+    <p class="rounded-lg border border-green-100 bg-green-50/60 p-4 text-sm leading-6 text-green-900 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">
+      {lang === 'zh'
+        ? '直接结论：若业务以高并发吞吐、API 调用效率和成本可预测性为核心，静态数据中心代理通常更合适。'
+        : 'Answer-first: static datacenter proxies are usually the best option when throughput, API efficiency, and predictable cost are the primary goals.'}
+    </p>
+    <div class="mt-4 rounded-lg border border-gray-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-900">
+      <h3 class="text-base font-semibold text-gray-900 dark:text-white mb-2">
+        {lang === 'zh' ? '关键指标口径' : 'Key Metric Definitions'}
+      </h3>
+      <ul class="list-disc pl-5 space-y-1 text-sm leading-6 text-gray-700 dark:text-gray-300">
+        <li>{lang === 'zh' ? '吞吐能力：单位时间内稳定完成请求数。' : 'Throughput: stable completed requests per unit time.'}</li>
+        <li>{lang === 'zh' ? 'P95 时延：高负载下的关键响应时延指标。' : 'P95 latency: tail latency metric under high-load windows.'}</li>
+        <li>{lang === 'zh' ? '成本波动率：预算周期内单位任务成本波动幅度。' : 'Cost variance: fluctuation range of unit workflow cost within budget cycles.'}</li>
+      </ul>
+    </div>
+    <ol class="mt-4 list-decimal pl-5 space-y-1 text-sm leading-6 text-gray-700 dark:text-gray-300">
+      <li>{lang === 'zh' ? '用固定负载模型做压测并记录峰值窗口。' : 'Benchmark with a fixed load model and include peak windows.'}</li>
+      <li>{lang === 'zh' ? '同时监控吞吐、P95 时延和失败重试占比。' : 'Track throughput, P95 latency, and retry ratio together.'}</li>
+      <li>{lang === 'zh' ? '按月复盘预算偏差并迭代资源配比。' : 'Review monthly budget variance and tune resource allocation.'}</li>
+    </ol>
+  </section>
+
   <!-- FAQs Widget -->
   <FAQs
     title={t('staticDatacenterProxy.faqs.title')}
