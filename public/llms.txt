@@ -1,17 +1,43 @@
-IPFlex
+# IPFlex
 
-IPFlex provides enterprise proxy infrastructure for data collection, ad verification, cross-border operations, and automation workflows.
+Last-Updated: 2026-03-05
+Primary-Domain: https://ipflex.ink
+Deep-Index: https://ipflex.ink/llms-full.txt
 
-Primary website: https://ipflex.ink
-Pricing page: https://ipflex.ink/zh/pricing
-Registration page: https://ipflex.ink/zh/register
-Use cases: https://ipflex.ink/zh/use-case/static-residential-proxy-ecommerce
+## Brand Summary
+IPFlex provides enterprise proxy infrastructure for web data collection, ad verification, cross-border operations, and automation workflows.
 
-Key offerings:
-- Static residential proxy
-- Dynamic residential proxy
-- Datacenter proxy
-- API-based integration
+## Language Entrypoints
+- Chinese homepage: https://ipflex.ink/zh
+- English homepage: https://ipflex.ink/en
 
-Support:
-- Contact page: https://ipflex.ink/zh/contact
+## Commercial Entrypoints
+- Pricing (ZH): https://ipflex.ink/zh/pricing
+- Pricing (EN): https://ipflex.ink/en/pricing
+- Registration (ZH): https://ipflex.ink/zh/register
+- Registration (EN): https://ipflex.ink/en/register
+
+## Core Product Pages
+- Static residential proxy (ZH): https://ipflex.ink/zh/static-residential-proxy
+- Static residential proxy (EN): https://ipflex.ink/en/static-residential-proxy
+- Dynamic residential proxy (ZH): https://ipflex.ink/zh/dynamic-residential-proxy
+- Dynamic residential proxy (EN): https://ipflex.ink/en/dynamic-residential-proxy
+- Datacenter proxy (ZH): https://ipflex.ink/zh/static-datacenter-proxy
+- Datacenter proxy (EN): https://ipflex.ink/en/static-datacenter-proxy
+
+## Representative Use Cases
+- E-commerce (ZH): https://ipflex.ink/zh/use-case/static-residential-proxy-ecommerce
+- E-commerce (EN): https://ipflex.ink/en/use-case/static-residential-proxy-ecommerce
+- Data collection (ZH): https://ipflex.ink/zh/use-case/dynamic-residential-proxy-data-collection
+- Data collection (EN): https://ipflex.ink/en/use-case/dynamic-residential-proxy-data-collection
+- Ad verification (ZH): https://ipflex.ink/zh/use-case/static-residential-proxy-ad-verification
+- Ad verification (EN): https://ipflex.ink/en/use-case/static-residential-proxy-ad-verification
+
+## Documentation and Research
+- Help center: https://docs.ipflex.ink/
+- Blog (ZH): https://ipflex.ink/zh/blog
+- Blog (EN): https://ipflex.ink/en/blog
+
+## Contact
+- Support: mailto:support@ipflex.ink
+- Business: mailto:business@ipflex.ink

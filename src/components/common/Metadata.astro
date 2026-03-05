@@ -78,7 +78,7 @@ const alternateUrls = {
 const routePath = normalizedPath;
 const isHomePage = /^\/(zh|en)?$/.test(routePath);
 const isBlogPage = /^\/(zh|en)\/blog(\/|$)/.test(routePath);
-const isCommercialPage = /(proxy|pricing|detail|use-case|scenarios)/.test(routePath);
+const isCommercialPage = /(proxy|pricing|detail|use-case|scenarios|register)/.test(routePath);
 
 const shouldRenderWebsiteSchema = isHomePage;
 const shouldRenderProductSchema = isCommercialPage && !isBlogPage;
@@ -87,11 +87,71 @@ const shouldRenderMainSchema = isHomePage;
 
 const currentOgLocale = lang === 'zh' ? 'zh_CN' : 'en_US';
 const schemaServiceName = lang === 'zh' ? 'IPFlex IP代理服务' : 'IPFlex Proxy Services';
+const isZh = lang === 'zh';
 const schemaDescription =
   description ||
-  (lang === 'zh'
+  (isZh
     ? 'IPFlex提供企业级住宅代理、动态代理与数据中心代理服务，覆盖全球200+国家和地区。'
     : 'IPFlex provides enterprise-grade residential, rotating, and datacenter proxy services across 200+ countries and regions.');
+const schemaAlternateNames = isZh
+  ? ['IPFlex IP代理服务', 'IPFlex住宅代理', 'IPFlex数据中心代理', 'IPFlex HTTP代理', 'IPFlex SOCKS5代理']
+  : ['IPFlex Proxy Service', 'IPFlex Residential Proxy', 'IPFlex Datacenter Proxy', 'IPFlex HTTP Proxy', 'IPFlex SOCKS5 Proxy'];
+const schemaKeywords = isZh
+  ? ['IP代理', '住宅代理', '数据中心代理', 'HTTP代理', 'SOCKS5代理', '网页抓取代理', '跨境电商代理', '广告验证代理', '静态代理', '动态代理']
+  : ['IP proxy', 'residential proxy', 'datacenter proxy', 'HTTP proxy', 'SOCKS5 proxy', 'web scraping proxy', 'ecommerce proxy', 'ad verification proxy', 'static proxy', 'rotating proxy'];
+const schemaServiceTypes = isZh
+  ? ['静态住宅代理服务', '动态住宅代理服务', '数据中心代理服务', 'HTTP代理服务', 'SOCKS5代理服务', '网页抓取代理API', '跨境电商代理服务', '广告验证代理服务', '企业级IP解决方案']
+  : ['Static Residential Proxy Service', 'Dynamic Residential Proxy Service', 'Datacenter Proxy Service', 'HTTP Proxy Service', 'SOCKS5 Proxy Service', 'Web Scraping Proxy API', 'Cross-border E-commerce Proxy', 'Ad Verification Proxy Service', 'Enterprise IP Solutions'];
+const serviceCatalogItems = isZh
+  ? [
+      {
+        name: '静态住宅代理',
+        description: '高质量住宅IP，稳定可靠，适合跨境电商、市场调研等长期业务场景',
+        category: '住宅代理服务',
+      },
+      {
+        name: '动态住宅代理',
+        description: '动态轮换IP池，千万级IP资源，适合大规模数据采集、网页抓取等场景',
+        category: '动态代理服务',
+      },
+      {
+        name: '数据中心代理',
+        description: '高速数据中心IP，性价比高，适合API调用、自动化测试等场景',
+        category: '数据中心服务',
+      },
+    ]
+  : [
+      {
+        name: 'Static Residential Proxy',
+        description: 'Stable real residential IPs for long-session operations such as cross-border e-commerce and market research.',
+        category: 'Residential proxy service',
+      },
+      {
+        name: 'Dynamic Residential Proxy',
+        description: 'Rotating residential IP pool for high-volume crawling and data collection with anti-blocking resilience.',
+        category: 'Rotating proxy service',
+      },
+      {
+        name: 'Datacenter Proxy',
+        description: 'High-speed datacenter IPs for API access, automation testing, and cost-efficient scalable workloads.',
+        category: 'Datacenter proxy service',
+      },
+    ];
+const organizationSchema = {
+  '@type': 'Organization',
+  name: 'IPFlex',
+  url: SITE.site,
+  description: isZh
+    ? 'IPFlex 提供企业级代理网络服务，覆盖住宅代理、动态代理与数据中心代理。'
+    : 'IPFlex provides enterprise-grade proxy services including residential, rotating, and datacenter proxies.',
+  sameAs: ['https://x.com/IPFlexSupport', 'https://t.me/IPFlexProxy', 'https://docs.ipflex.ink/'],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer service',
+    email: 'support@ipflex.ink',
+    availableLanguage: ['zh-CN', 'en-US'],
+  },
+};
 
 const localizedDefaultMetadata =
   lang === 'en'
@@ -111,10 +171,9 @@ const localizedDefaultMetadata =
         description: METADATA?.description,
       };
 
-const clampMetaText = (text: unknown, maxChars: number) => {
+const normalizeMetaText = (text: unknown) => {
   if (typeof text !== 'string') return text;
-  const normalized = text.replace(/\s+/g, ' ').trim();
-  return normalized.length > maxChars ? `${normalized.slice(0, maxChars - 1)}…` : normalized;
+  return text.replace(/\s+/g, ' ').trim();
 };
 
 const seoProps: AstroSeoProps = merge(
@@ -159,16 +218,16 @@ const seoProps: AstroSeoProps = merge(
 
 const shouldRenderHreflang = seoProps.noindex !== true;
 
-// 标题/描述长度规范化（P1）
-seoProps.title = clampMetaText(seoProps.title, lang === 'zh' ? 32 : 60) as string;
-seoProps.description = clampMetaText(seoProps.description, lang === 'zh' ? 120 : 145) as string;
+// 标题/描述规范化：仅清理空白，避免输出被强制截断为省略号
+seoProps.title = normalizeMetaText(seoProps.title) as string;
+seoProps.description = normalizeMetaText(seoProps.description) as string;
 if (seoProps.openGraph) {
-  seoProps.openGraph.title = clampMetaText(seoProps.openGraph.title || seoProps.title, lang === 'zh' ? 32 : 60) as string;
-  seoProps.openGraph.description = clampMetaText(seoProps.openGraph.description || seoProps.description, lang === 'zh' ? 120 : 145) as string;
+  seoProps.openGraph.title = normalizeMetaText(seoProps.openGraph.title || seoProps.title) as string;
+  seoProps.openGraph.description = normalizeMetaText(seoProps.openGraph.description || seoProps.description) as string;
 }
 if (seoProps.twitter) {
-  seoProps.twitter.title = clampMetaText(seoProps.twitter.title || seoProps.title, lang === 'zh' ? 32 : 60) as string;
-  seoProps.twitter.description = clampMetaText(seoProps.twitter.description || seoProps.description, lang === 'zh' ? 120 : 145) as string;
+  seoProps.twitter.title = normalizeMetaText(seoProps.twitter.title || seoProps.title) as string;
+  seoProps.twitter.description = normalizeMetaText(seoProps.twitter.description || seoProps.description) as string;
 }
 
 // 添加结构化数据
@@ -176,10 +235,10 @@ const mainStructuredData = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
   name: schemaServiceName,
-  alternateName: ['IPFlex Proxy Service', 'IPFlex住宅代理', 'IPFlex数据中心代理', 'IPFlex HTTP代理', 'IPFlex SOCKS5代理'],
+  alternateName: schemaAlternateNames,
   applicationCategory: 'IP Proxy Service',
   operatingSystem: 'All',
-  keywords: ['IP代理', '住宅代理', '数据中心代理', 'HTTP代理', 'SOCKS5代理', '网页抓取代理', '跨境电商代理', '广告验证代理', '静态代理', '动态代理'],
+  keywords: schemaKeywords,
   offers: {
     '@type': 'Offer',
     availability: 'https://schema.org/InStock',
@@ -196,28 +255,8 @@ const mainStructuredData = {
       }
     : {}),
   description: schemaDescription,
-  provider: {
-    '@type': 'Organization',
-    name: 'IPFlex',
-    description: 'Professional IP proxy service provider offering residential proxies, datacenter proxies, HTTP/SOCKS5 proxy solutions for enterprise customers',
-    url: 'https://ipflex.ink',
-    contactPoint: {
-      '@type': 'ContactPoint',
-      contactType: 'customer service',
-      availableLanguage: ['en', 'zh']
-    }
-  },
-  serviceType: [
-    'Static Residential Proxy Service',
-    'Dynamic Residential Proxy Service', 
-    'Datacenter Proxy Service',
-    'HTTP Proxy Service',
-    'SOCKS5 Proxy Service',
-    'Web Scraping Proxy API',
-    'Cross-border E-commerce Proxy',
-    'Ad Verification Proxy Service',
-    'Enterprise IP Solutions'
-  ],
+  provider: organizationSchema,
+  serviceType: schemaServiceTypes,
   areaServed: {
     '@type': 'Country',
     name: 'Global'
@@ -255,9 +294,7 @@ const websiteStructuredData = {
   description: schemaDescription,
   inLanguage: lang === 'zh' ? 'zh-CN' : 'en-US',
   publisher: {
-    '@type': 'Organization',
-    name: 'IPFlex',
-    url: SITE.site
+    ...organizationSchema
   }
 };
 
@@ -268,19 +305,11 @@ const serviceStructuredData = {
   name: schemaServiceName,
   serviceType: 'Proxy Server Service',
   provider: {
-    '@type': 'Organization',
-    name: 'IPFlex',
-    url: SITE.site,
+    ...organizationSchema,
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Global',
       addressCountry: 'Worldwide'
-    },
-    contactPoint: {
-      '@type': 'ContactPoint',
-      contactType: 'customer service',
-      email: 'support@ipflex.ink',
-      availableLanguage: ['zh-CN', 'en-US']
     }
   },
   areaServed: [
@@ -298,35 +327,13 @@ const serviceStructuredData = {
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'IP Proxy Services',
-    itemListElement: [
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: '静态住宅代理',
-          description: '高质量住宅IP，稳定可靠，适合跨境电商、市场调研等长期业务场景',
-          category: '住宅代理服务'
-        }
+    itemListElement: serviceCatalogItems.map((item) => ({
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Service',
+        ...item,
       },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: '动态住宅代理',
-          description: '动态轮换IP池，千万级IP资源，适合大规模数据采集、网页抓取等场景',
-          category: '动态代理服务'
-        }
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: '数据中心代理',
-          description: '高速数据中心IP，性价比高，适合API调用、自动化测试等场景',
-          category: '数据中心服务'
-        }
-      }
-    ]
+    })),
   }
 };
 ---

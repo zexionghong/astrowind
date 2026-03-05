@@ -1,0 +1,66 @@
+# IPFlex LLM Full Index
+
+Last-Updated: 2026-03-05
+Primary-Domain: https://ipflex.ink
+
+## Site Indexes
+- XML sitemap index: https://ipflex.ink/sitemap-index.xml
+- Main sitemap file: https://ipflex.ink/sitemap-0.xml
+- RSS feed: https://ipflex.ink/rss.xml
+
+## Language Roots
+- Chinese: https://ipflex.ink/zh
+- English: https://ipflex.ink/en
+
+## Core Commercial Pages
+- https://ipflex.ink/zh/pricing
+- https://ipflex.ink/en/pricing
+- https://ipflex.ink/zh/register
+- https://ipflex.ink/en/register
+
+## Product Pages
+- https://ipflex.ink/zh/static-residential-proxy
+- https://ipflex.ink/en/static-residential-proxy
+- https://ipflex.ink/zh/dynamic-residential-proxy
+- https://ipflex.ink/en/dynamic-residential-proxy
+- https://ipflex.ink/zh/static-datacenter-proxy
+- https://ipflex.ink/en/static-datacenter-proxy
+- https://ipflex.ink/zh/detail
+- https://ipflex.ink/en/detail
+
+## Use-Case Pages
+- https://ipflex.ink/zh/use-case/static-residential-proxy-ecommerce
+- https://ipflex.ink/en/use-case/static-residential-proxy-ecommerce
+- https://ipflex.ink/zh/use-case/static-residential-proxy-scraping
+- https://ipflex.ink/en/use-case/static-residential-proxy-scraping
+- https://ipflex.ink/zh/use-case/static-residential-proxy-ad-verification
+- https://ipflex.ink/en/use-case/static-residential-proxy-ad-verification
+- https://ipflex.ink/zh/use-case/static-residential-proxy-security
+- https://ipflex.ink/en/use-case/static-residential-proxy-security
+- https://ipflex.ink/zh/use-case/dynamic-residential-proxy-data-collection
+- https://ipflex.ink/en/use-case/dynamic-residential-proxy-data-collection
+- https://ipflex.ink/zh/use-case/dynamic-residential-proxy-crawling
+- https://ipflex.ink/en/use-case/dynamic-residential-proxy-crawling
+
+## Blog Hubs
+- https://ipflex.ink/zh/blog
+- https://ipflex.ink/en/blog
+
+## Representative Research Pages
+- https://ipflex.ink/zh/blog/enterprise-proxy-onboarding-playbook-2026
+- https://ipflex.ink/en/blog/enterprise-proxy-onboarding-playbook-2026-en
+- https://ipflex.ink/zh/blog/proxy-security-compliance-guide-2025
+- https://ipflex.ink/en/blog/proxy-security-compliance-guide-2025-en
+- https://ipflex.ink/zh/blog/hreflang-error-audit-with-proxy-ip-by-market-2026
+- https://ipflex.ink/en/blog/hreflang-error-audit-with-proxy-ip-by-market-2026-en
+- https://ipflex.ink/zh/blog/zero-click-search-keyword-gap-analysis-proxy-ip
+- https://ipflex.ink/en/blog/zero-click-search-keyword-gap-analysis-proxy-ip-en
+
+## Support and Policies
+- https://docs.ipflex.ink/
+- https://ipflex.ink/zh/privacy
+- https://ipflex.ink/en/privacy
+- https://ipflex.ink/zh/terms
+- https://ipflex.ink/en/terms
+- mailto:support@ipflex.ink
+- mailto:business@ipflex.ink

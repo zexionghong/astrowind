@@ -25,7 +25,8 @@ Allow: /_astro/*.png
 Sitemap: https://ipflex.ink/sitemap-index.xml
 Sitemap: https://ipflex.ink/rss.xml
 # LLM discoverability
-LLM: https://ipflex.ink/llms.txt
+Sitemap: https://ipflex.ink/llms.txt
+Sitemap: https://ipflex.ink/llms-full.txt
 
 # 指定主域名
 Host: https://ipflex.ink
@@ -41,6 +42,21 @@ Crawl-delay: 1
 User-agent: Bingbot  
 Allow: /
 Crawl-delay: 1
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
 
 User-agent: Baiduspider
 Allow: /
