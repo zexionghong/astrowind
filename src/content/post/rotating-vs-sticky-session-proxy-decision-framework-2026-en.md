@@ -135,3 +135,37 @@ For most mature teams, yes. Hybrid routing aligns better with real multi-stage w
 - Review policy impact weekly and adjust routing.
 
 If you need a broader anti-ban framework, see: [Proxy Ban Rate Reduction Playbook](/en/blog/proxy-ban-rate-reduction-playbook-2026-en).
+
+## Mini Case: Checkout Stability with Hybrid Session Policy
+
+A cross-border team was rotating sessions across full checkout journeys and seeing frequent mid-flow failures.
+
+- Before: checkout completion 71%, challenge spikes in payment steps
+- After policy change: checkout completion 83%, challenge rate down 31%
+
+Key fix: sticky session inside transactional sequence, rotate only between sequences.
+
+## Policy Snippet
+
+```yaml
+workflow_policies:
+  checkout_sequence:
+    session_mode: sticky
+    renew_on:
+      - captcha_threshold
+      - latency_p95_threshold
+  discovery_sequence:
+    session_mode: rotating
+    rotate_every_requests: 1
+observability:
+  track:
+    - workflow_type
+    - session_mode
+    - completion_rate
+```
+
+## Next Step CTA
+
+Map your top 5 workflows into stateful/stateless/mixed classes this week, then run a controlled A/B session policy test for 14 days.
+
+For anti-ban tuning after rollout, use: [Proxy Ban Rate Reduction Playbook](/en/blog/proxy-ban-rate-reduction-playbook-2026-en).

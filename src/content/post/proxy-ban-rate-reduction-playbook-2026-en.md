@@ -167,3 +167,49 @@ Not always. Match proxy type to workflow and target behavior. Mixed strategy usu
 - Promote only stable segments to higher traffic.
 
 If you need a broader architecture baseline before scaling, see: [Enterprise Proxy Onboarding Playbook](/en/blog/enterprise-proxy-onboarding-playbook-2026-en).
+
+## Mini Case: Reducing Ban Rate in a 2-Market Crawl
+
+A retail monitoring team running US + UK category crawls had a weekly ban-rate spike after doubling concurrency.
+
+- Before: 12.8% ban rate, 22% retry overhead, unstable hourly output
+- After 3 weeks: 7.1% ban rate, 13% retry overhead, stable throughput windows
+
+What changed:
+
+1. split stateful and stateless routes,
+2. introduced failure-class retry policies,
+3. limited burst concurrency by path group.
+
+## Starter Configuration Example
+
+Use this policy template as a baseline:
+
+```yaml
+workload_profiles:
+  stateful:
+    session_mode: sticky
+    ttl_minutes: 20
+    retry:
+      max_attempts: 2
+      backoff: exponential
+  stateless:
+    session_mode: rotating
+    rotate_every_requests: 1
+    retry:
+      max_attempts: 3
+      backoff: jittered_exponential
+alerts:
+  ban_rate_warn: 0.08
+  ban_rate_critical: 0.12
+```
+
+## Next Step CTA
+
+If you want, run a 7-day ban-rate audit with your current routing policy and compare:
+
+- ban rate by route class
+- retry overhead by target
+- cost per successful workflow
+
+Start from your production onboarding baseline: [Enterprise Proxy Onboarding Playbook](/en/blog/enterprise-proxy-onboarding-playbook-2026-en).

@@ -134,3 +134,46 @@ At least monthly, and immediately after major platform or anti-bot behavior chan
 - Audit geo quality by market each month.
 
 For onboarding and governance alignment across product/engineering/ops, see: [Enterprise Proxy Onboarding Playbook](/en/blog/enterprise-proxy-onboarding-playbook-2026-en).
+
+## Mini Case: Hybrid Routing for Marketplace Monitoring
+
+An ecommerce operations team moved from single-pool routing to a hybrid model.
+
+- Before: account challenge rate 9.4%, unstable localized checks
+- After 30 days: challenge rate 5.6%, geo-check consistency improved by 27%
+
+Rollout pattern:
+
+1. stateful flows moved to residential routes,
+2. bulk catalog scans kept on datacenter routes,
+3. fallback rule auto-escalated difficult segments to residential pool.
+
+## Starter Routing Template
+
+```yaml
+routes:
+  account_login:
+    pool: residential
+    session: sticky
+  checkout_validation:
+    pool: residential
+    session: sticky
+  catalog_scan:
+    pool: datacenter
+    session: rotating
+  price_snapshot:
+    pool: datacenter
+    session: rotating
+fallback:
+  on_challenge_threshold: residential_sticky
+```
+
+## Next Step CTA
+
+If you’re deciding procurement this month, build a 2-week side-by-side test with:
+
+- login success rate
+- geo consistency
+- cost per successful business action
+
+Then lock your routing policy before peak campaigns.
