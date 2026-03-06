@@ -15,7 +15,10 @@ const { Content } = await privacy.render();
 
 const metadata = {
   title: privacy.data.title,
-  description: `IPFlex ${lang === 'zh' ? '隐私政策' : 'Privacy Policy'}`,
+  description:
+    lang === 'zh'
+      ? 'IPFlex 隐私政策：说明我们如何收集、使用、存储与保护用户数据，包括账号信息、日志留存、安全审计、跨境传输与数据主体权利。'
+      : 'IPFlex Privacy Policy explains how we collect, use, store, and protect user data, including account details, logs, security audits, cross-border transfers, and data subject rights.',
 };
 ---
 
@@ -25,5 +28,21 @@ const metadata = {
       <h1 class="text-center mb-8">{privacy.data.title}</h1>
       <Content />
     </div>
+
+    <section class="mx-auto mt-10 max-w-4xl rounded-2xl border border-gray-200 bg-gray-50 p-6">
+      <h2 class="mb-3 text-2xl font-bold text-gray-900">
+        {lang === 'zh' ? '数据安全与用户权利说明' : 'Data Security and User Rights'}
+      </h2>
+      <p class="mb-3 text-base leading-7 text-gray-700">
+        {lang === 'zh'
+          ? 'IPFlex 仅在提供服务所必需的范围内处理数据，并通过访问控制、加密传输、日志审计和最小权限策略降低数据风险。针对账号相关数据，我们会依据业务与合规要求设置合理留存周期，并在到期后执行归档或删除。'
+          : 'IPFlex processes data only as needed to deliver services and applies access control, encrypted transport, audit logging, and least-privilege practices to reduce risk. For account-related records, we keep data only for justified operational and compliance periods, then archive or delete it when retention expires.'}
+      </p>
+      <p class="text-base leading-7 text-gray-700">
+        {lang === 'zh'
+          ? '用户可通过支持渠道申请访问、更正或删除个人信息，并可就处理目的、留存期限和跨境传输安排提出咨询。企业客户建议在接入前完成数据分级、权限审计和供应商合规评估，以确保业务上线后的可追溯性与可控性。'
+          : 'Users can request access, correction, or deletion through support channels, and may ask about processing purposes, retention windows, and cross-border transfer controls. Enterprise customers should complete data classification, permission audits, and vendor compliance checks before production rollout to improve traceability and governance.'}
+      </p>
+    </section>
   </section>
 </Layout> 

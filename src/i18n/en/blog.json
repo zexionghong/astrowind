@@ -1,7 +1,7 @@
 {
   "blog": {
-    "title": "Blog",
-    "subtitle": "Latest Articles and Updates",
+    "title": "Proxy Infrastructure Blog",
+    "subtitle": "Practical articles on proxy architecture, web data collection, ad verification, and cross-border growth playbooks.",
     "page": "Page %s",
     "backToBlog": "Back to Blog"
   }

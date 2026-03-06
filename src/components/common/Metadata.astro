@@ -78,15 +78,17 @@ const alternateUrls = {
 const routePath = normalizedPath;
 const isHomePage = /^\/(zh|en)?$/.test(routePath);
 const isBlogPage = /^\/(zh|en)\/blog(\/|$)/.test(routePath);
+const isNoindexLandingPage = /^\/(zh|en)\/register(\/)?$/.test(routePath);
 const isCommercialPage = /(proxy|pricing|detail|use-case|scenarios|register)/.test(routePath);
 
 const shouldRenderWebsiteSchema = isHomePage;
-const shouldRenderProductSchema = isCommercialPage && !isBlogPage;
-const shouldRenderServiceSchema = isCommercialPage;
+const shouldRenderProductSchema = isCommercialPage && !isBlogPage && !isNoindexLandingPage;
+const shouldRenderServiceSchema = isCommercialPage && !isNoindexLandingPage;
 const shouldRenderMainSchema = isHomePage;
 
 const currentOgLocale = lang === 'zh' ? 'zh_CN' : 'en_US';
 const schemaServiceName = lang === 'zh' ? 'IPFlex IP代理服务' : 'IPFlex Proxy Services';
+const schemaPageName = typeof title === 'string' && title.trim().length > 0 ? title.trim() : schemaServiceName;
 const isZh = lang === 'zh';
 const schemaDescription =
   description ||
@@ -234,7 +236,7 @@ if (seoProps.twitter) {
 const mainStructuredData = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: schemaServiceName,
+  name: schemaPageName,
   alternateName: schemaAlternateNames,
   applicationCategory: 'IP Proxy Service',
   operatingSystem: 'All',
@@ -267,7 +269,7 @@ const mainStructuredData = {
 const productStructuredData = {
   '@context': 'https://schema.org',
   '@type': 'Product',
-  name: schemaServiceName,
+  name: schemaPageName,
   description: schemaDescription,
   url: canonical,
   image: `${SITE.site}/images/hero-proxy.webp`,
@@ -302,7 +304,7 @@ const websiteStructuredData = {
 const serviceStructuredData = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: schemaServiceName,
+  name: schemaPageName,
   serviceType: 'Proxy Server Service',
   provider: {
     ...organizationSchema,
