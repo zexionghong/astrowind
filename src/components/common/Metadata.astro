@@ -69,10 +69,24 @@ const pathWithoutLocale = normalizedPath
   .replace(/^\/(zh|en)(?=\/|$)/, '')
   .replace(/^$/, '/');
 
+const isBlogDetailPath = /^\/blog\//.test(pathWithoutLocale);
+const zhBlogSlug = isBlogDetailPath ? pathWithoutLocale.replace(/^\/blog\//, '') : '';
+const hasEnSuffix = isBlogDetailPath && /-en\/?$/.test(zhBlogSlug);
+
+const zhAltPath =
+  isBlogDetailPath && hasEnSuffix
+    ? `/blog/${zhBlogSlug.replace(/-en\/?$/, '')}`
+    : pathWithoutLocale;
+
+const enAltPath =
+  isBlogDetailPath && !hasEnSuffix
+    ? `/blog/${zhBlogSlug.replace(/\/?$/, '')}-en`
+    : pathWithoutLocale;
+
 const isRootWithoutLocale = normalizedPath === '/';
 const alternateUrls = {
-  zh: isRootWithoutLocale ? '/' : `/zh${pathWithoutLocale === '/' ? '' : pathWithoutLocale}`,
-  en: `/en${pathWithoutLocale === '/' ? '' : pathWithoutLocale}`,
+  zh: isRootWithoutLocale ? '/' : `/zh${zhAltPath === '/' ? '' : zhAltPath}`,
+  en: `/en${enAltPath === '/' ? '' : enAltPath}`,
 };
 
 const routePath = normalizedPath;
@@ -88,7 +102,13 @@ const shouldRenderMainSchema = isHomePage;
 
 const currentOgLocale = lang === 'zh' ? 'zh_CN' : 'en_US';
 const schemaServiceName = lang === 'zh' ? 'IPFlex IP代理服务' : 'IPFlex Proxy Services';
-const schemaPageName = typeof title === 'string' && title.trim().length > 0 ? title.trim() : schemaServiceName;
+const cleanSchemaTitle = (raw: string) =>
+  raw
+    .replace(/\s+[—\-|｜]\s+IPFlex.*$/u, '')
+    .replace(/\s+[—\-|｜]\s+IPFlex$/u, '')
+    .trim();
+const schemaPageName =
+  typeof title === 'string' && title.trim().length > 0 ? cleanSchemaTitle(title.trim()) : schemaServiceName;
 const isZh = lang === 'zh';
 const schemaDescription =
   description ||

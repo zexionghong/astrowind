@@ -4,6 +4,25 @@ import { Icon } from 'astro-icon/components';
 const { lang = 'zh' } = Astro.params;
 const path = Astro.url.pathname.replace(`/${lang}`, '');
 
+const toLanguagePath = (targetLang: 'zh' | 'en') => {
+  let normalizedPath = path.endsWith('/') && path !== '/' ? path.slice(0, -1) : path;
+
+  if (normalizedPath.startsWith('/blog/')) {
+    const blogSlug = normalizedPath.replace('/blog/', '');
+    const hasEnSuffix = /-en$/.test(blogSlug);
+
+    if (targetLang === 'en' && !hasEnSuffix) {
+      normalizedPath = `/blog/${blogSlug}-en`;
+    }
+
+    if (targetLang === 'zh' && hasEnSuffix) {
+      normalizedPath = `/blog/${blogSlug.replace(/-en$/, '')}`;
+    }
+  }
+
+  return `/${targetLang}${normalizedPath}`;
+};
+
 const languages = [
   {
     code: 'zh',
@@ -36,7 +55,7 @@ const currentLanguage = languages.find(l => l.code === lang) || languages[0];
     <div class="dropdown-menu absolute top-full mt-1 w-36 md:w-48 bg-white/95 backdrop-blur-md rounded-lg shadow-xl border border-gray-200/50 py-2 z-50">
       {languages.map((language) => (
         <a
-          href={`/${language.code}${path.endsWith('/') ? path.slice(0, -1) : path}`}
+          href={toLanguagePath(language.code as 'zh' | 'en')}
           class={`group flex items-center px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm transition-colors duration-200 ${
             lang === language.code
               ? 'bg-blue-50 text-blue-700 font-medium dark:bg-blue-900/30 dark:text-blue-300'
