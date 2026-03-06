@@ -82,5 +82,18 @@ const metadata = {
   features={(Array.isArray(t('index.content.dataCenterProxy.items')) ? t('index.content.dataCenterProxy.items') : [])}
 />
 
- 
+<section class="mx-auto mt-10 mb-14 max-w-5xl rounded-2xl border border-gray-200 bg-gray-50 p-6 md:p-8">
+  <h2 class="text-2xl font-bold text-gray-900">
+    {lang === 'zh' ? '企业接入实施建议' : 'Enterprise Integration Notes'}
+  </h2>
+  <p class="mt-4 text-base leading-7 text-gray-700">
+    {lang === 'zh'
+      ? '建议先以单一业务链路完成 PoC，再逐步扩展到多区域、多并发场景。上线后应持续跟踪成功率、延迟、封禁率与单位完成成本，并通过日志字段标准化提升排障效率。'
+      : 'Start with a single production workflow PoC, then expand by region and concurrency. After launch, track success rate, latency, block rate, and cost per completed workflow with standardized logs for fast troubleshooting.'}
+  </p>
+  <p class="mt-3 text-sm leading-7 text-gray-600" lang="en">
+    Integration checklist: access credential isolation, proxy routing policy by task type, timeout and retry budget, monitoring dashboard ownership, rollback trigger, and monthly capacity review.
+  </p>
+</section>
+
 </Layout>

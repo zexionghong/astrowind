@@ -16,11 +16,14 @@ type ScenarioItem = { title?: string; description?: string; url?: string };
 const scenarios = (t('scenarios.data_list') || []) as ScenarioItem[];
 
 const metadata = {
-  title: lang === 'zh' ? '应用场景 - IPFlex' : 'Use Cases - IPFlex',
+  title:
+    lang === 'zh'
+      ? 'IPFlex 企业代理应用场景与行业落地实践方案导航'
+      : 'IPFlex Proxy Use Cases for Ad Verification, Data Collection, and E-commerce',
   description:
     lang === 'zh'
-      ? '探索IPFlex在广告验证、数据采集、电商运营与安全风控等场景的实际应用。'
-      : 'Explore IPFlex use cases across ad verification, data collection, e-commerce operations, and security risk control.',
+      ? '了解 IPFlex 在广告验证、跨境电商、数据采集、品牌监测与安全风控中的落地方法，覆盖静态住宅、动态住宅和数据中心代理组合，支持会话管理、区域路由、重试策略、稳定性优化与成本控制，帮助团队按业务目标持续扩展。'
+      : 'See how IPFlex supports ad verification, data collection, e-commerce, and security tasks with static, rotating, and datacenter proxies, plus session control, geo routing, retry strategy, and cost management.',
   ignoreTitleTemplate: true,
 };
 ---
@@ -61,6 +64,9 @@ const metadata = {
         {lang === 'zh'
           ? '对于广告验证场景，建议优先覆盖核心投放国家和城市并保留样本日志；对于电商运营场景，建议将登录、浏览、下单等行为拆分为独立会话策略；对于安全风控场景，建议结合黑白名单和频率控制，确保检测结果可复现。IPFlex 的多产品组合能力可支持同一团队在多场景下采用不同代理策略。'
           : 'For ad verification, prioritize major campaign regions and keep sample logs for traceability. For e-commerce operations, split login, browse, and order actions into separate session policies. For security operations, combine allowlists, denylists, and rate controls to make results reproducible. IPFlex product combinations allow one team to run different strategies for different use cases.'}
+      </p>
+      <p class="mt-3 text-sm leading-7 text-gray-600" lang="en">
+        Operational playbook: define KPI baseline, map target markets, configure session persistence, set retry budget, monitor failure taxonomy, compare provider pools, and review cost per successful workflow every week.
       </p>
     </section>
   </section>
