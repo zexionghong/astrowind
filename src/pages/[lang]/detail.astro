@@ -15,7 +15,7 @@ const t = await useTranslations(lang);
 
 const metadata = {
   title: t('detail.title'),
-  description: t('detail.metadata.description'),
+  description: lang === 'zh' ? '了解IPFlex静态住宅代理、动态住宅代理与静态数据中心代理的能力边界、协议支持、性能基线与接入建议，帮助企业根据业务类型选择合适方案并建立可持续的上线流程。' : t('detail.metadata.description'),
 };
 ---
 
