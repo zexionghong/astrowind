@@ -19,8 +19,8 @@ const metadata = {
     ? 'IPFlex 企业代理服务账号注册与接入开通中心与新手接入指引'
     : 'IPFlex Enterprise Proxy Account Registration and Onboarding',
   description: lang === 'zh'
-    ? '注册 IPFlex 企业账号，快速开通静态住宅、动态住宅与数据中心线路。支持 API 接入、用量计费、区域定位、会话管理、访问策略、团队协作、日志审计、权限控制和实时监控，适配数据采集、广告核验、跨境运营、账号管理、自动化任务与长期稳定接入。'
-    : 'Create an IPFlex account to activate enterprise proxy services with static residential, dynamic residential and datacenter options, API integration, usage-based billing, and global coverage.',
+    ? '注册 IPFlex 企业账号，快速开通静态住宅、动态住宅与数据中心代理，支持 API 接入、会话管理、区域路由、用量计费与实时监控，适用于数据采集、广告核验、跨境运营和自动化任务上线。'
+    : 'Register an IPFlex enterprise account to start static, rotating, and datacenter proxies with API access, geo routing, session control, usage billing, and real-time monitoring.',
   robots: {
     index: false,
     follow: false,
@@ -224,23 +224,6 @@ const handleSubmit = `async function(e) {
           </a>
         </div>
 
-        <section class="mt-3 text-[11px] leading-4 text-gray-500">
-          <p>
-            {lang === 'zh'
-              ? '接入提示：建议先完成小流量验证，再按阶段扩容。Operational onboarding checklist: verify authentication flow, endpoint reachability, success ratio trend, latency baseline, and rollback readiness before production expansion.'
-              : 'Operational onboarding checklist: verify authentication flow, endpoint reachability, success ratio trend, latency baseline, and rollback readiness before production expansion.'}
-          </p>
-          <p class="mt-1">
-            {lang === 'zh'
-              ? 'Execution baseline for first launch: document ownership for account setup, credential safety, and incident response; run controlled tests for normal traffic and peak traffic windows; verify retry behavior and error classification; record change history and rollback checkpoints; then expand capacity in phases. This method improves predictability, reduces avoidable rework, and keeps cross-team collaboration stable during onboarding.'
-              : 'Execution baseline for first launch: document ownership for account setup, credential safety, and incident response; run controlled tests for normal traffic and peak traffic windows; verify retry behavior and error classification; record change history and rollback checkpoints; then expand capacity in phases. This method improves predictability, reduces avoidable rework, and keeps cross-team collaboration stable during onboarding.'}
-          </p>
-          <ul class="mt-1 list-disc pl-4">
-            <li>{lang === 'zh' ? '先核对可用性与异常处理，再放量。' : 'Validate reliability and failure handling before scaling.'}</li>
-            <li>{lang === 'zh' ? '保持每周质量复盘与变更记录。' : 'Keep weekly quality review and change logs.'}</li>
-          </ul>
-        </section>
-
         <section class="sr-only" aria-label={lang === 'zh' ? '注册流程补充说明' : 'Registration process notes'}>
           <h2>{lang === 'zh' ? '注册流程与接入准备' : 'Registration Workflow and Onboarding Readiness'}</h2>
           <p>
@@ -287,6 +270,20 @@ const handleSubmit = `async function(e) {
               {lang === 'zh'
                 ? '生产阶段可继续建立凭证轮换策略、线路兜底方案、超时基线和每周质量复盘机制，以保证持续交付的稳定性。'
                 : 'Production readiness checklist: credential rotation policy, endpoint fallback strategy, request timeout baseline, and weekly quality review cadence.'}
+            </p>
+            <p class="mt-3 text-sm leading-6 text-gray-700">
+              {lang === 'zh' ? '相关页面：' : 'Related pages:'}
+              <a class="ml-2 text-blue-600 hover:text-blue-700" href={`/${lang}/pricing`}>
+                {lang === 'zh' ? '价格方案' : 'Pricing'}
+              </a>
+              <span class="mx-2">·</span>
+              <a class="text-blue-600 hover:text-blue-700" href={`/${lang}/detail`}>
+                {lang === 'zh' ? '产品详情' : 'Product Details'}
+              </a>
+              <span class="mx-2">·</span>
+              <a class="text-blue-600 hover:text-blue-700" href={`/${lang}/scenarios`}>
+                {lang === 'zh' ? '应用场景' : 'Use Cases'}
+              </a>
             </p>
           </section>
         </details>

@@ -83,4 +83,4 @@ We may update this Privacy Policy. Updates will be announced on the website and 
 
 For privacy-related inquiries:
 - Email: support@ipflex.ink
-- Website: www.ipflex.ink 
+- Website: [ipflex.ink](https://ipflex.ink) 

@@ -57,4 +57,4 @@ We reserve the right to modify these terms at any time. Major changes will be no
 
 For any questions, please contact us at:
 - Email: support@ipflex.ink
-- Website: www.ipflex.ink 
+- Website: [ipflex.ink](https://ipflex.ink) 

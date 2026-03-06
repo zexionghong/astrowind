@@ -93,11 +93,11 @@ const routePath = normalizedPath;
 const isHomePage = /^\/(zh|en)?$/.test(routePath);
 const isBlogPage = /^\/(zh|en)\/blog(\/|$)/.test(routePath);
 const isNoindexLandingPage = /^\/(zh|en)\/register(\/)?$/.test(routePath);
-const isCommercialPage = /(proxy|pricing|detail|use-case|scenarios|register)/.test(routePath);
+const isCoreCommercialPage = /^\/(zh|en)\/(static-residential-proxy|dynamic-residential-proxy|static-datacenter-proxy|pricing|detail)(\/)?$/.test(routePath);
 
 const shouldRenderWebsiteSchema = isHomePage;
-const shouldRenderProductSchema = isCommercialPage && !isBlogPage && !isNoindexLandingPage;
-const shouldRenderServiceSchema = isCommercialPage && !isNoindexLandingPage;
+const shouldRenderProductSchema = isCoreCommercialPage;
+const shouldRenderServiceSchema = isCoreCommercialPage;
 const shouldRenderMainSchema = isHomePage;
 
 const currentOgLocale = lang === 'zh' ? 'zh_CN' : 'en_US';
