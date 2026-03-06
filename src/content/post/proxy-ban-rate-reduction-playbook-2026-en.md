@@ -77,7 +77,7 @@ A practical split:
 - Rotating: catalog/discovery pages
 - Hybrid: sticky within step sequence, rotate between sequences
 
-For a deeper comparison model, also review: [/en/blog/proxy-sticky-session-checkout-login-stability-guide-en](/en/blog/proxy-sticky-session-checkout-login-stability-guide-en).
+For a deeper comparison model, also review: [Sticky Session Proxy Guide for Checkout and Login Stability](/en/blog/proxy-sticky-session-checkout-login-stability-guide-en).
 
 ### Layer C: Retry and Backoff Discipline
 
@@ -166,4 +166,4 @@ Not always. Match proxy type to workflow and target behavior. Mixed strategy usu
 - Add weekly route-level review.
 - Promote only stable segments to higher traffic.
 
-If you need a broader architecture baseline before scaling, see: [/en/blog/enterprise-proxy-onboarding-playbook-2026-en](/en/blog/enterprise-proxy-onboarding-playbook-2026-en).
+If you need a broader architecture baseline before scaling, see: [Enterprise Proxy Onboarding Playbook](/en/blog/enterprise-proxy-onboarding-playbook-2026-en).

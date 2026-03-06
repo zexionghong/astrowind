@@ -62,7 +62,7 @@ Key KPI:
 - localized result consistency
 - cross-tool variance
 
-You can pair this with your city-level workflow: [/en/blog/city-level-serp-tracking-proxy-playbook-2026-en](/en/blog/city-level-serp-tracking-proxy-playbook-2026-en).
+You can pair this with your city-level workflow: [City-Level SERP Tracking Proxy Playbook](/en/blog/city-level-serp-tracking-proxy-playbook-2026-en).
 
 ## Recommended Hybrid Model for Ecommerce Teams
 
@@ -133,4 +133,4 @@ At least monthly, and immediately after major platform or anti-bot behavior chan
 - Track cost per successful workflow, not list price.
 - Audit geo quality by market each month.
 
-For onboarding and governance alignment across product/engineering/ops, see: [/en/blog/enterprise-proxy-onboarding-playbook-2026-en](/en/blog/enterprise-proxy-onboarding-playbook-2026-en).
+For onboarding and governance alignment across product/engineering/ops, see: [Enterprise Proxy Onboarding Playbook](/en/blog/enterprise-proxy-onboarding-playbook-2026-en).

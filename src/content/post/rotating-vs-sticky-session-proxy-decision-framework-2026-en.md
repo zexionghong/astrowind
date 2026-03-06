@@ -68,7 +68,7 @@ Recommended: rotating session with bounded concurrency and smart backoff.
 
 Recommended: sticky short windows per location to stabilize comparisons, rotate between location batches.
 
-For geo-focused workflows, also reference: [/en/blog/google-maps-local-pack-ranking-audit-proxy-workflow-2026-en](/en/blog/google-maps-local-pack-ranking-audit-proxy-workflow-2026-en).
+For geo-focused workflows, also reference: [Google Maps Local Pack Ranking Audit Workflow](/en/blog/google-maps-local-pack-ranking-audit-proxy-workflow-2026-en).
 
 ## KPI Set for Session Strategy Reviews
 
@@ -134,4 +134,4 @@ For most mature teams, yes. Hybrid routing aligns better with real multi-stage w
 - Set thresholds for challenge rate and recovery time.
 - Review policy impact weekly and adjust routing.
 
-If you need a broader anti-ban framework, see: [/en/blog/proxy-ban-rate-reduction-playbook-2026-en](/en/blog/proxy-ban-rate-reduction-playbook-2026-en).
+If you need a broader anti-ban framework, see: [Proxy Ban Rate Reduction Playbook](/en/blog/proxy-ban-rate-reduction-playbook-2026-en).
