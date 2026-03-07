@@ -1,8 +1,12 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { getCollection } from 'astro:content';
 
 const { lang = 'zh' } = Astro.params;
 const path = Astro.url.pathname.replace(`/${lang}`, '');
+
+const allPosts = await getCollection('post');
+const postSlugSet = new Set(allPosts.map((p) => p.slug.split('/').pop() || p.slug));
 
 const toLanguagePath = (targetLang: 'zh' | 'en') => {
   let normalizedPath = path.endsWith('/') && path !== '/' ? path.slice(0, -1) : path;
@@ -14,16 +18,24 @@ const toLanguagePath = (targetLang: 'zh' | 'en') => {
   }
 
   if (normalizedPath.startsWith('/blog/')) {
-    const blogSlug = normalizedPath.replace('/blog/', '');
-    const hasEnSuffix = /-en$/.test(blogSlug);
+    const blogPart = normalizedPath.replace('/blog/', '');
 
-    if (targetLang === 'en' && !hasEnSuffix) {
-      normalizedPath = `/blog/${blogSlug}-en`;
+    // 分页页：/blog/2 -> /blog/2（不能加 -en）
+    if (/^\d+$/.test(blogPart)) {
+      return `/${targetLang}/blog/${blogPart}`;
     }
 
-    if (targetLang === 'zh' && hasEnSuffix) {
-      normalizedPath = `/blog/${blogSlug.replace(/-en$/, '')}`;
+    // 博客详情页：仅当目标语言 slug 存在时跳转，否则回退博客列表页
+    const hasEnSuffix = /-en$/.test(blogPart);
+    const targetSlug = targetLang === 'en'
+      ? (hasEnSuffix ? blogPart : `${blogPart}-en`)
+      : (hasEnSuffix ? blogPart.replace(/-en$/, '') : blogPart);
+
+    if (!postSlugSet.has(targetSlug)) {
+      return `/${targetLang}/blog`;
     }
+
+    return `/${targetLang}/blog/${targetSlug}`;
   }
 
   return `/${targetLang}${normalizedPath}`;
