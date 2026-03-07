@@ -1,0 +1,23 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCollection } from 'astro:content';
+
+export const getStaticPaths = (async () => {
+  const posts = await getCollection('post');
+
+  return posts.map((post) => {
+    const slug = post.slug.split('/').pop() || post.slug;
+    const lang = post.data.language === 'en' ? 'en' : 'zh';
+
+    return {
+      params: { slug },
+      props: {
+        target: `/${lang}/blog/${slug}`,
+      },
+    };
+  });
+}) satisfies GetStaticPaths;
+
+const { target } = Astro.props as { target: string };
+return Astro.redirect(target, 301);
+---

@@ -7,6 +7,12 @@ const path = Astro.url.pathname.replace(`/${lang}`, '');
 const toLanguagePath = (targetLang: 'zh' | 'en') => {
   let normalizedPath = path.endsWith('/') && path !== '/' ? path.slice(0, -1) : path;
 
+  // 标签页跨语言 slug 不总是一一对应（尤其中文拼音 slug），
+  // 为避免生成不存在的 /en/tag/... 链接，统一回退到博客列表页。
+  if (normalizedPath.startsWith('/tag/')) {
+    return `/${targetLang}/blog`;
+  }
+
   if (normalizedPath.startsWith('/blog/')) {
     const blogSlug = normalizedPath.replace('/blog/', '');
     const hasEnSuffix = /-en$/.test(blogSlug);
