@@ -1,12 +1,12 @@
 {
   "detail": {
-    "title": "Product Details",
+    "title": "Proxy Type Selection Guide",
     "metadata": {
-      "description": "Explore IPFlex proxy product details across static residential, dynamic residential, and datacenter proxies, with coverage, performance, and protocol support."
+      "description": "Compare IPFlex static residential, dynamic residential, and datacenter proxies by use case, protocol support, operational fit, and decision criteria so teams can choose the right proxy type with less guesswork."
     },
     "slogan": {
-      "line1": "Millions of Global Real Proxy, Unlimited Possibilities",
-      "line2": "Stable, Reliable, Lightning-Fast - Break Through All Data Barriers!"
+      "line1": "Short answer: use static residential proxies for persistent sessions, dynamic residential proxies for broad coverage, and datacenter proxies for throughput-cost efficiency.",
+      "line2": "This page helps teams compare proxy types by workload fit, operating limits, and rollout guidance."
     },
     "staticResidential": {
       "title": "Static Residential Proxy",

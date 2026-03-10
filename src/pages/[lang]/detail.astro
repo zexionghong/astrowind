@@ -13,21 +13,120 @@ export async function getStaticPaths() {
 const { lang } = Astro.params;
 const t = await useTranslations(lang);
 
-const metadata = {
-  title: t('detail.title'),
-  description: lang === 'zh' ? '了解IPFlex静态住宅代理、动态住宅代理与静态数据中心代理的能力边界、协议支持、性能基线与接入建议，帮助企业根据业务类型选择合适方案并建立可持续的上线流程。' : t('detail.metadata.description'),
+const pageMetadata = {
+  title:
+    lang === 'zh'
+      ? 'IPFlex 代理类型选择指南：静态住宅、动态住宅与数据中心代理对比'
+      : 'IPFlex Proxy Type Selection Guide: Static Residential vs Dynamic Residential vs Datacenter',
+  description:
+    lang === 'zh'
+      ? '了解 IPFlex 静态住宅代理、动态住宅代理与静态数据中心代理的能力边界、协议支持、性能基线与接入建议，帮助企业根据业务类型选择合适方案并建立可持续的上线流程。'
+      : 'Compare IPFlex static residential, dynamic residential, and datacenter proxies by workload fit, protocol support, performance baseline, and onboarding guidance.',
 };
+
+const answerFirstSummary =
+  lang === 'zh'
+    ? '直接结论：账号稳定和长期会话优先静态住宅代理；高覆盖和轮换采集优先动态住宅代理；高并发 API 与成本效率优先静态数据中心代理。'
+    : 'Answer first: choose static residential proxies for stable long sessions, dynamic residential proxies for broad rotating collection, and datacenter proxies for high-throughput API workloads and cost efficiency.';
+
+const comparisonPoints =
+  lang === 'zh'
+    ? [
+        '稳定性优先的账号体系、登录与支付校验任务，更适合静态住宅代理。',
+        '覆盖率优先的抓取、广告验证与区域可见性任务，更适合动态住宅代理。',
+        '吞吐与预算优先的接口调用、批处理与自动化测试任务，更适合数据中心代理。',
+      ]
+    : [
+        'Static residential proxies fit account workflows, login stability, and checkout validation tasks.',
+        'Dynamic residential proxies fit coverage-heavy scraping, ad verification, and geo visibility jobs.',
+        'Datacenter proxies fit API calls, batch processing, and automation workloads focused on throughput and budget.',
+      ];
+
+const faqItems =
+  lang === 'zh'
+    ? [
+        {
+          question: '如何快速判断应该选哪种代理？',
+          answer:
+            '先看业务目标。如果重点是长期会话稳定和账号一致性，优先静态住宅代理；如果重点是覆盖率和轮换能力，优先动态住宅代理；如果重点是高并发吞吐和成本效率，优先静态数据中心代理。',
+        },
+        {
+          question: '什么时候不应优先选择静态住宅代理？',
+          answer:
+            '当任务主要依赖大规模并发采集、频繁切换出口和广泛区域覆盖时，动态住宅代理通常更合适；如果目标是吞吐和预算效率，数据中心代理往往更优。',
+        },
+        {
+          question: '代理类型比较时应该先看哪些指标？',
+          answer:
+            '建议先统一比较成功率、会话保持率或覆盖率、P95 时延、重试开销，以及单业务流程的完成成本，再决定最终方案。',
+        },
+      ]
+    : [
+        {
+          question: 'How should teams decide which proxy type to start with?',
+          answer:
+            'Start from workload priority. Use static residential proxies for session stability, dynamic residential proxies for broad rotating coverage, and datacenter proxies for throughput-cost efficiency.',
+        },
+        {
+          question: 'When should teams avoid starting with static residential proxies?',
+          answer:
+            'Avoid them when the main requirement is large-scale rotating collection or wide geo coverage. In those cases, dynamic residential or datacenter options are usually a better operational fit.',
+        },
+        {
+          question: 'Which metrics matter most when comparing proxy types?',
+          answer:
+            'Compare success ratio, session retention or coverage success, P95 latency, retry overhead, and cost per completed workflow under the same workload assumptions.',
+        },
+      ];
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'IPFlex',
+      item: `https://ipflex.ink/${lang}`,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: lang === 'zh' ? '代理类型选择指南' : 'Proxy Type Selection Guide',
+      item: `https://ipflex.ink/${lang}/detail`,
+    },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={pageMetadata}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
-    <div class="relative h-[350px] text-center bg-[#2a64f4] w-full flex flex-col items-center justify-center">
+    <header class="relative h-[350px] text-center bg-[#2a64f4] w-full flex flex-col items-center justify-center">
       <div class="absolute inset-0 bg-gradient-to-b from-blue-500/20 to-transparent"></div>
       <div class="relative z-10 max-w-3xl mx-auto px-4">
         <h1 class="text-4xl md:text-5xl font-bold leading-tight tracking-tight mb-6 font-heading text-white drop-shadow-md">
           {t('detail.title')}
         </h1>
-        <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+        <p class="text-lg md:text-xl text-white/95 mb-4 max-w-3xl mx-auto leading-relaxed">
+          {answerFirstSummary}
+        </p>
+        <p class="text-base md:text-lg text-white/85 mb-8 max-w-2xl mx-auto leading-relaxed">
           {t('detail.slogan.line1')}
           <br/>
           {t('detail.slogan.line2')}
@@ -45,7 +144,7 @@ const metadata = {
           </div>
         </div>
       </div>
-    </div>
+    </header>
   <!-- 波浪形状背景 -->
   <div class="relative w-full h-[300px]">
     <div class="absolute bottom-0 left-0 w-full ">
@@ -58,42 +157,93 @@ const metadata = {
       
     </div>
   </div>
-  <ProxyService
-  subtitle={t('index.content.residentialProxy.title')}
-  description=""
-  descriptionList={t('index.content.residentialProxy.descriptionList')}
-  features={(Array.isArray(t('index.content.residentialProxy.items')) ? t('index.content.residentialProxy.items') : [])}
-/>
+  <section class="mx-auto mt-8 max-w-5xl px-4 md:px-6">
+    <div class="rounded-2xl border border-blue-100 bg-blue-50/70 p-6 md:p-8">
+      <h2 class="text-2xl font-bold text-gray-900">
+        {lang === 'zh' ? '如何选择合适的代理类型' : 'How to Choose the Right Proxy Type'}
+      </h2>
+      <p class="mt-4 text-base leading-7 text-gray-700">
+        {lang === 'zh'
+          ? '选择代理类型时，建议先明确业务优先级，再决定技术方案。核心判断顺序通常是：先看是否要求长期会话稳定，再看是否要求广覆盖轮换，最后看吞吐和成本效率是否是主要约束。'
+          : 'Start proxy selection from workload priority instead of product preference. The usual decision order is session stability first, rotating coverage second, and throughput-cost efficiency third.'}
+      </p>
+      <ol class="mt-4 list-decimal space-y-2 pl-5 text-sm leading-6 text-gray-700">
+        {comparisonPoints.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ol>
+    </div>
+  </section>
 
-<br/>
-<br/>
-<ProxyService
-  subtitle={t('index.content.dynamicProxy.title')}
-  isEven={true}
-  descriptionList={t('index.content.dynamicProxy.descriptionList')}
-  features={(Array.isArray(t('index.content.dynamicProxy.items')) ? t('index.content.dynamicProxy.items') : [])}
-/>
-<br/>
-<br/>
-<ProxyService
-  subtitle={t('index.content.dataCenterProxy.title')}
+  <section aria-label={t('detail.staticResidential.title')} class="mt-10">
+    <div class="mx-auto max-w-5xl px-4 md:px-6">
+      <p class="mt-3 text-base leading-7 text-gray-700 dark:text-gray-300">
+        {t('detail.staticResidential.description')}
+      </p>
+    </div>
+    <ProxyService
+      subtitle={t('detail.staticResidential.title')}
+      description=""
+      descriptionList={t('index.content.residentialProxy.descriptionList')}
+      features={(Array.isArray(t('index.content.residentialProxy.items')) ? t('index.content.residentialProxy.items') : [])}
+    />
+  </section>
 
-  descriptionList={t('index.content.dataCenterProxy.descriptionList')}
-  features={(Array.isArray(t('index.content.dataCenterProxy.items')) ? t('index.content.dataCenterProxy.items') : [])}
-/>
+  <section aria-label={t('detail.dynamicResidential.title')} class="mt-2">
+    <div class="mx-auto max-w-5xl px-4 md:px-6">
+      <p class="mt-3 text-base leading-7 text-gray-700 dark:text-gray-300">
+        {t('detail.dynamicResidential.description')}
+      </p>
+    </div>
+    <ProxyService
+      subtitle={t('detail.dynamicResidential.title')}
+      isEven={true}
+      descriptionList={t('index.content.dynamicProxy.descriptionList')}
+      features={(Array.isArray(t('index.content.dynamicProxy.items')) ? t('index.content.dynamicProxy.items') : [])}
+    />
+  </section>
 
-<section class="mx-auto mt-10 mb-14 max-w-5xl rounded-2xl border border-gray-200 bg-gray-50 p-6 md:p-8">
-  <h2 class="text-2xl font-bold text-gray-900">
-    {lang === 'zh' ? '企业接入实施建议' : 'Enterprise Integration Notes'}
-  </h2>
-  <p class="mt-4 text-base leading-7 text-gray-700">
-    {lang === 'zh'
-      ? '建议先以单一业务链路完成 PoC，再逐步扩展到多区域、多并发场景。上线后应持续跟踪成功率、延迟、封禁率与单位完成成本，并通过日志字段标准化提升排障效率。'
-      : 'Start with a single production workflow PoC, then expand by region and concurrency. After launch, track success rate, latency, block rate, and cost per completed workflow with standardized logs for fast troubleshooting.'}
-  </p>
-  <p class="mt-3 text-sm leading-7 text-gray-600" lang="en">
-    Integration checklist: access credential isolation, proxy routing policy by task type, timeout and retry budget, monitoring dashboard ownership, rollback trigger, and monthly capacity review.
-  </p>
-</section>
+  <section aria-label={t('detail.datacenter.title')} class="mt-2">
+    <div class="mx-auto max-w-5xl px-4 md:px-6">
+      <p class="mt-3 text-base leading-7 text-gray-700 dark:text-gray-300">
+        {t('detail.datacenter.description')}
+      </p>
+    </div>
+    <ProxyService
+      subtitle={t('detail.datacenter.title')}
+      descriptionList={t('index.content.dataCenterProxy.descriptionList')}
+      features={(Array.isArray(t('index.content.dataCenterProxy.items')) ? t('index.content.dataCenterProxy.items') : [])}
+    />
+  </section>
+
+  <section class="mx-auto mt-10 mb-10 max-w-5xl rounded-2xl border border-gray-200 bg-gray-50 p-6 md:p-8">
+    <h2 class="text-2xl font-bold text-gray-900">
+      {lang === 'zh' ? '企业接入实施建议' : 'Enterprise Integration Notes'}
+    </h2>
+    <p class="mt-4 text-base leading-7 text-gray-700">
+      {lang === 'zh'
+        ? '建议先以单一业务链路完成 PoC，再逐步扩展到多区域、多并发场景。上线后应持续跟踪成功率、延迟、封禁率与单位完成成本，并通过日志字段标准化提升排障效率。'
+        : 'Start with a single production workflow PoC, then expand by region and concurrency. After launch, track success ratio, latency, block rate, and cost per completed workflow with standardized logs for faster troubleshooting.'}
+    </p>
+    <p class="mt-3 text-sm leading-7 text-gray-600">
+      {lang === 'zh'
+        ? '实施顺序建议是先确认鉴权和路由策略，再定义超时与重试预算，最后建立监控负责人、回滚条件和月度容量复盘机制。'
+        : 'Execution order: validate authentication and routing policy first, then define timeout and retry budget, and finally assign dashboard ownership, rollback triggers, and monthly capacity reviews.'}
+    </p>
+  </section>
+
+  <section class="mx-auto mb-14 max-w-5xl rounded-2xl border border-gray-200 bg-white p-6 md:p-8">
+    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+      {lang === 'zh' ? '常见问题' : 'Frequently Asked Questions'}
+    </h2>
+    <div class="mt-6 space-y-4">
+      {faqItems.map((item) => (
+        <article class="rounded-xl border border-gray-200 p-4">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{item.question}</h3>
+          <p class="mt-2 text-sm leading-6 text-gray-700 dark:text-gray-300">{item.answer}</p>
+        </article>
+      ))}
+    </div>
+  </section>
 
 </Layout>
