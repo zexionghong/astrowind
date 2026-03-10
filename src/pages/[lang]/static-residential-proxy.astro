@@ -30,6 +30,11 @@ const metadata = {
   ignoreTitleTemplate: true,
 };
 
+const answerFirstSummary =
+  lang === 'zh'
+    ? '直接结论：如果业务依赖长期会话、账号一致性和低身份波动，静态住宅代理通常是优先选项。'
+    : 'Answer first: static residential proxies are the best starting point when your workflow depends on long sessions, stable identity, and low profile volatility.';
+
 const stats = t('stats.items');
 const faqs = t('faqs.items');
 
@@ -89,9 +94,29 @@ const geoMethodFaqs = lang === 'zh'
         a: 'Scale after key metrics remain stable across the baseline window with controlled retry overhead.',
       },
     ];
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'IPFlex',
+      item: `https://ipflex.ink/${lang}`,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: lang === 'zh' ? '静态住宅代理' : 'Static Residential Proxy',
+      item: `https://ipflex.ink/${lang}/static-residential-proxy`,
+    },
+  ],
+};
 ---
 
 <Layout metadata={metadata}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <!-- Hero Widget -->
   <div class="relative">
     <div class="absolute inset-0 bg-gradient-to-b from-blue-600 to-blue-10"></div>
@@ -103,16 +128,19 @@ const geoMethodFaqs = lang === 'zh'
       class="relative z-10 pt-16 pb-10"
     >
       <Fragment slot="title">
-        <div class="flex flex-col items-start gap-2 mb-6" style="margin-left:50px;">
-          <div class="text-5xl font-bold text-white leading-tight" role="heading" aria-level="1">
-            {t('hero.title')}
-          </div>
-        </div>
+        <span class="block text-5xl font-bold text-white leading-tight" style="margin-left:50px;">
+          {t('hero.title')}
+        </span>
       </Fragment>
       <Fragment slot="subtitle">
-        <div class="text-gray-200 space-y-6" style="margin-left:50px;">
-            <p class="text-xl font-light leading-relaxed text-left">
-            {t('hero.subtitle')}
+        <span class="block text-left" style="margin-left:50px;">
+          {t('hero.subtitle')}
+        </span>
+      </Fragment>
+      <Fragment slot="content">
+        <div class="text-gray-200 space-y-6 mt-6" style="margin-left:50px;">
+          <p class="rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-base font-medium leading-7 text-left text-white/95">
+            {answerFirstSummary}
           </p>
           <ul class="space-y-3 text-lg">
             {t('hero.features').map((feature) => (
@@ -194,6 +222,22 @@ const geoMethodFaqs = lang === 'zh'
 
   <!-- 计费方式对比 -->
   <DeductionMethods lang={lang} deductionData={t('deductionMethods')} />
+
+  <section class="max-w-6xl mx-auto px-4 md:px-6 py-10">
+    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+      {lang === 'zh' ? '静态住宅代理选择清单' : 'Static Residential Proxy Selection Checklist'}
+    </h2>
+    <p class="text-base leading-7 text-gray-700 dark:text-gray-300">
+      {lang === 'zh'
+        ? '评估静态住宅代理时，建议先看业务是否真的需要稳定身份，再验证会话持续时间、登录成功率和异常验证触发率。只有这些指标在同一负载下持续稳定，静态住宅代理的价值才会真正体现。'
+        : 'Evaluate static residential proxies by confirming whether the workflow truly needs identity persistence, then validate session duration, login success, and challenge trigger rate under the same workload assumptions.'}
+    </p>
+    <ol class="mt-4 list-decimal pl-5 space-y-2 text-sm leading-6 text-gray-700 dark:text-gray-300">
+      <li>{lang === 'zh' ? '确认目标任务是否依赖固定身份，例如登录、支付校验、账号运营。' : 'Confirm the target workflow depends on a persistent identity such as login, checkout validation, or account operations.'}</li>
+      <li>{lang === 'zh' ? '在单一业务链路下记录 3 至 7 天会话稳定样本。' : 'Capture a 3-to-7 day stability baseline on one representative workflow.'}</li>
+      <li>{lang === 'zh' ? '对比扩容前后成功率、重试开销和异常验证波动。' : 'Compare success ratio, retry overhead, and verification volatility before and after scale-up.'}</li>
+    </ol>
+  </section>
 
   <section class="max-w-6xl mx-auto px-4 md:px-6 py-10">
     <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">

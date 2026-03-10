@@ -30,6 +30,11 @@ const metadata = {
   ignoreTitleTemplate: true,
 };
 
+const answerFirstSummary =
+  lang === 'zh'
+    ? '直接结论：如果工作负载以高并发吞吐、接口调用效率和成本可预测性为核心，静态数据中心代理通常是首选。'
+    : 'Answer first: static datacenter proxies are usually the first choice when throughput, API efficiency, and predictable cost matter most.';
+
 const stats = t('staticDatacenterProxy.stats.items');
 const faqs = t('staticDatacenterProxy.faqs.items');
 
@@ -88,9 +93,29 @@ const geoMethodFaqs = lang === 'zh'
         a: 'Use fixed-load benchmarking, monthly variance reviews, and iterative resource tuning.',
       },
     ];
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'IPFlex',
+      item: `https://ipflex.ink/${lang}`,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: lang === 'zh' ? '静态数据中心代理' : 'Static Datacenter Proxy',
+      item: `https://ipflex.ink/${lang}/static-datacenter-proxy`,
+    },
+  ],
+};
 ---
 
 <Layout metadata={metadata}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <!-- Hero Widget -->
   <div class="relative">
     <div class="absolute inset-0 bg-gradient-to-b from-green-600 to-green-10"></div>
@@ -102,16 +127,19 @@ const geoMethodFaqs = lang === 'zh'
       class="relative z-10 pt-16 pb-10"
     >
       <Fragment slot="title">
-        <div class="flex flex-col items-start gap-2 mb-6" style="margin-left:50px;">
-          <div class="text-5xl font-bold text-white leading-tight" role="heading" aria-level="1">
-            {t('staticDatacenterProxy.hero.title')}
-          </div>
-        </div>
+        <span class="block text-5xl font-bold text-white leading-tight" style="margin-left:50px;">
+          {t('staticDatacenterProxy.hero.title')}
+        </span>
       </Fragment>
       <Fragment slot="subtitle">
-        <div class="text-gray-200 space-y-6" style="margin-left:50px;">
-            <p class="text-xl font-light leading-relaxed text-left">
-            {t('staticDatacenterProxy.hero.subtitle')}
+        <span class="block text-left" style="margin-left:50px;">
+          {t('staticDatacenterProxy.hero.subtitle')}
+        </span>
+      </Fragment>
+      <Fragment slot="content">
+        <div class="text-gray-200 space-y-6 mt-6" style="margin-left:50px;">
+          <p class="rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-base font-medium leading-7 text-left text-white/95">
+            {answerFirstSummary}
           </p>
           <ul class="space-y-3 text-lg">
             {t('staticDatacenterProxy.hero.features').map((feature) => (
@@ -173,6 +201,22 @@ const geoMethodFaqs = lang === 'zh'
 
   <!-- 计费方式对比 -->
   <DeductionMethods lang={lang} deductionData={t('staticDatacenterProxy.deductionMethods')} />
+
+  <section class="max-w-6xl mx-auto px-4 md:px-6 py-10">
+    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+      {lang === 'zh' ? '静态数据中心代理选择清单' : 'Static Datacenter Proxy Selection Checklist'}
+    </h2>
+    <p class="text-base leading-7 text-gray-700 dark:text-gray-300">
+      {lang === 'zh'
+        ? '静态数据中心代理的价值不只在低单价，而在于它能否在固定预算内持续交付吞吐和响应稳定性。评估时应把性能、预算偏差和失败重试占比放在同一视角比较。'
+        : 'The value of static datacenter proxies is not just a lower unit price. It comes from whether the product can deliver stable throughput and response performance inside a fixed budget envelope.'}
+    </p>
+    <ol class="mt-4 list-decimal pl-5 space-y-2 text-sm leading-6 text-gray-700 dark:text-gray-300">
+      <li>{lang === 'zh' ? '先用固定负载压测确认稳定吞吐区间。' : 'Use a fixed-load benchmark to identify the stable throughput range first.'}</li>
+      <li>{lang === 'zh' ? '同时记录 P95 时延、失败重试占比和单位完成成本。' : 'Record P95 latency, retry ratio, and unit completion cost together.'}</li>
+      <li>{lang === 'zh' ? '用月度预算偏差和高峰窗口表现决定是否扩容。' : 'Use monthly budget variance and peak-window behavior to decide whether to scale.'}</li>
+    </ol>
+  </section>
 
   <section class="max-w-6xl mx-auto px-4 md:px-6 py-10">
     <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">

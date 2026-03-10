@@ -24,6 +24,68 @@ const pricingIntro = lang === 'zh'
   ? 'IPFlex 代理IP定价方案面向不同业务阶段提供可扩展组合，团队可以根据稳定性目标、请求体量与预算约束进行分层采购。'
   : 'IPFlex proxy pricing plans are designed for staged growth, so teams can combine products by stability target, request volume, and budget constraints.';
 
+const pricingFaqs = lang === 'zh'
+  ? [
+      {
+        q: '应该先看价格还是先看成功率？',
+        a: '应先看在统一负载下能否稳定完成目标任务，再比较单位完成成本。只看标价容易低估失败重试和运营波动带来的真实成本。',
+      },
+      {
+        q: '什么时候适合从试用流量扩到生产采购？',
+        a: '当成功率、时延、重试开销和预算偏差在完整业务周期内保持稳定时，再按业务优先级逐步扩容更稳妥。',
+      },
+      {
+        q: '定价评估时应比较哪些指标？',
+        a: '建议统一比较成功率、P50/P95 时延、失败类型分布、重试开销和单业务流程月度完成成本。',
+      },
+    ]
+  : [
+      {
+        q: 'Should teams compare list price or success rate first?',
+        a: 'Start with whether a plan can reliably complete the target workflow under the same workload, then compare cost per completed outcome.',
+      },
+      {
+        q: 'When is a team ready to move from pilot traffic to production purchasing?',
+        a: 'Scale after success ratio, latency, retry overhead, and budget variance remain stable through a full business cycle.',
+      },
+      {
+        q: 'Which metrics matter most for pricing evaluation?',
+        a: 'Compare success ratio, P50/P95 latency, failure distribution, retry overhead, and monthly cost per completed workflow.',
+      },
+    ];
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'IPFlex',
+      item: `https://ipflex.ink/${lang}`,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: lang === 'zh' ? '代理定价' : 'Proxy Pricing',
+      item: `https://ipflex.ink/${lang}/pricing`,
+    },
+  ],
+};
+
+const pricingFaqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: pricingFaqs.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.a,
+    },
+  })),
+};
+
 export function getStaticPaths() {
   return [
     { params: { lang: 'en' } },
@@ -115,7 +177,9 @@ const productSchema = {
 ---
 
 <Layout metadata={metadata}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(pricingFaqSchema)} />
   
   <!-- <HeroText
     title={t('pricing.hero.title')}
@@ -225,6 +289,20 @@ const productSchema = {
         Procurement decisions are usually more reliable when teams document assumptions, include both peak and off-peak samples, and review result stability over multiple cycles instead of one-time snapshots.
       </p>
     )}
+  </section>
+
+  <section class="mx-auto max-w-5xl px-4 pb-14">
+    <h2 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
+      {lang === 'zh' ? '定价常见问题' : 'Pricing FAQs'}
+    </h2>
+    <div class="space-y-4">
+      {pricingFaqs.map((item) => (
+        <article class="rounded-xl border border-gray-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-900">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{item.q}</h3>
+          <p class="mt-2 text-sm leading-6 text-gray-700 dark:text-gray-300">{item.a}</p>
+        </article>
+      ))}
+    </div>
   </section>
 
   <!-- <Features3
