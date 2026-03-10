@@ -4,7 +4,7 @@ excerpt: "想要买到靠谱的代理IP？本文为你详细解析选购代理IP
 category: "网络服务"
 tags: [代理IP, 选购指南, 性能指标, 网络优化, 企业服务]
 publishDate: 2025-04-19
-author: "IPFelx"
+author: "技术编辑部"
 language: "zh"
 
 ---

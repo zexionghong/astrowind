@@ -11,7 +11,7 @@ tags:
   - "FAQ优化"
   - "GEO可读性"
 publishDate: 2026-02-25
-author: "IPFelx"
+author: "技术编辑部"
 language: "zh"
 ---
 

@@ -4,7 +4,7 @@ excerpt: "全面解析代理IP自动化测试框架的设计原理、技术实�
 category: "技术实施"
 tags: ["自动化测试", "代理IP测试", "测试框架", "质量保障", "性能测试", "稳定性测试", "测试自动化", "CI/CD集成", "测试工具", "质量管理"]
 publishDate: 2025-09-26
-author: "IPFlex"
+author: "技术编辑部"
 language: "zh"
 ---
 

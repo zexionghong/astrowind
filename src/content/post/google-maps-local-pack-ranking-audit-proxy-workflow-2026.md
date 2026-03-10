@@ -11,7 +11,7 @@ tags:
   - "长尾关键词"
   - "GBP优化"
 publishDate: 2026-02-26
-author: "IPFelx"
+author: "技术编辑部"
 language: "zh"
 ---
 

@@ -4,7 +4,7 @@ excerpt: "Comprehensive enterprise guide to proxy security compliance, legal fra
 category: "Security & Compliance"
 tags: ["Proxy Security Compliance", "Legal Proxy Usage", "Business Proxy Compliance", "GDPR Proxy", "Enterprise Security", "Proxy Regulations", "Data Protection", "Privacy Compliance", "Secure Proxy Usage", "Proxy Legal Framework"]
 publishDate: 2025-09-09
-author: "IPFlex"
+author: "Editorial Team"
 language: "en"
 ---
 

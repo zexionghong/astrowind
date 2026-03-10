@@ -4,7 +4,7 @@ excerpt: "A comprehensive enterprise-grade framework for evaluating and selectin
 category: "Enterprise Guide"
 tags: ["Enterprise Proxy Selection", "Proxy Provider Evaluation", "Business Proxy Solutions", "Proxy RFP", "Enterprise Decision Framework", "Proxy Procurement", "Vendor Assessment", "Proxy Management"]
 publishDate: 2025-09-09
-author: "IPFlex"
+author: "Editorial Team"
 language: "en"
 ---
 

@@ -4,7 +4,7 @@ excerpt: "深入解析数据采集领域中代理IP的关键作用，涵盖技�
 category: "技术"
 tags: ["代理IP", "数据采集", "爬虫技术", "IP代理池", "反爬虫", "Python", "网络爬虫", "数据分析", "技术架构", "性能优化"]
 publishDate: 2024-04-09
-author: "IPFelx"
+author: "技术编辑部"
 
 language: "zh"
 ---

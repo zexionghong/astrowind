@@ -4,7 +4,7 @@ excerpt: "Comprehensive analysis of proxy IP geolocation technology principles, 
 category: "Technical Testing"
 tags: ["proxy IP geolocation", "location verification", "IP location accuracy", "location detection tools", "proxy quality", "IP geographic data", "location technology", "proxy verification", "geographic accuracy", "IP positioning"]
 publishDate: 2025-09-26
-author: "IPFlex"
+author: "Editorial Team"
 language: "en"
 ---
 

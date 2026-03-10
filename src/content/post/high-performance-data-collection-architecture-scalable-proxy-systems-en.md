@@ -4,7 +4,7 @@ excerpt: "A comprehensive technical guide for designing and implementing enterpr
 category: "System Architecture"
 tags: ["Scalable Data Collection", "Microservices Architecture", "Proxy Pool Management", "System Design", "DevOps", "Performance Optimization", "Enterprise Architecture", "Distributed Systems"]
 publishDate: 2025-09-09
-author: "IPFlex"
+author: "Editorial Team"
 language: "en"
 ---
 

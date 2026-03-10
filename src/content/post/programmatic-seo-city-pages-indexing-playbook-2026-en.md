@@ -11,7 +11,7 @@ tags:
   - "Long-tail keywords"
   - "Technical SEO"
 publishDate: 2026-02-27
-author: "IPFelx"
+author: "Editorial Team"
 language: "en"
 ---
 

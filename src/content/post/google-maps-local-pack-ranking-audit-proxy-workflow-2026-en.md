@@ -11,7 +11,7 @@ tags:
   - "GBP Optimization"
   - "Local Search Audit"
 publishDate: 2026-02-26
-author: "IPFelx"
+author: "Editorial Team"
 language: "en"
 ---
 

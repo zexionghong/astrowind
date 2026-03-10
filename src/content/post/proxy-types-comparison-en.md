@@ -4,7 +4,7 @@ excerpt: "This article provides an in-depth analysis of different proxy IP types
 category: "Technical Tutorial"
 tags: ["Proxy IP", "Network Technology", "Data Collection", "Cross-border E-commerce", "Network Security"]
 publishDate: 2025-04-20
-author: "IPFelx"
+author: "Editorial Team"
 language: "en"
 
 ---

@@ -4,7 +4,7 @@ excerpt: "深入解析Python爬虫中代理IP的5种实现方式，包含详细�
 category: "技术"
 tags: ["Python", "爬虫", "代理IP", "数据采集", "网络编程", "反爬虫"]
 publishDate: 2024-04-08
-author: "IPFelx"
+author: "技术编辑部"
 language: "zh"
 ---
 

@@ -4,7 +4,7 @@ excerpt: "深入解析SSL/TLS代理隧道的安全机制、加密原理和最佳
 category: "技术安全"
 tags: ["SSL代理", "TLS隧道", "HTTPS代理", "加密代理", "网络安全", "隧道技术", "安全协议", "企业代理", "代理加密", "网络隧道"]
 publishDate: 2025-09-26
-author: "IPFlex"
+author: "技术编辑部"
 language: "zh"
 ---
 

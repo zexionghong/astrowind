@@ -4,7 +4,7 @@ excerpt: "做爬虫最怕IP被封？本文详细解析代理IP在爬虫中的应
 category: "网络服务"
 tags: [代理IP, 爬虫技术, 反爬虫, 数据采集, 技术指南]
 publishDate: 2025-04-23
-author: "IPFelx"
+author: "技术编辑部"
 language: "zh"
 
 ---

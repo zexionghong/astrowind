@@ -11,7 +11,7 @@ tags:
   - "长尾关键词策略"
   - "技术SEO"
 publishDate: 2026-02-27
-author: "IPFelx"
+author: "技术编辑部"
 language: "zh"
 ---
 

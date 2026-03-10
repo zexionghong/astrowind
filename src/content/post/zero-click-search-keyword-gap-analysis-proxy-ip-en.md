@@ -9,7 +9,7 @@ tags:
   - "SERP tracking"
   - "content strategy"
 publishDate: 2026-02-28
-author: "IPFelx"
+author: "Editorial Team"
 language: "en"
 ---
 Zero-click search is no longer a forecast. For many industries, it is the default user journey: search, read the answer on the results page, make a decision, and leave without clicking through.

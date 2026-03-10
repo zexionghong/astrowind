@@ -11,7 +11,7 @@ tags:
   - "conversion rate optimization"
   - "SERP analysis"
 publishDate: 2026-02-24
-author: "IPFelx"
+author: "Editorial Team"
 language: "en"
 ---
 

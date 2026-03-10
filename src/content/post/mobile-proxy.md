@@ -4,7 +4,7 @@ excerpt: "移动互联网时代，App营销需要了解不同地区用户体验�
 category: "网络工具"
 tags: [移动代理IP, App测试, 区域定位, 营销策略, 全球化运营]
 publishDate: 2025-06-12
-author: "IPFelx"
+author: "技术编辑部"
 language: "zh"
 
 ---

@@ -4,7 +4,7 @@ excerpt: "深入探讨亚马逊卖家使用代理IP的必要性、潜在风险�
 category: "电商运营"
 tags: ["亚马逊", "代理IP", "账号安全", "电商运营", "风险规避", "住宅IP", "指纹浏览器"]
 publishDate: 2024-04-09
-author: "IPFelx"
+author: "技术编辑部"
 language: "zh"
 ---
 # 亚马逊卖家代理IP安全指南：如何规避账号风险的终极攻略

@@ -11,7 +11,7 @@ tags:
   - "captcha reduction"
   - "AI-readable content"
 publishDate: 2026-02-23
-author: "IPFelx"
+author: "Editorial Team"
 language: "en"
 ---
 

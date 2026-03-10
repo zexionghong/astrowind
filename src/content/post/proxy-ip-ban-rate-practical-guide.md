@@ -4,7 +4,7 @@ excerpt: "很多团队不是代理不够贵，而是请求行为太像机器。�
 category: "技术教程"
 tags: ["代理IP", "网页抓取", "数据采集", "性能优化", "网络安全"]
 publishDate: 2026-02-12
-author: "IPFlex"
+author: "技术编辑部"
 language: "zh"
 draft: false
 ---

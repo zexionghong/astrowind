@@ -4,7 +4,7 @@ excerpt: "想要做好跨境电商？本文深入解析代理IP在跨境电商�
 category: "网络服务"
 tags: [代理IP, 跨境电商, 多账号管理, 价格监控, 业务优化]
 publishDate: 2025-04-24
-author: "IPFelx"
+author: "技术编辑部"
 language: "zh"
 
 ---

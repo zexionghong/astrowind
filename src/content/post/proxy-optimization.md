@@ -4,7 +4,7 @@ excerpt: "想要提升代理IP的性能？本文详细介绍代理IP性能优化
 category: "网络服务"
 tags: [代理IP, 性能优化, 网络加速, 连接优化, 技术指南]
 publishDate: 2025-04-26
-author: "IPFelx"
+author: "技术编辑部"
 language: "zh"
 
 ---

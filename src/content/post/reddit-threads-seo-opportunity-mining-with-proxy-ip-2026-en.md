@@ -10,7 +10,7 @@ tags:
   - "AI search optimization"
   - "GEO readability"
 publishDate: 2026-03-04
-author: "IPFelx"
+author: "Editorial Team"
 language: "en"
 ---
 

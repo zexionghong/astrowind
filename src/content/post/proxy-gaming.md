@@ -4,7 +4,7 @@ excerpt: "想要提升游戏体验？本文深入解析代理IP在游戏加速�
 category: "网络服务"
 tags: [代理IP, 游戏加速, 网络优化, 游戏体验, 技术指南]
 publishDate: 2025-04-22
-author: "IPFelx"
+author: "技术编辑部"
 language: "zh"
 
 ---

@@ -4,7 +4,7 @@ excerpt: "深度解析社交媒体平台的多账号运营策略，涵盖代理I
 category: "营销策略"
 tags: ["社交媒体营销", "多账号管理", "代理IP策略", "品牌出海", "账号安全", "反检测技术", "Instagram营销", "Facebook广告", "TikTok运营", "营销自动化"]
 publishDate: 2025-09-26
-author: "IPFlex"
+author: "技术编辑部"
 language: "zh"
 ---
 

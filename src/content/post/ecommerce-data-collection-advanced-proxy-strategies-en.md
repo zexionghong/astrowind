@@ -4,7 +4,7 @@ excerpt: "A comprehensive technical guide for overcoming sophisticated e-commerc
 category: "Technical Tutorial"
 tags: ["E-commerce Data Scraping", "Anti-Bot Solutions", "Retail Data Collection", "Proxy Strategies", "Web Scraping", "Competitive Intelligence", "Data Mining", "Python Automation"]
 publishDate: 2025-09-09
-author: "IPFlex"
+author: "Editorial Team"
 language: "en"
 ---
 

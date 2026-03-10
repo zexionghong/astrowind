@@ -10,7 +10,7 @@ tags:
   - "Scraping reliability"
   - "Proxy observability"
 publishDate: 2026-03-06
-author: "IPFlex"
+author: "Editorial Team"
 language: "en"
 ---
 

@@ -4,7 +4,7 @@ excerpt: "详解代理IP测试方法、性能评估标准与监控策略，助�
 category: "技术"
 tags: ["代理IP", "网络测试", "代理质量", "性能监控"]
 publishDate: 2024-04-10
-author: "IPFlex"
+author: "技术编辑部"
 language: "zh"
 ---
 ## 一、为什么代理IP质量测试至关重要？

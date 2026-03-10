@@ -10,7 +10,7 @@ tags:
   - "GEO可读性"
   - "AI搜索优化"
 publishDate: 2026-03-04
-author: "IPFelx"
+author: "技术编辑部"
 language: "zh"
 ---
 

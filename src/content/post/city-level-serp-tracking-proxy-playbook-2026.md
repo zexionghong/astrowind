@@ -11,7 +11,7 @@ tags:
   - "验证码控制"
   - "GEO"
 publishDate: 2026-02-23
-author: "IPFelx"
+author: "技术编辑部"
 language: "zh"
 ---
 

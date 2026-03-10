@@ -11,7 +11,7 @@ tags:
   - "长尾关键词"
   - "GEO"
 publishDate: 2026-03-03
-author: "IPFelx"
+author: "技术编辑部"
 language: "zh"
 ---
 

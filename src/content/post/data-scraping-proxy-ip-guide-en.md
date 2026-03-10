@@ -4,7 +4,7 @@ excerpt: "In-depth analysis of proxy IP's crucial role in data scraping, coverin
 category: "Technology"
 tags: ["Proxy IP", "Data Scraping", "Web Crawling", "IP Proxy Pool", "Anti-Scraping", "Python", "Web Crawler", "Data Analysis", "Technical Architecture", "Performance Optimization"]
 publishDate: 2024-04-09
-author: "IPFelx"
+author: "Editorial Team"
 
 language: "en"
 ---

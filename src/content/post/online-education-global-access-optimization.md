@@ -4,7 +4,7 @@ excerpt: "全面解析在线教育平台的全球化部署策略，涵盖跨地�
 category: "教育科技"
 tags: ["在线教育", "全球访问优化", "教育科技", "跨地区部署", "内容加速", "学习体验", "教育平台", "国际化", "EdTech", "远程学习"]
 publishDate: 2025-09-26
-author: "IPFlex"
+author: "技术编辑部"
 language: "zh"
 ---
 

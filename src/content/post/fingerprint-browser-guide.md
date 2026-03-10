@@ -4,7 +4,7 @@ excerpt: "深入解读指纹浏览器的概念、功能及其在跨境电商和�
 category: "互联网营销"
 tags: [指纹浏览器, IP代理, 多账号管理, 跨境电商, 网络安全]
 publishDate: 2024-04-15
-author: "IPFelx"
+author: "技术编辑部"
 language: "zh"
 ---
 

@@ -4,7 +4,7 @@ excerpt: "Comprehensive analysis of SSL/TLS proxy tunnel security mechanisms, en
 category: "Security Technology"
 tags: ["SSL proxy", "TLS tunnel", "HTTPS proxy", "encrypted proxy", "network security", "tunnel technology", "security protocols", "enterprise proxy", "proxy encryption", "network tunnel"]
 publishDate: 2025-09-26
-author: "IPFlex"
+author: "Editorial Team"
 language: "en"
 ---
 

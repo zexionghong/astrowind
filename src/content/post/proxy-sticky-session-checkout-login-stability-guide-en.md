@@ -4,7 +4,7 @@ excerpt: "Learn how to improve login pass rate and checkout completion with stic
 category: "Stability Optimization"
 tags: ["sticky session proxy", "login success rate", "checkout success rate", "session persistence", "anti-bot mitigation", "proxy routing strategy", "geo consistency", "proxy monitoring", "conversion stability", "residential proxy strategy"]
 publishDate: 2026-02-23
-author: "IPFelx"
+author: "Editorial Team"
 language: "en"
 ---
 

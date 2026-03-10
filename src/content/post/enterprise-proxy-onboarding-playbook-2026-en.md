@@ -4,7 +4,7 @@ excerpt: "A practical onboarding guide for product, engineering, and operations 
 category: "Onboarding Playbook"
 tags: ["Enterprise Proxy Onboarding", "Proxy Rollout", "Proxy PoC", "Reliability Engineering", "Capacity Planning", "Proxy Monitoring", "Cost Control", "Cross-Team Collaboration", "Production Operations", "Proxy Integration"]
 publishDate: 2026-02-23
-author: "IPFlex"
+author: "Editorial Team"
 language: "en"
 ---
 

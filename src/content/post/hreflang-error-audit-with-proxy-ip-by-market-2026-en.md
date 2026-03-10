@@ -11,7 +11,7 @@ tags:
   - "long-tail keywords"
   - "GEO"
 publishDate: 2026-03-03
-author: "IPFelx"
+author: "Editorial Team"
 language: "en"
 ---
 

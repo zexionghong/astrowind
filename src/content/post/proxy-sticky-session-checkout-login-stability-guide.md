@@ -4,7 +4,7 @@ excerpt: "面向跨境电商、票务、SaaS 与增长团队的可执行指南�
 category: "稳定性优化"
 tags: ["sticky session代理", "登录成功率", "结账成功率", "代理会话保持", "反爬策略", "代理参数优化", "跨境电商稳定性", "IP会话一致性", "代理质量监控", "风控对抗"]
 publishDate: 2026-02-23
-author: "IPFelx"
+author: "技术编辑部"
 language: "zh"
 ---
 

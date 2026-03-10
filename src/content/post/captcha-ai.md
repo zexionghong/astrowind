@@ -4,7 +4,7 @@ excerpt: "Discover how CaptchaAI revolutionizes automated CAPTCHA solving in 202
 category: "AI Tools"
 tags: ["CaptchaAI", "CAPTCHA Solving", "AI", "Automation", "reCAPTCHA", "OCR", "Web Scraping", "API Integration"]
 publishDate: 2025-08-17
-author: "IPFlex"
+author: "Editorial Team"
 language: "en"
 ---
 
