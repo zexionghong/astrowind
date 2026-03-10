@@ -43,6 +43,8 @@ Primary-Domain: https://ipflex.ink
 - https://ipflex.ink/en/use-case/dynamic-residential-proxy-crawling
 
 ## Blog Hubs
+- https://ipflex.ink/zh/resources
+- https://ipflex.ink/en/resources
 - https://ipflex.ink/zh/blog
 - https://ipflex.ink/en/blog
 

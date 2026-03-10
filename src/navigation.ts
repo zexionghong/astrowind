@@ -80,6 +80,10 @@ export const getHeaderData = (lang: string = 'zh') => ({
       text: lang == 'zh'?"博客":"Blog",
       href:`/${lang}/blog`
     },
+    {
+      text: lang === 'zh' ? '知识中心' : 'Resources',
+      href: `/${lang}/resources`
+    },
     ...(lang === 'zh' ? [
       {
         text: '帮助中心',
@@ -128,6 +132,7 @@ export const getFooterData = (lang: string = 'zh') => ({
     {
       title: lang === 'zh' ? '支持' : 'Support',
       links: [
+        { text: lang === 'zh' ? '知识中心' : 'Resources', href: `/${lang}/resources` },
         { text: lang === 'zh' ? '帮助中心' : 'Help Center', href: 'https://docs.ipflex.ink/' },
         { text: lang === 'zh' ? '联系我们: support@ipflex.ink' : 'Contact Us: support@ipflex.ink', href: 'mailto:support@ipflex.ink' },
         { text: lang === 'zh' ? '商务合作: business@ipflex.ink' : 'Business Cooperation: business@ipflex.ink', href: 'mailto:business@ipflex.ink' },

@@ -34,6 +34,8 @@ IPFlex provides enterprise proxy infrastructure for web data collection, ad veri
 - Ad verification (EN): https://ipflex.ink/en/use-case/static-residential-proxy-ad-verification
 
 ## Documentation and Research
+- Resource hub (ZH): https://ipflex.ink/zh/resources
+- Resource hub (EN): https://ipflex.ink/en/resources
 - Help center: https://docs.ipflex.ink/
 - Blog (ZH): https://ipflex.ink/zh/blog
 - Blog (EN): https://ipflex.ink/en/blog
