@@ -141,6 +141,7 @@ export const getFooterData = (lang: string = 'zh') => ({
     {
       title: lang === 'zh' ? '公司' : 'Company',
       links: [
+        { text: lang === 'zh' ? '关于我们' : 'About Us', href: `/${lang}/about` },
         { text: lang === 'zh' ? '使用条款' : 'Terms of Service', href: `/${lang}/terms` },
         { text: lang === 'zh' ? '隐私政策' : 'Privacy Policy', href: `/${lang}/privacy` },
       ],

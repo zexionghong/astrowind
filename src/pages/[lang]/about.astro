@@ -1,0 +1,274 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'zh' } }
+  ];
+}
+
+const { lang = 'zh' } = Astro.params;
+
+const metadata = {
+  title: lang === 'zh' ? '关于 IPFlex：企业代理服务、交付方法与支持原则' : 'About IPFlex: Enterprise Proxy Services, Delivery Method, and Support Principles',
+  description:
+    lang === 'zh'
+      ? '了解 IPFlex 的定位、服务边界、交付方法、支持原则与数据治理要求。这个页面帮助团队快速判断 IPFlex 是否适合当前业务场景，并为采购、PoC 与生产接入提供统一背景信息。'
+      : 'Learn what IPFlex does, how the team delivers proxy services, what support principles it follows, and how data governance is handled for evaluation, PoC, and production rollout.',
+  ignoreTitleTemplate: true,
+};
+
+const answerFirstSummary =
+  lang === 'zh'
+    ? '直接结论：IPFlex 是面向企业场景的代理服务提供方，重点解决代理类型选择、接入落地、稳定性评估和长期运维协同，而不是只提供一组可购买的 IP。'
+    : 'Answer first: IPFlex is an enterprise proxy provider focused on proxy selection, onboarding, stability evaluation, and long-term operational support, not just on selling standalone IP resources.';
+
+const principles = lang === 'zh'
+  ? [
+      {
+        title: '先定义业务目标，再选代理类型',
+        description: '我们强调先看会话稳定、覆盖率、吞吐和成本边界，再决定静态住宅、动态住宅或数据中心代理，而不是把产品选择简化成价格比较。',
+      },
+      {
+        title: '用可量化指标做 PoC 和扩容',
+        description: '评估阶段优先看成功率、P95 时延、封禁恢复时间、异常验证触发率和单位任务成本，减少凭主观感受做采购决策。',
+      },
+      {
+        title: '把交付延伸到接入和运维',
+        description: '除了代理资源本身，团队更关注认证方式、访问控制、日志与排障路径，帮助客户把代理能力真正纳入日常运营流程。',
+      },
+    ]
+  : [
+      {
+        title: 'Define the workload before choosing the proxy type',
+        description: 'The selection process starts with session stability, coverage, throughput, and cost boundaries, then maps the workload to static residential, dynamic residential, or datacenter proxies.',
+      },
+      {
+        title: 'Use measurable metrics for PoC and scale-up',
+        description: 'Evaluation should prioritize success ratio, P95 latency, recovery time after blocks, challenge trigger rate, and cost per completed workflow instead of subjective impressions.',
+      },
+      {
+        title: 'Extend delivery into onboarding and operations',
+        description: 'The team treats proxy delivery as an operational capability that includes authentication, access control, logging, troubleshooting, and routine optimization.',
+      },
+    ];
+
+const facts = lang === 'zh'
+  ? [
+      '覆盖静态住宅、动态住宅与数据中心代理三类核心能力。',
+      '支持帮助中心、接入文档、知识中心和方法文章的多层资料结构。',
+      '适用于数据采集、广告验证、跨境电商、账号稳定和地区可见性验证等场景。',
+      '面向评估、PoC、生产接入和扩容阶段提供统一决策信息。',
+    ]
+  : [
+      'Covers three core proxy capabilities: static residential, dynamic residential, and datacenter proxies.',
+      'Provides layered support through a help center, onboarding docs, a resource hub, and playbooks.',
+      'Supports use cases such as data collection, ad verification, cross-border e-commerce, account stability, and geo-visibility validation.',
+      'Helps teams make consistent decisions across evaluation, PoC, onboarding, and scale-up phases.',
+    ];
+
+const faqs = lang === 'zh'
+  ? [
+      {
+        q: 'IPFlex 更适合哪些团队？',
+        a: '更适合需要稳定代理能力并且要把代理接入到长期业务流程中的团队，例如数据采集、电商运营、广告验证、风控巡检和全球化验证团队。',
+      },
+      {
+        q: '这个页面和产品页、帮助中心的分工是什么？',
+        a: 'About 页面负责解释团队定位、交付方法和治理原则；产品页负责说明单个代理类型的适配边界；帮助中心负责 API、鉴权和具体操作文档。',
+      },
+      {
+        q: '采购或接入前最值得先确认什么？',
+        a: '先确认业务是否需要会话稳定、出口轮换或高并发吞吐，然后再用成功率、时延、封禁恢复和单位任务成本来验证方案是否适配。',
+      },
+    ]
+  : [
+      {
+        q: 'What teams is IPFlex best suited for?',
+        a: 'It is best suited for teams that need stable proxy capability as part of a repeatable operating workflow, including data collection, e-commerce operations, ad verification, risk control, and geo-validation.',
+      },
+      {
+        q: 'How is this page different from product pages and the help center?',
+        a: 'The About page explains positioning, delivery method, and governance principles. Product pages explain workload fit. The help center covers API, authentication, and operational instructions.',
+      },
+      {
+        q: 'What should teams confirm before procurement or onboarding?',
+        a: 'Teams should first confirm whether the workload needs session stability, exit rotation, or high-throughput capacity, then validate success ratio, latency, recovery, and unit cost before rollout.',
+      },
+    ];
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'IPFlex',
+      item: `https://ipflex.ink/${lang}`,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: lang === 'zh' ? '关于我们' : 'About',
+      item: `https://ipflex.ink/${lang}/about`,
+    },
+  ],
+};
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'IPFlex',
+  url: 'https://ipflex.ink',
+  logo: 'https://ipflex.ink/_astro/logo.C27jQ6H2.png',
+  description:
+    lang === 'zh'
+      ? 'IPFlex 为企业提供住宅代理、动态代理与数据中心代理服务，支持评估、接入与长期运维。'
+      : 'IPFlex provides residential, rotating, and datacenter proxy services for enterprise evaluation, onboarding, and long-term operations.',
+  sameAs: ['https://x.com/IPFlexSupport', 'https://t.me/IPFlexProxy', 'https://docs.ipflex.ink/'],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer service',
+    email: 'support@ipflex.ink',
+    availableLanguage: ['zh-CN', 'en-US'],
+  },
+};
+
+const aboutPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: lang === 'zh' ? '关于 IPFlex' : 'About IPFlex',
+  description: metadata.description,
+  url: `https://ipflex.ink/${lang}/about`,
+  inLanguage: lang === 'zh' ? 'zh-CN' : 'en-US',
+  about: {
+    '@type': 'Organization',
+    name: 'IPFlex',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.a,
+    },
+  })),
+};
+---
+
+<Layout metadata={metadata}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(aboutPageSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <section class="mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-20">
+    <header class="rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-50 via-white to-blue-50 p-8 md:p-10">
+      <p class="text-sm font-semibold uppercase tracking-wide text-blue-700">
+        {lang === 'zh' ? 'About IPFlex' : 'About IPFlex'}
+      </p>
+      <h1 class="mt-3 text-4xl font-bold tracking-tight text-gray-900 md:text-5xl">
+        {lang === 'zh' ? '关于 IPFlex' : 'About IPFlex'}
+      </h1>
+      <p class="mt-4 rounded-xl border border-blue-100 bg-blue-50/70 px-5 py-4 text-sm leading-6 text-blue-900">
+        {answerFirstSummary}
+      </p>
+      <p class="mt-4 max-w-3xl text-base leading-7 text-gray-700">
+        {lang === 'zh'
+          ? '这个页面的目标是让采购、技术和运营团队在进入产品页或帮助中心之前，先快速理解 IPFlex 的角色、服务边界和交付方式。'
+          : 'This page gives procurement, technical, and operations teams a clear view of what IPFlex does, where it fits, and how proxy delivery is handled before they move into product pages or documentation.'}
+      </p>
+    </header>
+
+    <section class="mt-10 grid gap-6 md:grid-cols-2">
+      <article class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+        <h2 class="text-2xl font-bold text-gray-900">
+          {lang === 'zh' ? '我们做什么' : 'What IPFlex Does'}
+        </h2>
+        <p class="mt-3 text-base leading-7 text-gray-700">
+          {lang === 'zh'
+            ? 'IPFlex 提供企业代理能力，覆盖静态住宅、动态住宅和数据中心三类代理。重点不是只提供可购买节点，而是帮助团队把代理能力用于明确的业务目标、接入路径和稳定性管理。'
+            : 'IPFlex provides enterprise proxy capability across static residential, dynamic residential, and datacenter proxy services. The focus is not only on node access, but on making proxy capacity usable in a defined workload, onboarding path, and stability model.'}
+        </p>
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-gray-700">
+          {facts.map((item) => <li>{item}</li>)}
+        </ul>
+      </article>
+
+      <article class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+        <h2 class="text-2xl font-bold text-gray-900">
+          {lang === 'zh' ? '如何判断是否适合' : 'How to Evaluate Fit'}
+        </h2>
+        <p class="mt-3 text-base leading-7 text-gray-700">
+          {lang === 'zh'
+            ? '如果团队正在处理登录稳定、账号一致性、区域可见性验证、高并发采集或预算可预测性问题，那么代理方案通常应纳入评估。是否适合，取决于会话要求、覆盖目标、吞吐边界和可接受成本。'
+            : 'Proxy capability should be evaluated when teams face session stability, account consistency, geo-visibility validation, high-volume collection, or predictable budget requirements. Fit depends on session requirements, coverage targets, throughput boundaries, and acceptable cost.'}
+        </p>
+        <div class="mt-4 rounded-xl border border-gray-200 bg-slate-50 p-4 text-sm leading-6 text-gray-700">
+          <strong>{lang === 'zh' ? '先看这 4 个问题：' : 'Start with these four questions:'}</strong>
+          <ol class="mt-2 list-decimal space-y-1 pl-5">
+            <li>{lang === 'zh' ? '任务是否依赖长期会话或固定身份？' : 'Does the workflow require long sessions or a stable identity?'}</li>
+            <li>{lang === 'zh' ? '是否需要地区级覆盖或出口轮换？' : 'Does it require geo-level coverage or exit rotation?'}</li>
+            <li>{lang === 'zh' ? '是否以高并发吞吐为优先？' : 'Is high-throughput capacity a primary goal?'}</li>
+            <li>{lang === 'zh' ? '能否用成功率、时延和单位任务成本做验证？' : 'Can the evaluation be measured with success ratio, latency, and unit cost?'}</li>
+          </ol>
+        </div>
+      </article>
+    </section>
+
+    <section class="mt-10 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+      <h2 class="text-2xl font-bold text-gray-900">
+        {lang === 'zh' ? '交付与支持原则' : 'Delivery and Support Principles'}
+      </h2>
+      <div class="mt-6 grid gap-4 md:grid-cols-3">
+        {principles.map((item) => (
+          <article class="rounded-xl border border-gray-200 p-5">
+            <h3 class="text-lg font-semibold text-gray-900">{item.title}</h3>
+            <p class="mt-2 text-sm leading-6 text-gray-700">{item.description}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="mt-10 rounded-2xl border border-gray-200 bg-slate-50 p-6">
+      <h2 class="text-2xl font-bold text-gray-900">
+        {lang === 'zh' ? '继续阅读' : 'Next Steps'}
+      </h2>
+      <div class="mt-5 grid gap-4 md:grid-cols-2">
+        <a href={`/${lang}/detail`} class="rounded-xl border border-gray-200 bg-white p-5 transition-colors hover:border-blue-300 hover:bg-blue-50/40">
+          <h3 class="text-lg font-semibold text-gray-900">{lang === 'zh' ? '代理类型选择指南' : 'Proxy Type Selection Guide'}</h3>
+          <p class="mt-2 text-sm leading-6 text-gray-700">
+            {lang === 'zh' ? '先比较静态住宅、动态住宅和数据中心代理的适配边界。' : 'Compare static residential, dynamic residential, and datacenter proxy fit first.'}
+          </p>
+        </a>
+        <a href={`/${lang}/resources`} class="rounded-xl border border-gray-200 bg-white p-5 transition-colors hover:border-blue-300 hover:bg-blue-50/40">
+          <h3 class="text-lg font-semibold text-gray-900">{lang === 'zh' ? '知识中心' : 'Resources'}</h3>
+          <p class="mt-2 text-sm leading-6 text-gray-700">
+            {lang === 'zh' ? '查看定义、接入文档、场景方法和精选执行文章。' : 'Open definitions, onboarding docs, use cases, and selected execution playbooks.'}
+          </p>
+        </a>
+      </div>
+    </section>
+
+    <section class="mt-10 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+      <h2 class="text-2xl font-bold text-gray-900">
+        {lang === 'zh' ? '常见问题' : 'Frequently Asked Questions'}
+      </h2>
+      <div class="mt-5 space-y-4">
+        {faqs.map((item) => (
+          <article class="rounded-xl border border-gray-200 p-5">
+            <h3 class="text-lg font-semibold text-gray-900">{item.q}</h3>
+            <p class="mt-2 text-sm leading-6 text-gray-700">{item.a}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  </section>
+</Layout>
