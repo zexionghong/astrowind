@@ -8,6 +8,7 @@ const {
   subtitle = '',
   tagline = '',
   items = [],
+  schemaItems = items,
   columns = 2,
 
   id,
@@ -33,7 +34,7 @@ const {
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": items.map(item => ({
+    "mainEntity": schemaItems.map(item => ({
       "@type": "Question",
       "name": item.title,
       "acceptedAnswer": {

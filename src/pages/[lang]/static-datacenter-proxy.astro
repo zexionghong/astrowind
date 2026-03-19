@@ -93,6 +93,13 @@ const geoMethodFaqs = lang === 'zh'
         a: 'Use fixed-load benchmarking, monthly variance reviews, and iterative resource tuning.',
       },
     ];
+const combinedFaqSchemaItems = [
+  ...faqs,
+  ...geoMethodFaqs.map((item) => ({
+    title: item.q,
+    description: item.a,
+  })),
+];
 
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
@@ -250,6 +257,7 @@ const breadcrumbSchema = {
     subtitle={t('staticDatacenterProxy.faqs.subtitle')}
     tagline={t('staticDatacenterProxy.faqs.tagline')}
     items={faqs}
+    schemaItems={combinedFaqSchemaItems}
     classes={{
       container: 'max-w-6xl py-16 bg-gray-50',
       title: 'text-3xl font-bold',
@@ -280,15 +288,6 @@ const breadcrumbSchema = {
     <p class="mt-4 text-xs text-gray-500 dark:text-slate-400">
       {lang === 'zh' ? 'Last updated: 2026-03-05。来源：定价页、数据中心代理评估口径、帮助中心文档。' : 'Last updated: 2026-03-05. Sources: pricing framework, datacenter proxy evaluation baseline, and help center docs.'}
     </p>
-    <script type="application/ld+json" set:html={JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: geoMethodFaqs.map((item) => ({
-        '@type': 'Question',
-        name: item.q,
-        acceptedAnswer: { '@type': 'Answer', text: item.a },
-      })),
-    })} />
   </section>
 
 </Layout>
