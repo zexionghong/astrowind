@@ -22,9 +22,7 @@ const { lang='zh' } = Astro.params;
 const t = await useTranslations(lang);
 const metadata = {
   title: t('index.metadata.title'),
-  description: lang === 'zh'
-    ? 'IPFlex 提供企业级网络接入能力，覆盖静态住宅、动态住宅与数据中心节点。支持 HTTP/SOCKS5、全球节点、城市级定位、API 接入、弹性计费、团队管理、策略编排和实时监控，适用于数据采集、广告验证、跨境电商、品牌保护、自动化运营及长期稳定业务交付。'
-    : t('index.metadata.description'),
+  description: t('index.metadata.description'),
   ignoreTitleTemplate: true,
 };
 ---
@@ -50,6 +48,33 @@ const metadata = {
       <Fragment slot="title" set:html={t('index.hero.title')} />
       <Fragment slot="subtitle" set:html={t('index.hero.subtitle')} />
     </Hero>
+
+    <section class="mx-auto max-w-5xl px-4 pb-4 sm:pb-6" aria-labelledby="home-summary-heading">
+      <div class="rounded-2xl border border-blue-100 bg-white/95 p-5 text-sm leading-7 text-slate-700 shadow-sm dark:border-slate-700 dark:bg-slate-900/95 dark:text-slate-200">
+        <h2 id="home-summary-heading" class="text-base font-semibold tracking-tight text-heading dark:text-white">
+          {lang === 'zh' ? '快速结论' : 'Quick answer'}
+        </h2>
+        <p class="mt-2">
+          {lang === 'zh'
+            ? 'IPFlex 适合需要稳定地区出口、城市级定位和 API 集成能力的团队。选型时，一般按“长期稳定会话选静态住宅，高频轮换采集选动态住宅，成本敏感批量任务选数据中心”来判断。'
+            : 'IPFlex fits teams that need stable regional exit points, city-level targeting, and API-ready proxy capacity. In practice, choose static residential for long sessions, rotating residential for high-churn collection, and datacenter nodes for cost-sensitive batch workloads.'}
+        </p>
+        <div class="mt-4 grid gap-3 md:grid-cols-3">
+          <article class="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-800/60">
+            <h3 class="font-semibold text-heading dark:text-white">{lang === 'zh' ? '静态住宅代理' : 'Static residential'}</h3>
+            <p class="mt-2">{lang === 'zh' ? '适合登录、账号运营、长期会话和对稳定性要求高的业务。' : 'Best for login flows, account operations, long sessions, and stability-sensitive workloads.'}</p>
+          </article>
+          <article class="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-800/60">
+            <h3 class="font-semibold text-heading dark:text-white">{lang === 'zh' ? '动态住宅代理' : 'Rotating residential'}</h3>
+            <p class="mt-2">{lang === 'zh' ? '适合高频轮换、分布式采集、广告验证和多地区数据任务。' : 'Best for high-rotation traffic, distributed collection, ad verification, and multi-region data workflows.'}</p>
+          </article>
+          <article class="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-800/60">
+            <h3 class="font-semibold text-heading dark:text-white">{lang === 'zh' ? '数据中心代理' : 'Datacenter proxy'}</h3>
+            <p class="mt-2">{lang === 'zh' ? '适合成本敏感、吞吐优先的 API 调用、测试和批量任务处理。' : 'Best for cost-sensitive, throughput-oriented API access, testing, and batch processing.'}</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
     <!-- Intro Widget ******************* -->
     <section class="mx-auto max-w-6xl px-4 py-8 sm:py-10 text-base leading-7 text-muted dark:text-slate-300">

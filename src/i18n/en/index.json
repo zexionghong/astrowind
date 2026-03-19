@@ -2,13 +2,13 @@
   "index": {
     "metadata": {
       "title": "IPFlex - Premium IP Proxy Service | Residential Proxy | HTTP Proxy | SOCKS5 Proxy",
-      "description": "IPFlex offers enterprise-grade IP proxy services: static residential proxies, dynamic residential proxies, datacenter proxies. Supports HTTP/SOCKS5 protocols, covers 200+ countries, serves web scraping proxy, e-commerce proxy, ad verification proxy scenarios. 99.9% uptime, free trial, 24/7 support. Buy proxy service now!"
+      "description": "IPFlex provides enterprise proxy infrastructure across static residential, rotating residential, and datacenter nodes, with HTTP/SOCKS5 support, city-level targeting, API access, and team-ready operations for data collection, ad verification, cross-border operations, and automation workflows."
     },
     "hero": {
       "primaryAction": "Buy Proxy IP",
       "secondaryAction": "Learn More",
-      "title": "Professional IP Proxy Provider",
-      "subtitle": "<span class=\"text-lg sm:text-xl\"><span class=\"font-semibold\">IPFlex</span> is the leading IP proxy service provider, offering professional static residential proxies, dynamic residential proxies, and datacenter proxies. Supports HTTP/SOCKS5 protocols, covers 200+ countries, serves web scraping proxy, cross-border e-commerce proxy, ad verification proxy, price monitoring proxy and various application scenarios with 99.9% high availability.</span>"
+      "title": "Enterprise Proxy Infrastructure Across Residential and Datacenter Nodes",
+      "subtitle": "<span class=\"text-lg sm:text-xl\"><span class=\"font-semibold\">Answer-first:</span> if your team needs stable regional exit points, API-ready proxy access, and scalable capacity, IPFlex provides static residential, rotating residential, and datacenter nodes with HTTP/SOCKS5 support, city-level targeting, and long-term operational support.</span>"
     },
     "content": {
       "residentialProxyTitle": "Residential Proxy Services",

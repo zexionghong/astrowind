@@ -1,6 +1,7 @@
 ---
 import merge from 'lodash.merge';
 import { AstroSeo } from '@astrolib/seo';
+import { getCollection } from 'astro:content';
 
 import type { Props as AstroSeoProps } from '@astrolib/seo';
 
@@ -73,14 +74,35 @@ const isBlogDetailPath = /^\/blog\//.test(pathWithoutLocale);
 const zhBlogSlug = isBlogDetailPath ? pathWithoutLocale.replace(/^\/blog\//, '') : '';
 const hasEnSuffix = isBlogDetailPath && /-en\/?$/.test(zhBlogSlug);
 
+const blogEntries = isBlogDetailPath ? await getCollection('post') : [];
+const blogSlugSet = new Set(
+  blogEntries.map((post) => {
+    const slug = post.slug.split('/').pop() || post.slug;
+    return `${post.data.language}:${slug}`;
+  })
+);
+const currentBlogSlug = isBlogDetailPath ? pathWithoutLocale.replace(/^\/blog\//, '').replace(/\/$/, '') : '';
+const candidateZhSlug = isBlogDetailPath
+  ? hasEnSuffix
+    ? currentBlogSlug.replace(/-en$/, '')
+    : currentBlogSlug
+  : '';
+const candidateEnSlug = isBlogDetailPath
+  ? hasEnSuffix
+    ? currentBlogSlug
+    : `${currentBlogSlug}-en`
+  : '';
+const hasZhBlogAlternate = isBlogDetailPath ? blogSlugSet.has(`zh:${candidateZhSlug}`) : true;
+const hasEnBlogAlternate = isBlogDetailPath ? blogSlugSet.has(`en:${candidateEnSlug}`) : true;
+
 const zhAltPath =
-  isBlogDetailPath && hasEnSuffix
-    ? `/blog/${zhBlogSlug.replace(/-en\/?$/, '')}`
+  isBlogDetailPath && hasZhBlogAlternate
+    ? `/blog/${candidateZhSlug}`
     : pathWithoutLocale;
 
 const enAltPath =
-  isBlogDetailPath && !hasEnSuffix
-    ? `/blog/${zhBlogSlug.replace(/\/?$/, '')}-en`
+  isBlogDetailPath && hasEnBlogAlternate
+    ? `/blog/${candidateEnSlug}`
     : pathWithoutLocale;
 
 const isRootWithoutLocale = normalizedPath === '/';
@@ -96,9 +118,8 @@ const isNoindexLandingPage = /^\/(zh|en)\/register(\/)?$/.test(routePath);
 const isCoreCommercialPage = /^\/(zh|en)\/(static-residential-proxy|dynamic-residential-proxy|static-datacenter-proxy|pricing|detail)(\/)?$/.test(routePath);
 
 const shouldRenderWebsiteSchema = isHomePage;
-const shouldRenderProductSchema = isCoreCommercialPage;
+const shouldRenderOrganizationSchema = isHomePage;
 const shouldRenderServiceSchema = isCoreCommercialPage;
-const shouldRenderMainSchema = isHomePage;
 
 const currentOgLocale = lang === 'zh' ? 'zh_CN' : 'en_US';
 const schemaServiceName = lang === 'zh' ? 'IPFlex IP代理服务' : 'IPFlex Proxy Services';
@@ -110,11 +131,9 @@ const cleanSchemaTitle = (raw: string) =>
 const schemaPageName =
   typeof title === 'string' && title.trim().length > 0 ? cleanSchemaTitle(title.trim()) : schemaServiceName;
 const isZh = lang === 'zh';
-const schemaDescription =
-  description ||
-  (isZh
-    ? 'IPFlex提供企业级住宅代理、动态代理与数据中心代理服务，覆盖全球200+国家和地区。'
-    : 'IPFlex provides enterprise-grade residential, rotating, and datacenter proxy services across 200+ countries and regions.');
+const defaultSchemaDescription = isZh
+  ? 'IPFlex提供企业级住宅代理、动态代理与数据中心代理服务，覆盖全球200+国家和地区。'
+  : 'IPFlex provides enterprise-grade residential, rotating, and datacenter proxy services across 200+ countries and regions.';
 const schemaAlternateNames = isZh
   ? ['IPFlex IP代理服务', 'IPFlex住宅代理', 'IPFlex数据中心代理', 'IPFlex HTTP代理', 'IPFlex SOCKS5代理']
   : ['IPFlex Proxy Service', 'IPFlex Residential Proxy', 'IPFlex Datacenter Proxy', 'IPFlex HTTP Proxy', 'IPFlex SOCKS5 Proxy'];
@@ -163,9 +182,8 @@ const organizationSchema = {
   '@type': 'Organization',
   name: 'IPFlex',
   url: SITE.site,
-  description: isZh
-    ? 'IPFlex 提供企业级代理网络服务，覆盖住宅代理、动态代理与数据中心代理。'
-    : 'IPFlex provides enterprise-grade proxy services including residential, rotating, and datacenter proxies.',
+  logo: `${SITE.site}/_astro/logo.C27jQ6H2.png`,
+  description: defaultSchemaDescription,
   sameAs: ['https://x.com/IPFlexSupport', 'https://t.me/IPFlexProxy', 'https://docs.ipflex.ink/'],
   contactPoint: {
     '@type': 'ContactPoint',
@@ -239,6 +257,26 @@ const seoProps: AstroSeoProps = merge(
 );
 
 const shouldRenderHreflang = seoProps.noindex !== true;
+const schemaDescription = String(seoProps.description || defaultSchemaDescription);
+const hreflangLinks = [];
+
+if (shouldRenderHreflang) {
+  if (!isBlogDetailPath || hasZhBlogAlternate) {
+    hreflangLinks.push({ lang: 'zh', href: `${SITE.site}${alternateUrls.zh}` });
+  }
+
+  if (!isBlogDetailPath || hasEnBlogAlternate) {
+    hreflangLinks.push({ lang: 'en', href: `${SITE.site}${alternateUrls.en}` });
+  }
+
+  const xDefaultHref =
+    hreflangLinks.find((item) => item.lang === 'zh')?.href ||
+    hreflangLinks.find((item) => item.lang === 'en')?.href;
+
+  if (xDefaultHref) {
+    hreflangLinks.push({ lang: 'x-default', href: xDefaultHref });
+  }
+}
 
 // 标题/描述规范化：仅清理空白，避免输出被强制截断为省略号
 seoProps.title = normalizeMetaText(seoProps.title) as string;
@@ -251,61 +289,6 @@ if (seoProps.twitter) {
   seoProps.twitter.title = normalizeMetaText(seoProps.twitter.title || seoProps.title) as string;
   seoProps.twitter.description = normalizeMetaText(seoProps.twitter.description || seoProps.description) as string;
 }
-
-// 添加结构化数据
-const mainStructuredData = {
-  '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
-  name: schemaPageName,
-  alternateName: schemaAlternateNames,
-  applicationCategory: 'IP Proxy Service',
-  operatingSystem: 'All',
-  keywords: schemaKeywords,
-  offers: {
-    '@type': 'Offer',
-    availability: 'https://schema.org/InStock',
-    price: '0',
-    priceCurrency: 'USD'
-  },
-  ...(isHomePage
-    ? {
-        aggregateRating: {
-          '@type': 'AggregateRating',
-          ratingValue: '4.8',
-          ratingCount: '1320',
-        },
-      }
-    : {}),
-  description: schemaDescription,
-  provider: organizationSchema,
-  serviceType: schemaServiceTypes,
-  areaServed: {
-    '@type': 'Country',
-    name: 'Global'
-  }
-};
-
-
-const productStructuredData = {
-  '@context': 'https://schema.org',
-  '@type': 'Product',
-  name: schemaPageName,
-  description: schemaDescription,
-  url: canonical,
-  image: `${SITE.site}/images/hero-proxy.webp`,
-  category: 'Proxy Service',
-  brand: {
-    '@type': 'Brand',
-    name: 'IPFlex'
-  },
-  offers: {
-    '@type': 'Offer',
-    price: '0',
-    priceCurrency: 'USD',
-    availability: 'https://schema.org/InStock',
-    url: canonical
-  }
-};
 
 // 添加WebSite结构化数据
 const websiteStructuredData = {
@@ -326,6 +309,8 @@ const serviceStructuredData = {
   '@type': 'Service',
   name: schemaPageName,
   serviceType: 'Proxy Server Service',
+  description: schemaDescription,
+  url: canonical,
   provider: {
     ...organizationSchema,
     address: {
@@ -365,9 +350,9 @@ const serviceStructuredData = {
 <!-- 添加hreflang多语言支持 -->
 {shouldRenderHreflang && (
   <>
-    <link rel="alternate" hreflang="zh" href={`${SITE.site}${alternateUrls.zh}`} />
-    <link rel="alternate" hreflang="en" href={`${SITE.site}${alternateUrls.en}`} />
-    <link rel="alternate" hreflang="x-default" href={`${SITE.site}${alternateUrls.zh}`} />
+    {hreflangLinks.map((item) => (
+      <link rel="alternate" hreflang={item.lang} href={item.href} />
+    ))}
   </>
 )}
 <link rel="alternate" type="text/plain" href={`${SITE.site}/llms.txt`} />
@@ -382,11 +367,7 @@ const serviceStructuredData = {
 <!-- 添加更多搜索引擎优化标签 -->
 <meta name="author" content="IPFlex Team" />
 <meta name="generator" content="Astro" />
-<meta name="rating" content="General" />
-<meta name="distribution" content="Global" />
 <meta name="language" content={lang || 'zh'} />
-<meta name="geo.region" content="Global" />
-<meta name="geo.placename" content="Worldwide" />
 
 <!-- 添加更多SEO meta标签 -->
 <meta name="theme-color" content="#0ea5e9" />
@@ -395,16 +376,7 @@ const serviceStructuredData = {
 <meta name="mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="default" />
 
-<!-- 多语言关键词优化 -->
-{lang === 'zh' ? (
-  <meta name="keywords" content="IP代理,住宅代理,数据中心代理,SOCKS5代理,HTTP代理,网页抓取,跨境电商,代理服务器,动态IP,静态IP" />
-) : (
-  <meta name="keywords" content="IP proxy,residential proxy,datacenter proxy,SOCKS5 proxy,HTTP proxy,web scraping proxy,ecommerce proxy,rotating proxy,static IP,dynamic IP" />
-)}
-<meta name="Classification" content="Business" />
 <meta name="copyright" content="IPFlex" />
-<meta name="revisit-after" content="7 days" />
-<meta name="resource-type" content="document" />
 
 <!-- Inter font is loaded automatically by Astro from Tailwind CSS -->
 
@@ -416,7 +388,6 @@ const serviceStructuredData = {
 
 <!-- CSS and JS assets are loaded automatically by Astro -->
 
-{shouldRenderMainSchema && <script type="application/ld+json" set:html={JSON.stringify(mainStructuredData)} />}
-{shouldRenderProductSchema && <script type="application/ld+json" set:html={JSON.stringify(productStructuredData)} />}
+{shouldRenderOrganizationSchema && <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', ...organizationSchema })} />}
 {shouldRenderWebsiteSchema && <script type="application/ld+json" set:html={JSON.stringify(websiteStructuredData)} />}
 {shouldRenderServiceSchema && <script type="application/ld+json" set:html={JSON.stringify(serviceStructuredData)} />}
