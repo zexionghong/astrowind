@@ -34,11 +34,52 @@ interface Props {
   normalizedPost: any;
 }
 
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+const extractSummary = (body: string) => {
+  const match = body.match(
+    /^(?:>\s*)?(?:Direct answer:|Quick answer:|TL;DR:|直接结论：|一句话结论：)\s*([\s\S]*?)(?=\n\s*\n|\n#{1,6}\s|$)/m
+  );
+
+  if (!match) return undefined;
+
+  return match[1]
+    .replace(/^\s*>\s?/gm, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+};
+
+const extractFaqItems = (body: string): FAQItem[] => {
+  const faqSectionMatch = body.match(/(?:^|\n)##\s+(?:FAQ|常见问题)\s*\n([\s\S]*?)(?=\n##\s+|$)/i);
+  if (!faqSectionMatch) return [];
+
+  const sectionBody = faqSectionMatch[1];
+  const items = [...sectionBody.matchAll(/(?:^|\n)###\s+(.+?)\s*\n([\s\S]*?)(?=\n###\s+|$)/g)];
+
+  return items
+    .map(([, question, answer]) => ({
+      question: question.trim(),
+      answer: answer
+        .replace(/^\s*[-*]\s+/gm, '')
+        .replace(/`/g, '')
+        .replace(/\[(.*?)\]\((.*?)\)/g, '$1')
+        .replace(/\s+/g, ' ')
+        .trim(),
+    }))
+    .filter((item) => item.question && item.answer);
+};
+
 const { post, normalizedPost } = Astro.props;
 const { lang } = Astro.params;
 const t = await useTranslations(lang);
 
 const { Content } = await post.render();
+const summary = extractSummary(post.body);
+const faqItems = extractFaqItems(post.body);
+const summaryLabel = lang === 'zh' ? '快速结论' : 'Quick answer';
 
 const siteBase = String(Astro.site || '').replace(/\/$/, '');
 const canonicalUrl = `${siteBase}${Astro.url.pathname}`;
@@ -77,12 +118,29 @@ const blogPostingSchema = {
   keywords: Array.isArray(post.data.tags) ? post.data.tags.join(',') : undefined,
   articleSection: post.data.category,
 };
+
+const faqSchema =
+  faqItems.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqItems.map((item) => ({
+          '@type': 'Question',
+          name: item.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.answer,
+          },
+        })),
+      }
+    : undefined;
 ---
 
 <Layout metadata={metadata}>
   <script type="application/ld+json" set:html={JSON.stringify(blogPostingSchema)} />
-  <SinglePost post={normalizedPost}>
+  {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
+  <SinglePost post={normalizedPost} summary={summary} summaryLabel={summaryLabel}>
     <Content />
   </SinglePost>
   <ToBlogLink lang={lang} />
-</Layout> 
+</Layout>
