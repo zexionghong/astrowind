@@ -1,0 +1,668 @@
+---
+export async function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'zh' } },
+  ];
+}
+
+import Layout from '~/layouts/PageLayout.astro';
+
+const { lang = 'zh' } = Astro.params;
+const isZh = lang === 'zh';
+
+const metadata = {
+  title: isZh
+    ? 'IPFlex AI 加速器 - AI 工具网络优化与账号安全防护'
+    : 'IPFlex AI Accelerator - Network Optimization and Account Protection for AI Tools',
+  description: isZh
+    ? 'IPFlex AI 加速器通过优质静态住宅网络、DNS 智能管理与 WebRTC 防护技术，为 ChatGPT、Claude 等 AI 工具提供稳定安全的网络连接服务，有效降低账号风控风险。'
+    : 'IPFlex AI Accelerator uses static residential networks, smart DNS management, and WebRTC protection to provide stable, secure connectivity for ChatGPT, Claude, and other AI tools.',
+  ignoreTitleTemplate: true,
+};
+
+const icons = {
+  home:
+    '<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z"/></svg>',
+  dns:
+    '<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>',
+  shield:
+    '<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>',
+  server:
+    '<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><circle cx="6" cy="6" r="1" fill="currentColor"/><circle cx="6" cy="18" r="1" fill="currentColor"/></svg>',
+  globe:
+    '<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>',
+  zap:
+    '<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>',
+  aiCube:
+    '<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M9.75 3.104v5.441a1.5 1.5 0 01-.854 1.353L5 11.482M20.25 20.853V15.44a1.5 1.5 0 00-.86-1.34L16 12.5M5 11.482v7.518a1.5 1.5 0 001.03 1.424L12 23M20.25 20.853l-5.75-2.877a1.5 1.5 0 01-.75-1.3v-7.726M12 12.5l4.413-2.338a1.5 1.5 0 00.837-1.34V3.381M12 23l-4.97-2.576A1.5 1.5 0 016 19.06v-7.56"/></svg>',
+  monitor:
+    '<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>',
+  grid:
+    '<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>',
+};
+
+const copy = isZh
+  ? {
+      badge: '新一代 AI 网络加速方案',
+      title: '为 AI 工具打造的专业网络加速服务',
+      titleHighlight: '专业网络加速服务',
+      subtitle:
+        'IPFlex AI 加速器通过优质静态住宅网络与智能 DNS 管理，为 ChatGPT、Claude 等 AI 平台提供稳定、安全的网络连接，有效降低账号风控风险。',
+      primaryCta: '进入控制面板',
+      secondaryCta: '了解技术原理',
+      proof: ['无须复杂配置', '专属客户端', '7x24 技术支持'],
+      problemTitle: '为什么 AI 平台会误判你的账号？',
+      problemIntro:
+        'ChatGPT、Claude 等 AI 平台会检测 IP 类型、DNS 泄露、WebRTC 泄露、时区不一致等信号。普通网络环境容易触发这些检测机制，导致账号受限或封禁。',
+      solutionEyebrow: '我们的方案',
+      solutionTitle: 'IPFlex AI 加速器，一站式解决',
+      solutionIntro:
+        '基于二次开发的 Mihomo 内核，结合优质静态住宅网络资源，从网络层面系统性解决 AI 平台风控问题。',
+      howTitle: '技术原理',
+      howIntro: 'IPFlex AI 从三个关键维度入手，系统性降低 AI 平台的风控误判。',
+      scenariosTitle: '适用场景',
+      scenariosIntro: '不止于 AI 工具，IPFlex AI 为多种需要稳定网络身份的场景提供支持。',
+      stepsTitle: '使用方式',
+      stepsIntro: 'IPFlex AI 加速器与 IPFlex 主站账户互通。在网页后台购买所需地区 IP，客户端一键连接。',
+      compareTitle: '与传统方案相比',
+      faqTitle: '常见问题',
+      faqIntro: '关于 IPFlex AI 加速器的常见疑问。',
+      ctaTitle: '保护你的 AI 账号安全',
+      ctaIntro: '不再因为网络环境问题中断 ChatGPT、Claude 工作流。IPFlex AI 加速器，让你的 AI 使用体验更稳定。',
+      contact: '联系客服',
+      pricingNote: 'IP 购买及套餐价格详情请登录 IPFlex 控制面板查看',
+      problems: [
+        {
+          title: 'IP 类型被识别',
+          description: '数据中心 IP、托管 IP 会被 AI 平台标记为高风险，触发风控降权或限制访问。',
+          icon: '!',
+          color: 'red',
+        },
+        {
+          title: 'DNS / WebRTC 泄露',
+          description: 'DNS 查询走本地运营商、WebRTC 暴露真实局域网 IP，平台可据此识别真实网络环境。',
+          icon: 'DNS',
+          color: 'orange',
+        },
+        {
+          title: '共享 IP 信誉受损',
+          description: '低质量共享 IP 容易被他人的违规行为牵连，导致整个 IP 段被平台标记。',
+          icon: 'IP',
+          color: 'yellow',
+        },
+      ],
+      solutions: [
+        {
+          title: '优质静态住宅网络',
+          description: '独享 ISP 运营商分配的静态住宅 IP，AI 平台更容易识别为真实家庭宽带用户。',
+          icon: icons.home,
+        },
+        {
+          title: 'DNS 智能管理',
+          description: '客户端自动接管系统 DNS，域名解析通过加密通道完成，减少 DNS 泄露风险。',
+          icon: icons.dns,
+        },
+        {
+          title: 'WebRTC 防泄露',
+          description: '自动拦截 WebRTC 泄露通道，防止浏览器暴露真实局域网 IP 地址。',
+          icon: icons.shield,
+        },
+        {
+          title: 'Mihomo 增强客户端',
+          description: '基于 Mihomo 内核二次开发，集成 DNS 接管、WebRTC 拦截等规则，开箱即用。',
+          icon: icons.server,
+        },
+        {
+          title: '独享纯净 IP',
+          description: '每个静态住宅 IP 独享分配，使用历史由你掌控，减少被他人行为影响的风险。',
+          icon: icons.globe,
+        },
+        {
+          title: '低延迟连接',
+          description: '多区域节点覆盖，自动选择合适出口节点，让 AI 对话响应更流畅。',
+          icon: icons.zap,
+        },
+      ],
+      how: [
+        {
+          title: '网络身份重塑',
+          description:
+            '通过静态住宅 IP 替代原有网络出口，使 AI 平台检测到的 IP 类型更接近 ISP 家庭宽带，同时保持网络身份信息一致。',
+        },
+        {
+          title: '信息泄露防护',
+          description:
+            '客户端接管 DNS 解析，并拦截 WebRTC 探测请求，减少真实网络环境、局域网 IP 和拓扑信息泄露。',
+        },
+        {
+          title: '客户端一键集成',
+          description:
+            '登录账号、选择已购买的 IP 节点、点击连接，客户端自动完成 DNS 与防泄露配置，无需手动设置。',
+        },
+      ],
+      scenarios: [
+        {
+          title: 'ChatGPT 稳定访问',
+          description: '住宅 IP 与全链路防泄露组合，让访问环境更接近海外真实家庭用户。',
+          icon: icons.aiCube,
+          color: 'green',
+        },
+        {
+          title: 'Claude 安全使用',
+          description: '静态住宅 IP 配合 DNS/WebRTC 防护，降低账号因网络异常触发风控的概率。',
+          icon: icons.aiCube,
+          color: 'orange',
+        },
+        {
+          title: '海外 AI 服务平台',
+          description: 'Gemini、Perplexity、Midjourney 等海外 AI 产品可获得更稳定的网络加速体验。',
+          icon: icons.monitor,
+          color: 'purple',
+        },
+        {
+          title: '跨境电商运营',
+          description: '通过不同区域住宅 IP 隔离店铺网络环境，降低多账号关联风险。',
+          icon: icons.grid,
+          color: 'blue',
+        },
+      ],
+      steps: [
+        {
+          title: '注册 IPFlex 账号',
+          description: '前往 IPFlex 官网注册账号并登录用户控制面板。AI 客户端与主站使用同一账号体系。',
+        },
+        {
+          title: '在控制面板购买 IP',
+          description: '选择所需国家或地区，购买对应区域的静态住宅 IP。购买后即时生效，按需使用。',
+        },
+        {
+          title: '打开客户端并刷新节点列表',
+          description: '下载并安装 IPFlex AI 客户端。登录后点击刷新，客户端会同步网页后台已购买的 IP 列表。',
+        },
+        {
+          title: '选择 IP，一键连接',
+          description: '在客户端中选择 IP 节点并点击连接，DNS 接管与 WebRTC 防护会自动启用。',
+        },
+      ],
+      table: {
+        headers: ['对比维度', 'IPFlex AI 加速器', '普通网络环境', '数据中心 IP 方案'],
+        rows: [
+          ['IP 类型', 'ISP 静态住宅', '中国大陆运营商', '数据中心 / 托管'],
+          ['AI 平台信任度', '高，识别为家庭用户', '低，受限访问', '极低，高风险标记'],
+          ['DNS 泄露防护', '客户端自动接管', '无', '需手动配置，易出错'],
+          ['WebRTC 泄露防护', '自动拦截', '无', '需浏览器插件，不稳定'],
+          ['国内网站访问', '无影响，正常使用', '正常', '全部流量绕行，速度慢'],
+          ['设置复杂度', '一键连接', '-', '需手动配置多项参数'],
+        ],
+      },
+      faqs: [
+        {
+          question: 'IPFlex AI 加速器是什么？它和普通网络工具有什么区别？',
+          answer:
+            'IPFlex AI 加速器是一款专为海外 AI 工具设计的网络优化服务。它通过静态住宅网络、DNS 智能管理和 WebRTC 防护技术，帮助你获得更稳定、更安全的网络连接体验。',
+        },
+        {
+          question: '使用 IPFlex AI 会影响我正常使用国内网站和应用吗？',
+          answer: '不会。IPFlex AI 专注于为海外 AI 服务提供网络优化，日常使用的国内网站和应用不受影响。',
+        },
+        {
+          question: '静态住宅 IP 和数据中心 IP 有什么区别？',
+          answer:
+            '静态住宅 IP 由 ISP 运营商分配给家庭宽带用户，数据中心 IP 来自云服务商机房。AI 平台通常更信任住宅 IP。',
+        },
+        {
+          question: '为什么需要 DNS 和 WebRTC 防护？',
+          answer:
+            '即使使用住宅 IP，如果 DNS 查询或 WebRTC 暴露真实网络信息，平台仍可能判断环境异常。客户端会从系统层面减少这些泄露风险。',
+        },
+        {
+          question: '客户端支持哪些操作系统？',
+          answer: '目前支持 Windows 10/11 和 macOS 12+，安装后登录账号即可使用。',
+        },
+        {
+          question: '可以多台设备同时使用吗？',
+          answer: '可以。你可以在多台电脑上安装客户端并登录同一账号，已购买的 IP 会在设备间同步。',
+        },
+      ],
+    }
+  : {
+      badge: 'Next-generation AI network acceleration',
+      title: 'Professional network acceleration for AI tools',
+      titleHighlight: 'AI tools',
+      subtitle:
+        'IPFlex AI Accelerator combines static residential networks and smart DNS management to provide stable, secure connectivity for ChatGPT, Claude, and other AI platforms.',
+      primaryCta: 'Open Dashboard',
+      secondaryCta: 'How It Works',
+      proof: ['Simple setup', 'Dedicated client', '24/7 support'],
+      problemTitle: 'Why AI platforms may flag your account',
+      problemIntro:
+        'AI platforms inspect IP type, DNS leakage, WebRTC leakage, timezone consistency, and other risk signals. Unstable network environments can trigger restrictions.',
+      solutionEyebrow: 'Our solution',
+      solutionTitle: 'IPFlex AI Accelerator solves the network layer risks',
+      solutionIntro:
+        'Built on an enhanced Mihomo core and static residential network resources, IPFlex AI reduces common AI platform risk-control triggers.',
+      howTitle: 'How It Works',
+      howIntro: 'IPFlex AI focuses on three network identity dimensions to reduce false risk flags.',
+      scenariosTitle: 'Use Cases',
+      scenariosIntro: 'Beyond AI tools, IPFlex AI supports workflows that require a stable network identity.',
+      stepsTitle: 'How to Start',
+      stepsIntro: 'Use your IPFlex account, buy regional IPs in the dashboard, then connect through the desktop client.',
+      compareTitle: 'Compared with traditional options',
+      faqTitle: 'FAQ',
+      faqIntro: 'Common questions about IPFlex AI Accelerator.',
+      ctaTitle: 'Protect your AI account access',
+      ctaIntro: 'Keep ChatGPT and Claude workflows stable with a cleaner, safer network environment.',
+      contact: 'Contact Support',
+      pricingNote: 'Log in to the IPFlex dashboard to view IP availability and package pricing.',
+      problems: [
+        {
+          title: 'IP type detection',
+          description: 'Datacenter or hosted IPs can be marked as higher risk by AI platforms.',
+          icon: '!',
+          color: 'red',
+        },
+        {
+          title: 'DNS / WebRTC leakage',
+          description: 'Local DNS queries or WebRTC exposure can reveal the real network environment.',
+          icon: 'DNS',
+          color: 'orange',
+        },
+        {
+          title: 'Shared IP reputation',
+          description: 'Low-quality shared IP pools may inherit reputation damage from other users.',
+          icon: 'IP',
+          color: 'yellow',
+        },
+      ],
+      solutions: [
+        {
+          title: 'Static residential network',
+          description: 'Dedicated ISP residential IPs make the network identity closer to real household broadband.',
+          icon: icons.home,
+        },
+        {
+          title: 'Smart DNS management',
+          description: 'The client manages DNS queries through protected channels to reduce DNS leakage.',
+          icon: icons.dns,
+        },
+        {
+          title: 'WebRTC leak protection',
+          description: 'WebRTC leak paths are blocked to avoid exposing local network information.',
+          icon: icons.shield,
+        },
+        {
+          title: 'Enhanced Mihomo client',
+          description: 'DNS management and leak-protection rules are built into a lightweight desktop client.',
+          icon: icons.server,
+        },
+        {
+          title: 'Dedicated clean IPs',
+          description: 'Each static residential IP is dedicated, reducing reputation risk from unrelated users.',
+          icon: icons.globe,
+        },
+        {
+          title: 'Low-latency access',
+          description: 'Multi-region coverage helps choose practical exits for smoother AI conversations.',
+          icon: icons.zap,
+        },
+      ],
+      how: [
+        {
+          title: 'Network identity shaping',
+          description: 'Static residential exits replace risky network signatures and keep identity signals more consistent.',
+        },
+        {
+          title: 'Leak protection',
+          description: 'DNS handling and WebRTC blocking reduce exposure of local network and topology signals.',
+        },
+        {
+          title: 'One-click client flow',
+          description: 'Log in, select a purchased IP, and connect. The client applies the required network rules.',
+        },
+      ],
+      scenarios: [
+        {
+          title: 'ChatGPT access',
+          description: 'Residential IPs and leak protection help create a cleaner access environment.',
+          icon: icons.aiCube,
+          color: 'green',
+        },
+        {
+          title: 'Claude usage',
+          description: 'Static residential exits reduce account risk caused by unstable network signals.',
+          icon: icons.aiCube,
+          color: 'orange',
+        },
+        {
+          title: 'Global AI services',
+          description: 'Gemini, Perplexity, Midjourney, and other services can run through stable exits.',
+          icon: icons.monitor,
+          color: 'purple',
+        },
+        {
+          title: 'Cross-border operations',
+          description: 'Regional residential IPs help isolate account environments for overseas workflows.',
+          icon: icons.grid,
+          color: 'blue',
+        },
+      ],
+      steps: [
+        {
+          title: 'Create an IPFlex account',
+          description: 'Register and sign in to the IPFlex dashboard. The AI client uses the same account system.',
+        },
+        {
+          title: 'Buy IPs in the dashboard',
+          description: 'Choose the country or region you need and purchase matching static residential IPs.',
+        },
+        {
+          title: 'Install the client and refresh nodes',
+          description: 'Open the desktop client and refresh the node list to sync purchased IPs.',
+        },
+        {
+          title: 'Select an IP and connect',
+          description: 'Choose a node and connect. DNS management and WebRTC protection are applied automatically.',
+        },
+      ],
+      table: {
+        headers: ['Dimension', 'IPFlex AI Accelerator', 'Normal network', 'Datacenter IP option'],
+        rows: [
+          ['IP type', 'ISP static residential', 'Local carrier', 'Datacenter / hosted'],
+          ['AI platform trust', 'Higher, residential identity', 'Low or restricted', 'Very low, high-risk flag'],
+          ['DNS leak protection', 'Managed by client', 'None', 'Manual setup, error-prone'],
+          ['WebRTC protection', 'Automatic blocking', 'None', 'Browser extension required'],
+          ['Local website access', 'Unaffected', 'Normal', 'Traffic detours may slow access'],
+          ['Setup complexity', 'One-click connection', '-', 'Multiple manual settings'],
+        ],
+      },
+      faqs: [
+        {
+          question: 'What is IPFlex AI Accelerator?',
+          answer:
+            'It is a network optimization service for overseas AI tools, combining residential IPs, smart DNS management, and WebRTC protection.',
+        },
+        {
+          question: 'Will it affect local websites and apps?',
+          answer: 'No. It focuses on overseas AI service access while keeping normal local website usage unaffected.',
+        },
+        {
+          question: 'Why use static residential IPs?',
+          answer: 'Residential IPs are assigned by ISPs and usually carry a more trusted identity than datacenter IPs.',
+        },
+        {
+          question: 'Why do DNS and WebRTC protection matter?',
+          answer:
+            'DNS queries and WebRTC can expose real network signals even when the exit IP looks clean. The client reduces these leaks.',
+        },
+        {
+          question: 'Which operating systems are supported?',
+          answer: 'Windows 10/11 and macOS 12+ are currently supported.',
+        },
+        {
+          question: 'Can I use multiple devices?',
+          answer: 'Yes. Purchased IPs can sync across devices logged in with the same account.',
+        },
+      ],
+    };
+---
+
+<Layout metadata={metadata}>
+  <section class="ai-hero relative overflow-hidden bg-[#030620]">
+    <div class="absolute inset-0 ai-grid opacity-35"></div>
+    <div class="absolute left-1/2 top-14 h-72 w-[42rem] -translate-x-1/2 rounded-full bg-blue-500/20 blur-3xl"></div>
+    <div class="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 md:py-28 lg:py-32">
+      <div class="mx-auto max-w-3xl text-center">
+        <div class="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-4 py-1.5 text-sm font-medium text-blue-100 backdrop-blur-sm">
+          <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+          {copy.badge}
+        </div>
+        <h1 class="mb-6 text-4xl font-bold leading-tight tracking-normal text-white md:text-5xl lg:text-6xl">
+          {copy.title}
+        </h1>
+        <p class="mx-auto mb-10 max-w-2xl text-lg leading-8 text-slate-300 md:text-xl">
+          {copy.subtitle}
+        </p>
+        <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <a href="https://dashboard.ipflex.ink" target="_blank" rel="noopener noreferrer" class="ai-btn-primary inline-flex items-center justify-center rounded-full px-8 py-3.5 text-base font-semibold text-white">
+            {copy.primaryCta}
+          </a>
+          <a href="#how-it-works" class="inline-flex items-center justify-center rounded-full border border-white/25 px-8 py-3.5 text-base font-medium text-white transition hover:border-white/60 hover:bg-white/10">
+            {copy.secondaryCta}
+          </a>
+        </div>
+        <div class="mt-12 flex flex-col items-center justify-center gap-4 text-sm text-slate-400 sm:flex-row sm:gap-8">
+          {copy.proof.map((item) => (
+            <div class="flex items-center gap-2">
+              <span class="text-emerald-400">✓</span>
+              {item}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-20 md:py-28">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="mb-16 text-center">
+        <h2 class="mb-4 text-3xl font-bold text-slate-950 md:text-4xl">{copy.problemTitle}</h2>
+        <p class="mx-auto max-w-2xl text-lg leading-8 text-slate-600">{copy.problemIntro}</p>
+      </div>
+
+      <div class="mb-16 grid gap-8 md:grid-cols-3">
+        {copy.problems.map((item) => (
+          <article class="rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-sm">
+            <div class:list={[
+              'mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-xl text-sm font-bold',
+              item.color === 'red' && 'bg-red-50 text-red-500',
+              item.color === 'orange' && 'bg-orange-50 text-orange-500',
+              item.color === 'yellow' && 'bg-amber-50 text-amber-600',
+            ]}>
+              {item.icon}
+            </div>
+            <h3 class="mb-3 text-lg font-semibold text-slate-950">{item.title}</h3>
+            <p class="text-sm leading-7 text-slate-600">{item.description}</p>
+          </article>
+        ))}
+      </div>
+
+      <div class="mb-12 text-center">
+        <span class="mb-3 inline-block text-sm font-semibold uppercase tracking-wide text-blue-600">{copy.solutionEyebrow}</span>
+        <h2 class="mb-4 text-3xl font-bold text-slate-950 md:text-4xl">{copy.solutionTitle}</h2>
+        <p class="mx-auto max-w-2xl text-lg leading-8 text-slate-600">{copy.solutionIntro}</p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {copy.solutions.map((item) => (
+          <article class="rounded-2xl border border-blue-100 bg-gradient-to-br from-blue-50 to-violet-50 p-6 transition duration-200 hover:-translate-y-1 hover:shadow-lg">
+            <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-white text-blue-600 shadow-sm">
+              <Fragment set:html={item.icon} />
+            </div>
+            <h3 class="mb-2 text-base font-semibold text-slate-950">{item.title}</h3>
+            <p class="text-sm leading-7 text-slate-600">{item.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="how-it-works" class="relative overflow-hidden bg-[#030620] py-20 md:py-28">
+    <div class="absolute inset-0 ai-grid opacity-20"></div>
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="mb-16 text-center">
+        <h2 class="mb-4 text-3xl font-bold text-white md:text-4xl">{copy.howTitle}</h2>
+        <p class="mx-auto max-w-2xl text-lg leading-8 text-slate-300">{copy.howIntro}</p>
+      </div>
+      <div class="grid gap-8 md:grid-cols-3">
+        {copy.how.map((item, index) => (
+          <article class="rounded-2xl border border-white/10 bg-white/[0.06] p-8 text-center backdrop-blur-sm">
+            <div class="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-500/20">
+              <span class="text-3xl font-bold text-blue-300">{index + 1}</span>
+            </div>
+            <h3 class="mb-4 text-xl font-semibold text-white">{item.title}</h3>
+            <p class="text-sm leading-7 text-slate-400">{item.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-slate-50 py-20 md:py-28">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="mb-16 text-center">
+        <h2 class="mb-4 text-3xl font-bold text-slate-950 md:text-4xl">{copy.scenariosTitle}</h2>
+        <p class="mx-auto max-w-xl text-lg leading-8 text-slate-600">{copy.scenariosIntro}</p>
+      </div>
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        {copy.scenarios.map((item) => (
+          <article class="rounded-2xl border border-slate-200 bg-white p-6 transition hover:shadow-md">
+            <div class:list={[
+              'mb-4 flex h-11 w-11 items-center justify-center rounded-xl',
+              item.color === 'green' && 'bg-green-50 text-green-600',
+              item.color === 'orange' && 'bg-orange-50 text-orange-600',
+              item.color === 'purple' && 'bg-purple-50 text-purple-600',
+              item.color === 'blue' && 'bg-blue-50 text-blue-600',
+            ]}>
+              <Fragment set:html={item.icon} />
+            </div>
+            <h3 class="mb-2 text-base font-semibold text-slate-950">{item.title}</h3>
+            <p class="text-sm leading-7 text-slate-600">{item.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-20 md:py-28">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="mb-16 text-center">
+        <h2 class="mb-4 text-3xl font-bold text-slate-950 md:text-4xl">{copy.stepsTitle}</h2>
+        <p class="mx-auto max-w-2xl text-lg leading-8 text-slate-600">{copy.stepsIntro}</p>
+      </div>
+      <div class="mx-auto max-w-4xl">
+        {copy.steps.map((item, index) => (
+          <div class="mb-10 flex flex-col items-start gap-6 last:mb-0 md:flex-row">
+            <div class="ai-step flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-lg font-bold text-white">
+              {index + 1}
+            </div>
+            <article class="flex-1 rounded-2xl bg-slate-50 p-6">
+              <h3 class="mb-2 text-lg font-semibold text-slate-950">{item.title}</h3>
+              <p class="text-sm leading-7 text-slate-600">{item.description}</p>
+            </article>
+          </div>
+        ))}
+      </div>
+      <div class="mt-14 text-center">
+        <p class="mb-6 text-sm text-slate-600">{copy.pricingNote}</p>
+        <a href="https://dashboard.ipflex.ink" target="_blank" rel="noopener noreferrer" class="ai-btn-primary inline-flex items-center justify-center rounded-full px-8 py-3.5 text-base font-semibold text-white">
+          {copy.primaryCta}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-50/50 py-16">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6">
+      <h3 class="mb-10 text-center text-2xl font-bold text-gray-900">{copy.compareTitle}</h3>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-gray-200">
+              {copy.table.headers.map((header, index) => (
+                <th class:list={[
+                  'px-4 py-4 font-semibold',
+                  index === 0 && 'text-left text-gray-900',
+                  index === 1 && 'rounded-t-xl bg-[#0161ef] text-center text-white',
+                  index > 1 && 'text-center text-gray-500',
+                ]}>
+                  {header}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            {copy.table.rows.map((row) => (
+              <tr>
+                {row.map((cell, index) => (
+                  <td class:list={[
+                    'px-4 py-3.5',
+                    index === 0 && 'font-medium text-gray-700',
+                    index === 1 && 'bg-blue-50/50 text-center font-medium text-green-600',
+                    index === 2 && 'ai-text-dim text-center',
+                    index === 3 && 'text-center text-red-500',
+                  ]}>
+                    {cell}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-20 md:py-28">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6">
+      <div class="mb-16 text-center">
+        <h2 class="mb-4 text-3xl font-bold text-slate-950 md:text-4xl">{copy.faqTitle}</h2>
+        <p class="text-lg text-slate-600">{copy.faqIntro}</p>
+      </div>
+      <div class="space-y-3">
+        {copy.faqs.map((item, index) => (
+          <details class="group rounded-xl border border-slate-200" open={index === 0}>
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 p-5 font-medium text-slate-950">
+              {item.question}
+              <span class="text-slate-400 transition group-open:rotate-180">⌄</span>
+            </summary>
+            <p class="px-5 pb-5 text-sm leading-7 text-slate-600">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="relative overflow-hidden bg-[#030620] py-16 md:py-20">
+    <div class="absolute inset-0 ai-grid opacity-20"></div>
+    <div class="relative mx-auto max-w-3xl px-4 text-center sm:px-6">
+      <h2 class="mb-4 text-3xl font-bold text-white md:text-4xl">{copy.ctaTitle}</h2>
+      <p class="mx-auto mb-8 max-w-xl text-lg leading-8 text-slate-300">{copy.ctaIntro}</p>
+      <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <a href="https://dashboard.ipflex.ink/register" target="_blank" rel="noopener noreferrer" class="ai-btn-primary inline-flex items-center justify-center rounded-full px-8 py-3.5 text-base font-semibold text-white">
+          {isZh ? '立即注册' : 'Sign Up'}
+        </a>
+        <a href="https://t.me/IPFlexProxy" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-slate-300 transition hover:text-white">
+          {copy.contact}
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .ai-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(circle at center, black, transparent 75%);
+  }
+
+  .ai-btn-primary,
+  .ai-step {
+    background: linear-gradient(135deg, #0161ef, #6d28d9);
+  }
+
+  .ai-btn-primary {
+    box-shadow: 0 12px 30px rgba(1, 97, 239, 0.28);
+    transition:
+      transform 180ms ease,
+      box-shadow 180ms ease;
+  }
+
+  .ai-btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 16px 38px rgba(1, 97, 239, 0.34);
+  }
+</style>

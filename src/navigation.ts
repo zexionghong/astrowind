@@ -24,6 +24,15 @@ export const getHeaderData = (lang: string = 'zh') => ({
           icon: 'tabler:server',
           description: lang === 'zh' ? '高速数据中心代理IP，HTTP/SOCKS5协议支持，性价比高' : 'High-speed datacenter proxy IPs with HTTP/SOCKS5 protocol support, great value'
         },
+        {
+          text: lang === 'zh' ? 'AI加速器' : 'AI Accelerator',
+          href: `/${lang}/ai-accelerator`,
+          icon: 'tabler:sparkles',
+          description: lang === 'zh'
+            ? '面向 ChatGPT、Claude 等 AI 工具的静态住宅网络加速与账号安全防护'
+            : 'Static residential network acceleration and account protection for ChatGPT, Claude, and other AI tools',
+          badge: lang === 'zh' ? '新品' : 'New'
+        },
       ]
 
     },
@@ -100,6 +109,10 @@ export const getFooterData = (lang: string = 'zh') => ({
         { 
           text: lang === 'zh' ? '数据中心代理' : 'Data Center Proxy', 
           href: `/${lang}/static-datacenter-proxy` 
+        },
+        { 
+          text: lang === 'zh' ? 'AI加速器' : 'AI Accelerator', 
+          href: `/${lang}/ai-accelerator` 
         },
       ],
     },
