@@ -8,9 +8,9 @@
     "node": "^18.17.1 || ^20.3.0 || >= 21.0.0"
   },
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
+    "dev": "node scripts/build-friend-links.js && astro dev",
+    "start": "node scripts/build-friend-links.js && astro dev",
+    "build": "node scripts/build-friend-links.js && astro build",
     "preview": "astro preview",
     "geo:track": "node scripts/geo-tracker.js",
     "astro": "astro",
@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.8",
-    "@astrojs/sitemap": "^3.2.0",
+    "@astrojs/sitemap": "3.2.0",
     "@astrolib/analytics": "^0.6.1",
     "@astrolib/seo": "^1.0.0-beta.8",
     "@fontsource-variable/inter": "^5.1.0",

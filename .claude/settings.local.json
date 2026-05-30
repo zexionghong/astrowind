@@ -7,7 +7,10 @@
       "mcp__playwright__browser_console_messages",
       "mcp__playwright__browser_evaluate",
       "mcp__think__sequentialthinking",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(node scripts/build-friend-links.js)",
+      "Bash(npm run *)",
+      "Bash(npx prettier *)"
     ],
     "deny": [],
     "ask": []
