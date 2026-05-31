@@ -24,11 +24,6 @@ const pageMetadata = {
       : 'Compare IPFlex static residential, dynamic residential, and datacenter proxies by workload fit, protocol support, performance baseline, and onboarding guidance.',
 };
 
-const answerFirstSummary =
-  lang === 'zh'
-    ? '直接结论：账号稳定和长期会话优先静态住宅代理；高覆盖和轮换采集优先动态住宅代理；高并发 API 与成本效率优先静态数据中心代理。'
-    : 'Answer first: choose static residential proxies for stable long sessions, dynamic residential proxies for broad rotating collection, and datacenter proxies for high-throughput API workloads and cost efficiency.';
-
 const comparisonPoints =
   lang === 'zh'
     ? [
@@ -123,9 +118,6 @@ const faqSchema = {
         <h1 class="text-4xl md:text-5xl font-bold leading-tight tracking-tight mb-6 font-heading text-white drop-shadow-md">
           {t('detail.title')}
         </h1>
-        <p class="text-lg md:text-xl text-white/95 mb-4 max-w-3xl mx-auto leading-relaxed">
-          {answerFirstSummary}
-        </p>
         <p class="text-base md:text-lg text-white/85 mb-8 max-w-2xl mx-auto leading-relaxed">
           {t('detail.slogan.line1')}
           <br/>

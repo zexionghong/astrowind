@@ -53,40 +53,6 @@ const metadata = {
       <Fragment slot="subtitle" set:html={t('index.hero.subtitle')} />
     </Hero>
 
-    <section class="mx-auto max-w-5xl px-4 pb-4 sm:pb-6" aria-labelledby="home-summary-heading">
-      <div class="rounded-2xl border border-blue-100 bg-white/95 p-5 text-sm leading-7 text-slate-700 shadow-sm dark:border-slate-700 dark:bg-slate-900/95 dark:text-slate-200">
-        <h2 id="home-summary-heading" class="text-base font-semibold tracking-tight text-heading dark:text-white">
-          {lang === 'zh' ? '快速结论' : 'Quick answer'}
-        </h2>
-        <p class="mt-2">
-          {lang === 'zh'
-            ? 'IPFlex 适合需要稳定地区出口、城市级定位和 API 集成能力的团队。选型时，一般按“长期稳定会话选静态住宅，高频轮换采集选动态住宅，成本敏感批量任务选数据中心”来判断。'
-            : 'IPFlex fits teams that need stable regional exit points, city-level targeting, and API-ready proxy capacity. In practice, choose static residential for long sessions, rotating residential for high-churn collection, and datacenter nodes for cost-sensitive batch workloads.'}
-        </p>
-        <div class="mt-4 grid gap-3 md:grid-cols-3">
-          <article class="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-800/60">
-            <h3 class="font-semibold text-heading dark:text-white">{lang === 'zh' ? '静态住宅代理' : 'Static residential'}</h3>
-            <p class="mt-2">{lang === 'zh' ? '适合登录、账号运营、长期会话和对稳定性要求高的业务。' : 'Best for login flows, account operations, long sessions, and stability-sensitive workloads.'}</p>
-          </article>
-          <article class="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-800/60">
-            <h3 class="font-semibold text-heading dark:text-white">{lang === 'zh' ? '动态住宅代理' : 'Rotating residential'}</h3>
-            <p class="mt-2">{lang === 'zh' ? '适合高频轮换、分布式采集、广告验证和多地区数据任务。' : 'Best for high-rotation traffic, distributed collection, ad verification, and multi-region data workflows.'}</p>
-          </article>
-          <article class="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-800/60">
-            <h3 class="font-semibold text-heading dark:text-white">{lang === 'zh' ? '数据中心代理' : 'Datacenter proxy'}</h3>
-            <p class="mt-2">{lang === 'zh' ? '适合成本敏感、吞吐优先的 API 调用、测试和批量任务处理。' : 'Best for cost-sensitive, throughput-oriented API access, testing, and batch processing.'}</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Intro Widget ******************* -->
-    <section class="mx-auto max-w-6xl px-4 py-8 sm:py-10 text-base leading-7 text-muted dark:text-slate-300">
-      <h2 class="text-2xl font-bold tracking-tight text-heading dark:text-white mb-4">{t('index.intro.title')}</h2>
-      <p class="mb-3">{t('index.intro.p1')}</p>
-      <p>{t('index.intro.p2')}</p>
-    </section>
-
     <!-- Note Widget ******************* -->
     <ProxyContent
       residentialProxy={{
@@ -147,62 +113,6 @@ const metadata = {
       items={t('index.features2.items')}
     />
 
-    <!-- SEO Content Block ********* -->
-    <section class="mx-auto max-w-6xl px-4 py-8 sm:py-10 text-base leading-7 text-muted dark:text-slate-300">
-      <h2 class="text-2xl font-bold tracking-tight text-heading dark:text-white mb-4">
-        {lang === 'zh' ? '面向真实生产场景的企业网络接入体系' : 'Enterprise Proxy Network for Real Production Workflows'}
-      </h2>
-      <p class="mb-3">
-        {lang === 'zh'
-          ? '很多团队发现，真正困难的不是一次性接入，而是在日常业务中持续稳定运行。要实现长期可用，通常需要明确接入规范、使用策略、变更流程与故障响应机制，并把这些流程文档化、可复用化。'
-          : 'Many organizations discover that the hard part is not getting access once, but running daily workflows without interruption. Stable online operations require clear standards for onboarding, usage policies, change control, and incident response. A practical service should help operators document these routines and keep execution consistent as projects grow.'}
-      </p>
-      <p class="mb-3">
-        {lang === 'zh'
-          ? '在真实项目中，业务与技术负责人通常会从多个维度评估稳定性，例如完成率、响应波动、地域一致性和异常恢复速度。可观测性同样关键，团队需要清晰的看板、日志和告警来提前识别风险，并基于数据做决策。'
-          : 'In real projects, business and engineering owners usually evaluate reliability from several angles: completion rate, response stability, regional consistency, and recovery speed when conditions change. Operational quality also depends on observability. Decision makers need simple dashboards, clear logs, and understandable alerts so they can detect risk early and make choices based on evidence instead of guesswork.'}
-      </p>
-      <p class="mb-3">
-        {lang === 'zh'
-          ? '成本管理和性能同样重要。可持续方案应避免过度预留资源，并让资源使用与业务周期匹配，从而提升季度预算可预测性。治理层面也不可忽视，角色权限、评审节点和审计记录能有效降低误操作并提升跨团队协同效率。'
-          : 'Cost management matters as much as performance. A sustainable approach avoids over-provisioning, aligns resource usage with campaign cycles, and keeps financial planning predictable across quarters. Governance is equally important: role-based access, review checkpoints, and internal audit records help organizations reduce mistakes while improving collaboration between marketing, analytics, product, and infrastructure groups.'}
-      </p>
-      <p>
-        {lang === 'zh'
-          ? '我们的目标是帮助团队建立长期可执行的运行体系。通过清晰的接入指引、可落地的运营模式和及时支持，企业可以把分散脚本沉淀为可复制流程，减少人工救火，提升交付稳定性，并为国际业务扩展打下更稳的执行基础。'
-          : 'Our objective is to support long-term execution quality. With straightforward setup guidance, practical operating patterns, and responsive human support, companies can turn scattered scripts into repeatable processes. This helps reduce manual firefighting, improves delivery confidence, and gives decision makers a more stable foundation for scaling international business initiatives over time.'}
-      </p>
-      <p class="mt-3">
-        {lang === 'zh'
-          ? '对于计划区域扩张的团队，分阶段推进通常比一次性放量更稳妥。先定义目标，再通过量化检查点验证，最后结合复盘持续迭代，能在保证稳定性的同时提升组织协同效率。'
-          : 'For organizations planning regional growth, a disciplined rollout path is often the difference between short-term wins and sustainable outcomes. Start with clear priorities, validate with measurable checkpoints, and iterate with documented learnings. Over time, this operating rhythm improves reliability, aligns stakeholders, and creates a durable advantage in competitive markets.'}
-      </p>
-      <p class="mt-3">
-        {lang === 'zh'
-          ? '成熟的执行模型还应包含固定复盘节奏。与其只在故障发生后被动响应，更好的做法是建立每周健康巡检、每月趋势分析和季度架构评估。这种节奏可以更早暴露瓶颈，保护交付周期，并支撑跨职能团队的长期协作。'
-          : 'A mature execution model also includes regular review cycles. Instead of reacting only when incidents happen, strong operators define weekly health checks, monthly trend analysis, and quarterly architecture reviews. This cadence helps expose hidden bottlenecks, protects delivery timelines, and supports cross-functional alignment. When strategy, operations, and technical governance move together, organizations can maintain quality while expanding into new regions and higher-volume workloads with less operational friction.'}
-      </p>
-      <p class="mt-3 text-sm text-gray-600 dark:text-gray-400">
-        {lang === 'zh'
-          ? 'Operational readiness baseline: confirm success-rate target, latency threshold, retry policy, escalation path, and ownership map before launch. Teams that track these indicators continuously usually maintain better stability during growth.'
-          : 'Operational readiness baseline: confirm success-rate target, latency threshold, retry policy, escalation path, and ownership map before launch. Teams that track these indicators continuously usually maintain better stability during growth.'}
-      </p>
-      <p class="mt-3 text-sm text-gray-600 dark:text-gray-400">
-        {lang === 'zh'
-          ? 'Governance note: keep decision logs, approval records, and incident summaries in a shared workspace so future iterations remain traceable and execution quality can improve over time.'
-          : 'Governance note: keep decision logs, approval records, and incident summaries in a shared workspace so future iterations remain traceable and execution quality can improve over time.'}
-      </p>
-      <p class="mt-3 text-sm text-gray-600 dark:text-gray-400">
-        {lang === 'zh'
-          ? 'A practical operating model values clarity over complexity: clear ownership, measurable checkpoints, transparent communication, and disciplined postmortems. This approach strengthens predictability and reduces avoidable coordination loss during growth.'
-          : 'A practical operating model values clarity over complexity: clear ownership, measurable checkpoints, transparent communication, and disciplined postmortems. This approach strengthens predictability and reduces avoidable coordination loss during growth.'}
-      </p>
-      <p class="mt-3 text-sm text-gray-600 dark:text-gray-400">
-        {lang === 'zh'
-          ? 'Long-term delivery quality improves when teams maintain simple rules, explicit accountability, and continuous review of outcomes. This operational rhythm helps reduce ambiguity, keep priorities aligned, and support predictable scaling across regions.'
-          : 'Long-term delivery quality improves when teams maintain simple rules, explicit accountability, and continuous review of outcomes. This operational rhythm helps reduce ambiguity, keep priorities aligned, and support predictable scaling across regions.'}
-      </p>
-    </section>
     <br />
   </div>
 

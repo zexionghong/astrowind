@@ -11,12 +11,10 @@ import type { Post } from '~/types';
 
 export interface Props {
   post: Post;
-  url: string | URL;
-  summary?: string;
-  summaryLabel?: string;
+  url?: string | URL;
 }
 
-const { post, url, summary, summaryLabel = 'Quick answer' } = Astro.props;
+const { post, url = Astro.url } = Astro.props;
 ---
 
 <section class="relative bg-white dark:bg-slate-900">
@@ -73,16 +71,6 @@ const { post, url, summary, summaryLabel = 'Quick answer' } = Astro.props;
             <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
               {post.excerpt}
             </p>
-            {
-              summary && (
-                <section class="mt-6 rounded-2xl border border-blue-200 bg-blue-50 px-5 py-4 text-sm text-blue-950 dark:border-blue-900/60 dark:bg-slate-800 dark:text-blue-100" aria-label={summaryLabel}>
-                  <p class="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-blue-700 dark:text-blue-300">
-                    {summaryLabel}
-                  </p>
-                  <p class="leading-relaxed">{summary}</p>
-                </section>
-              )
-            }
           </header>
 
           <div class="prose prose-lg dark:prose-invert max-w-none

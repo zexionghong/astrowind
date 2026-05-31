@@ -30,11 +30,6 @@ const metadata = {
   ignoreTitleTemplate: true,
 };
 
-const answerFirstSummary =
-  lang === 'zh'
-    ? '直接结论：如果工作负载以高并发吞吐、接口调用效率和成本可预测性为核心，静态数据中心代理通常是首选。'
-    : 'Answer first: static datacenter proxies are usually the first choice when throughput, API efficiency, and predictable cost matter most.';
-
 const stats = t('staticDatacenterProxy.stats.items');
 const faqs = t('staticDatacenterProxy.faqs.items');
 
@@ -145,9 +140,6 @@ const breadcrumbSchema = {
       </Fragment>
       <Fragment slot="content">
         <div class="text-gray-200 space-y-6 mt-6" style="margin-left:50px;">
-          <p class="rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-base font-medium leading-7 text-left text-white/95">
-            {answerFirstSummary}
-          </p>
           <ul class="space-y-3 text-lg">
             {t('staticDatacenterProxy.hero.features').map((feature) => (
               <li class="flex items-center gap-3">
@@ -229,11 +221,6 @@ const breadcrumbSchema = {
     <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
       {lang === 'zh' ? '静态数据中心代理如何评估是否适配' : 'How to Evaluate Static Datacenter Proxy Fit'}
     </h2>
-    <p class="rounded-lg border border-green-100 bg-green-50/60 p-4 text-sm leading-6 text-green-900 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">
-      {lang === 'zh'
-        ? '直接结论：若业务以高并发吞吐、API 调用效率和成本可预测性为核心，静态数据中心代理通常更合适。'
-        : 'Answer-first: static datacenter proxies are usually the best option when throughput, API efficiency, and predictable cost are the primary goals.'}
-    </p>
     <div class="mt-4 rounded-lg border border-gray-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-900">
       <h3 class="text-base font-semibold text-gray-900 dark:text-white mb-2">
         {lang === 'zh' ? '关键指标口径' : 'Key Metric Definitions'}

@@ -8,7 +8,7 @@
       "primaryAction": "Buy Proxy IP",
       "secondaryAction": "Learn More",
       "title": "Enterprise Proxy Infrastructure Across Residential and Datacenter Nodes",
-      "subtitle": "<span class=\"text-lg sm:text-xl\"><span class=\"font-semibold\">Answer-first:</span> if your team needs stable regional exit points, API-ready proxy access, and scalable capacity, IPFlex provides static residential, rotating residential, and datacenter nodes with HTTP/SOCKS5 support, city-level targeting, and long-term operational support.</span>"
+      "subtitle": "<span class=\"text-lg sm:text-xl\">IPFlex provides static residential, rotating residential, and datacenter nodes with HTTP/SOCKS5 support, city-level targeting, and API-ready access for data collection, ad verification, cross-border operations, and automation workflows.</span>"
     },
     "content": {
       "residentialProxyTitle": "Residential Proxy Services",
@@ -281,11 +281,6 @@
           "description": "We offer 24/7 technical support, including online documentation, technical consultation, and troubleshooting services to ensure your business runs smoothly."
         }
       ]
-    },
-    "intro": {
-      "title": "Enterprise Proxy Network Overview",
-      "p1": "Built for cross-border operations, data collection, and automation workflows, this service provides stable and scalable network access for both long-running tasks and burst traffic.",
-      "p2": "In production, teams care most about success rate, latency, geo coverage, and cost balance. With flexible node options and practical integration support, you can bring connectivity into daily operations with less friction."
     }
   }
 }

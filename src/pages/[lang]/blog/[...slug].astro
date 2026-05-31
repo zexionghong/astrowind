@@ -39,19 +39,6 @@ interface FAQItem {
   answer: string;
 }
 
-const extractSummary = (body: string) => {
-  const match = body.match(
-    /^(?:>\s*)?(?:Direct answer:|Quick answer:|TL;DR:|直接结论：|一句话结论：)\s*([\s\S]*?)(?=\n\s*\n|\n#{1,6}\s|$)/m
-  );
-
-  if (!match) return undefined;
-
-  return match[1]
-    .replace(/^\s*>\s?/gm, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
-};
-
 const extractFaqItems = (body: string): FAQItem[] => {
   const faqSectionMatch = body.match(/(?:^|\n)##\s+(?:FAQ|常见问题)\s*\n([\s\S]*?)(?=\n##\s+|$)/i);
   if (!faqSectionMatch) return [];
@@ -77,9 +64,7 @@ const { lang } = Astro.params;
 const t = await useTranslations(lang);
 
 const { Content } = await post.render();
-const summary = extractSummary(post.body);
 const faqItems = extractFaqItems(post.body);
-const summaryLabel = lang === 'zh' ? '快速结论' : 'Quick answer';
 
 const siteBase = String(Astro.site || '').replace(/\/$/, '');
 const canonicalUrl = `${siteBase}${Astro.url.pathname}`;
@@ -139,7 +124,7 @@ const faqSchema =
 <Layout metadata={metadata}>
   <script type="application/ld+json" set:html={JSON.stringify(blogPostingSchema)} />
   {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
-  <SinglePost post={normalizedPost} summary={summary} summaryLabel={summaryLabel}>
+  <SinglePost post={normalizedPost}>
     <Content />
   </SinglePost>
   <ToBlogLink lang={lang} />

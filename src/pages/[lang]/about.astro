@@ -19,11 +19,6 @@ const metadata = {
   ignoreTitleTemplate: true,
 };
 
-const answerFirstSummary =
-  lang === 'zh'
-    ? '直接结论：IPFlex 是面向企业场景的代理服务提供方，重点解决代理类型选择、接入落地、稳定性评估和长期运维协同，而不是只提供一组可购买的 IP。'
-    : 'Answer first: IPFlex is an enterprise proxy provider focused on proxy selection, onboarding, stability evaluation, and long-term operational support, not just on selling standalone IP resources.';
-
 const principles = lang === 'zh'
   ? [
       {
@@ -177,9 +172,6 @@ const faqSchema = {
       <h1 class="mt-3 text-4xl font-bold tracking-tight text-gray-900 md:text-5xl">
         {lang === 'zh' ? '关于 IPFlex' : 'About IPFlex'}
       </h1>
-      <p class="mt-4 rounded-xl border border-blue-100 bg-blue-50/70 px-5 py-4 text-sm leading-6 text-blue-900">
-        {answerFirstSummary}
-      </p>
       <p class="mt-4 max-w-3xl text-base leading-7 text-gray-700">
         {lang === 'zh'
           ? '这个页面的目标是让采购、技术和运营团队在进入产品页或帮助中心之前，先快速理解 IPFlex 的角色、服务边界和交付方式。'

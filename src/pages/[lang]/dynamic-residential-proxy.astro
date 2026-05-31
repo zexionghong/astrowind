@@ -30,11 +30,6 @@ const metadata = {
   ignoreTitleTemplate: true,
 };
 
-const answerFirstSummary =
-  lang === 'zh'
-    ? '直接结论：如果你的核心目标是广覆盖、轮换出口和大规模采集，动态住宅代理通常更适合。'
-    : 'Answer first: dynamic residential proxies are usually the best fit when broad coverage, rotating exits, and large-scale collection are the main priorities.';
-
 const stats = t('dynamicResidentialProxy.stats.items');
 const faqs = t('dynamicResidentialProxy.faqs.items');
 
@@ -145,9 +140,6 @@ const breadcrumbSchema = {
       </Fragment>
       <Fragment slot="content">
         <div class="text-gray-200 space-y-6 mt-6" style="margin-left:50px;">
-          <p class="rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-base font-medium leading-7 text-left text-white/95">
-            {answerFirstSummary}
-          </p>
           <ul class="space-y-3 text-lg">
             {t('dynamicResidentialProxy.hero.features').map((feature) => (
               <li class="flex items-center gap-3">
@@ -229,11 +221,6 @@ const breadcrumbSchema = {
     <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
       {lang === 'zh' ? '动态住宅代理如何评估是否适配' : 'How to Evaluate Dynamic Residential Proxy Fit'}
     </h2>
-    <p class="rounded-lg border border-purple-100 bg-purple-50/60 p-4 text-sm leading-6 text-purple-900 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">
-      {lang === 'zh'
-        ? '直接结论：如果任务重点是覆盖率、抗封禁和大规模并发采集，动态住宅代理通常更优。'
-        : 'Answer-first: dynamic residential proxies are usually the best fit for broad coverage, anti-block resilience, and high-volume collection.'}
-    </p>
     <div class="mt-4 rounded-lg border border-gray-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-900">
       <h3 class="text-base font-semibold text-gray-900 dark:text-white mb-2">
         {lang === 'zh' ? '关键指标口径' : 'Key Metric Definitions'}

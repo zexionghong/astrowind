@@ -22,11 +22,6 @@ const metadata = {
   ignoreTitleTemplate: true,
 };
 
-const answerFirstSummary =
-  lang === 'zh'
-    ? '直接结论：如果你要快速理解 IPFlex 代理产品并找到可执行资料，先看定义与选择，再看场景与接入，最后进入方法文章和帮助文档。'
-    : 'Answer first: if you need to understand IPFlex quickly and find execution-ready material, start with definitions and selection guidance, then move to use cases and onboarding, and finally review playbooks and docs.';
-
 const sections = lang === 'zh'
   ? [
       {
@@ -190,9 +185,6 @@ const faqSchema = {
       <h1 class="mt-3 text-4xl font-bold tracking-tight text-gray-900 md:text-5xl">
         {lang === 'zh' ? 'IPFlex 知识中心' : 'IPFlex Resources'}
       </h1>
-      <p class="mt-4 rounded-xl border border-blue-100 bg-blue-50/70 px-5 py-4 text-sm leading-6 text-blue-900">
-        {answerFirstSummary}
-      </p>
       <p class="mt-4 max-w-3xl text-base leading-7 text-gray-700">
         {lang === 'zh'
           ? '这个页面的目标不是替代帮助中心，而是把定义、选择、场景、接入和方法资料集中到主域，减少团队在多个入口之间来回切换的成本。'
