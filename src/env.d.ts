@@ -3,3 +3,12 @@
 /// <reference types="astro/client" />
 /// <reference types="vite/client" />
 /// <reference types="../vendor/integration/types.d.ts" />
+
+interface ImportMetaEnv {
+  readonly PUBLIC_LIBREDESK_BASE_URL?: string;
+  readonly PUBLIC_LIBREDESK_INBOX_ID?: string;
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv;
+}
