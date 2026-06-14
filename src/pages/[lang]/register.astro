@@ -1,26 +1,22 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Form from '~/components/ui/Form.astro';
+import { useTranslations } from '~/utils/i18n';
+import { getStaticPathsForLang } from '~/utils/schema';
 import registerBg from '~/assets/images/bg/register.png';
 
 export async function getStaticPaths() {
-  return [
-    { params: { lang: 'en' } },
-    { params: { lang: 'zh' } }
-  ];
+  return getStaticPathsForLang();
 }
 
 const { lang } = Astro.params;
+const t = useTranslations(lang);
 
 const url = Astro.url;
 const urlInviteCode = url.searchParams.get('invite') || url.searchParams.get('ref') || url.searchParams.get('code');
 const metadata = {
-  title: lang === 'zh'
-    ? 'IPFlex 企业代理服务账号注册与接入开通中心与新手接入指引'
-    : 'IPFlex Enterprise Proxy Account Registration and Onboarding',
-  description: lang === 'zh'
-    ? '注册 IPFlex 企业账号，快速开通静态住宅、动态住宅与数据中心代理，支持 API 接入、会话管理、区域路由、用量计费与实时监控，适用于数据采集、广告核验、跨境运营和自动化任务上线。'
-    : 'Register an IPFlex enterprise account to start static, rotating, and datacenter proxies with API access, geo routing, session control, usage billing, and real-time monitoring.',
+  title: t('register.title'),
+  description: t('register.description'),
   robots: {
     index: false,
     follow: false,
@@ -28,70 +24,60 @@ const metadata = {
   ignoreTitleTemplate: true,
 };
 
-const alert_msg = lang === 'zh' ? '注册成功!请查看邮箱中的验证邮件完成注册。' : 'Registration successful! Please check your email for verification.';
+const inviteCode = urlInviteCode;
 
-// 获取缓存的邀请码
-const getCachedInviteCode = () => {
-  if (typeof window !== 'undefined') {
-    const cachedData = localStorage.getItem('inviteCodeData');
-    if (cachedData) {
-      try {
-        const { code, timestamp } = JSON.parse(cachedData);
-        const now = new Date().getTime();
-        const isExpired = now - timestamp > 24 * 60 * 60 * 1000; // 24小时过期
-        
-        if (!isExpired) {
-          return code;
-        }
-      } catch (e) {
-        // 忽略解析错误
-      }
-    }
-  }
-  return null;
-};
-
-// 优先使用URL参数中的邀请码，如果没有则使用缓存的邀请码
-const inviteCode = urlInviteCode || getCachedInviteCode();
-
-const handleSubmit = `async function(e) {
+const handleRegisterSubmit = `async (e, form) => {
   e.preventDefault();
-  console.log(111111111111111111111111);
+  
+  const submitBtn = form.querySelector('button[type="submit"]');
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.textContent = '${lang === 'zh' ? '注册中...' : 'Registering...'}';
+  }
+
   try {
-    const formData = new FormData(e.target);
-    const inviteInput = e.target.querySelector('input[name="invite"]');
+    const formData = new FormData(form);
     
-    if (inviteInput && inviteInput.disabled) {
-      formData.set('invite', inviteInput.value);
-    }
+    // 映射字段名到后端期望的格式
+    const username = formData.get('username');
+    const email = formData.get('email');
+    const password = formData.get('password');
+    const invite = formData.get('invite');
     
-    // 将常用字段映射到后端期望的字段名
-    formData.set('name', formData.get('username')); 
-    formData.set('confirm_password', formData.get('password')); 
-    formData.set('invite_code', formData.get('invite'));
-    
-    // 同时提交验证码字段，兼容可能的后端接收字段
-    const codeValue = formData.get('code');
-    if (codeValue) {
-      formData.set('code', codeValue);
+    const params = new URLSearchParams();
+    params.append('username', username);
+    params.append('name', username);
+    params.append('email', email);
+    params.append('password', password);
+    params.append('confirm_password', password);
+    if (invite) {
+      params.append('invite_code', invite);
     }
     
     const response = await fetch('https://api.ipflex.ink/user/register_link', {
       method: 'POST',
-      body: formData
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: params.toString()
     });
 
     const result = await response.json();
-    console.log(result);
+    console.log('Registration result:', result);
   
     if (result.code === 0) {
-      alert('${alert_msg}');
+      alert('${lang === 'zh' ? '注册成功!请查看邮箱中的验证邮件完成注册。' : 'Registration successful! Please check your email for verification.'}');
     } else {
-      alert(result.msg || '注册失败，请重试');
+      alert(result.msg || '${lang === 'zh' ? '注册失败，请重试' : 'Registration failed, please try again'}');
     }
   } catch (error) {
     console.error('Registration error:', error);
-    alert('注册失败，请重试');
+    alert('${lang === 'zh' ? '注册失败，请重试' : 'Registration failed, please try again'}');
+  } finally {
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = '${lang === 'zh' ? '注 册' : 'Register'}';
+    }
   }
 }`;
 ---
@@ -100,10 +86,10 @@ const handleSubmit = `async function(e) {
   <div id="page-root" data-lang={lang} class="min-h-screen flex">
     <!-- 左侧背景图和文案 -->
     <aside class="hidden md:block relative" style="width: min(45%, 714px);">
-      <img src={registerBg.src} alt={lang === 'zh' ? "IPFlex代理IP服务注册背景 - 高速稳定的IP代理" : "IPFlex proxy IP service registration background - Fast and stable IP proxy"} class="h-screen w-full object-cover object-left" />
+      <img src={registerBg.src} alt={t('register.sidebar.alt')} class="h-screen w-full object-cover object-left" />
       <div class="absolute inset-0 flex flex-col justify-between p-12">
         <div>
-          <p class="text-xl font-medium text-gray-800 mb-16 text-center">{lang === 'zh' ? '专业的代理服务提供商' : 'Professional Proxy Service Provider'}</p>
+          <p class="text-xl font-medium text-gray-800 mb-16 text-center">{t('register.sidebar.tagline')}</p>
           
           <div class="space-y-3">
             <div class="flex items-start space-x-4 bg-white/10 backdrop-blur-sm p-4 rounded-lg">
@@ -113,8 +99,8 @@ const handleSubmit = `async function(e) {
                 </svg>
               </div>
               <div>
-                <p class="text-lg font-medium mb-1 text-gray-800">{lang === 'zh' ? '高速稳定' : 'Fast & Stable'}</p>
-                <p class="text-sm text-gray-600">{lang === 'zh' ? '采用优质线路，确保代理服务的稳定性和速度' : 'Premium network ensures stability and speed'}</p>
+                <p class="text-lg font-medium mb-1 text-gray-800">{t('register.sidebar.fastStable.title')}</p>
+                <p class="text-sm text-gray-600">{t('register.sidebar.fastStable.desc')}</p>
               </div>
             </div>
 
@@ -125,8 +111,8 @@ const handleSubmit = `async function(e) {
                 </svg>
               </div>
               <div>
-                <p class="text-lg font-medium mb-1 text-gray-800">{lang === 'zh' ? '安全匿名' : 'Safe & Anonymous'}</p>
-                <p class="text-sm text-gray-600">{lang === 'zh' ? '采用加密技术，保护您的隐私安全' : 'Encryption technology protects your privacy'}</p>
+                <p class="text-lg font-medium mb-1 text-gray-800">{t('register.sidebar.safeAnonymous.title')}</p>
+                <p class="text-sm text-gray-600">{t('register.sidebar.safeAnonymous.desc')}</p>
               </div>
             </div>
 
@@ -137,18 +123,18 @@ const handleSubmit = `async function(e) {
                 </svg>
               </div>
               <div>
-                <p class="text-lg font-medium mb-1 text-gray-800">{lang === 'zh' ? '按量计费' : 'Pay As You Go'}</p>
-                <p class="text-sm text-gray-600">{lang === 'zh' ? '无需月付，充值即可使用，余额永久有效' : 'No monthly fee, pay as you go, balance never expires'}</p>
+                <p class="text-lg font-medium mb-1 text-gray-800">{t('register.sidebar.payAsYouGo.title')}</p>
+                <p class="text-sm text-gray-600">{t('register.sidebar.payAsYouGo.desc')}</p>
               </div>
             </div>
           </div>
         </div>
 
         <div class="mt-11 p-4 bg-blue-500/60 rounded-xl">
-          <p class="text-sm font-medium mb-1 text-white">{lang === 'zh' ? '新用户专享' : 'New User Special'}</p>
+          <p class="text-sm font-medium mb-1 text-white">{t('register.sidebar.newUser.title')}</p>
           <div class="flex items-baseline space-x-2">
             <span class="text-4xl font-bold text-white">￥15</span>
-            <span class="text-sm text-white/90">{lang === 'zh' ? '体验金' : 'Trial Balance'}</span>
+            <span class="text-sm text-white/90">{t('register.sidebar.newUser.trial')}</span>
           </div>
         </div>
       </div>
@@ -159,130 +145,102 @@ const handleSubmit = `async function(e) {
       <article class="w-full max-w-md">
         <div class="flex items-center mb-8">
           <span class="text-2xl font-bold text-blue-600 mr-3">IPFlex</span>
-          <h1 class="text-2xl font-bold text-gray-900">{lang === 'zh' ? '立即注册 IPFlex 账号' : 'Create Your IPFlex Account'}</h1>
+          <h1 class="text-2xl font-bold text-gray-900">{t('register.title')}</h1>
         </div>
 
         <Form 
+          onSubmit={handleRegisterSubmit}
           inputs={[
             {
               type: 'text',
               name: 'username',
-              label: lang === 'zh' ? '用户名' : 'Username',
-              placeholder: lang === 'zh' ? '4~6位字符' : '4-6 characters',
+              label: t('register.form.username'),
+              placeholder: t('register.form.usernamePlaceholder'),
               required: true,
               containerClassName: 'mb-4'
             },
             {
               type: 'email',
               name: 'email',
-              label: lang === 'zh' ? '邮箱' : 'Email',
-              placeholder: lang === 'zh' ? '请输入邮箱' : 'Enter your email',
+              label: t('register.form.email'),
+              placeholder: t('register.form.emailPlaceholder'),
               required: true,
               containerClassName: 'mb-4'
             },
-            //             {
-            //   type: 'text',
-            //   name: 'code',
-            //   label: lang === 'zh' ? '验证码' : 'Verification Code',
-            //   placeholder: lang === 'zh' ? '请输入邮箱验证码' : 'Enter the code you received by email',
-            //   containerClassName: 'mb-6',
-            //   value: '',
-            //   required: true
-            // },
             {
               type: 'password',
               name: 'password',
-              label: lang === 'zh' ? '密码' : 'Password',
-              placeholder: lang === 'zh' ? '6~20位字符' : '6-20 characters',
+              label: t('register.form.password'),
+              placeholder: t('register.form.passwordPlaceholder'),
               required: true,
               containerClassName: 'mb-4'
             },
             {
               type: 'text',
               name: 'invite',
-              label: lang === 'zh' ? '邀请码' : 'Invite Code',
-              placeholder: lang === 'zh' ? '选填' : 'Optional',
+              label: t('register.form.invite'),
+              placeholder: t('register.form.invitePlaceholder'),
               containerClassName: 'mb-6',
               value: inviteCode,
               disabled: !!urlInviteCode,
             },
-
           ]}
           button={{
-            text: lang === 'zh' ? '注 册' : 'Register',
+            text: t('register.form.submit'),
             className: 'w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors',
-            onclick: handleSubmit
           }}
         />
 
       
 
         <div class="mt-6 text-center text-sm text-gray-500">
-          {lang === 'zh' ? '已有账号？' : 'Already have an account?'}
+          {t('register.hasAccount')}
           <a href='https://dashboard.ipflex.ink/login' class="text-blue-600 hover:text-blue-700 font-medium ml-1">
-            {lang === 'zh' ? '立即登录' : 'Sign in'}
+            {t('register.signIn')}
           </a>
         </div>
 
-        <section class="sr-only" aria-label={lang === 'zh' ? '注册流程补充说明' : 'Registration process notes'}>
-          <h2>{lang === 'zh' ? '注册流程与接入准备' : 'Registration Workflow and Onboarding Readiness'}</h2>
-          <p>
-            {lang === 'zh'
-              ? '完成账号注册后，建议先进行基础连通验证，确认接口鉴权、请求成功率、响应时延与日志记录都符合预期。首轮验证可以使用小规模样本流量，观察失败类型与重试行为，再逐步扩大任务范围。这样可以更快识别配置误差、减少上线前返工，并提升跨团队协作效率。'
-              : 'After creating an account, teams should run a baseline readiness check for authentication, success ratio, response latency, and logging quality. Start with small traffic samples, observe failure patterns and retry behavior, then expand in phases. This process helps identify configuration gaps early, reduces rework before production, and improves collaboration across product, engineering, and operations.'}
-          </p>
-          <p>
-            {lang === 'zh'
-              ? '建议同步建立发布检查清单、异常升级路径和回滚预案，并明确每个阶段的负责人。持续记录关键指标变化，有助于在流量增长时保持交付稳定，降低运维波动风险。'
-              : 'Teams should also define release checklists, escalation paths, and rollback plans with clear ownership for each stage. Consistent tracking of key metrics keeps delivery stable during traffic growth and reduces operational uncertainty.'}
-          </p>
+        <section class="sr-only" aria-label={t('register.onboardingNotes.title')}>
+          <h2>{t('register.onboardingNotes.title')}</h2>
+          <p>{t('register.onboardingNotes.p1')}</p>
+          <p>{t('register.onboardingNotes.p2')}</p>
         </section>
 
         <details class="mt-6 rounded-xl border border-gray-200 bg-gray-50 p-4 text-left">
           <summary class="cursor-pointer list-none text-sm font-semibold text-gray-700">
-            {lang === 'zh' ? '注册接入说明（展开查看）' : 'Registration Onboarding Notes (Expand)'}
+            {t('register.onboardingNotes.expandTitle')}
           </summary>
           <section class="mt-3">
             <h2 class="mb-3 text-lg font-bold text-gray-900">
-              {lang === 'zh' ? '注册后你可以立即开始什么' : 'What You Can Start Right After Registration'}
+              {t('register.onboardingNotes.afterRegisterTitle')}
             </h2>
             <p class="mb-3 text-sm leading-6 text-gray-700">
-              {lang === 'zh'
-                ? '完成注册后，你可以在控制台创建代理提取配置、查看实时用量、管理 API 凭证并按业务场景选择不同代理类型。对于账号运营和长期会话任务，建议优先启用静态住宅代理；对于大规模采集任务，建议使用动态住宅代理并配置重试策略；对于高并发程序化任务，可使用数据中心代理优化吞吐和成本。'
-                : 'After registration, you can create proxy extraction settings, monitor real-time usage, manage API credentials, and select proxy types by workload. Use static residential proxies for persistent account sessions, dynamic residential proxies for large-scale collection with retry strategy, and datacenter proxies for high-throughput automation at lower cost.'}
+              {t('register.onboardingNotes.afterRegisterP1')}
             </p>
             <p class="text-sm leading-6 text-gray-700">
-              {lang === 'zh'
-                ? '建议首次接入时先进行小流量验证，确认目标站点可达性、请求成功率和地域命中情况，再逐步放量。这样可以更稳妥地控制预算，并在上线前提前发现风控或兼容性问题。'
-                : 'For first-time onboarding, begin with a small traffic test to validate reachability, success rate, and geo targeting before scaling up. This staged rollout helps control budget and catch compatibility or anti-bot issues early.'}
+              {t('register.onboardingNotes.afterRegisterP2')}
             </p>
             <p class="mt-3 text-sm leading-6 text-gray-700">
-              {lang === 'zh'
-                ? '建议在接入初期优先完成基础检查项：创建 API 凭证、确认线路区域、验证请求成功率、监测响应时延，并按阶段逐步放量。'
-                : 'Registration onboarding checklist: create API credentials, configure endpoint region, validate request success rate, monitor response latency, and scale traffic gradually from staging to production.'}
+              {t('register.onboardingNotes.checklist')}
             </p>
             <p class="mt-3 text-sm leading-6 text-gray-700">
-              {lang === 'zh'
-                ? '完整接入流程通常包括：明确业务目标、梳理请求模式、配置鉴权机制、验证路由行为、检查异常处理并建立统一监控指标。上线前做完这些准备，通常能获得更稳定的运行表现、更清晰的容量规划和更高效的排障节奏。'
-                : 'Successful onboarding usually follows a clear sequence: define business goals, map request patterns, configure authentication, validate routing behavior, review error handling, and monitor service quality with consistent metrics. Teams that complete this checklist before production rollout often achieve better stability, clearer capacity planning, and faster troubleshooting when traffic scales. This practical process also reduces avoidable rework in later integration stages.'}
+              {t('register.onboardingNotes.onboardingProcess')}
             </p>
             <p class="mt-3 text-sm leading-6 text-gray-700">
-              {lang === 'zh'
-                ? '生产阶段可继续建立凭证轮换策略、线路兜底方案、超时基线和每周质量复盘机制，以保证持续交付的稳定性。'
-                : 'Production readiness checklist: credential rotation policy, endpoint fallback strategy, request timeout baseline, and weekly quality review cadence.'}
+              {t('register.onboardingNotes.productionReadiness')}
             </p>
             <p class="mt-3 text-sm leading-6 text-gray-700">
-              {lang === 'zh' ? '相关页面：' : 'Related pages:'}
+              {t('register.onboardingNotes.relatedLinksTitle')}
               <a class="ml-2 text-blue-600 hover:text-blue-700" href={`/${lang}/pricing`}>
-                {lang === 'zh' ? '价格方案' : 'Pricing'}
+                {t('register.onboardingNotes.pricing')}
               </a>
               <span class="mx-2">·</span>
               <a class="text-blue-600 hover:text-blue-700" href={`/${lang}/detail`}>
-                {lang === 'zh' ? '产品详情' : 'Product Details'}
+                {t('register.onboardingNotes.productDetails')}
               </a>
               <span class="mx-2">·</span>
               <a class="text-blue-600 hover:text-blue-700" href={`/${lang}/scenarios`}>
-                {lang === 'zh' ? '应用场景' : 'Use Cases'}
+                {t('register.onboardingNotes.useCases')}
               </a>
             </p>
           </section>
@@ -309,43 +267,3 @@ const handleSubmit = `async function(e) {
     @apply block text-sm font-medium text-gray-700 mb-1;
   }
 </style>
-
-
-
-<!-- 邀请码优先从URL参数获取，若无则读取本地缓存 -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const urlInviteCodeLocal = urlParams.get('invite') || urlParams.get('ref') || urlParams.get('code');
-
-    // 获取缓存的邀请码
-    const getCachedInviteCode = () => {
-      const cachedData = localStorage.getItem('inviteCodeData');
-      if (cachedData) {
-        try {
-          const { code, timestamp } = JSON.parse(cachedData);
-          const now = new Date().getTime();
-          const isExpired = now - timestamp > 24 * 60 * 60 * 1000; // 24小时过期
-          if (!isExpired) return code;
-        } catch (e) {
-          // 解析失败忽略
-        }
-      }
-      return null;
-    };
-
-    // 优先使用URL参数中的邀请码，如果没有则使用缓存的邀请码
-    const cachedInvite = getCachedInviteCode();
-    const finalInvite = urlInviteCodeLocal || cachedInvite;
-
-    if (finalInvite) {
-      const inviteInput = document.querySelector('input[name="invite"]');
-      if (inviteInput) {
-        inviteInput.value = finalInvite;
-        if (urlInviteCodeLocal) {
-          inviteInput.disabled = true;
-        }
-      }
-    }
-  });
-</script>

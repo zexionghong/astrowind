@@ -1,0 +1,77 @@
+{
+  "resources": {
+    "title": "IPFlex Resources: Proxy Definitions, Onboarding Docs, Selection Guides, and Playbooks",
+    "description": "Browse the IPFlex resource hub for proxy definitions, plan selection guidance, implementation methods, integration docs, and curated playbooks for evaluation and rollout.",
+    "header": {
+      "eyebrow": "Resource Hub",
+      "title": "IPFlex Resources",
+      "description": "This page does not replace the help center. It gives the main domain a clear knowledge entrypoint for definitions, selection, rollout, onboarding, and implementation material."
+    },
+    "sections": [
+      {
+        "title": "Definitions and Selection",
+        "description": "Clarify the difference between static residential, dynamic residential, and datacenter proxies before choosing the best fit.",
+        "links": [
+          { "href": "detail", "label": "Proxy Type Selection Guide", "note": "Compare capability boundaries, use cases, and rollout guidance." },
+          { "href": "static-residential-proxy", "label": "Static Residential Proxy", "note": "Best for stable sessions, account consistency, and low identity volatility." },
+          { "href": "dynamic-residential-proxy", "label": "Dynamic Residential Proxy", "note": "Best for broad coverage, rotation, and large-scale collection." },
+          { "href": "static-datacenter-proxy", "label": "Static Datacenter Proxy", "note": "Best for high-throughput API workloads and predictable cost." },
+          { "href": "pricing", "label": "Pricing and Plan Selection Guide", "note": "Evaluate plans with success rate, latency, and cost-per-completion." }
+        ]
+      },
+      {
+        "title": "Use Cases and Rollout",
+        "description": "Start from business goals, then choose the scenario and proxy strategy that fits operational reality.",
+        "links": [
+          { "href": "scenarios", "label": "Use Case Overview", "note": "Browse ad verification, e-commerce, collection, and security workflows." },
+          { "href": "use-case/static-residential-proxy-ad-verification", "label": "Ad Verification Proxy", "note": "Validate geo accuracy, placement consistency, and fraud exposure." },
+          { "href": "use-case/static-residential-proxy-ecommerce", "label": "E-commerce Proxy", "note": "Support account operations, session stability, and platform execution." },
+          { "href": "use-case/static-residential-proxy-scraping", "label": "Market Research and Data Collection", "note": "Focus on collection reliability, coverage, and target-site access." },
+          { "href": "use-case/static-residential-proxy-security", "label": "Network Security and Risk Control", "note": "Support reproducible testing, inspection, and control strategy." }
+        ]
+      },
+      {
+        "title": "Onboarding and Docs",
+        "description": "The main domain is the decision and discovery layer, while the help center remains the detailed documentation layer.",
+        "links": [
+          { "href": "https://docs.ipflex.ink/", "label": "Help Center", "note": "Open API, authentication, onboarding, and operational documentation.", "external": true },
+          { "href": "register", "label": "Registration and Access", "note": "Create an account and start a PoC or production rollout." },
+          { "href": "privacy", "label": "Privacy and Data Governance", "note": "Review data handling, retention, and security governance policy." }
+        ]
+      },
+      {
+        "title": "Featured Playbooks",
+        "description": "These articles work well as execution references and internal review material.",
+        "links": [
+          { "href": "blog/enterprise-proxy-onboarding-playbook-2026", "label": "Enterprise Proxy Onboarding Playbook", "note": "Operational guide from PoC to production scale-up." },
+          { "href": "blog/proxy-sticky-session-checkout-login-stability-guide", "label": "Sticky Session Stability Guide", "note": "Useful for account, login, checkout, and stability validation." },
+          { "href": "blog/proxy-types-comparison", "label": "Proxy Type Comparison", "note": "Complementary explanation of product tradeoffs and fit." },
+          { "href": "blog", "label": "Browse All Blog Posts", "note": "Read more proxy, integration, and GEO methodology content." }
+        ]
+      }
+    ],
+    "readingOrder": {
+      "title": "Recommended Reading Order",
+      "steps": [
+        "Start with the proxy type guide to decide whether stability, coverage, or throughput matters most.",
+        "Move to pricing and use case pages so product fit and budget fit are evaluated with the same logic.",
+        "After the decision is clear, use the help center and rollout playbooks to reduce onboarding gaps."
+      ]
+    },
+    "faqTitle": "Frequently Asked Questions",
+    "faqs": [
+      {
+        "q": "Which section should teams start with?",
+        "a": "Start with the proxy type guide and pricing evaluation if the team is still deciding. Move to use cases and product pages when the workload is already clear. Use the help center when the team is in onboarding."
+      },
+      {
+        "q": "What is the difference between the resource hub and the help center?",
+        "a": "The resource hub is the decision and discovery layer for definitions, selection, and methods. The help center is the detailed documentation layer for API, authentication, onboarding, and operations."
+      },
+      {
+        "q": "Which pages are best for internal review or procurement decisions?",
+        "a": "The most useful pages are the proxy type selection guide, pricing page, use case overview, and the enterprise onboarding playbook because they combine product fit, rollout logic, and evaluation criteria."
+      }
+    ]
+  }
+}

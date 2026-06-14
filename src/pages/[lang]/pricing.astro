@@ -1,97 +1,31 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
 import Prices from '~/components/widgets/Pricing.astro';
-// import FAQs from '~/components/widgets/FAQs.astro';
-// import Steps from '~/components/widgets/Steps.astro';
-import Features3 from '~/components/widgets/Features3.astro';
 import SimpleReferralWidget from '~/components/widgets/SimpleReferralWidget.astro';
 import { SITE } from 'astrowind:config';
 import { useTranslations } from '~/utils/i18n';
+import { getStaticPathsForLang, generateBreadcrumbSchema, generateFAQSchema } from '~/utils/schema';
+
+export function getStaticPaths() {
+  return getStaticPathsForLang();
+}
 
 const { lang } = Astro.params;
 const t = useTranslations(lang);
 
 const metadata = {
-  title: lang === 'zh'
-    ? 'IPFlex 企业代理IP定价方案与套餐选择指南'
-    : 'IPFlex Enterprise Proxy Pricing Plans and Selection Guide',
-  description: lang === 'zh'
-    ? '查看 IPFlex 企业网络服务定价方案，覆盖静态住宅、动态住宅与数据中心线路。按业务规模灵活计费，支持 API 接入、全球节点、会话管理、重试策略、访问规则、监控告警、权限审计与成本优化，适配采集分析、广告核验、跨境运营、自动化扩展与长期稳定交付。'
-    : 'Explore IPFlex proxy pricing for static residential, dynamic residential, and datacenter plans with flexible billing, global coverage, API integration, and clear scaling paths for data collection and growth.',
+  title: t('pricing.metadata.title'),
+  description: t('pricing.metadata.description'),
 };
-const pricingIntro = lang === 'zh'
-  ? 'IPFlex 代理IP定价方案面向不同业务阶段提供可扩展组合，团队可以根据稳定性目标、请求体量与预算约束进行分层采购。'
-  : 'IPFlex proxy pricing plans are designed for staged growth, so teams can combine products by stability target, request volume, and budget constraints.';
+const pricingIntro = t('pricing.intro');
+const guideContent = t('pricing.guideContent');
+const guideList = t('pricing.guideList');
 
-const pricingFaqs = lang === 'zh'
-  ? [
-      {
-        q: '应该先看价格还是先看成功率？',
-        a: '应先看在统一负载下能否稳定完成目标任务，再比较单位完成成本。只看标价容易低估失败重试和运营波动带来的真实成本。',
-      },
-      {
-        q: '什么时候适合从试用流量扩到生产采购？',
-        a: '当成功率、时延、重试开销和预算偏差在完整业务周期内保持稳定时，再按业务优先级逐步扩容更稳妥。',
-      },
-      {
-        q: '定价评估时应比较哪些指标？',
-        a: '建议统一比较成功率、P50/P95 时延、失败类型分布、重试开销和单业务流程月度完成成本。',
-      },
-    ]
-  : [
-      {
-        q: 'Should teams compare list price or success rate first?',
-        a: 'Start with whether a plan can reliably complete the target workflow under the same workload, then compare cost per completed outcome.',
-      },
-      {
-        q: 'When is a team ready to move from pilot traffic to production purchasing?',
-        a: 'Scale after success ratio, latency, retry overhead, and budget variance remain stable through a full business cycle.',
-      },
-      {
-        q: 'Which metrics matter most for pricing evaluation?',
-        a: 'Compare success ratio, P50/P95 latency, failure distribution, retry overhead, and monthly cost per completed workflow.',
-      },
-    ];
+const pricingFaqsRaw = t('pricing.faqs');
+const pricingFaqs = Array.isArray(pricingFaqsRaw) ? pricingFaqsRaw : [];
 
-const breadcrumbSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    {
-      '@type': 'ListItem',
-      position: 1,
-      name: 'IPFlex',
-      item: `https://ipflex.ink/${lang}`,
-    },
-    {
-      '@type': 'ListItem',
-      position: 2,
-      name: lang === 'zh' ? '代理定价' : 'Proxy Pricing',
-      item: `https://ipflex.ink/${lang}/pricing`,
-    },
-  ],
-};
-
-const pricingFaqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: pricingFaqs.map((item) => ({
-    '@type': 'Question',
-    name: item.q,
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: item.a,
-    },
-  })),
-};
-
-export function getStaticPaths() {
-  return [
-    { params: { lang: 'en' } },
-    { params: { lang: 'zh' } },
-  ];
-}
+const breadcrumbSchema = generateBreadcrumbSchema(lang, t('pricing.hero.title'), 'pricing');
+const pricingFaqSchema = generateFAQSchema(pricingFaqs);
 
 const prices = [
   {
@@ -99,9 +33,9 @@ const prices = [
     subtitle: t('pricing.plans.static.subtitle'),
     price: t('pricing.plans.static.price'),
     period: t('pricing.plans.static.period'),
-    items: t('pricing.plans.static.features').map(feature => ({
+    items: Array.isArray(t('pricing.plans.static.features')) ? t('pricing.plans.static.features').map((feature: any) => ({
       description: feature,
-    })),
+    })) : [],
     callToAction: {
       target: '_blank',
       text: t('pricing.plans.static.action'),
@@ -113,9 +47,9 @@ const prices = [
     subtitle: t('pricing.plans.dynamic.subtitle'),
     price: t('pricing.plans.dynamic.price'),
     period: t('pricing.plans.dynamic.period'),
-    items: t('pricing.plans.dynamic.features').map(feature => ({
+    items: Array.isArray(t('pricing.plans.dynamic.features')) ? t('pricing.plans.dynamic.features').map((feature: any) => ({
       description: feature,
-    })),
+    })) : [],
     callToAction: {
       target: '_blank',
       text: t('pricing.plans.dynamic.action'),
@@ -129,9 +63,9 @@ const prices = [
     subtitle: t('pricing.plans.datacenter.subtitle'),
     price: t('pricing.plans.datacenter.price'),
     period: t('pricing.plans.datacenter.period'),
-    items: t('pricing.plans.datacenter.features').map(feature => ({
+    items: Array.isArray(t('pricing.plans.datacenter.features')) ? t('pricing.plans.datacenter.features').map((feature: any) => ({
       description: feature,
-    })),
+    })) : [],
     callToAction: {
       target: '_blank',
       text: t('pricing.plans.datacenter.action'),
@@ -146,11 +80,10 @@ const features = {
     items: t('pricing.features.items'),
 };
 
-// 产品结构化数据
 const productSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: lang === 'zh' ? 'IPFlex 代理IP定价方案' : 'IPFlex Proxy Pricing Plans',
+  name: t('pricing.metadata.title'),
   description: pricingIntro,
   provider: {
     '@type': 'Organization',
@@ -192,106 +125,25 @@ const productSchema = {
 
   <section class="mx-auto max-w-5xl px-4 py-14">
     <h2 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
-      {lang === 'zh' ? '如何选择合适的代理套餐' : 'How to Choose the Right Proxy Plan'}
+      {t('pricing.guideTitle')}
     </h2>
     <p class="mb-4 text-base leading-7 text-gray-700 dark:text-gray-300">
       {pricingIntro}
     </p>
-    <p class="mb-4 text-base leading-7 text-gray-700 dark:text-gray-300">
-      {lang === 'zh'
-        ? '在选择代理套餐时，建议先确认业务目标、请求并发、目标网站反爬强度和预算结构。静态住宅代理更适合需要长期稳定会话的账号运营、支付验证和风控场景；动态住宅代理更适合大规模采集、广告验证和需要频繁切换出口的任务；静态数据中心代理更适合高并发 API 调用、自动化测试和成本敏感业务。'
-        : 'When selecting a proxy plan, start with business goals, request concurrency, anti-bot difficulty, and budget structure. Static residential proxies are ideal for long sessions in account operations and risk control. Dynamic residential proxies are better for large crawling and ad verification workloads. Static datacenter proxies are suitable for high-throughput API calls, automation, and cost-sensitive tasks.'}
-    </p>
-    <p class="mb-4 text-base leading-7 text-gray-700 dark:text-gray-300">
-      {lang === 'zh'
-        ? '如果你的核心 KPI 是成功率与稳定性，优先关注可用率、失败重试策略和地域覆盖；如果你的核心 KPI 是成本效率，优先关注单次请求成本、会话复用能力和批量任务调度。IPFlex 支持按业务阶段组合采购，从小流量验证到生产级扩展可以平滑迁移，避免一次性过度投入。'
-        : 'If your KPI is stability, prioritize success rate, retry strategy, and geo coverage. If your KPI is cost efficiency, prioritize cost per successful request, session reuse, and batch scheduling. IPFlex supports phased scaling so teams can validate with small traffic first and then expand to production without large upfront commitment.'}
-    </p>
+    {Array.isArray(guideContent) && guideContent.map((item: any) => (
+      <p class="mb-4 text-base leading-7 text-gray-700 dark:text-gray-300">{item}</p>
+    ))}
     <ul class="list-disc space-y-2 pl-5 text-base leading-7 text-gray-700 dark:text-gray-300">
-      <li>{lang === 'zh' ? '账号体系任务：优先静态住宅代理，保证会话连续和身份一致。' : 'Account-based workflows: prioritize static residential for persistent identity and session continuity.'}</li>
-      <li>{lang === 'zh' ? '抓取采集任务：优先动态住宅代理，提升覆盖率并降低封禁概率。' : 'Data collection workloads: prioritize dynamic residential for broader coverage and lower block rates.'}</li>
-      <li>{lang === 'zh' ? '高并发接口任务：优先数据中心代理，控制单位成本并提高吞吐。' : 'High-concurrency API tasks: prioritize datacenter proxies for throughput and predictable costs.'}</li>
+      {Array.isArray(guideList) && guideList.map((item: any) => <li>{item}</li>)}
     </ul>
-    <p class="mt-4 text-base leading-7 text-gray-700 dark:text-gray-300">
-      {lang === 'zh'
-        ? '评估套餐时，建议用可量化结果而不是只看标价。基准项可包含成功率、平均完成时长、重试开销、失败类型分布和单业务流程月度成本。按这套方法比较，更容易在真实流量下平衡吞吐、稳定性与运营可预测性。'
-        : 'Pricing evaluation works best when teams compare measurable outcomes instead of only list price. A reliable baseline should include request success ratio, average completion time, retry overhead, failure classification, and monthly cost per completed workflow. With this method, decision makers can choose a plan that balances throughput, reliability, and operational predictability under real production traffic.'}
-    </p>
-    <p class="mt-4 text-base leading-7 text-gray-700 dark:text-gray-300">
-      {lang === 'zh'
-        ? '对比测试建议至少覆盖一个完整业务周期，并包含高峰时段和重试密集场景，这样最终选择更贴近真实执行环境，而不是理想化假设。'
-        : 'Operational comparison tip: benchmark at least one full business cycle, including peak hours and retry-heavy scenarios, so the selected plan reflects real execution conditions instead of ideal traffic assumptions.'}
-    </p>
-    <p class="mt-4 text-sm leading-6 text-gray-600 dark:text-gray-400">
-      {lang === 'zh'
-        ? '定价评估的运营基线可包含：成功率、中位时延、重试开销、失败类型分布，以及单流程月度完成成本。在真实流量下按同一口径比较，更容易找到稳定性与预算可预测性之间的平衡点。'
-        : 'Operational baseline for pricing decisions: compare success ratio, median latency, retry overhead, failure type distribution, and monthly cost per completed workflow under real traffic, then choose the plan that keeps reliability and budget predictable during scale-up.'}
-    </p>
-    <p class="mt-3 text-sm leading-6 text-gray-600 dark:text-gray-400">
-      {lang === 'zh'
-        ? '方案选择的执行清单建议包括：定义基线负载、进行受控流量测试、记录完成质量、对比高峰期恢复表现，并在最终采购前核对月度预算偏差。'
-        : 'Execution checklist for plan selection: define baseline workload, run controlled traffic tests, record completion quality, compare recovery behavior during peak periods, and verify monthly budget variance before final procurement.'}
-    </p>
-    <p class="mt-3 text-sm leading-6 text-gray-600 dark:text-gray-400">
-      {lang === 'zh'
-        ? '为了提升财务可预测性，团队可将采购节奏与业务周期对齐，设置预算波动护栏，并定期复盘利用率趋势。这有助于保持成本透明，并支持稳健扩容决策。'
-        : 'For financial predictability, teams should align procurement with campaign cycles, set variance guardrails, and review utilization trends regularly. This keeps spending transparent and helps stakeholders make steady scaling decisions.'}
-    </p>
-    <p class="mt-3 text-sm leading-6 text-gray-600 dark:text-gray-400">
-      {lang === 'zh'
-        ? '规划建议是使用一致的负载假设比较多个方案，跨多个业务窗口追踪结果质量，并在决策前明确记录权衡点。该方法能提高预算清晰度，避免被短期波动误导。'
-        : 'Planning tip: compare options with identical workload assumptions, track outcome quality across multiple business windows, and document tradeoffs clearly before commitment. This method improves budget clarity and avoids decisions based on isolated short-term signals.'}
-    </p>
-    <p class="mt-3 text-sm leading-6 text-gray-600 dark:text-gray-400">
-      {lang === 'zh'
-        ? '当团队基于共同假设决策、保留透明对比记录，并在每个业务周期后回看结果时，治理效果通常更好。这种节奏能持续提升规划质量并保持预算决策稳定。'
-        : 'Decision governance works best when teams align on shared assumptions, maintain transparent comparison records, and revisit results after each campaign cycle. With this rhythm, planning quality improves and budget decisions remain stable over longer periods.'}
-    </p>
-    <div class="mt-5 rounded-lg border border-gray-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-900">
-      <h3 class="mb-2 text-base font-semibold text-gray-900 dark:text-white">
-        {lang === 'zh' ? '四步评估法（可直接落地）' : '4-Step Evaluation Framework'}
-      </h3>
-      <ol class="list-decimal space-y-1 pl-5 text-sm leading-6 text-gray-700 dark:text-gray-300">
-        <li>{lang === 'zh' ? '定义统一负载：目标站点、并发、时间窗口、成功判定标准。' : 'Define identical workload: target sites, concurrency, time window, and completion criteria.'}</li>
-        <li>{lang === 'zh' ? '并行跑样本：同一任务在三类套餐下跑完整业务周期。' : 'Run parallel samples: test all three plan types over a full business cycle.'}</li>
-        <li>{lang === 'zh' ? '记录结果：成功率、P50/P95 时延、重试开销、完成成本。' : 'Record outcomes: success ratio, P50/P95 latency, retry overhead, and completion cost.'}</li>
-        <li>{lang === 'zh' ? '做决策复盘：按峰值/常态双窗口评估，保留采购依据。' : 'Review and decide: compare peak and normal windows, then keep transparent decision records.'}</li>
-      </ol>
-      <p class="mt-3 text-xs text-gray-500 dark:text-slate-400">
-        {lang === 'zh'
-          ? '该方法可降低一次性拍脑袋采购风险，并提升财务与工程之间的决策一致性。'
-          : 'This approach reduces one-shot procurement risk and improves alignment between finance and engineering.'}
-      </p>
-    </div>
-    <div class="mt-4 grid gap-2 text-sm">
-      <a class="text-blue-700 underline underline-offset-2 dark:text-blue-300" href={`/${lang}/blog/enterprise-proxy-onboarding-playbook-2026${lang === 'en' ? '-en' : ''}`}>
-        {lang === 'zh' ? '查看接入执行手册（2026）' : 'Read onboarding execution playbook (2026)'}
-      </a>
-      <a class="text-blue-700 underline underline-offset-2 dark:text-blue-300" href={`/${lang}/blog/proxy-sticky-session-checkout-login-stability-guide${lang === 'en' ? '-en' : ''}`}>
-        {lang === 'zh' ? '查看会话稳定性评估方法' : 'Read sticky session stability evaluation guide'}
-      </a>
-      <a class="text-blue-700 underline underline-offset-2 dark:text-blue-300" href="https://docs.ipflex.ink/" target="_blank" rel="noopener noreferrer">
-        {lang === 'zh' ? '查看 API 与集成文档' : 'Open API and integration docs'}
-      </a>
-    </div>
-    {lang === 'zh' && (
-      <p class="mt-3 text-xs leading-6 text-gray-500 dark:text-gray-400">
-        Pricing decision baseline in practice: compare plans with identical workload assumptions, evaluate completion quality under peak and normal windows, measure retry overhead, verify cost variance tolerance, and keep decision records transparent for procurement, finance, and engineering review alignment.
-      </p>
-    )}
-    {lang === 'zh' && (
-      <p class="mt-2 text-xs leading-6 text-gray-500 dark:text-gray-400">
-        Procurement decisions are usually more reliable when teams document assumptions, include both peak and off-peak samples, and review result stability over multiple cycles instead of one-time snapshots.
-      </p>
-    )}
   </section>
 
   <section class="mx-auto max-w-5xl px-4 pb-14">
     <h2 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
-      {lang === 'zh' ? '定价常见问题' : 'Pricing FAQs'}
+      {t('pricing.faqTitle')}
     </h2>
     <div class="space-y-4">
-      {pricingFaqs.map((item) => (
+      {pricingFaqs.map((item: any) => (
         <article class="rounded-xl border border-gray-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-900">
           <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{item.q}</h3>
           <p class="mt-2 text-sm leading-6 text-gray-700 dark:text-gray-300">{item.a}</p>

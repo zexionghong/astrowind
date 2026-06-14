@@ -1,0 +1,77 @@
+{
+  "about": {
+    "title": "About IPFlex: Enterprise Proxy Services, Delivery Method, and Support Principles",
+    "description": "Learn what IPFlex does, how the team delivers proxy services, what support principles it follows, and how data governance is handled for evaluation, PoC, and production rollout.",
+    "header": {
+      "eyebrow": "About IPFlex",
+      "title": "About IPFlex",
+      "description": "This page gives procurement, technical, and operations teams a clear view of what IPFlex does, where it fits, and how proxy delivery is handled before they move into product pages or documentation."
+    },
+    "whatWeDo": {
+      "title": "What IPFlex Does",
+      "description": "IPFlex provides enterprise proxy capability across static residential, dynamic residential, and datacenter proxy services. The focus is not only on node access, but on making proxy capacity usable in a defined workload, onboarding path, and stability model.",
+      "facts": [
+        "Covers three core proxy capabilities: static residential, dynamic residential, and datacenter proxies.",
+        "Provides layered support through a help center, onboarding docs, a resource hub, and playbooks.",
+        "Supports use cases such as data collection, ad verification, cross-border e-commerce, account stability, and geo-visibility validation.",
+        "Helps teams make consistent decisions across evaluation, PoC, onboarding, and scale-up phases."
+      ]
+    },
+    "evaluation": {
+      "title": "How to Evaluate Fit",
+      "description": "Proxy capability should be evaluated when teams face session stability, account consistency, geo-visibility validation, high-volume collection, or predictable budget requirements. Fit depends on session requirements, coverage targets, throughput boundaries, and acceptable cost.",
+      "fourQuestions": "Start with these four questions:",
+      "questions": [
+        "Does the workflow require long sessions or a stable identity?",
+        "Does it require geo-level coverage or exit rotation?",
+        "Is high-throughput capacity a primary goal?",
+        "Can the evaluation be measured with success ratio, latency, and unit cost?"
+      ]
+    },
+    "principles": {
+      "title": "Delivery and Support Principles",
+      "items": [
+        {
+          "title": "Define the workload before choosing the proxy type",
+          "description": "The selection process starts with session stability, coverage, throughput, and cost boundaries, then maps the workload to static residential, dynamic residential, or datacenter proxies."
+        },
+        {
+          "title": "Use measurable metrics for PoC and scale-up",
+          "description": "Evaluation should prioritize success ratio, P95 latency, recovery time after blocks, challenge trigger rate, and cost per completed workflow instead of subjective impressions."
+        },
+        {
+          "title": "Extend delivery into onboarding and operations",
+          "description": "The team treats proxy delivery as an operational capability that includes authentication, access control, logging, troubleshooting, and routine optimization."
+        }
+      ]
+    },
+    "nextSteps": {
+      "title": "Next Steps",
+      "proxyGuide": {
+        "title": "Proxy Type Selection Guide",
+        "description": "Compare static residential, dynamic residential, and datacenter proxy fit first."
+      },
+      "resources": {
+        "title": "Resources",
+        "description": "Open definitions, onboarding docs, use cases, and selected execution playbooks."
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "q": "What teams is IPFlex best suited for?",
+          "a": "It is best suited for teams that need stable proxy capability as part of a repeatable operating workflow, including data collection, e-commerce operations, ad verification, risk control, and geo-validation."
+        },
+        {
+          "q": "How is this page different from product pages and the help center?",
+          "a": "The About page explains positioning, delivery method, and governance principles. Product pages explain workload fit. The help center covers API, authentication, and operational instructions."
+        },
+        {
+          "q": "What should teams confirm before procurement or onboarding?",
+          "a": "Teams should first confirm whether the workload needs session stability, exit rotation, or high-throughput capacity, then validate success ratio, latency, recovery, and unit cost before rollout."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+export { default as Header } from './widgets/Header.astro';
+export { default as Footer } from './widgets/Footer.astro';
+export { default as Hero } from './widgets/Hero.astro';
+export { default as Hero2 } from './widgets/Hero2.astro';
+export { default as Features } from './widgets/Features.astro';
+export { default as Features2 } from './widgets/Features2.astro';
+export { default as Features3 } from './widgets/Features3.astro';
+export { default as Pricing } from './widgets/Pricing.astro';
+export { default as PricingCards } from './widgets/PricingCards.astro';
+export { default as PricingTable } from './widgets/PricingTable.astro';
+export { default as CallToAction } from './widgets/CallToAction.astro';
+export { default as FAQs } from './widgets/FAQs.astro';
+export { default as Contact } from './widgets/Contact.astro';
+export { default as Steps } from './widgets/Steps.astro';
+export { default as SimpleSteps } from './widgets/SimpleSteps.astro';

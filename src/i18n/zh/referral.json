@@ -1,0 +1,47 @@
+{
+  "referral": {
+    "title": "IPFlex推荐返现计划 - 最高10%佣金奖励 | 邀请好友赚取收益",
+    "description": "IPFlex推荐返现计划，邀请好友注册购买代理服务，好友充值立即返现10%佣金。零门槛参与，无限推荐。立即加入IPFlex合伙人计划！",
+    "hero": {
+      "badge": "推荐返现计划",
+      "title": "邀请好友，获得",
+      "titleHighlight": "10%佣金",
+      "description": "加入IPFlex推荐返现计划，每推荐一位好友购买代理服务，好友充值时您立即获得丰厚的佣金奖励。零门槛参与，无限推荐次数。",
+      "primaryCta": "立即注册开始推荐",
+      "secondaryCta": "登录查看推荐收益"
+    },
+    "stats": [
+      { "value": "10%", "label": "最高佣金比例" },
+      { "value": "∞", "label": "无限推荐次数" },
+      { "value": "$0", "label": "零门槛参与" },
+      { "value": "⚡", "label": "充值立即到账" }
+    ],
+    "howItWorks": {
+      "title": "如何参与推荐返现？",
+      "subtitle": "4个简单步骤，开始您的推荐赚钱之旅",
+      "steps": [
+        { "title": "注册IPFlex账户", "description": "免费注册IPFlex账户，获取您的专属推荐链接和推荐码" },
+        { "title": "分享推荐链接", "description": "通过社交媒体、邮件、网站等方式分享您的推荐链接给朋友" },
+        { "title": "好友完成充值", "description": "您的好友通过推荐链接注册并购买任意代理套餐，然后充值" },
+        { "title": "获得佣金奖励", "description": "系统自动计算佣金，立即结算到您的账户余额" }
+      ]
+    },
+    "commission": {
+      "title": "简单透明的佣金制度",
+      "subtitle": "好友充值，立即返现，统一10%佣金，无需等级升级",
+      "highlight": "统一10%佣金 + 充值立返",
+      "description": "好友通过您的推荐链接注册并完成充值，您立即获得充值金额10%的佣金奖励。无需等待，无分级制度，简单直接！",
+      "features": [
+        { "title": "立即到账", "description": "好友充值完成，佣金立即到账" },
+        { "title": "统一比例", "description": "无论推荐多少人，都是10%佣金" },
+        { "title": "无限推荐", "description": "推荐好友数量没有上限限制" }
+      ]
+    },
+    "cta": {
+      "title": "准备好开始您的推荐赚钱之旅了吗？",
+      "description": "加入数千名满意的推荐者行列，立即注册，获取您的专属推荐链接！",
+      "primaryCta": "立即注册开始推荐",
+      "secondaryCta": "已有账户？登录查看"
+    }
+  }
+}

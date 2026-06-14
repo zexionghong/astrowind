@@ -1,0 +1,55 @@
+{
+  "register": {
+    "title": "IPFlex Enterprise Proxy Account Registration and Onboarding",
+    "description": "Register an IPFlex enterprise account to start static, rotating, and datacenter proxies with API access, geo routing, session control, usage billing, and real-time monitoring.",
+    "sidebar": {
+      "alt": "IPFlex proxy IP service registration background - Fast and stable IP proxy",
+      "tagline": "Professional Proxy Service Provider",
+      "fastStable": {
+        "title": "Fast & Stable",
+        "desc": "Premium network ensures stability and speed"
+      },
+      "safeAnonymous": {
+        "title": "Safe & Anonymous",
+        "desc": "Encryption technology protects your privacy"
+      },
+      "payAsYouGo": {
+        "title": "Pay As You Go",
+        "desc": "No monthly fee, pay as you go, balance never expires"
+      },
+      "newUser": {
+        "title": "New User Special",
+        "trial": "Trial Balance"
+      }
+    },
+    "form": {
+      "username": "Username",
+      "usernamePlaceholder": "4-6 characters",
+      "email": "Email",
+      "emailPlaceholder": "Enter your email",
+      "password": "Password",
+      "passwordPlaceholder": "6-20 characters",
+      "invite": "Invite Code",
+      "invitePlaceholder": "Optional",
+      "submit": "Register"
+    },
+    "hasAccount": "Already have an account?",
+    "signIn": "Sign in",
+    "onboardingNotes": {
+      "title": "Registration process notes",
+      "p1": "After creating an account, teams should run a baseline readiness check for authentication, success ratio, response latency, and logging quality.",
+      "p2": "Teams should also define release checklists, escalation paths, and rollback plans with clear ownership for each stage.",
+      "expandTitle": "Registration Onboarding Notes (Expand)",
+      "afterRegisterTitle": "What You Can Start Right After Registration",
+      "afterRegisterP1": "After registration, you can create proxy extraction settings, monitor real-time usage, manage API credentials, and select proxy types by workload. Use static residential proxies for persistent account sessions, dynamic residential proxies for large-scale collection with retry strategy, and datacenter proxies for high-throughput automation at lower cost.",
+      "afterRegisterP2": "For first-time onboarding, begin with a small traffic test to validate reachability, success rate, and geo targeting before scaling up. This staged rollout helps control budget and catch compatibility or anti-bot issues early.",
+      "checklist": "Registration onboarding checklist: create API credentials, configure endpoint region, validate request success rate, monitor response latency, and scale traffic gradually from staging to production.",
+      "onboardingProcess": "Successful onboarding usually follows a clear sequence: define business goals, map request patterns, configure authentication, validate routing behavior, review error handling, and monitor service quality with consistent metrics.",
+      "productionReadiness": "Production readiness checklist: credential rotation policy, endpoint fallback strategy, request timeout baseline, and weekly quality review cadence.",
+      "relatedLinksTitle": "Related pages:",
+      "pricing": "Pricing",
+      "productDetails": "Product Details",
+      "useCases": "Use Cases"
+    }
+  }
+}

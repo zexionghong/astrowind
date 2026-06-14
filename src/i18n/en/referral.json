@@ -1,0 +1,47 @@
+{
+  "referral": {
+    "title": "IPFlex Referral Program - Up to 10% Commission | Earn by Referring Friends",
+    "description": "Join IPFlex Referral Program and earn 10% commission when friends purchase proxy services. Instant cashback when friends recharge. No threshold, unlimited referrals. Become an IPFlex partner today!",
+    "hero": {
+      "badge": "Referral Program",
+      "title": "Refer Friends, Earn",
+      "titleHighlight": "10% Commission",
+      "description": "Join the IPFlex referral program and earn generous commissions for every friend you refer who purchases our proxy services. Instant cashback when friends recharge. No barriers to entry, unlimited referrals.",
+      "primaryCta": "Register to Start Referring",
+      "secondaryCta": "Login to View Earnings"
+    },
+    "stats": [
+      { "value": "10%", "label": "Maximum Commission Rate" },
+      { "value": "∞", "label": "Unlimited Referrals" },
+      { "value": "$0", "label": "Zero Entry Threshold" },
+      { "value": "⚡", "label": "Instant Credit on Recharge" }
+    ],
+    "howItWorks": {
+      "title": "How Does the Referral Program Work?",
+      "subtitle": "Start your earning journey in 4 simple steps",
+      "steps": [
+        { "title": "Register IPFlex Account", "description": "Sign up for a free IPFlex account and get your unique referral link and code" },
+        { "title": "Share Referral Link", "description": "Share your referral link with friends via social media, email, websites, etc." },
+        { "title": "Friend Completes Recharge", "description": "Your friend registers through your referral link and purchases any proxy package, then recharges" },
+        { "title": "Earn Commission Rewards", "description": "System automatically calculates commission and instantly credits to your account balance" }
+      ]
+    },
+    "commission": {
+      "title": "Simple & Transparent Commission",
+      "subtitle": "Instant cashback when friends recharge, unified 10% commission, no tier upgrades needed",
+      "highlight": "Unified 10% Commission + Instant Cashback",
+      "description": "When friends register through your referral link and complete recharge, you instantly earn 10% commission on the recharge amount. No waiting, no tiers, simple and direct!",
+      "features": [
+        { "title": "Instant Payout", "description": "Commission credited instantly upon friend's recharge" },
+        { "title": "Unified Rate", "description": "10% commission regardless of referral count" },
+        { "title": "Unlimited Referrals", "description": "No limit on number of friends you can refer" }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Start Your Referral Journey?",
+      "description": "Join thousands of satisfied referrers who are already earning with IPFlex. Register now and get your exclusive referral link!",
+      "primaryCta": "Start Referring Now",
+      "secondaryCta": "Have Account? Login"
+    }
+  }
+}

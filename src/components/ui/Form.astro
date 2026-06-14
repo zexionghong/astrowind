@@ -1,10 +1,10 @@
 ---
 import type { Form as Props } from '~/types';
 
-const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } = Astro.props;
+const { inputs, textarea, disclaimer, button = 'Contact us', description = '', action, method = 'POST', onSubmit } = Astro.props;
 ---
 
-<form id="form">
+<form id="form" action={action} method={method}>
   {
     inputs &&
       inputs.map(
@@ -27,7 +27,6 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
                 required={required}
                 value={value}
                 disabled={disabled}
-                data-debug={`value:${value},disabled:${disabled}`}
                 class="flex-1 px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-slate-900 disabled:bg-gray-100 dark:disabled:bg-gray-800 disabled:cursor-not-allowed"
               />
             </div>
@@ -94,13 +93,14 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
   }
 </form>
 
-<script define:vars={{ button }}>
+<script define:vars={{ onSubmit }}>
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('form');
-  if (form && typeof button === 'object' && button.onclick) {
-    form.addEventListener('submit', function(e) {
-      const fn = new Function('return ' + button.onclick)();
-      fn(e);
+  if (!form) return;
+
+  if (typeof onSubmit === 'function') {
+    form.addEventListener('submit', (e) => {
+      onSubmit(e, form);
     });
   }
 });

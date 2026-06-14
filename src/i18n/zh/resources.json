@@ -1,0 +1,77 @@
+{
+  "resources": {
+    "title": "IPFlex 知识中心：代理定义、接入文档、选择指南与方法文章",
+    "description": "浏览 IPFlex 主域知识中心，快速获取代理类型定义、套餐选择方法、场景落地建议、接入文档入口与精选方法文章，帮助团队更快完成评估、接入与扩容。",
+    "header": {
+      "eyebrow": "Knowledge Hub",
+      "title": "IPFlex 知识中心",
+      "description": "这个页面的目标不是替代帮助中心，而是把定义、选择、场景、接入和方法资料集中到主域，减少团队在多个入口之间来回切换的成本。"
+    },
+    "sections": [
+      {
+        "title": "代理定义与选择",
+        "description": "先明确静态住宅、动态住宅与数据中心代理的差异，再决定哪个更适合你的业务目标。",
+        "links": [
+          { "href": "detail", "label": "代理类型选择指南", "note": "比较三类代理的能力边界、适用场景与实施建议。" },
+          { "href": "static-residential-proxy", "label": "静态住宅代理", "note": "适合长期会话、账号稳定与低身份波动任务。" },
+          { "href": "dynamic-residential-proxy", "label": "动态住宅代理", "note": "适合广覆盖、轮换出口与大规模采集任务。" },
+          { "href": "static-datacenter-proxy", "label": "静态数据中心代理", "note": "适合高并发 API、吞吐优先与成本敏感任务。" },
+          { "href": "pricing", "label": "套餐与定价选择指南", "note": "按成功率、时延与单位完成成本评估套餐。" }
+        ]
+      },
+      {
+        "title": "场景与落地方法",
+        "description": "按业务目标查找场景方案，再结合代理类型做更细的技术决策。",
+        "links": [
+          { "href": "scenarios", "label": "应用场景总览", "note": "按广告验证、电商运营、采集与风控分类查看方案。" },
+          { "href": "use-case/static-residential-proxy-ad-verification", "label": "广告验证代理", "note": "验证地域展示、投放一致性与广告欺诈风险。" },
+          { "href": "use-case/static-residential-proxy-ecommerce", "label": "跨境电商代理", "note": "处理账号运营、会话稳定与多平台执行。" },
+          { "href": "use-case/static-residential-proxy-scraping", "label": "市场研究与数据采集", "note": "面向采集、覆盖率与目标站点稳定性。" },
+          { "href": "use-case/static-residential-proxy-security", "label": "网络安全与风控", "note": "面向可复现测试、巡检与防护策略。" }
+        ]
+      },
+      {
+        "title": "接入与帮助文档",
+        "description": "主域负责聚合和决策入口，详细 API 与操作文档仍在帮助中心。",
+        "links": [
+          { "href": "https://docs.ipflex.ink/", "label": "帮助中心", "note": "查看 API、鉴权、接入流程和常见操作。", "external": true },
+          { "href": "register", "label": "注册与开通", "note": "创建账号并启动 PoC 或生产接入。" },
+          { "href": "privacy", "label": "隐私与数据治理", "note": "了解数据处理、留存和安全治理要求。" }
+        ]
+      },
+      {
+        "title": "精选方法文章",
+        "description": "这些文章更适合做实施参考和团队内部评审材料。",
+        "links": [
+          { "href": "blog/enterprise-proxy-onboarding-playbook-2026", "label": "企业代理接入执行手册", "note": "适合 PoC 到生产扩容的实施流程。" },
+          { "href": "blog/proxy-sticky-session-checkout-login-stability-guide", "label": "会话稳定性评估方法", "note": "适合账号、登录、结账和稳定性验证。" },
+          { "href": "blog/proxy-types-comparison", "label": "代理类型对比文章", "note": "补充理解产品差异与适配边界。" },
+          { "href": "blog", "label": "浏览全部博客", "note": "查看更多代理、集成和 GEO 方法文章。" }
+        ]
+      }
+    ],
+    "readingOrder": {
+      "title": "推荐使用顺序",
+      "steps": [
+        "先看代理类型选择指南，明确业务到底需要稳定性、覆盖率还是吞吐。",
+        "再看定价与场景页，把产品判断和预算判断放到同一套口径里。",
+        "确定方案后进入帮助中心和执行手册，减少接入过程中的信息断层。"
+      ]
+    },
+    "faqTitle": "常见问题",
+    "faqs": [
+      {
+        "q": "资源中心先看哪一部分最有效？",
+        "a": "如果你还在评估阶段，先看代理类型选择指南和定价选择方法；如果你已经明确业务目标，先看应用场景和对应产品页；如果你在接入阶段，直接进入帮助中心和接入手册。"
+      },
+      {
+        "q": "主域资源中心和帮助中心的分工是什么？",
+        "a": "主域资源中心负责定义、选择、场景和方法聚合，帮助中心负责 API、鉴权、接入流程和详细操作说明。两者结合可以减少团队查找资料的时间。"
+      },
+      {
+        "q": "哪些页面最适合做内部评审或采购决策参考？",
+        "a": "通常建议先看代理类型选择指南、定价页、应用场景总览，以及企业代理接入执行手册，这几类页面最适合做跨团队评审和采购判断。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "aiAccelerator": {
+    "badge": "新一代 AI 网络加速方案",
+    "title": "为 AI 工具打造的专业网络加速服务",
+    "titleHighlight": "专业网络加速服务",
+    "subtitle": "IPFlex AI 加速器通过优质静态住宅网络与智能 DNS 管理，为 ChatGPT、Claude 等 AI 平台提供稳定、安全的网络连接，有效降低账号风控风险。",
+    "primaryCta": "进入控制面板",
+    "secondaryCta": "了解技术原理",
+    "proof": ["无须复杂配置", "专属客户端", "7x24 技术支持"],
+    "problemTitle": "为什么 AI 平台会误判你的账号？",
+    "problemIntro": "ChatGPT、Claude 等 AI 平台会检测 IP 类型、DNS 泄露、WebRTC 泄露、时区不一致等信号。普通网络环境容易触发这些检测机制，导致账号受限或封禁。",
+    "solutionEyebrow": "我们的方案",
+    "solutionTitle": "IPFlex AI 加速器，一站式解决",
+    "solutionIntro": "基于二次开发的 Mihomo 内核，结合优质静态住宅网络资源，从网络层面系统性解决 AI 平台风控问题。",
+    "howTitle": "技术原理",
+    "howIntro": "IPFlex AI 从三个关键维度入手，系统性降低 AI 平台的风控误判。",
+    "scenariosTitle": "适用场景",
+    "scenariosIntro": "不止于 AI 工具，IPFlex AI 为多种需要稳定网络身份的场景提供支持。",
+    "stepsTitle": "使用方式",
+    "stepsIntro": "IPFlex AI 加速器与 IPFlex 主站账户互通。在网页后台购买所需地区 IP，客户端一键连接。",
+    "compareTitle": "与传统方案相比",
+    "faqTitle": "常见问题",
+    "faqIntro": "关于 IPFlex AI 加速器的常见疑问。",
+    "ctaTitle": "保护你的 AI 账号安全",
+    "ctaIntro": "不再因为网络环境问题中断 ChatGPT、Claude 工作流。IPFlex AI 加速器，让你的 AI 使用体验更稳定。",
+    "contact": "联系客服",
+    "pricingNote": "IP 购买及套餐价格详情请登录 IPFlex 控制面板查看",
+    "problems": [
+      { "title": "IP 类型被识别", "description": "数据中心 IP、托管 IP 会被 AI 平台标记为高风险，触发风控降权或限制访问。", "icon": "!", "color": "red" },
+      { "title": "DNS / WebRTC 泄露", "description": "DNS 查询走本地运营商、WebRTC 暴露真实局域网 IP，平台可据此识别真实网络环境。", "icon": "DNS", "color": "orange" },
+      { "title": "共享 IP 信誉受损", "description": "低质量共享 IP 容易被他人的违规行为牵连，导致整个 IP 段被平台标记。", "icon": "IP", "color": "yellow" }
+    ],
+    "solutions": [
+      { "title": "优质静态住宅网络", "description": "独享 ISP 运营商分配的静态住宅 IP，AI 平台更容易识别为真实家庭宽带用户。", "icon": "home" },
+      { "title": "DNS 智能管理", "description": "客户端自动接管系统 DNS，域名解析通过加密通道完成，减少 DNS 泄露风险。", "icon": "dns" },
+      { "title": "WebRTC 防泄露", "description": "自动拦截 WebRTC 泄露通道，防止浏览器暴露真实局域网 IP 地址。", "icon": "shield" },
+      { "title": "Mihomo 增强客户端", "description": "基于 Mihomo 内核二次开发，集成 DNS 接管、WebRTC 拦截等规则，开箱即用。", "icon": "server" },
+      { "title": "独享纯净 IP", "description": "每个静态住宅 IP 独享分配，使用历史由你掌控，减少被他人行为影响的风险。", "icon": "globe" },
+      { "title": "低延迟连接", "description": "多区域节点覆盖，自动选择合适出口节点，让 AI 对话响应更流畅。", "icon": "zap" }
+    ],
+    "how": [
+      { "title": "网络身份重塑", "description": "通过静态住宅 IP 替代原有网络出口，使 AI 平台检测到的 IP 类型更接近 ISP 家庭宽带，同时保持网络身份信息一致。" },
+      { "title": "信息泄露防护", "description": "客户端接管 DNS 解析，并拦截 WebRTC 探测请求，减少真实网络环境、局域网 IP 和拓扑信息泄露。" },
+      { "title": "客户端一键集成", "description": "登录账号、选择已购买的 IP 节点、点击连接，客户端自动完成 DNS 与防泄露配置，无需手动设置。" }
+    ],
+    "scenarios": [
+      { "title": "ChatGPT 稳定访问", "description": "住宅 IP 与全链路防泄露组合，让访问环境更接近海外真实家庭用户。", "icon": "aiCube", "color": "green" },
+      { "title": "Claude 安全使用", "description": "静态住宅 IP 配合 DNS/WebRTC 防护，降低账号因网络异常触发风控的概率。", "icon": "aiCube", "color": "orange" },
+      { "title": "海外 AI 服务平台", "description": "Gemini、Perplexity、Midjourney 等海外 AI 产品可获得更稳定的网络加速体验。", "icon": "monitor", "color": "purple" },
+      { "title": "跨境电商运营", "description": "通过不同区域住宅 IP 隔离店铺网络环境，降低多账号关联风险。", "icon": "grid", "color": "blue" }
+    ],
+    "steps": [
+      { "title": "注册 IPFlex 账号", "description": "前往 IPFlex 官网注册账号并登录用户控制面板。AI 客户端与主站使用同一账号体系。" },
+      { "title": "在控制面板购买 IP", "description": "选择所需国家或地区，购买对应区域的静态住宅 IP。购买后即时生效，按需使用。" },
+      { "title": "打开客户端并刷新节点列表", "description": "下载并安装 IPFlex AI 客户端。登录后点击刷新，客户端会同步网页后台已购买的 IP 列表。" },
+      { "title": "选择 IP，一键连接", "description": "在客户端中选择 IP 节点并点击连接，DNS 接管与 WebRTC 防护会自动启用。" }
+    ],
+    "table": {
+      "headers": ["对比维度", "IPFlex AI 加速器", "普通网络环境", "数据中心 IP 方案"],
+      "rows": [
+        ["IP 类型", "ISP 静态住宅", "中国大陆运营商", "数据中心 / 托管"],
+        ["AI 平台信任度", "高，识别为家庭用户", "低，受限访问", "极低，高风险标记"],
+        ["DNS 泄露防护", "客户端自动接管", "无", "需手动配置，易出错"],
+        ["WebRTC 泄露防护", "自动拦截", "无", "需浏览器插件，不稳定"],
+        ["国内网站访问", "无影响，正常使用", "正常", "全部流量绕行，速度慢"],
+        ["设置复杂度", "一键连接", "-", "需手动配置多项参数"]
+      ]
+    },
+    "faqs": [
+      { "question": "IPFlex AI 加速器是什么？它和普通网络工具有什么区别？", "answer": "IPFlex AI 加速器是一款专为海外 AI 工具设计的网络优化服务。它通过静态住宅网络、DNS 智能管理和 WebRTC 防护技术，帮助你获得更稳定、更安全的网络连接体验。" },
+      { "question": "使用 IPFlex AI 会影响我正常使用国内网站和应用吗？", "answer": "不会。IPFlex AI 专注于为海外 AI 服务提供网络优化，日常使用的国内网站和应用不受影响。" },
+      { "question": "静态住宅 IP 和数据中心 IP 有什么区别？", "answer": "静态住宅 IP 由 ISP 运营商分配给家庭宽带用户，数据中心 IP 来自云服务商机房。AI 平台通常更信任住宅 IP。" },
+      { "question": "为什么需要 DNS 和 WebRTC 防护？", "answer": "即使使用住宅 IP，如果 DNS 查询或 WebRTC 暴露真实网络信息，平台仍可能判断环境异常。客户端会从系统层面减少这些泄露风险。" },
+      { "question": "客户端支持哪些操作系统？", "answer": "目前支持 Windows 10/11 和 macOS 12+，安装后登录账号即可使用。" },
+      { "question": "可以多台设备同时使用吗？", "answer": "可以。你可以在多台电脑上安装客户端并登录同一账号，已购买的 IP 会在设备间同步。" }
+    ]
+  }
+}
