@@ -1,5 +1,5 @@
 ---
-import { findImage } from '~/utils/images';
+import { findImage } from '~/utils/images/images';
 interface Feature {
   title: string;
   bg: string;
@@ -22,23 +22,23 @@ const { title, subtitle,  features,description="",descriptionList=[], isEven = f
   <div class="max-w-7xl mx-auto">
     {title && 
       <div class="text-center mb-8">
-        <h2 class="text-4xl font-bold text-blue-600">{title}</h2>
+        <h2 class="text-4xl font-bold text-primary">{title}</h2>
       </div>
     }
     {subtitle && 
       <div class="max-w-16xl mx-auto">
-        <h2 class={`text-xl text-blue-500 mb-6 relative ${isEven ? 'text-right' : 'text-left'}`}>
+        <h2 class={`text-xl text-secondary mb-6 relative ${isEven ? 'text-right' : 'text-left'}`}>
           {subtitle}
           <span aria-hidden="true" class={`block absolute bottom-0 h-0.5 w-[300px] ${
             isEven 
-              ? 'right-0 bg-gradient-to-l from-purple-500 via-blue-500 to-transparent' 
-              : 'left-0 bg-gradient-to-r from-purple-500 via-blue-500 to-transparent'
+              ? 'right-0 bg-gradient-to-l from-accent via-primary to-transparent' 
+              : 'left-0 bg-gradient-to-r from-accent via-primary to-transparent'
           }`}></span>
         </h2>
       </div>
     }
     <div class="max-w-16xl mx-auto">
-      <p class={`text-gray-600 dark:text-gray-300 mb-12 text-sm ${isEven ? 'text-right' : 'text-left'}`}>
+      <p class={`text-muted mb-12 text-sm ${isEven ? 'text-right' : 'text-left'}`}>
         {description?description:descriptionList.map((l) => (
           <span>{l}</span><br/>
         ))}
@@ -50,7 +50,7 @@ const { title, subtitle,  features,description="",descriptionList=[], isEven = f
         const bgUrl = await findImage(feature.bg);
         const src = bgUrl?.src;
         return (
-        <div class="bg-blue-50/50 backdrop-blur-sm rounded-2xl p-12 flex items-end justify-start shadow-sm hover:translate-y-[-8px] transition-transform duration-300 ease-in-out hover:shadow-md relative overflow-hidden h-32">
+        <div class="glass-card rounded-2xl p-12 flex items-end justify-start relative overflow-hidden h-32 cursor-pointer">
             {src && (
               <img
                 src={src}
@@ -58,10 +58,10 @@ const { title, subtitle,  features,description="",descriptionList=[], isEven = f
                 width="320"
                 height="128"
                 loading="lazy"
-                class="absolute inset-0 h-full w-full object-cover"
+                class="absolute inset-0 h-full w-full object-cover opacity-80"
               />
             )}
-            <span class={`absolute bottom-2 left-2 z-10 ${index % 2 === 1 ? 'text-white' : 'text-gray-700 dark:text-gray-300'}`}>{feature.title}</span>
+            <span class={`absolute bottom-2 left-2 z-10 ${index % 2 === 1 ? 'text-white' : 'text-heading'}`}>{feature.title}</span>
         </div>
       )
       })}

@@ -42,7 +42,7 @@ const {
     )
   }
   <div class={twMerge('relative z-10 mx-auto max-w-xl px-4 md:px-6 pt-12 md:pt-16 lg:pt-10 text-default text-center', containerClass)}>
-    <div class="glass-container rounded-t-3xl p-6 md:p-8 lg:p-10 relative overflow-hidden">
+    <div class="glass-card rounded-t-3xl p-6 md:p-8 lg:p-10 relative overflow-hidden">
       <div class="relative z-10">
         <h2 class={twMerge('text-4xl md:text-4xl lg:text-4xl font-bold text-white mb-6', titleClass)}>
           {title}
@@ -52,7 +52,7 @@ const {
         </p>
         <a
           href={buttonHref}
-          class={twMerge('inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-10 rounded-full transition-all duration-300 hover:shadow-lg hover:scale-105', buttonClass)}
+          class={twMerge('inline-block bg-primary hover:bg-blue-700 text-white font-semibold py-4 px-10 rounded-full transition-all duration-300 hover:shadow-glass-lg hover:scale-105', buttonClass)}
         >
           {buttonText}
         </a>
@@ -62,27 +62,29 @@ const {
 </section>
 
 <style>
-  .glass-container {
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(12px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  .glass-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
     isolation: isolate;
   }
 
-  .glass-container::before {
+  .glass-card::before {
     content: '';
     position: absolute;
     inset: 0;
     background: linear-gradient(
       45deg,
-      rgba(255, 255, 255, 0.2) 0%,
-      rgba(255, 255, 255, 0.3) 100%
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.2) 100%
     );
     border-radius: inherit;
     z-index: -1;
   }
 
-  .glass-container > * {
+  .glass-card > * {
     isolation: isolate;
   }
 </style> 

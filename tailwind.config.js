@@ -19,6 +19,13 @@ export default {
         default: 'var(--aw-color-text-default)',
         muted: 'var(--aw-color-text-muted)',
       },
+      backdropBlur: {
+        xs: '2px',
+      },
+      boxShadow: {
+        'glass': '0 8px 32px rgba(31, 38, 135, 0.1)',
+        'glass-lg': '0 12px 40px rgba(31, 38, 135, 0.15)',
+      },
       fontFamily: {
         sans: ['var(--aw-font-sans, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
         serif: ['var(--aw-font-serif, ui-serif)', ...defaultTheme.fontFamily.serif],

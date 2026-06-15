@@ -16,11 +16,11 @@ const {
 } = Astro.props;
 
 const variants = {
-  primary: 'btn-primary bg-blue-600 hover:bg-blue-700 text-white rounded-full',
-  secondary: 'btn-secondary text-gray-900',
-  tertiary: 'btn btn-tertiary text-gray-900',
-  link: 'cursor-pointer hover:text-primary text-gray-900',
-  ghost: 'text-white hover:bg-white hover:text-blue-600 transition-colors duration-200',
+  primary: 'btn-primary bg-primary hover:bg-blue-700 text-white rounded-full shadow-glass transition-all duration-300',
+  secondary: 'btn-secondary text-default glass-card',
+  tertiary: 'btn btn-tertiary text-default',
+  link: 'cursor-pointer hover:text-primary text-default',
+  ghost: 'text-white hover:bg-white/20 hover:text-white transition-all duration-300 border border-white/30 hover:border-white/50',
 };
 
 const colorClass = color ? `bg-${color}-600 hover:bg-${color}-700 text-white` : '';
