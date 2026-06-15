@@ -74,7 +74,7 @@ if (index % 2 === 0) {
         </div>
       )}
       
-      <div class="px-5 py-8 relative z-1">
+      <div class={`px-5 py-8 relative z-1 ${showHighlight ? 'pt-12 pb-10' : ''}`}>
         <h2 class={`text-2xl font-bold mb-2 ${showHighlight || isWhite ? 'text-blue-100' : 'text-gray-600'}`}>{title}</h2>
         <p class={`text-sm mb-6 ${showHighlight || isWhite ? 'text-blue-100' : 'text-gray-600'}`}>{subtitle}</p>
         
