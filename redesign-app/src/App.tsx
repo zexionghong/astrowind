@@ -1,0 +1,35 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Layout } from './components/layout/Layout';
+import { PATHS } from './routes';
+import { HomePage } from './pages/HomePage';
+import { PricingPage } from './pages/PricingPage';
+import { StaticResidentialPage } from './pages/StaticResidentialPage';
+import { DynamicResidentialPage } from './pages/DynamicResidentialPage';
+import { DatacenterPage } from './pages/DatacenterPage';
+import { ScenariosPage } from './pages/ScenariosPage';
+import { ResourcesPage } from './pages/ResourcesPage';
+import { BlogPage } from './pages/BlogPage';
+import { AboutPage } from './pages/AboutPage';
+import { RegisterPage } from './pages/RegisterPage';
+
+export function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path={PATHS.home} element={<HomePage />} />
+          <Route path={PATHS.pricing} element={<PricingPage />} />
+          <Route path={PATHS.prodSrp} element={<StaticResidentialPage />} />
+          <Route path={PATHS.prodDrp} element={<DynamicResidentialPage />} />
+          <Route path={PATHS.prodDc} element={<DatacenterPage />} />
+          <Route path={PATHS.scenarios} element={<ScenariosPage />} />
+          <Route path={PATHS.resources} element={<ResourcesPage />} />
+          <Route path={PATHS.blog} element={<BlogPage />} />
+          <Route path={PATHS.about} element={<AboutPage />} />
+          <Route path={PATHS.register} element={<RegisterPage />} />
+          <Route path="*" element={<HomePage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}

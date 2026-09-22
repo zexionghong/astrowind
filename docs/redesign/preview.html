@@ -1,0 +1,2263 @@
+<!doctype html>
+<html lang="zh" data-dir="a" data-active="home">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IPFlex 官网重设计 · 全站方向预览</title>
+<style>
+/* ============================================================
+   IPFlex 全站重设计 · 共享样式
+   四个方向共用一套组件，仅切换 html[data-dir] 上的 token。
+   A: 明亮企业 SaaS / B: 深色科技 / C: 明亮+深色区块 / D: 玻璃拟态修复
+   ============================================================ */
+
+/* ---------- 方向 A：明亮企业级 SaaS（默认） ---------- */
+:root, html[data-dir="a"] {
+  --bg: #FFFFFF;
+  --bg-subtle: #F8FAFC;
+  --surface: #FFFFFF;
+  --border: #E2E8F0;
+  --border-strong: #CBD5E1;
+
+  --text-heading: #0F172A;
+  --text: #334155;
+  --text-muted: #64748B;
+
+  --primary: #2563EB;
+  --primary-hover: #1D4ED8;
+  --primary-soft: #EFF6FF;
+  --on-primary: #FFFFFF;
+
+  --btn2-bg: transparent;
+  --btn2-text: #1E293B;
+  --btn2-border: #CBD5E1;
+  --btn2-hover-bg: #F1F5F9;
+
+  --nav-bg: rgba(255,255,255,.86);
+  --nav-text: #1E293B;
+  --nav-muted: #475569;
+
+  --hero-fg: #334155;
+  --hero-heading: #0F172A;
+  --hero-sub: #475569;
+  --hero-border: rgba(15,23,42,.14);
+  --hero-chip-bg: rgba(255,255,255,.7);
+  --hero-deco:
+    radial-gradient(52rem 30rem at 12% -8%, rgba(37,99,235,.10), transparent 60%),
+    radial-gradient(44rem 26rem at 88% 4%, rgba(59,130,246,.08), transparent 62%),
+    radial-gradient(38rem 24rem at 50% 110%, rgba(14,165,233,.06), transparent 65%);
+
+  --cta-card-bg: linear-gradient(135deg, #1E3A8A 0%, #2563EB 55%, #3B82F6 100%);
+  --cta-fg: #FFFFFF;
+
+  --stat-num: #1D4ED8;
+  --stat-label: #64748B;
+
+  --footer-bg: #0F172A;
+  --footer-text: #94A3B8;
+  --footer-heading: #E2E8F0;
+  --footer-border: rgba(148,163,184,.18);
+
+  --ok-bg: #DCFCE7;
+  --ok-fg: #15803D;
+
+  --shadow-card: 0 1px 2px rgba(15,23,42,.04), 0 10px 28px -14px rgba(15,23,42,.10);
+  --shadow-card-hover: 0 2px 4px rgba(15,23,42,.05), 0 18px 40px -16px rgba(15,23,42,.16);
+  --surface-blur: none;
+
+  --note-bg: rgba(250,204,21,.92);
+  --note-fg: #422006;
+}
+
+/* ---------- 方向 B：深色科技感 ---------- */
+html[data-dir="b"] {
+  --bg: #0A0F1E;
+  --bg-subtle: #0D1528;
+  --surface: #101A31;
+  --border: rgba(255,255,255,.09);
+  --border-strong: rgba(255,255,255,.18);
+
+  --text-heading: #F1F5F9;
+  --text: #CBD5E1;
+  --text-muted: #8FA3BF;
+
+  --primary: #3B82F6;
+  --primary-hover: #60A5FA;
+  --primary-soft: rgba(59,130,246,.14);
+  --on-primary: #FFFFFF;
+
+  --btn2-bg: rgba(255,255,255,.04);
+  --btn2-text: #E2E8F0;
+  --btn2-border: rgba(255,255,255,.16);
+  --btn2-hover-bg: rgba(255,255,255,.09);
+
+  --nav-bg: rgba(10,15,30,.78);
+  --nav-text: #E2E8F0;
+  --nav-muted: #94A3B8;
+
+  --hero-fg: #B7C6DE;
+  --hero-heading: #F8FAFC;
+  --hero-sub: #9FB2CC;
+  --hero-border: rgba(255,255,255,.16);
+  --hero-chip-bg: rgba(255,255,255,.05);
+  --hero-deco:
+    radial-gradient(48rem 28rem at 18% -10%, rgba(59,130,246,.22), transparent 62%),
+    radial-gradient(42rem 26rem at 85% 0%, rgba(34,211,238,.13), transparent 60%),
+    radial-gradient(60rem 34rem at 50% 118%, rgba(37,99,235,.16), transparent 65%);
+
+  --cta-card-bg: linear-gradient(135deg, rgba(59,130,246,.18), rgba(34,211,238,.10));
+  --cta-fg: #F1F5F9;
+
+  --stat-num: #7DD3FC;
+  --stat-label: #8FA3BF;
+
+  --footer-bg: #070C18;
+  --footer-text: #7C90AC;
+  --footer-heading: #DCE6F5;
+  --footer-border: rgba(148,163,184,.16);
+
+  --ok-bg: rgba(34,197,94,.14);
+  --ok-fg: #4ADE80;
+
+  --shadow-card: 0 0 0 1px rgba(255,255,255,.02), 0 18px 40px -20px rgba(0,0,0,.55);
+  --shadow-card-hover: 0 0 0 1px rgba(59,130,246,.35), 0 22px 48px -20px rgba(0,0,0,.6);
+  --surface-blur: blur(12px);
+
+  --note-bg: rgba(250,204,21,.92);
+  --note-fg: #422006;
+}
+
+/* ---------- 方向 C：明亮为主 + 深色 Hero/CTA 区块（继承 A） ---------- */
+html[data-dir="c"] {
+  --hero-fg: #B7C6DE;
+  --hero-heading: #F8FAFC;
+  --hero-sub: #9FB2CC;
+  --hero-border: rgba(255,255,255,.16);
+  --hero-chip-bg: rgba(255,255,255,.06);
+  --hero-deco:
+    radial-gradient(52rem 30rem at 15% -12%, rgba(59,130,246,.30), transparent 60%),
+    radial-gradient(46rem 28rem at 88% 2%, rgba(14,165,233,.16), transparent 62%),
+    linear-gradient(180deg, #0B1230 0%, #101C3F 100%);
+}
+
+/* ---------- 方向 D：修复版玻璃拟态 ---------- */
+html[data-dir="d"] {
+  --bg: #0B1026;
+  --bg-subtle: rgba(255,255,255,.03);
+  --surface: rgba(255,255,255,.07);
+  --border: rgba(255,255,255,.16);
+  --border-strong: rgba(255,255,255,.28);
+
+  --text-heading: #F8FAFC;
+  --text: #DCE6F5;
+  --text-muted: #A5B4CE;
+
+  --primary: #3B82F6;
+  --primary-hover: #60A5FA;
+  --primary-soft: rgba(59,130,246,.18);
+  --on-primary: #FFFFFF;
+
+  --btn2-bg: rgba(255,255,255,.06);
+  --btn2-text: #F1F5F9;
+  --btn2-border: rgba(255,255,255,.22);
+  --btn2-hover-bg: rgba(255,255,255,.12);
+
+  --nav-bg: rgba(11,16,38,.72);
+  --nav-text: #F1F5F9;
+  --nav-muted: #C7D2E8;
+
+  --hero-fg: #DCE6F5;
+  --hero-heading: #FFFFFF;
+  --hero-sub: #C7D2E8;
+  --hero-border: rgba(255,255,255,.22);
+  --hero-chip-bg: rgba(255,255,255,.08);
+  --hero-deco: none;
+
+  --cta-card-bg: rgba(255,255,255,.07);
+  --cta-fg: #FFFFFF;
+
+  --stat-num: #93C5FD;
+  --stat-label: #A5B4CE;
+
+  --footer-bg: rgba(5,8,22,.85);
+  --footer-text: #94A7C4;
+  --footer-heading: #E2E8F0;
+  --footer-border: rgba(148,163,184,.2);
+
+  --ok-bg: rgba(255,255,255,.1);
+  --ok-fg: #86EFAC;
+
+  --shadow-card: 0 8px 32px rgba(2,6,23,.35);
+  --shadow-card-hover: 0 14px 44px rgba(2,6,23,.5);
+  --surface-blur: blur(16px);
+
+  --note-bg: rgba(250,204,21,.92);
+  --note-fg: #422006;
+}
+
+/* ============================================================
+   基础
+   ============================================================ */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.7;
+  padding-top: 52px;
+  transition: background .3s ease, color .3s ease;
+}
+html[data-dir="d"] body {
+  background: #0B1026;
+}
+html[data-dir="d"] body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: -1;
+  background:
+    radial-gradient(56rem 34rem at 14% -6%, rgba(37,99,235,.30), transparent 60%),
+    radial-gradient(46rem 30rem at 88% 8%, rgba(124,58,237,.18), transparent 62%),
+    radial-gradient(60rem 36rem at 50% 112%, rgba(14,165,233,.16), transparent 65%),
+    linear-gradient(180deg, #0B1026 0%, #0D1230 100%);
+}
+img, svg { display: block; }
+a { color: inherit; text-decoration: none; }
+.ic { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.section   { padding: 96px 0; position: relative; }
+@media (min-width: 1024px) { .section { padding: 128px 0; } }
+.section-sm { padding: 72px 0; position: relative; }
+.sec-alt   { background: var(--bg-subtle); }
+html[data-dir="b"] .sec-alt { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+.sec-head { max-width: 720px; margin: 0 auto 56px; text-align: center; }
+.eyebrow {
+  display: inline-block; font-size: 12.5px; font-weight: 700; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--primary); margin-bottom: 14px;
+}
+.sec-title { font-size: clamp(26px, 3.4vw, 38px); font-weight: 700; line-height: 1.25; color: var(--text-heading); letter-spacing: -.01em; }
+.sec-sub   { margin-top: 14px; font-size: 17px; color: var(--text-muted); }
+
+/* ---------- 按钮 ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 12px 26px; border-radius: 999px; border: 1px solid transparent;
+  font-size: 15px; font-weight: 600; line-height: 1.4; cursor: pointer;
+  transition: all .2s ease; white-space: nowrap;
+}
+.btn .ic { width: 18px; height: 18px; }
+.btn-primary { background: var(--primary); color: var(--on-primary); box-shadow: 0 8px 20px -8px rgba(37,99,235,.5); }
+.btn-primary:hover { background: var(--primary-hover); transform: translateY(-1px); }
+.btn-secondary { background: var(--btn2-bg); color: var(--btn2-text); border-color: var(--btn2-border); }
+.btn-secondary:hover { background: var(--btn2-hover-bg); }
+.btn-white { background: #FFFFFF; color: #1D4ED8; }
+.btn-white:hover { transform: translateY(-1px); box-shadow: 0 10px 24px -10px rgba(0,0,0,.35); }
+html[data-dir="a"] .btn-hero2 { background: transparent; color: var(--btn2-text); border-color: var(--btn2-border); }
+html[data-dir="a"] .btn-hero2:hover { background: var(--btn2-hover-bg); }
+html[data-dir="b"] .btn-hero2,
+html[data-dir="c"] .btn-hero2,
+html[data-dir="d"] .btn-hero2 { background: rgba(255,255,255,.06); color: #fff; border-color: rgba(255,255,255,.38); }
+html[data-dir="b"] .btn-hero2:hover,
+html[data-dir="c"] .btn-hero2:hover,
+html[data-dir="d"] .btn-hero2:hover { background: rgba(255,255,255,.14); }
+.btn-sm { padding: 9px 18px; font-size: 14px; }
+
+/* ---------- 区块来源标注 ---------- */
+.note-tag {
+  display: none; position: absolute; top: 14px; right: 14px; z-index: 30;
+  font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  font-size: 11px; line-height: 1; padding: 5px 8px; border-radius: 6px;
+  background: var(--note-bg); color: var(--note-fg); pointer-events: none;
+}
+html.show-notes .note-tag { display: inline-block; }
+
+/* ---------- 入场动画 ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+}
+
+/* ============================================================
+   预览工具栏
+   ============================================================ */
+.pt-bar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 52px;
+  background: #0F172A; color: #E2E8F0;
+  display: flex; align-items: center; gap: 14px; padding: 0 16px;
+  border-bottom: 1px solid rgba(255,255,255,.08); overflow-x: auto;
+}
+.pt-brand { font-weight: 700; font-size: 13.5px; white-space: nowrap; display: flex; align-items: center; gap: 8px; }
+.pt-brand .ic { width: 16px; height: 16px; color: #60A5FA; }
+.pt-group { display: flex; gap: 6px; }
+.pt-btn {
+  border: 1px solid rgba(255,255,255,.16); background: transparent; color: #CBD5E1;
+  font-size: 12.5px; font-weight: 600; padding: 6px 12px; border-radius: 8px; cursor: pointer; white-space: nowrap;
+  transition: all .15s ease;
+}
+.pt-btn:hover { background: rgba(255,255,255,.08); color: #fff; }
+.pt-btn.active { background: #2563EB; border-color: #2563EB; color: #fff; }
+.pt-btn small { display: block; font-size: 10px; font-weight: 400; opacity: .75; line-height: 1.2; }
+.pt-toggle {
+  margin-left: auto; display: flex; align-items: center; gap: 8px;
+  font-size: 12.5px; color: #CBD5E1; cursor: pointer; user-select: none; white-space: nowrap;
+}
+.pt-toggle input { accent-color: #2563EB; width: 15px; height: 15px; cursor: pointer; }
+
+/* ============================================================
+   导航
+   ============================================================ */
+.nav-wrap { position: sticky; top: 52px; z-index: 50; }
+.nav {
+  background: var(--nav-bg);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  color: var(--nav-text);
+}
+.nav .container { display: flex; align-items: center; gap: 24px; height: 64px; }
+.logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 20px; letter-spacing: -.02em; color: var(--nav-text); }
+.logo-mark {
+  width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center;
+  background: linear-gradient(135deg, #2563EB, #3B82F6); color: #fff;
+}
+.logo-mark .ic { width: 16px; height: 16px; stroke-width: 2.2; }
+.nav-links { display: flex; align-items: center; gap: 2px; list-style: none; }
+.nav-links a {
+  display: inline-flex; align-items: center; padding: 8px 12px; border-radius: 8px;
+  font-size: 14.5px; font-weight: 500; color: var(--nav-muted); transition: all .15s ease; white-space: nowrap;
+}
+.nav-links a:hover { color: var(--nav-text); background: var(--btn2-hover-bg); }
+.nav-links a.active { color: var(--primary); font-weight: 700; }
+.nav-cta { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+.nav-login { font-size: 14.5px; font-weight: 600; color: var(--nav-muted); padding: 8px 12px; border-radius: 8px; white-space: nowrap; }
+.nav-login:hover { color: var(--nav-text); }
+.nav-burger { display: none; margin-left: auto; background: none; border: none; color: var(--nav-text); cursor: pointer; padding: 8px; }
+@media (max-width: 1080px) {
+  .nav-links, .nav-cta { display: none; }
+  .nav-burger { display: block; }
+}
+
+/* ============================================================
+   首页 Hero
+   ============================================================ */
+.sec-hero { background: var(--hero-deco); color: var(--hero-fg); overflow: hidden; }
+.hero { padding: 104px 0 88px; text-align: center; }
+@media (min-width: 1024px) { .hero { padding: 148px 0 120px; } }
+.hero h1 {
+  font-size: clamp(32px, 5vw, 56px); font-weight: 800; line-height: 1.18; letter-spacing: -.02em;
+  color: var(--hero-heading); max-width: 880px; margin: 0 auto 22px;
+}
+.hero .hero-sub { font-size: clamp(15.5px, 1.6vw, 18.5px); color: var(--hero-sub); max-width: 760px; margin: 0 auto 36px; }
+.hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-bottom: 64px; }
+.hero-trust {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  max-width: 980px; margin: 0 auto; border: 1px solid var(--hero-border); border-radius: 18px;
+  background: var(--hero-chip-bg);
+}
+.hero-trust-item {
+  display: flex; flex-direction: column; align-items: center; gap: 7px;
+  padding: 22px 12px; color: var(--hero-sub); font-size: 13.5px; font-weight: 500;
+}
+.hero-trust-item + .hero-trust-item { border-left: 1px solid var(--hero-border); }
+.hero-trust-item .ic { width: 21px; height: 21px; color: var(--primary); }
+html[data-dir="b"] .hero-trust-item .ic, html[data-dir="d"] .hero-trust-item .ic { color: #7DD3FC; }
+@media (max-width: 760px) {
+  .hero-trust { grid-template-columns: repeat(2, 1fr); }
+  .hero-trust-item:nth-child(3) { border-left: none; }
+  .hero-trust-item:nth-child(n+3) { border-top: 1px solid var(--hero-border); }
+}
+
+/* ============================================================
+   内页 Hero（浅色，所有方向一致；B/D 全页本就为深色）
+   ============================================================ */
+.phero { padding: 72px 0 56px; background: var(--hero-deco); color: var(--hero-fg); }
+@media (min-width: 1024px) { .phero { padding: 96px 0 72px; } }
+.phero h1 {
+  font-size: clamp(28px, 4vw, 44px); font-weight: 800; line-height: 1.2; letter-spacing: -.02em;
+  color: var(--hero-heading); margin-bottom: 16px;
+}
+html[data-dir="a"] .phero h1 { color: var(--text-heading); }
+html[data-dir="c"] .phero h1 { color: var(--text-heading); }
+.phero .phero-sub { font-size: clamp(15px, 1.5vw, 17.5px); color: var(--hero-sub); max-width: 720px; margin: 0 auto 28px; }
+html[data-dir="a"] .phero .phero-sub, html[data-dir="c"] .phero .phero-sub { color: var(--text-muted); }
+.phero .eyebrow { color: var(--primary); }
+.phero-center { text-align: center; }
+.phero .phero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+html[data-dir="a"] .phero .btn-hero2, html[data-dir="c"] .phero .btn-hero2 { background: transparent; color: var(--btn2-text); border-color: var(--btn2-border); }
+
+/* Hero 特性 chips（产品页） */
+.chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid var(--hero-border); border-radius: 999px;
+  background: var(--hero-chip-bg); color: var(--hero-fg);
+  padding: 9px 16px; font-size: 13.5px; font-weight: 600;
+  backdrop-filter: var(--surface-blur);
+}
+.chip .ic { width: 16px; height: 16px; color: var(--primary); }
+html[data-dir="b"] .chip .ic, html[data-dir="d"] .chip .ic { color: #7DD3FC; }
+html[data-dir="a"] .chip { color: var(--text); border-color: var(--border); }
+html[data-dir="c"] .chip { color: var(--text); border-color: var(--border); background: #fff; }
+
+/* ============================================================
+   产品卡 / 功能卡 / 统计 / 步骤（首页共用）
+   ============================================================ */
+.band-label { text-align: center; margin-bottom: 34px; }
+.band-title {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; color: var(--text-heading);
+}
+.band-title::before, .band-title::after { content: ''; width: 44px; height: 1px; background: var(--border-strong); }
+
+.p-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 24px;
+  padding: 36px; box-shadow: var(--shadow-card);
+  display: grid; grid-template-columns: 1fr 1.05fr; gap: 40px; align-items: center;
+  backdrop-filter: var(--surface-blur);
+  transition: box-shadow .25s ease, border-color .25s ease;
+}
+.p-card + .p-card { margin-top: 28px; }
+.p-card:hover { box-shadow: var(--shadow-card-hover); border-color: var(--border-strong); }
+.p-name { font-size: 24px; font-weight: 700; color: var(--text-heading); margin-bottom: 16px; }
+.p-desc { list-style: none; margin-bottom: 24px; }
+.p-desc li { position: relative; padding-left: 22px; color: var(--text-muted); font-size: 15px; margin-bottom: 8px; }
+.p-desc li::before { content: ''; position: absolute; left: 2px; top: .62em; width: 7px; height: 7px; border-radius: 50%; background: var(--primary); }
+.p-link { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 14.5px; color: var(--primary); }
+.p-link .ic { width: 16px; height: 16px; transition: transform .2s ease; }
+.p-link:hover .ic { transform: translateX(3px); }
+.p-tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.p-tile {
+  display: flex; align-items: center; gap: 12px;
+  border: 1px solid var(--border); border-radius: 16px; padding: 16px 18px;
+  font-size: 14px; font-weight: 600; color: var(--text);
+  background: var(--bg-subtle);
+}
+html[data-dir="d"] .p-tile { background: rgba(255,255,255,.04); }
+.p-tile .ic { width: 20px; height: 20px; color: var(--primary); }
+@media (max-width: 900px) { .p-card { grid-template-columns: 1fr; gap: 26px; padding: 26px; } }
+
+.steps-grid { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; max-width: 1020px; margin: 0 auto; }
+.steps-grid::before {
+  content: ''; position: absolute; top: 33px; left: 11%; right: 11%; height: 2px;
+  background: var(--border-strong); opacity: .6;
+}
+.step { position: relative; text-align: center; }
+.step-num {
+  position: relative; z-index: 1;
+  width: 66px; height: 66px; margin: 0 auto 18px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--primary-soft); color: var(--primary);
+  border: 1px solid var(--border-strong);
+  font-size: 19px; font-weight: 800; font-family: ui-monospace, Consolas, monospace;
+  backdrop-filter: var(--surface-blur);
+}
+.step.done .step-num { background: var(--ok-bg); color: var(--ok-fg); }
+.step.done .step-num .ic { width: 28px; height: 28px; stroke-width: 2.6; }
+.step h3 { font-size: 17px; font-weight: 700; color: var(--text-heading); margin-bottom: 8px; }
+.step p { font-size: 14px; color: var(--text-muted); max-width: 220px; margin: 0 auto; }
+@media (max-width: 900px) { .steps-grid { grid-template-columns: repeat(2, 1fr); } .steps-grid::before { display: none; } }
+@media (max-width: 540px) { .steps-grid { grid-template-columns: 1fr; } }
+
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+@media (max-width: 960px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .grid-3, .grid-2 { grid-template-columns: 1fr; } }
+
+.f-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+  padding: 28px; box-shadow: var(--shadow-card); backdrop-filter: var(--surface-blur);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+  display: flex; flex-direction: column;
+}
+.f-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-card-hover); border-color: var(--border-strong); }
+.f-icon {
+  width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center;
+  background: var(--primary-soft); color: var(--primary); margin-bottom: 18px;
+}
+.f-card h3 { font-size: 17px; font-weight: 700; color: var(--text-heading); margin-bottom: 9px; line-height: 1.4; }
+.f-card p { font-size: 14.5px; color: var(--text-muted); }
+
+.u-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+  padding: 26px; box-shadow: var(--shadow-card); backdrop-filter: var(--surface-blur);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.u-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-card-hover); border-color: var(--primary); }
+.u-card .f-icon { margin-bottom: 14px; }
+.u-card h3 { font-size: 16.5px; font-weight: 700; color: var(--text-heading); margin-bottom: 8px; }
+.u-card p { font-size: 14px; color: var(--text-muted); }
+.u-card .p-link { margin-top: 14px; }
+
+.stat-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+  padding: 30px 16px; text-align: center; box-shadow: var(--shadow-card); backdrop-filter: var(--surface-blur);
+}
+.stat-num {
+  font-size: clamp(30px, 3.4vw, 44px); font-weight: 800; letter-spacing: -.02em;
+  color: var(--stat-num); line-height: 1.1;
+}
+html[data-dir="b"] .stat-num, html[data-dir="d"] .stat-num { font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace; }
+.stat-label { margin-top: 10px; font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--stat-label); }
+
+/* ============================================================
+   中部 CTA / FAQ / 推荐奖励
+   ============================================================ */
+.cta-banner {
+  background: var(--cta-card-bg); color: var(--cta-fg);
+  border: 1px solid var(--border); border-radius: 24px;
+  padding: 64px 40px; text-align: center; position: relative; overflow: hidden;
+  backdrop-filter: var(--surface-blur);
+}
+html[data-dir="d"] .cta-banner { border-color: rgba(255,255,255,.16); }
+.cta-banner::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(36rem 18rem at 50% -30%, rgba(255,255,255,.14), transparent 65%);
+}
+.cta-banner h2 { position: relative; font-size: clamp(26px, 3.4vw, 36px); font-weight: 800; letter-spacing: -.01em; margin-bottom: 14px; }
+.cta-banner p { position: relative; font-size: 16px; opacity: .88; margin-bottom: 30px; white-space: pre-line; }
+html[data-dir="c"] .cta-banner { background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 55%, #3B82F6 100%); }
+
+.faq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 1080px; margin: 0 auto; }
+@media (max-width: 860px) { .faq-grid { grid-template-columns: 1fr; } }
+.faq-item {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+  backdrop-filter: var(--surface-blur); overflow: hidden; align-self: start;
+}
+.faq-item summary {
+  list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 14px;
+  padding: 18px 22px; font-size: 15.5px; font-weight: 600; color: var(--text-heading);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary .ic { width: 18px; height: 18px; color: var(--text-muted); transition: transform .25s ease; }
+.faq-item[open] summary .ic { transform: rotate(180deg); }
+.faq-item[open] { border-color: var(--border-strong); }
+.faq-item .faq-a { padding: 0 22px 20px; font-size: 14.5px; color: var(--text-muted); }
+
+.ref-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 24px;
+  padding: 56px 40px; text-align: center; box-shadow: var(--shadow-card);
+  backdrop-filter: var(--surface-blur); position: relative; overflow: hidden;
+}
+html[data-dir="a"] .ref-card, html[data-dir="c"] .ref-card { background: linear-gradient(180deg, #FFFFFF, #F0F6FF); }
+.ref-badge {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: var(--primary-soft); color: var(--primary);
+  font-size: 12.5px; font-weight: 700; letter-spacing: .06em;
+  padding: 6px 14px; border-radius: 999px; margin-bottom: 20px;
+}
+.ref-badge .ic { width: 15px; height: 15px; }
+.ref-title { font-size: clamp(26px, 3.2vw, 36px); font-weight: 800; color: var(--text-heading); letter-spacing: -.01em; margin-bottom: 14px; }
+.ref-title .hl {
+  background: linear-gradient(90deg, #2563EB, #22D3EE);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.ref-desc { max-width: 640px; margin: 0 auto 34px; color: var(--text-muted); font-size: 15.5px; }
+.ref-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; max-width: 760px; margin: 0 auto 34px; }
+@media (max-width: 640px) { .ref-stats { grid-template-columns: repeat(2, 1fr); } }
+.ref-stat { border: 1px dashed var(--border-strong); border-radius: 14px; padding: 16px 10px; }
+.ref-stat b { display: block; font-size: 24px; font-weight: 800; color: var(--primary); }
+.ref-stat span { font-size: 12.5px; color: var(--text-muted); }
+.ref-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+
+/* ============================================================
+   页脚
+   ============================================================ */
+.footer { background: var(--footer-bg); color: var(--footer-text); border-top: 1px solid var(--footer-border); }
+.footer-grid { display: grid; grid-template-columns: 1.6fr repeat(4, 1fr); gap: 40px; padding: 64px 0 48px; }
+@media (max-width: 960px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .footer-grid { grid-template-columns: 1fr; } }
+.footer .logo { color: var(--footer-heading); }
+.footer-desc { font-size: 14px; margin: 16px 0 22px; max-width: 300px; }
+.footer-social { display: flex; gap: 10px; }
+.footer-social a {
+  width: 38px; height: 38px; border-radius: 10px; display: grid; place-items: center;
+  border: 1px solid var(--footer-border); color: var(--footer-text); transition: all .2s ease;
+}
+.footer-social a:hover { color: #fff; border-color: rgba(255,255,255,.4); }
+.footer-social .ic { width: 18px; height: 18px; }
+.footer h4 { font-size: 14px; font-weight: 700; color: var(--footer-heading); margin-bottom: 16px; }
+.footer ul { list-style: none; }
+.footer li { margin-bottom: 10px; }
+.footer li a { font-size: 14px; transition: color .15s ease; }
+.footer li a:hover { color: #fff; }
+.footer-note { border-top: 1px solid var(--footer-border); padding: 22px 0; text-align: center; font-size: 13px; }
+
+</style>
+<style>
+/* ===== 页面切换：非活动页面隐藏 ===== */
+html:not([data-active="home"]) .page-home { display: none; }
+html:not([data-active="pricing"]) .page-pricing { display: none; }
+html:not([data-active="prod-srp"]) .page-prod-srp { display: none; }
+html:not([data-active="prod-drp"]) .page-prod-drp { display: none; }
+html:not([data-active="prod-dc"]) .page-prod-dc { display: none; }
+html:not([data-active="scenarios"]) .page-scenarios { display: none; }
+html:not([data-active="resources"]) .page-resources { display: none; }
+html:not([data-active="blog"]) .page-blog { display: none; }
+html:not([data-active="about"]) .page-about { display: none; }
+html:not([data-active="register"]) .page-register { display: none; }
+
+/* ===== 定价页 ===== */
+.price-card {
+  position: relative; display: flex; flex-direction: column;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 24px;
+  padding: 36px 32px; box-shadow: var(--shadow-card); backdrop-filter: var(--surface-blur);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.price-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card-hover); }
+.price-card.popular { border-color: var(--primary); border-width: 2px; }
+.price-ribbon {
+  position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+  background: var(--primary); color: #fff; font-size: 12.5px; font-weight: 700;
+  padding: 5px 16px; border-radius: 999px; letter-spacing: .05em; white-space: nowrap;
+}
+.price-name { font-size: 19px; font-weight: 700; color: var(--text-heading); }
+.price-sub { font-size: 13.5px; color: var(--text-muted); margin-top: 4px; margin-bottom: 22px; }
+.price-line { display: flex; align-items: baseline; gap: 4px; margin-bottom: 24px; }
+.price-num { font-size: 46px; font-weight: 800; color: var(--text-heading); letter-spacing: -.02em; line-height: 1; }
+html[data-dir="b"] .price-num, html[data-dir="d"] .price-num { font-family: ui-monospace, Consolas, monospace; }
+.price-unit { font-size: 15px; color: var(--text-muted); font-weight: 600; }
+.price-feats { list-style: none; margin-bottom: 28px; flex: 1; }
+.price-feats li { display: flex; align-items: center; gap: 10px; font-size: 14.5px; color: var(--text); margin-bottom: 11px; }
+.price-feats .ic { width: 17px; height: 17px; color: var(--ok-fg); }
+
+/* ===== 引导列表 / 方法步骤 ===== */
+.guide-wrap { display: grid; grid-template-columns: 1.2fr .8fr; gap: 22px; max-width: 1080px; margin: 0 auto; }
+@media (max-width: 860px) { .guide-wrap { grid-template-columns: 1fr; } }
+.guide-block {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+  padding: 28px; box-shadow: var(--shadow-card); backdrop-filter: var(--surface-blur);
+}
+.guide-block h3 { font-size: 17px; font-weight: 700; color: var(--text-heading); margin-bottom: 12px; }
+.guide-block p { font-size: 14.5px; color: var(--text-muted); margin-bottom: 10px; }
+.guide-list { list-style: none; }
+.guide-list li { display: flex; gap: 10px; font-size: 14.5px; color: var(--text); margin-bottom: 10px; }
+.guide-list .ic { width: 18px; height: 18px; color: var(--primary); margin-top: 4px; }
+.eval-steps { counter-reset: ev; }
+.eval-steps li::before {
+  counter-increment: ev; content: counter(ev, decimal-leading-zero);
+  font-family: ui-monospace, Consolas, monospace; font-size: 12px; font-weight: 700; color: var(--primary);
+}
+
+/* ===== 产品页：计费对比 ===== */
+.bill-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; max-width: 980px; margin: 0 auto; }
+@media (max-width: 780px) { .bill-grid { grid-template-columns: 1fr; } }
+.bill-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
+  padding: 32px; box-shadow: var(--shadow-card); backdrop-filter: var(--surface-blur);
+}
+.bill-card h3 { font-size: 19px; font-weight: 700; color: var(--text-heading); margin-bottom: 6px; }
+.bill-price { font-size: 15px; font-weight: 700; color: var(--primary); margin-bottom: 18px; }
+.bill-block { margin-bottom: 16px; }
+.bill-block b { display: block; font-size: 13px; font-weight: 700; color: var(--text-heading); margin-bottom: 6px; }
+.bill-block ul { list-style: none; }
+.bill-block li { font-size: 14px; color: var(--text-muted); margin-bottom: 6px; padding-left: 16px; position: relative; }
+.bill-block li::before { content: ''; position: absolute; left: 2px; top: .66em; width: 5px; height: 5px; border-radius: 50%; background: var(--primary); }
+.bill-note { text-align: center; margin-top: 28px; font-size: 14px; color: var(--text-muted); }
+.bill-note b { color: var(--text-heading); }
+
+/* ===== 产品页：双栏图文（性能/会话） ===== */
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; max-width: 1080px; margin: 0 auto; }
+@media (max-width: 880px) { .split { grid-template-columns: 1fr; gap: 28px; } }
+.split h2 { font-size: clamp(22px, 2.6vw, 30px); font-weight: 700; color: var(--text-heading); margin-bottom: 14px; letter-spacing: -.01em; }
+.split > div > p { font-size: 15px; color: var(--text-muted); margin-bottom: 20px; }
+.split-feats { list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+@media (max-width: 560px) { .split-feats { grid-template-columns: 1fr; } }
+.split-feats li { display: flex; align-items: center; gap: 9px; font-size: 14px; font-weight: 600; color: var(--text); }
+.split-feats .ic { width: 17px; height: 17px; color: var(--ok-fg); }
+.mock-panel {
+  border: 1px solid var(--border); border-radius: 20px; background: var(--bg-subtle);
+  padding: 22px; box-shadow: var(--shadow-card); font-family: ui-monospace, Consolas, monospace; font-size: 12.5px;
+}
+html[data-dir="d"] .mock-panel { background: rgba(255,255,255,.04); }
+.mock-title { display: flex; gap: 6px; margin-bottom: 14px; }
+.mock-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--border-strong); }
+.mock-line { color: var(--text-muted); margin-bottom: 7px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mock-line b { color: var(--ok-fg); font-weight: 600; }
+.mock-line .k { color: var(--primary); }
+
+/* ===== 场景卡片 ===== */
+.sc-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
+  padding: 30px; box-shadow: var(--shadow-card); backdrop-filter: var(--surface-blur);
+  display: flex; flex-direction: column; transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.sc-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-card-hover); border-color: var(--border-strong); }
+.sc-tag {
+  align-self: flex-start; font-size: 11.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 999px; margin-bottom: 16px;
+  background: var(--primary-soft); color: var(--primary);
+}
+.sc-card h3 { font-size: 18px; font-weight: 700; color: var(--text-heading); margin-bottom: 10px; }
+.sc-card > p { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; }
+.sc-benefits { list-style: none; margin-bottom: 20px; flex: 1; }
+.sc-benefits li { display: flex; gap: 8px; font-size: 13.5px; color: var(--text); margin-bottom: 7px; }
+.sc-benefits .ic { width: 15px; height: 15px; color: var(--ok-fg); margin-top: 4px; }
+
+/* ===== 知识中心 / About：链接列 ===== */
+.link-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+@media (max-width: 700px) { .link-cards { grid-template-columns: 1fr; } }
+.link-card {
+  display: flex; align-items: flex-start; gap: 14px;
+  border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px;
+  background: var(--surface); backdrop-filter: var(--surface-blur);
+  transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+.link-card:hover { border-color: var(--primary); transform: translateY(-2px); box-shadow: var(--shadow-card-hover); }
+.link-card .f-icon { width: 40px; height: 40px; border-radius: 10px; margin: 0; flex-shrink: 0; }
+.link-card b { display: block; font-size: 15px; font-weight: 700; color: var(--text-heading); margin-bottom: 3px; }
+.link-card span { font-size: 13px; color: var(--text-muted); }
+.link-card.ext b::after { content: ' ↗'; color: var(--text-muted); font-weight: 400; }
+
+.order-steps { list-style: none; counter-reset: ord; max-width: 760px; margin: 0 auto; }
+.order-steps li {
+  counter-increment: ord; position: relative; padding: 0 0 22px 52px;
+  font-size: 15px; color: var(--text);
+}
+.order-steps li::before {
+  content: counter(ord); position: absolute; left: 0; top: -2px;
+  width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--primary-soft); color: var(--primary); font-weight: 800; font-size: 14px;
+  border: 1px solid var(--border-strong); font-family: ui-monospace, Consolas, monospace;
+}
+.order-steps li::after {
+  content: ''; position: absolute; left: 17px; top: 36px; bottom: 2px; width: 1px; background: var(--border-strong);
+}
+.order-steps li:last-child::after { display: none; }
+
+/* ===== 博客 ===== */
+.blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+@media (max-width: 960px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .blog-grid { grid-template-columns: 1fr; } }
+.blog-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 18px; overflow: hidden;
+  box-shadow: var(--shadow-card); backdrop-filter: var(--surface-blur); display: flex; flex-direction: column;
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+.blog-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-card-hover); }
+.blog-cover { height: 140px; position: relative; overflow: hidden; }
+.blog-cover .cover-art { position: absolute; inset: 0; display: grid; place-items: center; }
+.blog-cover .cover-art .ic { width: 44px; height: 44px; color: rgba(255,255,255,.9); stroke-width: 1.4; }
+.blog-cover.c1 { background: linear-gradient(135deg, #1E3A8A, #2563EB); }
+.blog-cover.c2 { background: linear-gradient(135deg, #0F766E, #14B8A6); }
+.blog-cover.c3 { background: linear-gradient(135deg, #7C3AED, #A78BFA); }
+.blog-cover.c4 { background: linear-gradient(135deg, #B45309, #F59E0B); }
+.blog-cover.c5 { background: linear-gradient(135deg, #334155, #64748B); }
+.blog-cover.c6 { background: linear-gradient(135deg, #BE123C, #FB7185); }
+.blog-body { padding: 22px; display: flex; flex-direction: column; flex: 1; }
+.blog-meta { display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--text-muted); margin-bottom: 10px; }
+.blog-cat { background: var(--primary-soft); color: var(--primary); font-weight: 700; padding: 3px 10px; border-radius: 999px; font-size: 11.5px; }
+.blog-card h3 { font-size: 16px; font-weight: 700; color: var(--text-heading); line-height: 1.45; margin-bottom: 10px; }
+.blog-card p { font-size: 13.5px; color: var(--text-muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; flex: 1; }
+
+/* ===== About 原则卡 / 事实列表 ===== */
+.fact-list { list-style: none; }
+.fact-list li { display: flex; gap: 10px; font-size: 15px; color: var(--text); margin-bottom: 12px; }
+.fact-list .ic { width: 19px; height: 19px; color: var(--ok-fg); margin-top: 4px; }
+.q-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; max-width: 900px; margin: 0 auto; }
+@media (max-width: 680px) { .q-grid { grid-template-columns: 1fr; } }
+.q-card {
+  display: flex; gap: 12px; align-items: flex-start;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+  padding: 20px; box-shadow: var(--shadow-card); backdrop-filter: var(--surface-blur);
+  font-size: 14.5px; color: var(--text);
+}
+.q-card .f-icon { width: 36px; height: 36px; border-radius: 10px; margin: 0; font-weight: 800; font-size: 14px; font-family: ui-monospace, Consolas, monospace; }
+
+/* ===== 注册页 ===== */
+.reg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; max-width: 1080px; margin: 0 auto; border-radius: 24px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-card); }
+@media (max-width: 880px) { .reg-grid { grid-template-columns: 1fr; } }
+.reg-side {
+  background: linear-gradient(160deg, #101C3F 0%, #1E3A8A 60%, #2563EB 100%);
+  color: #fff; padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; gap: 22px;
+}
+.reg-side h2 { font-size: 26px; font-weight: 800; letter-spacing: -.01em; }
+.reg-side .reg-tag { font-size: 12.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; opacity: .85; }
+.reg-feat { display: flex; gap: 14px; align-items: flex-start; }
+.reg-feat .f-icon { background: rgba(255,255,255,.14); color: #fff; margin: 0; width: 40px; height: 40px; }
+.reg-feat b { display: block; font-size: 15px; margin-bottom: 2px; }
+.reg-feat span { font-size: 13px; opacity: .82; }
+.reg-bonus { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.22); border-radius: 12px; padding: 10px 14px; font-size: 13.5px; font-weight: 600; align-self: flex-start; }
+.reg-form { background: var(--surface); padding: 48px 40px; backdrop-filter: var(--surface-blur); }
+.reg-form h2 { font-size: 22px; font-weight: 700; color: var(--text-heading); margin-bottom: 26px; }
+.form-field { margin-bottom: 18px; }
+.form-field label { display: block; font-size: 13.5px; font-weight: 600; color: var(--text-heading); margin-bottom: 7px; }
+.form-field input {
+  width: 100%; padding: 11px 14px; border-radius: 10px; border: 1px solid var(--border-strong);
+  background: var(--bg); color: var(--text); font-size: 14.5px; font-family: inherit; outline: none;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.form-field input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-soft); }
+.form-field input::placeholder { color: var(--text-muted); opacity: .7; }
+.reg-submit { width: 100%; margin-top: 6px; }
+.reg-alt { text-align: center; margin-top: 18px; font-size: 14px; color: var(--text-muted); }
+.reg-alt a { color: var(--primary); font-weight: 600; }
+
+/* ===== 关于页 hero 布局 ===== */
+.phero-split { display: grid; grid-template-columns: 1.1fr .9fr; gap: 44px; align-items: center; text-align: left; }
+@media (max-width: 880px) { .phero-split { grid-template-columns: 1fr; } }
+.phero-split h1 { margin-bottom: 16px; }
+.phero-split .phero-sub { margin: 0 0 26px; max-width: 560px; }
+.about-side-card {
+  background: var(--hero-chip-bg); border: 1px solid var(--hero-border); border-radius: 20px;
+  padding: 28px; backdrop-filter: var(--surface-blur);
+}
+html[data-dir="a"] .about-side-card, html[data-dir="c"] .about-side-card { background: #fff; border-color: var(--border); box-shadow: var(--shadow-card); }
+.about-side-card b { display: block; font-size: 14px; font-weight: 700; color: var(--hero-heading); margin-bottom: 14px; }
+html[data-dir="a"] .about-side-card b, html[data-dir="c"] .about-side-card b { color: var(--text-heading); }
+.about-side-card ul { list-style: none; }
+.about-side-card li { display: flex; gap: 10px; font-size: 13.5px; color: var(--hero-sub); margin-bottom: 10px; }
+html[data-dir="a"] .about-side-card li, html[data-dir="c"] .about-side-card li { color: var(--text); }
+.about-side-card li .ic { width: 17px; height: 17px; color: var(--ok-fg); margin-top: 3px; }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></symbol>
+    <symbol id="i-headset" viewBox="0 0 24 24"><path d="M4 13a8 8 0 0 1 16 0"/><rect x="3" y="13" width="4" height="6" rx="2"/><rect x="17" y="13" width="4" height="6" rx="2"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1 1-1.5 4.5-1.5 4.5s3.5-.5 4.5-1.5M9 15c-2-2-2-2 0-4l6-6c3 0 6 3 6 6l-6 6c-2 2-2 2-4 0l-2-2z"/><circle cx="15" cy="9" r="1.6"/></symbol>
+    <symbol id="i-infinity" viewBox="0 0 24 24"><path d="M6.2 15.8a3.8 3.8 0 1 1 0-7.6c2.9 0 4.9 7.6 7.8 7.6a3.8 3.8 0 1 0 0-7.6c-2.9 0-4.9 7.6-7.8 7.6z"/></symbol>
+    <symbol id="i-shieldlock" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6l7-3z"/><rect x="9.5" y="11" width="5" height="4.5" rx="1"/><path d="M10.5 11v-1.5a1.5 1.5 0 0 1 3 0V11"/></symbol>
+    <symbol id="i-bug" viewBox="0 0 24 24"><circle cx="12" cy="13" r="5"/><path d="M12 8V5M8.5 9.5L5.5 6.5M15.5 9.5l3-3M7 13H4M20 13h-3M8.5 16.5l-3 3M15.5 16.5l3 3"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.6"/><circle cx="17" cy="20" r="1.6"/><path d="M3 4h2l2.5 12h10L20 8H6"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9h-9V3z"/><path d="M15 3.5A9 9 0 0 1 20.5 9H15V3.5z"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.5"/><circle cx="17" cy="6" r="2.5"/><circle cx="17" cy="18" r="2.5"/><path d="M8.3 10.8l6.4-3.6M8.3 13.2l6.4 3.6"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></symbol>
+    <symbol id="i-ad" viewBox="0 0 24 24"><path d="M3 10v4l11 4V6L3 10z"/><path d="M14 8.5c2.5.5 4 1.8 4 3.5s-1.5 3-4 3.5M6 15v4"/></symbol>
+    <symbol id="i-gauge" viewBox="0 0 24 24"><path d="M4 14a8 8 0 0 1 16 0"/><path d="M12 14l3.5-3.5"/><circle cx="12" cy="14" r="1.4"/><path d="M4 18.5h16"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></symbol>
+    <symbol id="i-news" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 9h8M8 13h8M8 17h5"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.7"/><path d="M20 4v4h-4"/></symbol>
+    <symbol id="i-server" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="1.5"/><rect x="3" y="13" width="18" height="7" rx="1.5"/><path d="M7 7.5h.01M7 16.5h.01"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11l8-7 8 7"/><path d="M6 10v9h12v-9"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M12 4l1.5 4.5L18 10l-4.5 1.5L12 16l-1.5-4.5L6 10l4.5-1.5L12 4z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15z"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 3L5 13h6l-1 8 8-10h-6l1-8z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></symbol>
+    <symbol id="i-chevdown" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+    <symbol id="i-arrowright" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="1.5"/><path d="M4 10h16M12 10v10M12 10s-4 0-5-2 1-4 3-3 2 5 2 5zM12 10s4 0 5-2-1-4-3-3-2 5-2 5z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-tg" viewBox="0 0 24 24"><path d="M21.5 4.5L2.8 11.6c-.9.35-.85 1.6.07 1.9l4.4 1.4 1.7 5.2c.28.8 1.3.95 1.83.3l2.4-2.7 4.4 3.2c.66.5 1.6.13 1.78-.68l3-14.5c.2-.95-.75-1.7-1.6-1.3z"/></symbol>
+    <symbol id="i-xbrand" viewBox="0 0 24 24"><path d="M4 4l7 8.5L4.5 20h2.2l5.2-6 5 6H20l-7.3-8.8L19.5 4h-2.2l-4.8 5.6L8 4H4z"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h14v16H6a2 2 0 0 0-2 2V5z"/><path d="M4 19a2 2 0 0 1 2-2h14"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h9l5 5v13H6V3z"/><path d="M14 3v6h6M9 13h6M9 17h6"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 4v16M5 8h14M7 8l-3 6a3 3 0 0 0 6 0L7 8zM17 8l-3 6a3 3 0 0 0 6 0l-3-6z"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c1.5-3.5 4.5-5 8-5s6.5 1.5 8 5"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></symbol>
+    <symbol id="i-stairs" viewBox="0 0 24 24"><path d="M4 20h4v-4h4v-4h4V8h4"/></symbol>
+    <symbol id="i-blog" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h8M8 17h4"/></symbol>
+  </defs>
+</svg>
+
+<!-- ===== 预览工具栏 ===== -->
+<div class="pt-bar" role="toolbar" aria-label="预览控制">
+  <span class="pt-brand"><svg class="ic"><use href="#i-sparkles"/></svg>IPFlex 重设计</span>
+  <div class="pt-group" id="dir-group">
+    <button class="pt-btn active" data-dir-btn="a" title="白底蓝主色 · Stripe / Cloudflare 调性">A · 明亮企业<small>Light SaaS</small></button>
+    <button class="pt-btn" data-dir-btn="b" title="深底渐变光晕 · Vercel / Linear 调性">B · 深色科技<small>Dark Tech</small></button>
+    <button class="pt-btn" data-dir-btn="c" title="浅色主体 + 深色 Hero / CTA">C · 明暗节奏<small>Light + Dark</small></button>
+    <button class="pt-btn" data-dir-btn="d" title="深色氛围 + 玻璃卡片（修复版）">D · 玻璃拟态<small>Glass fixed</small></button>
+  </div>
+  <div class="pt-group" id="page-group" style="margin-left:8px; padding-left:12px; border-left:1px solid rgba(255,255,255,.14)">
+    <button class="pt-btn active" data-page-btn="home">首页</button>
+    <button class="pt-btn" data-page-btn="pricing">定价</button>
+    <button class="pt-btn" data-page-btn="prod-srp">静态住宅</button>
+    <button class="pt-btn" data-page-btn="prod-drp">动态住宅</button>
+    <button class="pt-btn" data-page-btn="prod-dc">数据中心</button>
+    <button class="pt-btn" data-page-btn="scenarios">场景</button>
+    <button class="pt-btn" data-page-btn="resources">知识中心</button>
+    <button class="pt-btn" data-page-btn="blog">博客</button>
+    <button class="pt-btn" data-page-btn="about">关于</button>
+    <button class="pt-btn" data-page-btn="register">注册</button>
+  </div>
+  <label class="pt-toggle"><input type="checkbox" id="notes-toggle">标注</label>
+</div>
+
+<!-- ==================== 促销条（NewUserPromotion：由弹窗改为常驻横幅） ==================== -->
+<div class="promo" id="promo" style="background:linear-gradient(90deg,#1D4ED8,#3B82F6);color:#fff;font-size:13.5px;position:relative">
+  <span class="note-tag">common/NewUserPromotion.astro</span>
+  <div class="container" style="display:flex;align-items:center;gap:12px;min-height:44px;padding-top:6px;padding-bottom:6px">
+    <span style="background:rgba(255,255,255,.18);border-radius:999px;padding:3px 10px;font-weight:700;font-size:12px;white-space:nowrap">新用户专享</span>
+    <span>注册即送15元免费试用额度，立即体验我们的优质服务！</span>
+    <a href="#" style="font-weight:700;white-space:nowrap;text-decoration:underline;text-underline-offset:3px">立即注册</a>
+    <button id="promo-close" aria-label="关闭" style="margin-left:auto;background:none;border:none;color:rgba(255,255,255,.85);cursor:pointer;padding:4px"><svg class="ic" style="width:16px;height:16px"><use href="#i-close"/></svg></button>
+  </div>
+</div>
+
+<!-- ==================== 导航（Header.astro） ==================== -->
+<div class="nav-wrap">
+  <span class="note-tag">widgets/Header.astro</span>
+  <nav class="nav">
+    <div class="container">
+      <a class="logo" href="#" data-nav="home"><span class="logo-mark"><svg class="ic"><use href="#i-globe"/></svg></span>IPFlex</a>
+      <ul class="nav-links">
+        <li><a href="#" data-nav="prod-srp" data-sub="products">代理产品</a></li>
+        <li><a href="#" data-nav="pricing">定价</a></li>
+        <li><a href="#" data-nav="scenarios">应用场景</a></li>
+        <li><a href="#" data-nav="blog">博客</a></li>
+        <li><a href="#" data-nav="resources">知识中心</a></li>
+        <li><a href="#">帮助中心</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a class="nav-login" href="#">登录</a>
+        <a class="btn btn-primary btn-sm" href="#" data-nav="register">注册</a>
+      </div>
+      <button class="nav-burger" aria-label="菜单"><svg class="ic" style="width:24px;height:24px"><use href="#i-menu"/></svg></button>
+    </div>
+  </nav>
+</div>
+
+<!-- ============================================================ -->
+<!-- ==================== 页面 1：首页 ==================== -->
+<!-- ============================================================ -->
+<div class="page-home">
+
+<section class="sec-hero" style="position:relative">
+  <span class="note-tag">widgets/Hero.astro</span>
+  <div class="container">
+    <div class="hero">
+      <h1>企业级代理网络服务，<br>覆盖住宅与数据中心节点</h1>
+      <p class="hero-sub">IPFlex 提供静态住宅、动态住宅与数据中心节点，支持 HTTP/SOCKS5、城市级定位与 API 接入，适用于数据采集、广告验证、跨境运营与自动化流程。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#" data-nav="register">购买代理IP</a>
+        <a class="btn btn-hero2" href="#" data-nav="pricing">了解更多</a>
+      </div>
+      <div class="hero-trust">
+        <div class="hero-trust-item"><svg class="ic"><use href="#i-zap"/></svg>HTTP · SOCKS5 双协议</div>
+        <div class="hero-trust-item"><svg class="ic"><use href="#i-pin"/></svg>200+ 国家 · 城市级定位</div>
+        <div class="hero-trust-item"><svg class="ic"><use href="#i-gauge"/></svg>99.9% 可用性保障</div>
+        <div class="hero-trust-item"><svg class="ic"><use href="#i-clock"/></svg>7×24 技术支持</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="position:relative">
+  <span class="note-tag">widgets/ProxyContent.astro</span>
+  <div class="container">
+    <div class="band-label"><h2 class="band-title">住宅代理服务</h2></div>
+    <div class="p-card reveal">
+      <div>
+        <h3 class="p-name">静态住宅代理</h3>
+        <ul class="p-desc">
+          <li>基于真实住宅网络的代理服务，提供长期不变的固定IP地址。</li>
+          <li>具有极高的匿名性和可信度，能够有效避免被识别为代理或被封禁。</li>
+          <li>适用于跨境电商、市场调研、社媒营销、品牌保护等多种业务场景。</li>
+        </ul>
+        <a class="p-link" href="#" data-nav="prod-srp">查看静态住宅代理 <svg class="ic"><use href="#i-arrowright"/></svg></a>
+      </div>
+      <div class="p-tiles">
+        <div class="p-tile"><svg class="ic"><use href="#i-home"/></svg>真实长效住宅IP</div>
+        <div class="p-tile"><svg class="ic"><use href="#i-gauge"/></svg>可用率高达99.9%</div>
+        <div class="p-tile"><svg class="ic"><use href="#i-pin"/></svg>精准城市定位</div>
+        <div class="p-tile"><svg class="ic"><use href="#i-code"/></svg>多协议兼容</div>
+      </div>
+    </div>
+    <div class="p-card reveal">
+      <div>
+        <h3 class="p-name">动态住宅代理</h3>
+        <ul class="p-desc">
+          <li>基于不断变化的IP地址池的代理服务，提供短期内频繁更换的IP地址。</li>
+          <li>具有高度灵活性和广泛的IP覆盖，能够有效规避IP封禁和限制。</li>
+          <li>适用于网络爬虫、数据抓取、广告验证和自动化测试等业务场景。</li>
+        </ul>
+        <a class="p-link" href="#" data-nav="prod-drp">查看动态住宅代理 <svg class="ic"><use href="#i-arrowright"/></svg></a>
+      </div>
+      <div class="p-tiles">
+        <div class="p-tile"><svg class="ic"><use href="#i-refresh"/></svg>真实短效住宅IP</div>
+        <div class="p-tile"><svg class="ic"><use href="#i-infinity"/></svg>千万+ 日活跃IP</div>
+        <div class="p-tile"><svg class="ic"><use href="#i-pin"/></svg>可定位至城市</div>
+        <div class="p-tile"><svg class="ic"><use href="#i-code"/></svg>多协议兼容</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section sec-alt" style="position:relative">
+  <span class="note-tag">widgets/ProxyService.astro</span>
+  <div class="container">
+    <div class="band-label"><h2 class="band-title">数据中心代理服务</h2></div>
+    <div class="p-card reveal">
+      <div>
+        <h3 class="p-name">静态数据中心代理</h3>
+        <ul class="p-desc">
+          <li>基于数据中心网络的代理服务，提供长期不变的固定IP地址。</li>
+          <li>通过位于数据中心的服务器提供IP，具有较高的速度和稳定性，在成本和性能上具有优势。</li>
+          <li>尤其适合需要快速、大规模数据抓取和访问的业务场景，如网站测试、数据分析、SEO监控和在线广告验证。</li>
+        </ul>
+        <a class="p-link" href="#" data-nav="prod-dc">查看数据中心代理 <svg class="ic"><use href="#i-arrowright"/></svg></a>
+      </div>
+      <div class="p-tiles">
+        <div class="p-tile"><svg class="ic"><use href="#i-server"/></svg>长效数据中心IP</div>
+        <div class="p-tile"><svg class="ic"><use href="#i-pin"/></svg>精准城市定位</div>
+        <div class="p-tile"><svg class="ic"><use href="#i-gauge"/></svg>可用率高达99.9%</div>
+        <div class="p-tile"><svg class="ic"><use href="#i-code"/></svg>多协议兼容</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="position:relative">
+  <span class="note-tag">widgets/SimpleSteps.astro</span>
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Quick Start</span>
+      <h2 class="sec-title">快速开始使用企业代理服务</h2>
+    </div>
+    <div class="steps-grid reveal">
+      <div class="step"><div class="step-num">01</div><h3>注册账号</h3><p>在官网注册账号，开始配置您的网络接入服务。</p></div>
+      <div class="step"><div class="step-num">02</div><h3>选择套餐</h3><p>根据业务目标选择合适套餐与资源类型。</p></div>
+      <div class="step"><div class="step-num">03</div><h3>开始使用</h3><p>完成配置后即可接入业务流程，稳定开展日常任务。</p></div>
+      <div class="step done"><div class="step-num"><svg class="ic"><use href="#i-check"/></svg></div><h3>完成！</h3></div>
+    </div>
+  </div>
+</section>
+
+<section class="section sec-alt" style="position:relative">
+  <span class="note-tag">widgets/Advantages.astro</span>
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Why IPFlex</span>
+      <h2 class="sec-title">为什么选择我们</h2>
+      <p class="sec-sub">面向企业场景的稳定代理网络与服务支持</p>
+    </div>
+    <div class="grid-3">
+      <div class="f-card reveal"><div class="f-icon"><svg class="ic"><use href="#i-globe"/></svg></div><h3>全球IP资源池</h3><p>我们拥有广泛覆盖的全球IP资源池，涵盖200+国家和地区，为您提供多样化的IP地址选择，开启无界网络体验。</p></div>
+      <div class="f-card reveal"><div class="f-icon"><svg class="ic"><use href="#i-headset"/></svg></div><h3>高效技术支持 + 推荐奖励</h3><p>我们提供全天候24/7的专业技术支持，确保您的体验始终顺畅无忧。更有推荐返现计划，好友充值立即返现10%佣金，无需等待，让您边用边赚！</p></div>
+      <div class="f-card reveal"><div class="f-icon"><svg class="ic"><use href="#i-layers"/></svg></div><h3>丰富的IP类型</h3><p>我们为您提供多样化的IP类型选择，包括住宅代理、数据中心代理；静态代理、动态代理等，以满足不同业务场景的需求，让您的业务更加高效。</p></div>
+      <div class="f-card reveal"><div class="f-icon"><svg class="ic"><use href="#i-rocket"/></svg></div><h3>快速稳定的连接</h3><p>使用我们，您将享受卓越的网络性能，快速且稳定的连接让您告别网络延迟和不稳定的烦恼，提升工作效率和用户体验。</p></div>
+      <div class="f-card reveal"><div class="f-icon"><svg class="ic"><use href="#i-infinity"/></svg></div><h3>无限带宽</h3><p>我们为您提供无限制的带宽使用，彻底消除流量限制的束缚，让您在任何情况下都能享受超高速率和极低延迟的网络服务。</p></div>
+      <div class="f-card reveal"><div class="f-icon"><svg class="ic"><use href="#i-shieldlock"/></svg></div><h3>高级安全保障</h3><p>我们提供顶级的安全保障措施，全面保护您的隐私和数据安全，确保您的信息安全无虞，安心使用我们的服务。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="position:relative">
+  <span class="note-tag">widgets/DataStats.astro</span>
+  <div class="container">
+    <div class="grid-4">
+      <div class="stat-card reveal"><div class="stat-num">132K</div><div class="stat-label">用户数量</div></div>
+      <div class="stat-card reveal"><div class="stat-num">24.8K</div><div class="stat-label">服务次数</div></div>
+      <div class="stat-card reveal"><div class="stat-num">200+</div><div class="stat-label">覆盖国家</div></div>
+      <div class="stat-card reveal"><div class="stat-num">98%</div><div class="stat-label">满意度</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section sec-alt" style="position:relative">
+  <span class="note-tag">widgets/UsageScenarios.astro</span>
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Use Cases</span>
+      <h2 class="sec-title">常用场景</h2>
+      <p class="sec-sub">适用于多类业务场景。</p>
+    </div>
+    <div class="grid-3">
+      <div class="u-card reveal"><div class="f-icon"><svg class="ic"><use href="#i-bug"/></svg></div><h3>网页数据采集</h3><p>借助代理 IP，轻松突破网站限制，穿梭于海量网页间，精准抓取文本、图片、数据等信息，为市场分析、竞品调研提供有力支撑，赋能业务决策。</p></div>
+      <div class="u-card reveal"><div class="f-icon"><svg class="ic"><use href="#i-cart"/></svg></div><h3>电子商务运营</h3><p>实时采集电商平台产品详情、价格波动、销量排行，帮商家把握商机，及时优化选品、定价策略，在竞争激烈的电商赛道抢占先机。</p></div>
+      <div class="u-card reveal"><div class="f-icon"><svg class="ic"><use href="#i-chart"/></svg></div><h3>市场调研洞察</h3><p>深入挖掘各行业数据，模拟不同地域、人群调研，精准剖析市场需求、消费者偏好，助企业提前布局，领航市场走向。</p></div>
+      <div class="u-card reveal"><div class="f-icon"><svg class="ic"><use href="#i-share"/></svg></div><h3>社交媒体拓展</h3><p>多账号运营无忧，通过代理 IP 切换身份，批量操作点赞、评论、分享，安全提升品牌曝光，高效吸引目标受众，引爆社交热度。</p></div>
+      <div class="u-card reveal"><div class="f-icon"><svg class="ic"><use href="#i-search"/></svg></div><h3>SEO策略优化</h3><p>模拟各地搜索请求，精准监测网站关键词排名、流量来源，依此优化页面内容、结构，让网站在搜索引擎中脱颖而出。</p></div>
+      <div class="u-card reveal"><div class="f-icon"><svg class="ic"><use href="#i-ad"/></svg></div><h3>广告投放增效</h3><p>从多地区视角验证广告投放，确保精准触达，对比不同区域成效，及时调整投放细节，用有限预算撬动最大流量转化。</p></div>
+      <div class="u-card reveal"><div class="f-icon"><svg class="ic"><use href="#i-gauge"/></svg></div><h3>网站性能测试</h3><p>模拟多样网络环境与地域访问，全面排查网站漏洞、加载瓶颈，保障全球用户访问顺畅，提升网站可靠性与用户体验。</p></div>
+      <div class="u-card reveal"><div class="f-icon"><svg class="ic"><use href="#i-shield"/></svg></div><h3>品牌安全守护</h3><p>隐匿真实 IP，降低品牌网络被攻击风险，实时监测假冒侵权信息，捍卫品牌声誉，稳固市场地位。</p></div>
+      <div class="u-card reveal"><div class="f-icon"><svg class="ic"><use href="#i-news"/></svg></div><h3>舆情动态追踪</h3><p>实时收集主流媒体、社交平台舆情，分析舆论风向、公众情绪，助力企业快速回应，巧妙化解危机，维护品牌形象。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="position:relative">
+  <span class="note-tag">widgets/HeroTitle.astro</span>
+  <div class="container">
+    <div class="cta-banner reveal">
+      <h2>专业稳定的企业网络服务</h2>
+      <p>立即体验高效稳定的企业级代理网络能力。
+不要再犹豫了，立即行动！</p>
+      <a class="btn btn-white" href="#" data-nav="register">获取服务</a>
+    </div>
+  </div>
+</section>
+
+<section class="section sec-alt" style="position:relative">
+  <span class="note-tag">widgets/FAQs.astro</span>
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">FAQs</span>
+      <h2 class="sec-title">常见问题</h2>
+      <p class="sec-sub">了解功能与接入方式，快速开始使用。</p>
+    </div>
+    <div class="faq-grid">
+      <details class="faq-item"><summary>代理IP如何工作？<svg class="ic"><use href="#i-chevdown"/></svg></summary><p class="faq-a">代理IP作为中间服务器，可以隐藏您的真实IP地址，帮助您访问受地理限制的内容，同时提供额外的安全性和匿名性保护。</p></details>
+      <details class="faq-item"><summary>静态住宅IP和动态IP有什么区别？<svg class="ic"><use href="#i-chevdown"/></svg></summary><p class="faq-a">静态住宅IP是固定不变的真实住宅IP地址，适合需要保持IP稳定的业务场景；动态IP则会定期自动更换，适合需要频繁切换IP的数据采集任务。</p></details>
+      <details class="faq-item"><summary>代理IP服务价格如何？<svg class="ic"><use href="#i-chevdown"/></svg></summary><p class="faq-a">我们提供灵活的计费方案，包括按流量计费、按IP数量计费等多种选择。您可以根据业务需求选择最适合的套餐，我们也提供定制化的企业解决方案。</p></details>
+      <details class="faq-item"><summary>如何选择合适的代理IP类型？<svg class="ic"><use href="#i-chevdown"/></svg></summary><p class="faq-a">选择代理IP类型需要考虑您的具体使用场景。数据采集建议使用动态IP，跨境电商建议使用静态住宅IP，企业应用则可以选择专用数据中心IP。</p></details>
+      <details class="faq-item"><summary>IP资源覆盖哪些地区？<svg class="ic"><use href="#i-chevdown"/></svg></summary><p class="faq-a">我们的IP资源池覆盖全球200+国家和地区，支持精确到城市的地理位置定位，满足您的全球业务需求。</p></details>
+      <details class="faq-item"><summary>代理IP的带宽和速度如何？<svg class="ic"><use href="#i-chevdown"/></svg></summary><p class="faq-a">本服务提供高速稳定的代理服务，采用先进的负载均衡技术，确保低延迟和高带宽，支持无限流量使用。</p></details>
+      <details class="faq-item"><summary>如何保证代理IP的稳定性？<svg class="ic"><use href="#i-chevdown"/></svg></summary><p class="faq-a">我们采用多重备份机制和智能监控系统，实时监测IP状态，确保99.9%的可用性，同时提供自动故障转移功能。</p></details>
+      <details class="faq-item"><summary>是否支持API接入？<svg class="ic"><use href="#i-chevdown"/></svg></summary><p class="faq-a">是的，我们提供完整的API文档和SDK，支持多种编程语言，方便您将代理服务集成到自己的系统中。</p></details>
+      <details class="faq-item"><summary>如何确保数据安全？<svg class="ic"><use href="#i-chevdown"/></svg></summary><p class="faq-a">本服务采用企业级加密技术，支持HTTPS和SOCKS5协议，确保数据传输安全。我们严格遵守数据保护法规，不会记录或泄露用户数据。</p></details>
+      <details class="faq-item"><summary>提供哪些技术支持？<svg class="ic"><use href="#i-chevdown"/></svg></summary><p class="faq-a">我们提供7x24小时技术支持，包括在线文档、技术咨询、故障排查等服务，确保您的业务顺利运行。</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="position:relative">
+  <span class="note-tag">widgets/SimpleReferralWidget.astro</span>
+  <div class="container">
+    <div class="ref-card reveal">
+      <span class="ref-badge"><svg class="ic"><use href="#i-gift"/></svg>推荐返现计划</span>
+      <h2 class="ref-title">邀请好友，获得<span class="hl">10%佣金</span></h2>
+      <p class="ref-desc">加入IPFlex推荐返现计划，每推荐一位好友购买代理服务，好友充值时您立即获得丰厚的佣金奖励。零门槛参与，无限推荐次数。</p>
+      <div class="ref-stats">
+        <div class="ref-stat"><b>10%</b><span>最高佣金比例</span></div>
+        <div class="ref-stat"><b>∞</b><span>无限推荐次数</span></div>
+        <div class="ref-stat"><b>$0</b><span>零门槛参与</span></div>
+        <div class="ref-stat"><b>⚡</b><span>充值立即到账</span></div>
+      </div>
+      <div class="ref-actions">
+        <a class="btn btn-primary" href="#" data-nav="register">立即注册开始推荐</a>
+        <a class="btn btn-secondary" href="#">登录查看推荐收益</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /page-home -->
+
+<!-- ============================================================ -->
+<!-- ==================== 页面 2：定价 ==================== -->
+<!-- ============================================================ -->
+<div class="page-pricing">
+
+<section class="phero phero-center" style="position:relative">
+  <span class="note-tag">[lang]/pricing.astro</span>
+  <div class="container">
+    <span class="eyebrow">Pricing</span>
+    <h1>限时优惠！低至￥2/IP ￥10/GB + 推荐返现</h1>
+    <p class="phero-sub">选择最适合您业务需求的方案，推荐好友充值立即返现10%佣金</p>
+    <div class="phero-actions">
+      <a class="btn btn-primary" href="#" data-nav="register">立即购买</a>
+      <a class="btn btn-hero2" href="#" data-nav="prod-srp">了解产品</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:56px; position:relative">
+  <span class="note-tag">widgets/PricingCards.astro</span>
+  <div class="container">
+    <div class="grid-3" style="align-items:stretch">
+      <div class="price-card reveal">
+        <div class="price-name">静态住宅代理</div>
+        <div class="price-sub">稳定可靠的长效住宅IP</div>
+        <div class="price-line"><span class="price-num">￥40</span><span class="price-unit">/GB</span></div>
+        <ul class="price-feats">
+          <li><svg class="ic"><use href="#i-check"/></svg>真实长效住宅IP</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>可用率高达99.9%</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>精准城市定位</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>HTTP、Socks5协议支持</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>低至2元/天</li>
+        </ul>
+        <a class="btn btn-secondary" href="#" data-nav="register" style="width:100%">立即购买</a>
+      </div>
+      <div class="price-card popular reveal">
+        <div class="price-ribbon">热门</div>
+        <div class="price-name">动态住宅代理</div>
+        <div class="price-sub">海量真实住宅IP资源</div>
+        <div class="price-line"><span class="price-num">￥2</span><span class="price-unit">/IP</span></div>
+        <ul class="price-feats">
+          <li><svg class="ic"><use href="#i-check"/></svg>真实短效住宅IP</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>千万+日活跃IP</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>可定位至城市</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>HTTP、Socks5协议支持</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>40元/GB</li>
+        </ul>
+        <a class="btn btn-primary" href="#" data-nav="register" style="width:100%">立即购买</a>
+      </div>
+      <div class="price-card reveal">
+        <div class="price-name">静态数据中心代理</div>
+        <div class="price-sub">高性价比的数据中心IP</div>
+        <div class="price-line"><span class="price-num">￥10</span><span class="price-unit">/GB</span></div>
+        <ul class="price-feats">
+          <li><svg class="ic"><use href="#i-check"/></svg>长效数据中心IP</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>按天购买不限流量</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>可定位至城市</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>HTTP、Socks5协议支持</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>2元/天 或 30元/月</li>
+        </ul>
+        <a class="btn btn-secondary" href="#" data-nav="register" style="width:100%">立即购买</a>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:36px;font-size:14.5px;color:var(--text-muted);max-width:820px;margin-left:auto;margin-right:auto">IPFlex 代理IP定价方案面向不同业务阶段提供可扩展组合，团队可以根据稳定性目标、请求体量与预算约束进行分层采购。</p>
+  </div>
+</section>
+
+<section class="section sec-alt" style="position:relative">
+  <span class="note-tag">[lang]/pricing.astro（选购指南）</span>
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Guide</span>
+      <h2 class="sec-title">如何选择合适的代理套餐</h2>
+    </div>
+    <div class="guide-wrap">
+      <div class="guide-block reveal">
+        <h3>按任务类型选择</h3>
+        <ul class="guide-list">
+          <li><svg class="ic"><use href="#i-user"/></svg>账号体系任务：优先静态住宅代理，保证会话连续和身份一致。</li>
+          <li><svg class="ic"><use href="#i-bug"/></svg>抓取采集任务：优先动态住宅代理，提升覆盖率并降低封禁概率。</li>
+          <li><svg class="ic"><use href="#i-code"/></svg>高并发接口任务：优先数据中心代理，控制单位成本并提高吞吐。</li>
+        </ul>
+      </div>
+      <div class="guide-block reveal">
+        <h3>四步评估法（可直接落地）</h3>
+        <ul class="guide-list eval-steps">
+          <li>定义统一负载：目标站点、并发、时间窗口、成功判定标准。</li>
+          <li>并行跑样本：同一任务在三类套餐下跑完整业务周期。</li>
+          <li>记录结果：成功率、P50/P95 时延、重试开销、完成成本。</li>
+          <li>做决策复盘：按峰值/常态双窗口评估，保留采购依据。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="position:relative">
+  <span class="note-tag">widgets/PricingTable.astro（价格相关特性）</span>
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Features</span>
+      <h2 class="sec-title">价格相关特性</h2>
+      <p class="sec-sub">了解选择我们方案的优势</p>
+    </div>
+    <div class="grid-3">
+      <div class="f-card reveal"><div class="f-icon"><svg class="ic"><use href="#i-stairs"/></svg></div><h3>分级定价方案</h3><p>提供多种价格方案，满足不同预算和需求</p></div>
+      <div class="f-card reveal"><div class="f-icon"><svg class="ic"><use href="#i-scale"/></svg></div><h3>透明定价</h3><p>清晰展示每个方案的价格详情，无隐藏费用</p></div>
+      <div class="f-card reveal"><div class="f-icon"><svg class="ic"><use href="#i-shieldlock"/></svg></div><h3>安全支付</h3><p>安全的支付网关保护您的交易信息</p></div>
+      <div class="f-card reveal"><div class="f-icon"><svg class="ic"><use href="#i-zap"/></svg></div><h3>即时访问</h3><p>支付完成后即可使用所有功能</p></div>
+      <div class="f-card reveal"><div class="f-icon"><svg class="ic"><use href="#i-rocket"/></svg></div><h3>升级优惠</h3><p>升级到更高级方案可解锁更多功能和优势</p></div>
+      <div class="f-card reveal"><div class="f-icon"><svg class="ic"><use href="#i-headset"/></svg></div><h3>24小时支持</h3><p>每天通过在线聊天、邮件或电话提供支持</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section sec-alt" style="position:relative">
+  <span class="note-tag">[lang]/pricing.astro（定价 FAQ）</span>
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">FAQs</span>
+      <h2 class="sec-title">定价常见问题</h2>
+    </div>
+    <div class="faq-grid">
+      <details class="faq-item"><summary>应该先看价格还是先看成功率？<svg class="ic"><use href="#i-chevdown"/></svg></summary><p class="faq-a">应先看在统一负载下能否稳定完成目标任务，再比较单位完成成本。只看标价容易低估失败重试和运营波动带来的真实成本。</p></details>
+      <details class="faq-item"><summary>什么时候适合从试用流量扩到生产采购？<svg class="ic"><use href="#i-chevdown"/></svg></summary><p class="faq-a">当成功率、时延、重试开销和预算偏差在完整业务周期内保持稳定时，再按业务优先级逐步扩容更稳妥。</p></details>
+      <details class="faq-item"><summary>定价评估时应比较哪些指标？<svg class="ic"><use href="#i-chevdown"/></svg></summary><p class="faq-a">建议统一比较成功率、P50/P95 时延、失败类型分布、重试开销和单业务流程月度完成成本。</p></details>
+    </div>
+  </div>
+</section>
+
+</div><!-- /page-pricing -->
+
+<!-- ============================================================ -->
+<!-- ==================== 页面 3：静态住宅代理 ==================== -->
+<!-- ============================================================ -->
+<div class="page-prod-srp">
+
+<section class="phero phero-center" style="position:relative">
+  <span class="note-tag">[lang]/static-residential-proxy.astro</span>
+  <div class="container">
+    <span class="eyebrow">Static Residential Proxy</span>
+    <h1>静态住宅代理</h1>
+    <p class="phero-sub">基于真实住宅网络的代理服务，提供长期不变的固定IP地址</p>
+    <div class="chips" style="margin-bottom:32px">
+      <span class="chip"><svg class="ic"><use href="#i-shield"/></svg>高稳定性，低封禁风险</span>
+      <span class="chip"><svg class="ic"><use href="#i-pin"/></svg>定位城市级别，更高精度</span>
+      <span class="chip"><svg class="ic"><use href="#i-scale"/></svg>按需付费，按量计费</span>
+      <span class="chip"><svg class="ic"><use href="#i-infinity"/></svg>不限带宽，流量充足</span>
+    </div>
+    <div class="phero-actions">
+      <a class="btn btn-primary" href="#" data-nav="register">立即试用IPFlex</a>
+      <a class="btn btn-hero2" href="#" data-nav="pricing">查看定价</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:64px;position:relative">
+  <span class="note-tag">产品页 stats 区块</span>
+  <div class="container">
+    <div class="sec-head">
+      <h2 class="sec-title" style="font-size:clamp(22px,2.6vw,30px)">全球资源覆盖</h2>
+      <p class="sec-sub">IPFlex拥有海量优质住宅IP资源，为您的业务保驾护航</p>
+    </div>
+    <div class="grid-4">
+      <div class="stat-card reveal"><div class="stat-num">0.4s</div><div class="stat-label">平均响应时间</div></div>
+      <div class="stat-card reveal"><div class="stat-num">80+</div><div class="stat-label">覆盖国家/地区</div></div>
+      <div class="stat-card reveal"><div class="stat-num">99.9%</div><div class="stat-label">服务可用性</div></div>
+      <div class="stat-card reveal"><div class="stat-num">24/7</div><div class="stat-label">技术支持</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section sec-alt" style="position:relative">
+  <span class="note-tag">产品页 performance 区块</span>
+  <div class="container">
+    <div class="split">
+      <div class="reveal">
+        <span class="eyebrow">Performance</span>
+        <h2>卓越性能与无限制带宽</h2>
+        <p>IPFlex静态住宅代理，基于真实住宅网络，提供无限带宽、不限时长会话，支持HTTP和SOCKS5协议。高性能、高匿名性，助力数据采集、跨境电商、广告验证等多场景，提升业务效率，降低封禁风险。</p>
+        <ul class="split-feats">
+          <li><svg class="ic"><use href="#i-check"/></svg>无限带宽</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>不限时长会话</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>支持HTTP和SOCKS5协议</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>高匿名性与稳定性</li>
+        </ul>
+      </div>
+      <div class="mock-panel reveal">
+        <div class="mock-title"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span></div>
+        <div class="mock-line"><span class="k">GET</span> https://target.example.com/api/list</div>
+        <div class="mock-line">proxy: <b>static-residential · US · New York</b></div>
+        <div class="mock-line">status: <b>200 OK</b> &nbsp;latency: <b>0.38s</b> &nbsp;exit-ip: <b>72.14.x.x</b></div>
+        <div class="mock-line" style="margin-top:12px"><span class="k">GET</span> https://target.example.com/api/detail?id=8842</div>
+        <div class="mock-line">session: <b>sticky</b> &nbsp;exit-ip: <b>72.14.x.x（保持不变）</b></div>
+        <div class="mock-line">status: <b>200 OK</b> &nbsp;latency: <b>0.41s</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="position:relative">
+  <span class="note-tag">产品页 whyChooseUs 区块</span>
+  <div class="container">
+    <div class="sec-head">
+      <h2 class="sec-title">为什么要选择IPFlex？</h2>
+    </div>
+    <div class="grid-3">
+      <div class="f-card reveal"><div class="f-icon"><svg class="ic"><use href="#i-scale"/></svg></div><h3>性价比高</h3><p>灵活套餐，按需付费，满足不同业务需求，经济实惠。</p></div>
+      <div class="f-card reveal"><div class="f-icon"><svg class="ic"><use href="#i-globe"/></svg></div><h3>地区资源多</h3><p>覆盖全球200+国家和地区，IP资源丰富，满足多样化需求。</p></div>
+      <div class="f-card reveal"><div class="f-icon"><svg class="ic"><use href="#i-infinity"/></svg></div><h3>无限带宽</h3><p>按代理计费模式下，流量费用无额外收费，无限带宽畅享。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section sec-alt" style="position:relative">
+  <span class="note-tag">产品页 useCases 区块</span>
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Use Cases</span>
+      <h2 class="sec-title">使用场景</h2>
+    </div>
+    <div class="grid-2">
+      <div class="u-card reveal">
+        <div class="f-icon"><svg class="ic"><use href="#i-ad"/></svg></div>
+        <h3>广告验证</h3>
+        <p>依托住宅代理和全球IP资源，广告主可真实模拟用户访问，精准完成广告验证，有效防止广告欺诈，提升广告ROI。IPFlex每日为50+企业提供广告验证、反欺诈等合规检测服务。</p>
+        <a class="p-link" href="#">了解广告验证方案 <svg class="ic"><use href="#i-arrowright"/></svg></a>
+      </div>
+      <div class="u-card reveal">
+        <div class="f-icon"><svg class="ic"><use href="#i-bug"/></svg></div>
+        <h3>市场研究与数据采集</h3>
+        <p>通过70万+住宅IP，轻松突破反爬虫限制，助力企业高效进行数据采集和市场调研。日均采集量超1亿条，支持API自动化，满足数据驱动决策需求。</p>
+        <a class="p-link" href="#">了解采集方案 <svg class="ic"><use href="#i-arrowright"/></svg></a>
+      </div>
+      <div class="u-card reveal">
+        <div class="f-icon"><svg class="ic"><use href="#i-cart"/></svg></div>
+        <h3>电子商务账号养护</h3>
+        <p>为跨境电商卖家提供长期稳定的住宅IP，降低账号被封风险，支持Amazon、eBay、Shopee等多平台账号养护和批量管理，账号安全率高达99.9%。</p>
+        <a class="p-link" href="#">了解电商方案 <svg class="ic"><use href="#i-arrowright"/></svg></a>
+      </div>
+      <div class="u-card reveal">
+        <div class="f-icon"><svg class="ic"><use href="#i-shield"/></svg></div>
+        <h3>网络安全与风控</h3>
+        <p>利用住宅代理进行渗透测试、品牌保护和风控监控，帮助企业识别网络安全威胁，防范黑产活动。IPFlex已为60+互联网企业提供住宅代理风控解决方案。</p>
+        <a class="p-link" href="#">了解风控方案 <svg class="ic"><use href="#i-arrowright"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="position:relative">
+  <span class="note-tag">产品页 deductionMethods 区块</span>
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Billing</span>
+      <h2 class="sec-title">计费方式对比</h2>
+      <p class="sec-sub">IPFlex支持【按流量】和【按IP个数】两种灵活计费方式，满足不同业务场景和团队预算。</p>
+    </div>
+    <div class="bill-grid">
+      <div class="bill-card reveal">
+        <h3>按流量扣费</h3>
+        <div class="bill-price">￥40 / GB</div>
+        <div class="bill-block"><b>适用场景</b>
+          <ul><li>爬虫采集有波动、不可确定访问量的项目</li><li>大部分分布式采集/监测业务</li><li>营销/广告投放等高变动性需求</li></ul>
+        </div>
+        <div class="bill-block"><b>优势</b>
+          <ul><li>用多少付多少，灵活不浪费</li><li>适合临时项目或不确定用量的初创团队</li><li>流量单价可阶梯减价，量大更优惠</li></ul>
+        </div>
+      </div>
+      <div class="bill-card reveal">
+        <h3>按IP个数扣费</h3>
+        <div class="bill-price">最低 ￥4 / IP / 天起</div>
+        <div class="bill-block"><b>适用场景</b>
+          <ul><li>跨境电商账号养护/站群维护</li><li>长期稳定业务，对IP独占持续性有强需求</li><li>高并发、定向权重监测</li></ul>
+        </div>
+        <div class="bill-block"><b>优势</b>
+          <ul><li>IP独享，稳定性强</li><li>无需担心流量突发，适合集中管理</li><li>按需扩容，预算可控</li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="bill-note"><b>新用户注册赠送￥15免费使用</b> — <a class="p-link" href="#" data-nav="register">立即注册，专享灵活计费体验 <svg class="ic"><use href="#i-arrowright"/></svg></a></div>
+  </div>
+</section>
+
+<section class="section sec-alt" style="position:relative">
+  <span class="note-tag">产品页 FAQ 区块</span>
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">FAQs</span>
+      <h2 class="sec-title">常见问题</h2>
+      <p class="sec-sub">关于静态住宅代理的常见疑问解答</p>
+    </div>
+    <div class="faq-grid">
+      <details class="faq-item"><summary>什么是住宅代理？<svg class="ic"><use href="#i-chevdown"/></svg></summary><p class="faq-a">住宅代理（Residential Proxy）是通过真实家庭宽带网络分配的IP地址，能够模拟普通用户的上网行为。相比数据中心代理，住宅IP代理更难被目标网站识别和封锁，是数据采集、网络爬虫、账号注册、广告验证等场景的首选。</p></details>
+      <details class="faq-item"><summary>为什么要使用住宅代理IP？<svg class="ic"><use href="#i-chevdown"/></svg></summary><p class="faq-a">使用住宅代理IP可以有效突破网站的反爬虫机制，降低被封禁风险。住宅IP代理具备高匿名性和高稳定性，适合跨境电商、社交媒体运营、市场调研、SEO监控、广告验证等需要大量高质量IP的业务。</p></details>
+      <details class="faq-item"><summary>静态住宅代理和动态住宅代理有什么区别？<svg class="ic"><use href="#i-chevdown"/></svg></summary><p class="faq-a">静态住宅代理提供长期不变的住宅IP，适合账号养护、长期数据采集等对IP稳定性要求高的场景。动态住宅代理则会定期更换IP，适合大规模爬虫、短期任务、匿名浏览等灵活性需求。</p></details>
+      <details class="faq-item"><summary>静态住宅代理适合哪些应用场景？<svg class="ic"><use href="#i-chevdown"/></svg></summary><p class="faq-a">静态住宅代理适用于跨境电商账号养护、社交媒体账号管理、长期数据采集、广告投放、品牌保护、网络安全测试等对IP稳定性和安全性要求高的场景。</p></details>
+      <details class="faq-item"><summary>静态住宅代理有哪些扣费方式？<svg class="ic"><use href="#i-chevdown"/></svg></summary><p class="faq-a">静态住宅代理常见扣费方式包括按IP数量计费、按流量计费和套餐包月。用户可根据业务需求选择最优方案，实现高性价比的住宅IP代理服务。</p></details>
+      <details class="faq-item"><summary>如何购买和使用静态住宅代理IP？<svg class="ic"><use href="#i-chevdown"/></svg></summary><p class="faq-a">注册IPFlex账号后，选择合适的静态住宅代理套餐，即可获取高质量住宅IP和端口信息。支持API自动化管理，快速集成到您的业务系统中。</p></details>
+    </div>
+  </div>
+</section>
+
+</div><!-- /page-prod-srp -->
+
+<!-- ============================================================ -->
+<!-- ==================== 页面 4：动态住宅代理 ==================== -->
+<!-- ============================================================ -->
+<div class="page-prod-drp">
+
+<section class="phero phero-center" style="position:relative">
+  <span class="note-tag">[lang]/dynamic-residential-proxy.astro</span>
+  <div class="container">
+    <span class="eyebrow">Dynamic Residential Proxy</span>
+    <h1>动态住宅代理</h1>
+    <p class="phero-sub">自动轮换的住宅IP代理服务，提供高匿名性和灵活性的网络访问解决方案</p>
+    <div class="chips" style="margin-bottom:32px">
+      <span class="chip"><svg class="ic"><use href="#i-refresh"/></svg>自动IP轮换，高匿名性</span>
+      <span class="chip"><svg class="ic"><use href="#i-globe"/></svg>覆盖全球200+国家地区</span>
+      <span class="chip"><svg class="ic"><use href="#i-code"/></svg>支持HTTP/SOCKS5协议</span>
+      <span class="chip"><svg class="ic"><use href="#i-pin"/></svg>支持定向城市级别IP</span>
+    </div>
+    <div class="phero-actions">
+      <a class="btn btn-primary" href="#" data-nav="register">立即试用IPFlex</a>
+      <a class="btn btn-hero2" href="#" data-nav="pricing">查看定价</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:64px;position:relative">
+  <span class="note-tag">产品页 stats 区块</span>
+  <div class="container">
+    <div class="sec-head">
+      <h2 class="sec-title" style="font-size:clamp(22px,2.6vw,30px)">全球动态IP资源池</h2>
+      <p class="sec-sub">IPFlex拥有超过4000万个动态住宅IP，为您的业务提供强大支撑</p>
+    </div>
+    <div class="grid-4">
+      <div class="stat-card reveal"><div class="stat-num">4000万+</div><div class="stat-label">动态IP池规模</div></div>
+      <div class="stat-card reveal"><div class="stat-num">200+</div><div class="stat-label">覆盖国家/地区</div></div>
+      <div class="stat-card reveal"><div class="stat-num">0.4s+</div><div class="stat-label">平均响应速度</div></div>
+      <div class="stat-card reveal"><div class="stat-num">99.9%</div><div class="stat-label">成功率保障</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section sec-alt" style="position:relative">
+  <span class="note-tag">产品页 performance 区块</span>
+  <div class="container">
+    <div class="split">
+      <div class="mock-panel reveal">
+        <div class="mock-title"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span></div>
+        <div class="mock-line"><span class="k">GET</span> https://target.example.com/search?q=1</div>
+        <div class="mock-line">proxy: <b>rotating-residential · exit 98.42.x.x</b></div>
+        <div class="mock-line">status: <b>200 OK</b> &nbsp;latency: <b>0.44s</b></div>
+        <div class="mock-line" style="margin-top:12px"><span class="k">GET</span> https://target.example.com/search?q=2</div>
+        <div class="mock-line">rotate: <b>auto</b> &nbsp;exit 203.0.x.x（新出口）</div>
+        <div class="mock-line">status: <b>200 OK</b> &nbsp;latency: <b>0.39s</b></div>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">Performance</span>
+        <h2>智能轮换与高性能访问</h2>
+        <p>IPFlex动态住宅代理采用智能轮换算法，基于真实住宅网络提供高匿名性访问。支持自定义轮换策略，无限带宽，适用于大规模数据采集、网络爬虫、市场调研、广告验证等场景。有效规避反爬虫检测，提升采集效率。</p>
+        <ul class="split-feats">
+          <li><svg class="ic"><use href="#i-check"/></svg>智能IP轮换算法</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>自定义轮换策略</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>无限带宽访问</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>高匿名性保护</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>反爬虫规避</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="position:relative">
+  <span class="note-tag">产品页 whyChooseUs 区块</span>
+  <div class="container">
+    <div class="sec-head">
+      <h2 class="sec-title">为什么选择IPFlex动态住宅代理？</h2>
+    </div>
+    <div class="grid-4">
+      <div class="f-card reveal"><div class="f-icon"><svg class="ic"><use href="#i-refresh"/></svg></div><h3>智能轮换</h3><p>基于AI算法的智能IP轮换，根据目标网站特性自动调整策略，最大化成功率。</p></div>
+      <div class="f-card reveal"><div class="f-icon"><svg class="ic"><use href="#i-clock"/></svg></div><h3>会话持久</h3><p>支持会话持久化，确保在同一会话中使用相同IP，适合需要会话一致性的应用场景。</p></div>
+      <div class="f-card reveal"><div class="f-icon"><svg class="ic"><use href="#i-globe"/></svg></div><h3>全球覆盖</h3><p>覆盖200+国家和地区的住宅IP资源，支持精确到城市级别的地理定位。</p></div>
+      <div class="f-card reveal"><div class="f-icon"><svg class="ic"><use href="#i-scale"/></svg></div><h3>高性价比</h3><p>按需付费模式，支持按流量和按请求次数计费，灵活控制成本。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section sec-alt" style="position:relative">
+  <span class="note-tag">产品页 useCases 区块</span>
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Use Cases</span>
+      <h2 class="sec-title">应用场景</h2>
+    </div>
+    <div class="grid-3">
+      <div class="u-card reveal">
+        <div class="f-icon"><svg class="ic"><use href="#i-bug"/></svg></div>
+        <h3>大规模数据采集</h3>
+        <p>利用动态IP轮换技术，突破网站访问限制，实现高效大规模数据采集。支持电商价格监控、社交媒体数据抓取、新闻资讯采集等场景，日均处理请求超过5000万次。</p>
+        <a class="p-link" href="#">了解方案 <svg class="ic"><use href="#i-arrowright"/></svg></a>
+      </div>
+      <div class="u-card reveal">
+        <div class="f-icon"><svg class="ic"><use href="#i-target"/></svg></div>
+        <h3>网络爬虫与监控</h3>
+        <p>为网络爬虫提供高匿名性IP轮换服务，有效规避反爬虫检测。支持SEO监控、竞品分析、内容聚合等应用，帮助企业获取关键业务数据。</p>
+        <a class="p-link" href="#">了解方案 <svg class="ic"><use href="#i-arrowright"/></svg></a>
+      </div>
+      <div class="u-card reveal">
+        <div class="f-icon"><svg class="ic"><use href="#i-user"/></svg></div>
+        <h3>匿名浏览与隐私保护</h3>
+        <p>通过动态IP轮换保护用户真实身份，实现匿名浏览和隐私保护。适用于敏感信息查询、地理限制内容访问、网络安全研究等场景。</p>
+        <a class="p-link" href="#">了解方案 <svg class="ic"><use href="#i-arrowright"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="position:relative">
+  <span class="note-tag">产品页 FAQ 区块</span>
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">FAQs</span>
+      <h2 class="sec-title">常见问题</h2>
+    </div>
+    <div class="faq-grid">
+      <details class="faq-item"><summary>什么是动态住宅代理？<svg class="ic"><use href="#i-chevdown"/></svg></summary><p class="faq-a">动态住宅代理基于不断变化的IP地址池，每次请求或短周期后自动更换出口IP。基于真实住宅网络，兼具高匿名性与灵活性，适合大规模采集与高频访问任务。</p></details>
+      <details class="faq-item"><summary>轮换频率可以自定义吗？<svg class="ic"><use href="#i-chevdown"/></svg></summary><p class="faq-a">可以。IPFlex支持按请求轮换与按时长轮换两种模式，也可通过会话保持（Sticky Session）在指定时间内固定同一出口IP，满足不同业务对稳定性与灵活性的要求。</p></details>
+      <details class="faq-item"><summary>动态住宅代理如何计费？<svg class="ic"><use href="#i-chevdown"/></svg></summary><p class="faq-a">支持按流量（￥40/GB）与按IP数量（￥2/IP起）两种计费模式，可按业务负载特征选择最经济的方案，无最低消费，余额永久有效。</p></details>
+      <details class="faq-item"><summary>动态与静态住宅代理怎么选？<svg class="ic"><use href="#i-chevdown"/></svg></summary><p class="faq-a">需要频繁切换出口、大规模采集选动态；需要长期固定身份、账号养护选静态。两者也可按业务阶段组合采购，从小流量验证平滑过渡到生产级扩展。</p></details>
+    </div>
+  </div>
+</section>
+
+</div><!-- /page-prod-drp -->
+
+<!-- ============================================================ -->
+<!-- ==================== 页面 5：数据中心代理 ==================== -->
+<!-- ============================================================ -->
+<div class="page-prod-dc">
+
+<section class="phero phero-center" style="position:relative">
+  <span class="note-tag">[lang]/static-datacenter-proxy.astro</span>
+  <div class="container">
+    <span class="eyebrow">Static Datacenter Proxy</span>
+    <h1>静态数据中心代理</h1>
+    <p class="phero-sub">基于数据中心的高速代理服务，提供超低延迟和极高性能的网络访问解决方案</p>
+    <div class="chips" style="margin-bottom:32px">
+      <span class="chip"><svg class="ic"><use href="#i-zap"/></svg>超低延迟，毫秒级响应</span>
+      <span class="chip"><svg class="ic"><use href="#i-infinity"/></svg>高带宽，支持大流量访问</span>
+      <span class="chip"><svg class="ic"><use href="#i-gauge"/></svg>99.9%稳定性保障</span>
+      <span class="chip"><svg class="ic"><use href="#i-scale"/></svg>性价比极高，成本可控</span>
+    </div>
+    <div class="phero-actions">
+      <a class="btn btn-primary" href="#" data-nav="register">立即试用IPFlex</a>
+      <a class="btn btn-hero2" href="#" data-nav="pricing">查看定价</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:64px;position:relative">
+  <span class="note-tag">产品页 stats 区块</span>
+  <div class="container">
+    <div class="sec-head">
+      <h2 class="sec-title" style="font-size:clamp(22px,2.6vw,30px)">全球数据中心资源</h2>
+      <p class="sec-sub">IPFlex在全球部署高性能数据中心，为您的业务提供极速访问体验</p>
+    </div>
+    <div class="grid-4">
+      <div class="stat-card reveal"><div class="stat-num">50万+</div><div class="stat-label">数据中心IP池</div></div>
+      <div class="stat-card reveal"><div class="stat-num">100+</div><div class="stat-label">全球数据中心</div></div>
+      <div class="stat-card reveal"><div class="stat-num">0.1s</div><div class="stat-label">平均延迟</div></div>
+      <div class="stat-card reveal"><div class="stat-num">10Gbps</div><div class="stat-label">单IP带宽</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section sec-alt" style="position:relative">
+  <span class="note-tag">产品页 performance 区块</span>
+  <div class="container">
+    <div class="split">
+      <div class="reveal">
+        <span class="eyebrow">Performance</span>
+        <h2>极速性能与无限带宽</h2>
+        <p>IPFlex静态数据中心代理基于全球顶级数据中心基础设施，提供毫秒级响应速度和无限带宽。专为高并发API调用、自动化测试、批量数据处理等高性能场景设计。支持HTTP/HTTPS/SOCKS5协议，提供企业级稳定性保障。</p>
+        <ul class="split-feats">
+          <li><svg class="ic"><use href="#i-check"/></svg>毫秒级响应速度</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>无限带宽保障</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>企业级稳定性</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>多协议支持</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>全球节点覆盖</li>
+        </ul>
+      </div>
+      <div class="mock-panel reveal">
+        <div class="mock-title"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span></div>
+        <div class="mock-line"><span class="k">GET</span> https://api.target.example/v1/data</div>
+        <div class="mock-line">proxy: <b>datacenter-static · JP · Tokyo</b></div>
+        <div class="mock-line">status: <b>200 OK</b> &nbsp;latency: <b>0.09s</b> &nbsp;bandwidth: <b>峰值 9.6Gbps</b></div>
+        <div class="mock-line" style="margin-top:12px"><span class="k">并发 x 500</span> 批量任务 · 10min</div>
+        <div class="mock-line">success: <b>99.97%</b> &nbsp;p95: <b>0.14s</b> &nbsp;重试率 <b>0.03%</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="position:relative">
+  <span class="note-tag">产品页 whyChooseUs 区块</span>
+  <div class="container">
+    <div class="sec-head">
+      <h2 class="sec-title">为什么选择IPFlex数据中心代理？</h2>
+    </div>
+    <div class="grid-3">
+      <div class="f-card reveal"><div class="f-icon"><svg class="ic"><use href="#i-zap"/></svg></div><h3>极速性能</h3><p>基于顶级数据中心基础设施，提供毫秒级响应和10Gbps带宽，满足高性能需求。</p></div>
+      <div class="f-card reveal"><div class="f-icon"><svg class="ic"><use href="#i-scale"/></svg></div><h3>成本优势</h3><p>相比住宅代理，数据中心代理成本更低，适合大规模、高频次的访问需求。</p></div>
+      <div class="f-card reveal"><div class="f-icon"><svg class="ic"><use href="#i-shield"/></svg></div><h3>稳定可靠</h3><p>99.9%在线率保障，专业运维团队24/7监控，确保服务稳定运行。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section sec-alt" style="position:relative">
+  <span class="note-tag">产品页 useCases 区块</span>
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Use Cases</span>
+      <h2 class="sec-title">应用场景</h2>
+    </div>
+    <div class="grid-3">
+      <div class="u-card reveal">
+        <div class="f-icon"><svg class="ic"><use href="#i-code"/></svg></div>
+        <h3>API接口调用</h3>
+        <p>为高频API调用提供稳定的代理服务，支持RESTful API、GraphQL等各类接口访问。适用于数据同步、第三方服务集成、微服务架构等场景。</p>
+        <a class="p-link" href="#">了解方案 <svg class="ic"><use href="#i-arrowright"/></svg></a>
+      </div>
+      <div class="u-card reveal">
+        <div class="f-icon"><svg class="ic"><use href="#i-target"/></svg></div>
+        <h3>自动化测试</h3>
+        <p>为自动化测试提供稳定的网络环境，支持Web应用测试、API测试、性能测试等场景。通过数据中心代理模拟不同地区的访问，确保测试结果的准确性。</p>
+        <a class="p-link" href="#">了解方案 <svg class="ic"><use href="#i-arrowright"/></svg></a>
+      </div>
+      <div class="u-card reveal">
+        <div class="f-icon"><svg class="ic"><use href="#i-server"/></svg></div>
+        <h3>批量数据处理</h3>
+        <p>支持大规模批量数据处理任务，如数据导入导出、批量文件上传下载、数据库同步等。高带宽和低延迟特性确保数据处理的高效性。</p>
+        <a class="p-link" href="#">了解方案 <svg class="ic"><use href="#i-arrowright"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /page-prod-dc -->
+
+<!-- ============================================================ -->
+<!-- ==================== 页面 6：应用场景 ==================== -->
+<!-- ============================================================ -->
+<div class="page-scenarios">
+
+<section class="phero phero-center" style="position:relative">
+  <span class="note-tag">[lang]/scenarios.astro</span>
+  <div class="container">
+    <span class="eyebrow">Use Cases</span>
+    <h1>IPFlex应用场景</h1>
+    <p class="phero-sub">覆盖广告验证、跨境电商、数据采集、品牌监测与安全风控的企业级代理实践，提供可执行的场景方案、指标口径与接入建议，帮助团队快速落地并持续优化业务成功率。</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:64px;position:relative">
+  <span class="note-tag">ScenarioCard / 场景网格</span>
+  <div class="container">
+    <div class="grid-3">
+      <div class="sc-card reveal">
+        <span class="sc-tag">静态住宅</span>
+        <h3>广告验证</h3>
+        <p>依托住宅代理和全球IP资源，广告主可真实模拟用户访问，精准完成广告验证，有效防止广告欺诈，提升广告ROI。</p>
+        <ul class="sc-benefits">
+          <li><svg class="ic"><use href="#i-check"/></svg>真实用户模拟，精准验证广告投放效果</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>防止广告欺诈，保护广告投资回报率</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>全球IP覆盖，支持多地域广告验证</li>
+        </ul>
+        <a class="p-link" href="#">查看方案 <svg class="ic"><use href="#i-arrowright"/></svg></a>
+      </div>
+      <div class="sc-card reveal">
+        <span class="sc-tag">静态住宅</span>
+        <h3>市场研究与数据采集</h3>
+        <p>通过70万+住宅IP，轻松突破反爬虫限制，助力企业高效进行数据采集和市场调研。日均采集量超1亿条，支持API自动化。</p>
+        <ul class="sc-benefits">
+          <li><svg class="ic"><use href="#i-check"/></svg>突破反爬虫限制，确保数据采集稳定性</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>支持大规模并发，日均处理超1亿条数据</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>全球地域覆盖，获取多维度市场洞察</li>
+        </ul>
+        <a class="p-link" href="#">查看方案 <svg class="ic"><use href="#i-arrowright"/></svg></a>
+      </div>
+      <div class="sc-card reveal">
+        <span class="sc-tag">静态住宅</span>
+        <h3>电子商务账号养护</h3>
+        <p>为跨境电商卖家提供长期稳定的住宅IP，降低账号被封风险，支持Amazon、eBay、Shopee等多平台账号养护和批量管理。</p>
+        <ul class="sc-benefits">
+          <li><svg class="ic"><use href="#i-check"/></svg>降低账号封禁风险，保障业务连续性</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>支持多平台批量管理，提升运营效率</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>长期稳定IP，适合账号长期养护</li>
+        </ul>
+        <a class="p-link" href="#">查看方案 <svg class="ic"><use href="#i-arrowright"/></svg></a>
+      </div>
+      <div class="sc-card reveal">
+        <span class="sc-tag">静态住宅</span>
+        <h3>网络安全与风控</h3>
+        <p>利用住宅代理进行渗透测试、品牌保护和风控监控，帮助企业识别网络安全威胁，防范黑产活动。已为60+企业提供服务。</p>
+        <ul class="sc-benefits">
+          <li><svg class="ic"><use href="#i-check"/></svg>渗透测试与安全评估，发现潜在威胁</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>品牌保护监控，维护企业声誉</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>风控系统支持，防范黑产活动</li>
+        </ul>
+        <a class="p-link" href="#">查看方案 <svg class="ic"><use href="#i-arrowright"/></svg></a>
+      </div>
+      <div class="sc-card reveal">
+        <span class="sc-tag">动态住宅</span>
+        <h3>大规模数据采集</h3>
+        <p>利用动态IP轮换技术，突破网站访问限制，实现高效大规模数据采集。支持电商价格监控、社媒数据抓取等场景，日均处理请求超5000万次。</p>
+        <ul class="sc-benefits">
+          <li><svg class="ic"><use href="#i-check"/></svg>智能IP轮换，有效规避反爬虫检测</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>高并发处理，日均处理超5000万次请求</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>全球地域覆盖，满足跨境数据采集需求</li>
+        </ul>
+        <a class="p-link" href="#">查看方案 <svg class="ic"><use href="#i-arrowright"/></svg></a>
+      </div>
+      <div class="sc-card reveal">
+        <span class="sc-tag">动态住宅</span>
+        <h3>网络爬虫与监控</h3>
+        <p>为网络爬虫提供高匿名性IP轮换服务，有效规避反爬虫检测。支持SEO监控、竞品分析、内容聚合等应用，帮助企业获取关键业务数据。</p>
+        <ul class="sc-benefits">
+          <li><svg class="ic"><use href="#i-check"/></svg>高匿名性保护，模拟真实用户行为</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>智能轮换算法，适应不同反爬虫策略</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>全面监控支持，获取关键业务洞察</li>
+        </ul>
+        <a class="p-link" href="#">查看方案 <svg class="ic"><use href="#i-arrowright"/></svg></a>
+      </div>
+      <div class="sc-card reveal">
+        <span class="sc-tag">动态住宅</span>
+        <h3>匿名浏览与隐私保护</h3>
+        <p>通过动态IP轮换保护用户真实身份，实现匿名浏览和隐私保护。适用于敏感信息查询、地理限制内容访问、网络安全研究等场景。</p>
+        <ul class="sc-benefits">
+          <li><svg class="ic"><use href="#i-check"/></svg>真实身份保护，有效隐藏用户信息</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>地域限制突破，访问全球互联网资源</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>高级匿名保护，适用于安全研究</li>
+        </ul>
+        <a class="p-link" href="#">查看方案 <svg class="ic"><use href="#i-arrowright"/></svg></a>
+      </div>
+      <div class="sc-card reveal">
+        <span class="sc-tag">动态住宅</span>
+        <h3>广告验证与反欺诈</h3>
+        <p>模拟真实用户行为进行广告验证，检测广告欺诈和点击农场。通过地理分布的动态IP，确保广告投放效果的真实性和准确性。</p>
+        <ul class="sc-benefits">
+          <li><svg class="ic"><use href="#i-check"/></svg>模拟真实用户，检测广告欺诈行为</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>地理分布验证，确保投放效果真实性</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>反欺诈检测，保护广告投资安全</li>
+        </ul>
+        <a class="p-link" href="#">查看方案 <svg class="ic"><use href="#i-arrowright"/></svg></a>
+      </div>
+      <div class="sc-card reveal">
+        <span class="sc-tag">数据中心</span>
+        <h3>API接口调用</h3>
+        <p>为高频API调用提供稳定的代理服务，支持RESTful API、GraphQL等各类接口访问。适用于数据同步、第三方服务集成、微服务架构等场景。</p>
+        <ul class="sc-benefits">
+          <li><svg class="ic"><use href="#i-check"/></svg>超低延迟响应，适合高频API调用</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>稳定可靠服务，确保接口调用成功率</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>高性能保障，支持大规模并发访问</li>
+        </ul>
+        <a class="p-link" href="#">查看方案 <svg class="ic"><use href="#i-arrowright"/></svg></a>
+      </div>
+      <div class="sc-card reveal">
+        <span class="sc-tag">数据中心</span>
+        <h3>自动化测试</h3>
+        <p>为自动化测试提供稳定的网络环境，支持Web应用测试、API测试、性能测试等场景。通过数据中心代理模拟不同地区的访问。</p>
+        <ul class="sc-benefits">
+          <li><svg class="ic"><use href="#i-check"/></svg>稳定测试环境，确保结果一致性</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>全球节点覆盖，模拟不同地区访问</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>高并发支持，满足性能测试需求</li>
+        </ul>
+        <a class="p-link" href="#">查看方案 <svg class="ic"><use href="#i-arrowright"/></svg></a>
+      </div>
+      <div class="sc-card reveal">
+        <span class="sc-tag">数据中心</span>
+        <h3>批量数据处理</h3>
+        <p>支持大规模批量数据处理任务，如数据导入导出、批量文件上传下载、数据库同步等。高带宽和低延迟特性确保数据处理的高效性。</p>
+        <ul class="sc-benefits">
+          <li><svg class="ic"><use href="#i-check"/></svg>高带宽支持，处理大规模数据任务</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>低延迟保障，提升数据处理效率</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>稳定可靠，确保批量任务完成</li>
+        </ul>
+        <a class="p-link" href="#">查看方案 <svg class="ic"><use href="#i-arrowright"/></svg></a>
+      </div>
+      <div class="sc-card reveal">
+        <span class="sc-tag">数据中心</span>
+        <h3>内容分发加速</h3>
+        <p>为CDN、内容分发网络提供代理加速服务，优化全球用户访问体验。通过就近接入数据中心节点，减少网络延迟，提升内容加载速度。</p>
+        <ul class="sc-benefits">
+          <li><svg class="ic"><use href="#i-check"/></svg>全球节点覆盖，就近接入减少延迟</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>智能路由优化，自动选择最优路径</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>高性能保障，提升内容加载速度</li>
+        </ul>
+        <a class="p-link" href="#">查看方案 <svg class="ic"><use href="#i-arrowright"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="position:relative">
+  <span class="note-tag">场景页 CTA</span>
+  <div class="container">
+    <div class="cta-banner reveal">
+      <h2>找到适合您业务的场景方案</h2>
+      <p>注册即可开始验证，从小流量 PoC 平滑扩展到生产级接入。</p>
+      <a class="btn btn-white" href="#" data-nav="register">立即使用</a>
+    </div>
+  </div>
+</section>
+
+</div><!-- /page-scenarios -->
+
+<!-- ============================================================ -->
+<!-- ==================== 页面 7：知识中心 ==================== -->
+<!-- ============================================================ -->
+<div class="page-resources">
+
+<section class="phero phero-center" style="position:relative">
+  <span class="note-tag">[lang]/resources.astro</span>
+  <div class="container">
+    <span class="eyebrow">Knowledge Hub</span>
+    <h1>IPFlex 知识中心</h1>
+    <p class="phero-sub">这个页面的目标不是替代帮助中心，而是把定义、选择、场景、接入和方法资料集中到主域，减少团队在多个入口之间来回切换的成本。</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:64px;position:relative">
+  <span class="note-tag">resources.sections 区块</span>
+  <div class="container">
+    <div class="grid-2">
+      <div class="reveal">
+        <h3 style="font-size:19px;font-weight:700;color:var(--text-heading);margin-bottom:6px">代理定义与选择</h3>
+        <p style="font-size:14px;color:var(--text-muted);margin-bottom:18px">先明确静态住宅、动态住宅与数据中心代理的差异，再决定哪个更适合你的业务目标。</p>
+        <div class="link-cards">
+          <a class="link-card" href="#" data-nav="prod-srp"><span class="f-icon"><svg class="ic"><use href="#i-home"/></svg></span><span><b>静态住宅代理</b><span>适合长期会话、账号稳定与低身份波动任务。</span></span></a>
+          <a class="link-card" href="#" data-nav="prod-drp"><span class="f-icon"><svg class="ic"><use href="#i-refresh"/></svg></span><span><b>动态住宅代理</b><span>适合广覆盖、轮换出口与大规模采集任务。</span></span></a>
+          <a class="link-card" href="#" data-nav="prod-dc"><span class="f-icon"><svg class="ic"><use href="#i-server"/></svg></span><span><b>静态数据中心代理</b><span>适合高并发 API、吞吐优先与成本敏感任务。</span></span></a>
+          <a class="link-card" href="#" data-nav="pricing"><span class="f-icon"><svg class="ic"><use href="#i-scale"/></svg></span><span><b>套餐与定价选择指南</b><span>按成功率、时延与单位完成成本评估套餐。</span></span></a>
+        </div>
+      </div>
+      <div class="reveal">
+        <h3 style="font-size:19px;font-weight:700;color:var(--text-heading);margin-bottom:6px">场景与落地方法</h3>
+        <p style="font-size:14px;color:var(--text-muted);margin-bottom:18px">按业务目标查找场景方案，再结合代理类型做更细的技术决策。</p>
+        <div class="link-cards">
+          <a class="link-card" href="#" data-nav="scenarios"><span class="f-icon"><svg class="ic"><use href="#i-target"/></svg></span><span><b>应用场景总览</b><span>按广告验证、电商运营、采集与风控分类查看方案。</span></span></a>
+          <a class="link-card" href="#"><span class="f-icon"><svg class="ic"><use href="#i-ad"/></svg></span><span><b>广告验证代理</b><span>验证地域展示、投放一致性与广告欺诈风险。</span></span></a>
+          <a class="link-card" href="#"><span class="f-icon"><svg class="ic"><use href="#i-cart"/></svg></span><span><b>跨境电商代理</b><span>处理账号运营、会话稳定与多平台执行。</span></span></a>
+          <a class="link-card" href="#"><span class="f-icon"><svg class="ic"><use href="#i-bug"/></svg></span><span><b>市场研究与数据采集</b><span>面向采集、覆盖率与目标站点稳定性。</span></span></a>
+        </div>
+      </div>
+      <div class="reveal">
+        <h3 style="font-size:19px;font-weight:700;color:var(--text-heading);margin-bottom:6px">接入与帮助文档</h3>
+        <p style="font-size:14px;color:var(--text-muted);margin-bottom:18px">主域负责聚合和决策入口，详细 API 与操作文档仍在帮助中心。</p>
+        <div class="link-cards">
+          <a class="link-card ext" href="#"><span class="f-icon"><svg class="ic"><use href="#i-book"/></svg></span><span><b>帮助中心</b><span>查看 API、鉴权、接入流程和常见操作。</span></span></a>
+          <a class="link-card" href="#" data-nav="register"><span class="f-icon"><svg class="ic"><use href="#i-user"/></svg></span><span><b>注册与开通</b><span>创建账号并启动 PoC 或生产接入。</span></span></a>
+          <a class="link-card" href="#"><span class="f-icon"><svg class="ic"><use href="#i-shieldlock"/></svg></span><span><b>隐私与数据治理</b><span>了解数据处理、留存和安全治理要求。</span></span></a>
+        </div>
+      </div>
+      <div class="reveal">
+        <h3 style="font-size:19px;font-weight:700;color:var(--text-heading);margin-bottom:6px">精选方法文章</h3>
+        <p style="font-size:14px;color:var(--text-muted);margin-bottom:18px">这些文章更适合做实施参考和团队内部评审材料。</p>
+        <div class="link-cards">
+          <a class="link-card" href="#" data-nav="blog"><span class="f-icon"><svg class="ic"><use href="#i-doc"/></svg></span><span><b>企业代理接入执行手册</b><span>适合 PoC 到生产扩容的实施流程。</span></span></a>
+          <a class="link-card" href="#" data-nav="blog"><span class="f-icon"><svg class="ic"><use href="#i-doc"/></svg></span><span><b>会话稳定性评估方法</b><span>适合账号、登录、结账和稳定性验证。</span></span></a>
+          <a class="link-card" href="#" data-nav="blog"><span class="f-icon"><svg class="ic"><use href="#i-doc"/></svg></span><span><b>代理类型对比文章</b><span>补充理解产品差异与适配边界。</span></span></a>
+          <a class="link-card" href="#" data-nav="blog"><span class="f-icon"><svg class="ic"><use href="#i-blog"/></svg></span><span><b>浏览全部博客</b><span>查看更多代理、集成和 GEO 方法文章。</span></span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section sec-alt" style="position:relative">
+  <span class="note-tag">resources.readingOrder 区块</span>
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Reading Order</span>
+      <h2 class="sec-title">推荐使用顺序</h2>
+    </div>
+    <ol class="order-steps">
+      <li>先看代理类型选择指南，明确业务到底需要稳定性、覆盖率还是吞吐。</li>
+      <li>再看定价与场景页，把产品判断和预算判断放到同一套口径里。</li>
+      <li>确定方案后进入帮助中心和执行手册，减少接入过程中的信息断层。</li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" style="position:relative">
+  <span class="note-tag">resources.faqs 区块</span>
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">FAQs</span>
+      <h2 class="sec-title">常见问题</h2>
+    </div>
+    <div class="faq-grid">
+      <details class="faq-item"><summary>资源中心先看哪一部分最有效？<svg class="ic"><use href="#i-chevdown"/></svg></summary><p class="faq-a">如果你还在评估阶段，先看代理类型选择指南和定价选择方法；如果你已经明确业务目标，先看应用场景和对应产品页；如果你在接入阶段，直接进入帮助中心和接入手册。</p></details>
+      <details class="faq-item"><summary>主域资源中心和帮助中心的分工是什么？<svg class="ic"><use href="#i-chevdown"/></svg></summary><p class="faq-a">主域资源中心负责定义、选择、场景和方法聚合，帮助中心负责 API、鉴权、接入流程和详细操作说明。两者结合可以减少团队查找资料的时间。</p></details>
+      <details class="faq-item"><summary>哪些页面最适合做内部评审或采购决策参考？<svg class="ic"><use href="#i-chevdown"/></svg></summary><p class="faq-a">通常建议先看代理类型选择指南、定价页、应用场景总览，以及企业代理接入执行手册，这几类页面最适合做跨团队评审和采购判断。</p></details>
+    </div>
+  </div>
+</section>
+
+</div><!-- /page-resources -->
+
+<!-- ============================================================ -->
+<!-- ==================== 页面 8：博客 ==================== -->
+<!-- ============================================================ -->
+<div class="page-blog">
+
+<section class="phero phero-center" style="position:relative">
+  <span class="note-tag">[lang]/blog/[...page].astro</span>
+  <div class="container">
+    <span class="eyebrow">Blog</span>
+    <h1>博客与方法文章</h1>
+    <p class="phero-sub">代理接入实践、场景方法论与行业趋势，共 77 篇 · 持续更新</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:64px;position:relative">
+  <span class="note-tag">blog/Grid.astro + GridItem.astro</span>
+  <div class="container">
+    <div class="blog-grid">
+      <a class="blog-card reveal" href="#">
+        <div class="blog-cover c1"><div class="cover-art"><svg class="ic"><use href="#i-doc"/></svg></div></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span class="blog-cat">接入实践</span><span>2026-02-23</span></div>
+          <h3>企业团队如何规划代理接入：从验证到上线的执行手册（2026）</h3>
+          <p>面向产品、研发、运维和采购团队的代理接入实战指南。覆盖需求拆解、PoC验证、容量规划、上线治理、监控告警与成本控制。</p>
+        </div>
+      </a>
+      <a class="blog-card reveal" href="#">
+        <div class="blog-cover c2"><div class="cover-art"><svg class="ic"><use href="#i-layers"/></svg></div></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span class="blog-cat">选型指南</span><span>2026-01-15</span></div>
+          <h3>代理IP类型全解析：数据中心代理 vs 住宅代理 vs 移动代理，如何选择最适合你的方案？</h3>
+          <p>从协议支持、会话能力、覆盖范围与成本结构四个维度，系统比较三类代理的适配边界与组合策略。</p>
+        </div>
+      </a>
+      <a class="blog-card reveal" href="#">
+        <div class="blog-cover c3"><div class="cover-art"><svg class="ic"><use href="#i-clock"/></svg></div></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span class="blog-cat">稳定性治理</span><span>2026-03-08</span></div>
+          <h3>Sticky Session 代理实战：如何提升登录与结账成功率（2026）</h3>
+          <p>会话保持是账号类业务的核心指标。本文给出 sticky session 的评估口径、常见坑与线上验证方法。</p>
+        </div>
+      </a>
+      <a class="blog-card reveal" href="#">
+        <div class="blog-cover c4"><div class="cover-art"><svg class="ic"><use href="#i-search"/></svg></div></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span class="blog-cat">SEO 方法</span><span>2026-02-02</span></div>
+          <h3>零点击搜索时代：用代理IP做关键词缺口分析与流量回收</h3>
+          <p>搜索结果页的本地化差异越来越大。用城市级代理采集 SERP，重建关键词缺口视图并指导内容投放。</p>
+        </div>
+      </a>
+      <a class="blog-card reveal" href="#">
+        <div class="blog-cover c5"><div class="cover-art"><svg class="ic"><use href="#i-refresh"/></svg></div></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span class="blog-cat">选型指南</span><span>2025-12-11</span></div>
+          <h3>静态IP vs 轮换IP：谁是你业务的最佳"网络伙伴"？</h3>
+          <p>静态与轮换不是二选一，而是任务分层。按身份一致性、采集规模与成本敏感度组合使用才是正解。</p>
+        </div>
+      </a>
+      <a class="blog-card reveal" href="#">
+        <div class="blog-cover c6"><div class="cover-art"><svg class="ic"><use href="#i-share"/></svg></div></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span class="blog-cat">社媒运营</span><span>2025-11-27</span></div>
+          <h3>社交媒体营销中的代理IP多账号策略：2025品牌出海必备指南</h3>
+          <p>多账号防关联的核心是环境隔离。从IP、指纹、行为三个层面拆解出海品牌的安全运营框架。</p>
+        </div>
+      </a>
+    </div>
+    <div style="display:flex;justify-content:center;gap:10px;margin-top:44px">
+      <a class="btn btn-secondary btn-sm" href="#">上一页</a>
+      <a class="btn btn-primary btn-sm" href="#">1</a>
+      <a class="btn btn-secondary btn-sm" href="#">2</a>
+      <a class="btn btn-secondary btn-sm" href="#">3</a>
+      <a class="btn btn-secondary btn-sm" href="#">…</a>
+      <a class="btn btn-secondary btn-sm" href="#">13</a>
+      <a class="btn btn-secondary btn-sm" href="#">下一页</a>
+    </div>
+  </div>
+</section>
+
+</div><!-- /page-blog -->
+
+<!-- ============================================================ -->
+<!-- ==================== 页面 9：关于 ==================== -->
+<!-- ============================================================ -->
+<div class="page-about">
+
+<section class="phero" style="position:relative">
+  <span class="note-tag">[lang]/about.astro</span>
+  <div class="container">
+    <div class="phero-split">
+      <div>
+        <span class="eyebrow">About IPFlex</span>
+        <h1>关于 IPFlex</h1>
+        <p class="phero-sub">这个页面的目标是让采购、技术和运营团队在进入产品页或帮助中心之前，先快速理解 IPFlex 的角色、服务边界和交付方式。</p>
+        <div class="phero-actions">
+          <a class="btn btn-primary" href="#" data-nav="prod-srp">浏览产品</a>
+          <a class="btn btn-hero2" href="#" data-nav="resources">访问知识中心</a>
+        </div>
+      </div>
+      <div class="about-side-card">
+        <b>我们做什么</b>
+        <ul>
+          <li><svg class="ic"><use href="#i-check"/></svg>覆盖静态住宅、动态住宅与数据中心代理三类核心能力。</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>支持帮助中心、接入文档、知识中心和方法文章的多层资料结构。</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>适用于数据采集、广告验证、跨境电商、账号稳定和地区可见性验证等场景。</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>面向评估、PoC、生产接入和扩容阶段提供统一决策信息。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="position:relative">
+  <span class="note-tag">about.evaluation 区块</span>
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Evaluation</span>
+      <h2 class="sec-title">如何判断是否适合</h2>
+      <p class="sec-sub">如果团队正在处理登录稳定、账号一致性、区域可见性验证、高并发采集或预算可预测性问题，那么代理方案通常应纳入评估。先看这 4 个问题：</p>
+    </div>
+    <div class="q-grid">
+      <div class="q-card reveal"><span class="f-icon">Q1</span>任务是否依赖长期会话或固定身份？</div>
+      <div class="q-card reveal"><span class="f-icon">Q2</span>是否需要地区级覆盖或出口轮换？</div>
+      <div class="q-card reveal"><span class="f-icon">Q3</span>是否以高并发吞吐为优先？</div>
+      <div class="q-card reveal"><span class="f-icon">Q4</span>能否用成功率、时延和单位任务成本做验证？</div>
+    </div>
+  </div>
+</section>
+
+<section class="section sec-alt" style="position:relative">
+  <span class="note-tag">about.principles 区块</span>
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Principles</span>
+      <h2 class="sec-title">交付与支持原则</h2>
+    </div>
+    <div class="grid-3">
+      <div class="f-card reveal"><div class="f-icon"><svg class="ic"><use href="#i-target"/></svg></div><h3>先定义业务目标，再选代理类型</h3><p>我们强调先看会话稳定、覆盖率、吞吐和成本边界，再决定静态住宅、动态住宅或数据中心代理，而不是把产品选择简化成价格比较。</p></div>
+      <div class="f-card reveal"><div class="f-icon"><svg class="ic"><use href="#i-chart"/></svg></div><h3>用可量化指标做 PoC 和扩容</h3><p>评估阶段优先看成功率、P95 时延、封禁恢复时间、异常验证触发率和单位任务成本，减少凭主观感受做采购决策。</p></div>
+      <div class="f-card reveal"><div class="f-icon"><svg class="ic"><use href="#i-headset"/></svg></div><h3>把交付延伸到接入和运维</h3><p>除了代理资源本身，团队更关注认证方式、访问控制、日志与排障路径，帮助客户把代理能力真正纳入日常运营流程。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="position:relative">
+  <span class="note-tag">about.faq 区块</span>
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">FAQs</span>
+      <h2 class="sec-title">常见问题</h2>
+    </div>
+    <div class="faq-grid">
+      <details class="faq-item"><summary>IPFlex 更适合哪些团队？<svg class="ic"><use href="#i-chevdown"/></svg></summary><p class="faq-a">更适合需要稳定代理能力并且要把代理接入到长期业务流程中的团队，例如数据采集、电商运营、广告验证、风控巡检和全球化验证团队。</p></details>
+      <details class="faq-item"><summary>这个页面和产品页、帮助中心的分工是什么？<svg class="ic"><use href="#i-chevdown"/></svg></summary><p class="faq-a">About 页面负责解释团队定位、交付方法和治理原则；产品页负责说明单个代理类型的适配边界；帮助中心负责 API、鉴权和具体操作文档。</p></details>
+    </div>
+  </div>
+</section>
+
+</div><!-- /page-about -->
+
+<!-- ============================================================ -->
+<!-- ==================== 页面 10：注册 ==================== -->
+<!-- ============================================================ -->
+<div class="page-register">
+
+<section class="section-sm" style="position:relative">
+  <span class="note-tag">[lang]/register.astro</span>
+  <div class="container">
+    <div class="reg-grid reveal">
+      <div class="reg-side">
+        <span class="reg-tag">专业的代理服务提供商</span>
+        <h2>创建您的 IPFlex 账号</h2>
+        <div class="reg-feat"><span class="f-icon"><svg class="ic"><use href="#i-zap"/></svg></span><span><b>高速稳定</b><span>采用优质线路，确保代理服务的稳定性和速度</span></span></div>
+        <div class="reg-feat"><span class="f-icon"><svg class="ic"><use href="#i-shieldlock"/></svg></span><span><b>安全匿名</b><span>采用加密技术，保护您的隐私安全</span></span></div>
+        <div class="reg-feat"><span class="f-icon"><svg class="ic"><use href="#i-scale"/></svg></span><span><b>按量计费</b><span>无需月付，充值即可使用，余额永久有效</span></span></div>
+        <div class="reg-bonus"><svg class="ic" style="width:17px;height:17px"><use href="#i-gift"/></svg>新用户专享 ￥15 体验金</div>
+      </div>
+      <div class="reg-form">
+        <h2>注 册</h2>
+        <form onsubmit="return false">
+          <div class="form-field"><label>用户名</label><input type="text" placeholder="4~6位字符"></div>
+          <div class="form-field"><label>邮箱</label><input type="email" placeholder="请输入邮箱"></div>
+          <div class="form-field"><label>密码</label><input type="password" placeholder="6~20位字符"></div>
+          <div class="form-field"><label>邀请码</label><input type="text" placeholder="选填"></div>
+          <button class="btn btn-primary reg-submit" type="submit">注 册</button>
+        </form>
+        <div class="reg-alt">已有账号？<a href="#">立即登录</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm sec-alt" style="position:relative">
+  <span class="note-tag">register.onboardingNotes 区块</span>
+  <div class="container" style="max-width:900px">
+    <div class="sec-head" style="margin-bottom:32px">
+      <h2 class="sec-title" style="font-size:clamp(20px,2.4vw,26px)">注册后你可以立即开始什么</h2>
+    </div>
+    <div class="guide-block reveal">
+      <p>完成注册后，你可以在控制台创建代理提取配置、查看实时用量、管理 API 凭证并按业务场景选择不同代理类型。对于账号运营和长期会话任务，建议优先启用静态住宅代理；对于大规模采集任务，建议使用动态住宅代理并配置重试策略；对于高并发程序化任务，可使用数据中心代理优化吞吐和成本。</p>
+      <p>建议首次接入时先进行小流量验证，确认目标站点可达性、请求成功率和地域命中情况，再逐步放量。这样可以更稳妥地控制预算，并在上线前提前发现风控或兼容性问题。</p>
+      <p style="margin-bottom:0">相关页面：<a class="p-link" href="#" data-nav="pricing">价格方案</a> · <a class="p-link" href="#" data-nav="prod-srp">产品详情</a> · <a class="p-link" href="#" data-nav="scenarios">应用场景</a></p>
+    </div>
+  </div>
+</section>
+
+</div><!-- /page-register -->
+
+<!-- ==================== 页脚（Footer.astro） ==================== -->
+<footer class="footer" style="position:relative">
+  <span class="note-tag">widgets/Footer.astro</span>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="logo" href="#" data-nav="home"><span class="logo-mark"><svg class="ic"><use href="#i-globe"/></svg></span>IPFlex</a>
+        <p class="footer-desc">专业的IP代理服务提供商，为您提供优质的代理服务</p>
+        <div class="footer-social">
+          <a href="#" aria-label="X"><svg class="ic"><use href="#i-xbrand"/></svg></a>
+          <a href="#" aria-label="Telegram"><svg class="ic"><use href="#i-tg"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>代理产品</h4>
+        <ul>
+          <li><a href="#" data-nav="prod-srp">静态住宅代理</a></li>
+          <li><a href="#" data-nav="prod-drp">动态住宅代理</a></li>
+          <li><a href="#" data-nav="prod-dc">数据中心代理</a></li>
+          <li><a href="#">AI加速器</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>解决方案</h4>
+        <ul>
+          <li><a href="#" data-nav="scenarios">跨境电商</a></li>
+          <li><a href="#" data-nav="scenarios">品牌保护</a></li>
+          <li><a href="#" data-nav="scenarios">市场调研</a></li>
+          <li><a href="#" data-nav="scenarios">广告验证</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>支持</h4>
+        <ul>
+          <li><a href="#" data-nav="resources">知识中心</a></li>
+          <li><a href="#">帮助中心</a></li>
+          <li><a href="#">support@ipflex.ink</a></li>
+          <li><a href="#">business@ipflex.ink</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>公司</h4>
+        <ul>
+          <li><a href="#" data-nav="about">关于我们</a></li>
+          <li><a href="#">使用条款</a></li>
+          <li><a href="#">隐私政策</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-note">© <span id="year">2026</span> IPFlex. 版权所有.</div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var html = document.documentElement;
+  var dirBtns = document.querySelectorAll('[data-dir-btn]');
+  var pageBtns = document.querySelectorAll('[data-page-btn]');
+  var pages = ['home','pricing','prod-srp','prod-drp','prod-dc','scenarios','resources','blog','about','register'];
+
+  function setDir(dir) {
+    html.setAttribute('data-dir', dir);
+    dirBtns.forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-dir-btn') === dir); });
+    try { sessionStorage.setItem('ipflex-dir', dir); } catch (e) {}
+  }
+  function setPage(page) {
+    if (pages.indexOf(page) === -1) page = 'home';
+    html.setAttribute('data-active', page);
+    pageBtns.forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-page-btn') === page); });
+    try { sessionStorage.setItem('ipflex-page', page); } catch (e) {}
+    window.scrollTo({ top: 0 });
+    revealScan();
+  }
+
+  dirBtns.forEach(function (b) { b.addEventListener('click', function () { setDir(b.getAttribute('data-dir-btn')); }); });
+  pageBtns.forEach(function (b) { b.addEventListener('click', function () { setPage(b.getAttribute('data-page-btn')); }); });
+  document.querySelectorAll('[data-nav]').forEach(function (a) {
+    a.addEventListener('click', function (e) { e.preventDefault(); setPage(a.getAttribute('data-nav')); });
+  });
+
+  try {
+    var d = sessionStorage.getItem('ipflex-dir'); if (d) setDir(d);
+    var p = sessionStorage.getItem('ipflex-page'); if (p) setPage(p);
+  } catch (e) {}
+
+  document.getElementById('notes-toggle').addEventListener('change', function (e) {
+    html.classList.toggle('show-notes', e.target.checked);
+  });
+  document.getElementById('promo-close').addEventListener('click', function () {
+    document.getElementById('promo').style.display = 'none';
+  });
+  var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+
+  // 入场动画（页面切换后重新扫描未显示的元素）
+  function revealScan() {
+    var els = document.querySelectorAll('.reveal:not(.in)');
+    if (!('IntersectionObserver' in window) || !window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+      els.forEach(function (el) { el.classList.add('in'); }); return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.08 });
+    els.forEach(function (el) { io.observe(el); });
+  }
+  revealScan();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1542 @@
+{
+  "nav": {
+    "products": "Proxy Products",
+    "pricing": "Pricing",
+    "scenarios": "Use Cases",
+    "blog": "Blog",
+    "resources": "Knowledge Hub",
+    "help": "Help Center",
+    "login": "Log in",
+    "register": "Sign up"
+  },
+  "promo": {
+    "tag": "New User Offer",
+    "text": "Sign up and get a ¥15 free trial credit — start experiencing our premium service today!",
+    "cta": "Sign up now",
+    "close": "Close"
+  },
+  "home": {
+    "hero": {
+      "title": "Enterprise-Grade Proxy Network,\nResidential & Datacenter Coverage",
+      "sub": "IPFlex offers static residential, rotating residential and datacenter proxies with HTTP/SOCKS5 support, city-level targeting and API access — built for web scraping, ad verification, cross-border operations and automation.",
+      "buy": "Buy Proxy IPs",
+      "learnMore": "Learn more",
+      "trust": [
+        {
+          "icon": "zap",
+          "text": "HTTP · SOCKS5 Dual Protocol"
+        },
+        {
+          "icon": "pin",
+          "text": "200+ Countries · City-Level Targeting"
+        },
+        {
+          "icon": "gauge",
+          "text": "99.9% Availability"
+        },
+        {
+          "icon": "clock",
+          "text": "24/7 Technical Support"
+        }
+      ]
+    },
+    "proxyContent": {
+      "band": "Residential Proxy Services",
+      "cards": [
+        {
+          "name": "Static Residential Proxy",
+          "desc": [
+            "Built on real residential networks, providing long-lived fixed IP addresses.",
+            "Exceptional anonymity and trust, effectively avoiding proxy detection and bans.",
+            "Ideal for cross-border e-commerce, market research, social media marketing and brand protection."
+          ],
+          "link": "Explore Static Residential Proxy",
+          "tiles": [
+            {
+              "icon": "home",
+              "text": "Real long-lived residential IPs"
+            },
+            {
+              "icon": "gauge",
+              "text": "Up to 99.9% availability"
+            },
+            {
+              "icon": "pin",
+              "text": "Precise city-level targeting"
+            },
+            {
+              "icon": "code",
+              "text": "Multi-protocol support"
+            }
+          ],
+          "to": "prod-srp"
+        },
+        {
+          "name": "Rotating Residential Proxy",
+          "desc": [
+            "Built on a constantly changing IP pool, providing frequently rotated IPs for short-term tasks.",
+            "Highly flexible with broad IP coverage, effectively bypassing IP bans and restrictions.",
+            "Ideal for web scraping, data extraction, ad verification and automated testing."
+          ],
+          "link": "Explore Rotating Residential Proxy",
+          "tiles": [
+            {
+              "icon": "refresh",
+              "text": "Real short-lived residential IPs"
+            },
+            {
+              "icon": "infinity",
+              "text": "10M+ daily active IPs"
+            },
+            {
+              "icon": "pin",
+              "text": "City-level targeting"
+            },
+            {
+              "icon": "code",
+              "text": "Multi-protocol support"
+            }
+          ],
+          "to": "prod-drp"
+        }
+      ]
+    },
+    "proxyService": {
+      "band": "Datacenter Proxy Services",
+      "card": [
+        {
+          "name": "Static Datacenter Proxy",
+          "desc": [
+            "Built on datacenter networks, providing long-lived fixed IP addresses.",
+            "Delivered from servers in datacenters with high speed and stability, advantageous in both cost and performance.",
+            "Especially suited for fast, large-scale data extraction — website testing, data analysis, SEO monitoring and online ad verification."
+          ],
+          "link": "Explore Datacenter Proxy",
+          "to": "prod-dc",
+          "tiles": [
+            {
+              "icon": "server",
+              "text": "Long-lived datacenter IPs"
+            },
+            {
+              "icon": "pin",
+              "text": "Precise city-level targeting"
+            },
+            {
+              "icon": "gauge",
+              "text": "Up to 99.9% availability"
+            },
+            {
+              "icon": "code",
+              "text": "Multi-protocol support"
+            }
+          ]
+        }
+      ]
+    },
+    "steps": {
+      "eyebrow": "Quick Start",
+      "title": "Get started with enterprise proxy services",
+      "items": [
+        {
+          "num": "01",
+          "title": "Create an account",
+          "desc": "Sign up on our website and start configuring your network access."
+        },
+        {
+          "num": "02",
+          "title": "Choose a plan",
+          "desc": "Pick the right plan and resource type for your business goals."
+        },
+        {
+          "num": "03",
+          "title": "Start using",
+          "desc": "Once configured, plug proxies into your workflow and run daily tasks with stability."
+        }
+      ],
+      "done": "Done!"
+    },
+    "advantages": {
+      "eyebrow": "Why IPFlex",
+      "title": "Why choose us",
+      "sub": "A stable proxy network and service support built for enterprise scenarios",
+      "items": [
+        {
+          "icon": "globe",
+          "title": "Global IP resource pool",
+          "desc": "Our broadly covering global IP pool spans 200+ countries and regions, offering diverse IP choices for a borderless network experience."
+        },
+        {
+          "icon": "headset",
+          "title": "Responsive support + referral rewards",
+          "desc": "24/7 professional technical support keeps your experience smooth. Plus a referral program — earn a 10% cash commission instantly when friends top up. Zero waiting; earn while you use!"
+        },
+        {
+          "icon": "layers",
+          "title": "Rich IP types",
+          "desc": "Choose from a wide range of IP types — residential and datacenter proxies, static and rotating — to fit different business scenarios and make your business more efficient."
+        },
+        {
+          "icon": "rocket",
+          "title": "Fast, stable connections",
+          "desc": "Enjoy outstanding network performance. Fast, stable connections eliminate latency and flakiness, improving productivity and user experience."
+        },
+        {
+          "icon": "infinity",
+          "title": "Unlimited bandwidth",
+          "desc": "Unlimited bandwidth with no traffic caps, so you get ultra-high speed and ultra-low latency in every situation."
+        },
+        {
+          "icon": "shieldlock",
+          "title": "Advanced security",
+          "desc": "Top-tier security safeguards fully protect your privacy and data, so you can use our services with complete peace of mind."
+        }
+      ]
+    },
+    "stats": [
+      {
+        "num": "132K",
+        "label": "Users"
+      },
+      {
+        "num": "24.8K",
+        "label": "Services delivered"
+      },
+      {
+        "num": "200+",
+        "label": "Countries covered"
+      },
+      {
+        "num": "98%",
+        "label": "Satisfaction"
+      }
+    ],
+    "useCases": {
+      "eyebrow": "Use Cases",
+      "title": "Common scenarios",
+      "sub": "Suitable for a wide range of business scenarios.",
+      "items": [
+        {
+          "icon": "bug",
+          "title": "Web data extraction",
+          "desc": "With proxy IPs, easily bypass site restrictions and move across massive pages to precisely capture text, images and data — empowering market analysis, competitor research and business decisions."
+        },
+        {
+          "icon": "cart",
+          "title": "E-commerce operations",
+          "desc": "Collect product details, price movements and sales rankings from e-commerce platforms in real time, helping sellers seize opportunities and optimize selection and pricing strategies."
+        },
+        {
+          "icon": "chart",
+          "title": "Market research insights",
+          "desc": "Dig deep into industry data and simulate research across regions and demographics to precisely analyze market demand and consumer preferences, helping enterprises plan ahead and lead the market."
+        },
+        {
+          "icon": "share",
+          "title": "Social media growth",
+          "desc": "Operate multiple accounts with ease — switch identities via proxies, batch likes, comments and shares, safely boost brand exposure and efficiently attract target audiences."
+        },
+        {
+          "icon": "search",
+          "title": "SEO optimization",
+          "desc": "Simulate search requests from different regions to precisely monitor keyword rankings and traffic sources, then optimize page content and structure to stand out in search results."
+        },
+        {
+          "icon": "ad",
+          "title": "Ad delivery efficiency",
+          "desc": "Verify ad delivery from multi-region perspectives, ensure precise reach, compare regional performance and adjust details in time — maximizing conversion on a limited budget."
+        },
+        {
+          "icon": "gauge",
+          "title": "Website performance testing",
+          "desc": "Simulate diverse network environments and regional access to fully detect vulnerabilities and loading bottlenecks, ensuring smooth global access and a reliable user experience."
+        },
+        {
+          "icon": "shield",
+          "title": "Brand safety",
+          "desc": "Hide your real IP to reduce attack risks on brand assets, monitor counterfeit and infringing content in real time, defend brand reputation and solidify market position."
+        },
+        {
+          "icon": "news",
+          "title": "Public opinion tracking",
+          "desc": "Collect opinions from mainstream media and social platforms in real time, analyze trends and public sentiment, helping enterprises respond quickly, defuse crises and maintain brand image."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Professional and stable enterprise network services",
+      "desc": "Experience efficient, stable enterprise-grade proxy capabilities now.\nStop hesitating — act now!",
+      "btn": "Get started"
+    },
+    "faq": {
+      "eyebrow": "FAQs",
+      "title": "Frequently asked questions",
+      "sub": "Learn about features and integration to get started quickly.",
+      "items": [
+        {
+          "q": "How do proxy IPs work?",
+          "a": "A proxy IP acts as an intermediate server that hides your real IP address, helps you access geo-restricted content, and provides additional security and anonymity."
+        },
+        {
+          "q": "What's the difference between static residential and rotating IPs?",
+          "a": "A static residential IP is a fixed real residential IP address, suitable for scenarios requiring IP stability; a rotating IP changes automatically at intervals, suited for scraping tasks that need frequent IP switching."
+        },
+        {
+          "q": "How is the proxy service priced?",
+          "a": "We offer flexible billing options including traffic-based and per-IP pricing. Choose the plan that best fits your needs — we also provide custom enterprise solutions."
+        },
+        {
+          "q": "How do I choose the right proxy type?",
+          "a": "Consider your specific use case: rotating IPs for scraping, static residential IPs for cross-border e-commerce, and dedicated datacenter IPs for enterprise applications."
+        },
+        {
+          "q": "Which regions do your IPs cover?",
+          "a": "Our IP pool covers 200+ countries and regions worldwide, with city-level geolocation to support your global business needs."
+        },
+        {
+          "q": "What about bandwidth and speed?",
+          "a": "The service delivers high-speed, stable proxies using advanced load balancing for low latency and high bandwidth, with unlimited traffic."
+        },
+        {
+          "q": "How is proxy stability guaranteed?",
+          "a": "We use multi-level backup mechanisms and intelligent monitoring to track IP health in real time, ensuring 99.9% availability with automatic failover."
+        },
+        {
+          "q": "Is API access supported?",
+          "a": "Yes. We provide complete API documentation and SDKs in multiple programming languages, making it easy to integrate proxies into your systems."
+        },
+        {
+          "q": "How is data security ensured?",
+          "a": "The service uses enterprise-grade encryption, supports HTTPS and SOCKS5, and strictly complies with data protection regulations — we never record or leak user data."
+        },
+        {
+          "q": "What technical support is provided?",
+          "a": "We offer 24/7 support including online documentation, technical consultation and troubleshooting to keep your business running smoothly."
+        }
+      ]
+    },
+    "referral": {
+      "badge": "Referral program",
+      "titlePrefix": "Invite friends, earn ",
+      "titleHighlight": "10% commission",
+      "desc": "Join the IPFlex referral program — earn generous commission instantly whenever a friend you referred tops up. Zero threshold, unlimited referrals.",
+      "stats": [
+        {
+          "num": "10%",
+          "label": "Max commission"
+        },
+        {
+          "num": "∞",
+          "label": "Unlimited referrals"
+        },
+        {
+          "num": "$0",
+          "label": "Zero threshold"
+        },
+        {
+          "num": "⚡",
+          "label": "Instant payout"
+        }
+      ],
+      "primary": "Sign up and start referring",
+      "secondary": "Log in to view earnings"
+    }
+  },
+  "pricing": {
+    "eyebrow": "Pricing",
+    "heroTitle": "Limited-time offer! From ¥2/IP, ¥10/GB + referral cashback",
+    "heroSub": "Choose the plan that best fits your business — refer friends and earn 10% cash commission instantly on their top-ups",
+    "buyNow": "Buy now",
+    "learnProduct": "Explore products",
+    "cards": [
+      {
+        "name": "Static Residential Proxy",
+        "sub": "Stable, reliable long-lived residential IPs",
+        "num": "¥40",
+        "unit": "/GB",
+        "feats": [
+          "Real long-lived residential IPs",
+          "Up to 99.9% availability",
+          "Precise city-level targeting",
+          "HTTP & SOCKS5 support",
+          "From ¥2/day"
+        ],
+        "popular": false
+      },
+      {
+        "name": "Rotating Residential Proxy",
+        "sub": "Massive pool of real residential IPs",
+        "num": "¥2",
+        "unit": "/IP",
+        "feats": [
+          "Real short-lived residential IPs",
+          "10M+ daily active IPs",
+          "City-level targeting",
+          "HTTP & SOCKS5 support",
+          "¥40/GB"
+        ],
+        "popular": true
+      },
+      {
+        "name": "Static Datacenter Proxy",
+        "sub": "Cost-effective datacenter IPs",
+        "num": "¥10",
+        "unit": "/GB",
+        "feats": [
+          "Long-lived datacenter IPs",
+          "Daily purchase, unmetered traffic",
+          "City-level targeting",
+          "HTTP & SOCKS5 support",
+          "¥2/day or ¥30/month"
+        ],
+        "popular": false
+      }
+    ],
+    "note": "IPFlex pricing plans offer scalable combinations for every stage of business — teams can tier their purchases based on stability targets, request volume and budget constraints.",
+    "guide": {
+      "eyebrow": "Guide",
+      "title": "How to choose the right proxy plan",
+      "blocks": [
+        {
+          "title": "Choose by task type",
+          "list": [
+            {
+              "icon": "user",
+              "text": "Account-based tasks: prefer static residential proxies for session continuity and identity consistency."
+            },
+            {
+              "icon": "bug",
+              "text": "Scraping tasks: prefer rotating residential proxies to improve coverage and reduce ban probability."
+            },
+            {
+              "icon": "code",
+              "text": "High-concurrency API tasks: prefer datacenter proxies to control unit cost and increase throughput."
+            }
+          ]
+        },
+        {
+          "title": "Four-step evaluation (ready to apply)",
+          "evalSteps": [
+            "Define a unified workload: target sites, concurrency, time window, success criteria.",
+            "Run samples in parallel: run the full business cycle on all three plan types.",
+            "Record results: success rate, P50/P95 latency, retry overhead, completion cost.",
+            "Review and decide: evaluate at both peak and steady-state windows; keep the procurement rationale."
+          ]
+        }
+      ]
+    },
+    "features": {
+      "eyebrow": "Features",
+      "title": "Pricing-related features",
+      "sub": "Learn the advantages of choosing our plans",
+      "items": [
+        {
+          "icon": "stairs",
+          "title": "Tiered pricing",
+          "desc": "Multiple price plans to fit different budgets and needs"
+        },
+        {
+          "icon": "scale",
+          "title": "Transparent pricing",
+          "desc": "Clear pricing details for every plan, no hidden fees"
+        },
+        {
+          "icon": "shieldlock",
+          "title": "Secure payment",
+          "desc": "Secure payment gateways protect your transactions"
+        },
+        {
+          "icon": "zap",
+          "title": "Instant access",
+          "desc": "All features available as soon as payment completes"
+        },
+        {
+          "icon": "rocket",
+          "title": "Upgrade perks",
+          "desc": "Upgrading to higher tiers unlocks more features and benefits"
+        },
+        {
+          "icon": "headset",
+          "title": "24-hour support",
+          "desc": "Support every day via live chat, email or phone"
+        }
+      ]
+    },
+    "faq": {
+      "eyebrow": "FAQs",
+      "title": "Pricing FAQs",
+      "items": [
+        {
+          "q": "Should I look at price or success rate first?",
+          "a": "First check whether the target task can be completed stably under a unified workload, then compare unit completion cost. Judging by sticker price alone underestimates the real cost of failed retries and operational fluctuation."
+        },
+        {
+          "q": "When is the right time to scale from trial traffic to production?",
+          "a": "Scale gradually by business priority once success rate, latency, retry overhead and budget deviation remain stable across a full business cycle."
+        },
+        {
+          "q": "Which metrics should I compare when evaluating pricing?",
+          "a": "We recommend consistently comparing success rate, P50/P95 latency, failure type distribution, retry overhead, and monthly completion cost per business flow."
+        }
+      ]
+    },
+    "popular": "Popular"
+  },
+  "srp": {
+    "eyebrow": "Static Residential Proxy",
+    "heroTitle": "Static Residential Proxy",
+    "heroSub": "A proxy service built on real residential networks, providing long-lived fixed IP addresses",
+    "chips": [
+      {
+        "icon": "shield",
+        "text": "High stability, low ban risk"
+      },
+      {
+        "icon": "pin",
+        "text": "City-level precision targeting"
+      },
+      {
+        "icon": "scale",
+        "text": "Pay as you go, usage-based billing"
+      },
+      {
+        "icon": "infinity",
+        "text": "Unlimited bandwidth, ample traffic"
+      }
+    ],
+    "trial": "Try IPFlex now",
+    "viewPricing": "View pricing",
+    "stats": {
+      "title": "Global resource coverage",
+      "sub": "IPFlex has a massive pool of quality residential IPs to safeguard your business",
+      "items": [
+        {
+          "num": "0.4s",
+          "label": "Avg response time"
+        },
+        {
+          "num": "80+",
+          "label": "Countries/regions"
+        },
+        {
+          "num": "99.9%",
+          "label": "Service availability"
+        },
+        {
+          "num": "24/7",
+          "label": "Technical support"
+        }
+      ]
+    },
+    "performance": {
+      "eyebrow": "Performance",
+      "title": "Outstanding performance, unlimited bandwidth",
+      "desc": "IPFlex static residential proxies are built on real residential networks with unlimited bandwidth and unlimited session duration, supporting HTTP and SOCKS5. High performance and high anonymity for data extraction, cross-border e-commerce, ad verification and more — boosting efficiency while reducing ban risk.",
+      "feats": [
+        "Unlimited bandwidth",
+        "Unlimited session duration",
+        "HTTP & SOCKS5 support",
+        "High anonymity and stability"
+      ]
+    },
+    "mock": {
+      "lines": [
+        {
+          "k": "GET",
+          "text": " https://target.example.com/api/list"
+        },
+        {
+          "text": "proxy: ",
+          "b": "static-residential · US · New York"
+        },
+        {
+          "text": "status: ",
+          "b": "200 OK",
+          "tail": "  latency: ",
+          "b2": "0.38s",
+          "tail2": "  exit-ip: ",
+          "b3": "72.14.x.x"
+        },
+        {
+          "k": "GET",
+          "text": " https://target.example.com/api/detail?id=8842"
+        },
+        {
+          "text": "session: ",
+          "b": "sticky",
+          "tail": "  exit-ip: ",
+          "b2": "72.14.x.x (unchanged)"
+        },
+        {
+          "text": "status: ",
+          "b": "200 OK",
+          "tail": "  latency: ",
+          "b2": "0.41s"
+        }
+      ]
+    },
+    "why": {
+      "title": "Why choose IPFlex?",
+      "items": [
+        {
+          "icon": "scale",
+          "title": "Great value",
+          "desc": "Flexible plans with pay-as-you-go billing to meet different business needs economically."
+        },
+        {
+          "icon": "globe",
+          "title": "Rich regional resources",
+          "desc": "Covering 200+ countries and regions with abundant IP resources for diverse needs."
+        },
+        {
+          "icon": "infinity",
+          "title": "Unlimited bandwidth",
+          "desc": "Under per-proxy billing, no extra traffic charges — enjoy unlimited bandwidth."
+        }
+      ]
+    },
+    "useCases": {
+      "eyebrow": "Use Cases",
+      "title": "Use cases",
+      "items": [
+        {
+          "icon": "ad",
+          "title": "Ad verification",
+          "desc": "Leverage residential proxies and global IP resources to genuinely simulate user visits, precisely verify ads, prevent ad fraud and improve ROI. IPFlex serves 50+ enterprises daily with ad verification and anti-fraud compliance checks.",
+          "link": "Explore ad verification"
+        },
+        {
+          "icon": "bug",
+          "title": "Market research & data extraction",
+          "desc": "With 700K+ residential IPs, easily bypass anti-scraping measures for efficient data extraction and market research. Daily collection exceeds 100M records with API automation for data-driven decisions.",
+          "link": "Explore extraction"
+        },
+        {
+          "icon": "cart",
+          "title": "E-commerce account nurturing",
+          "desc": "Long-term stable residential IPs for cross-border sellers reduce ban risk. Supports account nurturing and batch management across Amazon, eBay, Shopee and more, with a 99.9% account safety rate.",
+          "link": "Explore e-commerce"
+        },
+        {
+          "icon": "shield",
+          "title": "Network security & risk control",
+          "desc": "Use residential proxies for penetration testing, brand protection and risk monitoring to identify threats and prevent fraud. IPFlex has delivered risk-control solutions to 60+ internet companies.",
+          "link": "Explore risk control"
+        }
+      ]
+    },
+    "billing": {
+      "eyebrow": "Billing",
+      "title": "Billing methods compared",
+      "sub": "IPFlex supports both traffic-based and per-IP billing to fit different scenarios and team budgets.",
+      "cards": [
+        {
+          "title": "Pay by traffic",
+          "price": "¥40 / GB",
+          "blocks": [
+            {
+              "b": "Best for",
+              "items": [
+                "Scraping projects with fluctuating, unpredictable traffic",
+                "Most distributed scraping/monitoring workloads",
+                "Highly variable needs like marketing/ad delivery"
+              ]
+            },
+            {
+              "b": "Advantages",
+              "items": [
+                "Pay only for what you use — flexible, no waste",
+                "Great for temporary projects or teams with uncertain usage",
+                "Tiered volume discounts — the more you use, the cheaper"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Pay per IP",
+          "price": "From ¥4 / IP / day",
+          "blocks": [
+            {
+              "b": "Best for",
+              "items": [
+                "Cross-border account nurturing / site-group maintenance",
+                "Long-term stable operations requiring dedicated IPs",
+                "High-concurrency, targeted weight monitoring"
+              ]
+            },
+            {
+              "b": "Advantages",
+              "items": [
+                "Dedicated IPs with strong stability",
+                "No worry about traffic spikes — ideal for centralized management",
+                "Scale on demand with predictable budgets"
+              ]
+            }
+          ]
+        }
+      ],
+      "noteB": "New users get ¥15 free credit on sign-up",
+      "noteLink": "Sign up now for flexible billing"
+    },
+    "faq": {
+      "eyebrow": "FAQs",
+      "title": "Frequently asked questions",
+      "sub": "Common questions about static residential proxies",
+      "items": [
+        {
+          "q": "What is a residential proxy?",
+          "a": "A residential proxy uses IP addresses assigned through real home broadband networks, mimicking ordinary user behavior. Compared with datacenter proxies, residential IPs are much harder for target sites to detect and block — the first choice for data extraction, scraping, account registration and ad verification."
+        },
+        {
+          "q": "Why use residential proxy IPs?",
+          "a": "Residential proxies effectively bypass anti-scraping mechanisms and reduce ban risk. With high anonymity and stability, they suit cross-border e-commerce, social media operations, market research, SEO monitoring, ad verification and other businesses that need large volumes of high-quality IPs."
+        },
+        {
+          "q": "Static vs rotating residential proxies — what's the difference?",
+          "a": "Static residential proxies provide long-lived unchanging IPs, ideal for account nurturing and long-term extraction where IP stability matters. Rotating residential proxies change IPs periodically, suited to large-scale scraping, short-term tasks and anonymous browsing."
+        },
+        {
+          "q": "What scenarios suit static residential proxies?",
+          "a": "Cross-border e-commerce account nurturing, social media account management, long-term data extraction, ad delivery, brand protection, security testing — any scenario that demands IP stability and security."
+        },
+        {
+          "q": "What billing options are available?",
+          "a": "Common options include per-IP billing, traffic-based billing and monthly packages. Choose the optimal plan based on your business needs for cost-effective residential proxy service."
+        },
+        {
+          "q": "How do I buy and use static residential proxies?",
+          "a": "After registering an IPFlex account, pick a suitable static residential plan to get quality residential IPs and port details. API-based automation is supported for quick integration into your systems."
+        }
+      ]
+    }
+  },
+  "drp": {
+    "eyebrow": "Rotating Residential Proxy",
+    "heroTitle": "Rotating Residential Proxy",
+    "heroSub": "An auto-rotating residential proxy service offering high anonymity and flexible network access",
+    "chips": [
+      {
+        "icon": "refresh",
+        "text": "Automatic IP rotation, high anonymity"
+      },
+      {
+        "icon": "globe",
+        "text": "200+ countries and regions"
+      },
+      {
+        "icon": "code",
+        "text": "HTTP/SOCKS5 support"
+      },
+      {
+        "icon": "pin",
+        "text": "City-level targeting"
+      }
+    ],
+    "trial": "Try IPFlex now",
+    "viewPricing": "View pricing",
+    "stats": {
+      "title": "Global rotating IP pool",
+      "sub": "IPFlex has over 40 million rotating residential IPs to power your business",
+      "items": [
+        {
+          "num": "40M+",
+          "label": "Rotating IP pool size"
+        },
+        {
+          "num": "200+",
+          "label": "Countries/regions"
+        },
+        {
+          "num": "0.4s+",
+          "label": "Avg response speed"
+        },
+        {
+          "num": "99.9%",
+          "label": "Success rate guarantee"
+        }
+      ]
+    },
+    "performance": {
+      "eyebrow": "Performance",
+      "title": "Smart rotation, high-performance access",
+      "desc": "IPFlex rotating residential proxies use intelligent rotation algorithms on real residential networks for highly anonymous access. Custom rotation strategies and unlimited bandwidth suit large-scale extraction, scraping, market research and ad verification — effectively evading anti-bot detection and improving efficiency.",
+      "feats": [
+        "Smart IP rotation algorithm",
+        "Custom rotation strategies",
+        "Unlimited bandwidth",
+        "High anonymity protection",
+        "Anti-bot evasion"
+      ]
+    },
+    "mock": {
+      "lines": [
+        {
+          "k": "GET",
+          "text": " https://target.example.com/search?q=1"
+        },
+        {
+          "text": "proxy: ",
+          "b": "rotating-residential · exit 98.42.x.x"
+        },
+        {
+          "text": "status: ",
+          "b": "200 OK",
+          "tail": "  latency: ",
+          "b2": "0.44s"
+        },
+        {
+          "k": "GET",
+          "text": " https://target.example.com/search?q=2"
+        },
+        {
+          "text": "rotate: ",
+          "b": "auto",
+          "tail": "  exit ",
+          "b2": "203.0.x.x (new exit)"
+        },
+        {
+          "text": "status: ",
+          "b": "200 OK",
+          "tail": "  latency: ",
+          "b2": "0.39s"
+        }
+      ]
+    },
+    "why": {
+      "title": "Why choose IPFlex rotating residential proxies?",
+      "items": [
+        {
+          "icon": "refresh",
+          "title": "Smart rotation",
+          "desc": "AI-based intelligent IP rotation that adapts strategies to target site characteristics, maximizing success rates."
+        },
+        {
+          "icon": "clock",
+          "title": "Persistent sessions",
+          "desc": "Session persistence keeps the same IP within a session, ideal for scenarios that require session consistency."
+        },
+        {
+          "icon": "globe",
+          "title": "Global coverage",
+          "desc": "Residential IP resources across 200+ countries and regions, with precise city-level geolocation."
+        },
+        {
+          "icon": "scale",
+          "title": "Great value",
+          "desc": "Pay-as-you-go with traffic- or request-based billing for flexible cost control."
+        }
+      ]
+    },
+    "useCases": {
+      "eyebrow": "Use Cases",
+      "title": "Use cases",
+      "items": [
+        {
+          "icon": "bug",
+          "title": "Large-scale data extraction",
+          "desc": "Dynamic IP rotation breaks site access limits for efficient large-scale extraction. Supports e-commerce price monitoring, social media scraping and news collection — over 50M requests processed daily.",
+          "link": "Explore plan"
+        },
+        {
+          "icon": "target",
+          "title": "Scraping & monitoring",
+          "desc": "High-anonymity IP rotation for scrapers effectively evades anti-bot detection. Supports SEO monitoring, competitor analysis and content aggregation to help enterprises get key business data.",
+          "link": "Explore plan"
+        },
+        {
+          "icon": "user",
+          "title": "Anonymous browsing & privacy",
+          "desc": "Dynamic IP rotation protects real identities for anonymous browsing and privacy. Suited to sensitive queries, geo-restricted content access and security research.",
+          "link": "Explore plan"
+        }
+      ]
+    },
+    "faq": {
+      "eyebrow": "FAQs",
+      "title": "Frequently asked questions",
+      "items": [
+        {
+          "q": "What is a rotating residential proxy?",
+          "a": "A rotating residential proxy draws from a constantly changing IP pool, switching exit IPs per request or short cycle. Built on real residential networks, it combines high anonymity with flexibility for large-scale, high-frequency tasks."
+        },
+        {
+          "q": "Can rotation frequency be customized?",
+          "a": "Yes. IPFlex supports per-request and time-based rotation, plus sticky sessions that hold the same exit IP for a specified period — meeting different demands for stability and flexibility."
+        },
+        {
+          "q": "How is it billed?",
+          "a": "Two billing modes: traffic-based (¥40/GB) and per-IP (from ¥2/IP). Choose the most economical option by workload characteristics — no minimum spend, balance never expires."
+        },
+        {
+          "q": "Rotating or static residential — how to choose?",
+          "a": "Choose rotating for frequent exit switching and large-scale extraction; choose static for long-term fixed identities and account nurturing. Both can be combined by business stage, scaling smoothly from small PoC traffic to production."
+        }
+      ]
+    }
+  },
+  "dc": {
+    "eyebrow": "Static Datacenter Proxy",
+    "heroTitle": "Static Datacenter Proxy",
+    "heroSub": "A high-speed datacenter proxy service delivering ultra-low latency and top-tier performance",
+    "chips": [
+      {
+        "icon": "zap",
+        "text": "Ultra-low latency, millisecond response"
+      },
+      {
+        "icon": "infinity",
+        "text": "High bandwidth for heavy traffic"
+      },
+      {
+        "icon": "gauge",
+        "text": "99.9% stability guarantee"
+      },
+      {
+        "icon": "scale",
+        "text": "Excellent value, controllable cost"
+      }
+    ],
+    "trial": "Try IPFlex now",
+    "viewPricing": "View pricing",
+    "stats": {
+      "title": "Global datacenter resources",
+      "sub": "IPFlex deploys high-performance datacenters worldwide for an ultra-fast access experience",
+      "items": [
+        {
+          "num": "500K+",
+          "label": "Datacenter IP pool"
+        },
+        {
+          "num": "100+",
+          "label": "Global datacenters"
+        },
+        {
+          "num": "0.1s",
+          "label": "Average latency"
+        },
+        {
+          "num": "10Gbps",
+          "label": "Per-IP bandwidth"
+        }
+      ]
+    },
+    "performance": {
+      "eyebrow": "Performance",
+      "title": "Extreme performance, unlimited bandwidth",
+      "desc": "IPFlex static datacenter proxies run on top-tier global datacenter infrastructure with millisecond response and unlimited bandwidth. Designed for high-performance scenarios like high-concurrency API calls, automated testing and batch data processing. HTTP/HTTPS/SOCKS5 support with enterprise-grade stability.",
+      "feats": [
+        "Millisecond response",
+        "Unlimited bandwidth",
+        "Enterprise-grade stability",
+        "Multi-protocol support",
+        "Global node coverage"
+      ]
+    },
+    "mock": {
+      "lines": [
+        {
+          "k": "GET",
+          "text": " https://api.target.example/v1/data"
+        },
+        {
+          "text": "proxy: ",
+          "b": "datacenter-static · JP · Tokyo"
+        },
+        {
+          "text": "status: ",
+          "b": "200 OK",
+          "tail": "  latency: ",
+          "b2": "0.09s",
+          "tail2": "  bandwidth: ",
+          "b3": "peak 9.6Gbps"
+        },
+        {
+          "k": "Concurrency x 500",
+          "text": " batch tasks · 10min"
+        },
+        {
+          "text": "success: ",
+          "b": "99.97%",
+          "tail": "  p95: ",
+          "b2": "0.14s",
+          "tail2": "  retry rate ",
+          "b3": "0.03%"
+        }
+      ]
+    },
+    "why": {
+      "title": "Why choose IPFlex datacenter proxies?",
+      "items": [
+        {
+          "icon": "zap",
+          "title": "Extreme performance",
+          "desc": "Top-tier datacenter infrastructure delivers millisecond response and 10Gbps bandwidth for demanding workloads."
+        },
+        {
+          "icon": "scale",
+          "title": "Cost advantage",
+          "desc": "Cheaper than residential proxies, ideal for large-scale, high-frequency access needs."
+        },
+        {
+          "icon": "shield",
+          "title": "Stable and reliable",
+          "desc": "99.9% uptime guarantee with a professional ops team monitoring 24/7 for stable service."
+        }
+      ]
+    },
+    "useCases": {
+      "eyebrow": "Use Cases",
+      "title": "Use cases",
+      "items": [
+        {
+          "icon": "code",
+          "title": "API calls",
+          "desc": "Stable proxy service for high-frequency API calls — RESTful API, GraphQL and more. Suited to data sync, third-party service integration and microservice architectures.",
+          "link": "Explore plan"
+        },
+        {
+          "icon": "target",
+          "title": "Automated testing",
+          "desc": "A stable network environment for automated testing — web app tests, API tests, performance tests. Simulate access from different regions via datacenter proxies to ensure accurate results.",
+          "link": "Explore plan"
+        },
+        {
+          "icon": "server",
+          "title": "Batch data processing",
+          "desc": "Handles large-scale batch tasks — data import/export, bulk file transfers, database sync. High bandwidth and low latency keep data processing efficient.",
+          "link": "Explore plan"
+        }
+      ]
+    }
+  },
+  "scenarios": {
+    "eyebrow": "Use Cases",
+    "heroTitle": "IPFlex Use Cases",
+    "heroSub": "Enterprise-grade proxy practices spanning ad verification, cross-border e-commerce, data extraction, brand monitoring and security risk control — with actionable scenario plans, metrics definitions and integration guidance to help teams launch fast and keep improving success rates.",
+    "items": [
+      {
+        "tag": "Static Residential",
+        "title": "Ad verification",
+        "desc": "Leverage residential proxies and global IP resources to genuinely simulate user visits, precisely verify ads, prevent ad fraud and improve ROI.",
+        "benefits": [
+          "Real user simulation for precise ad delivery verification",
+          "Ad fraud prevention to protect ad ROI",
+          "Global IP coverage for multi-region ad verification"
+        ]
+      },
+      {
+        "tag": "Static Residential",
+        "title": "Market research & data extraction",
+        "desc": "With 700K+ residential IPs, easily bypass anti-scraping measures for efficient data extraction and market research. Over 100M records collected daily with API automation.",
+        "benefits": [
+          "Bypass anti-scraping for stable data collection",
+          "Large-scale concurrency — 100M+ records processed daily",
+          "Global coverage for multi-dimensional market insights"
+        ]
+      },
+      {
+        "tag": "Static Residential",
+        "title": "E-commerce account nurturing",
+        "desc": "Long-term stable residential IPs for cross-border sellers reduce ban risk, supporting account nurturing and batch management across Amazon, eBay, Shopee and more.",
+        "benefits": [
+          "Lower ban risk to keep business running",
+          "Multi-platform batch management for efficiency",
+          "Long-term stable IPs suited to account nurturing"
+        ]
+      },
+      {
+        "tag": "Static Residential",
+        "title": "Network security & risk control",
+        "desc": "Use residential proxies for penetration testing, brand protection and risk monitoring to identify threats and prevent fraud. Serving 60+ enterprises.",
+        "benefits": [
+          "Penetration testing and security assessment to surface threats",
+          "Brand protection monitoring to guard reputation",
+          "Risk-control system support against fraud"
+        ]
+      },
+      {
+        "tag": "Rotating Residential",
+        "title": "Large-scale data extraction",
+        "desc": "Dynamic IP rotation breaks site access limits for efficient large-scale extraction — e-commerce price monitoring, social media scraping and more, with 50M+ requests processed daily.",
+        "benefits": [
+          "Smart IP rotation to evade anti-bot detection",
+          "High-concurrency processing — 50M+ requests daily",
+          "Global coverage for cross-border data needs"
+        ]
+      },
+      {
+        "tag": "Rotating Residential",
+        "title": "Scraping & monitoring",
+        "desc": "High-anonymity IP rotation for scrapers effectively evades anti-bot detection. Supports SEO monitoring, competitor analysis and content aggregation.",
+        "benefits": [
+          "High anonymity simulating real user behavior",
+          "Smart rotation adapting to anti-bot strategies",
+          "Comprehensive monitoring for key insights"
+        ]
+      },
+      {
+        "tag": "Rotating Residential",
+        "title": "Anonymous browsing & privacy",
+        "desc": "Dynamic IP rotation protects real identities for anonymous browsing and privacy — suited to sensitive queries, geo-restricted content and security research.",
+        "benefits": [
+          "Identity protection effectively hiding user info",
+          "Bypass geo-restrictions to access global resources",
+          "Advanced anonymity suited to security research"
+        ]
+      },
+      {
+        "tag": "Rotating Residential",
+        "title": "Ad verification & anti-fraud",
+        "desc": "Simulate real user behavior to verify ads and detect fraud and click farms. Geographically distributed rotating IPs ensure the authenticity of ad delivery results.",
+        "benefits": [
+          "Real user simulation to detect ad fraud",
+          "Geo-distributed verification for authentic results",
+          "Anti-fraud detection protecting ad spend"
+        ]
+      },
+      {
+        "tag": "Datacenter",
+        "title": "API calls",
+        "desc": "Stable proxy service for high-frequency API calls — RESTful API, GraphQL and more. Suited to data sync, third-party integration and microservice architectures.",
+        "benefits": [
+          "Ultra-low latency suited to high-frequency API calls",
+          "Reliable service ensuring call success rates",
+          "High performance for large-scale concurrency"
+        ]
+      },
+      {
+        "tag": "Datacenter",
+        "title": "Automated testing",
+        "desc": "A stable network environment for automated testing — web app tests, API tests, performance tests — simulating access from different regions.",
+        "benefits": [
+          "Stable test environment for consistent results",
+          "Global nodes simulating regional access",
+          "High concurrency for performance testing"
+        ]
+      },
+      {
+        "tag": "Datacenter",
+        "title": "Batch data processing",
+        "desc": "Handles large-scale batch tasks — data import/export, bulk file transfers, database sync — with high bandwidth and low latency.",
+        "benefits": [
+          "High bandwidth for large-scale data tasks",
+          "Low latency boosting processing efficiency",
+          "Stable and reliable batch completion"
+        ]
+      },
+      {
+        "tag": "Datacenter",
+        "title": "Content delivery acceleration",
+        "desc": "Proxy acceleration for CDNs and content delivery networks, optimizing global access. Nearby datacenter nodes reduce latency and speed up content loading.",
+        "benefits": [
+          "Global nodes with nearby access for less latency",
+          "Smart routing automatically choosing optimal paths",
+          "High performance for faster content loading"
+        ]
+      }
+    ],
+    "cta": {
+      "title": "Find the right scenario plan for your business",
+      "desc": "Sign up to start validating — scale smoothly from a small PoC to production-grade access.",
+      "btn": "Start now"
+    },
+    "viewPlan": "View plan"
+  },
+  "resources": {
+    "eyebrow": "Knowledge Hub",
+    "heroTitle": "IPFlex Knowledge Hub",
+    "heroSub": "This hub isn't meant to replace the Help Center — it consolidates definitions, selection guidance, scenarios, integration and methodology resources on the main domain, reducing the cost of jumping between multiple entry points.",
+    "cols": [
+      {
+        "title": "Proxy definitions & selection",
+        "desc": "Clarify the differences between static residential, rotating residential and datacenter proxies first, then decide which fits your business goals.",
+        "links": [
+          {
+            "icon": "home",
+            "b": "Static Residential Proxy",
+            "text": "For long sessions, account stability and low identity drift.",
+            "to": "prod-srp"
+          },
+          {
+            "icon": "refresh",
+            "b": "Rotating Residential Proxy",
+            "text": "For broad coverage, exit rotation and large-scale extraction.",
+            "to": "prod-drp"
+          },
+          {
+            "icon": "server",
+            "b": "Static Datacenter Proxy",
+            "text": "For high-concurrency APIs, throughput-first and cost-sensitive tasks.",
+            "to": "prod-dc"
+          },
+          {
+            "icon": "scale",
+            "b": "Plan & pricing selection guide",
+            "text": "Evaluate plans by success rate, latency and unit completion cost.",
+            "to": "pricing"
+          }
+        ]
+      },
+      {
+        "title": "Scenarios & implementation",
+        "desc": "Find scenario plans by business goal, then make finer technical decisions by proxy type.",
+        "links": [
+          {
+            "icon": "target",
+            "b": "Use case overview",
+            "text": "Browse plans by ad verification, e-commerce, extraction and risk control.",
+            "to": "scenarios"
+          },
+          {
+            "icon": "ad",
+            "b": "Ad verification proxies",
+            "text": "Verify geo display, delivery consistency and fraud risk."
+          },
+          {
+            "icon": "cart",
+            "b": "Cross-border e-commerce proxies",
+            "text": "Handle account operations, session stability and multi-platform execution."
+          },
+          {
+            "icon": "bug",
+            "b": "Market research & extraction",
+            "text": "For collection, coverage and target-site stability."
+          }
+        ]
+      },
+      {
+        "title": "Integration & help docs",
+        "desc": "The main domain aggregates decision entry points; detailed API and operations docs live in the Help Center.",
+        "links": [
+          {
+            "icon": "book",
+            "b": "Help Center",
+            "text": "API, authentication, onboarding flows and common operations.",
+            "ext": true
+          },
+          {
+            "icon": "user",
+            "b": "Sign-up & activation",
+            "text": "Create an account and start a PoC or production integration.",
+            "to": "register"
+          },
+          {
+            "icon": "shieldlock",
+            "b": "Privacy & data governance",
+            "text": "Data processing, retention and security governance requirements."
+          }
+        ]
+      },
+      {
+        "title": "Featured methodology articles",
+        "desc": "These articles work better as implementation references and internal review material.",
+        "links": [
+          {
+            "icon": "doc",
+            "b": "Enterprise proxy integration handbook",
+            "text": "Implementation process from PoC to production scaling.",
+            "to": "blog"
+          },
+          {
+            "icon": "doc",
+            "b": "Session stability evaluation methods",
+            "text": "For accounts, logins, checkout and stability verification.",
+            "to": "blog"
+          },
+          {
+            "icon": "doc",
+            "b": "Proxy type comparison articles",
+            "text": "Deepen understanding of product differences and boundaries.",
+            "to": "blog"
+          },
+          {
+            "icon": "blog",
+            "b": "Browse all blog posts",
+            "text": "More proxy, integration and GEO methodology articles.",
+            "to": "blog"
+          }
+        ]
+      }
+    ],
+    "reading": {
+      "eyebrow": "Reading Order",
+      "title": "Recommended reading order",
+      "items": [
+        "Start with the proxy type selection guide to clarify whether your business needs stability, coverage or throughput.",
+        "Then read the pricing and scenarios pages to put product and budget judgments on the same yardstick.",
+        "Once decided, move to the Help Center and the integration handbook to close information gaps during onboarding."
+      ]
+    },
+    "faq": {
+      "eyebrow": "FAQs",
+      "title": "Frequently asked questions",
+      "items": [
+        {
+          "q": "Which section should I read first?",
+          "a": "If you're still evaluating, start with the proxy type selection guide and pricing methodology. If your business goals are clear, go to use cases and the matching product pages. If you're integrating, head straight to the Help Center and the integration handbook."
+        },
+        {
+          "q": "How does this hub differ from the Help Center?",
+          "a": "The hub aggregates definitions, selection, scenarios and methodology; the Help Center covers APIs, authentication, onboarding flows and detailed operations. Together they cut the time teams spend hunting for material."
+        },
+        {
+          "q": "Which pages work best for internal reviews or procurement decisions?",
+          "a": "We typically recommend the proxy type selection guide, the pricing page, the use case overview and the enterprise integration handbook — the pages best suited to cross-team review and procurement judgment."
+        }
+      ]
+    }
+  },
+  "blog": {
+    "eyebrow": "Blog",
+    "heroTitle": "Blog & methodology articles",
+    "heroSub": "Proxy integration practices, scenario methodology and industry trends — 77 articles and growing",
+    "posts": [
+      {
+        "cover": "c1",
+        "icon": "doc",
+        "cat": "Integration practice",
+        "date": "2026-02-23",
+        "title": "How enterprise teams plan proxy integration: an execution handbook from validation to launch (2026)",
+        "desc": "A practical integration guide for product, engineering, ops and procurement teams — covering requirement breakdown, PoC validation, capacity planning, launch governance, monitoring and cost control."
+      },
+      {
+        "cover": "c2",
+        "icon": "layers",
+        "cat": "Selection guide",
+        "date": "2026-01-15",
+        "title": "Proxy IP types explained: datacenter vs residential vs mobile proxies — which fits you best?",
+        "desc": "A systematic comparison of the three proxy classes across protocol support, session capability, coverage and cost structure — and how to combine them."
+      },
+      {
+        "cover": "c3",
+        "icon": "clock",
+        "cat": "Stability engineering",
+        "date": "2026-03-08",
+        "title": "Sticky session proxies in practice: improving login and checkout success rates (2026)",
+        "desc": "Session persistence is the core metric for account-based businesses. This article covers evaluation criteria, common pitfalls and field validation methods for sticky sessions."
+      },
+      {
+        "cover": "c4",
+        "icon": "search",
+        "cat": "SEO methods",
+        "date": "2026-02-02",
+        "title": "The zero-click search era: keyword gap analysis and traffic recovery with proxy IPs",
+        "desc": "SERP localization differences keep growing. Use city-level proxies to collect SERPs, rebuild the keyword gap view and guide content investment."
+      },
+      {
+        "cover": "c5",
+        "icon": "refresh",
+        "cat": "Selection guide",
+        "date": "2025-12-11",
+        "title": "Static IP vs rotating IP: which is the best 'network partner' for your business?",
+        "desc": "Static and rotating aren't either/or — they're task layers. Combining them by identity consistency, scraping scale and cost sensitivity is the right answer."
+      },
+      {
+        "cover": "c6",
+        "icon": "share",
+        "cat": "Social media ops",
+        "date": "2025-11-27",
+        "title": "Multi-account proxy strategies for social media marketing: a 2025 guide for global brands",
+        "desc": "The core of multi-account anti-association is environment isolation. A security operations framework for global brands across IP, fingerprint and behavior layers."
+      }
+    ],
+    "pager": {
+      "prev": "Previous",
+      "next": "Next"
+    }
+  },
+  "about": {
+    "eyebrow": "About IPFlex",
+    "heroTitle": "About IPFlex",
+    "heroSub": "This page helps procurement, engineering and operations teams quickly understand IPFlex's role, service boundaries and delivery approach before entering product pages or the Help Center.",
+    "browseProducts": "Browse products",
+    "visitResources": "Visit Knowledge Hub",
+    "sideCard": {
+      "b": "What we do",
+      "items": [
+        "Covering three core capabilities: static residential, rotating residential and datacenter proxies.",
+        "A layered resource structure across Help Center, integration docs, Knowledge Hub and methodology articles.",
+        "Suited to data extraction, ad verification, cross-border e-commerce, account stability and regional visibility verification.",
+        "Unified decision information across evaluation, PoC, production integration and scaling stages."
+      ]
+    },
+    "evaluation": {
+      "eyebrow": "Evaluation",
+      "title": "How to tell if we're a fit",
+      "sub": "If your team is dealing with login stability, account consistency, regional visibility verification, high-concurrency extraction or budget predictability, proxy solutions should be on your evaluation list. Start with these 4 questions:",
+      "items": [
+        "Do tasks rely on long sessions or fixed identities?",
+        "Do you need regional coverage or exit rotation?",
+        "Is high-concurrency throughput the priority?",
+        "Can you validate with success rate, latency and unit task cost?"
+      ]
+    },
+    "principles": {
+      "eyebrow": "Principles",
+      "title": "Delivery & support principles",
+      "items": [
+        {
+          "icon": "target",
+          "title": "Define business goals first, then choose proxy types",
+          "desc": "We insist on examining session stability, coverage, throughput and cost boundaries before choosing static residential, rotating residential or datacenter proxies — never reducing product choice to a price comparison."
+        },
+        {
+          "icon": "chart",
+          "title": "Quantified metrics for PoC and scaling",
+          "desc": "During evaluation we prioritize success rate, P95 latency, ban-recovery time, anomaly-trigger rate and unit task cost — reducing procurement decisions made on gut feeling."
+        },
+        {
+          "icon": "headset",
+          "title": "Delivery extends to integration and operations",
+          "desc": "Beyond proxy resources themselves, teams care about authentication, access control, logging and troubleshooting paths — helping customers truly fold proxy capabilities into daily operations."
+        }
+      ]
+    },
+    "faq": {
+      "eyebrow": "FAQs",
+      "title": "Frequently asked questions",
+      "items": [
+        {
+          "q": "Which teams is IPFlex best for?",
+          "a": "Teams that need stable proxy capabilities and want to integrate proxies into long-term business workflows — data extraction, e-commerce operations, ad verification, risk-control inspections and global verification teams."
+        },
+        {
+          "q": "How does this page divide responsibility with product pages and the Help Center?",
+          "a": "The About page explains positioning, delivery methods and governance principles; product pages explain the boundaries of each proxy type; the Help Center covers APIs, authentication and detailed operations."
+        }
+      ]
+    }
+  },
+  "register": {
+    "sideTag": "A professional proxy service provider",
+    "sideTitle": "Create your IPFlex account",
+    "feats": [
+      {
+        "icon": "zap",
+        "b": "Fast and stable",
+        "text": "Premium network routes ensure proxy stability and speed"
+      },
+      {
+        "icon": "shieldlock",
+        "b": "Secure and anonymous",
+        "text": "Encryption technology protects your privacy"
+      },
+      {
+        "icon": "scale",
+        "b": "Pay as you go",
+        "text": "No monthly fee — top up and use; balance never expires"
+      }
+    ],
+    "bonus": "New users get ¥15 free credit",
+    "formTitle": "Sign up",
+    "username": "Username",
+    "usernamePh": "4-6 characters",
+    "email": "Email",
+    "emailPh": "Enter your email",
+    "password": "Password",
+    "passwordPh": "6-20 characters",
+    "invite": "Invite code",
+    "invitePh": "Optional",
+    "submit": "Sign up",
+    "altPrefix": "Already have an account?",
+    "altLink": "Log in",
+    "onboarding": {
+      "title": "What you can do right after signing up",
+      "p1": "After registering, you can create proxy extraction configs in the console, view real-time usage, manage API credentials and choose proxy types by scenario. For account operations and long sessions, start with static residential proxies; for large-scale extraction, use rotating residential proxies with retry strategies; for high-concurrency programmatic tasks, datacenter proxies optimize throughput and cost.",
+      "p2": "We recommend starting with small-traffic validation on first integration — confirm target site reachability, request success rates and geo-hit rates before scaling up. This controls budgets more safely and surfaces risk-control or compatibility issues before launch.",
+      "relatedPrefix": "Related pages: ",
+      "related": [
+        {
+          "text": "Pricing plans",
+          "to": "pricing"
+        },
+        {
+          "text": "Product details",
+          "to": "prod-srp"
+        },
+        {
+          "text": "Use cases",
+          "to": "scenarios"
+        }
+      ]
+    }
+  },
+  "footer": {
+    "desc": "A professional IP proxy service provider delivering premium proxy services",
+    "products": {
+      "title": "Proxy Products",
+      "links": [
+        {
+          "text": "Static Residential Proxy",
+          "to": "prod-srp"
+        },
+        {
+          "text": "Rotating Residential Proxy",
+          "to": "prod-drp"
+        },
+        {
+          "text": "Datacenter Proxy",
+          "to": "prod-dc"
+        },
+        {
+          "text": "AI Accelerator"
+        }
+      ]
+    },
+    "solutions": {
+      "title": "Solutions",
+      "links": [
+        {
+          "text": "Cross-border e-commerce",
+          "to": "scenarios"
+        },
+        {
+          "text": "Brand protection",
+          "to": "scenarios"
+        },
+        {
+          "text": "Market research",
+          "to": "scenarios"
+        },
+        {
+          "text": "Ad verification",
+          "to": "scenarios"
+        }
+      ]
+    },
+    "support": {
+      "title": "Support",
+      "links": [
+        {
+          "text": "Knowledge Hub",
+          "to": "resources"
+        },
+        {
+          "text": "Help Center"
+        },
+        {
+          "text": "support@ipflex.ink"
+        },
+        {
+          "text": "business@ipflex.ink"
+        }
+      ]
+    },
+    "company": {
+      "title": "Company",
+      "links": [
+        {
+          "text": "About us",
+          "to": "about"
+        },
+        {
+          "text": "Terms of Service"
+        },
+        {
+          "text": "Privacy Policy"
+        }
+      ]
+    },
+    "copyright": "© {year} IPFlex. All rights reserved."
+  }
+}
