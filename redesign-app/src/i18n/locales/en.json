@@ -1608,7 +1608,9 @@
         }
       ]
     },
-    "copyright": "© {year} IPFlex. All rights reserved."
+    "copyright": "© {year} IPFlex. All rights reserved.",
+    "partners": "Partners",
+    "partnerAlt": "{name} - IPFlex Proxy IP Service Partner"
   },
   "ai": {
     "eyebrow": "Next-generation AI network acceleration",

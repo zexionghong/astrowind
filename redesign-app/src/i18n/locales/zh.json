@@ -1608,7 +1608,9 @@
         }
       ]
     },
-    "copyright": "© {year} IPFlex. 版权所有."
+    "copyright": "© {year} IPFlex. 版权所有.",
+    "partners": "合作伙伴",
+    "partnerAlt": "{name} - IPFlex代理IP服务合作伙伴"
   },
   "ai": {
     "eyebrow": "新一代 AI 网络加速方案",

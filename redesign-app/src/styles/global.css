@@ -958,6 +958,31 @@ html[data-dir="a"] .about-side-card li, html[data-dir="c"] .about-side-card li {
 /* ============================================================
    页脚
    ============================================================ */
+.friends { border-bottom: 1px solid var(--footer-border); padding: 48px 0 40px; }
+.friends h2 { margin: 0 0 22px; text-align: center; font-size: 22px; font-weight: 700; color: var(--footer-heading); }
+.friends-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.friends-grid a {
+  display: flex; align-items: center; gap: 14px; min-width: 0;
+  padding: 14px; border: 1px solid var(--footer-border); border-radius: 12px;
+  color: var(--footer-text); background: transparent;
+}
+.friends-grid a:hover { border-color: rgba(255,255,255,.4); color: #fff; }
+.friends-logo {
+  flex: none; width: 50px; height: 50px; display: grid; place-items: center; overflow: hidden;
+}
+.friends-logo img { width: 100%; height: 100%; object-fit: contain; }
+.friends-copy { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.friends-copy strong {
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  font-size: 15px; font-weight: 700; color: var(--footer-heading);
+}
+.friends-sub, .friends-desc {
+  overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical;
+  font-size: 12px; line-height: 1.45; color: var(--footer-text);
+}
+.friends-sub { -webkit-line-clamp: 1; white-space: nowrap; display: block; text-overflow: ellipsis; }
+.friends-desc { -webkit-line-clamp: 2; }
+@media (max-width: 900px) { .friends-grid { grid-template-columns: 1fr; } }
 .footer { background: var(--footer-bg); color: var(--footer-text); border-top: 1px solid var(--footer-border); }
 .footer-grid { display: grid; grid-template-columns: 1.6fr repeat(4, 1fr); gap: 40px; padding: 64px 0 48px; }
 @media (max-width: 960px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }

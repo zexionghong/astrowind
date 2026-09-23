@@ -1608,7 +1608,9 @@
         }
       ]
     },
-    "copyright": "© {year} IPFlex. All rights reserved."
+    "copyright": "© {year} IPFlex. All rights reserved.",
+    "partners": "パートナー",
+    "partnerAlt": "{name} - IPFlexプロキシIPサービスのパートナー"
   },
   "ai": {
     "eyebrow": "次世代のAIネットワーク加速",

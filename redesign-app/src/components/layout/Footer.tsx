@@ -4,6 +4,7 @@ import { EXTERNAL } from '../../routes';
 import { Icon } from '../Icon';
 import { AppLink } from '../common';
 import logoUrl from '../../assets/logo.png';
+import { FriendLinks } from './FriendLinks';
 
 /** 页脚栏目：footer.<key> 下为 { title, links: [{ text, to?, href? }] } */
 const COLUMNS = ['products', 'solutions', 'support', 'company'] as const;
@@ -14,6 +15,7 @@ export function Footer() {
 
   return (
     <footer className="footer">
+      <FriendLinks />
       <div className="container">
         <div className="footer-grid">
           <div>
