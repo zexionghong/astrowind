@@ -1444,6 +1444,9 @@
     "invite": "Invite code",
     "invitePh": "Optional",
     "submit": "Sign up",
+    "submitting": "Registering...",
+    "success": "Registration successful! Please check your email for verification.",
+    "fail": "Registration failed, please try again",
     "altPrefix": "Already have an account?",
     "altLink": "Log in",
     "onboarding": {

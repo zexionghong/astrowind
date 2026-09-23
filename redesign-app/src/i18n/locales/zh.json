@@ -1444,6 +1444,9 @@
     "invite": "邀请码",
     "invitePh": "选填",
     "submit": "注 册",
+    "submitting": "注册中...",
+    "success": "注册成功!请查看邮箱中的验证邮件完成注册。",
+    "fail": "注册失败，请重试",
     "altPrefix": "已有账号？",
     "altLink": "立即登录",
     "onboarding": {
