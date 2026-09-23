@@ -16,7 +16,45 @@
     "lang": "Language",
     "menu": "Open menu",
     "menuClose": "Close menu",
-    "skip": "Skip to main content"
+    "skip": "Skip to main content",
+    "productsMenu": {
+      "srp": {
+        "label": "Static Residential Proxy",
+        "desc": "Stable static residential IPs for long-term cross-border commerce",
+        "badge": "Recommended"
+      },
+      "drp": {
+        "label": "Rotating Residential Proxy",
+        "desc": "Rotating residential IPs for web scraping and large-scale collection"
+      },
+      "dc": {
+        "label": "Datacenter Proxy",
+        "desc": "High-speed datacenter IPs with HTTP/SOCKS5, built for throughput"
+      }
+    },
+    "scenariosMenu": {
+      "ad": {
+        "label": "Ad Verification Proxy",
+        "desc": "Replay real visits and catch ad fraud"
+      },
+      "research": {
+        "label": "Market Research & Data Collection",
+        "desc": "Get past anti-bot checks for lower-risk bulk collection"
+      },
+      "shop": {
+        "label": "E-commerce Proxy",
+        "desc": "Reduce bans while running accounts across platforms"
+      },
+      "security": {
+        "label": "Network Security & Risk Control",
+        "desc": "Penetration testing, brand protection, and risk checks"
+      },
+      "all": {
+        "label": "View all use cases",
+        "desc": "See every scenario and solution",
+        "badge": "More"
+      }
+    }
   },
   "promo": {
     "tag": "New User Offer",
