@@ -249,7 +249,7 @@ function ProxyCard({
   };
 }) {
   return (
-    <div className="p-card reveal">
+    <div className="p-card reveal in">
       <div>
         <h3 className="p-name">{card.name}</h3>
         <ul className="p-desc">
