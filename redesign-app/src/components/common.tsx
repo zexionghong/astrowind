@@ -5,24 +5,45 @@ import { Link } from 'react-router-dom';
 import { Icon } from './Icon';
 import { ROUTES } from '../routes';
 
-/** i18n key → 内部路由。不在映射内的 key 视为外部/占位链接 */
+const ABSOLUTE = /^(https?:|mailto:)/i;
+
+/** i18n key → 内部路由。绝对地址（http/https/mailto）不走路由表 */
 function resolveTo(to?: string): string | null {
-  if (!to) return null;
+  if (!to || ABSOLUTE.test(to)) return null;
   return ROUTES[to as keyof typeof ROUTES] ?? null;
 }
 
-/** 统一链接组件：有 to 且能映射到路由时用 <Link>，否则渲染占位 <a> */
+/**
+ * 统一链接：路由 key 用 <Link>；http(s)/mailto（href 或 to）用真实 <a>；
+ * 尚未落地的 key 仍渲染不可跳转的占位 <a>。
+ */
 export function AppLink({
   to,
+  href,
   className,
   style,
   children,
 }: {
   to?: string;
+  href?: string;
   className?: string;
   style?: React.CSSProperties;
   children: React.ReactNode;
 }) {
+  const absolute = href || (to && ABSOLUTE.test(to) ? to : undefined);
+  if (absolute) {
+    const external = /^https?:/i.test(absolute);
+    return (
+      <a
+        href={absolute}
+        className={className}
+        style={style}
+        {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+      >
+        {children}
+      </a>
+    );
+  }
   const path = resolveTo(to);
   if (path) {
     return (

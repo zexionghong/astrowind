@@ -1,16 +1,17 @@
 import React from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useI18n } from '../../i18n';
+import { EXTERNAL, ROUTES } from '../../routes';
 import { Icon } from '../Icon';
 import { AppLink, DirSwitch, LangSwitch, PromoBar } from '../common';
 
-const NAV_LINKS: { key: string; to: string }[] = [
+const NAV_LINKS: { key: string; to?: string; href?: string }[] = [
   { key: 'nav.products', to: 'prod-srp' },
   { key: 'nav.pricing', to: 'pricing' },
   { key: 'nav.scenarios', to: 'scenarios' },
   { key: 'nav.blog', to: 'blog' },
   { key: 'nav.resources', to: 'resources' },
-  { key: 'nav.help', to: '' },
+  { key: 'nav.help', href: EXTERNAL.docs },
 ];
 
 export function Header() {
@@ -38,16 +39,18 @@ export function Header() {
             <ul className="nav-links">
               {NAV_LINKS.map((l) => (
                 <li key={l.key}>
-                  <AppLink to={l.to}>{t(l.key)}</AppLink>
+                  <AppLink to={l.to} href={l.href}>
+                    {t(l.key)}
+                  </AppLink>
                 </li>
               ))}
             </ul>
             <div className="nav-cta">
               <DirSwitch />
               <LangSwitch />
-              <a href="#" className="nav-login" onClick={(e) => e.preventDefault()}>
+              <AppLink href={EXTERNAL.login} className="nav-login">
                 {t('nav.login')}
-              </a>
+              </AppLink>
               <Link to="/register" className="btn btn-primary btn-sm">
                 {t('nav.register')}
               </Link>
@@ -68,11 +71,23 @@ export function Header() {
                 <DirSwitch />
                 <LangSwitch />
               </div>
-              {NAV_LINKS.map((l) => (
-                <NavLink key={l.key} to={l.to || '/'} className={({ isActive }) => (isActive ? 'active' : '')}>
-                  {t(l.key)}
-                </NavLink>
-              ))}
+              {NAV_LINKS.map((l) =>
+                l.href ? (
+                  <a key={l.key} href={l.href} target="_blank" rel="noopener noreferrer">
+                    {t(l.key)}
+                  </a>
+                ) : (
+                  <NavLink
+                    key={l.key}
+                    to={(l.to && ROUTES[l.to]) || '/'}
+                    className={({ isActive }) => (isActive ? 'active' : '')}
+                  >
+                    {t(l.key)}
+                  </NavLink>
+                ),
+              )}
+              <AppLink href={EXTERNAL.login}>{t('nav.login')}</AppLink>
+              <Link to="/register">{t('nav.register')}</Link>
             </div>
           </div>
         )}

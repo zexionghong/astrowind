@@ -1,5 +1,6 @@
 import { FormEvent } from 'react';
 import { useI18n } from '../i18n';
+import { EXTERNAL } from '../routes';
 import { Icon, type IconName } from '../components/Icon';
 import { AppLink } from '../components/common';
 import { Section } from '../components/ui/sections';
@@ -65,9 +66,7 @@ export function RegisterPage() {
             </form>
             <div className="reg-alt">
               {t('register.altPrefix')}
-              <a href="#" onClick={(e) => e.preventDefault()}>
-                {t('register.altLink')}
-              </a>
+              <AppLink href={EXTERNAL.login}>{t('register.altLink')}</AppLink>
             </div>
           </div>
         </div>

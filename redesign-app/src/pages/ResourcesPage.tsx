@@ -8,7 +8,7 @@ export function ResourcesPage() {
   const cols = ta<{
     title: string;
     desc: string;
-    links: { icon: IconName; b: string; text: string; to?: string; ext?: boolean }[];
+    links: { icon: IconName; b: string; text: string; to?: string; href?: string; ext?: boolean }[];
   }>('resources.cols');
   const reading = ta<string>('resources.reading.items');
 
@@ -24,7 +24,7 @@ export function ResourcesPage() {
               <p>{col.desc}</p>
               <div className="link-cards">
                 {col.links.map((link) => (
-                  <AppLink key={link.b} to={link.to} className={`link-card${link.ext ? ' ext' : ''}`}>
+                  <AppLink key={link.b} to={link.to} href={link.href} className={`link-card${link.ext ? ' ext' : ''}`}>
                     <span className="f-icon">
                       <Icon name={link.icon} />
                     </span>

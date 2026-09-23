@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 import { useI18n } from '../i18n';
+import { EXTERNAL } from '../routes';
 import { Icon, type IconName } from '../components/Icon';
 import { AppLink } from '../components/common';
 import { Section } from '../components/ui/sections';
@@ -214,9 +215,9 @@ export function HomePage() {
             <AppLink to="register" className="btn btn-primary">
               {t('home.referral.primary')}
             </AppLink>
-            <a href="#" className="btn btn-secondary" onClick={(e) => e.preventDefault()}>
+            <AppLink href={EXTERNAL.login} className="btn btn-secondary">
               {t('home.referral.secondary')}
-            </a>
+            </AppLink>
           </div>
         </div>
       </Section>

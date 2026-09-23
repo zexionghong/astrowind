@@ -524,7 +524,7 @@
         "title": "接続とヘルプドキュメント",
         "desc": "メインドメインは集約と判断の入口を担当し、詳細なAPIと操作ドキュメントはヘルプセンターにあります。",
         "links": [
-          { "icon": "book", "b": "ヘルプセンター", "text": "API、認証、接続フロー、よくある操作を確認。", "ext": true },
+          { "icon": "book", "b": "ヘルプセンター", "text": "API、認証、接続フロー、よくある操作を確認。", "to": "https://docs.ipflex.ink/", "ext": true },
           { "icon": "user", "b": "登録と開通", "text": "アカウントを作成し、PoCまたは本番接続を開始。", "to": "register" },
           { "icon": "shieldlock", "b": "プライバシーとデータガバナンス", "text": "データ処理、保持、セキュリティガバナンスの要件を確認。" }
         ]
@@ -669,9 +669,9 @@
       "title": "サポート",
       "links": [
         { "text": "ナレッジセンター", "to": "resources" },
-        { "text": "ヘルプセンター" },
-        { "text": "support@ipflex.ink" },
-        { "text": "business@ipflex.ink" }
+        { "text": "ヘルプセンター", "to": "https://docs.ipflex.ink/" },
+        { "text": "support@ipflex.ink", "to": "mailto:support@ipflex.ink" },
+        { "text": "business@ipflex.ink", "to": "mailto:business@ipflex.ink" }
       ]
     },
     "company": {
