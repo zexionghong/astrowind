@@ -42,8 +42,8 @@
 
 | # | 差异 | 位置 | 修复方案 | 状态 |
 |---|------|------|----------|------|
-| G1 | 产品页结尾多了 CTA banner（预览稿无） | `components/ui/ProductPage.tsx` | 删除末尾 `<Section><CtaBanner/></Section>` | ⬜ |
-| G2 | FAQ 区块背景写死 sec-alt；drp/resources/about 应为普通 section | `components/ui/sections.tsx` FaqSection | 增加 `alt` prop，调用处按预览稿传参 | ⬜ |
+| G1 | 产品页结尾多了 CTA banner（预览稿无） | `components/ui/ProductPage.tsx` | 删除末尾 `<Section><CtaBanner/></Section>` | ✅ 71687be |
+| G2 | FAQ 区块背景写死 sec-alt；drp/resources/about 应为普通 section | `components/ui/sections.tsx` FaqSection | 增加 `alt` prop，调用处按预览稿传参 | ✅ 71687be |
 | G3 | 博客分页用 `.blog-pager` 类，预览稿为 inline flex 容器 | `pages/BlogPage.tsx` / global.css | 视觉等效，低优先级，保持现状可接受 | ⬜（可接受） |
 
 ## 四、已确认无差异（本轮核对通过）
@@ -55,4 +55,5 @@
 ## 五、进度日志
 
 - **2026-09-23**：完成预览稿全页结构基线提取（section 类名 + h2），逐页与 app 比对；确认首页/定价/场景/博客/关于/注册结构一致；登记 G1–G3 差异；落盘本文档。
+- **2026-09-23**：建立本地分支 `redesign`（原 detached HEAD @05d8896）；提交 TASKS.md（31a011a）；修复 G1/G2（71687be），build 通过。
 - （后续每完成一项在此追加，并同步勾选上方状态）
