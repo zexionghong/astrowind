@@ -114,7 +114,7 @@ export function PricingPage() {
         </div>
       </Section>
 
-      <FaqSection prefix="pricing.faq" />
+      <FaqSection prefix="pricing.faq" alt />
     </>
   );
 }

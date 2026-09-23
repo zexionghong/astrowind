@@ -1,7 +1,7 @@
 import { useI18n } from '../../i18n';
 import { Icon, type IconName } from '../Icon';
 import { AppLink } from '../common';
-import { PageHero, Section, SecHead, StatGrid, FaqSection, CtaBanner } from './sections';
+import { PageHero, Section, SecHead, StatGrid, FaqSection } from './sections';
 
 /* ---------- 产品页共享子区块 ---------- */
 
@@ -205,11 +205,7 @@ export function ProductPage({ prefix, reverseSplit = false, showBilling = false,
 
       {showBilling && <BillingSection prefix={prefix} />}
 
-      {showFaq && <FaqSection prefix={`${prefix}.faq`} />}
-
-      <Section>
-        <CtaBanner prefix="home.cta" />
-      </Section>
+      {showFaq && <FaqSection prefix={`${prefix}.faq`} alt={prefix === 'srp'} />}
     </>
   );
 }

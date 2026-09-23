@@ -152,12 +152,12 @@ export function FaqGrid({ items }: { items: { q: string; a: string }[] }) {
   );
 }
 
-/** FAQ 区块（标题 + 列表） */
-export function FaqSection({ prefix }: { prefix: string }) {
+/** FAQ 区块（标题 + 列表）；alt 控制是否浅色交替背景 */
+export function FaqSection({ prefix, alt = false }: { prefix: string; alt?: boolean }) {
   const { ta } = useI18n();
   const items = ta<{ q: string; a: string }>(`${prefix}.items`);
   return (
-    <Section alt>
+    <Section alt={alt}>
       <SecHead prefix={prefix} />
       <FaqGrid items={items} />
     </Section>
