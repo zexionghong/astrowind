@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useI18n } from '../i18n';
-import { loadPost, postsFor, type BlogPost } from '../blog';
+import { POSTS, loadPost, postsFor, type BlogPost } from '../blog';
 import { Markdown } from '../markdown';
 import { Section } from '../components/ui/sections';
 
 export function BlogPostPage() {
   const { slug = '' } = useParams();
   const { t, lang } = useI18n();
+  const meta = POSTS.find((item) => item.slug === slug);
   const [post, setPost] = useState<BlogPost | null | undefined>(undefined);
   const more = postsFor(lang).filter((item) => item.slug !== slug).slice(0, 3);
 
@@ -22,9 +23,7 @@ export function BlogPostPage() {
     };
   }, [slug]);
 
-  if (post === undefined) return null;
-
-  if (!post) {
+  if (!meta) {
     return (
       <Section small>
         <div className="post-missing">
@@ -45,16 +44,16 @@ export function BlogPostPage() {
             {t('blog.back')}
           </Link>
           <div className="blog-meta">
-            <span className="blog-cat">{post.category}</span>
-            <span>{post.date}</span>
+            <span className="blog-cat">{meta.category}</span>
+            <span>{meta.date}</span>
           </div>
-          <h1>{post.title}</h1>
-          <p className="phero-sub">{post.excerpt}</p>
+          <h1>{meta.title}</h1>
+          <p className="phero-sub">{meta.excerpt}</p>
         </div>
       </section>
       <Section small>
         <article className="post">
-          <Markdown source={post.body} />
+          {post ? <Markdown source={post.body} /> : <div className="post-loading" aria-hidden="true" />}
         </article>
         {more.length > 0 && (
           <div className="post-more">

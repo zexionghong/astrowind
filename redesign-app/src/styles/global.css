@@ -842,6 +842,7 @@ html[data-dir="d"] .mock-panel { background: rgba(255,255,255,.04); }
 .post-body th { background: var(--bg-subtle); color: var(--text-heading); }
 .post-more { max-width: 1080px; margin: 56px auto 0; }
 .post-more h2 { font-size: 22px; color: var(--text-heading); margin-bottom: 18px; }
+.post-loading { min-height: 70vh; }
 .post-missing { text-align: center; padding: 48px 0; }
 .post-missing h1 { font-size: 28px; color: var(--text-heading); margin-bottom: 20px; }
 
