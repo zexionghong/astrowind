@@ -12,6 +12,7 @@ import { BlogPage } from './pages/BlogPage';
 import { BlogPostPage } from './pages/BlogPostPage';
 import { AboutPage } from './pages/AboutPage';
 import { RegisterPage } from './pages/RegisterPage';
+import { UseCasePage } from './pages/UseCasePage';
 
 export function App() {
   return (
@@ -24,6 +25,7 @@ export function App() {
           <Route path={PATHS.prodDrp} element={<DynamicResidentialPage />} />
           <Route path={PATHS.prodDc} element={<DatacenterPage />} />
           <Route path={PATHS.scenarios} element={<ScenariosPage />} />
+          <Route path="/use-case/:slug" element={<UseCasePage />} />
           <Route path={PATHS.resources} element={<ResourcesPage />} />
           <Route path={PATHS.blog} element={<BlogPage />} />
           <Route path={`${PATHS.blog}/:slug`} element={<BlogPostPage />} />

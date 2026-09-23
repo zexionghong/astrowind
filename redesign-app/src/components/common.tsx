@@ -44,7 +44,7 @@ export function AppLink({
       </a>
     );
   }
-  const path = resolveTo(to);
+  const path = to && to.startsWith('/') ? to : resolveTo(to);
   if (path) {
     return (
       <Link to={path} className={className} style={style}>

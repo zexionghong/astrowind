@@ -787,6 +787,30 @@ html[data-dir="d"] .mock-panel { background: rgba(255,255,255,.04); }
 .post-missing { text-align: center; padding: 48px 0; }
 .post-missing h1 { font-size: 28px; color: var(--text-heading); margin-bottom: 20px; }
 
+.case-features { list-style: none; margin: 8px 0 28px; }
+.case-features li { display: flex; gap: 10px; align-items: flex-start; margin: 8px 0; color: var(--hero-sub); }
+html[data-dir="a"] .case-features li, html[data-dir="c"] .case-features li { color: var(--text); }
+.case-features .ic { width: 18px; height: 18px; color: var(--ok-fg); margin-top: 3px; }
+.case-split { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }
+@media (max-width: 860px) { .case-split { grid-template-columns: 1fr; } }
+.case-split h2 { font-size: 22px; color: var(--text-heading); margin-bottom: 16px; }
+.case-steps { list-style: none; }
+.case-steps li { display: flex; gap: 12px; align-items: flex-start; margin: 12px 0; color: var(--text); }
+.case-steps span {
+  flex: none; width: 28px; height: 28px; border-radius: 999px; display: grid; place-items: center;
+  background: var(--primary-soft); color: var(--primary); font-size: 13px; font-weight: 800;
+}
+.case-pros, .case-cons { list-style: none; }
+.case-pros li, .case-cons li { display: flex; gap: 10px; align-items: flex-start; margin: 10px 0; padding: 10px 12px; border-radius: 10px; }
+.case-pros li { background: var(--ok-bg); color: var(--ok-fg); }
+.case-cons li { background: var(--primary-soft); color: var(--text); }
+.case-pros .ic, .case-cons .ic { width: 16px; height: 16px; margin-top: 4px; }
+.case-flow { display: grid; grid-template-columns: 1.4fr .8fr; gap: 28px; align-items: center; }
+@media (max-width: 860px) { .case-flow { grid-template-columns: 1fr; } }
+.case-tips { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 22px; }
+.case-tips ul { list-style: none; }
+.case-tips li { margin: 12px 0; color: var(--text); }
+
 /* ============================================================
    About 原则卡 / 事实列表
    ============================================================ */

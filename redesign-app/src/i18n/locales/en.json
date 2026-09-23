@@ -1358,6 +1358,12 @@
     "more": "More articles",
     "missing": "This article does not exist"
   },
+  "useCase": {
+    "back": "Back to use cases",
+    "more": "More plans",
+    "try": "Try for free",
+    "missing": "This plan does not exist"
+  },
   "about": {
     "eyebrow": "About IPFlex",
     "heroTitle": "About IPFlex",

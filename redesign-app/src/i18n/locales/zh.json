@@ -1358,6 +1358,12 @@
     "more": "更多文章",
     "missing": "这篇文章不存在"
   },
+  "useCase": {
+    "back": "返回应用场景",
+    "more": "更多方案",
+    "try": "免费试用",
+    "missing": "这个方案不存在"
+  },
   "about": {
     "eyebrow": "About IPFlex",
     "heroTitle": "关于 IPFlex",

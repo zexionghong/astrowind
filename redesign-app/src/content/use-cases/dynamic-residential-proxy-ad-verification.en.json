@@ -1,0 +1,94 @@
+{
+  "title": "Dynamic Residential Proxy for Ad Verification & Anti-Fraud",
+  "subtitle": "How advertisers leverage geographically distributed dynamic proxies to simulate real user behavior and detect ad fraud and click farms",
+  "features": [
+    "Simulate real user behavior to effectively detect ad fraud and fake clicks",
+    "Geographically distributed dynamic proxies ensure accuracy of ad delivery verification",
+    "Support multi-platform ad verification covering mainstream ad networks and platforms",
+    "Real-time monitoring and reporting, timely detection and handling of ad fraud"
+  ],
+  "cta": "Free Trial: Ad Verification Dynamic Proxy",
+  "whyTitle": "Why Choose Dynamic Residential Proxies for Ad Verification?",
+  "why": [
+    {
+      "title": "Real User Simulation",
+      "desc": "Based on real residential network proxy addresses, perfectly simulate real user access behavior, effectively detecting ad fraud and fake traffic."
+    },
+    {
+      "title": "Geographic Precision Targeting",
+      "desc": "Supports precise geographic targeting in 200+ countries and regions globally, ensuring accuracy of ad delivery geographic verification and discovering geo-targeting anomalies."
+    },
+    {
+      "title": "Anti-Fraud Detection",
+      "desc": "Through dynamic proxy rotation and smart algorithms, effectively identify click farms, bot traffic and other ad fraud behaviors, protecting advertising investments."
+    }
+  ],
+  "scenarioTitle": "Ad Verification Use Cases & Detection Processes",
+  "steps": [
+    "Ad display verification: Verify ads are correctly displayed in specified positions",
+    "Click quality detection: Identify fake clicks and bot traffic",
+    "Geographic targeting verification: Confirm ad delivery effectiveness in target regions",
+    "Competitor ad monitoring: Monitor competitors' ad strategies and delivery situations"
+  ],
+  "prosTitle": "Ad Verification Advantages & Challenges",
+  "pros": [
+    "Dynamic proxy rotation simulates real users, effectively detecting ad fraud",
+    "Geographic distribution verification ensures geographic accuracy of ad delivery"
+  ],
+  "cons": [
+    "Fixed proxies are easily identified by ad platforms, affecting verification result accuracy",
+    "Traditional verification methods are inefficient, difficult to handle large-scale ad fraud"
+  ],
+  "flowTitle": "Automated Ad Verification Workflow",
+  "flow": [
+    "Verification configuration: Set ad verification targets and detection parameters",
+    "Proxy deployment: Select dynamic residential proxy pools in target regions",
+    "Simulate access: Simulate real user access behavior through dynamic proxies",
+    "Data collection: Collect key data including ad impressions, clicks, conversions",
+    "Fraud analysis: Multi-dimensional analysis to detect ad fraud behaviors, generate verification reports"
+  ],
+  "tags": [],
+  "tipsTitle": "",
+  "tips": [],
+  "faqTitle": "Ad Verification & Anti-Fraud Proxy FAQs",
+  "faqSub": "Make ad verification more professional with IPFlex!",
+  "faqs": [
+    {
+      "q": "Why does ad verification need dynamic residential proxies?",
+      "a": "Dynamic residential proxies can simulate real user access behavior, ensuring accuracy of ad verification through geographically distributed proxy addresses, effectively detecting ad fraud and fake traffic."
+    },
+    {
+      "q": "How do dynamic residential proxies detect ad fraud?",
+      "a": "Through smart proxy rotation and real user behavior simulation, dynamic residential proxies can identify abnormal behaviors like click farms and bot traffic, protecting advertisers' investment security."
+    },
+    {
+      "q": "Which ad platforms are supported for verification?",
+      "a": "Supports verification for mainstream ad platforms including Google Ads, Facebook Ads, Baidu Ads, Tencent Ads, as well as anti-fraud detection for various ad networks and alliances."
+    }
+  ],
+  "slug": "dynamic-residential-proxy-ad-verification",
+  "group": "drp",
+  "lang": "en",
+  "more": [
+    {
+      "slug": "dynamic-residential-proxy-data-collection",
+      "title": "Large-Scale Data Collection",
+      "desc": "Smart Proxy rotation, break through access restrictions"
+    },
+    {
+      "slug": "dynamic-residential-proxy-crawling",
+      "title": "Web Crawling & Monitoring",
+      "desc": "High anonymity, avoid anti-crawler detection"
+    },
+    {
+      "slug": "dynamic-residential-proxy-privacy",
+      "title": "Anonymous Browsing & Privacy Protection",
+      "desc": "Protect real identity, secure access"
+    },
+    {
+      "slug": "dynamic-residential-proxy-ad-verification",
+      "title": "Ad Verification & Anti-Fraud",
+      "desc": "Simulate real users, detect ad fraud"
+    }
+  ]
+}

@@ -580,6 +580,12 @@
     "more": "ほかの記事",
     "missing": "この記事は見つかりません"
   },
+  "useCase": {
+    "back": "活用シーンに戻る",
+    "more": "ほかのソリューション",
+    "try": "無料で試す",
+    "missing": "このソリューションは見つかりません"
+  },
   "about": {
     "eyebrow": "About IPFlex",
     "heroTitle": "IPFlexについて",

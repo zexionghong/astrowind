@@ -1,6 +1,7 @@
 import { useI18n } from '../i18n';
-import { Icon, type IconName } from '../components/Icon';
+import { Icon } from '../components/Icon';
 import { AppLink } from '../components/common';
+import { USE_CASE_SLUGS, useCasePath } from '../use-cases';
 import { Section, PageHero, CtaBanner } from '../components/ui/sections';
 
 export function ScenariosPage() {
@@ -13,7 +14,7 @@ export function ScenariosPage() {
 
       <Section padTop={64}>
         <div className="grid-3">
-          {items.map((it) => (
+          {items.map((it, index) => (
             <div key={it.title} className="sc-card reveal">
               <span className="sc-tag">{it.tag}</span>
               <h3>{it.title}</h3>
@@ -26,7 +27,7 @@ export function ScenariosPage() {
                   </li>
                 ))}
               </ul>
-              <AppLink className="p-link">
+              <AppLink to={useCasePath(USE_CASE_SLUGS[index] ?? '')} className="p-link">
                 {t('scenarios.viewPlan')} <Icon name="arrowright" />
               </AppLink>
             </div>

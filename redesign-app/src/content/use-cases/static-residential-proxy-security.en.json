@@ -1,0 +1,104 @@
+{
+  "title": "Static Residential Proxy for Cybersecurity & Risk Control",
+  "subtitle": "Use real residential proxy to simulate attack paths, replicate user behavior, and enhance enterprise risk testing and security",
+  "features": [
+    "Real identity simulation, penetration testing bypasses black/whitelists",
+    "Bulk detection and monitoring of attack surfaces, discover vulnerabilities",
+    "Multi-region/device event replication for brand protection and threat analysis",
+    "High anonymity for compliant, trace-free detection"
+  ],
+  "cta": "Free Trial: Security & Risk Control Proxy",
+  "whyTitle": "Why Use Static Residential Proxies for Cybersecurity & Risk Control?",
+  "why": [
+    {
+      "title": "Multi-dimensional Security Testing",
+      "desc": "Static residential proxy replicate end-user environments, help security teams with full-chain penetration, malicious traffic analysis, phishing detection, and more."
+    },
+    {
+      "title": "Compliant Monitoring & Real Behavior Simulation",
+      "desc": "Residential proxies help enterprises detect data leaks, ad fraud, bot activity, and more, from a real user perspective."
+    },
+    {
+      "title": "Strong Anti-ban Capability",
+      "desc": "Long-term stable proxy pool, supports automated continuous testing, avoids blacklisting and detection failures."
+    }
+  ],
+  "scenarioTitle": "Risk Control & Security Use Cases",
+  "steps": [
+    "Automated bulk penetration/vulnerability testing: Simulate millions of users with residential proxy",
+    "Brand protection: Detect counterfeits, phishing, blacklinks, and other attacks",
+    "Ad anti-fraud & API security: Simulate real user visits to prevent bot activity and bypass API protection",
+    "Risk inspection/data leak tracing: Capture abnormal asset flows, prevent fraud"
+  ],
+  "prosTitle": "Security & Risk Control Advantages & Insights",
+  "pros": [
+    "Simulate end-user traffic, replicate all attack/defense flows",
+    "Bypass blacklists, high concurrency, accelerate detection, tracing, and forensics"
+  ],
+  "cons": [
+    "Datacenter proxy are easily detected and blocked by firewalls",
+    "Manual/legacy testing is inefficient, costly, and error-prone"
+  ],
+  "flowTitle": "Automated Enterprise Security & Risk Control Workflow",
+  "flow": [
+    "Select geo/industry-specific residential proxy for deep coverage",
+    "Bulk integration with inspection/detection/penetration systems, replicate real user traffic",
+    "Automated operation/abnormality capture, deep risk analysis",
+    "Analyze threat chains, sources, and causes",
+    "Output risk control and forensics reports, close the compliance loop"
+  ],
+  "tags": [
+    "Geo targeting",
+    "Auto inspection",
+    "Concurrent detection",
+    "Risk analysis",
+    "Forensics report"
+  ],
+  "tipsTitle": "Risk Control Tips",
+  "tips": [
+    "Always use distributed geo proxy for inspection to avoid missed or false positives",
+    "Integrate with mainstream penetration/security platforms via API for bulk detection",
+    "Regularly archive all node data for compliance"
+  ],
+  "faqTitle": "Security & Risk Control Proxy FAQs",
+  "faqSub": "Empower enterprise digital security & brand defense",
+  "faqs": [
+    {
+      "q": "Why do enterprises use static residential proxies for security testing?",
+      "a": "Datacenter proxy are widely flagged, hard to simulate real attacks. Static residential proxies closely replicate end-user data access, helping discover real vulnerabilities."
+    },
+    {
+      "q": "What security scenarios are suitable for residential proxies?",
+      "a": "Risk/anti-fraud self-testing, brand protection, phishing tracing, ad anti-fraud, API security, botnet monitoring, ad anomaly detection, etc."
+    },
+    {
+      "q": "How to avoid bans/blacklists during testing?",
+      "a": "IPFlex residential proxies use global home broadband nodes, bulk deployment, geo-distributed, support long-term penetration and inspection, and are rarely blacklisted if used properly."
+    }
+  ],
+  "slug": "static-residential-proxy-security",
+  "group": "srp",
+  "lang": "en",
+  "more": [
+    {
+      "slug": "static-residential-proxy-ad-verification",
+      "title": "Ad Verification",
+      "desc": "Real user simulation, precise ad fraud prevention"
+    },
+    {
+      "slug": "static-residential-proxy-scraping",
+      "title": "Market Research & Data Scraping",
+      "desc": "Bypass anti-bot, low-risk bulk data collection"
+    },
+    {
+      "slug": "static-residential-proxy-ecommerce",
+      "title": "E-commerce Account Management",
+      "desc": "Prevent bans, manage multiple accounts across platforms"
+    },
+    {
+      "slug": "static-residential-proxy-security",
+      "title": "Cybersecurity & Risk Control",
+      "desc": "Penetration testing, brand protection, risk inspection"
+    }
+  ]
+}
