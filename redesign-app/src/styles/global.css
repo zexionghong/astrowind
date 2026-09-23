@@ -489,10 +489,10 @@ html[data-dir="c"] .chip { color: var(--text); border-color: var(--border); back
   display: inline-flex; align-items: center;
   border: 1px solid var(--border); border-radius: 999px;
   background: var(--surface); color: var(--text-heading);
-  padding: 8px 16px; font-size: 14px; font-weight: 700;
+  padding: 8px 16px; font: inherit; font-size: 14px; font-weight: 700; cursor: pointer;
 }
 .band-tag:hover { border-color: var(--border-strong); background: var(--primary-soft); color: var(--primary); }
-.band-follow { margin-top: 28px; }
+.band-tag.active { background: var(--primary); border-color: var(--primary); color: var(--on-primary); }
 
 .p-card {
   background: var(--surface); border: 1px solid var(--border); border-radius: 24px;

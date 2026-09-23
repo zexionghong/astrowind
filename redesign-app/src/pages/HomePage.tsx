@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { useI18n } from '../i18n';
 import { EXTERNAL } from '../routes';
 import { Icon, type IconName } from '../components/Icon';
@@ -29,6 +29,8 @@ export function HomePage() {
   const useCases = ta<{ icon: IconName; title: string; desc: string }>('home.useCases.items');
   const faqs = ta<{ q: string; a: string }>('home.faq.items');
   const refStats = ta<{ num: string; label: string }>('home.referral.stats');
+  const [proxyTab, setProxyTab] = useState<'residential' | 'datacenter'>('residential');
+  const visibleCards = proxyTab === 'residential' ? proxyCards : dcCard;
 
   return (
     <>
@@ -65,19 +67,30 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* 住宅代理 / 数据中心代理 */}
+      {/* 住宅代理 / 数据中心代理：只显示选中的一组 */}
       <Section>
-        <div className="band-tags">
-          <a className="band-tag" href="#residential-proxy">{t('home.proxyContent.band')}</a>
-          <a className="band-tag" href="#datacenter-proxy">{t('home.proxyService.band')}</a>
+        <div className="band-tags" role="tablist">
+          <button
+            type="button"
+            role="tab"
+            className={proxyTab === 'residential' ? 'band-tag active' : 'band-tag'}
+            aria-selected={proxyTab === 'residential'}
+            onClick={() => setProxyTab('residential')}
+          >
+            {t('home.proxyContent.band')}
+          </button>
+          <button
+            type="button"
+            role="tab"
+            className={proxyTab === 'datacenter' ? 'band-tag active' : 'band-tag'}
+            aria-selected={proxyTab === 'datacenter'}
+            onClick={() => setProxyTab('datacenter')}
+          >
+            {t('home.proxyService.band')}
+          </button>
         </div>
-        <div id="residential-proxy">
-          {proxyCards.map((card) => (
-            <ProxyCard key={card.name} card={card} />
-          ))}
-        </div>
-        <div id="datacenter-proxy" className="band-follow">
-          {dcCard.map((card) => (
+        <div role="tabpanel">
+          {visibleCards.map((card) => (
             <ProxyCard key={card.name} card={card} />
           ))}
         </div>
