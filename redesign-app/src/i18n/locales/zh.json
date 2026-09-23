@@ -12,7 +12,11 @@
     "dirA": "A · 明亮企业",
     "dirB": "B · 深色科技",
     "dirC": "C · 明暗节奏",
-    "dirD": "D · 玻璃拟态"
+    "dirD": "D · 玻璃拟态",
+    "lang": "语言",
+    "menu": "打开菜单",
+    "menuClose": "关闭菜单",
+    "skip": "跳到主要内容"
   },
   "promo": {
     "tag": "新用户专享",
@@ -1441,6 +1445,8 @@
     "emailPh": "请输入邮箱",
     "password": "密码",
     "passwordPh": "6~20位字符",
+    "showPassword": "显示密码",
+    "hidePassword": "隐藏密码",
     "invite": "邀请码",
     "invitePh": "选填",
     "submit": "注 册",

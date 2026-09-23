@@ -19,6 +19,8 @@ export function RegisterPage() {
   const [searchParams] = useSearchParams();
   const prefilledInvite = inviteFromQuery(searchParams);
   const [submitting, setSubmitting] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [notice, setNotice] = useState<{ ok: boolean; text: string } | null>(null);
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -39,6 +41,7 @@ export function RegisterPage() {
     if (invite) params.append('invite_code', invite);
 
     setSubmitting(true);
+    setNotice(null);
     try {
       const response = await fetch(REGISTER_URL, {
         method: 'POST',
@@ -47,12 +50,14 @@ export function RegisterPage() {
       });
       const result = (await response.json()) as { code?: number; msg?: string };
       if (result.code === 0) {
-        alert(t('register.success'));
+        setNotice({ ok: true, text: t('register.success') });
+        setShowPassword(false);
+        form.reset();
       } else {
-        alert(result.msg || t('register.fail'));
+        setNotice({ ok: false, text: result.msg || t('register.fail') });
       }
     } catch {
-      alert(t('register.fail'));
+      setNotice({ ok: false, text: t('register.fail') });
     } finally {
       setSubmitting(false);
     }
@@ -89,21 +94,47 @@ export function RegisterPage() {
             <form onSubmit={onSubmit}>
               <div className="form-field">
                 <label htmlFor="reg-username">{t('register.username')}</label>
-                <input id="reg-username" name="username" type="text" placeholder={t('register.usernamePh')} required />
+                <input
+                  id="reg-username"
+                  name="username"
+                  type="text"
+                  autoComplete="username"
+                  placeholder={t('register.usernamePh')}
+                  required
+                />
               </div>
               <div className="form-field">
                 <label htmlFor="reg-email">{t('register.email')}</label>
-                <input id="reg-email" name="email" type="email" placeholder={t('register.emailPh')} required />
+                <input
+                  id="reg-email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  placeholder={t('register.emailPh')}
+                  required
+                />
               </div>
               <div className="form-field">
                 <label htmlFor="reg-password">{t('register.password')}</label>
-                <input
-                  id="reg-password"
-                  name="password"
-                  type="password"
-                  placeholder={t('register.passwordPh')}
-                  required
-                />
+                <div className="pw-wrap">
+                  <input
+                    id="reg-password"
+                    name="password"
+                    type={showPassword ? 'text' : 'password'}
+                    autoComplete="new-password"
+                    placeholder={t('register.passwordPh')}
+                    required
+                  />
+                  <button
+                    type="button"
+                    className="pw-toggle"
+                    aria-pressed={showPassword}
+                    aria-label={showPassword ? t('register.hidePassword') : t('register.showPassword')}
+                    onClick={() => setShowPassword((v) => !v)}
+                  >
+                    <Icon name={showPassword ? 'eyeOff' : 'eye'} />
+                  </button>
+                </div>
               </div>
               <div className="form-field">
                 <label htmlFor="reg-invite">{t('register.invite')}</label>
@@ -116,9 +147,15 @@ export function RegisterPage() {
                   disabled={Boolean(prefilledInvite)}
                 />
               </div>
-              <button className="btn btn-primary reg-submit" type="submit" disabled={submitting}>
+              <button className="btn btn-primary reg-submit" type="submit" disabled={submitting} aria-busy={submitting}>
                 {submitting ? t('register.submitting') : t('register.submit')}
               </button>
+              {notice && (
+                <p className={notice.ok ? 'form-status ok' : 'form-status err'} role="alert">
+                  <Icon name={notice.ok ? 'check' : 'alert'} />
+                  <span>{notice.text}</span>
+                </p>
+              )}
             </form>
             <div className="reg-alt">
               {t('register.altPrefix')}

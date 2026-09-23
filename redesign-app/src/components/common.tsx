@@ -73,7 +73,7 @@ export function PromoBar() {
           {t('promo.cta')}
         </AppLink>
         <button className="promo-close" aria-label={t('promo.close')} onClick={() => setOpen(false)}>
-          <Icon name="close" />
+          <Icon name="close" style={{ width: 18, height: 18 }} />
         </button>
       </div>
     </div>
@@ -141,19 +141,20 @@ export function DirSwitch({ className = 'nav-lang' }: { className?: string }) {
 
 /** 语言切换（桌面 + 移动端共用一组按钮） */
 export function LangSwitch({ className = 'nav-lang' }: { className?: string }) {
-  const { lang, setLang } = useI18n();
+  const { t, lang, setLang } = useI18n();
   const langs: { code: Lang; label: string }[] = [
     { code: 'zh', label: '中文' },
     { code: 'en', label: 'EN' },
     { code: 'ja', label: '日' },
   ];
   return (
-    <div className={className}>
+    <div className={className} role="group" aria-label={t('nav.lang')}>
       {langs.map((l) => (
         <button
           key={l.code}
           className={lang === l.code ? 'active' : ''}
           onClick={() => setLang(l.code)}
+          aria-pressed={lang === l.code}
           aria-label={l.label}
         >
           {l.label}

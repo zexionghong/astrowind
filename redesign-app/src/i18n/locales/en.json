@@ -12,7 +12,11 @@
     "dirA": "A · Light SaaS",
     "dirB": "B · Dark Tech",
     "dirC": "C · Light + Dark",
-    "dirD": "D · Glass"
+    "dirD": "D · Glass",
+    "lang": "Language",
+    "menu": "Open menu",
+    "menuClose": "Close menu",
+    "skip": "Skip to main content"
   },
   "promo": {
     "tag": "New User Offer",
@@ -1441,6 +1445,8 @@
     "emailPh": "Enter your email",
     "password": "Password",
     "passwordPh": "6-20 characters",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
     "invite": "Invite code",
     "invitePh": "Optional",
     "submit": "Sign up",

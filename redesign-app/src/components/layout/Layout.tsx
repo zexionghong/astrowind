@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
+import { useI18n } from '../../i18n';
 import { Header } from './Header';
 import { Footer } from './Footer';
 
@@ -32,10 +33,14 @@ function useRevealOnRouteChange() {
 
 export function Layout() {
   useRevealOnRouteChange();
+  const { t } = useI18n();
   return (
     <>
+      <a className="skip-link" href="#main">
+        {t('nav.skip')}
+      </a>
       <Header />
-      <main>
+      <main id="main">
         <Outlet />
       </main>
       <Footer />

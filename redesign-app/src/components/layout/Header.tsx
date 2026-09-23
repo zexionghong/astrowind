@@ -39,9 +39,18 @@ export function Header() {
             <ul className="nav-links">
               {NAV_LINKS.map((l) => (
                 <li key={l.key}>
-                  <AppLink to={l.to} href={l.href}>
-                    {t(l.key)}
-                  </AppLink>
+                  {l.href ? (
+                    <a href={l.href} target="_blank" rel="noopener noreferrer">
+                      {t(l.key)}
+                    </a>
+                  ) : (
+                    <NavLink
+                      to={(l.to && ROUTES[l.to]) || '/'}
+                      className={({ isActive }) => (isActive ? 'active' : '')}
+                    >
+                      {t(l.key)}
+                    </NavLink>
+                  )}
                 </li>
               ))}
             </ul>
@@ -57,7 +66,9 @@ export function Header() {
             </div>
             <button
               className="nav-burger"
-              aria-label="menu"
+              aria-label={mobileOpen ? t('nav.menuClose') : t('nav.menu')}
+              aria-expanded={mobileOpen}
+              aria-controls="nav-mobile"
               onClick={() => setMobileOpen((v) => !v)}
             >
               <Icon name={mobileOpen ? 'close' : 'menu'} style={{ width: 24, height: 24 }} />
@@ -65,7 +76,7 @@ export function Header() {
           </div>
         </nav>
         {mobileOpen && (
-          <div className="nav-mobile">
+          <div className="nav-mobile" id="nav-mobile">
             <div className="container">
               <div className="nav-switches">
                 <DirSwitch />

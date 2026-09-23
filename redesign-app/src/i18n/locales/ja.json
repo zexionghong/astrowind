@@ -12,7 +12,11 @@
     "dirA": "A · ライト企業",
     "dirB": "B · ダークテック",
     "dirC": "C · 明暗リズム",
-    "dirD": "D · グラスモーフィズム"
+    "dirD": "D · グラスモーフィズム",
+    "lang": "言語",
+    "menu": "メニューを開く",
+    "menuClose": "メニューを閉じる",
+    "skip": "本文へスキップ"
   },
   "promo": {
     "tag": "新規ユーザー限定",
@@ -628,6 +632,8 @@
     "emailPh": "メールアドレスを入力",
     "password": "パスワード",
     "passwordPh": "6〜20文字",
+    "showPassword": "パスワードを表示",
+    "hidePassword": "パスワードを隠す",
     "invite": "招待コード",
     "invitePh": "任意",
     "submit": "登 録",

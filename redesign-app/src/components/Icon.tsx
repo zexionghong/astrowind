@@ -6,7 +6,7 @@ export type IconName =
   | 'news' | 'refresh' | 'server' | 'home' | 'sparkles' | 'zap' | 'check'
   | 'chevdown' | 'arrowright' | 'close' | 'pin' | 'code' | 'clock' | 'gift'
   | 'menu' | 'tg' | 'xbrand' | 'book' | 'doc' | 'scale' | 'user' | 'target'
-  | 'stairs' | 'blog';
+  | 'stairs' | 'blog' | 'eye' | 'eyeOff' | 'alert';
 
 const paths: Record<IconName, React.ReactNode> = {
   globe: <><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z" /></>,
@@ -47,6 +47,9 @@ const paths: Record<IconName, React.ReactNode> = {
   target: <><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="5" /><circle cx="12" cy="12" r="1.2" /></>,
   stairs: <path d="M4 20h4v-4h4v-4h4V8h4" />,
   blog: <><rect x="4" y="4" width="16" height="16" rx="2" /><path d="M8 9h8M8 13h8M8 17h4" /></>,
+  eye: <><path d="M2.5 12S6 7.2 12 7.2 21.5 12 21.5 12 18 16.8 12 16.8 2.5 12 2.5 12z" /><circle cx="12" cy="12" r="2.4" /></>,
+  eyeOff: <><path d="M4 5l16 14" /><path d="M9.6 6.5A10 10 0 0 1 12 6.2C18 6.2 21.5 12 21.5 12a17 17 0 0 1-2.8 3.4" /><path d="M6.3 8.1C4 9.6 2.5 12 2.5 12S6 17.8 12 17.8c1.3 0 2.5-.3 3.5-.7" /><path d="M9.8 10.1a2.4 2.4 0 0 0 3.3 3.3" /></>,
+  alert: <><path d="M12 3.5l8.5 15H3.5L12 3.5z" /><path d="M12 10v4" /><path d="M12 16.6h.01" /></>,
 };
 
 interface IconProps {
@@ -58,7 +61,7 @@ interface IconProps {
 /** 与 demo 中 <svg class="ic"><use href="#i-*"/></svg> 等价的内联图标组件 */
 export function Icon({ name, className = 'ic', style }: IconProps) {
   return (
-    <svg className={className} style={style} aria-hidden="true">
+    <svg className={className} style={style} viewBox="0 0 24 24" aria-hidden="true">
       {paths[name]}
     </svg>
   );
