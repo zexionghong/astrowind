@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useI18n } from '../../i18n';
 import { EXTERNAL, ROUTES } from '../../routes';
+import logoUrl from '../../assets/logo.png';
 import { Icon } from '../Icon';
 import { AppLink, DirSwitch, LangSwitch, PromoBar } from '../common';
 
@@ -31,10 +32,7 @@ export function Header() {
         <nav className="nav">
           <div className="container">
             <Link to="/" className="logo">
-              <span className="logo-mark">
-                <Icon name="globe" />
-              </span>
-              IPFlex
+              <img src={logoUrl} alt="IPFlex" />
             </Link>
             <ul className="nav-links">
               {NAV_LINKS.map((l) => (

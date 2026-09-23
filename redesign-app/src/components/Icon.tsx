@@ -6,7 +6,7 @@ export type IconName =
   | 'news' | 'refresh' | 'server' | 'home' | 'sparkles' | 'zap' | 'check'
   | 'chevdown' | 'arrowright' | 'close' | 'pin' | 'code' | 'clock' | 'gift'
   | 'menu' | 'tg' | 'xbrand' | 'book' | 'doc' | 'scale' | 'user' | 'target'
-  | 'stairs' | 'blog' | 'eye' | 'eyeOff' | 'alert';
+  | 'stairs' | 'blog' | 'eye' | 'eyeOff' | 'alert' | 'sun' | 'moon';
 
 const paths: Record<IconName, React.ReactNode> = {
   globe: <><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z" /></>,
@@ -50,6 +50,8 @@ const paths: Record<IconName, React.ReactNode> = {
   eye: <><path d="M2.5 12S6 7.2 12 7.2 21.5 12 21.5 12 18 16.8 12 16.8 2.5 12 2.5 12z" /><circle cx="12" cy="12" r="2.4" /></>,
   eyeOff: <><path d="M4 5l16 14" /><path d="M9.6 6.5A10 10 0 0 1 12 6.2C18 6.2 21.5 12 21.5 12a17 17 0 0 1-2.8 3.4" /><path d="M6.3 8.1C4 9.6 2.5 12 2.5 12S6 17.8 12 17.8c1.3 0 2.5-.3 3.5-.7" /><path d="M9.8 10.1a2.4 2.4 0 0 0 3.3 3.3" /></>,
   alert: <><path d="M12 3.5l8.5 15H3.5L12 3.5z" /><path d="M12 10v4" /><path d="M12 16.6h.01" /></>,
+  sun: <><circle cx="12" cy="12" r="4" /><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.5 1.5M16.9 16.9l1.5 1.5M18.4 5.6l-1.5 1.5M7.1 16.9l-1.5 1.5" /></>,
+  moon: <path d="M16 3.5A8 8 0 1 0 20.5 13 6.5 6.5 0 0 1 16 3.5z" />,
 };
 
 interface IconProps {

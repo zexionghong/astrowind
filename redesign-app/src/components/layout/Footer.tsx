@@ -3,6 +3,7 @@ import { useI18n } from '../../i18n';
 import { EXTERNAL } from '../../routes';
 import { Icon } from '../Icon';
 import { AppLink } from '../common';
+import logoUrl from '../../assets/logo.png';
 
 /** 页脚栏目：footer.<key> 下为 { title, links: [{ text, to?, href? }] } */
 const COLUMNS = ['products', 'solutions', 'support', 'company'] as const;
@@ -17,10 +18,7 @@ export function Footer() {
         <div className="footer-grid">
           <div>
             <Link to="/" className="logo">
-              <span className="logo-mark">
-                <Icon name="globe" />
-              </span>
-              IPFlex
+              <img src={logoUrl} alt="IPFlex" />
             </Link>
             <p className="footer-desc">{t('footer.desc')}</p>
             <div className="footer-social">

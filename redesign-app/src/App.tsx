@@ -9,6 +9,7 @@ import { DatacenterPage } from './pages/DatacenterPage';
 import { ScenariosPage } from './pages/ScenariosPage';
 import { ResourcesPage } from './pages/ResourcesPage';
 import { BlogPage } from './pages/BlogPage';
+import { BlogPostPage } from './pages/BlogPostPage';
 import { AboutPage } from './pages/AboutPage';
 import { RegisterPage } from './pages/RegisterPage';
 
@@ -25,6 +26,7 @@ export function App() {
           <Route path={PATHS.scenarios} element={<ScenariosPage />} />
           <Route path={PATHS.resources} element={<ResourcesPage />} />
           <Route path={PATHS.blog} element={<BlogPage />} />
+          <Route path={`${PATHS.blog}/:slug`} element={<BlogPostPage />} />
           <Route path={PATHS.about} element={<AboutPage />} />
           <Route path={PATHS.register} element={<RegisterPage />} />
           <Route path="*" element={<HomePage />} />

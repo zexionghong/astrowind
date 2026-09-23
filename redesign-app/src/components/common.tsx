@@ -80,34 +80,29 @@ export function PromoBar() {
   );
 }
 
-/** 视觉方向：与 global.css 的 html[data-dir] token 一一对应 */
-export type Dir = 'a' | 'b' | 'c' | 'd';
-
-const DIRS: { code: Dir; label: string }[] = [
-  { code: 'a', label: 'A' },
-  { code: 'b', label: 'B' },
-  { code: 'c', label: 'C' },
-  { code: 'd', label: 'D' },
-];
+/** 视觉方向：保留 A 明亮 / B 深色，由同一个按钮来回切换 */
+export type Dir = 'a' | 'b';
 
 const DIR_STORAGE_KEY = 'ipflex-dir';
 
 function detectDir(): Dir {
   try {
     const saved = localStorage.getItem(DIR_STORAGE_KEY);
-    if (saved && DIRS.some((d) => d.code === saved)) return saved as Dir;
+    if (saved === 'b') return 'b';
   } catch {
     /* ignore */
   }
   return 'a';
 }
 
-/** 视觉方向切换（A 明亮企业 / B 深色科技 / C 明暗节奏 / D 玻璃拟态），选择写入 localStorage */
-export function DirSwitch({ className = 'nav-lang' }: { className?: string }) {
+/** 黑白主题切换：按钮文案跟着当前主题变，点击切到另一套 */
+export function DirSwitch() {
   const { t } = useI18n();
   const [dir, setDirState] = React.useState<Dir>(detectDir);
+  const dark = dir === 'b';
 
-  const setDir = (next: Dir) => {
+  const toggle = () => {
+    const next: Dir = dark ? 'a' : 'b';
     setDirState(next);
     document.documentElement.setAttribute('data-dir', next);
     try {
@@ -122,44 +117,43 @@ export function DirSwitch({ className = 'nav-lang' }: { className?: string }) {
   }, [dir]);
 
   return (
-    <div className={className} role="group" aria-label={t('nav.dir')}>
-      {DIRS.map((d) => (
-        <button
-          key={d.code}
-          className={dir === d.code ? 'active' : ''}
-          onClick={() => setDir(d.code)}
-          aria-pressed={dir === d.code}
-          aria-label={t(`nav.dir${d.code.toUpperCase()}`)}
-          title={t(`nav.dir${d.code.toUpperCase()}`)}
-        >
-          {d.label}
-        </button>
-      ))}
-    </div>
+    <button
+      type="button"
+      className="nav-toggle"
+      onClick={toggle}
+      aria-pressed={dark}
+      aria-label={dark ? t('nav.themeToLight') : t('nav.themeToDark')}
+      title={dark ? t('nav.themeToLight') : t('nav.themeToDark')}
+    >
+      <Icon name={dark ? 'sun' : 'moon'} />
+      <span>{dark ? t('nav.themeLight') : t('nav.themeDark')}</span>
+    </button>
   );
 }
 
-/** 语言切换（桌面 + 移动端共用一组按钮） */
-export function LangSwitch({ className = 'nav-lang' }: { className?: string }) {
+const LANGS: { code: Lang; short: string; name: string }[] = [
+  { code: 'zh', short: '中文', name: '中文' },
+  { code: 'en', short: 'EN', name: 'English' },
+  { code: 'ja', short: '日本語', name: '日本語' },
+];
+
+/** 语言切换：同一个按钮，点一下切到下一种语言，文案跟着变 */
+export function LangSwitch() {
   const { t, lang, setLang } = useI18n();
-  const langs: { code: Lang; label: string }[] = [
-    { code: 'zh', label: '中文' },
-    { code: 'en', label: 'EN' },
-    { code: 'ja', label: '日' },
-  ];
+  const index = Math.max(0, LANGS.findIndex((item) => item.code === lang));
+  const next = LANGS[(index + 1) % LANGS.length];
+  const current = LANGS[index];
+
   return (
-    <div className={className} role="group" aria-label={t('nav.lang')}>
-      {langs.map((l) => (
-        <button
-          key={l.code}
-          className={lang === l.code ? 'active' : ''}
-          onClick={() => setLang(l.code)}
-          aria-pressed={lang === l.code}
-          aria-label={l.label}
-        >
-          {l.label}
-        </button>
-      ))}
-    </div>
+    <button
+      type="button"
+      className="nav-toggle"
+      onClick={() => setLang(next.code)}
+      aria-label={`${t('nav.lang')} · ${next.name}`}
+      title={`${t('nav.lang')} · ${next.name}`}
+    >
+      <Icon name="globe" />
+      <span>{current.short}</span>
+    </button>
   );
 }

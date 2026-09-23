@@ -8,11 +8,11 @@
     "help": "帮助中心",
     "login": "登录",
     "register": "注册",
-    "dir": "视觉方向",
-    "dirA": "A · 明亮企业",
-    "dirB": "B · 深色科技",
-    "dirC": "C · 明暗节奏",
-    "dirD": "D · 玻璃拟态",
+    "dir": "主题",
+    "themeLight": "浅色",
+    "themeDark": "深色",
+    "themeToLight": "切换到浅色",
+    "themeToDark": "切换到深色",
     "lang": "语言",
     "menu": "打开菜单",
     "menuClose": "关闭菜单",
@@ -1353,7 +1353,10 @@
     "pager": {
       "prev": "上一页",
       "next": "下一页"
-    }
+    },
+    "back": "返回博客",
+    "more": "更多文章",
+    "missing": "这篇文章不存在"
   },
   "about": {
     "eyebrow": "About IPFlex",
