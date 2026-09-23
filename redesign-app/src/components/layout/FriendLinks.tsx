@@ -1,4 +1,4 @@
-import React from 'react';
+import friendLinks from '../../../../public/friend-links.json';
 import { useI18n } from '../../i18n';
 
 interface FriendLink {
@@ -10,32 +10,17 @@ interface FriendLink {
   en_description?: string;
 }
 
-function visible(link: FriendLink) {
-  return Boolean(link.url && (link.name || link.en_name));
+interface FriendLinksFile {
+  links?: FriendLink[];
 }
 
-/** 旧站页脚友链：读 public/friend-links.json，中文用中文名，其它语言用英文。 */
+const links = ((friendLinks as FriendLinksFile).links ?? []).filter(
+  (link) => link.url && (link.name || link.en_name),
+);
+
+/** 旧站页脚友链：构建时写入 public/friend-links.json，中文用中文名，其它语言用英文。 */
 export function FriendLinks() {
   const { t, lang } = useI18n();
-  const [links, setLinks] = React.useState<FriendLink[]>([]);
-
-  React.useEffect(() => {
-    let active = true;
-    fetch('/friend-links.json')
-      .then((response) => (response.ok ? response.json() : null))
-      .then((data) => {
-        if (!active) return;
-        const items = Array.isArray(data?.links) ? data.links.filter(visible) : [];
-        setLinks(items);
-      })
-      .catch(() => {
-        if (active) setLinks([]);
-      });
-    return () => {
-      active = false;
-    };
-  }, []);
-
   if (links.length === 0) return null;
 
   const zh = lang === 'zh';

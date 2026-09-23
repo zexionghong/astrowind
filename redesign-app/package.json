@@ -5,8 +5,8 @@
   "type": "module",
   "description": "IPFlex website redesign — Vite + React + TypeScript, i18n (zh/en/ja)",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc --noEmit && vite build",
+    "dev": "node ../scripts/build-friend-links.js && vite",
+    "build": "node ../scripts/build-friend-links.js && tsc --noEmit && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
