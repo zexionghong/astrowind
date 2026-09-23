@@ -311,6 +311,22 @@ html.show-notes .note-tag { display: inline-block; }
 }
 .nav-toggle .ic { width: 16px; height: 16px; }
 .nav-toggle:hover { background: var(--btn2-hover-bg); }
+.lang-menu { position: relative; }
+.lang-chev { width: 14px; height: 14px; transition: transform .15s ease; }
+.lang-chev.open { transform: rotate(180deg); }
+.lang-list {
+  position: absolute; top: calc(100% + 6px); right: 0; z-index: 60;
+  min-width: 148px; margin: 0; padding: 6px; list-style: none;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+  box-shadow: var(--shadow-card);
+}
+.lang-list button {
+  width: 100%; text-align: left; border: none; background: transparent; cursor: pointer;
+  color: var(--text); font: inherit; font-size: 14px; font-weight: 600;
+  min-height: 36px; padding: 8px 10px; border-radius: 8px;
+}
+.lang-list button:hover { background: var(--btn2-hover-bg); }
+.lang-list button.active { color: var(--primary); background: var(--primary-soft); }
 .nav-links { display: flex; align-items: center; gap: 2px; list-style: none; }
 .nav-links a {
   display: inline-flex; align-items: center; padding: 8px 12px; border-radius: 8px;

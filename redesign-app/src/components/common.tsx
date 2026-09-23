@@ -137,23 +137,63 @@ const LANGS: { code: Lang; short: string; name: string }[] = [
   { code: 'ja', short: '日本語', name: '日本語' },
 ];
 
-/** 语言切换：同一个按钮，点一下切到下一种语言，文案跟着变 */
+/** 语言切换：点开下拉，从中文 / English / 日本語里选 */
 export function LangSwitch() {
   const { t, lang, setLang } = useI18n();
-  const index = Math.max(0, LANGS.findIndex((item) => item.code === lang));
-  const next = LANGS[(index + 1) % LANGS.length];
-  const current = LANGS[index];
+  const [open, setOpen] = React.useState(false);
+  const root = React.useRef<HTMLDivElement>(null);
+  const current = LANGS.find((item) => item.code === lang) ?? LANGS[0];
+
+  React.useEffect(() => {
+    if (!open) return;
+    const onPointer = (event: PointerEvent) => {
+      if (!root.current?.contains(event.target as Node)) setOpen(false);
+    };
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setOpen(false);
+    };
+    document.addEventListener('pointerdown', onPointer);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('pointerdown', onPointer);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [open]);
 
   return (
-    <button
-      type="button"
-      className="nav-toggle"
-      onClick={() => setLang(next.code)}
-      aria-label={`${t('nav.lang')} · ${next.name}`}
-      title={`${t('nav.lang')} · ${next.name}`}
-    >
-      <Icon name="globe" />
-      <span>{current.short}</span>
-    </button>
+    <div className="lang-menu" ref={root}>
+      <button
+        type="button"
+        className="nav-toggle"
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        aria-label={t('nav.lang')}
+        onClick={() => setOpen((value) => !value)}
+      >
+        <Icon name="globe" />
+        <span>{current.short}</span>
+        <Icon name="chevdown" className={open ? 'ic lang-chev open' : 'ic lang-chev'} />
+      </button>
+      {open && (
+        <ul className="lang-list" role="listbox" aria-label={t('nav.lang')}>
+          {LANGS.map((item) => (
+            <li key={item.code}>
+              <button
+                type="button"
+                role="option"
+                aria-selected={item.code === lang}
+                className={item.code === lang ? 'active' : ''}
+                onClick={() => {
+                  setLang(item.code);
+                  setOpen(false);
+                }}
+              >
+                {item.name}
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 }
