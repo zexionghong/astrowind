@@ -305,6 +305,7 @@ html.show-notes .note-tag { display: inline-block; }
 }
 .nav-mobile { border-bottom: 1px solid var(--border); background: var(--bg); padding: 16px 0; }
 .nav-mobile .container { display: flex; flex-direction: column; gap: 6px; }
+.nav-mobile .nav-switches { display: flex; flex-direction: row; gap: 8px; padding: 4px 0 10px; }
 .nav-mobile a { padding: 10px 12px; border-radius: 8px; font-size: 15px; font-weight: 600; color: var(--text); }
 .nav-mobile a.active { color: var(--primary); background: var(--primary-soft); }
 

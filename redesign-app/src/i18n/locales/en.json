@@ -7,7 +7,12 @@
     "resources": "Knowledge Hub",
     "help": "Help Center",
     "login": "Log in",
-    "register": "Sign up"
+    "register": "Sign up",
+    "dir": "Visual direction",
+    "dirA": "A · Light SaaS",
+    "dirB": "B · Dark Tech",
+    "dirC": "C · Light + Dark",
+    "dirD": "D · Glass"
   },
   "promo": {
     "tag": "New User Offer",

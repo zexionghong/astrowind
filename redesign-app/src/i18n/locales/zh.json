@@ -7,7 +7,12 @@
     "resources": "知识中心",
     "help": "帮助中心",
     "login": "登录",
-    "register": "注册"
+    "register": "注册",
+    "dir": "视觉方向",
+    "dirA": "A · 明亮企业",
+    "dirB": "B · 深色科技",
+    "dirC": "C · 明暗节奏",
+    "dirD": "D · 玻璃拟态"
   },
   "promo": {
     "tag": "新用户专享",

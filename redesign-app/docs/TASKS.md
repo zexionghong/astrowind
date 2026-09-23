@@ -20,6 +20,7 @@
 | 11 | 博客页 BlogPage | ✅ 完成 | 6 卡 + 分页 |
 | 12 | 关于页 AboutPage | ✅ 完成 | G2 已修复（FAQ 普通 section） |
 | 13 | 注册页 RegisterPage | ✅ 完成 | 表单 + 引导区 |
+| 16 | 视觉方向切换（A/B/C/D，`html[data-dir]`，localStorage 记忆） | ✅ 完成 | 导航栏 + 移动菜单，三语文案 |
 | 14 | 构建保绿（`npm run build` 每次提交前通过） | 🔄 持续 | |
 | 15 | 截图比对（Playwright 1440×900 fullPage ×10 路由） | ✅ 本轮完成 | G1/G2 修复后 10/10 与基线一致，后续按需复验 |
 
@@ -58,4 +59,5 @@
 - **2026-09-23**：建立本地分支 `redesign`（原 detached HEAD @05d8896）；提交 TASKS.md（31a011a）；修复 G1/G2（71687be），build 通过。
 - **2026-09-23**：完成 G1/G2 修复后 10/10 路由 Playwright 截图复验（1440×900 fullPage，`/tmp/shots/`）：首页（10 区块顺序、CTA 在 FAQ 前、返现卡结尾）、三产品页（G1 无 CTA / G2 drp 普通 FAQ、srp/dc sec-alt FAQ）、定价页（FAQ sec-alt）、场景页（12 卡 + CTA）、知识中心（FAQ 普通 section）、博客（6 卡 + 分页）、关于页（FAQ 普通 section）、注册页（双栏 + sec-alt 引导）—— 全部与基线一致，无新增差异。G3 维持可接受。任务 15 本轮完成，进入保真持续维护。
 - **2026-09-23**：三语 i18n 键数校验（zh/en/ja 各 208，结构完全对齐，无缺/多键）；Playwright 采集 en/ja 首页截图（1440×900 fullPage）—— 三语首页区块顺序与 zh 基线一致，文案均已本地化，无布局漂移。i18n 与截图任务验证通过。
+- **2026-09-23**：补齐视觉方向切换。global.css 已含 A/B/C/D 四套 token，但 `index.html` 把 `data-dir` 写死为 `a`，页面上没有切换入口。新增 `DirSwitch`（`components/common.tsx`），写入 `html[data-dir]` 并记忆 `localStorage['ipflex-dir']`；桌面导航放在语言切换左侧，窄屏收进移动菜单顶部横排。三语补 `nav.dir*` 文案。
 - （后续每完成一项在此追加，并同步勾选上方状态）

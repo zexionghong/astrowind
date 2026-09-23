@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useI18n } from '../../i18n';
 import { Icon } from '../Icon';
-import { AppLink, LangSwitch, PromoBar } from '../common';
+import { AppLink, DirSwitch, LangSwitch, PromoBar } from '../common';
 
 const NAV_LINKS: { key: string; to: string }[] = [
   { key: 'nav.products', to: 'prod-srp' },
@@ -43,6 +43,7 @@ export function Header() {
               ))}
             </ul>
             <div className="nav-cta">
+              <DirSwitch />
               <LangSwitch />
               <a href="#" className="nav-login" onClick={(e) => e.preventDefault()}>
                 {t('nav.login')}
@@ -63,12 +64,15 @@ export function Header() {
         {mobileOpen && (
           <div className="nav-mobile">
             <div className="container">
+              <div className="nav-switches">
+                <DirSwitch />
+                <LangSwitch />
+              </div>
               {NAV_LINKS.map((l) => (
                 <NavLink key={l.key} to={l.to || '/'} className={({ isActive }) => (isActive ? 'active' : '')}>
                   {t(l.key)}
                 </NavLink>
               ))}
-              <LangSwitch />
             </div>
           </div>
         )}
