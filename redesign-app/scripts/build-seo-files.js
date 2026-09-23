@@ -3,42 +3,27 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const site = 'https://ipflex.ink';
+loadEnv(resolve(root, '.env'));
+
+const site = (process.env.VITE_SITE_URL || 'https://ipflex.ink').replace(/\/+$/, '');
 const outDir = resolve(root, 'public');
+const today = new Date().toISOString().slice(0, 10);
 
-const staticPaths = [
-  '/',
-  '/pricing',
-  '/products/static-residential',
-  '/products/dynamic-residential',
-  '/products/datacenter',
-  '/products/ai-accelerator',
-  '/scenarios',
-  '/resources',
-  '/blog',
-  '/about',
-];
-
+const routeSource = readFileSync(resolve(root, 'src/routes.ts'), 'utf8');
+const useCaseSource = readFileSync(resolve(root, 'src/use-cases.ts'), 'utf8');
 const posts = JSON.parse(readFileSync(resolve(root, 'src/blog-index.json'), 'utf8'));
-const cases = [
-  'static-residential-proxy-ad-verification',
-  'static-residential-proxy-ecommerce',
-  'static-residential-proxy-scraping',
-  'static-residential-proxy-security',
-  'dynamic-residential-proxy-data-collection',
-  'dynamic-residential-proxy-crawling',
-  'dynamic-residential-proxy-privacy',
-  'dynamic-residential-proxy-ad-verification',
-  'static-datacenter-proxy-api',
-  'static-datacenter-proxy-testing',
-  'static-datacenter-proxy-batch-processing',
-  'static-datacenter-proxy-cdn',
-];
+
+const staticPaths = [...routeSource.matchAll(/:\s*'(\/[^']*)'/g)]
+  .map((match) => match[1])
+  .filter((path, index, all) => all.indexOf(path) === index && path !== '/register');
+const caseSlugs = [...useCaseSource.matchAll(/'([a-z0-9-]+)'/g)]
+  .map((match) => match[1])
+  .filter((slug, index, all) => all.indexOf(slug) === index && slug.includes('-proxy-'));
 
 const urls = [
-  ...staticPaths.map((path) => ({ loc: url(path), lastmod: '2026-09-23' })),
-  ...posts.map((post) => ({ loc: url(`/blog/${post.slug}`), lastmod: post.date })),
-  ...cases.map((slug) => ({ loc: url(`/use-case/${slug}`), lastmod: '2026-09-23' })),
+  ...staticPaths.map((path) => ({ loc: absolute(path), lastmod: today })),
+  ...posts.map((post) => ({ loc: absolute(`/blog/${post.slug}`), lastmod: post.date })),
+  ...caseSlugs.map((slug) => ({ loc: absolute(`/use-case/${slug}`), lastmod: today })),
 ];
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -46,7 +31,7 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 ${urls
   .map(
     (item) => `  <url>
-    <loc>${item.loc}</loc>
+    <loc>${escapeXml(item.loc)}</loc>
     <lastmod>${item.lastmod}</lastmod>
   </url>`,
   )
@@ -98,7 +83,7 @@ Sitemap: ${site}/sitemap.xml
 
 const llms = `# IPFlex
 
-Last-Updated: 2026-09-23
+Last-Updated: ${today}
 Primary-Domain: ${site}
 Sitemap: ${site}/sitemap.xml
 
@@ -106,16 +91,16 @@ Sitemap: ${site}/sitemap.xml
 IPFlex provides enterprise proxy infrastructure for web data collection, ad verification, cross-border operations, and automation workflows.
 
 ## Core Pages
-${staticPaths.map((path) => `- ${label(path)}: ${url(path)}`).join('\n')}
+${staticPaths.map((path) => `- ${absolute(path)}`).join('\n')}
 
 ## Use Cases
-${cases.map((slug) => `- ${url(`/use-case/${slug}`)}`).join('\n')}
+${caseSlugs.map((slug) => `- ${absolute(`/use-case/${slug}`)}`).join('\n')}
 
 ## Blog
 ${posts
   .slice()
   .sort((a, b) => b.date.localeCompare(a.date))
-  .map((post) => `- ${post.title}: ${url(`/blog/${post.slug}`)}`)
+  .map((post) => `- ${post.title}: ${absolute(`/blog/${post.slug}`)}`)
   .join('\n')}
 
 ## Contact
@@ -128,17 +113,25 @@ mkdirSync(outDir, { recursive: true });
 writeFileSync(resolve(outDir, 'sitemap.xml'), sitemap);
 writeFileSync(resolve(outDir, 'robots.txt'), robots);
 writeFileSync(resolve(outDir, 'llms.txt'), llms);
-console.log(`Generated SEO files with ${urls.length} sitemap URLs`);
+console.log(`Generated SEO files for ${site} with ${urls.length} sitemap URLs`);
 
-function url(path) {
+function absolute(path) {
   return path === '/' ? `${site}/` : `${site}${path}`;
 }
 
-function label(path) {
-  if (path === '/') return 'Home';
-  return path
-    .split('/')
-    .filter(Boolean)
-    .join(' / ')
-    .replaceAll('-', ' ');
+function escapeXml(value) {
+  return value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
+}
+
+function loadEnv(file) {
+  const text = readFileSync(file, 'utf8');
+  for (const line of text.split('\n')) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith('#')) continue;
+    const index = trimmed.indexOf('=');
+    if (index === -1) continue;
+    const key = trimmed.slice(0, index).trim();
+    const value = trimmed.slice(index + 1).trim().replace(/^['"]|['"]$/g, '');
+    if (!process.env[key]) process.env[key] = value;
+  }
 }

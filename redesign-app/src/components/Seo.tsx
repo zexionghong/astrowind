@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useI18n } from '../i18n';
-import { SITE, canonicalFor, metaFor } from '../seo';
+import { canonicalFor, metaFor } from '../seo';
+import { SITE_URL } from '../site';
 
 const MANAGED = 'data-seo';
 
@@ -38,7 +39,7 @@ export function Seo() {
       description: meta.description,
       url: canonical,
       inLanguage: document.documentElement.lang,
-      isPartOf: { '@type': 'WebSite', name: 'IPFlex', url: SITE },
+      isPartOf: { '@type': 'WebSite', name: 'IPFlex', url: SITE_URL },
     };
     let script = document.head.querySelector<HTMLScriptElement>(`script[${MANAGED}]`);
     if (!script) {

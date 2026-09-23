@@ -1,9 +1,8 @@
 import { POSTS } from './blog';
 import { PATHS } from './routes';
+import { absoluteUrl } from './site';
 import { getUseCase } from './use-cases';
 import type { Lang } from './i18n';
-
-export const SITE = 'https://ipflex.ink';
 
 export interface SeoMeta {
   title: string;
@@ -55,8 +54,7 @@ export function metaFor(pathname: string, lang: Lang, t: Translator): SeoMeta {
 }
 
 export function canonicalFor(pathname: string): string {
-  const path = pathname.replace(/\/+$/, '') || '/';
-  return path === '/' ? `${SITE}/` : `${SITE}${path}`;
+  return absoluteUrl(pathname.replace(/\/+$/, '') || '/');
 }
 
 function clean(text: string): string {

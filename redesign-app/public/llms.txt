@@ -8,21 +8,21 @@ Sitemap: https://ipflex.ink/sitemap.xml
 IPFlex provides enterprise proxy infrastructure for web data collection, ad verification, cross-border operations, and automation workflows.
 
 ## Core Pages
-- Home: https://ipflex.ink/
-- pricing: https://ipflex.ink/pricing
-- products / static residential: https://ipflex.ink/products/static-residential
-- products / dynamic residential: https://ipflex.ink/products/dynamic-residential
-- products / datacenter: https://ipflex.ink/products/datacenter
-- products / ai accelerator: https://ipflex.ink/products/ai-accelerator
-- scenarios: https://ipflex.ink/scenarios
-- resources: https://ipflex.ink/resources
-- blog: https://ipflex.ink/blog
-- about: https://ipflex.ink/about
+- https://ipflex.ink/
+- https://ipflex.ink/pricing
+- https://ipflex.ink/products/static-residential
+- https://ipflex.ink/products/dynamic-residential
+- https://ipflex.ink/products/datacenter
+- https://ipflex.ink/products/ai-accelerator
+- https://ipflex.ink/scenarios
+- https://ipflex.ink/resources
+- https://ipflex.ink/blog
+- https://ipflex.ink/about
 
 ## Use Cases
 - https://ipflex.ink/use-case/static-residential-proxy-ad-verification
-- https://ipflex.ink/use-case/static-residential-proxy-ecommerce
 - https://ipflex.ink/use-case/static-residential-proxy-scraping
+- https://ipflex.ink/use-case/static-residential-proxy-ecommerce
 - https://ipflex.ink/use-case/static-residential-proxy-security
 - https://ipflex.ink/use-case/dynamic-residential-proxy-data-collection
 - https://ipflex.ink/use-case/dynamic-residential-proxy-crawling
