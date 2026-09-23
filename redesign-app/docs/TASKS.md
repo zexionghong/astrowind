@@ -13,15 +13,15 @@
 | 4 | 共享布局（Header/PromoBar/语言切换/移动菜单/Footer） | ✅ 完成 | `components/layout/` |
 | 5 | 共享 UI 组件（Section/PageHero/SecHead/FeatureGrid/StatGrid/FaqSection/CtaBanner/Icon） | ✅ 完成 | `components/ui/` |
 | 6 | 首页 HomePage | ✅ 完成 | 结构与预览稿逐段核对一致 |
-| 7 | 产品页 ×3（ProductPage 共用，prefix 驱动） | ✅ 完成 / 🔧 保真修复中 | 见「待修复差异」 |
+| 7 | 产品页 ×3（ProductPage 共用，prefix 驱动） | ✅ 完成 | G1/G2 已修复（71687be），截图复验一致 |
 | 8 | 定价页 PricingPage | ✅ 完成 | 结构一致 |
 | 9 | 场景页 ScenariosPage | ✅ 完成 | 结构一致（12 卡 + CTA） |
-| 10 | 知识中心 ResourcesPage | ✅ 完成 / 🔧 保真修复中 | FAQ 背景色差 |
+| 10 | 知识中心 ResourcesPage | ✅ 完成 | G2 已修复（FAQ 普通 section） |
 | 11 | 博客页 BlogPage | ✅ 完成 | 6 卡 + 分页 |
-| 12 | 关于页 AboutPage | ✅ 完成 / 🔧 保真修复中 | FAQ 背景色差 |
+| 12 | 关于页 AboutPage | ✅ 完成 | G2 已修复（FAQ 普通 section） |
 | 13 | 注册页 RegisterPage | ✅ 完成 | 表单 + 引导区 |
 | 14 | 构建保绿（`npm run build` 每次提交前通过） | 🔄 持续 | |
-| 15 | 截图比对（Playwright 1440×900 fullPage ×10 路由） | 🔄 持续 | `/tmp/shots/` |
+| 15 | 截图比对（Playwright 1440×900 fullPage ×10 路由） | ✅ 本轮完成 | G1/G2 修复后 10/10 与基线一致，后续按需复验 |
 
 ## 二、预览稿结构基线（docs/redesign/preview.html 逐页提取）
 
@@ -56,4 +56,5 @@
 
 - **2026-09-23**：完成预览稿全页结构基线提取（section 类名 + h2），逐页与 app 比对；确认首页/定价/场景/博客/关于/注册结构一致；登记 G1–G3 差异；落盘本文档。
 - **2026-09-23**：建立本地分支 `redesign`（原 detached HEAD @05d8896）；提交 TASKS.md（31a011a）；修复 G1/G2（71687be），build 通过。
+- **2026-09-23**：完成 G1/G2 修复后 10/10 路由 Playwright 截图复验（1440×900 fullPage，`/tmp/shots/`）：首页（10 区块顺序、CTA 在 FAQ 前、返现卡结尾）、三产品页（G1 无 CTA / G2 drp 普通 FAQ、srp/dc sec-alt FAQ）、定价页（FAQ sec-alt）、场景页（12 卡 + CTA）、知识中心（FAQ 普通 section）、博客（6 卡 + 分页）、关于页（FAQ 普通 section）、注册页（双栏 + sec-alt 引导）—— 全部与基线一致，无新增差异。G3 维持可接受。任务 15 本轮完成，进入保真持续维护。
 - （后续每完成一项在此追加，并同步勾选上方状态）
