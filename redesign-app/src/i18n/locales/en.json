@@ -335,7 +335,7 @@
         },
         {
           "q": "How is the proxy service priced?",
-          "a": "We offer flexible billing options including traffic-based and per-IP pricing. Choose the plan that best fits your needs — we also provide custom enterprise solutions."
+          "a": "Billing is flexible: rotating residential proxies are billed by traffic, while static residential and datacenter proxies are billed per IP. Choose the plan that fits your workload — custom enterprise options are also available."
         },
         {
           "q": "How do I choose the right proxy type?",
@@ -396,7 +396,7 @@
   },
   "pricing": {
     "eyebrow": "Pricing",
-    "heroTitle": "Limited-time offer! From ¥2/IP, ¥10/GB + referral cashback",
+    "heroTitle": "Limited-time offer! Rotating traffic from ¥40/GB + referral cashback",
     "heroSub": "Choose the plan that best fits your business — refer friends and earn 10% cash commission instantly on their top-ups",
     "buyNow": "Buy now",
     "learnProduct": "Explore products",
@@ -417,15 +417,15 @@
       },
       {
         "name": "Rotating Residential Proxy",
-        "sub": "Massive pool of real residential IPs",
-        "num": "¥2",
-        "unit": "/IP",
+        "sub": "Real residential IPs billed by traffic",
+        "num": "¥40",
+        "unit": "/GB",
         "feats": [
           "Real short-lived residential IPs",
           "10M+ daily active IPs",
           "City-level targeting",
           "HTTP & SOCKS5 support",
-          "¥40/GB"
+          "Traffic-based billing"
         ],
         "popular": true
       },
@@ -679,31 +679,9 @@
     },
     "billing": {
       "eyebrow": "Billing",
-      "title": "Billing methods compared",
-      "sub": "IPFlex supports both traffic-based and per-IP billing to fit different scenarios and team budgets.",
+      "title": "Billing method",
+      "sub": "Static residential proxies are billed per IP, for workloads that need a dedicated IP long term. Traffic billing applies only to rotating residential proxies.",
       "cards": [
-        {
-          "title": "Pay by traffic",
-          "price": "¥40 / GB",
-          "blocks": [
-            {
-              "b": "Best for",
-              "items": [
-                "Scraping projects with fluctuating, unpredictable traffic",
-                "Most distributed scraping/monitoring workloads",
-                "Highly variable needs like marketing/ad delivery"
-              ]
-            },
-            {
-              "b": "Advantages",
-              "items": [
-                "Pay only for what you use — flexible, no waste",
-                "Great for temporary projects or teams with uncertain usage",
-                "Tiered volume discounts — the more you use, the cheaper"
-              ]
-            }
-          ]
-        },
         {
           "title": "Pay per IP",
           "price": "From ¥4 / IP / day",
@@ -753,7 +731,7 @@
         },
         {
           "q": "What billing options are available?",
-          "a": "Common options include per-IP billing, traffic-based billing and monthly packages. Choose the optimal plan based on your business needs for cost-effective residential proxy service."
+          "a": "Static residential proxies are billed per IP, from ¥4/IP/day. Traffic billing applies only to rotating residential proxies."
         },
         {
           "q": "How do I buy and use static residential proxies?",
@@ -875,7 +853,7 @@
         {
           "icon": "scale",
           "title": "Great value",
-          "desc": "Pay-as-you-go with traffic- or request-based billing for flexible cost control."
+          "desc": "Pay for the traffic you use, with flexible cost control."
         }
       ]
     },
@@ -917,7 +895,7 @@
         },
         {
           "q": "How is it billed?",
-          "a": "Two billing modes: traffic-based (¥40/GB) and per-IP (from ¥2/IP). Choose the most economical option by workload characteristics — no minimum spend, balance never expires."
+          "a": "Rotating residential proxies are billed by traffic at ¥40/GB. Pay for what you use — no minimum spend, and your balance never expires."
         },
         {
           "q": "Rotating or static residential — how to choose?",

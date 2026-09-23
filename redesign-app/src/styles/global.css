@@ -695,8 +695,7 @@ html[data-dir="b"] .price-num, html[data-dir="d"] .price-num { font-family: ui-m
 /* ============================================================
    产品页：计费对比
    ============================================================ */
-.bill-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; max-width: 980px; margin: 0 auto; }
-@media (max-width: 780px) { .bill-grid { grid-template-columns: 1fr; } }
+.bill-grid { display: grid; grid-template-columns: 1fr; gap: 22px; max-width: 560px; margin: 0 auto; }
 .bill-card {
   background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
   padding: 32px; box-shadow: var(--shadow-card); backdrop-filter: var(--surface-blur);
