@@ -65,24 +65,22 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* 住宅代理服务 */}
+      {/* 住宅代理 / 数据中心代理 */}
       <Section>
-        <div className="band-label">
-          <h2 className="band-title">{t('home.proxyContent.band')}</h2>
+        <div className="band-tags">
+          <a className="band-tag" href="#residential-proxy">{t('home.proxyContent.band')}</a>
+          <a className="band-tag" href="#datacenter-proxy">{t('home.proxyService.band')}</a>
         </div>
-        {proxyCards.map((card) => (
-          <ProxyCard key={card.name} card={card} />
-        ))}
-      </Section>
-
-      {/* 数据中心代理服务 */}
-      <Section alt>
-        <div className="band-label">
-          <h2 className="band-title">{t('home.proxyService.band')}</h2>
+        <div id="residential-proxy">
+          {proxyCards.map((card) => (
+            <ProxyCard key={card.name} card={card} />
+          ))}
         </div>
-        {dcCard.map((card) => (
-          <ProxyCard key={card.name} card={card} />
-        ))}
+        <div id="datacenter-proxy" className="band-follow">
+          {dcCard.map((card) => (
+            <ProxyCard key={card.name} card={card} />
+          ))}
+        </div>
       </Section>
 
       {/* 快速开始 */}
