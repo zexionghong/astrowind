@@ -404,8 +404,8 @@
       {
         "name": "Static Residential Proxy",
         "sub": "Stable, reliable long-lived residential IPs",
-        "num": "¥40",
-        "unit": "/GB",
+        "num": "¥2",
+        "unit": "/day",
         "feats": [
           "Real long-lived residential IPs",
           "Up to 99.9% availability",
@@ -432,14 +432,14 @@
       {
         "name": "Static Datacenter Proxy",
         "sub": "Cost-effective datacenter IPs",
-        "num": "¥10",
-        "unit": "/GB",
+        "num": "¥1",
+        "unit": "/day",
         "feats": [
           "Long-lived datacenter IPs",
           "Daily purchase, unmetered traffic",
           "City-level targeting",
           "HTTP & SOCKS5 support",
-          "¥2/day or ¥30/month"
+          "From ¥1/day"
         ],
         "popular": false
       }
@@ -684,7 +684,7 @@
       "cards": [
         {
           "title": "Pay per IP",
-          "price": "From ¥4 / IP / day",
+          "price": "¥2 / IP / day",
           "blocks": [
             {
               "b": "Best for",
@@ -731,7 +731,7 @@
         },
         {
           "q": "What billing options are available?",
-          "a": "Static residential proxies are billed per IP, from ¥4/IP/day. Traffic billing applies only to rotating residential proxies."
+          "a": "Static residential proxies are billed per IP at ¥2/IP/day. Traffic billing applies only to rotating residential proxies."
         },
         {
           "q": "How do I buy and use static residential proxies?",
