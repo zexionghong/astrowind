@@ -6,6 +6,7 @@ import { PricingPage } from './pages/PricingPage';
 import { StaticResidentialPage } from './pages/StaticResidentialPage';
 import { DynamicResidentialPage } from './pages/DynamicResidentialPage';
 import { DatacenterPage } from './pages/DatacenterPage';
+import { AiAcceleratorPage } from './pages/AiAcceleratorPage';
 import { ScenariosPage } from './pages/ScenariosPage';
 import { ResourcesPage } from './pages/ResourcesPage';
 import { BlogPage } from './pages/BlogPage';
@@ -24,6 +25,7 @@ export function App() {
           <Route path={PATHS.prodSrp} element={<StaticResidentialPage />} />
           <Route path={PATHS.prodDrp} element={<DynamicResidentialPage />} />
           <Route path={PATHS.prodDc} element={<DatacenterPage />} />
+          <Route path={PATHS.prodAi} element={<AiAcceleratorPage />} />
           <Route path={PATHS.scenarios} element={<ScenariosPage />} />
           <Route path="/use-case/:slug" element={<UseCasePage />} />
           <Route path={PATHS.resources} element={<ResourcesPage />} />

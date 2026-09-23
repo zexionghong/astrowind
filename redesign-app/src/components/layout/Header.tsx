@@ -13,11 +13,12 @@ type MenuItem = {
   badge?: boolean;
 };
 
-/** 旧站导航里的下拉项。只链到已经有页面的入口，AI 加速器暂不放入。 */
+/** 旧站导航里的产品下拉。 */
 const PRODUCT_ITEMS: MenuItem[] = [
   { key: 'srp', to: ROUTES['prod-srp'], icon: 'home', badge: true },
   { key: 'drp', to: ROUTES['prod-drp'], icon: 'refresh' },
   { key: 'dc', to: ROUTES['prod-dc'], icon: 'server' },
+  { key: 'ai', to: ROUTES['prod-ai'], icon: 'sparkles', badge: true },
 ];
 
 const PLAIN_LINKS: { key: string; to?: string; href?: string }[] = [

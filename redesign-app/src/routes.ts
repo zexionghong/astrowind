@@ -1,6 +1,7 @@
 /** 线上已有、站外打开的入口（控制台 / 文档 / 社媒 / 邮箱） */
 export const EXTERNAL = {
   login: 'https://dashboard.ipflex.ink/login',
+  dashboard: 'https://dashboard.ipflex.ink',
   dashboardRegister: 'https://dashboard.ipflex.ink/register',
   docs: 'https://docs.ipflex.ink/',
   x: 'https://x.com/IPFlexSupport',
@@ -16,6 +17,7 @@ export const PATHS = {
   prodSrp: '/products/static-residential',
   prodDrp: '/products/dynamic-residential',
   prodDc: '/products/datacenter',
+  prodAi: '/products/ai-accelerator',
   scenarios: '/scenarios',
   resources: '/resources',
   blog: '/blog',
@@ -30,6 +32,7 @@ export const ROUTES: Record<string, string> = {
   'prod-srp': PATHS.prodSrp,
   'prod-drp': PATHS.prodDrp,
   'prod-dc': PATHS.prodDc,
+  'prod-ai': PATHS.prodAi,
   scenarios: PATHS.scenarios,
   resources: PATHS.resources,
   blog: PATHS.blog,
