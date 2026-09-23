@@ -4,6 +4,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import { useI18n } from '../../i18n';
 import { Header } from './Header';
 import { Footer } from './Footer';
+import { Seo } from '../Seo';
 
 /** 滚动到顶部 + 路由切换后触发 .reveal 入场动画扫描 */
 function useRevealOnRouteChange() {
@@ -36,6 +37,7 @@ export function Layout() {
   const { t } = useI18n();
   return (
     <>
+      <Seo />
       <a className="skip-link" href="#main">
         {t('nav.skip')}
       </a>

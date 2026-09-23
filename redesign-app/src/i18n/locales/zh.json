@@ -1526,7 +1526,8 @@
           "to": "scenarios"
         }
       ]
-    }
+    },
+    "description": "注册 IPFlex 账号，获取企业级住宅与数据中心代理。"
   },
   "footer": {
     "desc": "专业的IP代理服务提供商，为您提供优质的代理服务",

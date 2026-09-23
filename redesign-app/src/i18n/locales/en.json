@@ -1526,7 +1526,8 @@
           "to": "scenarios"
         }
       ]
-    }
+    },
+    "description": "Create an IPFlex account for enterprise residential and datacenter proxies."
   },
   "footer": {
     "desc": "A professional IP proxy service provider delivering premium proxy services",
